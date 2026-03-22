@@ -1,0 +1,85 @@
+{
+  "name": "Kozak Sequence",
+  "type": "dna",
+  "organism": "Consensus",
+  "function": "Translation initiation",
+  "sequence": "GCCGCCACCATGGCGACC",
+  "length": 18,
+  "gc_content": 77.8,
+  "base_composition": {
+    "G": 5,
+    "C": 9,
+    "A": 3,
+    "T": 1
+  },
+  "molecular_mass": 5816.6,
+  "melting_temperature": 63.5,
+  "complement": "CGGCGGTGGTACCGCTGG",
+  "reverse_complement": "GGTCGCCATGGTGGCGGC",
+  "secondary_structures": {
+    "hairpins": 7,
+    "details": [
+      {
+        "start": 0,
+        "end": 17,
+        "loop_start": 6,
+        "loop_end": 11,
+        "stem_length": 6,
+        "loop_length": 5,
+        "stem_sequence": "GCCGCC",
+        "loop_sequence": "ACCAT",
+        "stability": 1.0,
+        "matches": 5
+      },
+      {
+        "start": 0,
+        "end": 17,
+        "loop_start": 5,
+        "loop_end": 12,
+        "stem_length": 5,
+        "loop_length": 7,
+        "stem_sequence": "GCCGC",
+        "loop_sequence": "CACCATG",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 1,
+        "end": 16,
+        "loop_start": 6,
+        "loop_end": 11,
+        "stem_length": 5,
+        "loop_length": 5,
+        "stem_sequence": "CCGCC",
+        "loop_sequence": "ACCAT",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 2,
+        "end": 15,
+        "loop_start": 6,
+        "loop_end": 11,
+        "stem_length": 4,
+        "loop_length": 5,
+        "stem_sequence": "CGCC",
+        "loop_sequence": "ACCAT",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 1,
+        "end": 16,
+        "loop_start": 7,
+        "loop_end": 10,
+        "stem_length": 6,
+        "loop_length": 3,
+        "stem_sequence": "CCGCCA",
+        "loop_sequence": "CCA",
+        "stability": 0.83,
+        "matches": 5
+      }
+    ]
+  },
+  "description": "Kozak consensus sequence for efficient translation initiation."
+}

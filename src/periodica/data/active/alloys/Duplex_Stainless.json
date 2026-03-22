@@ -1,0 +1,103 @@
+{
+  "Name": "Duplex Stainless",
+  "Formula": "Fe-C-Cr-Mn-Mo-Ni",
+  "Category": "Steel",
+  "SubCategory": "Martensitic Stainless Steel",
+  "Description": "Auto-generated steel with C 0.0%, Cr 22.0%, Ni 5.0%, Mo 3.0%, Mn 1.5%",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 67.47,
+      "MaxPercent": 69.47,
+      "Role": "Base"
+    },
+    {
+      "Element": "C",
+      "MinPercent": 0.03,
+      "MaxPercent": 0.03,
+      "Role": "Trace"
+    },
+    {
+      "Element": "Cr",
+      "MinPercent": 19.8,
+      "MaxPercent": 24.2,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 1.35,
+      "MaxPercent": 1.65,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mo",
+      "MinPercent": 2.7,
+      "MaxPercent": 3.3,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Ni",
+      "MinPercent": 4.5,
+      "MaxPercent": 5.5,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.794,
+    "MeltingPoint_K": 1629.3,
+    "ThermalConductivity_W_mK": 25.4,
+    "ThermalExpansion_per_K": 2.2e-05,
+    "ElectricalResistivity_Ohm_m": 3.816e-07,
+    "SpecificHeat_J_kgK": 600
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 943.0,
+    "YieldStrength_MPa": 566.0,
+    "Elongation_percent": 10,
+    "Hardness_HV": 283.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolling",
+    "Forging",
+    "Heat treatment"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Fe",
+      "element:C",
+      "element:Cr",
+      "element:Ni",
+      "element:Mo",
+      "element:Mn"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022510+00:00",
+    "model_version": "1.0.0"
+  }
+}

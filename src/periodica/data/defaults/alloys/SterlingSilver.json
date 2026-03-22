@@ -1,0 +1,151 @@
+{
+  "Name": "Sterling Silver",
+  "Formula": "Ag-Cu",
+  "Category": "Precious Metal Alloy",
+  "SubCategory": "Silver Alloy",
+  "Description": "Traditional silver alloy containing 92.5% silver, used for jewelry, tableware, and coins",
+
+  "Components": [
+    {"Element": "Ag", "MinPercent": 92.5, "MaxPercent": 92.5, "Role": "Base"},
+    {"Element": "Cu", "MinPercent": 7.5, "MaxPercent": 7.5, "Role": "Hardening"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 10.36,
+    "MeltingPoint_K": 1163,
+    "ThermalConductivity_W_mK": 361,
+    "ThermalExpansion_per_K": 19.2e-6,
+    "ElectricalResistivity_Ohm_m": 1.70e-8,
+    "SpecificHeat_J_kgK": 232,
+    "YoungsModulus_GPa": 76,
+    "ShearModulus_GPa": 28,
+    "PoissonsRatio": 0.37,
+    "BrinellHardness_HB": 75
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 290,
+    "YieldStrength_MPa": 172,
+    "Elongation_percent": 35,
+    "ReductionOfArea_percent": 45,
+    "ImpactStrength_J": 80,
+    "FatigueStrength_MPa": 120
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": ["Cu_rich_precipitates"],
+    "LatticeParameters": {
+      "a_pm": 408.5,
+      "b_pm": 408.5,
+      "c_pm": 408.5,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 288.9,
+    "StackingFaultEnergy_mJ_m2": 22
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Silver-Rich Phase",
+        "Symbol": "alpha",
+        "Structure": "FCC",
+        "VolumePercent": 95,
+        "Hardness_HV": 60
+      },
+      {
+        "Name": "Copper-Rich Phase",
+        "Symbol": "beta",
+        "Structure": "FCC",
+        "VolumePercent": 5,
+        "Hardness_HV": 90
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 1053,
+      "Liquidus_K": 1163,
+      "EutecticTemperature_K": 1052
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 150,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.5,
+      "ASTMGrainSizeNumber": 2,
+      "VoronoiSeedDensity_per_mm2": 44,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 30
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.15,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.9
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-8
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e9,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.1,
+        "HighAngleBoundaryFraction": 0.75,
+        "TwinBoundaryFraction": 0.15,
+        "GrainBoundaryEnergy_J_m2": 0.45
+      }
+    },
+    "Inclusions": {
+      "Types": ["Cu-oxide"],
+      "VolumeFraction": 0.001,
+      "AverageSize_um": 2
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,1], [2,0,0], [2,2,0]],
+      "Directions": [[1,1,0], [1,1,2]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "TarnishProperties": {
+    "TarnishResistance": "Moderate",
+    "SulfidationRate": "Medium",
+    "AntitarnishCoating": "Rhodium plating"
+  },
+
+  "FinenessMarking": {
+    "Standard": 925,
+    "Hallmark": "Sterling"
+  },
+
+  "Applications": ["Jewelry", "Tableware", "Coins", "Musical instruments", "Electrical contacts"],
+  "ProcessingMethods": ["Casting", "Rolling", "Drawing", "Annealing", "Electroplating"],
+  "Color": "#C0C0C0"
+}

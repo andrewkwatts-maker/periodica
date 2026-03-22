@@ -1,0 +1,37 @@
+{
+  "symbol": "Ir",
+  "name": "Iridium",
+  "atomic_number": 77,
+  "atomic_mass": 192.217,
+  "block": "d",
+  "period": 6,
+  "group": 9,
+  "ionization_energy": 8.96702,
+  "electronegativity": 2.2,
+  "atomic_radius": 180,
+  "covalent_radius": 141,
+  "melting_point": 2719,
+  "boiling_point": 4701,
+  "density": 22.56,
+  "electron_affinity": 150.9,
+  "valence_electrons": 9,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d⁷ 6s²",
+  "primary_emission_wavelength": 322.1,
+  "visible_emission_wavelength": 380.0,
+  "isotopes": [
+    {
+      "mass_number": 191,
+      "neutrons": 114,
+      "abundance": 37.3,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 193,
+      "neutrons": 116,
+      "abundance": 62.7,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

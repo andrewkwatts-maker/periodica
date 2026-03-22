@@ -1,0 +1,30 @@
+{
+  "symbol": "Nh",
+  "name": "Nihonium",
+  "atomic_number": 113,
+  "atomic_mass": 286,
+  "block": "p",
+  "period": 7,
+  "group": 13,
+  "ionization_energy": 7.4,
+  "electronegativity": 1.6,
+  "atomic_radius": 136,
+  "covalent_radius": 136,
+  "melting_point": 700,
+  "boiling_point": 1400,
+  "density": 16.0,
+  "electron_affinity": null,
+  "valence_electrons": 3,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 286,
+      "neutrons": 173,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "8 seconds"
+    }
+  ]
+}

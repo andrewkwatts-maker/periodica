@@ -1,0 +1,162 @@
+{
+  "Name": "Tool Steel D2",
+  "Formula": "Fe-Cr-C-Mo-V",
+  "Category": "Steel",
+  "SubCategory": "Cold Work Tool Steel",
+  "Description": "High-carbon, high-chromium tool steel with excellent wear resistance and edge retention",
+
+  "Components": [
+    {"Element": "Fe", "MinPercent": 83.0, "MaxPercent": 86.0, "Role": "Base"},
+    {"Element": "C", "MinPercent": 1.40, "MaxPercent": 1.60, "Role": "Hardening"},
+    {"Element": "Cr", "MinPercent": 11.0, "MaxPercent": 13.0, "Role": "Wear Resistance"},
+    {"Element": "Mo", "MinPercent": 0.70, "MaxPercent": 1.20, "Role": "Toughness"},
+    {"Element": "V", "MinPercent": 0.50, "MaxPercent": 1.10, "Role": "Carbide Former"},
+    {"Element": "Mn", "MinPercent": 0.10, "MaxPercent": 0.60, "Role": "Hardenability"},
+    {"Element": "Si", "MinPercent": 0.10, "MaxPercent": 0.60, "Role": "Deoxidizer"},
+    {"Element": "Co", "MinPercent": 0.0, "MaxPercent": 1.0, "Role": "Hot Hardness"},
+    {"Element": "Ni", "MinPercent": 0.0, "MaxPercent": 0.30, "Role": "Toughness"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.7,
+    "MeltingPoint_K": 1693,
+    "ThermalConductivity_W_mK": 20.0,
+    "ThermalExpansion_per_K": 10.4e-6,
+    "ElectricalResistivity_Ohm_m": 6.5e-7,
+    "SpecificHeat_J_kgK": 460,
+    "YoungsModulus_GPa": 210,
+    "ShearModulus_GPa": 80,
+    "PoissonsRatio": 0.30,
+    "BrinellHardness_HB": 248
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 1930,
+    "YieldStrength_MPa": 1480,
+    "Elongation_percent": 1,
+    "ReductionOfArea_percent": 2,
+    "ImpactStrength_J": 18,
+    "FatigueStrength_MPa": 700
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "BCT",
+    "SecondaryStructures": ["M7C3", "M23C6"],
+    "LatticeParameters": {
+      "a_pm": 285.0,
+      "b_pm": 285.0,
+      "c_pm": 293.0,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "I4/mmm",
+    "SpaceGroupNumber": 139,
+    "PointGroup": "4/mmm",
+    "AtomsPerUnitCell": 2,
+    "AtomicPackingFactor": 0.70,
+    "CoordinationNumber": 8,
+    "BurgersVector_pm": 248.0
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Martensite",
+        "Symbol": "alpha'",
+        "Structure": "BCT",
+        "VolumePercent": 75,
+        "CarbonContent_percent": 0.6,
+        "Hardness_HV": 750
+      },
+      {
+        "Name": "Retained Austenite",
+        "Symbol": "gamma_r",
+        "Structure": "FCC",
+        "VolumePercent": 10,
+        "Hardness_HV": 250
+      },
+      {
+        "Name": "Chromium Carbide",
+        "Symbol": "M7C3",
+        "Structure": "Orthorhombic",
+        "VolumePercent": 15,
+        "Hardness_HV": 1800
+      }
+    ],
+    "TransformationTemperatures": {
+      "A1_K": 1063,
+      "Acm_K": 1183,
+      "Ms_K": 473,
+      "Mf_K": 173
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 8,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.3,
+      "ASTMGrainSizeNumber": 11,
+      "VoronoiSeedDensity_per_mm2": 15625,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.2
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Worley",
+      "NoiseScale": 0.03,
+      "NoiseOctaves": 2,
+      "NoisePersistence": 0.6,
+      "PhaseThreshold": 0.4
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-3,
+        "InterstitialConcentration": 1e-4
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e15,
+        "BurgersVectorType": "a<100>",
+        "SlipSystems": ["110<111>", "112<111>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.35,
+        "HighAngleBoundaryFraction": 0.60,
+        "TwinBoundaryFraction": 0.05,
+        "GrainBoundaryEnergy_J_m2": 1.0
+      }
+    },
+    "Carbides": {
+      "Types": ["M7C3", "M23C6", "MC"],
+      "VolumeFraction": 0.15,
+      "AverageSize_um": 2,
+      "Distribution": "GrainBoundary"
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,0], [2,0,0], [2,1,1]],
+      "Directions": [[1,1,1], [1,0,0]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "HeatTreatmentResponse": {
+    "Annealing": {"Temperature_K": 1143, "Hardness_HB": 217},
+    "Austenitizing": {"Temperature_K": 1283, "SoakTime_min": 30},
+    "Quenching": {"Temperature_K": 1283, "Medium": "Air", "Hardness_HRC": 64},
+    "Tempering": {"Temperature_K": 477, "Hardness_HRC": 60}
+  },
+
+  "Applications": ["Cutting dies", "Blanking dies", "Knives", "Shear blades", "Wear plates"],
+  "ProcessingMethods": ["Hot forging", "Annealing", "Hardening", "Tempering", "EDM"],
+  "Color": "#4A4A4A"
+}

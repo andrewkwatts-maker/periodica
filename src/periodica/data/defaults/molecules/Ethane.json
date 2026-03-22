@@ -1,0 +1,52 @@
+{
+    "Name": "Ethane",
+    "Formula": "C2H6",
+    "MolecularMass_amu": 30.07,
+    "MolecularMass_g_mol": 30.07,
+    "BondType": "Covalent",
+    "Geometry": "Tetrahedral",
+    "BondAngle_deg": 109.5,
+    "Polarity": "Nonpolar",
+    "MeltingPoint_K": 90.4,
+    "BoilingPoint_K": 184.6,
+    "Density_g_cm3": 0.00125,
+    "State_STP": "Gas",
+    "Composition": [
+        {"Element": "C", "Count": 2},
+        {"Element": "H", "Count": 6}
+    ],
+    "Bonds": [
+        {"From": "C", "To": "C", "Type": "Single", "Length_pm": 154, "Index": 1},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 2},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 3},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 4},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 5},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 6},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 7}
+    ],
+    "Atoms3D": [
+        {"element": "C", "x": -0.77, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "C", "x": 0.77, "y": 0.0, "z": 0.0, "index": 1},
+        {"element": "H", "x": -1.14, "y": 0.513, "z": 0.889, "index": 2},
+        {"element": "H", "x": -1.14, "y": 0.513, "z": -0.889, "index": 3},
+        {"element": "H", "x": -1.14, "y": -1.026, "z": 0.0, "index": 4},
+        {"element": "H", "x": 1.14, "y": -0.513, "z": 0.889, "index": 5},
+        {"element": "H", "x": 1.14, "y": -0.513, "z": -0.889, "index": 6},
+        {"element": "H", "x": 1.14, "y": 1.026, "z": 0.0, "index": 7}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "single", "length_A": 1.54},
+        {"from": 0, "to": 2, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 3, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 4, "type": "single", "length_A": 1.09},
+        {"from": 1, "to": 5, "type": "single", "length_A": 1.09},
+        {"from": 1, "to": 6, "type": "single", "length_A": 1.09},
+        {"from": 1, "to": 7, "type": "single", "length_A": 1.09}
+    ],
+    "DipoleMoment_D": 0.0,
+    "ElectronConfiguration": "C: 1s2 2s2 2p2, H: 1s1",
+    "Applications": ["Natural gas component", "Refrigerant", "Chemical feedstock", "Fuel"],
+    "IUPAC_Name": "Ethane",
+    "Category": "Organic",
+    "Color": "#8BC34A"
+}

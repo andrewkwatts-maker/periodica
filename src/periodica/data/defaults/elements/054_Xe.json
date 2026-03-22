@@ -1,0 +1,86 @@
+{
+  "symbol": "Xe",
+  "name": "Xenon",
+  "atomic_number": 54,
+  "atomic_mass": 131.293,
+  "block": "p",
+  "period": 5,
+  "group": 18,
+  "ionization_energy": 12.13,
+  "electronegativity": 2.6,
+  "atomic_radius": 108,
+  "covalent_radius": 140,
+  "melting_point": 161.4,
+  "boiling_point": 165.03,
+  "density": 0.00589,
+  "electron_affinity": 0,
+  "valence_electrons": 8,
+  "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p⁶",
+  "primary_emission_wavelength": 467.1,
+  "visible_emission_wavelength": 467.1,
+  "isotopes": [
+    {
+      "mass_number": 124,
+      "neutrons": 70,
+      "abundance": 0.095,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 126,
+      "neutrons": 72,
+      "abundance": 0.089,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 128,
+      "neutrons": 74,
+      "abundance": 1.91,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 129,
+      "neutrons": 75,
+      "abundance": 26.401,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 130,
+      "neutrons": 76,
+      "abundance": 4.071,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 131,
+      "neutrons": 77,
+      "abundance": 21.232,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 132,
+      "neutrons": 78,
+      "abundance": 26.909,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 134,
+      "neutrons": 80,
+      "abundance": 10.436,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 136,
+      "neutrons": 82,
+      "abundance": 8.857,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

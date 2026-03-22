@@ -1,0 +1,44 @@
+{
+  "symbol": "Si",
+  "name": "Silicon",
+  "atomic_number": 14,
+  "atomic_mass": 28.085,
+  "block": "p",
+  "period": 3,
+  "group": 14,
+  "ionization_energy": 8.152,
+  "electronegativity": 1.9,
+  "atomic_radius": 111,
+  "covalent_radius": 111,
+  "melting_point": 1687,
+  "boiling_point": 3538,
+  "density": 2.33,
+  "electron_affinity": 133.6,
+  "valence_electrons": 4,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p²",
+  "primary_emission_wavelength": 390.6,
+  "visible_emission_wavelength": 390.6,
+  "isotopes": [
+    {
+      "mass_number": 28,
+      "neutrons": 14,
+      "abundance": 92.23,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 29,
+      "neutrons": 15,
+      "abundance": 4.67,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 30,
+      "neutrons": 16,
+      "abundance": 3.1,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

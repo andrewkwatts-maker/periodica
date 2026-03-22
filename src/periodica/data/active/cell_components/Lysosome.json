@@ -1,0 +1,39 @@
+{
+  "name": "Lysosome",
+  "type": "lysosome",
+  "organism": "Eukaryota (general)",
+  "function": "degradation",
+  "localization": ["cytoplasm"],
+  "description": "Acidic organelle containing hydrolytic enzymes for intracellular digestion.",
+  "structure": {
+    "membrane": "Single lipid bilayer with glycocalyx",
+    "lumen_pH": 4.5,
+    "diameter_um": 0.5
+  },
+  "copy_number_per_cell": 300,
+  "enzymes": {
+    "proteases": ["Cathepsin B", "Cathepsin D", "Cathepsin L"],
+    "lipases": ["Acid lipase", "Sphingomyelinase"],
+    "glycosidases": ["α-glucosidase", "β-galactosidase", "β-hexosaminidase"],
+    "nucleases": ["DNase II", "RNase"],
+    "phosphatases": ["Acid phosphatase"]
+  },
+  "total_enzyme_types": 60,
+  "key_proteins": {
+    "LAMP1": "Lysosomal membrane protein",
+    "LAMP2": "Membrane protection and autophagy",
+    "V-ATPase": "Proton pump for acidification",
+    "NPC1": "Cholesterol transport"
+  },
+  "pathways": {
+    "endocytosis": "Degradation of extracellular material",
+    "autophagy": "Degradation of intracellular components",
+    "phagocytosis": "Degradation of pathogens"
+  },
+  "diseases_when_defective": [
+    "Tay-Sachs disease",
+    "Gaucher disease",
+    "Pompe disease",
+    "Niemann-Pick disease"
+  ]
+}

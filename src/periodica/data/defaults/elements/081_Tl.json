@@ -1,0 +1,37 @@
+{
+  "symbol": "Tl",
+  "name": "Thallium",
+  "atomic_number": 81,
+  "atomic_mass": 204.38,
+  "block": "p",
+  "period": 6,
+  "group": 13,
+  "ionization_energy": 6.10829,
+  "electronegativity": 1.62,
+  "atomic_radius": 156,
+  "covalent_radius": 145,
+  "melting_point": 577,
+  "boiling_point": 1746,
+  "density": 11.85,
+  "electron_affinity": 19.2,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹",
+  "primary_emission_wavelength": 377.6,
+  "visible_emission_wavelength": 535.0,
+  "isotopes": [
+    {
+      "mass_number": 203,
+      "neutrons": 122,
+      "abundance": 29.52,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 205,
+      "neutrons": 124,
+      "abundance": 70.48,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

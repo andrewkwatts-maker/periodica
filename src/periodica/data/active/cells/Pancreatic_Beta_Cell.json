@@ -1,0 +1,39 @@
+{
+  "name": "Pancreatic Beta Cell",
+  "type": "pancreatic_beta",
+  "organism": "Homo sapiens",
+  "diameter_um": 12.0,
+  "volume_fL": 904.78,
+  "mass_pg": 950.02,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 452.39,
+  "surface_volume_ratio": 0.5,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 20.0,
+  "o2_consumption_per_s": 3.0,
+  "estimated_doubling_time_hours": 220309068.4,
+  "diffusion_time_ms": 72.0,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "pancreas",
+  "function": "Insulin secretion",
+  "nucleus": true,
+  "mitochondria_count": 500,
+  "lifespan_days": 1000,
+  "islet_location": true,
+  "key_proteins": [
+    "Insulin",
+    "Glucokinase",
+    "GLUT2",
+    "Kir6.2"
+  ],
+  "secretory_granules": 10000,
+  "description": "Endocrine cells in pancreatic islets that sense blood glucose and secrete insulin. Glucose metabolism triggers insulin release."
+}

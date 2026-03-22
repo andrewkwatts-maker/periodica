@@ -1,0 +1,46 @@
+{
+  "name": "Intervertebral Disc",
+  "type": "cartilage",
+  "ecm_composition": {
+    "collagen": 0.5,
+    "proteoglycan": 0.2,
+    "elastin": 0.05
+  },
+  "ecm_composition_normalized": {
+    "collagen": 0.6666666666666666,
+    "proteoglycan": 0.26666666666666666,
+    "elastin": 0.06666666666666667
+  },
+  "cell_composition": {},
+  "porosity": 40.0,
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 0.3475,
+    "youngs_modulus_voigt": 0.9733,
+    "youngs_modulus_reuss": 0.9574,
+    "ultimate_strength_MPa": 0.0116,
+    "poissons_ratio": 0.35,
+    "shear_modulus_MPa": 0.1287
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.007,
+    "water_content_percent": 0
+  },
+  "derived_properties": {
+    "stiffness_category": "Soft",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "description": "Spinal shock absorber",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "cells"
+    ],
+    "derivation_chain": [
+      "cells",
+      "biomaterial_predictor"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.144755+00:00",
+    "model_version": "1.0.0"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "Name": "Al-Zn Alloy (7xxx)",
+  "Formula": "Al-Cu-Mg-Zn",
+  "Category": "Aluminum Alloy",
+  "SubCategory": "Al-Cu Wrought Alloy",
+  "Description": "Auto-generated aluminum alloy with Zn 5.6%, Mg 2.5%, Cu 1.6%",
+  "Components": [
+    {
+      "Element": "Al",
+      "MinPercent": 89.3,
+      "MaxPercent": 91.3,
+      "Role": "Base"
+    },
+    {
+      "Element": "Cu",
+      "MinPercent": 1.44,
+      "MaxPercent": 1.76,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mg",
+      "MinPercent": 2.25,
+      "MaxPercent": 2.75,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Zn",
+      "MinPercent": 5.04,
+      "MaxPercent": 6.16,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 2.79,
+    "MeltingPoint_K": 843.2,
+    "ThermalConductivity_W_mK": 79.2,
+    "ThermalExpansion_per_K": 1.8e-05,
+    "ElectricalResistivity_Ohm_m": 1.8e-07,
+    "SpecificHeat_J_kgK": 560
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 439.0,
+    "YieldStrength_MPa": 264.0,
+    "Elongation_percent": 26,
+    "Hardness_HV": 132.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "LatticeParameters": {
+      "a_pm": 404.9,
+      "b_pm": 404.9,
+      "c_pm": 404.9,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "AtomsPerUnitCell": 4
+  },
+  "Applications": [
+    "Aerospace",
+    "Automotive",
+    "Lightweight structures"
+  ],
+  "ProcessingMethods": [
+    "Extrusion",
+    "Rolling",
+    "Casting"
+  ],
+  "Color": "#C0C0C0",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Al",
+      "element:Zn",
+      "element:Mg",
+      "element:Cu"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022631+00:00",
+    "model_version": "1.0.0"
+  }
+}

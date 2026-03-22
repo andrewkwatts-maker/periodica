@@ -1,0 +1,96 @@
+{
+  "Name": "Cr-Mo Steel",
+  "Formula": "Fe-C-Cr-Mn-Mo",
+  "Category": "Steel",
+  "SubCategory": "Medium Carbon Steel",
+  "Description": "Auto-generated steel with C 0.3%, Cr 1.0%, Mo 0.2%, Mn 0.5%",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 97.0,
+      "MaxPercent": 99.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "C",
+      "MinPercent": 0.27,
+      "MaxPercent": 0.33,
+      "Role": "Trace"
+    },
+    {
+      "Element": "Cr",
+      "MinPercent": 0.9,
+      "MaxPercent": 1.1,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 0.45,
+      "MaxPercent": 0.55,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mo",
+      "MinPercent": 0.18,
+      "MaxPercent": 0.22,
+      "Role": "Trace"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.809,
+    "MeltingPoint_K": 1603.1,
+    "ThermalConductivity_W_mK": 24.1,
+    "ThermalExpansion_per_K": 2e-05,
+    "ElectricalResistivity_Ohm_m": 4.087e-07,
+    "SpecificHeat_J_kgK": 580
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 849.0,
+    "YieldStrength_MPa": 510.0,
+    "Elongation_percent": 18,
+    "Hardness_HV": 255.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolling",
+    "Forging",
+    "Heat treatment"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Fe",
+      "element:C",
+      "element:Cr",
+      "element:Mo",
+      "element:Mn"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022387+00:00",
+    "model_version": "1.0.0"
+  }
+}

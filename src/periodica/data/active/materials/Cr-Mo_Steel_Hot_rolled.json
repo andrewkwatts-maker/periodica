@@ -1,0 +1,150 @@
+{
+  "Name": "Cr-Mo Steel (Hot rolled)",
+  "SourceAlloy": "Cr-Mo Steel",
+  "Category": "Steel",
+  "Processing": "Hot rolled",
+  "Description": "Material derived from Cr-Mo Steel via hot rolled",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 97.0,
+      "MaxPercent": 99.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "C",
+      "MinPercent": 0.27,
+      "MaxPercent": 0.33,
+      "Role": "Trace"
+    },
+    {
+      "Element": "Cr",
+      "MinPercent": 0.9,
+      "MaxPercent": 1.1,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 0.45,
+      "MaxPercent": 0.55,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mo",
+      "MinPercent": 0.18,
+      "MaxPercent": 0.22,
+      "Role": "Trace"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.809,
+    "MeltingPoint_K": 1603.1,
+    "ThermalConductivity_W_mK": 24.1,
+    "ThermalExpansion_per_K": 2e-05,
+    "ElectricalResistivity_Ohm_m": 4.087e-07,
+    "SpecificHeat_J_kgK": 580
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 849.0,
+    "YieldStrength_MPa": 510.0,
+    "Elongation_percent": 18,
+    "Hardness_HV": 255.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Ferrite",
+        "Symbol": "alpha",
+        "Structure": "BCC",
+        "VolumePercent": 100,
+        "Magnetic": true,
+        "Hardness_HV": 255.0
+      }
+    ],
+    "TransformationTemperatures": {}
+  },
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50.0,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400.0,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 5.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.95
+    },
+    "Defects": {
+      "VacancyConcentration": 1e-05,
+      "DislocationDensity_per_m2": 1000000000000.0,
+      "StressField": {
+        "Type": "VonMises",
+        "MaxStress_MPa": 153.0
+      }
+    },
+    "Inclusions": {
+      "Density_per_mm3": 50,
+      "Types": [
+        {
+          "Type": "MnS",
+          "Shape": "Elongated"
+        }
+      ],
+      "AverageSize_um": 5.0
+    }
+  },
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "Random",
+    "TextureStrength_mrd": 1.0
+  },
+  "CorrosionResistance": {
+    "PREN": 1.7,
+    "PassivationFilmComposition": "None",
+    "PittingPotential_mV_SCE": 17.0
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolled"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "alloy:Cr-Mo Steel"
+    ],
+    "derivation_chain": [
+      "elements",
+      "alloy",
+      "material"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.036060+00:00",
+    "model_version": "1.0.0"
+  }
+}

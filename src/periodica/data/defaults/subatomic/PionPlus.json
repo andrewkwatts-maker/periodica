@@ -1,0 +1,39 @@
+{
+  "Name": "Pion+",
+  "Symbol": "pi+",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Composite Particle", "Pion"],
+  "Charge_e": 1,
+  "Mass_MeVc2": 139.57039,
+  "Mass_kg": 2.488e-28,
+  "Mass_amu": 0.1498,
+  "Spin_hbar": 0,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 1,
+  "Isospin_I3": 1,
+  "Parity_P": -1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1, "Charge_e": 0.6666666667, "Symbol": "u" },
+    { "Constituent": "Anti-Down Quark", "Count": 1, "Charge_e": 0.3333333333, "Symbol": "d-bar", "IsAnti": true }
+  ],
+  "QuarkContent": "u anti-d",
+  "Stability": "Unstable",
+  "HalfLife_s": 2.6033e-8,
+  "MeanLifetime_s": 2.6033e-8,
+  "DecayProducts": ["Muon+", "Muon Neutrino"],
+  "DecayModes": [
+    { "Products": ["Muon+", "Muon Neutrino"], "BranchingRatio": 0.9999 },
+    { "Products": ["Positron", "Electron Neutrino"], "BranchingRatio": 0.0001 }
+  ],
+  "Antiparticle": {
+    "Name": "Pion-",
+    "Symbol": "pi-"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak"],
+  "Discovery": {
+    "Year": 1947,
+    "Location": "Bristol",
+    "Notes": "Discovered in cosmic rays by Powell, Lattes, Occhialini"
+  }
+}

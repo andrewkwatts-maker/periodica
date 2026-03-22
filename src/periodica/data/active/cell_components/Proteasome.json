@@ -1,0 +1,50 @@
+{
+  "name": "Proteasome",
+  "type": "proteasome",
+  "organism": "Eukaryota (general)",
+  "function": "degradation",
+  "localization": ["cytoplasm", "nucleus"],
+  "description": "Multi-subunit protease complex that degrades ubiquitinated proteins.",
+  "structure": {
+    "core_particle_20S": {
+      "shape": "Barrel",
+      "rings": 4,
+      "alpha_subunits": 7,
+      "beta_subunits": 7,
+      "catalytic_sites": 6
+    },
+    "regulatory_particle_19S": {
+      "subunits": 19,
+      "functions": ["Substrate recognition", "Unfolding", "Translocation"]
+    }
+  },
+  "total_mass_kDa": 2500,
+  "diameter_nm": 15,
+  "length_nm": 20,
+  "copy_number_per_cell": 100000,
+  "catalytic_activities": {
+    "chymotrypsin_like": "Cleaves after hydrophobic residues",
+    "trypsin_like": "Cleaves after basic residues",
+    "caspase_like": "Cleaves after acidic residues"
+  },
+  "substrates": {
+    "recognition": "Polyubiquitin chains (K48-linked)",
+    "types": ["Misfolded proteins", "Regulatory proteins", "Damaged proteins"]
+  },
+  "key_proteins": {
+    "Rpn1": "19S base subunit",
+    "Rpn10": "Ubiquitin receptor",
+    "Rpn13": "Ubiquitin receptor",
+    "Rpt1-6": "AAA+ ATPases for unfolding"
+  },
+  "regulation": {
+    "activators": ["PA28", "PA200"],
+    "inhibitors": ["Bortezomib", "Carfilzomib"]
+  },
+  "cellular_roles": [
+    "Protein quality control",
+    "Cell cycle regulation",
+    "Immune response (MHC class I)",
+    "Transcription factor regulation"
+  ]
+}

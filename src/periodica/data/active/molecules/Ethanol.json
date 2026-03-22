@@ -1,0 +1,56 @@
+{
+    "Name": "Ethanol",
+    "Formula": "C2H5OH",
+    "MolecularMass_amu": 46.07,
+    "MolecularMass_g_mol": 46.07,
+    "BondType": "Covalent",
+    "Geometry": "Tetrahedral",
+    "BondAngle_deg": 109.5,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 159.0,
+    "BoilingPoint_K": 351.5,
+    "Density_g_cm3": 0.789,
+    "State_STP": "Liquid",
+    "Composition": [
+        {"Element": "C", "Count": 2},
+        {"Element": "H", "Count": 6},
+        {"Element": "O", "Count": 1}
+    ],
+    "Bonds": [
+        {"From": "C", "To": "C", "Type": "Single", "Length_pm": 154, "Index": 1},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 2},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 3},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 4},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 5},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 6},
+        {"From": "C", "To": "O", "Type": "Single", "Length_pm": 143, "Index": 7},
+        {"From": "O", "To": "H", "Type": "Single", "Length_pm": 96, "Index": 8}
+    ],
+    "Atoms3D": [
+        {"element": "C", "x": -0.97, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "C", "x": 0.57, "y": 0.0, "z": 0.0, "index": 1},
+        {"element": "O", "x": 1.10, "y": 1.32, "z": 0.0, "index": 2},
+        {"element": "H", "x": -1.33, "y": 0.513, "z": 0.889, "index": 3},
+        {"element": "H", "x": -1.33, "y": 0.513, "z": -0.889, "index": 4},
+        {"element": "H", "x": -1.33, "y": -1.026, "z": 0.0, "index": 5},
+        {"element": "H", "x": 0.93, "y": -0.513, "z": 0.889, "index": 6},
+        {"element": "H", "x": 0.93, "y": -0.513, "z": -0.889, "index": 7},
+        {"element": "H", "x": 2.06, "y": 1.32, "z": 0.0, "index": 8}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "single", "length_A": 1.54},
+        {"from": 1, "to": 2, "type": "single", "length_A": 1.43},
+        {"from": 0, "to": 3, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 4, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 5, "type": "single", "length_A": 1.09},
+        {"from": 1, "to": 6, "type": "single", "length_A": 1.09},
+        {"from": 1, "to": 7, "type": "single", "length_A": 1.09},
+        {"from": 2, "to": 8, "type": "single", "length_A": 0.96}
+    ],
+    "DipoleMoment_D": 1.69,
+    "ElectronConfiguration": "C: 1s2 2s2 2p2, H: 1s1, O: 1s2 2s2 2p4",
+    "Applications": ["Alcoholic beverages", "Fuel", "Solvent", "Disinfectant"],
+    "IUPAC_Name": "Ethanol",
+    "Category": "Organic",
+    "Color": "#FFC107"
+}

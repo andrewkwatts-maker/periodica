@@ -1,0 +1,38 @@
+{
+  "Name": "Sigma0",
+  "Symbol": "Sigma0",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle", "Sigma Baryon", "Strange Baryon"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 1192.642,
+  "Mass_kg": 2.13e-27,
+  "Mass_amu": 1.279,
+  "Spin_hbar": 0.5,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Strangeness": -1,
+  "Isospin_I": 1,
+  "Isospin_I3": 0,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1, "Charge_e": 0.6666666667, "Symbol": "u" },
+    { "Constituent": "Down Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "d" },
+    { "Constituent": "Strange Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "s" }
+  ],
+  "QuarkContent": "uds",
+  "Stability": "Unstable",
+  "HalfLife_s": 7.4e-20,
+  "DecayProducts": ["Lambda", "Photon"],
+  "DecayModes": [
+    { "Products": ["Lambda", "Photon"], "BranchingRatio": 1.0 }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Sigma0",
+    "Symbol": "Anti-Sigma0"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"],
+  "Discovery": {
+    "Year": 1956,
+    "Location": "Brookhaven"
+  }
+}

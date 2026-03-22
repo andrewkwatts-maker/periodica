@@ -1,0 +1,87 @@
+{
+  "name": "tRNA Phe",
+  "type": "trna",
+  "organism": "Saccharomyces cerevisiae",
+  "function": "Amino acid transport - carries Phenylalanine",
+  "sequence": "GCGGAUUUAGCUCAGUUGGGAGAGCGCCAGACUGAAGAUCUGGAGGUCCUGUGUUCGAUCCACAGAAUUCGCACCA",
+  "length": 76,
+  "gc_content": 53.9,
+  "base_composition": {
+    "G": 23,
+    "C": 18,
+    "A": 18,
+    "U": 17
+  },
+  "molecular_mass": 24716.2,
+  "melting_temperature": 93.7,
+  "complement": "CGCCUAAAUCGAGUCAACCCUCUCGCGGUCUGACUUCUAGACCUCCAGGACACAAGCUAGGUGUCUUAAGCGUGGU",
+  "reverse_complement": "UGGUGCGAAUUCUGUGGAUCGAACACAGGACCUCCAGAUCUUCAGUCUGGCGCUCUCCCAACUGAGCUAAAUCCGC",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 24,
+        "end": 45,
+        "loop_start": 30,
+        "loop_end": 39,
+        "stem_length": 6,
+        "loop_length": 9,
+        "stem_sequence": "CGCCAG",
+        "loop_sequence": "ACUGAAGAU",
+        "stability": 0.83,
+        "matches": 5
+      },
+      {
+        "start": 25,
+        "end": 44,
+        "loop_start": 30,
+        "loop_end": 39,
+        "stem_length": 5,
+        "loop_length": 9,
+        "stem_sequence": "GCCAG",
+        "loop_sequence": "ACUGAAGAU",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 9,
+        "end": 25,
+        "loop_start": 13,
+        "loop_end": 21,
+        "stem_length": 4,
+        "loop_length": 8,
+        "stem_sequence": "GCUC",
+        "loop_sequence": "AGUUGGGA",
+        "stability": 0.75,
+        "matches": 4
+      },
+      {
+        "start": 26,
+        "end": 43,
+        "loop_start": 30,
+        "loop_end": 39,
+        "stem_length": 4,
+        "loop_length": 9,
+        "stem_sequence": "CCAG",
+        "loop_sequence": "ACUGAAGAU",
+        "stability": 0.75,
+        "matches": 4
+      },
+      {
+        "start": 24,
+        "end": 45,
+        "loop_start": 31,
+        "loop_end": 38,
+        "stem_length": 7,
+        "loop_length": 7,
+        "stem_sequence": "CGCCAGA",
+        "loop_sequence": "CUGAAGA",
+        "stability": 0.71,
+        "matches": 6
+      }
+    ]
+  },
+  "description": "First crystallized tRNA structure. Classic cloverleaf shape.",
+  "anticodon": "GAA",
+  "amino_acid": "Phenylalanine"
+}

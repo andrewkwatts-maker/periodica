@@ -1,0 +1,65 @@
+{
+  "symbol": "Ca",
+  "name": "Calcium",
+  "atomic_number": 20,
+  "atomic_mass": 40.078,
+  "block": "s",
+  "period": 4,
+  "group": 2,
+  "ionization_energy": 6.113,
+  "electronegativity": 1.0,
+  "atomic_radius": 194,
+  "covalent_radius": 176,
+  "melting_point": 1115,
+  "boiling_point": 1757,
+  "density": 1.54,
+  "electron_affinity": 2.37,
+  "valence_electrons": 2,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 4s²",
+  "primary_emission_wavelength": 422.7,
+  "visible_emission_wavelength": 422.7,
+  "isotopes": [
+    {
+      "mass_number": 40,
+      "neutrons": 20,
+      "abundance": 96.941,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 42,
+      "neutrons": 22,
+      "abundance": 0.647,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 43,
+      "neutrons": 23,
+      "abundance": 0.135,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 44,
+      "neutrons": 24,
+      "abundance": 2.086,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 46,
+      "neutrons": 26,
+      "abundance": 0.004,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 48,
+      "neutrons": 28,
+      "abundance": 0.187,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

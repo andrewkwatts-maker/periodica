@@ -1,0 +1,48 @@
+{
+  "name": "Skeletal Muscle",
+  "type": "muscle_skeletal",
+  "organ_system": "muscular",
+  "ecm_composition": {
+    "collagen_i": 0.02,
+    "collagen_iii": 0.02,
+    "laminin": 0.01,
+    "fibronectin": 0.01,
+    "water": 0.75,
+    "other": 0.04
+  },
+  "cell_composition": {
+    "myocyte": 0.8,
+    "fibroblast": 0.02,
+    "satellite_cell": 0.01
+  },
+  "porosity": 0.0,
+  "vascularization": "high",
+  "innervation": true,
+  "healing_time_weeks": 4,
+  "function": "Voluntary movement, posture maintenance, heat generation",
+  "description": "Striated muscle tissue under voluntary control. Composed of multinucleated muscle fibers organized into fascicles.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 28.8068,
+    "youngs_modulus_voigt": 37.8706,
+    "youngs_modulus_reuss": 19.743,
+    "ultimate_strength_MPa": 0.9602,
+    "poissons_ratio": 0.482,
+    "shear_modulus_MPa": 9.7166
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.022,
+    "water_content_percent": 88.2
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_i": 0.023529411764705882,
+    "collagen_iii": 0.023529411764705882,
+    "laminin": 0.011764705882352941,
+    "fibronectin": 0.011764705882352941,
+    "water": 0.8823529411764706,
+    "other": 0.047058823529411764
+  }
+}

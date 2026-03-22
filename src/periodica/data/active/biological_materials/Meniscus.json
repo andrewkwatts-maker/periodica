@@ -1,0 +1,44 @@
+{
+  "name": "Meniscus",
+  "type": "cartilage",
+  "ecm_composition": {
+    "collagen": 0.6,
+    "proteoglycan": 0.1
+  },
+  "ecm_composition_normalized": {
+    "collagen": 0.8571428571428572,
+    "proteoglycan": 0.14285714285714288
+  },
+  "cell_composition": {},
+  "porosity": 30.0,
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 0.49,
+    "youngs_modulus_voigt": 1.0,
+    "youngs_modulus_reuss": 1.0,
+    "ultimate_strength_MPa": 0.0163,
+    "poissons_ratio": 0.35,
+    "shear_modulus_MPa": 0.1815
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.0,
+    "water_content_percent": 0
+  },
+  "derived_properties": {
+    "stiffness_category": "Soft",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "description": "Knee fibrocartilage",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "cells"
+    ],
+    "derivation_chain": [
+      "cells",
+      "biomaterial_predictor"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.144650+00:00",
+    "model_version": "1.0.0"
+  }
+}

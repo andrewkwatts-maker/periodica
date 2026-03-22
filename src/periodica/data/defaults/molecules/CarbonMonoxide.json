@@ -1,0 +1,34 @@
+{
+    "Name": "Carbon Monoxide",
+    "Formula": "CO",
+    "MolecularMass_amu": 28.01,
+    "MolecularMass_g_mol": 28.01,
+    "BondType": "Covalent",
+    "Geometry": "Linear",
+    "BondAngle_deg": 180.0,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 68.15,
+    "BoilingPoint_K": 81.6,
+    "Density_g_cm3": 0.00125,
+    "State_STP": "Gas",
+    "Composition": [
+        {"Element": "C", "Count": 1},
+        {"Element": "O", "Count": 1}
+    ],
+    "Bonds": [
+        {"From": "C", "To": "O", "Type": "Triple", "Length_pm": 113, "Index": 1}
+    ],
+    "Atoms3D": [
+        {"element": "C", "x": -0.565, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "O", "x": 0.565, "y": 0.0, "z": 0.0, "index": 1}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "triple", "length_A": 1.13}
+    ],
+    "DipoleMoment_D": 0.11,
+    "ElectronConfiguration": "C: 1s2 2s2 2p2, O: 1s2 2s2 2p4",
+    "Applications": ["Steel production", "Chemical synthesis", "Fuel gas", "Reducing agent"],
+    "IUPAC_Name": "Carbon monoxide",
+    "Category": "Inorganic",
+    "Color": "#607D8B"
+}

@@ -1,0 +1,150 @@
+{
+  "Name": "Solder 60/40 (Tin-Lead)",
+  "Formula": "Sn-Pb",
+  "Category": "Solder",
+  "SubCategory": "Lead-Based Solder",
+  "Description": "Traditional tin-lead solder for electronics and plumbing with excellent wetting and flow properties",
+
+  "Components": [
+    {"Element": "Sn", "MinPercent": 59.0, "MaxPercent": 61.0, "Role": "Base"},
+    {"Element": "Pb", "MinPercent": 39.0, "MaxPercent": 41.0, "Role": "Melting Point Reduction"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.52,
+    "MeltingPoint_K": 456,
+    "SolidusTemperature_K": 456,
+    "LiquidusTemperature_K": 461,
+    "ThermalConductivity_W_mK": 50.9,
+    "ThermalExpansion_per_K": 24.7e-6,
+    "ElectricalResistivity_Ohm_m": 1.5e-7,
+    "SpecificHeat_J_kgK": 176,
+    "YoungsModulus_GPa": 30,
+    "ShearModulus_GPa": 12,
+    "PoissonsRatio": 0.40,
+    "BrinellHardness_HB": 14
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 40,
+    "YieldStrength_MPa": 27,
+    "Elongation_percent": 40,
+    "ReductionOfArea_percent": 85,
+    "ShearStrength_MPa": 35,
+    "CreepResistance": "Low"
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "BCT",
+    "SecondaryStructures": ["FCC_Pb"],
+    "LatticeParameters": {
+      "a_pm": 583.2,
+      "b_pm": 583.2,
+      "c_pm": 318.2,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "I4/amd",
+    "SpaceGroupNumber": 141,
+    "PointGroup": "4/mmm",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.53,
+    "CoordinationNumber": 4,
+    "BurgersVector_pm": 318.2
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Beta Tin",
+        "Symbol": "beta-Sn",
+        "Structure": "BCT",
+        "VolumePercent": 70,
+        "Hardness_HV": 5
+      },
+      {
+        "Name": "Lead-Rich Phase",
+        "Symbol": "alpha-Pb",
+        "Structure": "FCC",
+        "VolumePercent": 30,
+        "Hardness_HV": 3
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 456,
+      "Liquidus_K": 461,
+      "Eutectic_K": 456
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 20,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.5,
+      "ASTMGrainSizeNumber": 8,
+      "VoronoiSeedDensity_per_mm2": 2500,
+      "GrainBoundaryWidth_nm": 1.0,
+      "GrainAspectRatio": 1.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.2,
+      "NoiseOctaves": 4,
+      "NoisePersistence": 0.6,
+      "PhaseThreshold": 0.55
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-4,
+        "InterstitialConcentration": 1e-6
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e8,
+        "BurgersVectorType": "a<001>",
+        "SlipSystems": ["100<001>", "110<001>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.1,
+        "HighAngleBoundaryFraction": 0.9,
+        "TwinBoundaryFraction": 0.0,
+        "GrainBoundaryEnergy_J_m2": 0.30
+      }
+    },
+    "Inclusions": {
+      "Types": ["Intermetallics"],
+      "VolumeFraction": 0.0005,
+      "AverageSize_um": 0.5
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[2,0,0], [1,0,1], [2,1,1]],
+      "Directions": [[0,0,1], [1,0,0]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "SolderingProperties": {
+    "WettingAngle_deg": 20,
+    "SurfaceTension_mN_m": 490,
+    "FlowTemperature_K": 458,
+    "WorkingTemperature_K": 573,
+    "FluxRequired": true,
+    "IntermetallicFormation": ["Cu6Sn5", "Cu3Sn"]
+  },
+
+  "Applications": ["Electronics assembly", "Plumbing (legacy)", "Stained glass", "Roofing", "Radiator repair"],
+  "ProcessingMethods": ["Wave soldering", "Hand soldering", "Reflow soldering"],
+  "Color": "#A8A8A8",
+  "RoHSCompliant": false
+}

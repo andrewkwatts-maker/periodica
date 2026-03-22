@@ -1,0 +1,65 @@
+{
+  "symbol": "Se",
+  "name": "Selenium",
+  "atomic_number": 34,
+  "atomic_mass": 78.971,
+  "block": "p",
+  "period": 4,
+  "group": 16,
+  "ionization_energy": 9.752,
+  "electronegativity": 2.55,
+  "atomic_radius": 103,
+  "covalent_radius": 120,
+  "melting_point": 494,
+  "boiling_point": 958,
+  "density": 4.81,
+  "electron_affinity": 195.0,
+  "valence_electrons": 6,
+  "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p⁴",
+  "primary_emission_wavelength": 196.0,
+  "visible_emission_wavelength": 473.0,
+  "isotopes": [
+    {
+      "mass_number": 74,
+      "neutrons": 40,
+      "abundance": 0.89,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 76,
+      "neutrons": 42,
+      "abundance": 9.37,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 77,
+      "neutrons": 43,
+      "abundance": 7.63,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 78,
+      "neutrons": 44,
+      "abundance": 23.77,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 80,
+      "neutrons": 46,
+      "abundance": 49.61,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 82,
+      "neutrons": 48,
+      "abundance": 8.73,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

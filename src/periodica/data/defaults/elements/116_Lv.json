@@ -1,0 +1,30 @@
+{
+  "symbol": "Lv",
+  "name": "Livermorium",
+  "atomic_number": 116,
+  "atomic_mass": 293,
+  "block": "p",
+  "period": 7,
+  "group": 16,
+  "ionization_energy": 5.3,
+  "electronegativity": 2.0,
+  "atomic_radius": 175,
+  "covalent_radius": 175,
+  "melting_point": 700,
+  "boiling_point": 1100,
+  "density": 12.9,
+  "electron_affinity": null,
+  "valence_electrons": 6,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 293,
+      "neutrons": 177,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "53 milliseconds"
+    }
+  ]
+}

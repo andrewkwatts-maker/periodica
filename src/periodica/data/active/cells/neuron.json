@@ -1,0 +1,47 @@
+{
+  "name": "Motor Neuron",
+  "type": "neuron",
+  "organism": "Homo sapiens",
+  "diameter_um": 100.0,
+  "volume_fL": 523598.78,
+  "mass_pg": 549778.72,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 31415.93,
+  "surface_volume_ratio": 0.06,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 500.0,
+  "o2_consumption_per_s": 85.0,
+  "estimated_doubling_time_hours": null,
+  "diffusion_time_ms": 5000.0,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B0 x M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical cell body with dendrites and axon"
+  },
+  "tissue": "nervous",
+  "function": "Transmit motor commands to muscles",
+  "nucleus": true,
+  "mitochondria_count": 2500,
+  "lifespan_days": -1,
+  "dendritic_spines": 5000,
+  "axon_length_mm": 1000.0,
+  "key_proteins": [
+    "Voltage-gated Na+ channels",
+    "Voltage-gated K+ channels",
+    "Acetylcholine receptors",
+    "Neurofilaments",
+    "Kinesin",
+    "Dynein"
+  ],
+  "neurotransmitters": [
+    "Acetylcholine"
+  ],
+  "resting_membrane_potential_mV": -70,
+  "action_potential_amplitude_mV": 100,
+  "conduction_velocity_m_s": 70,
+  "description": "Large multipolar neuron that transmits motor commands from the central nervous system to skeletal muscles. Has very long myelinated axon."
+}

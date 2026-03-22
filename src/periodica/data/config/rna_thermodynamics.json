@@ -1,0 +1,38 @@
+{
+  "name": "RNA Nearest-Neighbor Thermodynamic Parameters",
+  "description": "Xia et al. (1998) nearest-neighbor parameters for RNA duplex stability",
+  "reference": "Xia, T. et al. (1998). Biochemistry, 37(42), 14719-14735",
+  "units": {
+    "dH": "kcal/mol",
+    "dS": "cal/(mol*K)"
+  },
+  "nearest_neighbor_params": {
+    "AA/UU": {"dH": -6.82, "dS": -19.0},
+    "AU/UA": {"dH": -9.38, "dS": -26.7},
+    "UA/AU": {"dH": -7.69, "dS": -20.5},
+    "CA/GU": {"dH": -10.44, "dS": -26.9},
+    "GU/CA": {"dH": -10.48, "dS": -27.1},
+    "CU/GA": {"dH": -10.48, "dS": -27.1},
+    "GA/CU": {"dH": -12.44, "dS": -32.5},
+    "CG/GC": {"dH": -10.64, "dS": -26.7},
+    "GC/CG": {"dH": -14.88, "dS": -36.9},
+    "GG/CC": {"dH": -13.39, "dS": -32.7},
+    "GU/UG": {"dH": -8.25, "dS": -21.9},
+    "UG/GU": {"dH": -8.25, "dS": -21.9}
+  },
+  "initiation_params": {
+    "terminal_AU": {"dH": 3.72, "dS": 10.5},
+    "terminal_GC": {"dH": 0.0, "dS": 0.0}
+  },
+  "nucleotide_molecular_weights": {
+    "A": 329.2,
+    "U": 306.2,
+    "G": 345.2,
+    "C": 305.2
+  },
+  "default_concentrations": {
+    "Na_M": 0.05,
+    "Mg_M": 0.001,
+    "oligo_M": 2.5e-7
+  }
+}

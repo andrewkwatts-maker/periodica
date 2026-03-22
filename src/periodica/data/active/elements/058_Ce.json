@@ -1,0 +1,51 @@
+{
+  "symbol": "Ce",
+  "name": "Cerium",
+  "atomic_number": 58,
+  "atomic_mass": 140.116,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 5.539,
+  "electronegativity": 1.12,
+  "atomic_radius": 185,
+  "covalent_radius": 204,
+  "melting_point": 1071,
+  "boiling_point": 3716,
+  "density": 6.77,
+  "electron_affinity": 50.0,
+  "valence_electrons": 4,
+  "electron_configuration": "[Xe] 4f¹ 5d¹ 6s²",
+  "primary_emission_wavelength": 413.8,
+  "visible_emission_wavelength": 413.8,
+  "isotopes": [
+    {
+      "mass_number": 136,
+      "neutrons": 78,
+      "abundance": 0.185,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 138,
+      "neutrons": 80,
+      "abundance": 0.251,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 140,
+      "neutrons": 82,
+      "abundance": 88.45,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 142,
+      "neutrons": 84,
+      "abundance": 11.114,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

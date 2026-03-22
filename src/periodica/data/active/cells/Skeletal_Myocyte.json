@@ -1,0 +1,45 @@
+{
+  "name": "Skeletal Myocyte",
+  "type": "myocyte",
+  "organism": "Homo sapiens",
+  "diameter_um": 50.0,
+  "volume_fL": 65449.85,
+  "mass_pg": 68722.34,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 7853.98,
+  "surface_volume_ratio": 0.12,
+  "metabolic_rate_fW": 0.01,
+  "atp_turnover_per_s": 485.0,
+  "o2_consumption_per_s": 81.0,
+  "estimated_doubling_time_hours": 642501199.5,
+  "diffusion_time_ms": 1250.0,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "length_um": 30000.0,
+  "tissue": "muscle_skeletal",
+  "function": "Voluntary movement",
+  "nucleus": true,
+  "nuclei_count": 100,
+  "mitochondria_count": 2000,
+  "lifespan_days": -1,
+  "sarcomere_length_um": 2.5,
+  "key_proteins": [
+    "Myosin heavy chain",
+    "Actin",
+    "Titin",
+    "Dystrophin"
+  ],
+  "fiber_types": [
+    "Type I (slow)",
+    "Type IIa (fast oxidative)",
+    "Type IIx (fast glycolytic)"
+  ],
+  "description": "Multinucleated muscle fibers formed by fusion of myoblasts. Contain myofibrils with repeating sarcomere units for contraction."
+}

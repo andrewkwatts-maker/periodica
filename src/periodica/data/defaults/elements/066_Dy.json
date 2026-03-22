@@ -1,0 +1,72 @@
+{
+  "symbol": "Dy",
+  "name": "Dysprosium",
+  "atomic_number": 66,
+  "atomic_mass": 162.5,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 5.9389,
+  "electronegativity": 1.22,
+  "atomic_radius": 228,
+  "covalent_radius": 192,
+  "melting_point": 1680,
+  "boiling_point": 2840,
+  "density": 8.55,
+  "electron_affinity": 33.96,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f¹⁰ 6s²",
+  "primary_emission_wavelength": 421.2,
+  "visible_emission_wavelength": 421.2,
+  "isotopes": [
+    {
+      "mass_number": 156,
+      "neutrons": 90,
+      "abundance": 0.056,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 158,
+      "neutrons": 92,
+      "abundance": 0.095,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 160,
+      "neutrons": 94,
+      "abundance": 2.329,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 161,
+      "neutrons": 95,
+      "abundance": 18.889,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 162,
+      "neutrons": 96,
+      "abundance": 25.475,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 163,
+      "neutrons": 97,
+      "abundance": 24.896,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 164,
+      "neutrons": 98,
+      "abundance": 28.26,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

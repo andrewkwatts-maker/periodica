@@ -1,0 +1,58 @@
+{
+  "symbol": "W",
+  "name": "Tungsten",
+  "atomic_number": 74,
+  "atomic_mass": 183.84,
+  "block": "d",
+  "period": 6,
+  "group": 6,
+  "ionization_energy": 7.86403,
+  "electronegativity": 2.36,
+  "atomic_radius": 193,
+  "covalent_radius": 162,
+  "melting_point": 3695,
+  "boiling_point": 5828,
+  "density": 19.25,
+  "electron_affinity": 78.6,
+  "valence_electrons": 6,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d⁴ 6s²",
+  "primary_emission_wavelength": 400.9,
+  "visible_emission_wavelength": 400.9,
+  "isotopes": [
+    {
+      "mass_number": 180,
+      "neutrons": 106,
+      "abundance": 0.12,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 182,
+      "neutrons": 108,
+      "abundance": 26.5,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 183,
+      "neutrons": 109,
+      "abundance": 14.31,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 184,
+      "neutrons": 110,
+      "abundance": 30.64,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 186,
+      "neutrons": 112,
+      "abundance": 28.43,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

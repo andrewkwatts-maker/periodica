@@ -1,0 +1,30 @@
+{
+  "symbol": "Pm",
+  "name": "Promethium",
+  "atomic_number": 61,
+  "atomic_mass": 145,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 5.582,
+  "electronegativity": 1.13,
+  "atomic_radius": 205,
+  "covalent_radius": 199,
+  "melting_point": 1315,
+  "boiling_point": 3273,
+  "density": 7.26,
+  "electron_affinity": 12.45,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f⁵ 6s²",
+  "primary_emission_wavelength": 390.0,
+  "visible_emission_wavelength": 390.0,
+  "isotopes": [
+    {
+      "mass_number": 145,
+      "neutrons": 84,
+      "abundance": 0,
+      "is_stable": false,
+      "half_life": "17.7 years"
+    }
+  ]
+}

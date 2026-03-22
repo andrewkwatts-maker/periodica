@@ -1,0 +1,151 @@
+{
+  "Name": "Brass (C36000 Free-Cutting Brass)",
+  "Formula": "Cu-Zn-Pb",
+  "Category": "Brass",
+  "SubCategory": "Leaded Brass",
+  "Description": "Most widely used free-machining copper alloy with excellent machinability",
+
+  "Components": [
+    {"Element": "Cu", "MinPercent": 60.0, "MaxPercent": 63.0, "Role": "Base"},
+    {"Element": "Zn", "MinPercent": 33.0, "MaxPercent": 37.0, "Role": "Strengthening"},
+    {"Element": "Pb", "MinPercent": 2.5, "MaxPercent": 3.7, "Role": "Machinability"},
+    {"Element": "Fe", "MinPercent": 0.0, "MaxPercent": 0.35, "Role": "Impurity"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.50,
+    "MeltingPoint_K": 1173,
+    "ThermalConductivity_W_mK": 115,
+    "ThermalExpansion_per_K": 20.5e-6,
+    "ElectricalResistivity_Ohm_m": 6.6e-8,
+    "SpecificHeat_J_kgK": 380,
+    "YoungsModulus_GPa": 97,
+    "ShearModulus_GPa": 37,
+    "PoissonsRatio": 0.31,
+    "BrinellHardness_HB": 100
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 385,
+    "YieldStrength_MPa": 138,
+    "Elongation_percent": 53,
+    "ReductionOfArea_percent": 55,
+    "ImpactStrength_J": 45,
+    "FatigueStrength_MPa": 140,
+    "MachinabilityRating_percent": 100
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": ["BCC_beta"],
+    "LatticeParameters": {
+      "a_pm": 369.0,
+      "b_pm": 369.0,
+      "c_pm": 369.0,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 260.9,
+    "StackingFaultEnergy_mJ_m2": 14
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Alpha Brass",
+        "Symbol": "alpha",
+        "Structure": "FCC",
+        "VolumePercent": 65,
+        "ZnSolubility_percent": 35,
+        "Hardness_HV": 90
+      },
+      {
+        "Name": "Beta Brass",
+        "Symbol": "beta",
+        "Structure": "BCC",
+        "VolumePercent": 32,
+        "Hardness_HV": 180
+      },
+      {
+        "Name": "Lead Inclusions",
+        "Symbol": "Pb",
+        "Structure": "FCC",
+        "VolumePercent": 3,
+        "Hardness_HV": 4
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 1173,
+      "Liquidus_K": 1178,
+      "AlphaBetaTransition_K": 727
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 35,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.4,
+      "ASTMGrainSizeNumber": 6,
+      "VoronoiSeedDensity_per_mm2": 816,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.55
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e11,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.15,
+        "HighAngleBoundaryFraction": 0.75,
+        "TwinBoundaryFraction": 0.10,
+        "GrainBoundaryEnergy_J_m2": 0.60
+      }
+    },
+    "Inclusions": {
+      "Types": ["Pb"],
+      "VolumeFraction": 0.03,
+      "AverageSize_um": 3,
+      "Distribution": "GrainBoundary"
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "Brass",
+    "MillerIndices": {
+      "Planes": [[1,1,0], [1,1,2]],
+      "Directions": [[1,1,2], [1,1,1]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 2.5
+  },
+
+  "Applications": ["Screw machine products", "Fittings", "Valves", "Gears", "Lock components", "Electrical connectors"],
+  "ProcessingMethods": ["Extrusion", "Drawing", "Machining", "Forging", "Hot stamping"],
+  "Color": "#B5A642"
+}

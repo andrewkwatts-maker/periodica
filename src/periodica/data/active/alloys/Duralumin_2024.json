@@ -1,0 +1,167 @@
+{
+  "Name": "Duralumin (2024 Aluminum)",
+  "Formula": "Al-Cu-Mg",
+  "Category": "Aluminum Alloy",
+  "SubCategory": "2xxx Series (Heat Treatable)",
+  "Description": "High-strength aircraft aluminum alloy with good fatigue resistance and machinability",
+
+  "Components": [
+    {"Element": "Al", "MinPercent": 90.7, "MaxPercent": 94.7, "Role": "Base"},
+    {"Element": "Cu", "MinPercent": 3.8, "MaxPercent": 4.9, "Role": "Strengthening"},
+    {"Element": "Mg", "MinPercent": 1.2, "MaxPercent": 1.8, "Role": "Strengthening"},
+    {"Element": "Mn", "MinPercent": 0.3, "MaxPercent": 0.9, "Role": "Grain Control"},
+    {"Element": "Fe", "MinPercent": 0.0, "MaxPercent": 0.5, "Role": "Impurity"},
+    {"Element": "Si", "MinPercent": 0.0, "MaxPercent": 0.5, "Role": "Impurity"},
+    {"Element": "Zn", "MinPercent": 0.0, "MaxPercent": 0.25, "Role": "Impurity"},
+    {"Element": "Ti", "MinPercent": 0.0, "MaxPercent": 0.15, "Role": "Grain Refiner"},
+    {"Element": "Cr", "MinPercent": 0.0, "MaxPercent": 0.1, "Role": "Grain Control"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 2.78,
+    "MeltingPoint_K": 775,
+    "ThermalConductivity_W_mK": 121,
+    "ThermalExpansion_per_K": 23.2e-6,
+    "ElectricalResistivity_Ohm_m": 5.82e-8,
+    "SpecificHeat_J_kgK": 875,
+    "YoungsModulus_GPa": 73.1,
+    "ShearModulus_GPa": 28,
+    "PoissonsRatio": 0.33,
+    "BrinellHardness_HB": 120
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 469,
+    "YieldStrength_MPa": 324,
+    "Elongation_percent": 19,
+    "ReductionOfArea_percent": 35,
+    "ImpactStrength_J": 40,
+    "FatigueStrength_MPa": 140,
+    "FractureToughness_MPa_sqrt_m": 26
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": ["GPB_zones", "S_phase", "theta_phase"],
+    "LatticeParameters": {
+      "a_pm": 404.9,
+      "b_pm": 404.9,
+      "c_pm": 404.9,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 286.3,
+    "StackingFaultEnergy_mJ_m2": 166
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Alpha Aluminum",
+        "Symbol": "alpha",
+        "Structure": "FCC",
+        "VolumePercent": 94,
+        "Hardness_HV": 140
+      },
+      {
+        "Name": "S Phase",
+        "Symbol": "S",
+        "Structure": "Orthorhombic",
+        "Composition": "Al2CuMg",
+        "VolumePercent": 4,
+        "Hardness_HV": 800
+      },
+      {
+        "Name": "Theta Phase",
+        "Symbol": "theta",
+        "Structure": "Tetragonal",
+        "Composition": "Al2Cu",
+        "VolumePercent": 2,
+        "Hardness_HV": 600
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 775,
+      "Liquidus_K": 911,
+      "SolutionTreatment_K": 768,
+      "AgingTemperature_K": 463
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 60,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.4,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 278,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 2.5
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.05,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.6,
+      "PhaseThreshold": 0.85
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-4,
+        "InterstitialConcentration": 1e-6
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e13,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.25,
+        "HighAngleBoundaryFraction": 0.70,
+        "TwinBoundaryFraction": 0.05,
+        "GrainBoundaryEnergy_J_m2": 0.50
+      }
+    },
+    "Precipitates": {
+      "Types": ["GPB zones", "S'", "S", "theta'", "theta"],
+      "VolumeFraction": 0.06,
+      "AverageSize_nm": 50,
+      "Distribution": "Matrix"
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "RollingTexture",
+    "MillerIndices": {
+      "Planes": [[1,2,3], [1,1,2]],
+      "Directions": [[6,3,4], [1,1,1]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 3.0
+  },
+
+  "HeatTreatmentResponse": {
+    "Tempers": {
+      "T3": {"Description": "Solution treated, cold worked, naturally aged", "YieldStrength_MPa": 345},
+      "T4": {"Description": "Solution treated, naturally aged", "YieldStrength_MPa": 324},
+      "T6": {"Description": "Solution treated, artificially aged", "YieldStrength_MPa": 393},
+      "T8": {"Description": "Solution treated, cold worked, artificially aged", "YieldStrength_MPa": 450}
+    }
+  },
+
+  "Applications": ["Aircraft structures", "Truck wheels", "Screw machine products", "Rivets", "Hardware"],
+  "ProcessingMethods": ["Rolling", "Extrusion", "Forging", "Heat treatment", "Machining"],
+  "Color": "#A8A9AD"
+}

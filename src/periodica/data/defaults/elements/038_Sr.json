@@ -1,0 +1,51 @@
+{
+  "symbol": "Sr",
+  "name": "Strontium",
+  "atomic_number": 38,
+  "atomic_mass": 87.62,
+  "block": "s",
+  "period": 5,
+  "group": 2,
+  "ionization_energy": 5.695,
+  "electronegativity": 0.95,
+  "atomic_radius": 219,
+  "covalent_radius": 195,
+  "melting_point": 1050,
+  "boiling_point": 1650,
+  "density": 2.64,
+  "electron_affinity": 5.03,
+  "valence_electrons": 2,
+  "electron_configuration": "[Kr] 5s²",
+  "primary_emission_wavelength": 460.7,
+  "visible_emission_wavelength": 460.7,
+  "isotopes": [
+    {
+      "mass_number": 84,
+      "neutrons": 46,
+      "abundance": 0.56,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 86,
+      "neutrons": 48,
+      "abundance": 9.86,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 87,
+      "neutrons": 49,
+      "abundance": 7.0,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 88,
+      "neutrons": 50,
+      "abundance": 82.58,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

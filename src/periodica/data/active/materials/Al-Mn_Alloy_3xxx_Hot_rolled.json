@@ -1,0 +1,152 @@
+{
+  "Name": "Al-Mn Alloy (3xxx) (Hot rolled)",
+  "SourceAlloy": "Al-Mn Alloy (3xxx)",
+  "Category": "Aluminum Alloy",
+  "Processing": "Hot rolled",
+  "Description": "Material derived from Al-Mn Alloy (3xxx) via hot rolled",
+  "Components": [
+    {
+      "Element": "Al",
+      "MinPercent": 97.0,
+      "MaxPercent": 99.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "Fe",
+      "MinPercent": 0.45,
+      "MaxPercent": 0.55,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 1.08,
+      "MaxPercent": 1.32,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Si",
+      "MinPercent": 0.27,
+      "MaxPercent": 0.33,
+      "Role": "Trace"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 2.728,
+    "MeltingPoint_K": 861.9,
+    "ThermalConductivity_W_mK": 80.0,
+    "ThermalExpansion_per_K": 1.8e-05,
+    "ElectricalResistivity_Ohm_m": 2.627e-07,
+    "SpecificHeat_J_kgK": 560
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 447.0,
+    "YieldStrength_MPa": 268.0,
+    "Elongation_percent": 26,
+    "Hardness_HV": 134.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "LatticeParameters": {
+      "a_pm": 404.9,
+      "b_pm": 404.9,
+      "c_pm": 404.9,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "AtomsPerUnitCell": 4
+  },
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Austenite",
+        "Symbol": "gamma",
+        "Structure": "FCC",
+        "VolumePercent": 100,
+        "Magnetic": false,
+        "Hardness_HV": 134.0
+      }
+    ],
+    "TransformationTemperatures": {}
+  },
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50.0,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400.0,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 50.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.95
+    },
+    "Defects": {
+      "VacancyConcentration": 1e-05,
+      "DislocationDensity_per_m2": 1000000000000.0,
+      "StressField": {
+        "Type": "VonMises",
+        "MaxStress_MPa": 80.39999999999999
+      }
+    },
+    "Inclusions": {
+      "Density_per_mm3": 50,
+      "Types": [
+        {
+          "Type": "MnS",
+          "Shape": "Elongated"
+        },
+        {
+          "Type": "Al2O3",
+          "Shape": "Globular"
+        },
+        {
+          "Type": "SiO2",
+          "Shape": "Globular"
+        }
+      ],
+      "AverageSize_um": 5.0
+    }
+  },
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "Random",
+    "TextureStrength_mrd": 1.0
+  },
+  "CorrosionResistance": {
+    "PREN": 0.0,
+    "PassivationFilmComposition": "Al2O3",
+    "PittingPotential_mV_SCE": 0
+  },
+  "Applications": [
+    "Aerospace",
+    "Automotive",
+    "Lightweight structures"
+  ],
+  "ProcessingMethods": [
+    "Hot rolled"
+  ],
+  "Color": "#C0C0C0",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "alloy:Al-Mn Alloy (3xxx)"
+    ],
+    "derivation_chain": [
+      "elements",
+      "alloy",
+      "material"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.036088+00:00",
+    "model_version": "1.0.0"
+  }
+}

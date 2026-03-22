@@ -1,0 +1,147 @@
+{
+  "Name": "Stainless Steel 304",
+  "Formula": "Fe-Cr-Ni",
+  "Category": "Steel",
+  "SubCategory": "Austenitic Stainless Steel",
+  "Description": "Most widely used austenitic stainless steel, excellent corrosion resistance",
+
+  "Components": [
+    {"Element": "Fe", "MinPercent": 66.0, "MaxPercent": 74.0, "Role": "Base"},
+    {"Element": "Cr", "MinPercent": 18.0, "MaxPercent": 20.0, "Role": "Corrosion Resistance"},
+    {"Element": "Ni", "MinPercent": 8.0, "MaxPercent": 10.5, "Role": "Austenite Stabilizer"},
+    {"Element": "Mn", "MinPercent": 0.0, "MaxPercent": 2.0, "Role": "Deoxidizer"},
+    {"Element": "Si", "MinPercent": 0.0, "MaxPercent": 1.0, "Role": "Deoxidizer"},
+    {"Element": "C", "MinPercent": 0.0, "MaxPercent": 0.08, "Role": "Strengthening"},
+    {"Element": "N", "MinPercent": 0.0, "MaxPercent": 0.1, "Role": "Strengthening"},
+    {"Element": "P", "MinPercent": 0.0, "MaxPercent": 0.045, "Role": "Impurity"},
+    {"Element": "S", "MinPercent": 0.0, "MaxPercent": 0.03, "Role": "Impurity"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.93,
+    "MeltingPoint_K": 1673,
+    "ThermalConductivity_W_mK": 16.2,
+    "ThermalExpansion_per_K": 17.3e-6,
+    "ElectricalResistivity_Ohm_m": 7.2e-7,
+    "SpecificHeat_J_kgK": 500,
+    "YoungsModulus_GPa": 193,
+    "ShearModulus_GPa": 77,
+    "PoissonsRatio": 0.29,
+    "BrinellHardness_HB": 201
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 515,
+    "YieldStrength_MPa": 205,
+    "Elongation_percent": 40,
+    "ReductionOfArea_percent": 70,
+    "ImpactStrength_J": 180,
+    "FatigueStrength_MPa": 240
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": [],
+    "LatticeParameters": {
+      "a_pm": 358.9,
+      "b_pm": 358.9,
+      "c_pm": 358.9,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 253.7,
+    "StackingFaultEnergy_mJ_m2": 20
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Austenite",
+        "Symbol": "gamma",
+        "Structure": "FCC",
+        "VolumePercent": 100,
+        "Magnetic": false,
+        "Hardness_HV": 180
+      }
+    ],
+    "TransformationTemperatures": {
+      "Md30_K": 258,
+      "SigmaFormation_K": 1073
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 50
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.95
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e11,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.15,
+        "HighAngleBoundaryFraction": 0.55,
+        "TwinBoundaryFraction": 0.30,
+        "GrainBoundaryEnergy_J_m2": 0.80
+      }
+    },
+    "Inclusions": {
+      "Types": ["Cr2O3"],
+      "VolumeFraction": 0.0005,
+      "AverageSize_um": 2
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,1], [2,0,0], [2,2,0]],
+      "Directions": [[1,1,0], [1,1,2]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "CorrosionResistance": {
+    "PREN": 18.0,
+    "PassivationFilmComposition": "Cr2O3",
+    "PittingPotential_mV_SCE": 200,
+    "CriticalPittingTemperature_K": 278
+  },
+
+  "Applications": ["Kitchen equipment", "Food processing", "Chemical containers", "Architectural trim", "Medical instruments"],
+  "ProcessingMethods": ["Cold rolling", "Annealing", "Welding", "Deep drawing"],
+  "Color": "#C0C0C0"
+}

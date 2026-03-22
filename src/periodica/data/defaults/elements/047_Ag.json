@@ -1,0 +1,37 @@
+{
+  "symbol": "Ag",
+  "name": "Silver",
+  "atomic_number": 47,
+  "atomic_mass": 107.868,
+  "block": "d",
+  "period": 5,
+  "group": 11,
+  "ionization_energy": 7.576,
+  "electronegativity": 1.93,
+  "atomic_radius": 165,
+  "covalent_radius": 145,
+  "melting_point": 1234.93,
+  "boiling_point": 2435,
+  "density": 10.49,
+  "electron_affinity": 125.6,
+  "valence_electrons": 1,
+  "electron_configuration": "[Kr] 4d¹⁰ 5s¹",
+  "primary_emission_wavelength": 328.1,
+  "visible_emission_wavelength": 520.0,
+  "isotopes": [
+    {
+      "mass_number": 107,
+      "neutrons": 60,
+      "abundance": 51.839,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 109,
+      "neutrons": 62,
+      "abundance": 48.161,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

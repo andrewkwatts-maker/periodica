@@ -1,0 +1,37 @@
+{
+  "symbol": "Eu",
+  "name": "Europium",
+  "atomic_number": 63,
+  "atomic_mass": 151.964,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 5.6704,
+  "electronegativity": 1.2,
+  "atomic_radius": 231,
+  "covalent_radius": 198,
+  "melting_point": 1095,
+  "boiling_point": 1802,
+  "density": 5.24,
+  "electron_affinity": 11.2,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f⁷ 6s²",
+  "primary_emission_wavelength": 459.4,
+  "visible_emission_wavelength": 459.4,
+  "isotopes": [
+    {
+      "mass_number": 151,
+      "neutrons": 88,
+      "abundance": 47.81,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 153,
+      "neutrons": 90,
+      "abundance": 52.19,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

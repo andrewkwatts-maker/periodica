@@ -1,0 +1,47 @@
+{
+  "name": "Cortical Bone",
+  "type": "bone_cortical",
+  "organ_system": "skeletal",
+  "ecm_composition": {
+    "hydroxyapatite": 0.45,
+    "collagen_i": 0.35,
+    "water": 0.1,
+    "proteoglycans": 0.02,
+    "other": 0.08
+  },
+  "cell_composition": {
+    "osteocyte": 0.02,
+    "osteoblast": 0.01,
+    "osteoclast": 0.002
+  },
+  "porosity": 0.05,
+  "vascularization": "high",
+  "innervation": true,
+  "remodeling_rate_per_year": 0.05,
+  "healing_time_weeks": 6,
+  "function": "Structural support, mineral storage, blood cell production",
+  "description": "Dense outer layer of bone with lamellar structure. Composed of mineralized collagen fibrils arranged in osteons.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 23916.5031,
+    "youngs_modulus_voigt": 53000.0802,
+    "youngs_modulus_reuss": 0.4807,
+    "ultimate_strength_MPa": 199.3042,
+    "poissons_ratio": 0.32,
+    "shear_modulus_MPa": 9059.2815
+  },
+  "physical_properties": {
+    "density_g_cm3": 2.081,
+    "water_content_percent": 10.0
+  },
+  "derived_properties": {
+    "stiffness_category": "Hard",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "hydroxyapatite": 0.45,
+    "collagen_i": 0.35,
+    "water": 0.1,
+    "proteoglycans": 0.02,
+    "other": 0.08
+  }
+}

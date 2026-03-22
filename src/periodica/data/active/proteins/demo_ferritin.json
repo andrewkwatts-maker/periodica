@@ -1,0 +1,53 @@
+{
+  "name": "Ferritin Light Chain",
+  "organism": "Homo sapiens",
+  "function": "Iron storage and detoxification",
+  "localization": "cytoplasm",
+  "sequence": "MSSQIRQNYSTDVEAAVNSLVNLYLQASYTYLSLGFYFDRDDVALEGVSHFFRELAEEKREGYERLLKMQNQRGGRALFQDIKKPAEDEW",
+  "length": 90,
+  "molecular_mass": 10353.8,
+  "isoelectric_point": 5.51,
+  "charge_pH7": -4.2,
+  "gravy": -0.28,
+  "amino_acid_composition": {
+    "A": 7,
+    "D": 6,
+    "E": 8,
+    "F": 4,
+    "G": 5,
+    "H": 1,
+    "I": 2,
+    "K": 4,
+    "L": 10,
+    "M": 2,
+    "N": 4,
+    "P": 1,
+    "Q": 6,
+    "R": 6,
+    "S": 8,
+    "T": 2,
+    "V": 4,
+    "W": 1,
+    "Y": 5
+  },
+  "secondary_structure": {
+    "helix_percent": 65.0,
+    "sheet_percent": 5.0,
+    "turn_percent": 15.0,
+    "coil_percent": 15.0
+  },
+  "residues": [
+    {"residue": "M", "position": 1, "structure": "C", "helix_score": 1.0, "sheet_score": 1.0, "turn_score": 1.0, "phi": -60.0, "psi": -40.0},
+    {"residue": "S", "position": 2, "structure": "C", "helix_score": 0.9, "sheet_score": 1.0, "turn_score": 1.1, "phi": -65.0, "psi": -35.0},
+    {"residue": "S", "position": 3, "structure": "H", "helix_score": 1.1, "sheet_score": 0.9, "turn_score": 0.9, "phi": -57.0, "psi": -47.0},
+    {"residue": "Q", "position": 4, "structure": "H", "helix_score": 1.15, "sheet_score": 0.85, "turn_score": 0.9, "phi": -60.0, "psi": -45.0},
+    {"residue": "I", "position": 5, "structure": "H", "helix_score": 1.08, "sheet_score": 1.0, "turn_score": 0.85, "phi": -57.0, "psi": -47.0}
+  ],
+  "disulfide_bonds": [],
+  "extinction_coefficient": {
+    "reduced": 13980,
+    "oxidized": 13980
+  },
+  "uniprot_id": "P02792",
+  "description": "Light chain of ferritin, a ubiquitous intracellular protein that stores iron and releases it in a controlled fashion."
+}

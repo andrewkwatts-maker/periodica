@@ -1,0 +1,31 @@
+{
+  "Name": "Tetraquark T(4900)",
+  "Symbol": "T",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Exotic Composite Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 4900,
+  "Mass_kg": 8.73e-27,
+  "Mass_amu": 5.26,
+  "Spin_hbar": 1,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": -1,
+  "Composition": [
+    { "Constituent": "Charm Quark", "Count": 1, "Charge_e": 0.6666666667 },
+    { "Constituent": "Anticharm Quark", "Count": 1, "Charge_e": -0.6666666667 },
+    { "Constituent": "Strange Quark", "Count": 1, "Charge_e": -0.3333333333 },
+    { "Constituent": "Antistrange Quark", "Count": 1, "Charge_e": 0.3333333333 }
+  ],
+  "Stability": "Unstable",
+  "HalfLife_s": 1e-23,
+  "DecayProducts": ["J/Psi", "Phi meson"],
+  "Antiparticle": {
+    "Name": "Tetraquark T(4900)",
+    "Symbol": "T"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

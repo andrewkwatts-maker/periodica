@@ -1,0 +1,46 @@
+{
+  "Name": "Upsilon",
+  "Symbol": "Y",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Composite Particle", "Bottomonium", "Vector Meson"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 9460.3,
+  "Mass_kg": 1.69e-26,
+  "Mass_amu": 10.15,
+  "Spin_hbar": 1,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Bottomness": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": -1,
+  "CParity": -1,
+  "Composition": [
+    { "Constituent": "Bottom Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "b" },
+    { "Constituent": "Anti-Bottom Quark", "Count": 1, "Charge_e": 0.3333333333, "Symbol": "b-bar", "IsAnti": true }
+  ],
+  "QuarkContent": "b anti-b",
+  "Notes": "Bottomonium ground state, analogous to J/psi for charm quarks",
+  "Stability": "Unstable",
+  "HalfLife_s": 1.22e-20,
+  "MeanLifetime_s": 1.22e-20,
+  "Width_MeV": 0.054,
+  "DecayProducts": ["Hadrons", "Tau+", "Tau-", "Muon+", "Muon-"],
+  "DecayModes": [
+    { "Products": ["Hadrons"], "BranchingRatio": 0.817 },
+    { "Products": ["Tau+", "Tau-"], "BranchingRatio": 0.026 },
+    { "Products": ["Muon+", "Muon-"], "BranchingRatio": 0.0248 },
+    { "Products": ["Electron", "Positron"], "BranchingRatio": 0.0238 }
+  ],
+  "Antiparticle": {
+    "Name": "Upsilon",
+    "Symbol": "Y",
+    "Notes": "Is its own antiparticle"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak"],
+  "Discovery": {
+    "Year": 1977,
+    "Location": "Fermilab",
+    "Notes": "Discovered by Leon Lederman's team"
+  }
+}

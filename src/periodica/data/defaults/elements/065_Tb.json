@@ -1,0 +1,30 @@
+{
+  "symbol": "Tb",
+  "name": "Terbium",
+  "atomic_number": 65,
+  "atomic_mass": 158.925,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 5.8638,
+  "electronegativity": 1.1,
+  "atomic_radius": 225,
+  "covalent_radius": 194,
+  "melting_point": 1629,
+  "boiling_point": 3503,
+  "density": 8.23,
+  "electron_affinity": 14.0,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f⁹ 6s²",
+  "primary_emission_wavelength": 432.6,
+  "visible_emission_wavelength": 432.6,
+  "isotopes": [
+    {
+      "mass_number": 159,
+      "neutrons": 94,
+      "abundance": 100,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

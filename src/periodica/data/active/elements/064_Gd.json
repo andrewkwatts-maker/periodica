@@ -1,0 +1,72 @@
+{
+  "symbol": "Gd",
+  "name": "Gadolinium",
+  "atomic_number": 64,
+  "atomic_mass": 157.25,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 6.1498,
+  "electronegativity": 1.2,
+  "atomic_radius": 233,
+  "covalent_radius": 196,
+  "melting_point": 1585,
+  "boiling_point": 3273,
+  "density": 7.9,
+  "electron_affinity": 13.22,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f⁷ 5d¹ 6s²",
+  "primary_emission_wavelength": 407.9,
+  "visible_emission_wavelength": 407.9,
+  "isotopes": [
+    {
+      "mass_number": 152,
+      "neutrons": 88,
+      "abundance": 0.2,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 154,
+      "neutrons": 90,
+      "abundance": 2.18,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 155,
+      "neutrons": 91,
+      "abundance": 14.8,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 156,
+      "neutrons": 92,
+      "abundance": 20.47,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 157,
+      "neutrons": 93,
+      "abundance": 15.65,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 158,
+      "neutrons": 94,
+      "abundance": 24.84,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 160,
+      "neutrons": 96,
+      "abundance": 21.86,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

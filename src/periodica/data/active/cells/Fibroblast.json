@@ -1,0 +1,43 @@
+{
+  "name": "Fibroblast",
+  "type": "fibroblast",
+  "organism": "Homo sapiens",
+  "diameter_um": 25.0,
+  "volume_fL": 8181.23,
+  "mass_pg": 8590.29,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 1963.5,
+  "surface_volume_ratio": 0.24,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 102.0,
+  "o2_consumption_per_s": 17.0,
+  "estimated_doubling_time_hours": 382033498.9,
+  "diffusion_time_ms": 312.5,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "connective",
+  "function": "ECM synthesis",
+  "nucleus": true,
+  "mitochondria_count": 200,
+  "lifespan_days": 365,
+  "key_proteins": [
+    "Collagen I/III",
+    "Fibronectin",
+    "Elastin",
+    "MMPs"
+  ],
+  "ecm_production": [
+    "collagen",
+    "elastin",
+    "proteoglycans",
+    "fibronectin"
+  ],
+  "description": "Primary cells of connective tissue responsible for synthesizing extracellular matrix components and wound healing."
+}

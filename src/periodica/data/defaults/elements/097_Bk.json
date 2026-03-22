@@ -1,0 +1,30 @@
+{
+  "symbol": "Bk",
+  "name": "Berkelium",
+  "atomic_number": 97,
+  "atomic_mass": 247,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 6.198,
+  "electronegativity": 1.3,
+  "atomic_radius": 170,
+  "covalent_radius": 168,
+  "melting_point": 1323,
+  "boiling_point": 2900,
+  "density": 14.78,
+  "electron_affinity": null,
+  "valence_electrons": 9,
+  "electron_configuration": "[Rn] 5f⁹ 7s²",
+  "primary_emission_wavelength": 412.0,
+  "visible_emission_wavelength": 412.0,
+  "isotopes": [
+    {
+      "mass_number": 247,
+      "neutrons": 150,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "1,380 years"
+    }
+  ]
+}

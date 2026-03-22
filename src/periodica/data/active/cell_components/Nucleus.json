@@ -1,0 +1,50 @@
+{
+  "name": "Nucleus",
+  "type": "nucleus",
+  "organism": "Eukaryota (general)",
+  "function": "genetic_storage",
+  "localization": ["cytoplasm"],
+  "description": "Contains the cell's genetic material and controls gene expression.",
+  "structure": {
+    "nuclear_envelope": {
+      "layers": 2,
+      "nuclear_pores": 2000,
+      "pore_diameter_nm": 120,
+      "function": "Selective transport between nucleus and cytoplasm"
+    },
+    "nucleoplasm": {
+      "contents": ["Chromatin", "Nuclear bodies", "Enzymes"],
+      "function": "Medium for nuclear processes"
+    },
+    "nucleolus": {
+      "count": 1,
+      "function": "rRNA synthesis and ribosome assembly"
+    },
+    "chromatin": {
+      "types": ["Euchromatin", "Heterochromatin"],
+      "function": "DNA organization and gene regulation"
+    }
+  },
+  "diameter_um": 6.0,
+  "copy_number_per_cell": 1,
+  "genome": {
+    "type": "Linear chromosomes",
+    "chromosomes": 46,
+    "size_bp": 3200000000,
+    "genes": 20000,
+    "protein_coding_genes": 20000,
+    "noncoding_percent": 98.5
+  },
+  "key_processes": {
+    "DNA_replication": "S phase of cell cycle",
+    "transcription": "RNA synthesis from DNA template",
+    "RNA_processing": "Splicing, capping, polyadenylation",
+    "ribosome_biogenesis": "Nucleolus-centered assembly"
+  },
+  "nuclear_bodies": [
+    {"name": "Nucleolus", "function": "Ribosome biogenesis"},
+    {"name": "Cajal body", "function": "snRNP assembly"},
+    {"name": "PML body", "function": "Transcription regulation"},
+    {"name": "Speckles", "function": "Pre-mRNA splicing factors storage"}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+    "Name": "Nitric Acid",
+    "Formula": "HNO3",
+    "MolecularMass_amu": 63.01,
+    "MolecularMass_g_mol": 63.01,
+    "BondType": "Covalent",
+    "Geometry": "Trigonal Planar",
+    "BondAngle_deg": 120.0,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 231.0,
+    "BoilingPoint_K": 356.0,
+    "Density_g_cm3": 1.51,
+    "State_STP": "Liquid",
+    "Composition": [
+        {"Element": "H", "Count": 1},
+        {"Element": "N", "Count": 1},
+        {"Element": "O", "Count": 3}
+    ],
+    "Bonds": [
+        {"From": "N", "To": "O", "Type": "Double", "Length_pm": 121, "Index": 1},
+        {"From": "N", "To": "O", "Type": "Single", "Length_pm": 141, "Index": 2},
+        {"From": "N", "To": "O", "Type": "Single", "Length_pm": 141, "Index": 3},
+        {"From": "O", "To": "H", "Type": "Single", "Length_pm": 96, "Index": 4}
+    ],
+    "Atoms3D": [
+        {"element": "N", "x": 0.0, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "O", "x": 0.0, "y": 1.21, "z": 0.0, "index": 1},
+        {"element": "O", "x": 1.22, "y": -0.71, "z": 0.0, "index": 2},
+        {"element": "O", "x": -1.22, "y": -0.71, "z": 0.0, "index": 3},
+        {"element": "H", "x": 1.22, "y": -1.67, "z": 0.0, "index": 4}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "double", "length_A": 1.21},
+        {"from": 0, "to": 2, "type": "single", "length_A": 1.41},
+        {"from": 0, "to": 3, "type": "single", "length_A": 1.41},
+        {"from": 2, "to": 4, "type": "single", "length_A": 0.96}
+    ],
+    "DipoleMoment_D": 2.17,
+    "ElectronConfiguration": "H: 1s1, N: 1s2 2s2 2p3, O: 1s2 2s2 2p4",
+    "Applications": ["Fertilizer production", "Explosives", "Metal etching", "Rocket propellant"],
+    "IUPAC_Name": "Nitric acid",
+    "Category": "Inorganic",
+    "Color": "#FF5722"
+}

@@ -1,0 +1,80 @@
+{
+  "Name": "AISI 1045 Carbon Steel",
+  "Standard": "AISI/SAE 1045",
+  "Category": "Structural Steel",
+  "SubCategory": "Medium Carbon Steel",
+  "Description": "General purpose medium carbon steel with good strength and machinability",
+  "BaseAlloy": "CarbonSteel",
+  "Processing": {
+    "Condition": "Normalized",
+    "HeatTreatment": "Air cooled from 900C",
+    "ColdWorkPercent": 0,
+    "GrainSizeASTM": 7
+  },
+  "ElasticProperties": {
+    "YoungsModulus_GPa": 205,
+    "ShearModulus_GPa": 80,
+    "BulkModulus_GPa": 160,
+    "PoissonsRatio": 0.29
+  },
+  "StrengthProperties": {
+    "YieldStrength_MPa": 310,
+    "UltimateTensileStrength_MPa": 565,
+    "CompressiveYieldStrength_MPa": 340,
+    "ShearStrength_MPa": 340,
+    "StrainHardeningExponent": 0.15,
+    "StrengthCoefficient_MPa": 930
+  },
+  "Hardness": {
+    "Brinell_HB": 163,
+    "Rockwell_HRB": 84,
+    "Vickers_HV": 170
+  },
+  "Ductility": {
+    "Elongation_percent": 16,
+    "ReductionOfArea_percent": 40
+  },
+  "FractureMechanics": {
+    "FractureToughness_KIC_MPa_sqrt_m": 60,
+    "JIC_kJ_m2": 120,
+    "CharpyImpact_J": {"at_20C": 45, "at_minus40C": 20},
+    "DBTT_K": 253,
+    "CrackGrowthParameters": {"Paris_C": 6.9e-12, "Paris_m": 3.0, "ThresholdDeltaK_MPa_sqrt_m": 4.0}
+  },
+  "FatigueProperties": {
+    "FatigueLimit_MPa": 260,
+    "FatigueStrengthCoefficient_MPa": 948,
+    "FatigueStrengthExponent": -0.092,
+    "EnduranceLimit_cycles": 1e6
+  },
+  "ThermalProperties": {
+    "MeltingPoint_K": 1773,
+    "ThermalConductivity_W_mK": 49.8,
+    "SpecificHeat_J_kgK": 486,
+    "ThermalExpansion_per_K": 11.7e-6
+  },
+  "ElectricalProperties": {
+    "ElectricalResistivity_Ohm_m": 1.71e-7,
+    "PercentIACS": 10.1
+  },
+  "PhysicalProperties": {
+    "Density_kg_m3": 7850
+  },
+  "SimulationParameters": {
+    "FEA": {"RecommendedMeshSize_mm": 2.0, "StressStrainModel": "BilinearIsotropicHardening", "TangentModulus_GPa": 2.0}
+  },
+  "FailureCriteria": {
+    "MaxPrincipalStress_MPa": 565,
+    "MaxShearStress_MPa": 340,
+    "VonMisesStress_MPa": 310,
+    "MaxTemperature_K": 673
+  },
+  "ServiceConditions": {
+    "MinServiceTemperature_K": 200,
+    "MaxServiceTemperature_K": 673,
+    "CorrosionResistance": "Poor",
+    "SafetyFactor_recommended": 2.0
+  },
+  "Applications": ["Shafts", "Gears", "Axles", "Bolts"],
+  "Color": "#808080"
+}

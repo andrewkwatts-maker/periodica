@@ -1,0 +1,162 @@
+{
+  "Name": "Ti-6Al-4V (Grade 5)",
+  "Formula": "Ti-Al-V",
+  "Category": "Titanium Alloy",
+  "SubCategory": "Alpha-Beta Alloy",
+  "Description": "Most widely used titanium alloy combining high strength, low density, and excellent corrosion resistance",
+
+  "Components": [
+    {"Element": "Ti", "MinPercent": 87.6, "MaxPercent": 91.0, "Role": "Base"},
+    {"Element": "Al", "MinPercent": 5.5, "MaxPercent": 6.75, "Role": "Alpha Stabilizer"},
+    {"Element": "V", "MinPercent": 3.5, "MaxPercent": 4.5, "Role": "Beta Stabilizer"},
+    {"Element": "Fe", "MinPercent": 0.0, "MaxPercent": 0.40, "Role": "Beta Stabilizer"},
+    {"Element": "O", "MinPercent": 0.0, "MaxPercent": 0.20, "Role": "Interstitial Strengthening"},
+    {"Element": "C", "MinPercent": 0.0, "MaxPercent": 0.10, "Role": "Impurity"},
+    {"Element": "N", "MinPercent": 0.0, "MaxPercent": 0.05, "Role": "Interstitial Strengthening"},
+    {"Element": "H", "MinPercent": 0.0, "MaxPercent": 0.015, "Role": "Impurity"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 4.43,
+    "MeltingPoint_K": 1933,
+    "ThermalConductivity_W_mK": 6.7,
+    "ThermalExpansion_per_K": 8.6e-6,
+    "ElectricalResistivity_Ohm_m": 1.78e-6,
+    "SpecificHeat_J_kgK": 526,
+    "YoungsModulus_GPa": 113.8,
+    "ShearModulus_GPa": 44,
+    "PoissonsRatio": 0.342,
+    "BrinellHardness_HB": 334
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 950,
+    "YieldStrength_MPa": 880,
+    "Elongation_percent": 14,
+    "ReductionOfArea_percent": 36,
+    "ImpactStrength_J": 45,
+    "FatigueStrength_MPa": 510,
+    "FractureToughness_MPa_sqrt_m": 75
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "HCP",
+    "SecondaryStructures": ["BCC_beta"],
+    "LatticeParameters": {
+      "a_pm": 295.0,
+      "b_pm": 295.0,
+      "c_pm": 468.0,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 120
+    },
+    "SpaceGroup": "P63/mmc",
+    "SpaceGroupNumber": 194,
+    "PointGroup": "6/mmm",
+    "AtomsPerUnitCell": 2,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 295.0,
+    "c_a_ratio": 1.587
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Alpha Phase",
+        "Symbol": "alpha",
+        "Structure": "HCP",
+        "VolumePercent": 90,
+        "AlContent_percent": 6.5,
+        "Hardness_HV": 320
+      },
+      {
+        "Name": "Beta Phase",
+        "Symbol": "beta",
+        "Structure": "BCC",
+        "VolumePercent": 10,
+        "VContent_percent": 15,
+        "Hardness_HV": 280
+      }
+    ],
+    "TransformationTemperatures": {
+      "BetaTransus_K": 1268,
+      "Solidus_K": 1877,
+      "Liquidus_K": 1933,
+      "Ms_K": 1073
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 15,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 9,
+      "VoronoiSeedDensity_per_mm2": 4444,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.5
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Worley",
+      "NoiseScale": 0.04,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.85
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-6
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e12,
+        "BurgersVectorType": "a<1120>/3",
+        "SlipSystems": ["0001<1120>", "1010<1120>", "1011<1120>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.2,
+        "HighAngleBoundaryFraction": 0.70,
+        "TwinBoundaryFraction": 0.10,
+        "GrainBoundaryEnergy_J_m2": 0.95
+      }
+    },
+    "LamellarStructure": {
+      "AlphaLamellaeWidth_um": 2,
+      "BetaRibWidth_nm": 100,
+      "ColonySize_um": 100
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "BasalFiber",
+    "MillerIndices": {
+      "Planes": [[0,0,0,2], [1,0,-1,0], [1,0,-1,1]],
+      "Directions": [[1,1,-2,0], [1,0,-1,0]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 60]
+    },
+    "TextureStrength_mrd": 5.0
+  },
+
+  "HeatTreatmentResponse": {
+    "MillAnnealed": {"Temperature_K": 993, "Cooling": "Air", "TensileStrength_MPa": 950},
+    "SolutionTreatedAged": {"Temperature_K": 1228, "AgingTemp_K": 808, "TensileStrength_MPa": 1100},
+    "BetaAnnealed": {"Temperature_K": 1303, "Cooling": "Furnace", "TensileStrength_MPa": 900}
+  },
+
+  "BiocompatibilityProperties": {
+    "Biocompatible": true,
+    "OsseointegrationCapability": "Excellent",
+    "CorrosionPotential_mV_SCE": -250,
+    "IonRelease_ug_cm2_day": 0.5
+  },
+
+  "Applications": ["Aerospace structures", "Gas turbine engines", "Medical implants", "Sports equipment", "Marine applications"],
+  "ProcessingMethods": ["Vacuum arc melting", "Forging", "Rolling", "Machining", "Additive manufacturing"],
+  "Color": "#8B8989"
+}

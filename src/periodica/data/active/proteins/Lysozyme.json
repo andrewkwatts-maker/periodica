@@ -1,0 +1,1546 @@
+{
+  "name": "Lysozyme",
+  "organism": "Homo sapiens",
+  "function": "Antibacterial enzyme",
+  "localization": "extracellular",
+  "sequence": "MKALIVLGLVLLSVTVQGKVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQINSRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRDPQGIRAWVAWRNRCQNRDVRQYVQGCGV",
+  "length": 148,
+  "molecular_mass": 16555.07,
+  "isoelectric_point": 9.31,
+  "charge_pH7": 8.6,
+  "gravy": -0.195,
+  "amino_acid_composition": {
+    "M": 3,
+    "K": 6,
+    "A": 15,
+    "L": 13,
+    "I": 6,
+    "V": 13,
+    "G": 13,
+    "S": 7,
+    "T": 6,
+    "Q": 7,
+    "F": 2,
+    "E": 3,
+    "R": 14,
+    "C": 8,
+    "D": 8,
+    "Y": 6,
+    "N": 10,
+    "W": 5,
+    "P": 2,
+    "H": 1
+  },
+  "secondary_structure": {
+    "helix_percent": 24.3,
+    "sheet_percent": 34.5,
+    "turn_percent": 39.2,
+    "coil_percent": 2.0
+  },
+  "residues": [
+    {
+      "residue": "M",
+      "position": 1,
+      "structure": "H",
+      "helix_score": 1.31,
+      "sheet_score": 0.98,
+      "turn_score": 0.715,
+      "phi": -58.7,
+      "psi": -48.9
+    },
+    {
+      "residue": "K",
+      "position": 2,
+      "structure": "H",
+      "helix_score": 1.264,
+      "sheet_score": 1.104,
+      "turn_score": 0.666,
+      "phi": -52.2,
+      "psi": -38.1
+    },
+    {
+      "residue": "A",
+      "position": 3,
+      "structure": "H",
+      "helix_score": 1.23,
+      "sheet_score": 1.203,
+      "turn_score": 0.638,
+      "phi": -55.8,
+      "psi": -40.2
+    },
+    {
+      "residue": "L",
+      "position": 4,
+      "structure": "H",
+      "helix_score": 1.227,
+      "sheet_score": 1.217,
+      "turn_score": 0.631,
+      "phi": -65.8,
+      "psi": -31.3
+    },
+    {
+      "residue": "I",
+      "position": 5,
+      "structure": "E",
+      "helix_score": 1.101,
+      "sheet_score": 1.174,
+      "turn_score": 0.769,
+      "phi": -119.7,
+      "psi": 145.1
+    },
+    {
+      "residue": "V",
+      "position": 6,
+      "structure": "E",
+      "helix_score": 1.109,
+      "sheet_score": 1.254,
+      "turn_score": 0.709,
+      "phi": -104.1,
+      "psi": 126.7
+    },
+    {
+      "residue": "L",
+      "position": 7,
+      "structure": "E",
+      "helix_score": 1.057,
+      "sheet_score": 1.379,
+      "turn_score": 0.686,
+      "phi": -121.7,
+      "psi": 111.6
+    },
+    {
+      "residue": "G",
+      "position": 8,
+      "structure": "C",
+      "helix_score": 1.057,
+      "sheet_score": 1.379,
+      "turn_score": 0.686,
+      "phi": 11.0,
+      "psi": 26.8
+    },
+    {
+      "residue": "L",
+      "position": 9,
+      "structure": "E",
+      "helix_score": 1.076,
+      "sheet_score": 1.336,
+      "turn_score": 0.703,
+      "phi": -107.2,
+      "psi": 108.8
+    },
+    {
+      "residue": "V",
+      "position": 10,
+      "structure": "E",
+      "helix_score": 1.034,
+      "sheet_score": 1.2,
+      "turn_score": 0.836,
+      "phi": -117.3,
+      "psi": 130.1
+    },
+    {
+      "residue": "L",
+      "position": 11,
+      "structure": "E",
+      "helix_score": 1.013,
+      "sheet_score": 1.257,
+      "turn_score": 0.823,
+      "phi": -114.6,
+      "psi": 132.5
+    },
+    {
+      "residue": "L",
+      "position": 12,
+      "structure": "E",
+      "helix_score": 1.05,
+      "sheet_score": 1.32,
+      "turn_score": 0.737,
+      "phi": -140.9,
+      "psi": 132.7
+    },
+    {
+      "residue": "S",
+      "position": 13,
+      "structure": "E",
+      "helix_score": 1.029,
+      "sheet_score": 1.377,
+      "turn_score": 0.724,
+      "phi": -109.8,
+      "psi": 135.2
+    },
+    {
+      "residue": "V",
+      "position": 14,
+      "structure": "E",
+      "helix_score": 1.036,
+      "sheet_score": 1.291,
+      "turn_score": 0.793,
+      "phi": -117.4,
+      "psi": 127.0
+    },
+    {
+      "residue": "T",
+      "position": 15,
+      "structure": "E",
+      "helix_score": 0.944,
+      "sheet_score": 1.213,
+      "turn_score": 0.931,
+      "phi": -115.4,
+      "psi": 126.9
+    },
+    {
+      "residue": "V",
+      "position": 16,
+      "structure": "E",
+      "helix_score": 0.937,
+      "sheet_score": 1.133,
+      "turn_score": 0.991,
+      "phi": -102.2,
+      "psi": 133.3
+    },
+    {
+      "residue": "Q",
+      "position": 17,
+      "structure": "E",
+      "helix_score": 0.979,
+      "sheet_score": 1.269,
+      "turn_score": 0.859,
+      "phi": -106.6,
+      "psi": 95.7
+    },
+    {
+      "residue": "G",
+      "position": 18,
+      "structure": "C",
+      "helix_score": 0.989,
+      "sheet_score": 1.223,
+      "turn_score": 0.873,
+      "phi": -51.2,
+      "psi": 45.7
+    },
+    {
+      "residue": "K",
+      "position": 19,
+      "structure": "E",
+      "helix_score": 1.086,
+      "sheet_score": 1.106,
+      "turn_score": 0.841,
+      "phi": -119.4,
+      "psi": 113.7
+    },
+    {
+      "residue": "V",
+      "position": 20,
+      "structure": "H",
+      "helix_score": 1.074,
+      "sheet_score": 0.996,
+      "turn_score": 0.906,
+      "phi": -67.2,
+      "psi": -47.9
+    },
+    {
+      "residue": "F",
+      "position": 21,
+      "structure": "E",
+      "helix_score": 1.016,
+      "sheet_score": 1.009,
+      "turn_score": 0.936,
+      "phi": -142.4,
+      "psi": 78.2
+    },
+    {
+      "residue": "E",
+      "position": 22,
+      "structure": "H",
+      "helix_score": 1.15,
+      "sheet_score": 0.954,
+      "turn_score": 0.819,
+      "phi": -63.6,
+      "psi": -58.2
+    },
+    {
+      "residue": "R",
+      "position": 23,
+      "structure": "H",
+      "helix_score": 1.157,
+      "sheet_score": 1.034,
+      "turn_score": 0.759,
+      "phi": -60.7,
+      "psi": -47.6
+    },
+    {
+      "residue": "C",
+      "position": 24,
+      "structure": "H",
+      "helix_score": 1.209,
+      "sheet_score": 0.91,
+      "turn_score": 0.781,
+      "phi": -56.6,
+      "psi": -39.0
+    },
+    {
+      "residue": "E",
+      "position": 25,
+      "structure": "H",
+      "helix_score": 1.187,
+      "sheet_score": 0.846,
+      "turn_score": 0.831,
+      "phi": -72.1,
+      "psi": -40.9
+    },
+    {
+      "residue": "L",
+      "position": 26,
+      "structure": "H",
+      "helix_score": 1.09,
+      "sheet_score": 0.963,
+      "turn_score": 0.863,
+      "phi": -69.2,
+      "psi": -35.8
+    },
+    {
+      "residue": "A",
+      "position": 27,
+      "structure": "H",
+      "helix_score": 1.123,
+      "sheet_score": 1.016,
+      "turn_score": 0.811,
+      "phi": -58.1,
+      "psi": -46.3
+    },
+    {
+      "residue": "R",
+      "position": 28,
+      "structure": "H",
+      "helix_score": 1.189,
+      "sheet_score": 0.951,
+      "turn_score": 0.786,
+      "phi": -59.1,
+      "psi": -42.6
+    },
+    {
+      "residue": "T",
+      "position": 29,
+      "structure": "H",
+      "helix_score": 1.113,
+      "sheet_score": 1.031,
+      "turn_score": 0.816,
+      "phi": -65.6,
+      "psi": -43.9
+    },
+    {
+      "residue": "L",
+      "position": 30,
+      "structure": "H",
+      "helix_score": 1.113,
+      "sheet_score": 1.031,
+      "turn_score": 0.816,
+      "phi": -54.0,
+      "psi": -48.0
+    },
+    {
+      "residue": "K",
+      "position": 31,
+      "structure": "E",
+      "helix_score": 0.991,
+      "sheet_score": 1.02,
+      "turn_score": 0.944,
+      "phi": -116.3,
+      "psi": 108.8
+    },
+    {
+      "residue": "R",
+      "position": 32,
+      "structure": "H",
+      "helix_score": 1.059,
+      "sheet_score": 1.037,
+      "turn_score": 0.894,
+      "phi": -67.2,
+      "psi": -40.5
+    },
+    {
+      "residue": "L",
+      "position": 33,
+      "structure": "H",
+      "helix_score": 1.084,
+      "sheet_score": 0.944,
+      "turn_score": 0.966,
+      "phi": -74.5,
+      "psi": -35.1
+    },
+    {
+      "residue": "G",
+      "position": 34,
+      "structure": "T",
+      "helix_score": 0.993,
+      "sheet_score": 0.866,
+      "turn_score": 1.104,
+      "phi": -107.4,
+      "psi": -58.4
+    },
+    {
+      "residue": "M",
+      "position": 35,
+      "structure": "T",
+      "helix_score": 0.926,
+      "sheet_score": 0.97,
+      "turn_score": 1.123,
+      "phi": -111.2,
+      "psi": -51.7
+    },
+    {
+      "residue": "D",
+      "position": 36,
+      "structure": "T",
+      "helix_score": 0.926,
+      "sheet_score": 0.97,
+      "turn_score": 1.123,
+      "phi": -94.2,
+      "psi": -8.2
+    },
+    {
+      "residue": "G",
+      "position": 37,
+      "structure": "T",
+      "helix_score": 0.834,
+      "sheet_score": 0.891,
+      "turn_score": 1.261,
+      "phi": -32.7,
+      "psi": -16.9
+    },
+    {
+      "residue": "Y",
+      "position": 38,
+      "structure": "T",
+      "helix_score": 0.907,
+      "sheet_score": 1.013,
+      "turn_score": 1.106,
+      "phi": -62.4,
+      "psi": -78.8
+    },
+    {
+      "residue": "R",
+      "position": 39,
+      "structure": "T",
+      "helix_score": 0.81,
+      "sheet_score": 0.97,
+      "turn_score": 1.224,
+      "phi": -69.8,
+      "psi": 8.6
+    },
+    {
+      "residue": "G",
+      "position": 40,
+      "structure": "T",
+      "helix_score": 0.839,
+      "sheet_score": 1.079,
+      "turn_score": 1.1,
+      "phi": -47.1,
+      "psi": -24.7
+    },
+    {
+      "residue": "I",
+      "position": 41,
+      "structure": "E",
+      "helix_score": 0.96,
+      "sheet_score": 1.09,
+      "turn_score": 0.971,
+      "phi": -125.2,
+      "psi": 131.1
+    },
+    {
+      "residue": "S",
+      "position": 42,
+      "structure": "T",
+      "helix_score": 0.957,
+      "sheet_score": 1.007,
+      "turn_score": 1.031,
+      "phi": -107.2,
+      "psi": -69.7
+    },
+    {
+      "residue": "L",
+      "position": 43,
+      "structure": "E",
+      "helix_score": 0.971,
+      "sheet_score": 1.07,
+      "turn_score": 1.033,
+      "phi": -142.9,
+      "psi": 119.9
+    },
+    {
+      "residue": "A",
+      "position": 44,
+      "structure": "E",
+      "helix_score": 1.097,
+      "sheet_score": 1.113,
+      "turn_score": 0.896,
+      "phi": -117.8,
+      "psi": 134.7
+    },
+    {
+      "residue": "N",
+      "position": 45,
+      "structure": "E",
+      "helix_score": 1.043,
+      "sheet_score": 1.054,
+      "turn_score": 0.999,
+      "phi": -124.5,
+      "psi": 118.9
+    },
+    {
+      "residue": "W",
+      "position": 46,
+      "structure": "E",
+      "helix_score": 1.106,
+      "sheet_score": 1.133,
+      "turn_score": 0.879,
+      "phi": -95.0,
+      "psi": 156.4
+    },
+    {
+      "residue": "M",
+      "position": 47,
+      "structure": "H",
+      "helix_score": 1.136,
+      "sheet_score": 1.066,
+      "turn_score": 0.889,
+      "phi": -53.6,
+      "psi": -48.7
+    },
+    {
+      "residue": "C",
+      "position": 48,
+      "structure": "H",
+      "helix_score": 1.099,
+      "sheet_score": 1.053,
+      "turn_score": 0.939,
+      "phi": -53.7,
+      "psi": -39.9
+    },
+    {
+      "residue": "L",
+      "position": 49,
+      "structure": "H",
+      "helix_score": 1.157,
+      "sheet_score": 1.121,
+      "turn_score": 0.853,
+      "phi": -54.0,
+      "psi": -49.5
+    },
+    {
+      "residue": "A",
+      "position": 50,
+      "structure": "H",
+      "helix_score": 1.219,
+      "sheet_score": 0.979,
+      "turn_score": 0.821,
+      "phi": -56.3,
+      "psi": -50.3
+    },
+    {
+      "residue": "K",
+      "position": 51,
+      "structure": "H",
+      "helix_score": 1.121,
+      "sheet_score": 0.936,
+      "turn_score": 0.94,
+      "phi": -75.5,
+      "psi": -44.9
+    },
+    {
+      "residue": "W",
+      "position": 52,
+      "structure": "H",
+      "helix_score": 1.103,
+      "sheet_score": 0.873,
+      "turn_score": 0.993,
+      "phi": -60.5,
+      "psi": -32.6
+    },
+    {
+      "residue": "E",
+      "position": 53,
+      "structure": "T",
+      "helix_score": 1.029,
+      "sheet_score": 0.897,
+      "turn_score": 1.071,
+      "phi": -78.2,
+      "psi": -30.1
+    },
+    {
+      "residue": "S",
+      "position": 54,
+      "structure": "T",
+      "helix_score": 0.921,
+      "sheet_score": 0.906,
+      "turn_score": 1.2,
+      "phi": -23.9,
+      "psi": 34.5
+    },
+    {
+      "residue": "G",
+      "position": 55,
+      "structure": "T",
+      "helix_score": 0.874,
+      "sheet_score": 0.97,
+      "turn_score": 1.193,
+      "phi": -89.2,
+      "psi": -19.2
+    },
+    {
+      "residue": "Y",
+      "position": 56,
+      "structure": "T",
+      "helix_score": 0.86,
+      "sheet_score": 0.907,
+      "turn_score": 1.191,
+      "phi": -112.4,
+      "psi": -52.2
+    },
+    {
+      "residue": "N",
+      "position": 57,
+      "structure": "T",
+      "helix_score": 0.847,
+      "sheet_score": 0.973,
+      "turn_score": 1.18,
+      "phi": -63.7,
+      "psi": -74.0
+    },
+    {
+      "residue": "T",
+      "position": 58,
+      "structure": "T",
+      "helix_score": 0.856,
+      "sheet_score": 1.036,
+      "turn_score": 1.113,
+      "phi": -60.0,
+      "psi": -40.2
+    },
+    {
+      "residue": "R",
+      "position": 59,
+      "structure": "T",
+      "helix_score": 0.87,
+      "sheet_score": 1.056,
+      "turn_score": 1.113,
+      "phi": -66.1,
+      "psi": -12.9
+    },
+    {
+      "residue": "A",
+      "position": 60,
+      "structure": "T",
+      "helix_score": 0.87,
+      "sheet_score": 1.056,
+      "turn_score": 1.113,
+      "phi": -45.8,
+      "psi": -53.3
+    },
+    {
+      "residue": "T",
+      "position": 61,
+      "structure": "T",
+      "helix_score": 0.87,
+      "sheet_score": 1.056,
+      "turn_score": 1.113,
+      "phi": -52.1,
+      "psi": -46.7
+    },
+    {
+      "residue": "N",
+      "position": 62,
+      "structure": "T",
+      "helix_score": 0.954,
+      "sheet_score": 1.004,
+      "turn_score": 1.07,
+      "phi": 3.3,
+      "psi": -45.8
+    },
+    {
+      "residue": "Y",
+      "position": 63,
+      "structure": "T",
+      "helix_score": 0.896,
+      "sheet_score": 0.979,
+      "turn_score": 1.157,
+      "phi": -86.5,
+      "psi": -16.0
+    },
+    {
+      "residue": "N",
+      "position": 64,
+      "structure": "T",
+      "helix_score": 0.837,
+      "sheet_score": 0.937,
+      "turn_score": 1.271,
+      "phi": -20.5,
+      "psi": -66.4
+    },
+    {
+      "residue": "A",
+      "position": 65,
+      "structure": "T",
+      "helix_score": 0.859,
+      "sheet_score": 0.9,
+      "turn_score": 1.27,
+      "phi": -11.5,
+      "psi": -33.4
+    },
+    {
+      "residue": "G",
+      "position": 66,
+      "structure": "T",
+      "helix_score": 0.873,
+      "sheet_score": 0.88,
+      "turn_score": 1.251,
+      "phi": -103.2,
+      "psi": 12.4
+    },
+    {
+      "residue": "D",
+      "position": 67,
+      "structure": "T",
+      "helix_score": 0.893,
+      "sheet_score": 0.84,
+      "turn_score": 1.226,
+      "phi": -99.1,
+      "psi": -12.6
+    },
+    {
+      "residue": "R",
+      "position": 68,
+      "structure": "T",
+      "helix_score": 0.941,
+      "sheet_score": 0.79,
+      "turn_score": 1.211,
+      "phi": -86.2,
+      "psi": 28.4
+    },
+    {
+      "residue": "S",
+      "position": 69,
+      "structure": "T",
+      "helix_score": 0.837,
+      "sheet_score": 0.881,
+      "turn_score": 1.28,
+      "phi": -82.3,
+      "psi": -3.4
+    },
+    {
+      "residue": "T",
+      "position": 70,
+      "structure": "T",
+      "helix_score": 0.837,
+      "sheet_score": 0.881,
+      "turn_score": 1.28,
+      "phi": -107.0,
+      "psi": -21.1
+    },
+    {
+      "residue": "D",
+      "position": 71,
+      "structure": "T",
+      "helix_score": 0.847,
+      "sheet_score": 1.033,
+      "turn_score": 1.139,
+      "phi": -28.9,
+      "psi": -56.0
+    },
+    {
+      "residue": "Y",
+      "position": 72,
+      "structure": "E",
+      "helix_score": 0.869,
+      "sheet_score": 1.097,
+      "turn_score": 1.089,
+      "phi": -137.8,
+      "psi": 104.7
+    },
+    {
+      "residue": "G",
+      "position": 73,
+      "structure": "T",
+      "helix_score": 0.917,
+      "sheet_score": 1.147,
+      "turn_score": 1.024,
+      "phi": -65.3,
+      "psi": -57.9
+    },
+    {
+      "residue": "I",
+      "position": 74,
+      "structure": "E",
+      "helix_score": 0.953,
+      "sheet_score": 1.206,
+      "turn_score": 0.954,
+      "phi": -108.9,
+      "psi": 134.5
+    },
+    {
+      "residue": "F",
+      "position": 75,
+      "structure": "E",
+      "helix_score": 0.904,
+      "sheet_score": 1.256,
+      "turn_score": 0.969,
+      "phi": -93.6,
+      "psi": 142.4
+    },
+    {
+      "residue": "Q",
+      "position": 76,
+      "structure": "E",
+      "helix_score": 0.916,
+      "sheet_score": 1.153,
+      "turn_score": 1.01,
+      "phi": -120.4,
+      "psi": 138.7
+    },
+    {
+      "residue": "I",
+      "position": 77,
+      "structure": "E",
+      "helix_score": 0.974,
+      "sheet_score": 1.179,
+      "turn_score": 0.923,
+      "phi": -132.8,
+      "psi": 141.8
+    },
+    {
+      "residue": "N",
+      "position": 78,
+      "structure": "E",
+      "helix_score": 0.919,
+      "sheet_score": 1.16,
+      "turn_score": 1.019,
+      "phi": -105.4,
+      "psi": 116.5
+    },
+    {
+      "residue": "S",
+      "position": 79,
+      "structure": "E",
+      "helix_score": 0.911,
+      "sheet_score": 1.159,
+      "turn_score": 1.07,
+      "phi": -118.5,
+      "psi": 135.3
+    },
+    {
+      "residue": "R",
+      "position": 80,
+      "structure": "E",
+      "helix_score": 0.853,
+      "sheet_score": 1.171,
+      "turn_score": 1.1,
+      "phi": -130.1,
+      "psi": 137.8
+    },
+    {
+      "residue": "Y",
+      "position": 81,
+      "structure": "T",
+      "helix_score": 0.794,
+      "sheet_score": 1.07,
+      "turn_score": 1.256,
+      "phi": -108.6,
+      "psi": 10.9
+    },
+    {
+      "residue": "W",
+      "position": 82,
+      "structure": "T",
+      "helix_score": 0.843,
+      "sheet_score": 1.02,
+      "turn_score": 1.241,
+      "phi": 0.1,
+      "psi": 25.6
+    },
+    {
+      "residue": "C",
+      "position": 83,
+      "structure": "T",
+      "helix_score": 0.814,
+      "sheet_score": 1.02,
+      "turn_score": 1.26,
+      "phi": -43.3,
+      "psi": -53.4
+    },
+    {
+      "residue": "N",
+      "position": 84,
+      "structure": "T",
+      "helix_score": 0.84,
+      "sheet_score": 0.993,
+      "turn_score": 1.269,
+      "phi": -54.4,
+      "psi": -46.1
+    },
+    {
+      "residue": "D",
+      "position": 85,
+      "structure": "T",
+      "helix_score": 0.86,
+      "sheet_score": 0.953,
+      "turn_score": 1.243,
+      "phi": -37.0,
+      "psi": -79.1
+    },
+    {
+      "residue": "G",
+      "position": 86,
+      "structure": "T",
+      "helix_score": 0.787,
+      "sheet_score": 0.836,
+      "turn_score": 1.323,
+      "phi": -72.9,
+      "psi": -45.3
+    },
+    {
+      "residue": "K",
+      "position": 87,
+      "structure": "T",
+      "helix_score": 0.769,
+      "sheet_score": 0.773,
+      "turn_score": 1.376,
+      "phi": -76.6,
+      "psi": -23.4
+    },
+    {
+      "residue": "T",
+      "position": 88,
+      "structure": "T",
+      "helix_score": 0.876,
+      "sheet_score": 0.764,
+      "turn_score": 1.247,
+      "phi": -61.1,
+      "psi": 12.3
+    },
+    {
+      "residue": "P",
+      "position": 89,
+      "structure": "T",
+      "helix_score": 0.883,
+      "sheet_score": 0.93,
+      "turn_score": 1.11,
+      "phi": -74.1,
+      "psi": 144.2
+    },
+    {
+      "residue": "G",
+      "position": 90,
+      "structure": "T",
+      "helix_score": 0.897,
+      "sheet_score": 0.95,
+      "turn_score": 1.11,
+      "phi": -64.5,
+      "psi": 5.7
+    },
+    {
+      "residue": "A",
+      "position": 91,
+      "structure": "T",
+      "helix_score": 0.934,
+      "sheet_score": 0.963,
+      "turn_score": 1.06,
+      "phi": -23.0,
+      "psi": -22.9
+    },
+    {
+      "residue": "V",
+      "position": 92,
+      "structure": "T",
+      "helix_score": 0.916,
+      "sheet_score": 0.963,
+      "turn_score": 1.093,
+      "phi": -83.0,
+      "psi": 12.9
+    },
+    {
+      "residue": "N",
+      "position": 93,
+      "structure": "T",
+      "helix_score": 0.977,
+      "sheet_score": 1.009,
+      "turn_score": 1.011,
+      "phi": -77.0,
+      "psi": -43.2
+    },
+    {
+      "residue": "A",
+      "position": 94,
+      "structure": "E",
+      "helix_score": 1.069,
+      "sheet_score": 1.087,
+      "turn_score": 0.873,
+      "phi": -138.3,
+      "psi": 101.4
+    },
+    {
+      "residue": "C",
+      "position": 95,
+      "structure": "E",
+      "helix_score": 0.976,
+      "sheet_score": 1.076,
+      "turn_score": 0.983,
+      "phi": -112.6,
+      "psi": 109.2
+    },
+    {
+      "residue": "H",
+      "position": 96,
+      "structure": "T",
+      "helix_score": 0.924,
+      "sheet_score": 1.003,
+      "turn_score": 1.081,
+      "phi": -31.7,
+      "psi": -47.7
+    },
+    {
+      "residue": "L",
+      "position": 97,
+      "structure": "T",
+      "helix_score": 0.939,
+      "sheet_score": 0.983,
+      "turn_score": 1.063,
+      "phi": -89.4,
+      "psi": -11.7
+    },
+    {
+      "residue": "S",
+      "position": 98,
+      "structure": "T",
+      "helix_score": 0.939,
+      "sheet_score": 0.983,
+      "turn_score": 1.063,
+      "phi": -65.3,
+      "psi": -53.3
+    },
+    {
+      "residue": "C",
+      "position": 99,
+      "structure": "C",
+      "helix_score": 1.011,
+      "sheet_score": 0.999,
+      "turn_score": 0.977,
+      "phi": -113.4,
+      "psi": 10.6
+    },
+    {
+      "residue": "S",
+      "position": 100,
+      "structure": "E",
+      "helix_score": 1.041,
+      "sheet_score": 1.06,
+      "turn_score": 0.926,
+      "phi": -116.2,
+      "psi": 130.8
+    },
+    {
+      "residue": "A",
+      "position": 101,
+      "structure": "E",
+      "helix_score": 1.027,
+      "sheet_score": 1.031,
+      "turn_score": 0.981,
+      "phi": -128.3,
+      "psi": 104.0
+    },
+    {
+      "residue": "L",
+      "position": 102,
+      "structure": "H",
+      "helix_score": 1.061,
+      "sheet_score": 1.001,
+      "turn_score": 0.986,
+      "phi": -74.1,
+      "psi": -40.3
+    },
+    {
+      "residue": "L",
+      "position": 103,
+      "structure": "H",
+      "helix_score": 1.057,
+      "sheet_score": 0.959,
+      "turn_score": 1.039,
+      "phi": -65.6,
+      "psi": -42.3
+    },
+    {
+      "residue": "Q",
+      "position": 104,
+      "structure": "H",
+      "helix_score": 1.101,
+      "sheet_score": 1.08,
+      "turn_score": 0.901,
+      "phi": -69.1,
+      "psi": -37.2
+    },
+    {
+      "residue": "D",
+      "position": 105,
+      "structure": "H",
+      "helix_score": 1.101,
+      "sheet_score": 1.08,
+      "turn_score": 0.901,
+      "phi": -59.5,
+      "psi": -40.2
+    },
+    {
+      "residue": "N",
+      "position": 106,
+      "structure": "H",
+      "helix_score": 1.073,
+      "sheet_score": 0.971,
+      "turn_score": 1.026,
+      "phi": -76.6,
+      "psi": -53.2
+    },
+    {
+      "residue": "I",
+      "position": 107,
+      "structure": "H",
+      "helix_score": 1.103,
+      "sheet_score": 0.904,
+      "turn_score": 1.036,
+      "phi": -73.3,
+      "psi": -42.4
+    },
+    {
+      "residue": "A",
+      "position": 108,
+      "structure": "H",
+      "helix_score": 1.096,
+      "sheet_score": 0.99,
+      "turn_score": 0.967,
+      "phi": -67.9,
+      "psi": -33.2
+    },
+    {
+      "residue": "D",
+      "position": 109,
+      "structure": "H",
+      "helix_score": 1.154,
+      "sheet_score": 1.031,
+      "turn_score": 0.853,
+      "phi": -60.3,
+      "psi": -54.3
+    },
+    {
+      "residue": "A",
+      "position": 110,
+      "structure": "H",
+      "helix_score": 1.159,
+      "sheet_score": 1.074,
+      "turn_score": 0.8,
+      "phi": -60.6,
+      "psi": -27.4
+    },
+    {
+      "residue": "V",
+      "position": 111,
+      "structure": "H",
+      "helix_score": 1.207,
+      "sheet_score": 0.964,
+      "turn_score": 0.827,
+      "phi": -51.2,
+      "psi": -45.4
+    },
+    {
+      "residue": "A",
+      "position": 112,
+      "structure": "H",
+      "helix_score": 1.17,
+      "sheet_score": 0.951,
+      "turn_score": 0.877,
+      "phi": -67.1,
+      "psi": -32.3
+    },
+    {
+      "residue": "C",
+      "position": 113,
+      "structure": "H",
+      "helix_score": 1.166,
+      "sheet_score": 1.007,
+      "turn_score": 0.804,
+      "phi": -49.6,
+      "psi": -39.9
+    },
+    {
+      "residue": "A",
+      "position": 114,
+      "structure": "E",
+      "helix_score": 1.114,
+      "sheet_score": 1.131,
+      "turn_score": 0.781,
+      "phi": -104.2,
+      "psi": 113.0
+    },
+    {
+      "residue": "K",
+      "position": 115,
+      "structure": "E",
+      "helix_score": 1.114,
+      "sheet_score": 1.131,
+      "turn_score": 0.781,
+      "phi": -131.4,
+      "psi": 103.2
+    },
+    {
+      "residue": "R",
+      "position": 116,
+      "structure": "E",
+      "helix_score": 1.051,
+      "sheet_score": 1.146,
+      "turn_score": 0.823,
+      "phi": -93.2,
+      "psi": 125.1
+    },
+    {
+      "residue": "V",
+      "position": 117,
+      "structure": "H",
+      "helix_score": 1.096,
+      "sheet_score": 1.053,
+      "turn_score": 0.861,
+      "phi": -65.3,
+      "psi": -53.8
+    },
+    {
+      "residue": "V",
+      "position": 118,
+      "structure": "E",
+      "helix_score": 0.974,
+      "sheet_score": 1.013,
+      "turn_score": 0.984,
+      "phi": -136.8,
+      "psi": 116.0
+    },
+    {
+      "residue": "R",
+      "position": 119,
+      "structure": "E",
+      "helix_score": 0.967,
+      "sheet_score": 1.064,
+      "turn_score": 0.98,
+      "phi": -115.9,
+      "psi": 123.0
+    },
+    {
+      "residue": "D",
+      "position": 120,
+      "structure": "T",
+      "helix_score": 0.909,
+      "sheet_score": 1.039,
+      "turn_score": 1.067,
+      "phi": -65.6,
+      "psi": -12.8
+    },
+    {
+      "residue": "P",
+      "position": 121,
+      "structure": "T",
+      "helix_score": 0.911,
+      "sheet_score": 1.024,
+      "turn_score": 1.063,
+      "phi": -60.8,
+      "psi": 151.4
+    },
+    {
+      "residue": "Q",
+      "position": 122,
+      "structure": "T",
+      "helix_score": 0.9,
+      "sheet_score": 0.914,
+      "turn_score": 1.127,
+      "phi": -96.7,
+      "psi": -43.5
+    },
+    {
+      "residue": "G",
+      "position": 123,
+      "structure": "T",
+      "helix_score": 0.963,
+      "sheet_score": 0.9,
+      "turn_score": 1.086,
+      "phi": -57.8,
+      "psi": -5.3
+    },
+    {
+      "residue": "I",
+      "position": 124,
+      "structure": "E",
+      "helix_score": 0.973,
+      "sheet_score": 1.019,
+      "turn_score": 1.014,
+      "phi": -138.6,
+      "psi": 120.3
+    },
+    {
+      "residue": "R",
+      "position": 125,
+      "structure": "E",
+      "helix_score": 1.043,
+      "sheet_score": 1.183,
+      "turn_score": 0.869,
+      "phi": -112.2,
+      "psi": 144.3
+    },
+    {
+      "residue": "A",
+      "position": 126,
+      "structure": "E",
+      "helix_score": 1.087,
+      "sheet_score": 1.144,
+      "turn_score": 0.823,
+      "phi": -132.5,
+      "psi": 131.3
+    },
+    {
+      "residue": "W",
+      "position": 127,
+      "structure": "E",
+      "helix_score": 1.16,
+      "sheet_score": 1.233,
+      "turn_score": 0.737,
+      "phi": -114.6,
+      "psi": 118.5
+    },
+    {
+      "residue": "V",
+      "position": 128,
+      "structure": "H",
+      "helix_score": 1.146,
+      "sheet_score": 1.137,
+      "turn_score": 0.806,
+      "phi": -63.2,
+      "psi": -28.7
+    },
+    {
+      "residue": "A",
+      "position": 129,
+      "structure": "E",
+      "helix_score": 1.101,
+      "sheet_score": 1.131,
+      "turn_score": 0.893,
+      "phi": -140.3,
+      "psi": 141.1
+    },
+    {
+      "residue": "W",
+      "position": 130,
+      "structure": "E",
+      "helix_score": 1.039,
+      "sheet_score": 1.146,
+      "turn_score": 0.934,
+      "phi": -119.5,
+      "psi": 101.8
+    },
+    {
+      "residue": "R",
+      "position": 131,
+      "structure": "E",
+      "helix_score": 0.984,
+      "sheet_score": 1.12,
+      "turn_score": 0.967,
+      "phi": -180,
+      "psi": 147.9
+    },
+    {
+      "residue": "N",
+      "position": 132,
+      "structure": "T",
+      "helix_score": 0.991,
+      "sheet_score": 1.034,
+      "turn_score": 1.036,
+      "phi": -65.8,
+      "psi": -96.1
+    },
+    {
+      "residue": "R",
+      "position": 133,
+      "structure": "T",
+      "helix_score": 0.884,
+      "sheet_score": 1.043,
+      "turn_score": 1.164,
+      "phi": -71.7,
+      "psi": -93.4
+    },
+    {
+      "residue": "C",
+      "position": 134,
+      "structure": "T",
+      "helix_score": 0.87,
+      "sheet_score": 0.98,
+      "turn_score": 1.163,
+      "phi": -19.3,
+      "psi": 9.5
+    },
+    {
+      "residue": "Q",
+      "position": 135,
+      "structure": "T",
+      "helix_score": 0.874,
+      "sheet_score": 0.924,
+      "turn_score": 1.236,
+      "phi": -57.9,
+      "psi": -40.4
+    },
+    {
+      "residue": "N",
+      "position": 136,
+      "structure": "T",
+      "helix_score": 0.93,
+      "sheet_score": 1.04,
+      "turn_score": 1.084,
+      "phi": -42.1,
+      "psi": -3.3
+    },
+    {
+      "residue": "R",
+      "position": 137,
+      "structure": "T",
+      "helix_score": 0.93,
+      "sheet_score": 1.04,
+      "turn_score": 1.084,
+      "phi": -72.7,
+      "psi": -43.9
+    },
+    {
+      "residue": "D",
+      "position": 138,
+      "structure": "T",
+      "helix_score": 0.989,
+      "sheet_score": 1.027,
+      "turn_score": 1.054,
+      "phi": -54.0,
+      "psi": -16.2
+    },
+    {
+      "residue": "V",
+      "position": 139,
+      "structure": "E",
+      "helix_score": 0.929,
+      "sheet_score": 1.08,
+      "turn_score": 1.077,
+      "phi": -110.6,
+      "psi": 99.2
+    },
+    {
+      "residue": "R",
+      "position": 140,
+      "structure": "E",
+      "helix_score": 0.984,
+      "sheet_score": 1.196,
+      "turn_score": 0.926,
+      "phi": -114.1,
+      "psi": 121.4
+    },
+    {
+      "residue": "Q",
+      "position": 141,
+      "structure": "E",
+      "helix_score": 1.003,
+      "sheet_score": 1.22,
+      "turn_score": 0.93,
+      "phi": -128.5,
+      "psi": 136.1
+    },
+    {
+      "residue": "Y",
+      "position": 142,
+      "structure": "E",
+      "helix_score": 0.94,
+      "sheet_score": 1.25,
+      "turn_score": 0.944,
+      "phi": -147.3,
+      "psi": 138.6
+    },
+    {
+      "residue": "V",
+      "position": 143,
+      "structure": "E",
+      "helix_score": 0.889,
+      "sheet_score": 1.177,
+      "turn_score": 1.043,
+      "phi": -130.2,
+      "psi": 124.1
+    },
+    {
+      "residue": "Q",
+      "position": 144,
+      "structure": "E",
+      "helix_score": 0.83,
+      "sheet_score": 1.151,
+      "turn_score": 1.13,
+      "phi": -101.2,
+      "psi": 112.8
+    },
+    {
+      "residue": "G",
+      "position": 145,
+      "structure": "T",
+      "helix_score": 0.823,
+      "sheet_score": 1.237,
+      "turn_score": 1.061,
+      "phi": -71.5,
+      "psi": -89.2
+    },
+    {
+      "residue": "C",
+      "position": 146,
+      "structure": "E",
+      "helix_score": 0.845,
+      "sheet_score": 1.198,
+      "turn_score": 1.048,
+      "phi": -122.8,
+      "psi": 124.1
+    },
+    {
+      "residue": "G",
+      "position": 147,
+      "structure": "T",
+      "helix_score": 0.802,
+      "sheet_score": 1.098,
+      "turn_score": 1.158,
+      "phi": -63.7,
+      "psi": -9.0
+    },
+    {
+      "residue": "V",
+      "position": 148,
+      "structure": "T",
+      "helix_score": 0.725,
+      "sheet_score": 1.097,
+      "turn_score": 1.203,
+      "phi": -29.8,
+      "psi": -21.4
+    }
+  ],
+  "disulfide_bonds": [
+    [
+      24,
+      48
+    ],
+    [
+      83,
+      95
+    ],
+    [
+      99,
+      113
+    ],
+    [
+      134,
+      146
+    ]
+  ],
+  "extinction_coefficient": {
+    "reduced": 36440,
+    "oxidized": 36940
+  },
+  "uniprot_id": "P61626",
+  "description": "Enzyme that breaks down bacterial cell walls."
+}

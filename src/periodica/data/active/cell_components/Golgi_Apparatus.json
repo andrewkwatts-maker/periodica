@@ -1,0 +1,40 @@
+{
+  "name": "Golgi Apparatus",
+  "type": "golgi_apparatus",
+  "organism": "Eukaryota (general)",
+  "function": "protein_sorting",
+  "localization": ["cytoplasm"],
+  "description": "Modifies, sorts, and packages proteins and lipids for secretion or delivery to other organelles.",
+  "structure": {
+    "cisternae_count": 6,
+    "organization": ["cis-Golgi", "medial-Golgi", "trans-Golgi"],
+    "vesicles": ["COPI", "COPII", "Clathrin-coated"]
+  },
+  "diameter_um": 3.0,
+  "copy_number_per_cell": 1,
+  "regions": {
+    "cis_Golgi": {
+      "function": "Receives proteins from ER",
+      "receives_from": "ER via COPII vesicles"
+    },
+    "medial_Golgi": {
+      "function": "Glycan processing",
+      "enzymes": ["Mannosidases", "GlcNAc transferases"]
+    },
+    "trans_Golgi": {
+      "function": "Final modifications, sorting",
+      "sends_to": ["Lysosomes", "Plasma membrane", "Secretory vesicles"]
+    }
+  },
+  "key_processes": {
+    "glycosylation": "O-linked glycosylation, glycan trimming",
+    "sulfation": "Tyrosine and carbohydrate sulfation",
+    "phosphorylation": "Mannose-6-phosphate tagging for lysosomes",
+    "proteolysis": "Prohormone processing"
+  },
+  "key_proteins": [
+    {"name": "GM130", "function": "cis-Golgi matrix protein"},
+    {"name": "Golgin-97", "function": "trans-Golgi network tether"},
+    {"name": "Rab GTPases", "function": "Vesicle trafficking regulation"}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "symbol": "As",
+  "name": "Arsenic",
+  "atomic_number": 33,
+  "atomic_mass": 74.922,
+  "block": "p",
+  "period": 4,
+  "group": 15,
+  "ionization_energy": 9.789,
+  "electronegativity": 2.18,
+  "atomic_radius": 114,
+  "covalent_radius": 119,
+  "melting_point": 1090,
+  "boiling_point": 887,
+  "density": 5.73,
+  "electron_affinity": 78.0,
+  "valence_electrons": 5,
+  "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p³",
+  "primary_emission_wavelength": 234.0,
+  "visible_emission_wavelength": 450.0,
+  "isotopes": [
+    {
+      "mass_number": 75,
+      "neutrons": 42,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

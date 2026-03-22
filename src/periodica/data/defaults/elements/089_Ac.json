@@ -1,0 +1,30 @@
+{
+  "symbol": "Ac",
+  "name": "Actinium",
+  "atomic_number": 89,
+  "atomic_mass": 227,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 5.380226,
+  "electronegativity": 1.1,
+  "atomic_radius": 195,
+  "covalent_radius": 215,
+  "melting_point": 1323,
+  "boiling_point": 3473,
+  "density": 10.07,
+  "electron_affinity": 33.8,
+  "valence_electrons": 3,
+  "electron_configuration": "[Rn] 6d¹ 7s²",
+  "primary_emission_wavelength": 400.0,
+  "visible_emission_wavelength": 400.0,
+  "isotopes": [
+    {
+      "mass_number": 227,
+      "neutrons": 138,
+      "abundance": 0,
+      "is_stable": false,
+      "half_life": "21.77 years"
+    }
+  ]
+}

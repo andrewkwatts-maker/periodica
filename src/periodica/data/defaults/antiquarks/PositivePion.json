@@ -1,0 +1,29 @@
+{
+  "Name": "Positive Pion",
+  "Symbol": "π⁺",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Composite Particle"],
+  "Charge_e": 1,
+  "Mass_MeVc2": 139.57039,
+  "Mass_kg": 2.4908978e-28,
+  "Mass_amu": 0.150046,
+  "Spin_hbar": 0.0, // A pseudo-scalar meson
+  "MagneticDipoleMoment_J_T": null, // Not applicable for a scalar particle (no spin to align)
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 1.0,
+  "Isospin_I3": 1.0,
+  "Parity_P": -1, // Pseudo-scalar
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1 },
+    { "Constituent": "Antidown Quark", "Count": 1 }
+  ],
+  "Stability": "Unstable",
+  "HalfLife_s": 2.6033e-8, // 26.033 nanoseconds
+  "DecayProducts": ["Muon", "Muon Neutrino"],
+  "Antiparticle": {
+    "Name": "Negative Pion",
+    "Symbol": "π⁻"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "Chloroplast",
+  "type": "chloroplast",
+  "organism": "Viridiplantae (Plants)",
+  "function": "photosynthesis",
+  "localization": ["cytoplasm"],
+  "description": "Double-membrane organelle responsible for photosynthesis. Captures light energy to produce ATP and NADPH, then uses them to fix CO2 into sugars.",
+  "structure": {
+    "outer_membrane": {
+      "composition": "Phospholipids and porins",
+      "function": "Permeable to small molecules"
+    },
+    "inner_membrane": {
+      "composition": "Galactolipids, proteins",
+      "function": "Transport regulation"
+    },
+    "intermembrane_space": {
+      "function": "Transport intermediate"
+    },
+    "stroma": {
+      "contents": ["cpDNA", "Ribosomes", "Calvin cycle enzymes", "Starch granules"],
+      "function": "Carbon fixation, cpDNA replication"
+    },
+    "thylakoid_membrane": {
+      "composition": "Galactolipids, photosystems, electron carriers",
+      "function": "Light reactions of photosynthesis"
+    },
+    "thylakoid_lumen": {
+      "function": "Proton reservoir for ATP synthesis"
+    }
+  },
+  "dimensions": {
+    "length_um": 5.0,
+    "width_um": 2.5
+  },
+  "copy_number_per_cell": 50,
+  "genome": {
+    "type": "Circular cpDNA",
+    "size_bp": 150000,
+    "genes": 120,
+    "protein_coding_genes": 80,
+    "tRNA_genes": 30,
+    "rRNA_genes": 4
+  },
+  "key_complexes": {
+    "Photosystem_I": {
+      "name": "Photosystem I (P700)",
+      "subunits": 14,
+      "function": "Light absorption, NADP+ reduction"
+    },
+    "Photosystem_II": {
+      "name": "Photosystem II (P680)",
+      "subunits": 25,
+      "function": "Light absorption, water splitting"
+    },
+    "Cytochrome_b6f": {
+      "name": "Cytochrome b6f complex",
+      "subunits": 8,
+      "function": "Electron transfer, proton pumping"
+    },
+    "ATP_synthase": {
+      "name": "CF1CF0 ATP synthase",
+      "subunits": 9,
+      "function": "ATP synthesis"
+    },
+    "RuBisCO": {
+      "name": "Ribulose-1,5-bisphosphate carboxylase/oxygenase",
+      "subunits": 16,
+      "function": "CO2 fixation"
+    }
+  },
+  "photosynthetic_rate_umol_O2_per_mg_Chl_per_h": 200,
+  "CO2_fixation_rate_umol_per_mg_Chl_per_h": 150
+}

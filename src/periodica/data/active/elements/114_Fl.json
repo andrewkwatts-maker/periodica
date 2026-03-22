@@ -1,0 +1,30 @@
+{
+  "symbol": "Fl",
+  "name": "Flerovium",
+  "atomic_number": 114,
+  "atomic_mass": 289,
+  "block": "p",
+  "period": 7,
+  "group": 14,
+  "ionization_energy": 8.5,
+  "electronegativity": 1.8,
+  "atomic_radius": 143,
+  "covalent_radius": 143,
+  "melting_point": 340,
+  "boiling_point": 420,
+  "density": 14.0,
+  "electron_affinity": null,
+  "valence_electrons": 4,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 289,
+      "neutrons": 175,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "1.9 seconds"
+    }
+  ]
+}

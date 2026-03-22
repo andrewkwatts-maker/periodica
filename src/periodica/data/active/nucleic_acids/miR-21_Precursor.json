@@ -1,0 +1,97 @@
+{
+  "name": "miR-21 Precursor",
+  "type": "RNA",
+  "organism": "Homo sapiens",
+  "function": "MicroRNA regulation",
+  "sequence": "UGUCGGGUAGCUUAUCAGACUGAUGUUGACUGUUGAAUCUCAUGGCAACACCAGUCGAUGGGCUGUC",
+  "length": 67,
+  "gc_content": 49.3,
+  "base_composition": {
+    "U": 20,
+    "G": 19,
+    "C": 14,
+    "A": 14
+  },
+  "molecular_mass": 21564.4,
+  "melting_temperature": 91.8,
+  "complement": "ACAGCCCAUCGAAUAGUCUGACUACAACUGACAACUUAGAGUACCGUUGUGGUCAGCUACCCGACAG",
+  "reverse_complement": "GACAGCCCAUCGACUGGUGUUGCCAUGAGAUUCAACAGUCAACAUCAGUCUGAUAAGCUACCCGACA",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 1,
+        "end": 20,
+        "loop_start": 6,
+        "loop_end": 15,
+        "stem_length": 5,
+        "loop_length": 9,
+        "stem_sequence": "GUCGG",
+        "loop_sequence": "GUAGCUUAU",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 15,
+        "end": 32,
+        "loop_start": 20,
+        "loop_end": 27,
+        "stem_length": 5,
+        "loop_length": 7,
+        "stem_sequence": "CAGAC",
+        "loop_sequence": "UGAUGUU",
+        "stability": 0.6,
+        "matches": 4
+      },
+      {
+        "start": 40,
+        "end": 60,
+        "loop_start": 45,
+        "loop_end": 55,
+        "stem_length": 5,
+        "loop_length": 10,
+        "stem_sequence": "CAUGG",
+        "loop_sequence": "CAACACCAGU",
+        "stability": 0.6,
+        "matches": 4
+      },
+      {
+        "start": 47,
+        "end": 66,
+        "loop_start": 52,
+        "loop_end": 61,
+        "stem_length": 5,
+        "loop_length": 9,
+        "stem_sequence": "ACACC",
+        "loop_sequence": "AGUCGAUGG",
+        "stability": 0.6,
+        "matches": 4
+      },
+      {
+        "start": 51,
+        "end": 65,
+        "loop_start": 56,
+        "loop_end": 60,
+        "stem_length": 5,
+        "loop_length": 4,
+        "stem_sequence": "CAGUC",
+        "loop_sequence": "GAUG",
+        "stability": 0.6,
+        "matches": 4
+      }
+    ]
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.138244+00:00",
+    "model_version": "1.0.0"
+  }
+}

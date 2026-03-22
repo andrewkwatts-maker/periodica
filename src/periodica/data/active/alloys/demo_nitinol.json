@@ -1,0 +1,159 @@
+{
+  "Name": "Nitinol (55-Nitinol)",
+  "Formula": "Ni-Ti",
+  "Category": "Shape Memory Alloy",
+  "SubCategory": "Nickel-Titanium",
+  "Description": "Shape memory alloy with superelastic properties, widely used in medical devices",
+
+  "Components": [
+    {"Element": "Ni", "MinPercent": 54.5, "MaxPercent": 57.0, "Role": "Base"},
+    {"Element": "Ti", "MinPercent": 43.0, "MaxPercent": 45.5, "Role": "Alloying"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 6.45,
+    "MeltingPoint_K": 1583,
+    "ThermalConductivity_W_mK": 18,
+    "ThermalExpansion_per_K": 11.0e-6,
+    "ElectricalResistivity_Ohm_m": 8.0e-7,
+    "SpecificHeat_J_kgK": 450,
+    "YoungsModulus_GPa": 75,
+    "ShearModulus_GPa": 28,
+    "PoissonsRatio": 0.33,
+    "BrinellHardness_HB": 300
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 900,
+    "YieldStrength_MPa": 500,
+    "Elongation_percent": 15,
+    "ReductionOfArea_percent": 25,
+    "ImpactStrength_J": 50,
+    "FatigueStrength_MPa": 350
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "B2",
+    "SecondaryStructures": ["B19prime"],
+    "LatticeParameters": {
+      "a_pm": 301.0,
+      "b_pm": 301.0,
+      "c_pm": 301.0,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Pm-3m",
+    "SpaceGroupNumber": 221,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 2,
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "BurgersVector_pm": 213.0,
+    "StackingFaultEnergy_mJ_m2": 50
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Austenite (B2)",
+        "Symbol": "B2",
+        "Structure": "BCC-like ordered",
+        "VolumePercent": 100,
+        "SnSolubility_percent": null,
+        "Hardness_HV": 200
+      },
+      {
+        "Name": "Martensite (B19')",
+        "Symbol": "B19prime",
+        "Structure": "Monoclinic",
+        "VolumePercent": 0,
+        "SnSolubility_percent": null,
+        "Hardness_HV": 350
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 1523,
+      "Liquidus_K": 1583,
+      "Martensite_start_K": 263,
+      "Martensite_finish_K": 243,
+      "Austenite_start_K": 283,
+      "Austenite_finish_K": 303
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.40,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.15,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.6,
+      "PhaseThreshold": 0.5
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e11,
+        "BurgersVectorType": "a<100>",
+        "SlipSystems": ["110<001>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.20,
+        "HighAngleBoundaryFraction": 0.70,
+        "TwinBoundaryFraction": 0.10,
+        "GrainBoundaryEnergy_J_m2": 0.55
+      }
+    },
+    "Inclusions": {
+      "Types": ["Ti2Ni", "TiC"],
+      "VolumeFraction": 0.01,
+      "AverageSize_um": 2.0,
+      "Distribution": "Random"
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "Fiber",
+    "MillerIndices": {
+      "Planes": [[1,1,0], [1,0,0]],
+      "Directions": [[1,1,1], [0,0,1]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 2.5
+  },
+
+  "TribologicalProperties": {
+    "CoefficientOfFriction": 0.30,
+    "WearCoefficient": 1e-6,
+    "PVLimit_MPa_m_s": 2.0,
+    "MaxOperatingTemperature_K": 373
+  },
+
+  "ShapeMemoryProperties": {
+    "RecoverableStrain_percent": 8,
+    "SuperelasticStrain_percent": 6,
+    "TransformationHysteresis_K": 30,
+    "CycleLife": 1000000
+  },
+
+  "Applications": ["Stents", "Guidewires", "Orthodontic archwires", "Eyeglass frames", "Actuators"],
+  "ProcessingMethods": ["Hot working", "Cold drawing", "Laser cutting", "Electropolishing"],
+  "Color": "#C0C0C0"
+}

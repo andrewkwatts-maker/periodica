@@ -1,0 +1,85 @@
+{
+  "name": "Hammerhead Ribozyme",
+  "type": "rna",
+  "organism": "Synthetic",
+  "function": "Catalytic RNA - self-cleaving",
+  "sequence": "GGCAGCUGAUGAGUCCGUGAGGACGAAACGGUACCCGGUACCGUC",
+  "length": 45,
+  "gc_content": 62.2,
+  "base_composition": {
+    "G": 16,
+    "C": 12,
+    "A": 10,
+    "U": 7
+  },
+  "molecular_mass": 14711.0,
+  "melting_temperature": 92.6,
+  "complement": "CCGUCGACUACUCAGGCACUCCUGCUUUGCCAUGGGCCAUGGCAG",
+  "reverse_complement": "GACGGUACCGGGUACCGUUUCGUCCUCACGGACUCAUCAGCUGCC",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 14,
+        "end": 31,
+        "loop_start": 19,
+        "loop_end": 26,
+        "stem_length": 5,
+        "loop_length": 7,
+        "stem_sequence": "CCGUG",
+        "loop_sequence": "AGGACGA",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 12,
+        "end": 24,
+        "loop_start": 16,
+        "loop_end": 20,
+        "stem_length": 4,
+        "loop_length": 4,
+        "stem_sequence": "GUCC",
+        "loop_sequence": "GUGA",
+        "stability": 0.75,
+        "matches": 4
+      },
+      {
+        "start": 14,
+        "end": 31,
+        "loop_start": 18,
+        "loop_end": 27,
+        "stem_length": 4,
+        "loop_length": 9,
+        "stem_sequence": "CCGU",
+        "loop_sequence": "GAGGACGAA",
+        "stability": 0.75,
+        "matches": 4
+      },
+      {
+        "start": 27,
+        "end": 44,
+        "loop_start": 31,
+        "loop_end": 40,
+        "stem_length": 4,
+        "loop_length": 9,
+        "stem_sequence": "ACGG",
+        "loop_sequence": "UACCCGGUA",
+        "stability": 0.75,
+        "matches": 4
+      },
+      {
+        "start": 28,
+        "end": 43,
+        "loop_start": 32,
+        "loop_end": 39,
+        "stem_length": 4,
+        "loop_length": 7,
+        "stem_sequence": "CGGU",
+        "loop_sequence": "ACCCGGU",
+        "stability": 0.75,
+        "matches": 4
+      }
+    ]
+  },
+  "description": "Hammerhead ribozyme - catalytically active RNA molecule."
+}

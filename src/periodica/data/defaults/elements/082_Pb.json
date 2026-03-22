@@ -1,0 +1,51 @@
+{
+  "symbol": "Pb",
+  "name": "Lead",
+  "atomic_number": 82,
+  "atomic_mass": 207.2,
+  "block": "p",
+  "period": 6,
+  "group": 14,
+  "ionization_energy": 7.41663,
+  "electronegativity": 2.33,
+  "atomic_radius": 154,
+  "covalent_radius": 146,
+  "melting_point": 600,
+  "boiling_point": 2022,
+  "density": 11.34,
+  "electron_affinity": 35.1,
+  "valence_electrons": 4,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²",
+  "primary_emission_wavelength": 283.3,
+  "visible_emission_wavelength": 405.8,
+  "isotopes": [
+    {
+      "mass_number": 204,
+      "neutrons": 122,
+      "abundance": 1.4,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 206,
+      "neutrons": 124,
+      "abundance": 24.1,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 207,
+      "neutrons": 125,
+      "abundance": 22.1,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 208,
+      "neutrons": 126,
+      "abundance": 52.4,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

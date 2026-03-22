@@ -1,0 +1,43 @@
+{
+    "Name": "Methane",
+    "Formula": "CH4",
+    "MolecularMass_amu": 16.04,
+    "MolecularMass_g_mol": 16.04,
+    "BondType": "Covalent",
+    "Geometry": "Tetrahedral",
+    "BondAngle_deg": 109.5,
+    "Polarity": "Nonpolar",
+    "MeltingPoint_K": 90.7,
+    "BoilingPoint_K": 111.65,
+    "Density_g_cm3": 0.000656,
+    "State_STP": "Gas",
+    "Composition": [
+        {"Element": "C", "Count": 1},
+        {"Element": "H", "Count": 4}
+    ],
+    "Bonds": [
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 1},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 2},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 3},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 4}
+    ],
+    "Atoms3D": [
+        {"element": "C", "x": 0.0, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "H", "x": 0.629, "y": 0.629, "z": 0.629, "index": 1},
+        {"element": "H", "x": 0.629, "y": -0.629, "z": -0.629, "index": 2},
+        {"element": "H", "x": -0.629, "y": 0.629, "z": -0.629, "index": 3},
+        {"element": "H", "x": -0.629, "y": -0.629, "z": 0.629, "index": 4}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 2, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 3, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 4, "type": "single", "length_A": 1.09}
+    ],
+    "DipoleMoment_D": 0.0,
+    "ElectronConfiguration": "C: 1s2 2s2 2p2, H: 1s1",
+    "Applications": ["Natural gas fuel", "Chemical synthesis", "Heating", "Power generation"],
+    "IUPAC_Name": "Methane",
+    "Category": "Organic",
+    "Color": "#8BC34A"
+}

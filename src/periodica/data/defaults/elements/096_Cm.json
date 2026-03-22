@@ -1,0 +1,30 @@
+{
+  "symbol": "Cm",
+  "name": "Curium",
+  "atomic_number": 96,
+  "atomic_mass": 247,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 5.992,
+  "electronegativity": 1.28,
+  "atomic_radius": 176,
+  "covalent_radius": 169,
+  "melting_point": 1613,
+  "boiling_point": 3383,
+  "density": 13.51,
+  "electron_affinity": null,
+  "valence_electrons": 8,
+  "electron_configuration": "[Rn] 5f⁷ 6d¹ 7s²",
+  "primary_emission_wavelength": 410.0,
+  "visible_emission_wavelength": 410.0,
+  "isotopes": [
+    {
+      "mass_number": 247,
+      "neutrons": 151,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "15.6 million years"
+    }
+  ]
+}

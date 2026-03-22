@@ -1,0 +1,65 @@
+{
+  "symbol": "Kr",
+  "name": "Krypton",
+  "atomic_number": 36,
+  "atomic_mass": 83.798,
+  "block": "p",
+  "period": 4,
+  "group": 18,
+  "ionization_energy": 14.0,
+  "electronegativity": 3.0,
+  "atomic_radius": 88,
+  "covalent_radius": 116,
+  "melting_point": 115.78,
+  "boiling_point": 119.93,
+  "density": 0.00375,
+  "electron_affinity": 0,
+  "valence_electrons": 8,
+  "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p⁶",
+  "primary_emission_wavelength": 587.1,
+  "visible_emission_wavelength": 587.1,
+  "isotopes": [
+    {
+      "mass_number": 78,
+      "neutrons": 42,
+      "abundance": 0.355,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 80,
+      "neutrons": 44,
+      "abundance": 2.286,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 82,
+      "neutrons": 46,
+      "abundance": 11.593,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 83,
+      "neutrons": 47,
+      "abundance": 11.5,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 84,
+      "neutrons": 48,
+      "abundance": 56.987,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 86,
+      "neutrons": 50,
+      "abundance": 17.279,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

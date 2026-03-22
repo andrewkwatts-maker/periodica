@@ -1,0 +1,97 @@
+{
+  "name": "TATA Box Promoter",
+  "type": "DNA",
+  "organism": "Consensus",
+  "function": "Transcription initiation",
+  "sequence": "GCGCGCTATAAAAGGCGCGC",
+  "length": 20,
+  "gc_content": 65.0,
+  "base_composition": {
+    "G": 7,
+    "C": 6,
+    "T": 2,
+    "A": 5
+  },
+  "molecular_mass": 6538.0,
+  "melting_temperature": 62.5,
+  "complement": "CGCGCGATATTTTCCGCGCG",
+  "reverse_complement": "GCGCGCCTTTTATAGCGCGC",
+  "secondary_structures": {
+    "hairpins": 7,
+    "details": [
+      {
+        "start": 0,
+        "end": 18,
+        "loop_start": 5,
+        "loop_end": 13,
+        "stem_length": 5,
+        "loop_length": 8,
+        "stem_sequence": "GCGCG",
+        "loop_sequence": "CTATAAAA",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 1,
+        "end": 19,
+        "loop_start": 6,
+        "loop_end": 14,
+        "stem_length": 5,
+        "loop_length": 8,
+        "stem_sequence": "CGCGC",
+        "loop_sequence": "TATAAAAG",
+        "stability": 1.0,
+        "matches": 5
+      },
+      {
+        "start": 0,
+        "end": 18,
+        "loop_start": 4,
+        "loop_end": 14,
+        "stem_length": 4,
+        "loop_length": 10,
+        "stem_sequence": "GCGC",
+        "loop_sequence": "GCTATAAAAG",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 1,
+        "end": 19,
+        "loop_start": 5,
+        "loop_end": 15,
+        "stem_length": 4,
+        "loop_length": 10,
+        "stem_sequence": "CGCG",
+        "loop_sequence": "CTATAAAAGG",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 2,
+        "end": 18,
+        "loop_start": 6,
+        "loop_end": 14,
+        "stem_length": 4,
+        "loop_length": 8,
+        "stem_sequence": "GCGC",
+        "loop_sequence": "TATAAAAG",
+        "stability": 1.0,
+        "matches": 4
+      }
+    ]
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.129544+00:00",
+    "model_version": "1.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "symbol": "Po",
+  "name": "Polonium",
+  "atomic_number": 84,
+  "atomic_mass": 209,
+  "block": "p",
+  "period": 6,
+  "group": 16,
+  "ionization_energy": 8.41671,
+  "electronegativity": 2.0,
+  "atomic_radius": 135,
+  "covalent_radius": 140,
+  "melting_point": 527,
+  "boiling_point": 1235,
+  "density": 9.2,
+  "electron_affinity": 183.3,
+  "valence_electrons": 6,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁴",
+  "primary_emission_wavelength": 300.0,
+  "visible_emission_wavelength": 420.0,
+  "isotopes": [
+    {
+      "mass_number": 209,
+      "neutrons": 125,
+      "abundance": 0,
+      "is_stable": false,
+      "half_life": "125.2 years"
+    }
+  ]
+}

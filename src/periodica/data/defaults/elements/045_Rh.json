@@ -1,0 +1,30 @@
+{
+  "symbol": "Rh",
+  "name": "Rhodium",
+  "atomic_number": 45,
+  "atomic_mass": 102.906,
+  "block": "d",
+  "period": 5,
+  "group": 9,
+  "ionization_energy": 7.459,
+  "electronegativity": 2.28,
+  "atomic_radius": 173,
+  "covalent_radius": 142,
+  "melting_point": 2237,
+  "boiling_point": 3968,
+  "density": 12.41,
+  "electron_affinity": 110.0,
+  "valence_electrons": 9,
+  "electron_configuration": "[Kr] 4d⁸ 5s¹",
+  "primary_emission_wavelength": 369.2,
+  "visible_emission_wavelength": 470.0,
+  "isotopes": [
+    {
+      "mass_number": 103,
+      "neutrons": 58,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

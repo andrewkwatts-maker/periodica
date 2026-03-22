@@ -1,0 +1,89 @@
+{
+  "Name": "Al-Cu Alloy (2xxx)",
+  "Formula": "Al-Cu-Mg-Mn",
+  "Category": "Aluminum Alloy",
+  "SubCategory": "Al-Cu Wrought Alloy",
+  "Description": "Auto-generated aluminum alloy with Cu 4.5%, Mg 1.5%, Mn 0.6%",
+  "Components": [
+    {
+      "Element": "Al",
+      "MinPercent": 92.4,
+      "MaxPercent": 94.4,
+      "Role": "Base"
+    },
+    {
+      "Element": "Cu",
+      "MinPercent": 4.05,
+      "MaxPercent": 4.95,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mg",
+      "MinPercent": 1.35,
+      "MaxPercent": 1.65,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 0.54,
+      "MaxPercent": 0.66,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 2.775,
+    "MeltingPoint_K": 869.9,
+    "ThermalConductivity_W_mK": 82.9,
+    "ThermalExpansion_per_K": 1.8e-05,
+    "ElectricalResistivity_Ohm_m": 1.856e-07,
+    "SpecificHeat_J_kgK": 560
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 451.0,
+    "YieldStrength_MPa": 271.0,
+    "Elongation_percent": 26,
+    "Hardness_HV": 135.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "LatticeParameters": {
+      "a_pm": 404.9,
+      "b_pm": 404.9,
+      "c_pm": 404.9,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "AtomsPerUnitCell": 4
+  },
+  "Applications": [
+    "Aerospace",
+    "Automotive",
+    "Lightweight structures"
+  ],
+  "ProcessingMethods": [
+    "Extrusion",
+    "Rolling",
+    "Casting"
+  ],
+  "Color": "#C0C0C0",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Al",
+      "element:Cu",
+      "element:Mg",
+      "element:Mn"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022535+00:00",
+    "model_version": "1.0.0"
+  }
+}

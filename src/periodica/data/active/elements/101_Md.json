@@ -1,0 +1,30 @@
+{
+  "symbol": "Md",
+  "name": "Mendelevium",
+  "atomic_number": 101,
+  "atomic_mass": 258,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 6.58,
+  "electronegativity": 1.3,
+  "atomic_radius": 200,
+  "covalent_radius": 173,
+  "melting_point": 1100,
+  "boiling_point": null,
+  "density": null,
+  "electron_affinity": null,
+  "valence_electrons": 13,
+  "electron_configuration": "[Rn] 5f¹³ 7s²",
+  "primary_emission_wavelength": 422.0,
+  "visible_emission_wavelength": 422.0,
+  "isotopes": [
+    {
+      "mass_number": 258,
+      "neutrons": 157,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "51.5 days"
+    }
+  ]
+}

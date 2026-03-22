@@ -1,0 +1,30 @@
+{
+  "symbol": "Np",
+  "name": "Neptunium",
+  "atomic_number": 93,
+  "atomic_mass": 237.048,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 6.266,
+  "electronegativity": 1.36,
+  "atomic_radius": 175,
+  "covalent_radius": 190,
+  "melting_point": 912,
+  "boiling_point": 4175,
+  "density": 20.45,
+  "electron_affinity": 45.8,
+  "valence_electrons": 7,
+  "electron_configuration": "[Rn] 5f⁴ 6d¹ 7s²",
+  "primary_emission_wavelength": 420.0,
+  "visible_emission_wavelength": 420.0,
+  "isotopes": [
+    {
+      "mass_number": 237,
+      "neutrons": 144,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "2.14 million years"
+    }
+  ]
+}

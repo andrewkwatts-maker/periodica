@@ -1,0 +1,33 @@
+{
+    "Name": "Hydrogen",
+    "Formula": "H2",
+    "MolecularMass_amu": 2.016,
+    "MolecularMass_g_mol": 2.016,
+    "BondType": "Covalent",
+    "Geometry": "Linear",
+    "BondAngle_deg": 180.0,
+    "Polarity": "Nonpolar",
+    "MeltingPoint_K": 13.99,
+    "BoilingPoint_K": 20.271,
+    "Density_g_cm3": 0.00008988,
+    "State_STP": "Gas",
+    "Composition": [
+        {"Element": "H", "Count": 2}
+    ],
+    "Bonds": [
+        {"From": "H", "To": "H", "Type": "Single", "Length_pm": 74, "Index": 1}
+    ],
+    "Atoms3D": [
+        {"element": "H", "x": -0.37, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "H", "x": 0.37, "y": 0.0, "z": 0.0, "index": 1}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "single", "length_A": 0.74}
+    ],
+    "DipoleMoment_D": 0.0,
+    "ElectronConfiguration": "H: 1s1",
+    "Applications": ["Fuel cells", "Chemical synthesis", "Rocket fuel", "Hydrogenation"],
+    "IUPAC_Name": "Dihydrogen",
+    "Category": "Inorganic",
+    "Color": "#FFFFFF"
+}

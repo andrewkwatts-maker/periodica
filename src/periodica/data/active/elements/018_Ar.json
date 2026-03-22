@@ -1,0 +1,44 @@
+{
+  "symbol": "Ar",
+  "name": "Argon",
+  "atomic_number": 18,
+  "atomic_mass": 39.948,
+  "block": "p",
+  "period": 3,
+  "group": 18,
+  "ionization_energy": 15.76,
+  "electronegativity": null,
+  "atomic_radius": 71,
+  "covalent_radius": 106,
+  "melting_point": 83,
+  "boiling_point": 87,
+  "density": 0.0018,
+  "electron_affinity": 0,
+  "valence_electrons": 8,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶",
+  "primary_emission_wavelength": 763.5,
+  "visible_emission_wavelength": 763.5,
+  "isotopes": [
+    {
+      "mass_number": 36,
+      "neutrons": 18,
+      "abundance": 0.3336,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 38,
+      "neutrons": 20,
+      "abundance": 0.0629,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 40,
+      "neutrons": 22,
+      "abundance": 99.6035,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

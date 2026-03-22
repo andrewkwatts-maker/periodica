@@ -1,0 +1,36 @@
+{
+    "Name": "Ozone",
+    "Formula": "O3",
+    "MolecularMass_amu": 48.00,
+    "MolecularMass_g_mol": 48.00,
+    "BondType": "Covalent",
+    "Geometry": "Bent",
+    "BondAngle_deg": 116.8,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 80.7,
+    "BoilingPoint_K": 161.3,
+    "Density_g_cm3": 0.00214,
+    "State_STP": "Gas",
+    "Composition": [
+        {"Element": "O", "Count": 3}
+    ],
+    "Bonds": [
+        {"From": "O", "To": "O", "Type": "Resonance", "Length_pm": 128, "Index": 1},
+        {"From": "O", "To": "O", "Type": "Resonance", "Length_pm": 128, "Index": 2}
+    ],
+    "Atoms3D": [
+        {"element": "O", "x": 0.0, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "O", "x": 1.10, "y": 0.58, "z": 0.0, "index": 1},
+        {"element": "O", "x": -1.10, "y": 0.58, "z": 0.0, "index": 2}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "resonance", "length_A": 1.28},
+        {"from": 0, "to": 2, "type": "resonance", "length_A": 1.28}
+    ],
+    "DipoleMoment_D": 0.53,
+    "ElectronConfiguration": "O: 1s2 2s2 2p4",
+    "Applications": ["UV protection", "Water purification", "Air treatment", "Sterilization"],
+    "IUPAC_Name": "Trioxygen",
+    "Category": "Inorganic",
+    "Color": "#03A9F4"
+}

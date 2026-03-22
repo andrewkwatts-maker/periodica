@@ -1,0 +1,49 @@
+{
+  "name": "Brain (Gray Matter)",
+  "type": "brain_gray",
+  "organ_system": "nervous",
+  "ecm_composition": {
+    "collagen_iv": 0.01,
+    "laminin": 0.02,
+    "hyaluronan": 0.05,
+    "proteoglycans": 0.03,
+    "water": 0.8,
+    "other": 0.04
+  },
+  "cell_composition": {
+    "neuron": 0.25,
+    "astrocyte": 0.2,
+    "oligodendrocyte": 0.05,
+    "microglia": 0.05
+  },
+  "porosity": 0.0,
+  "vascularization": "very_high",
+  "innervation": true,
+  "healing_time_weeks": 52,
+  "function": "Information processing, cognition",
+  "description": "Outer cortical layer containing neuronal cell bodies. Very soft tissue with high metabolic demand.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 2.1881,
+    "youngs_modulus_voigt": 4.3583,
+    "youngs_modulus_reuss": 0.0179,
+    "ultimate_strength_MPa": 0.0729,
+    "poissons_ratio": 0.476,
+    "shear_modulus_MPa": 0.7411
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.016,
+    "water_content_percent": 84.2
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_iv": 0.010526315789473684,
+    "laminin": 0.021052631578947368,
+    "hyaluronan": 0.05263157894736842,
+    "proteoglycans": 0.03157894736842105,
+    "water": 0.8421052631578947,
+    "other": 0.042105263157894736
+  }
+}

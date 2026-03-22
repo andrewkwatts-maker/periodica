@@ -1,0 +1,43 @@
+{
+  "name": "Red Blood Cell (Erythrocyte)",
+  "type": "erythrocyte",
+  "organism": "Homo sapiens",
+  "diameter_um": 7.5,
+  "volume_fL": 220.89,
+  "mass_pg": 231.94,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 176.71,
+  "surface_volume_ratio": 0.8,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 7.0,
+  "o2_consumption_per_s": 1.0,
+  "estimated_doubling_time_hours": 154861116.9,
+  "diffusion_time_ms": 28.125,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "blood",
+  "function": "Oxygen transport",
+  "nucleus": false,
+  "mitochondria_count": 0,
+  "lifespan_days": 120,
+  "normal_count_per_uL": 5000000,
+  "key_proteins": [
+    "Hemoglobin",
+    "Band 3",
+    "Spectrin",
+    "Ankyrin"
+  ],
+  "membrane_composition": {
+    "phospholipids": 0.4,
+    "cholesterol": 0.25,
+    "proteins": 0.35
+  },
+  "description": "Biconcave disc-shaped cells specialized for oxygen transport. Lack nucleus and organelles to maximize hemoglobin content."
+}

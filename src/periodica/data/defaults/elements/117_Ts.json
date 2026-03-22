@@ -1,0 +1,30 @@
+{
+  "symbol": "Ts",
+  "name": "Tennessine",
+  "atomic_number": 117,
+  "atomic_mass": 294,
+  "block": "p",
+  "period": 7,
+  "group": 17,
+  "ionization_energy": 7.1,
+  "electronegativity": 2.2,
+  "atomic_radius": 165,
+  "covalent_radius": 165,
+  "melting_point": 723,
+  "boiling_point": 883,
+  "density": 7.2,
+  "electron_affinity": null,
+  "valence_electrons": 7,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 294,
+      "neutrons": 177,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "51 milliseconds"
+    }
+  ]
+}

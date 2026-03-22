@@ -1,0 +1,30 @@
+{
+  "symbol": "Cn",
+  "name": "Copernicium",
+  "atomic_number": 112,
+  "atomic_mass": 285,
+  "block": "d",
+  "period": 7,
+  "group": 12,
+  "ionization_energy": 11.3,
+  "electronegativity": 2.5,
+  "atomic_radius": 122,
+  "covalent_radius": 122,
+  "melting_point": 283,
+  "boiling_point": 340,
+  "density": 23.7,
+  "electron_affinity": null,
+  "valence_electrons": 2,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s²",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 285,
+      "neutrons": 173,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "28 seconds"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Blood",
+  "type": "blood",
+  "organ_system": "cardiovascular",
+  "ecm_composition": {
+    "water": 0.55,
+    "plasma_proteins": 0.07,
+    "other": 0.03
+  },
+  "cell_composition": {
+    "erythrocyte": 0.4,
+    "leukocyte": 0.01,
+    "platelet": 0.004
+  },
+  "porosity": 0.0,
+  "vascularization": "N/A",
+  "innervation": false,
+  "function": "Oxygen transport, immune defense, nutrient delivery",
+  "description": "Liquid connective tissue circulating through vessels. Contains plasma (55%) and formed elements (45%).",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 3.3269,
+    "youngs_modulus_voigt": 0.1538,
+    "youngs_modulus_reuss": 6.5,
+    "ultimate_strength_MPa": 0.1109,
+    "poissons_ratio": 0.477,
+    "shear_modulus_MPa": 1.1263
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.0,
+    "water_content_percent": 84.6
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "water": 0.8461538461538461,
+    "plasma_proteins": 0.1076923076923077,
+    "other": 0.04615384615384615
+  }
+}

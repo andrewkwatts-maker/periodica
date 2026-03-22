@@ -1,0 +1,30 @@
+{
+  "symbol": "Pr",
+  "name": "Praseodymium",
+  "atomic_number": 59,
+  "atomic_mass": 140.908,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 5.473,
+  "electronegativity": 1.13,
+  "atomic_radius": 185,
+  "covalent_radius": 203,
+  "melting_point": 1208,
+  "boiling_point": 3793,
+  "density": 6.77,
+  "electron_affinity": 50.0,
+  "valence_electrons": 5,
+  "electron_configuration": "[Xe] 4f³ 6s²",
+  "primary_emission_wavelength": 495.1,
+  "visible_emission_wavelength": 495.1,
+  "isotopes": [
+    {
+      "mass_number": 141,
+      "neutrons": 82,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

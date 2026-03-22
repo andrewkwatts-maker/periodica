@@ -1,0 +1,43 @@
+{
+  "name": "Platelet",
+  "type": "platelet",
+  "organism": "Homo sapiens",
+  "diameter_um": 2.5,
+  "volume_fL": 8.18,
+  "mass_pg": 8.59,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 19.63,
+  "surface_volume_ratio": 2.4,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 1.0,
+  "o2_consumption_per_s": 0.0,
+  "estimated_doubling_time_hours": 67936230.5,
+  "diffusion_time_ms": 3.125,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "blood",
+  "function": "Hemostasis",
+  "nucleus": false,
+  "mitochondria_count": 5,
+  "lifespan_days": 10,
+  "normal_count_per_uL": 250000,
+  "key_proteins": [
+    "GPIIb/IIIa",
+    "vWF receptor",
+    "P-selectin",
+    "Fibrinogen receptor"
+  ],
+  "granules": [
+    "alpha",
+    "dense",
+    "lysosomes"
+  ],
+  "description": "Cell fragments from megakaryocytes. Essential for blood clotting through adhesion, activation, and aggregation."
+}

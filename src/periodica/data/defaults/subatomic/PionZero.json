@@ -1,0 +1,41 @@
+{
+  "Name": "Pion0",
+  "Symbol": "pi0",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Composite Particle", "Pion"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 134.9768,
+  "Mass_kg": 2.406e-28,
+  "Mass_amu": 0.1449,
+  "Spin_hbar": 0,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 1,
+  "Isospin_I3": 0,
+  "Parity_P": -1,
+  "CParity": 1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1, "Charge_e": 0.6666666667, "Symbol": "u" },
+    { "Constituent": "Anti-Up Quark", "Count": 1, "Charge_e": -0.6666666667, "Symbol": "u-bar", "IsAnti": true }
+  ],
+  "QuarkContent": "(u anti-u - d anti-d)/sqrt(2)",
+  "Notes": "Quantum superposition of u anti-u and d anti-d states",
+  "Stability": "Unstable",
+  "HalfLife_s": 8.52e-17,
+  "MeanLifetime_s": 8.52e-17,
+  "DecayProducts": ["Photon", "Photon"],
+  "DecayModes": [
+    { "Products": ["Photon", "Photon"], "BranchingRatio": 0.9882 },
+    { "Products": ["Photon", "Electron", "Positron"], "BranchingRatio": 0.0117 }
+  ],
+  "Antiparticle": {
+    "Name": "Pion0",
+    "Symbol": "pi0",
+    "Notes": "Is its own antiparticle"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak"],
+  "Discovery": {
+    "Year": 1950,
+    "Location": "Berkeley"
+  }
+}

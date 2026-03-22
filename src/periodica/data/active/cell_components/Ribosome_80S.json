@@ -1,0 +1,24 @@
+{
+  "name": "Ribosome (80S)",
+  "component_type": "organelle",
+  "description": "Eukaryotic ribosome for protein synthesis",
+  "properties": {
+    "diameter_nm": 25,
+    "copy_number": 10000000
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "proteins",
+      "nucleic_acids"
+    ],
+    "derivation_chain": [
+      "proteins",
+      "nucleic_acids",
+      "cell_component"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.141247+00:00",
+    "model_version": "1.0.0"
+  }
+}

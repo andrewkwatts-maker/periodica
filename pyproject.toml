@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "periodica"
+version = "1.0.0"
+description = "Scientific computation library for particle physics, nuclear physics, atomic chemistry, molecular chemistry, materials science, and biology"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Andrew Watts"}]
+keywords = ["chemistry", "physics", "periodic-table", "elements", "molecules", "alloys", "materials-science", "nuclear-physics", "particle-physics", "biochemistry"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "numpy>=1.24.0",
+    "google-generativeai>=0.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/andrewkwatts-maker/periodica"
+Repository = "https://github.com/andrewkwatts-maker/periodica"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-html>=4.0.0",
+    "pytest-json-report>=1.5.0",
+]
+docs = ["pdoc>=14.0.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+periodica = ["data/active/**/*.json", "data/defaults/**/*.json", "data/config/**/*.json", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+minversion = "7.0"
+addopts = ["-v", "--tb=short", "--strict-markers"]
+markers = [
+    "slow: marks tests as slow",
+    "gemini: marks tests that require Gemini API access",
+    "benchmark: marks tests used for performance benchmarking",
+]
+log_cli = true
+log_cli_level = "INFO"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::PendingDeprecationWarning"]

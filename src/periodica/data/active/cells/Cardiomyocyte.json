@@ -1,0 +1,41 @@
+{
+  "name": "Cardiomyocyte",
+  "type": "cardiomyocyte",
+  "organism": "Homo sapiens",
+  "diameter_um": 25.0,
+  "volume_fL": 8181.23,
+  "mass_pg": 8590.29,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 1963.5,
+  "surface_volume_ratio": 0.24,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 102.0,
+  "o2_consumption_per_s": 17.0,
+  "estimated_doubling_time_hours": 382033498.9,
+  "diffusion_time_ms": 312.5,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "length_um": 100.0,
+  "tissue": "muscle_cardiac",
+  "function": "Heart contraction",
+  "nucleus": true,
+  "nuclei_count": 2,
+  "mitochondria_count": 5000,
+  "lifespan_days": -1,
+  "key_proteins": [
+    "Myosin",
+    "Actin",
+    "Troponin",
+    "Connexin-43"
+  ],
+  "sarcomere_length_um": 2.2,
+  "intercalated_discs": true,
+  "description": "Cardiac muscle cells with extensive mitochondria (~40% of volume) for continuous ATP production. Connected by intercalated discs for synchronized contraction."
+}

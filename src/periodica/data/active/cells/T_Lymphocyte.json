@@ -1,0 +1,43 @@
+{
+  "name": "T Lymphocyte",
+  "type": "lymphocyte",
+  "organism": "Homo sapiens",
+  "diameter_um": 8.0,
+  "volume_fL": 268.08,
+  "mass_pg": 281.49,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 201.06,
+  "surface_volume_ratio": 0.75,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 8.0,
+  "o2_consumption_per_s": 1.0,
+  "estimated_doubling_time_hours": 162541375.2,
+  "diffusion_time_ms": 32.0,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "blood",
+  "function": "Adaptive immunity",
+  "nucleus": true,
+  "mitochondria_count": 200,
+  "lifespan_days": 1000,
+  "normal_count_per_uL": 1500,
+  "key_proteins": [
+    "T-cell receptor",
+    "CD3",
+    "CD4",
+    "CD8"
+  ],
+  "subtypes": [
+    "Helper T (CD4+)",
+    "Cytotoxic T (CD8+)",
+    "Regulatory T"
+  ],
+  "description": "Adaptive immune cells that recognize specific antigens. Essential for cell-mediated immunity and immune memory."
+}

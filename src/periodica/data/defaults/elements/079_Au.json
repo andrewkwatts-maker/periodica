@@ -1,0 +1,30 @@
+{
+  "symbol": "Au",
+  "name": "Gold",
+  "atomic_number": 79,
+  "atomic_mass": 196.967,
+  "block": "d",
+  "period": 6,
+  "group": 11,
+  "ionization_energy": 9.22553,
+  "electronegativity": 2.54,
+  "atomic_radius": 174,
+  "covalent_radius": 136,
+  "melting_point": 1337,
+  "boiling_point": 3129,
+  "density": 19.3,
+  "electron_affinity": 222.8,
+  "valence_electrons": 1,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s¹",
+  "primary_emission_wavelength": 267.6,
+  "visible_emission_wavelength": 627.8,
+  "isotopes": [
+    {
+      "mass_number": 197,
+      "neutrons": 118,
+      "abundance": 100,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

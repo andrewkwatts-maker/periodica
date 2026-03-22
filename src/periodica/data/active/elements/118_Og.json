@@ -1,0 +1,30 @@
+{
+  "symbol": "Og",
+  "name": "Oganesson",
+  "atomic_number": 118,
+  "atomic_mass": 294,
+  "block": "p",
+  "period": 7,
+  "group": 18,
+  "ionization_energy": 8.9,
+  "electronegativity": 2.4,
+  "atomic_radius": 157,
+  "covalent_radius": 157,
+  "melting_point": 350,
+  "boiling_point": 450,
+  "density": 5.0,
+  "electron_affinity": null,
+  "valence_electrons": 8,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 294,
+      "neutrons": 176,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "0.7 milliseconds"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Shine-Dalgarno Sequence",
+  "type": "RNA",
+  "organism": "Escherichia coli",
+  "function": "Prokaryotic ribosome binding",
+  "sequence": "AAGGAGGUGAUCAUG",
+  "length": 15,
+  "gc_content": 46.7,
+  "base_composition": {
+    "A": 5,
+    "G": 6,
+    "U": 3,
+    "C": 1
+  },
+  "molecular_mass": 4941.0,
+  "melting_temperature": 68.6,
+  "complement": "UUCCUCCACUAGUAC",
+  "reverse_complement": "CAUGAUCACCUCCUU",
+  "secondary_structures": {
+    "hairpins": 0,
+    "details": []
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.138298+00:00",
+    "model_version": "1.0.0"
+  }
+}

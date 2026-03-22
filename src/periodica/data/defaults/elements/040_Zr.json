@@ -1,0 +1,58 @@
+{
+  "symbol": "Zr",
+  "name": "Zirconium",
+  "atomic_number": 40,
+  "atomic_mass": 91.224,
+  "block": "d",
+  "period": 5,
+  "group": 4,
+  "ionization_energy": 6.634,
+  "electronegativity": 1.33,
+  "atomic_radius": 206,
+  "covalent_radius": 175,
+  "melting_point": 2128,
+  "boiling_point": 4682,
+  "density": 6.52,
+  "electron_affinity": 41.1,
+  "valence_electrons": 4,
+  "electron_configuration": "[Kr] 4d² 5s²",
+  "primary_emission_wavelength": 360.1,
+  "visible_emission_wavelength": 468.0,
+  "isotopes": [
+    {
+      "mass_number": 90,
+      "neutrons": 50,
+      "abundance": 51.45,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 91,
+      "neutrons": 51,
+      "abundance": 11.22,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 92,
+      "neutrons": 52,
+      "abundance": 17.15,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 94,
+      "neutrons": 54,
+      "abundance": 17.38,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 96,
+      "neutrons": 56,
+      "abundance": 2.8,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

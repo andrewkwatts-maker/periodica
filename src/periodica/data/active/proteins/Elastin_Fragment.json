@@ -1,0 +1,582 @@
+{
+  "name": "Elastin Fragment",
+  "organism": "Homo sapiens",
+  "function": "Tissue elasticity",
+  "localization": "extracellular",
+  "sequence": "VPGVGVPGVGVPGVGVPGVGVPGVGVPGVGVPGVGVPGVGVPGVGVPGVGVPGVG",
+  "length": 55,
+  "molecular_mass": 4540.39,
+  "isoelectric_point": 6.12,
+  "charge_pH7": -0.0,
+  "gravy": 1.2,
+  "amino_acid_composition": {
+    "V": 22,
+    "P": 11,
+    "G": 22
+  },
+  "secondary_structure": {
+    "helix_percent": 0.0,
+    "sheet_percent": 38.2,
+    "turn_percent": 61.8,
+    "coil_percent": 0.0
+  },
+  "residues": [
+    {
+      "residue": "V",
+      "position": 1,
+      "structure": "E",
+      "helix_score": 0.815,
+      "sheet_score": 1.175,
+      "turn_score": 1.02,
+      "phi": -130.2,
+      "psi": 136.3
+    },
+    {
+      "residue": "P",
+      "position": 2,
+      "structure": "T",
+      "helix_score": 0.766,
+      "sheet_score": 1.09,
+      "turn_score": 1.128,
+      "phi": -85.8,
+      "psi": 137.7
+    },
+    {
+      "residue": "G",
+      "position": 3,
+      "structure": "T",
+      "helix_score": 0.815,
+      "sheet_score": 1.192,
+      "turn_score": 1.023,
+      "phi": -82.2,
+      "psi": -5.9
+    },
+    {
+      "residue": "V",
+      "position": 4,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -129.5,
+      "psi": 139.4
+    },
+    {
+      "residue": "G",
+      "position": 5,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -77.6,
+      "psi": -136.2
+    },
+    {
+      "residue": "V",
+      "position": 6,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -137.9,
+      "psi": 122.8
+    },
+    {
+      "residue": "P",
+      "position": 7,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -65.4,
+      "psi": 142.0
+    },
+    {
+      "residue": "G",
+      "position": 8,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -71.8,
+      "psi": 21.8
+    },
+    {
+      "residue": "V",
+      "position": 9,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -136.4,
+      "psi": 136.3
+    },
+    {
+      "residue": "G",
+      "position": 10,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -25.2,
+      "psi": -29.4
+    },
+    {
+      "residue": "V",
+      "position": 11,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -120.7,
+      "psi": 117.6
+    },
+    {
+      "residue": "P",
+      "position": 12,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -62.2,
+      "psi": 148.0
+    },
+    {
+      "residue": "G",
+      "position": 13,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -46.9,
+      "psi": -105.1
+    },
+    {
+      "residue": "V",
+      "position": 14,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -131.5,
+      "psi": 111.4
+    },
+    {
+      "residue": "G",
+      "position": 15,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -128.9,
+      "psi": -19.1
+    },
+    {
+      "residue": "V",
+      "position": 16,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -139.7,
+      "psi": 139.5
+    },
+    {
+      "residue": "P",
+      "position": 17,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -70.0,
+      "psi": 154.1
+    },
+    {
+      "residue": "G",
+      "position": 18,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -62.6,
+      "psi": -78.5
+    },
+    {
+      "residue": "V",
+      "position": 19,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -124.0,
+      "psi": 150.1
+    },
+    {
+      "residue": "G",
+      "position": 20,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -50.0,
+      "psi": -7.5
+    },
+    {
+      "residue": "V",
+      "position": 21,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -132.8,
+      "psi": 130.1
+    },
+    {
+      "residue": "P",
+      "position": 22,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -69.5,
+      "psi": 140.1
+    },
+    {
+      "residue": "G",
+      "position": 23,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -25.5,
+      "psi": -36.1
+    },
+    {
+      "residue": "V",
+      "position": 24,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -94.2,
+      "psi": 131.2
+    },
+    {
+      "residue": "G",
+      "position": 25,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -61.6,
+      "psi": -87.9
+    },
+    {
+      "residue": "V",
+      "position": 26,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -143.9,
+      "psi": 103.0
+    },
+    {
+      "residue": "P",
+      "position": 27,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -56.0,
+      "psi": 135.1
+    },
+    {
+      "residue": "G",
+      "position": 28,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -50.4,
+      "psi": -62.5
+    },
+    {
+      "residue": "V",
+      "position": 29,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -127.2,
+      "psi": 137.5
+    },
+    {
+      "residue": "G",
+      "position": 30,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -71.0,
+      "psi": -3.6
+    },
+    {
+      "residue": "V",
+      "position": 31,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -114.4,
+      "psi": 110.3
+    },
+    {
+      "residue": "P",
+      "position": 32,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -66.0,
+      "psi": 145.9
+    },
+    {
+      "residue": "G",
+      "position": 33,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -112.7,
+      "psi": -104.2
+    },
+    {
+      "residue": "V",
+      "position": 34,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -108.8,
+      "psi": 111.9
+    },
+    {
+      "residue": "G",
+      "position": 35,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -8.2,
+      "psi": 9.7
+    },
+    {
+      "residue": "V",
+      "position": 36,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -135.7,
+      "psi": 133.3
+    },
+    {
+      "residue": "P",
+      "position": 37,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -62.3,
+      "psi": 153.1
+    },
+    {
+      "residue": "G",
+      "position": 38,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": 15.7,
+      "psi": -36.4
+    },
+    {
+      "residue": "V",
+      "position": 39,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -109.0,
+      "psi": 94.7
+    },
+    {
+      "residue": "G",
+      "position": 40,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -90.5,
+      "psi": -19.9
+    },
+    {
+      "residue": "V",
+      "position": 41,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -145.4,
+      "psi": 117.7
+    },
+    {
+      "residue": "P",
+      "position": 42,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -58.0,
+      "psi": 147.1
+    },
+    {
+      "residue": "G",
+      "position": 43,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -69.3,
+      "psi": -92.2
+    },
+    {
+      "residue": "V",
+      "position": 44,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -107.3,
+      "psi": 148.7
+    },
+    {
+      "residue": "G",
+      "position": 45,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -77.0,
+      "psi": -13.0
+    },
+    {
+      "residue": "V",
+      "position": 46,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -108.5,
+      "psi": 89.5
+    },
+    {
+      "residue": "P",
+      "position": 47,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -59.1,
+      "psi": 148.9
+    },
+    {
+      "residue": "G",
+      "position": 48,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -64.1,
+      "psi": -13.1
+    },
+    {
+      "residue": "V",
+      "position": 49,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.1,
+      "turn_score": 1.094,
+      "phi": -135.4,
+      "psi": 110.4
+    },
+    {
+      "residue": "G",
+      "position": 50,
+      "structure": "T",
+      "helix_score": 0.71,
+      "sheet_score": 0.964,
+      "turn_score": 1.246,
+      "phi": -77.3,
+      "psi": -24.7
+    },
+    {
+      "residue": "V",
+      "position": 51,
+      "structure": "E",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -122.0,
+      "psi": 135.2
+    },
+    {
+      "residue": "P",
+      "position": 52,
+      "structure": "T",
+      "helix_score": 0.78,
+      "sheet_score": 1.129,
+      "turn_score": 1.1,
+      "phi": -67.9,
+      "psi": 146.5
+    },
+    {
+      "residue": "G",
+      "position": 53,
+      "structure": "T",
+      "helix_score": 0.733,
+      "sheet_score": 1.033,
+      "turn_score": 1.2,
+      "phi": -117.5,
+      "psi": 13.6
+    },
+    {
+      "residue": "V",
+      "position": 54,
+      "structure": "T",
+      "helix_score": 0.766,
+      "sheet_score": 1.09,
+      "turn_score": 1.128,
+      "phi": -88.1,
+      "psi": 18.9
+    },
+    {
+      "residue": "G",
+      "position": 55,
+      "structure": "T",
+      "helix_score": 0.693,
+      "sheet_score": 0.938,
+      "turn_score": 1.285,
+      "phi": -58.8,
+      "psi": 23.3
+    }
+  ],
+  "disulfide_bonds": [],
+  "extinction_coefficient": {
+    "reduced": 0,
+    "oxidized": 0
+  },
+  "uniprot_id": "P15502",
+  "description": "Repetitive VPGVG sequence providing elastic properties to tissues."
+}

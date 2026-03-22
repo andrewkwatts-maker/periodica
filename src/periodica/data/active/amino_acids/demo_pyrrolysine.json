@@ -1,0 +1,22 @@
+{
+  "name": "Pyrrolysine",
+  "symbol": "O",
+  "three_letter_code": "Pyl",
+  "molecular_formula": "C12H21N3O3",
+  "molecular_mass": 255.31,
+  "atoms": {"C": 12, "H": 21, "N": 3, "O": 3},
+  "pKa_carboxyl": 2.2,
+  "pKa_amino": 9.0,
+  "pKa_sidechain": null,
+  "isoelectric_point": 5.6,
+  "hydropathy_index": -1.0,
+  "category": "special",
+  "polarity": "polar",
+  "charge_pH7": 0.0,
+  "helix_propensity": 1.0,
+  "sheet_propensity": 1.0,
+  "turn_propensity": 1.0,
+  "codon_count": 1,
+  "codons": ["UAG"],
+  "description": "The 22nd proteinogenic amino acid, found in methanogenic archaea and some bacteria. Incorporated at UAG amber stop codons."
+}

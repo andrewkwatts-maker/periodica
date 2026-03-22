@@ -1,0 +1,30 @@
+{
+  "symbol": "Mc",
+  "name": "Moscovium",
+  "atomic_number": 115,
+  "atomic_mass": 290,
+  "block": "p",
+  "period": 7,
+  "group": 15,
+  "ionization_energy": 7.0,
+  "electronegativity": 1.9,
+  "atomic_radius": 162,
+  "covalent_radius": 162,
+  "melting_point": 670,
+  "boiling_point": 1400,
+  "density": 13.5,
+  "electron_affinity": null,
+  "valence_electrons": 5,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 290,
+      "neutrons": 175,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "0.65 seconds"
+    }
+  ]
+}

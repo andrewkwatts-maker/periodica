@@ -1,0 +1,43 @@
+{
+  "Name": "Kaon0",
+  "Symbol": "K0",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Composite Particle", "Kaon", "Strange Meson"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 497.611,
+  "Mass_kg": 8.87e-28,
+  "Mass_amu": 0.5341,
+  "Spin_hbar": 0,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Strangeness": 1,
+  "Isospin_I": 0.5,
+  "Isospin_I3": -0.5,
+  "Parity_P": -1,
+  "Composition": [
+    { "Constituent": "Down Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "d" },
+    { "Constituent": "Anti-Strange Quark", "Count": 1, "Charge_e": 0.3333333333, "Symbol": "s-bar", "IsAnti": true }
+  ],
+  "QuarkContent": "d anti-s",
+  "Stability": "Unstable",
+  "Notes": "The K0 and anti-K0 can mix via CP violation, producing K-short and K-long states",
+  "HalfLife_s": null,
+  "MixedStates": [
+    { "Name": "K-short", "Symbol": "KS", "HalfLife_s": 8.954e-11, "MainDecay": ["Pion+", "Pion-"] },
+    { "Name": "K-long", "Symbol": "KL", "HalfLife_s": 5.116e-8, "MainDecay": ["Pion", "Pion", "Pion"] }
+  ],
+  "DecayProducts": ["Pion+", "Pion-", "Pion0"],
+  "DecayModes": [
+    { "Products": ["Pion+", "Pion-"], "BranchingRatio": 0.692, "State": "K-short" },
+    { "Products": ["Pion0", "Pion0"], "BranchingRatio": 0.307, "State": "K-short" }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Kaon0",
+    "Symbol": "anti-K0"
+  },
+  "InteractionForces": ["Strong", "Weak"],
+  "Discovery": {
+    "Year": 1947,
+    "Location": "Manchester"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Kozak Consensus",
+  "type": "DNA",
+  "organism": "Vertebrate consensus",
+  "function": "Translation initiation",
+  "sequence": "GCCGCCACCATGGCG",
+  "length": 15,
+  "gc_content": 80.0,
+  "base_composition": {
+    "G": 5,
+    "C": 7,
+    "A": 2,
+    "T": 1
+  },
+  "molecular_mass": 4843.0,
+  "melting_temperature": 58.8,
+  "complement": "CGGCGGTGGTACCGC",
+  "reverse_complement": "CGCCATGGTGGCGGC",
+  "secondary_structures": {
+    "hairpins": 0,
+    "details": []
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.129587+00:00",
+    "model_version": "1.0.0"
+  }
+}

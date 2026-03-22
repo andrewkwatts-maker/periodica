@@ -1,0 +1,57 @@
+{
+  "name": "Collagen-Alginate Hydrogel",
+  "type": "biomaterial_hydrogel",
+  "organ_system": "soft_tissue",
+  "ecm_composition": {
+    "collagen_i": 0.02,
+    "alginate": 0.02,
+    "water": 0.96
+  },
+  "cell_composition": {
+    "fibroblast": 0.0,
+    "mesenchymal_stem_cell": 0.0
+  },
+  "porosity": 0.95,
+  "pore_size_um": 100,
+  "interconnectivity": 0.99,
+  "vascularization": "none",
+  "innervation": false,
+  "remodeling_rate_per_year": null,
+  "healing_time_weeks": null,
+  "function": "Soft tissue engineering and cell encapsulation",
+  "description": "Injectable hydrogel composed of type I collagen and alginate. Supports cell encapsulation and provides ECM-mimetic environment for tissue regeneration.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 0.01,
+    "youngs_modulus_voigt": 0.015,
+    "youngs_modulus_reuss": 0.008,
+    "ultimate_strength_MPa": 0.005,
+    "poissons_ratio": 0.45,
+    "shear_modulus_MPa": 0.003,
+    "storage_modulus_Pa": 500,
+    "loss_modulus_Pa": 50
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.02,
+    "water_content_percent": 96.0
+  },
+  "derived_properties": {
+    "stiffness_category": "Soft",
+    "model_used": "Rubber elasticity theory"
+  },
+  "biocompatibility": {
+    "cytotoxicity": "Non-cytotoxic",
+    "hemolysis": "Non-hemolytic",
+    "implant_grade": "ISO 10993 compliant"
+  },
+  "degradation": {
+    "degradable": true,
+    "degradation_time_months": 3,
+    "degradation_products": ["Amino acids", "Mannuronic acid", "Guluronic acid"]
+  },
+  "swelling_ratio": 20,
+  "crosslinking_method": "Calcium chloride ionic crosslinking",
+  "gelation_time_min": 5,
+  "injectable": true,
+  "fabrication_method": "Physical mixing and ionic gelation",
+  "applications": ["Wound healing", "Cartilage repair", "Cell delivery", "Drug delivery"]
+}

@@ -1,0 +1,30 @@
+{
+  "symbol": "Be",
+  "name": "Beryllium",
+  "atomic_number": 4,
+  "atomic_mass": 9.0122,
+  "block": "s",
+  "period": 2,
+  "group": 2,
+  "ionization_energy": 9.323,
+  "electronegativity": 1.57,
+  "atomic_radius": 112,
+  "covalent_radius": 96,
+  "melting_point": 1560,
+  "boiling_point": 2744,
+  "density": 1.85,
+  "electron_affinity": 0,
+  "valence_electrons": 2,
+  "electron_configuration": "1s² 2s²",
+  "primary_emission_wavelength": 234.9,
+  "visible_emission_wavelength": 556.0,
+  "isotopes": [
+    {
+      "mass_number": 9,
+      "neutrons": 5,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "Name": "Inconel 718",
+  "Formula": "Ni-Cr-Fe-Nb-Mo",
+  "Category": "Nickel Alloy",
+  "SubCategory": "Superalloy",
+  "Description": "High-strength, corrosion-resistant nickel superalloy for extreme temperature applications",
+
+  "Components": [
+    {"Element": "Ni", "MinPercent": 50.0, "MaxPercent": 55.0, "Role": "Base"},
+    {"Element": "Cr", "MinPercent": 17.0, "MaxPercent": 21.0, "Role": "Oxidation Resistance"},
+    {"Element": "Fe", "MinPercent": 11.0, "MaxPercent": 22.5, "Role": "Balance"},
+    {"Element": "Nb", "MinPercent": 4.75, "MaxPercent": 5.5, "Role": "Gamma Double Prime Former"},
+    {"Element": "Mo", "MinPercent": 2.8, "MaxPercent": 3.3, "Role": "Solid Solution Strengthening"},
+    {"Element": "Ti", "MinPercent": 0.65, "MaxPercent": 1.15, "Role": "Gamma Prime Former"},
+    {"Element": "Al", "MinPercent": 0.2, "MaxPercent": 0.8, "Role": "Gamma Prime Former"},
+    {"Element": "Co", "MinPercent": 0.0, "MaxPercent": 1.0, "Role": "Strengthening"},
+    {"Element": "C", "MinPercent": 0.0, "MaxPercent": 0.08, "Role": "Carbide Former"},
+    {"Element": "Mn", "MinPercent": 0.0, "MaxPercent": 0.35, "Role": "Deoxidizer"},
+    {"Element": "Si", "MinPercent": 0.0, "MaxPercent": 0.35, "Role": "Deoxidizer"},
+    {"Element": "B", "MinPercent": 0.0, "MaxPercent": 0.006, "Role": "Grain Boundary Strengthening"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.19,
+    "MeltingPoint_K": 1533,
+    "ThermalConductivity_W_mK": 11.4,
+    "ThermalExpansion_per_K": 13.0e-6,
+    "ElectricalResistivity_Ohm_m": 1.25e-6,
+    "SpecificHeat_J_kgK": 435,
+    "YoungsModulus_GPa": 211,
+    "ShearModulus_GPa": 77,
+    "PoissonsRatio": 0.30,
+    "BrinellHardness_HB": 331
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 1375,
+    "YieldStrength_MPa": 1100,
+    "Elongation_percent": 25,
+    "ReductionOfArea_percent": 45,
+    "ImpactStrength_J": 60,
+    "FatigueStrength_MPa": 600,
+    "CreepStrength_100000h_MPa": 280
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": ["gamma_prime", "gamma_double_prime", "delta", "MC_carbides"],
+    "LatticeParameters": {
+      "a_pm": 360.0,
+      "b_pm": 360.0,
+      "c_pm": 360.0,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 254.6,
+    "StackingFaultEnergy_mJ_m2": 30
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Gamma Matrix",
+        "Symbol": "gamma",
+        "Structure": "FCC",
+        "VolumePercent": 75,
+        "Hardness_HV": 250
+      },
+      {
+        "Name": "Gamma Prime",
+        "Symbol": "gamma'",
+        "Structure": "L12",
+        "Composition": "Ni3(Al,Ti)",
+        "VolumePercent": 5,
+        "CoherencyStrain_percent": 0.1,
+        "Hardness_HV": 450
+      },
+      {
+        "Name": "Gamma Double Prime",
+        "Symbol": "gamma''",
+        "Structure": "D022",
+        "Composition": "Ni3Nb",
+        "VolumePercent": 18,
+        "CoherencyStrain_percent": 2.9,
+        "Hardness_HV": 600
+      },
+      {
+        "Name": "Delta Phase",
+        "Symbol": "delta",
+        "Structure": "Orthorhombic",
+        "Composition": "Ni3Nb",
+        "VolumePercent": 2,
+        "Hardness_HV": 500
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 1533,
+      "Liquidus_K": 1609,
+      "GammaPrimeSolvus_K": 1063,
+      "GammaDoublePrimeSolvus_K": 1173,
+      "DeltaSolvus_K": 1283
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 20,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.3,
+      "ASTMGrainSizeNumber": 8,
+      "VoronoiSeedDensity_per_mm2": 2500,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.2,
+      "TwinDensity_per_mm": 200
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Worley",
+      "NoiseScale": 0.02,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.4,
+      "PhaseThreshold": 0.6
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e13,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.15,
+        "HighAngleBoundaryFraction": 0.50,
+        "TwinBoundaryFraction": 0.35,
+        "GrainBoundaryEnergy_J_m2": 0.90
+      }
+    },
+    "Precipitates": {
+      "Types": ["gamma'", "gamma''", "delta", "MC", "M23C6"],
+      "VolumeFraction": 0.25,
+      "GammaPrimeSize_nm": 20,
+      "GammaDoublePrimeSize_nm": 50,
+      "Distribution": "Matrix"
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,1], [2,0,0], [2,2,0]],
+      "Directions": [[1,1,0], [1,1,2]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "HighTemperatureProperties": {
+    "MaxServiceTemperature_K": 973,
+    "OxidationResistance_K": 1253,
+    "CreepRuptureStrength_100h_MPa": 640,
+    "StressRuptureLife_1000h_MPa": 520
+  },
+
+  "HeatTreatmentResponse": {
+    "SolutionTreatment": {"Temperature_K": 1228, "Time_h": 1, "Cooling": "Air"},
+    "Aging": {
+      "Step1": {"Temperature_K": 991, "Time_h": 8, "Cooling": "Furnace cool to 894K"},
+      "Step2": {"Temperature_K": 894, "Time_h": 8, "Cooling": "Air"}
+    }
+  },
+
+  "Applications": ["Jet engine components", "Gas turbines", "Rocket motors", "Nuclear reactors", "Cryogenic tanks"],
+  "ProcessingMethods": ["Vacuum induction melting", "Vacuum arc remelting", "Forging", "Rolling", "Powder metallurgy"],
+  "Color": "#708090"
+}

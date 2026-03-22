@@ -1,0 +1,29 @@
+{
+  "Name": "Antiproton",
+  "Symbol": "p̅",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Antibaryon", "Hadron", "Composite Particle"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 938.27208816,
+  "Mass_kg": 1.67262192369e-27,
+  "Mass_amu": 1.007276466621,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": 1.41060679736e-26, // Same magnitude, opposite direction relative to spin
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": -1,
+  "Isospin_I": 0.5,
+  "Isospin_I3": -0.5,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Antiup Quark", "Count": 2, "Charge_e": -0.6666666667 },
+    { "Constituent": "Antidown Quark", "Count": 1, "Charge_e": 0.3333333333 }
+  ],
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Proton",
+    "Symbol": "p"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

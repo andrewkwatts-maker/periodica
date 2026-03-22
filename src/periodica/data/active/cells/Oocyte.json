@@ -1,0 +1,39 @@
+{
+  "name": "Oocyte",
+  "type": "oocyte",
+  "organism": "Homo sapiens",
+  "diameter_um": 120.0,
+  "volume_fL": 904778.68,
+  "mass_pg": 950017.62,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 45238.93,
+  "surface_volume_ratio": 0.05,
+  "metabolic_rate_fW": 0.11,
+  "atp_turnover_per_s": 3481.0,
+  "o2_consumption_per_s": 580.0,
+  "estimated_doubling_time_hours": 1238888935.0,
+  "diffusion_time_ms": 7200.0,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "reproductive",
+  "function": "Female gamete",
+  "nucleus": true,
+  "mitochondria_count": 100000,
+  "zona_pellucida": true,
+  "key_proteins": [
+    "ZP1",
+    "ZP2",
+    "ZP3",
+    "GDF9",
+    "BMP15"
+  ],
+  "cortical_granules": 15000,
+  "description": "Largest human cell. Contains maternal stores of mRNA, proteins, and mitochondria needed for early embryonic development."
+}

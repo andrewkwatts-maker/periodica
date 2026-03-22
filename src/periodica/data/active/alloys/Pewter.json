@@ -1,0 +1,160 @@
+{
+  "Name": "Pewter (Modern Lead-Free)",
+  "Formula": "Sn-Sb-Cu",
+  "Category": "Pewter",
+  "SubCategory": "Lead-Free Pewter",
+  "Description": "Modern lead-free pewter alloy for decorative items, tableware, and jewelry with excellent castability",
+
+  "Components": [
+    {"Element": "Sn", "MinPercent": 91.0, "MaxPercent": 95.0, "Role": "Base"},
+    {"Element": "Sb", "MinPercent": 1.0, "MaxPercent": 8.0, "Role": "Hardening"},
+    {"Element": "Cu", "MinPercent": 0.5, "MaxPercent": 3.0, "Role": "Strengthening"},
+    {"Element": "Bi", "MinPercent": 0.0, "MaxPercent": 3.0, "Role": "Brightness"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.28,
+    "MeltingPoint_K": 443,
+    "ThermalConductivity_W_mK": 64,
+    "ThermalExpansion_per_K": 21.4e-6,
+    "ElectricalResistivity_Ohm_m": 1.4e-7,
+    "SpecificHeat_J_kgK": 226,
+    "YoungsModulus_GPa": 50,
+    "ShearModulus_GPa": 18,
+    "PoissonsRatio": 0.39,
+    "BrinellHardness_HB": 20
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 55,
+    "YieldStrength_MPa": 35,
+    "Elongation_percent": 30,
+    "ReductionOfArea_percent": 60,
+    "ImpactStrength_J": 25,
+    "FatigueStrength_MPa": 20
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "BCT",
+    "SecondaryStructures": ["SbSn_intermetallic"],
+    "LatticeParameters": {
+      "a_pm": 583.2,
+      "b_pm": 583.2,
+      "c_pm": 318.2,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "I4/amd",
+    "SpaceGroupNumber": 141,
+    "PointGroup": "4/mmm",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.53,
+    "CoordinationNumber": 4,
+    "BurgersVector_pm": 318.2
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Beta Tin",
+        "Symbol": "beta-Sn",
+        "Structure": "BCT",
+        "VolumePercent": 92,
+        "Hardness_HV": 5
+      },
+      {
+        "Name": "SbSn Intermetallic",
+        "Symbol": "SbSn",
+        "Structure": "Cubic",
+        "VolumePercent": 5,
+        "Hardness_HV": 250
+      },
+      {
+        "Name": "Cu6Sn5",
+        "Symbol": "eta",
+        "Structure": "Hexagonal",
+        "VolumePercent": 3,
+        "Hardness_HV": 380
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 433,
+      "Liquidus_K": 513,
+      "TinPest_K": 286
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.45,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400,
+      "GrainBoundaryWidth_nm": 0.8,
+      "GrainAspectRatio": 1.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.12,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.8
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e8,
+        "BurgersVectorType": "a<001>",
+        "SlipSystems": ["100<001>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.1,
+        "HighAngleBoundaryFraction": 0.9,
+        "TwinBoundaryFraction": 0.0,
+        "GrainBoundaryEnergy_J_m2": 0.28
+      }
+    },
+    "Inclusions": {
+      "Types": ["SbSn", "Cu6Sn5"],
+      "VolumeFraction": 0.08,
+      "AverageSize_um": 5
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[2,0,0], [1,0,1], [2,1,1]],
+      "Directions": [[0,0,1], [1,0,0]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "CastingProperties": {
+    "Fluidity": "Excellent",
+    "Shrinkage_percent": 0.3,
+    "HotTearResistance": "Good",
+    "DetailReproduction": "Excellent"
+  },
+
+  "FoodSafety": {
+    "FoodGrade": true,
+    "LeadFree": true,
+    "CadmiumFree": true
+  },
+
+  "Applications": ["Tableware", "Decorative items", "Jewelry", "Figurines", "Commemorative pieces", "Trophies"],
+  "ProcessingMethods": ["Centrifugal casting", "Gravity casting", "Spin casting", "Polishing"],
+  "Color": "#D4D4D4"
+}

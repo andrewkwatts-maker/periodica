@@ -1,0 +1,50 @@
+{
+  "symbol": "Fe",
+  "name": "Iron",
+  "atomic_number": 26,
+  "atomic_mass": 55.845,
+  "block": "d",
+  "period": 4,
+  "group": 8,
+  "ionization_energy": 7.902,
+  "electronegativity": 1.83,
+  "atomic_radius": 126,
+  "covalent_radius": 132,
+  "melting_point": 1811,
+  "boiling_point": 3134,
+  "density": 7.874,
+  "electron_affinity": 15.7,
+  "valence_electrons": 2,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s²",
+  "primary_emission_wavelength": 372.0,
+  "isotopes": [
+    {
+      "mass_number": 54,
+      "neutrons": 28,
+      "abundance": 5.845,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 56,
+      "neutrons": 30,
+      "abundance": 91.754,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 57,
+      "neutrons": 31,
+      "abundance": 2.119,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 58,
+      "neutrons": 32,
+      "abundance": 0.282,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

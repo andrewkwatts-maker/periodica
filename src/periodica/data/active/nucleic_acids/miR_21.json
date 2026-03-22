@@ -1,0 +1,49 @@
+{
+  "name": "miR 21",
+  "type": "mirna",
+  "organism": "Homo sapiens",
+  "function": "Gene regulation - oncomiR",
+  "sequence": "UAGCUUAUCAGACUGAUGUUGA",
+  "length": 22,
+  "gc_content": 36.4,
+  "base_composition": {
+    "U": 8,
+    "A": 6,
+    "G": 5,
+    "C": 3
+  },
+  "molecular_mass": 7110.4,
+  "melting_temperature": 71.0,
+  "complement": "AUCGAAUAGUCUGACUACAACU",
+  "reverse_complement": "UCAACAUCAGUCUGAUAAGCUA",
+  "secondary_structures": {
+    "hairpins": 2,
+    "details": [
+      {
+        "start": 6,
+        "end": 17,
+        "loop_start": 10,
+        "loop_end": 13,
+        "stem_length": 4,
+        "loop_length": 3,
+        "stem_sequence": "AUCA",
+        "loop_sequence": "GAC",
+        "stability": 0.25,
+        "matches": 4
+      },
+      {
+        "start": 5,
+        "end": 18,
+        "loop_start": 10,
+        "loop_end": 13,
+        "stem_length": 5,
+        "loop_length": 3,
+        "stem_sequence": "UAUCA",
+        "loop_sequence": "GAC",
+        "stability": 0.2,
+        "matches": 4
+      }
+    ]
+  },
+  "description": "microRNA-21, one of the most studied oncogenic miRNAs."
+}

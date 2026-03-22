@@ -1,0 +1,68 @@
+{
+  "name": "Mitochondrion",
+  "type": "mitochondrion",
+  "organism": "Eukaryota (general)",
+  "function": "energy_production",
+  "localization": ["cytoplasm"],
+  "description": "Powerhouse of the cell. Generates ATP through oxidative phosphorylation.",
+  "structure": {
+    "outer_membrane": {
+      "composition": "Phospholipids and porins",
+      "function": "Permeable to small molecules"
+    },
+    "inner_membrane": {
+      "composition": "High protein content, cardiolipin",
+      "cristae": true,
+      "function": "Electron transport chain, ATP synthesis"
+    },
+    "intermembrane_space": {
+      "function": "Proton gradient storage"
+    },
+    "matrix": {
+      "contents": ["mtDNA", "Ribosomes", "Enzymes"],
+      "function": "TCA cycle, mtDNA replication"
+    }
+  },
+  "dimensions": {
+    "length_um": 2.0,
+    "width_um": 0.5
+  },
+  "copy_number_per_cell": 1000,
+  "genome": {
+    "type": "Circular mtDNA",
+    "size_bp": 16569,
+    "genes": 37,
+    "protein_coding_genes": 13,
+    "tRNA_genes": 22,
+    "rRNA_genes": 2
+  },
+  "key_complexes": {
+    "Complex_I": {
+      "name": "NADH dehydrogenase",
+      "subunits": 45,
+      "function": "NADH oxidation, proton pumping"
+    },
+    "Complex_II": {
+      "name": "Succinate dehydrogenase",
+      "subunits": 4,
+      "function": "Succinate oxidation"
+    },
+    "Complex_III": {
+      "name": "Cytochrome bc1",
+      "subunits": 11,
+      "function": "Electron transfer, proton pumping"
+    },
+    "Complex_IV": {
+      "name": "Cytochrome c oxidase",
+      "subunits": 13,
+      "function": "O2 reduction, proton pumping"
+    },
+    "Complex_V": {
+      "name": "ATP synthase",
+      "subunits": 16,
+      "function": "ATP synthesis"
+    }
+  },
+  "metabolic_rate_fW": 10,
+  "ATP_production_per_second": 100
+}

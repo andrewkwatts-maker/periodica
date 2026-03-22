@@ -1,0 +1,75 @@
+{
+  "Name": "Cupronickel 70/30",
+  "Formula": "Cu-Ni",
+  "Category": "Copper Alloy",
+  "SubCategory": "Cupronickel",
+  "Description": "Auto-generated copper alloy with Ni 30.0%",
+  "Components": [
+    {
+      "Element": "Cu",
+      "MinPercent": 69.0,
+      "MaxPercent": 71.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "Ni",
+      "MinPercent": 27.0,
+      "MaxPercent": 33.0,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.944,
+    "MeltingPoint_K": 1424.8,
+    "ThermalConductivity_W_mK": 215.6,
+    "ThermalExpansion_per_K": 1.4e-05,
+    "ElectricalResistivity_Ohm_m": 8.27e-08,
+    "SpecificHeat_J_kgK": 520
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 549.0,
+    "YieldStrength_MPa": 329.0,
+    "Elongation_percent": 42,
+    "Hardness_HV": 165.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "LatticeParameters": {
+      "a_pm": 361.5,
+      "b_pm": 361.5,
+      "c_pm": 361.5,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "AtomsPerUnitCell": 4
+  },
+  "Applications": [
+    "Electrical connectors",
+    "Heat exchangers",
+    "Marine hardware"
+  ],
+  "ProcessingMethods": [
+    "Casting",
+    "Cold working",
+    "Annealing"
+  ],
+  "Color": "#B87333",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Cu",
+      "element:Ni"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022789+00:00",
+    "model_version": "1.0.0"
+  }
+}

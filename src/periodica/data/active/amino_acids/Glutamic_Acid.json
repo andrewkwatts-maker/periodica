@@ -1,0 +1,32 @@
+{
+  "name": "Glutamic Acid",
+  "symbol": "E",
+  "category": "polar_negative",
+  "charge_pH7": -1.0,
+  "isoelectric_point": 3.22,
+  "hydropathy_index": -3.5,
+  "helix_propensity": 1.51,
+  "sheet_propensity": 0.37,
+  "turn_propensity": 0.74,
+  "pKa_carboxyl": 2.19,
+  "pKa_amino": 9.67,
+  "pKa_sidechain": 4.25,
+  "sidechain_ionization": "acidic",
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147358+00:00",
+    "model_version": "1.0.0"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "Name": "Silicon Bronze",
+  "Formula": "Cu-Mn-Si",
+  "Category": "Copper Alloy",
+  "SubCategory": "Copper Alloy",
+  "Description": "Auto-generated copper alloy with Si 3.0%, Mn 1.0%",
+  "Components": [
+    {
+      "Element": "Cu",
+      "MinPercent": 95.0,
+      "MaxPercent": 97.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 0.9,
+      "MaxPercent": 1.1,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Si",
+      "MinPercent": 2.7,
+      "MaxPercent": 3.3,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.237,
+    "MeltingPoint_K": 1287.1,
+    "ThermalConductivity_W_mK": 190.9,
+    "ThermalExpansion_per_K": 1.6e-05,
+    "ElectricalResistivity_Ohm_m": 8.205e-07,
+    "SpecificHeat_J_kgK": 540
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 567.0,
+    "YieldStrength_MPa": 340.0,
+    "Elongation_percent": 34,
+    "Hardness_HV": 170.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "LatticeParameters": {
+      "a_pm": 361.5,
+      "b_pm": 361.5,
+      "c_pm": 361.5,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "AtomsPerUnitCell": 4
+  },
+  "Applications": [
+    "Electrical connectors",
+    "Heat exchangers",
+    "Marine hardware"
+  ],
+  "ProcessingMethods": [
+    "Casting",
+    "Cold working",
+    "Annealing"
+  ],
+  "Color": "#B87333",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Cu",
+      "element:Si",
+      "element:Mn"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022839+00:00",
+    "model_version": "1.0.0"
+  }
+}

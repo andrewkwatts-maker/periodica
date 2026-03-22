@@ -1,0 +1,30 @@
+{
+  "symbol": "Pa",
+  "name": "Protactinium",
+  "atomic_number": 91,
+  "atomic_mass": 231.036,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 5.89,
+  "electronegativity": 1.5,
+  "atomic_radius": 180,
+  "covalent_radius": 200,
+  "melting_point": 1841,
+  "boiling_point": 4300,
+  "density": 15.37,
+  "electron_affinity": 53.0,
+  "valence_electrons": 5,
+  "electron_configuration": "[Rn] 5f² 6d¹ 7s²",
+  "primary_emission_wavelength": 417.5,
+  "visible_emission_wavelength": 417.5,
+  "isotopes": [
+    {
+      "mass_number": 231,
+      "neutrons": 140,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "32,760 years"
+    }
+  ]
+}

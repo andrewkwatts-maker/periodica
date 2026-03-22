@@ -1,0 +1,37 @@
+{
+  "symbol": "Cu",
+  "name": "Copper",
+  "atomic_number": 29,
+  "atomic_mass": 63.546,
+  "block": "d",
+  "period": 4,
+  "group": 11,
+  "ionization_energy": 7.726,
+  "electronegativity": 1.9,
+  "atomic_radius": 145,
+  "covalent_radius": 132,
+  "melting_point": 1358,
+  "boiling_point": 2835,
+  "density": 8.96,
+  "electron_affinity": 118.4,
+  "valence_electrons": 11,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s¹",
+  "primary_emission_wavelength": 324.8,
+  "visible_emission_wavelength": 515.0,
+  "isotopes": [
+    {
+      "mass_number": 63,
+      "neutrons": 34,
+      "abundance": 69.15,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 65,
+      "neutrons": 36,
+      "abundance": 30.85,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

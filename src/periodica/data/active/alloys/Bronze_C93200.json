@@ -1,0 +1,160 @@
+{
+  "Name": "Bronze (C93200 Bearing Bronze)",
+  "Formula": "Cu-Sn-Pb-Zn",
+  "Category": "Bronze",
+  "SubCategory": "Leaded Tin Bronze",
+  "Description": "High-lead tin bronze for bearings and bushings with excellent anti-friction properties",
+
+  "Components": [
+    {"Element": "Cu", "MinPercent": 81.0, "MaxPercent": 85.0, "Role": "Base"},
+    {"Element": "Sn", "MinPercent": 6.3, "MaxPercent": 7.5, "Role": "Hardening"},
+    {"Element": "Pb", "MinPercent": 6.0, "MaxPercent": 8.0, "Role": "Lubricity"},
+    {"Element": "Zn", "MinPercent": 2.0, "MaxPercent": 4.0, "Role": "Strengthening"},
+    {"Element": "Ni", "MinPercent": 0.0, "MaxPercent": 1.0, "Role": "Strengthening"},
+    {"Element": "Fe", "MinPercent": 0.0, "MaxPercent": 0.35, "Role": "Impurity"},
+    {"Element": "Sb", "MinPercent": 0.0, "MaxPercent": 0.35, "Role": "Hardening"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.93,
+    "MeltingPoint_K": 1123,
+    "ThermalConductivity_W_mK": 59,
+    "ThermalExpansion_per_K": 18.0e-6,
+    "ElectricalResistivity_Ohm_m": 1.1e-7,
+    "SpecificHeat_J_kgK": 376,
+    "YoungsModulus_GPa": 100,
+    "ShearModulus_GPa": 38,
+    "PoissonsRatio": 0.34,
+    "BrinellHardness_HB": 65
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 241,
+    "YieldStrength_MPa": 124,
+    "Elongation_percent": 20,
+    "ReductionOfArea_percent": 18,
+    "ImpactStrength_J": 30,
+    "FatigueStrength_MPa": 103
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": ["Pb_precipitates"],
+    "LatticeParameters": {
+      "a_pm": 365.0,
+      "b_pm": 365.0,
+      "c_pm": 365.0,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 258.1,
+    "StackingFaultEnergy_mJ_m2": 35
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Alpha Copper",
+        "Symbol": "alpha",
+        "Structure": "FCC",
+        "VolumePercent": 85,
+        "SnSolubility_percent": 15.8,
+        "Hardness_HV": 80
+      },
+      {
+        "Name": "Delta Phase",
+        "Symbol": "delta",
+        "Structure": "Intermetallic",
+        "VolumePercent": 8,
+        "Composition": "Cu31Sn8",
+        "Hardness_HV": 400
+      },
+      {
+        "Name": "Lead Inclusions",
+        "Symbol": "Pb",
+        "Structure": "FCC",
+        "VolumePercent": 7,
+        "Hardness_HV": 4
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 1123,
+      "Liquidus_K": 1273
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 100,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.45,
+      "ASTMGrainSizeNumber": 3,
+      "VoronoiSeedDensity_per_mm2": 100,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.1,
+      "NoiseOctaves": 4,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.7
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e10,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.1,
+        "HighAngleBoundaryFraction": 0.85,
+        "TwinBoundaryFraction": 0.05,
+        "GrainBoundaryEnergy_J_m2": 0.65
+      }
+    },
+    "Inclusions": {
+      "Types": ["Pb"],
+      "VolumeFraction": 0.07,
+      "AverageSize_um": 10,
+      "Distribution": "Interdentritic"
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,1], [2,0,0], [2,2,0]],
+      "Directions": [[1,1,0], [1,1,2]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "TribologicalProperties": {
+    "CoefficientOfFriction": 0.15,
+    "WearCoefficient": 1e-6,
+    "PVLimit_MPa_m_s": 7.0,
+    "MaxOperatingTemperature_K": 423
+  },
+
+  "Applications": ["Bearings", "Bushings", "Gears", "Piston rings", "Pump impellers"],
+  "ProcessingMethods": ["Continuous casting", "Sand casting", "Centrifugal casting", "Machining"],
+  "Color": "#CD7F32"
+}

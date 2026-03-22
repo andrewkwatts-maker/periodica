@@ -1,0 +1,150 @@
+{
+  "Name": "Carbon Steel (AISI 1045)",
+  "Formula": "Fe-C",
+  "Category": "Steel",
+  "SubCategory": "Medium Carbon Steel",
+  "Description": "Medium carbon steel with good balance of strength, ductility, and wear resistance",
+
+  "Components": [
+    {"Element": "Fe", "MinPercent": 98.51, "MaxPercent": 98.98, "Role": "Base"},
+    {"Element": "C", "MinPercent": 0.43, "MaxPercent": 0.50, "Role": "Hardening"},
+    {"Element": "Mn", "MinPercent": 0.60, "MaxPercent": 0.90, "Role": "Strengthening"},
+    {"Element": "P", "MinPercent": 0.0, "MaxPercent": 0.04, "Role": "Impurity"},
+    {"Element": "S", "MinPercent": 0.0, "MaxPercent": 0.05, "Role": "Impurity"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.85,
+    "MeltingPoint_K": 1698,
+    "ThermalConductivity_W_mK": 49.8,
+    "ThermalExpansion_per_K": 11.2e-6,
+    "ElectricalResistivity_Ohm_m": 1.71e-7,
+    "SpecificHeat_J_kgK": 486,
+    "YoungsModulus_GPa": 205,
+    "ShearModulus_GPa": 80,
+    "PoissonsRatio": 0.29,
+    "BrinellHardness_HB": 163
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 565,
+    "YieldStrength_MPa": 310,
+    "Elongation_percent": 16,
+    "ReductionOfArea_percent": 40,
+    "ImpactStrength_J": 25,
+    "FatigueStrength_MPa": 280
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "SecondaryStructures": ["FCC"],
+    "LatticeParameters": {
+      "a_pm": 286.65,
+      "b_pm": 286.65,
+      "c_pm": 286.65,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Im-3m",
+    "SpaceGroupNumber": 229,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 2,
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "BurgersVector_pm": 248.3
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Ferrite",
+        "Symbol": "alpha",
+        "Structure": "BCC",
+        "VolumePercent": 88,
+        "CarbonSolubility_ppm": 220,
+        "Hardness_HV": 80
+      },
+      {
+        "Name": "Pearlite",
+        "Symbol": "P",
+        "Structure": "Lamellar",
+        "VolumePercent": 12,
+        "LamellarSpacing_nm": 200,
+        "Hardness_HV": 280
+      }
+    ],
+    "TransformationTemperatures": {
+      "A1_K": 996,
+      "A3_K": 1053,
+      "Ms_K": 573
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 25,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.4,
+      "ASTMGrainSizeNumber": 7,
+      "VoronoiSeedDensity_per_mm2": 1600,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.05,
+      "NoiseOctaves": 4,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.6
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-4,
+        "InterstitialConcentration": 1e-6
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e12,
+        "BurgersVectorType": "a/2<111>",
+        "SlipSystems": ["110<111>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.2,
+        "HighAngleBoundaryFraction": 0.8,
+        "TwinBoundaryFraction": 0.05,
+        "GrainBoundaryEnergy_J_m2": 0.85
+      }
+    },
+    "Inclusions": {
+      "Types": ["MnS", "Al2O3"],
+      "VolumeFraction": 0.001,
+      "AverageSize_um": 5
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,0], [2,0,0], [2,1,1]],
+      "Directions": [[1,1,1], [1,1,0]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "HeatTreatmentResponse": {
+    "Annealing": {"Temperature_K": 1123, "Hardness_HB": 156},
+    "Normalizing": {"Temperature_K": 1173, "Hardness_HB": 170},
+    "Quenching": {"Temperature_K": 1103, "Medium": "Oil", "Hardness_HRC": 58},
+    "Tempering": {"Temperature_K": 673, "Hardness_HRC": 40}
+  },
+
+  "Applications": ["Gears", "Shafts", "Axles", "Bolts", "Connecting rods", "Crankshafts"],
+  "ProcessingMethods": ["Hot rolling", "Forging", "Machining", "Heat treatment"],
+  "Color": "#708090"
+}

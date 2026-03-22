@@ -1,0 +1,85 @@
+{
+  "name": "GFP mRNA Fragment",
+  "type": "mrna",
+  "organism": "Aequorea victoria",
+  "function": "Protein coding - fluorescent protein",
+  "sequence": "AUGAGUAAAGGGAGAAGAACUUUUACAGGAAAGGUUAUGAUAUAUUUACAGGAGAUAUGAAGGAAGUAUUAUAU",
+  "length": 74,
+  "gc_content": 29.7,
+  "base_composition": {
+    "A": 31,
+    "U": 21,
+    "G": 19,
+    "C": 3
+  },
+  "molecular_mass": 24257.8,
+  "melting_temperature": 82.4,
+  "complement": "UACUCAUUUCCCUCUUCUUGAAAAUGUCCUUUCCAAUACUAUAUAAAUGUCCUCUAUACUUCCUUCAUAAUAUA",
+  "reverse_complement": "AUAUAAUACUUCCUUCAUAUCUCCUGUAAAUAUAUCAUAACCUUUCCUGUAAAAGUUCUUCUCCCUUUACUCAU",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 4,
+        "end": 26,
+        "loop_start": 11,
+        "loop_end": 19,
+        "stem_length": 7,
+        "loop_length": 8,
+        "stem_sequence": "GUAAAGG",
+        "loop_sequence": "GAGAAGAA",
+        "stability": 0.43,
+        "matches": 6
+      },
+      {
+        "start": 6,
+        "end": 23,
+        "loop_start": 11,
+        "loop_end": 18,
+        "stem_length": 5,
+        "loop_length": 7,
+        "stem_sequence": "AAAGG",
+        "loop_sequence": "GAGAAGA",
+        "stability": 0.4,
+        "matches": 4
+      },
+      {
+        "start": 6,
+        "end": 24,
+        "loop_start": 11,
+        "loop_end": 19,
+        "stem_length": 5,
+        "loop_length": 8,
+        "stem_sequence": "AAAGG",
+        "loop_sequence": "GAGAAGAA",
+        "stability": 0.4,
+        "matches": 4
+      },
+      {
+        "start": 4,
+        "end": 26,
+        "loop_start": 10,
+        "loop_end": 20,
+        "stem_length": 6,
+        "loop_length": 10,
+        "stem_sequence": "GUAAAG",
+        "loop_sequence": "GGAGAAGAAC",
+        "stability": 0.33,
+        "matches": 5
+      },
+      {
+        "start": 5,
+        "end": 25,
+        "loop_start": 11,
+        "loop_end": 19,
+        "stem_length": 6,
+        "loop_length": 8,
+        "stem_sequence": "UAAAGG",
+        "loop_sequence": "GAGAAGAA",
+        "stability": 0.33,
+        "matches": 5
+      }
+    ]
+  },
+  "description": "5' region of GFP mRNA with start codon."
+}

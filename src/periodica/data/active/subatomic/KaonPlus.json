@@ -1,0 +1,42 @@
+{
+  "Name": "Kaon+",
+  "Symbol": "K+",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Composite Particle", "Kaon", "Strange Meson"],
+  "Charge_e": 1,
+  "Mass_MeVc2": 493.677,
+  "Mass_kg": 8.80e-28,
+  "Mass_amu": 0.5299,
+  "Spin_hbar": 0,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Strangeness": 1,
+  "Isospin_I": 0.5,
+  "Isospin_I3": 0.5,
+  "Parity_P": -1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1, "Charge_e": 0.6666666667, "Symbol": "u" },
+    { "Constituent": "Anti-Strange Quark", "Count": 1, "Charge_e": 0.3333333333, "Symbol": "s-bar", "IsAnti": true }
+  ],
+  "QuarkContent": "u anti-s",
+  "Stability": "Unstable",
+  "HalfLife_s": 1.238e-8,
+  "MeanLifetime_s": 1.238e-8,
+  "DecayProducts": ["Muon+", "Muon Neutrino", "Pion+", "Pion0"],
+  "DecayModes": [
+    { "Products": ["Muon+", "Muon Neutrino"], "BranchingRatio": 0.6356 },
+    { "Products": ["Pion+", "Pion0"], "BranchingRatio": 0.2067 },
+    { "Products": ["Pion+", "Pion+", "Pion-"], "BranchingRatio": 0.0559 },
+    { "Products": ["Pion+", "Pion0", "Pion0"], "BranchingRatio": 0.0173 }
+  ],
+  "Antiparticle": {
+    "Name": "Kaon-",
+    "Symbol": "K-"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak"],
+  "Discovery": {
+    "Year": 1947,
+    "Location": "Manchester",
+    "Notes": "Discovered in cosmic rays"
+  }
+}

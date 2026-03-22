@@ -1,0 +1,32 @@
+{
+  "name": "Tryptophan",
+  "symbol": "W",
+  "category": "nonpolar_aromatic",
+  "charge_pH7": -0.004,
+  "isoelectric_point": 6.11,
+  "hydropathy_index": -0.9,
+  "helix_propensity": 1.08,
+  "sheet_propensity": 1.37,
+  "turn_propensity": 0.96,
+  "pKa_carboxyl": 2.83,
+  "pKa_amino": 9.39,
+  "pKa_sidechain": null,
+  "sidechain_ionization": null,
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147469+00:00",
+    "model_version": "1.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "symbol": "Db",
+  "name": "Dubnium",
+  "atomic_number": 105,
+  "atomic_mass": 268,
+  "block": "d",
+  "period": 7,
+  "group": 5,
+  "ionization_energy": 6.8,
+  "electronegativity": 1.5,
+  "atomic_radius": 149,
+  "covalent_radius": 149,
+  "melting_point": 2900,
+  "boiling_point": null,
+  "density": 29.3,
+  "electron_affinity": null,
+  "valence_electrons": 5,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d³ 7s²",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 268,
+      "neutrons": 163,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "16 hours"
+    }
+  ]
+}

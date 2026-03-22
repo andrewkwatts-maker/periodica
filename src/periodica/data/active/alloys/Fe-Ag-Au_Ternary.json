@@ -1,0 +1,82 @@
+{
+  "Name": "Fe-Ag-Au Ternary",
+  "Formula": "Fe-Ag-Au",
+  "Category": "Steel",
+  "SubCategory": "Low Carbon Steel",
+  "Description": "Auto-generated steel with Ag 10.0%, Au 10.0%",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 79.0,
+      "MaxPercent": 81.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "Ag",
+      "MinPercent": 9.0,
+      "MaxPercent": 11.0,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Au",
+      "MinPercent": 9.0,
+      "MaxPercent": 11.0,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.597,
+    "MeltingPoint_K": 1603.7,
+    "ThermalConductivity_W_mK": 68.1,
+    "ThermalExpansion_per_K": 1.6e-05,
+    "ElectricalResistivity_Ohm_m": 1.817e-07,
+    "SpecificHeat_J_kgK": 540
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 690.0,
+    "YieldStrength_MPa": 414.0,
+    "Elongation_percent": 34,
+    "Hardness_HV": 207.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolling",
+    "Forging",
+    "Heat treatment"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Fe",
+      "element:Ag",
+      "element:Au"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.023192+00:00",
+    "model_version": "1.0.0"
+  }
+}

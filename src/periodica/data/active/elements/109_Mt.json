@@ -1,0 +1,30 @@
+{
+  "symbol": "Mt",
+  "name": "Meitnerium",
+  "atomic_number": 109,
+  "atomic_mass": 278,
+  "block": "d",
+  "period": 7,
+  "group": 9,
+  "ionization_energy": 8.0,
+  "electronegativity": 2.2,
+  "atomic_radius": 129,
+  "covalent_radius": 129,
+  "melting_point": 2500,
+  "boiling_point": null,
+  "density": 37.4,
+  "electron_affinity": null,
+  "valence_electrons": 9,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d⁷ 7s²",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 278,
+      "neutrons": 169,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "4.5 seconds"
+    }
+  ]
+}

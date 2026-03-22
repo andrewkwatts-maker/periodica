@@ -1,0 +1,32 @@
+{
+  "name": "Aspartic Acid",
+  "symbol": "D",
+  "three_letter_code": "Asp",
+  "molecular_formula": "C4H7NO4",
+  "molecular_mass": 133.104,
+  "atoms": {
+    "C": 4,
+    "H": 7,
+    "N": 1,
+    "O": 4
+  },
+  "pKa_carboxyl": 2.09,
+  "pKa_amino": 9.82,
+  "pKa_sidechain": 3.65,
+  "sidechain_ionization": "acidic",
+  "isoelectric_point": 2.77,
+  "hydropathy_index": -3.5,
+  "category": "polar_negative",
+  "polarity": "acidic",
+  "charge_pH7": -1.0,
+  "helix_propensity": 1.01,
+  "sheet_propensity": 0.54,
+  "turn_propensity": 1.46,
+  "codon_count": 2,
+  "codons": [
+    "GAU",
+    "GAC"
+  ],
+  "description": "An acidic amino acid with a carboxyl side chain. Important in enzyme active sites.",
+  "can_form_disulfide": false
+}

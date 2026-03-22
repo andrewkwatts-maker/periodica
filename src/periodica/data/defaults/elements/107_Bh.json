@@ -1,0 +1,30 @@
+{
+  "symbol": "Bh",
+  "name": "Bohrium",
+  "atomic_number": 107,
+  "atomic_mass": 270,
+  "block": "d",
+  "period": 7,
+  "group": 7,
+  "ionization_energy": 7.7,
+  "electronegativity": 1.9,
+  "atomic_radius": 141,
+  "covalent_radius": 141,
+  "melting_point": 2900,
+  "boiling_point": null,
+  "density": 37.1,
+  "electron_affinity": null,
+  "valence_electrons": 7,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d⁵ 7s²",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 270,
+      "neutrons": 163,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "61 seconds"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Adipocyte (White)",
+  "type": "adipocyte",
+  "organism": "Homo sapiens",
+  "diameter_um": 100.0,
+  "volume_fL": 523598.78,
+  "mass_pg": 549778.71,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 31415.93,
+  "surface_volume_ratio": 0.06,
+  "metabolic_rate_fW": 0.07,
+  "atp_turnover_per_s": 2309.0,
+  "o2_consumption_per_s": 385.0,
+  "estimated_doubling_time_hours": 1080553911.0,
+  "diffusion_time_ms": 5000.0,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "adipose",
+  "function": "Energy storage",
+  "nucleus": true,
+  "mitochondria_count": 100,
+  "lifespan_days": 3650,
+  "lipid_droplet_percentage": 90,
+  "key_proteins": [
+    "Perilipin",
+    "Leptin",
+    "Adiponectin",
+    "Lipoprotein lipase"
+  ],
+  "hormones_secreted": [
+    "Leptin",
+    "Adiponectin",
+    "Resistin"
+  ],
+  "description": "Large cells specialized for lipid storage. Single large lipid droplet occupies most of cell volume. Secrete important metabolic hormones."
+}

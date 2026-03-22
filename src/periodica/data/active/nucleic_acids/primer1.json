@@ -1,0 +1,26 @@
+{
+  "name": "PCR Primer Forward (GAPDH)",
+  "type": "primer",
+  "organism": "Homo sapiens",
+  "function": "PCR amplification primer for GAPDH gene",
+  "sequence": "GAAGGTGAAGGTCGGAGTCAACGGATTTGGT",
+  "length": 31,
+  "gc_content": 51.6,
+  "base_composition": {
+    "G": 11,
+    "A": 7,
+    "T": 8,
+    "C": 5
+  },
+  "molecular_mass": 9590.3,
+  "melting_temperature": 64.2,
+  "complement": "CTTCCACTTCCAGCCTCAGTTGCCTAAACCA",
+  "reverse_complement": "ACCAAATCCGTTGACTCCGACCTTCACTTC",
+  "secondary_structures": {
+    "hairpins": 0,
+    "details": []
+  },
+  "description": "Forward primer for amplifying human GAPDH (glyceraldehyde-3-phosphate dehydrogenase) for qPCR.",
+  "target_gene": "GAPDH",
+  "target_region": "Exon 1-2 junction"
+}

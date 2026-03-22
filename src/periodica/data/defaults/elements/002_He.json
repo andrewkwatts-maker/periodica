@@ -1,0 +1,37 @@
+{
+  "symbol": "He",
+  "name": "Helium",
+  "atomic_number": 2,
+  "atomic_mass": 4.0026,
+  "block": "s",
+  "period": 1,
+  "group": 18,
+  "ionization_energy": 24.587,
+  "electronegativity": null,
+  "atomic_radius": 31,
+  "covalent_radius": 28,
+  "melting_point": 0.95,
+  "boiling_point": 4.2,
+  "density": 0.00018,
+  "electron_affinity": 0,
+  "valence_electrons": 2,
+  "electron_configuration": "1s²",
+  "primary_emission_wavelength": 587.6,
+  "visible_emission_wavelength": 587.6,
+  "isotopes": [
+    {
+      "mass_number": 3,
+      "neutrons": 1,
+      "abundance": 0.0001,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 4,
+      "neutrons": 2,
+      "abundance": 99.9999,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

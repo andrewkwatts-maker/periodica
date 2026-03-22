@@ -1,0 +1,61 @@
+{
+    "Name": "Benzene",
+    "Formula": "C6H6",
+    "MolecularMass_amu": 78.11,
+    "MolecularMass_g_mol": 78.11,
+    "BondType": "Covalent",
+    "Geometry": "Planar Hexagonal",
+    "BondAngle_deg": 120.0,
+    "Polarity": "Nonpolar",
+    "MeltingPoint_K": 278.7,
+    "BoilingPoint_K": 353.3,
+    "Density_g_cm3": 0.8765,
+    "State_STP": "Liquid",
+    "Composition": [
+        {"Element": "C", "Count": 6},
+        {"Element": "H", "Count": 6}
+    ],
+    "Bonds": [
+        {"From": "C", "To": "C", "Type": "Aromatic", "Length_pm": 140, "Index": 1},
+        {"From": "C", "To": "C", "Type": "Aromatic", "Length_pm": 140, "Index": 2},
+        {"From": "C", "To": "C", "Type": "Aromatic", "Length_pm": 140, "Index": 3},
+        {"From": "C", "To": "C", "Type": "Aromatic", "Length_pm": 140, "Index": 4},
+        {"From": "C", "To": "C", "Type": "Aromatic", "Length_pm": 140, "Index": 5},
+        {"From": "C", "To": "C", "Type": "Aromatic", "Length_pm": 140, "Index": 6},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 7}
+    ],
+    "Atoms3D": [
+        {"element": "C", "x": 1.40, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "C", "x": 0.70, "y": 1.212, "z": 0.0, "index": 1},
+        {"element": "C", "x": -0.70, "y": 1.212, "z": 0.0, "index": 2},
+        {"element": "C", "x": -1.40, "y": 0.0, "z": 0.0, "index": 3},
+        {"element": "C", "x": -0.70, "y": -1.212, "z": 0.0, "index": 4},
+        {"element": "C", "x": 0.70, "y": -1.212, "z": 0.0, "index": 5},
+        {"element": "H", "x": 2.49, "y": 0.0, "z": 0.0, "index": 6},
+        {"element": "H", "x": 1.245, "y": 2.156, "z": 0.0, "index": 7},
+        {"element": "H", "x": -1.245, "y": 2.156, "z": 0.0, "index": 8},
+        {"element": "H", "x": -2.49, "y": 0.0, "z": 0.0, "index": 9},
+        {"element": "H", "x": -1.245, "y": -2.156, "z": 0.0, "index": 10},
+        {"element": "H", "x": 1.245, "y": -2.156, "z": 0.0, "index": 11}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "aromatic", "length_A": 1.40},
+        {"from": 1, "to": 2, "type": "aromatic", "length_A": 1.40},
+        {"from": 2, "to": 3, "type": "aromatic", "length_A": 1.40},
+        {"from": 3, "to": 4, "type": "aromatic", "length_A": 1.40},
+        {"from": 4, "to": 5, "type": "aromatic", "length_A": 1.40},
+        {"from": 5, "to": 0, "type": "aromatic", "length_A": 1.40},
+        {"from": 0, "to": 6, "type": "single", "length_A": 1.09},
+        {"from": 1, "to": 7, "type": "single", "length_A": 1.09},
+        {"from": 2, "to": 8, "type": "single", "length_A": 1.09},
+        {"from": 3, "to": 9, "type": "single", "length_A": 1.09},
+        {"from": 4, "to": 10, "type": "single", "length_A": 1.09},
+        {"from": 5, "to": 11, "type": "single", "length_A": 1.09}
+    ],
+    "DipoleMoment_D": 0.0,
+    "ElectronConfiguration": "C: 1s2 2s2 2p2, H: 1s1",
+    "Applications": ["Chemical synthesis", "Solvent", "Petrochemical feedstock", "Plastic production"],
+    "IUPAC_Name": "Benzene",
+    "Category": "Organic",
+    "Color": "#9C27B0"
+}

@@ -1,0 +1,45 @@
+{
+  "Name": "J/Psi",
+  "Symbol": "J/psi",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Meson", "Hadron", "Composite Particle", "Charmonium", "Vector Meson"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 3096.9,
+  "Mass_kg": 5.52e-27,
+  "Mass_amu": 3.323,
+  "Spin_hbar": 1,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Charm": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": -1,
+  "CParity": -1,
+  "Composition": [
+    { "Constituent": "Charm Quark", "Count": 1, "Charge_e": 0.6666666667, "Symbol": "c" },
+    { "Constituent": "Anti-Charm Quark", "Count": 1, "Charge_e": -0.6666666667, "Symbol": "c-bar", "IsAnti": true }
+  ],
+  "QuarkContent": "c anti-c",
+  "Notes": "Charmonium bound state, narrow resonance due to OZI suppression",
+  "Stability": "Unstable",
+  "HalfLife_s": 7.09e-21,
+  "MeanLifetime_s": 7.09e-21,
+  "Width_MeV": 0.0929,
+  "DecayProducts": ["Hadrons", "Electron", "Positron", "Muon+", "Muon-"],
+  "DecayModes": [
+    { "Products": ["Hadrons"], "BranchingRatio": 0.8778 },
+    { "Products": ["Electron", "Positron"], "BranchingRatio": 0.0594 },
+    { "Products": ["Muon+", "Muon-"], "BranchingRatio": 0.0593 }
+  ],
+  "Antiparticle": {
+    "Name": "J/Psi",
+    "Symbol": "J/psi",
+    "Notes": "Is its own antiparticle"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak"],
+  "Discovery": {
+    "Year": 1974,
+    "Location": "SLAC and BNL",
+    "Notes": "November Revolution - simultaneous discovery by Richter (SLAC) and Ting (BNL)"
+  }
+}

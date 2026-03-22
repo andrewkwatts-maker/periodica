@@ -1,0 +1,89 @@
+{
+  "Name": "Ferritic Stainless",
+  "Formula": "Fe-C-Cr-Si",
+  "Category": "Steel",
+  "SubCategory": "Ferritic Stainless Steel",
+  "Description": "Auto-generated steel with C 0.1%, Cr 17.0%, Si 0.5%",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 81.42,
+      "MaxPercent": 83.42,
+      "Role": "Base"
+    },
+    {
+      "Element": "C",
+      "MinPercent": 0.07,
+      "MaxPercent": 0.09,
+      "Role": "Trace"
+    },
+    {
+      "Element": "Cr",
+      "MinPercent": 15.3,
+      "MaxPercent": 18.7,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Si",
+      "MinPercent": 0.45,
+      "MaxPercent": 0.55,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.644,
+    "MeltingPoint_K": 1706.1,
+    "ThermalConductivity_W_mK": 28.5,
+    "ThermalExpansion_per_K": 1.8e-05,
+    "ElectricalResistivity_Ohm_m": 3.946e-07,
+    "SpecificHeat_J_kgK": 560
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 815.0,
+    "YieldStrength_MPa": 489.0,
+    "Elongation_percent": 26,
+    "Hardness_HV": 244.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolling",
+    "Forging",
+    "Heat treatment"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Fe",
+      "element:C",
+      "element:Cr",
+      "element:Si"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022468+00:00",
+    "model_version": "1.0.0"
+  }
+}

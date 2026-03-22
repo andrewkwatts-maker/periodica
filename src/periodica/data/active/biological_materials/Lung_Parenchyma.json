@@ -1,0 +1,50 @@
+{
+  "name": "Lung Parenchyma",
+  "type": "lung",
+  "organ_system": "respiratory",
+  "ecm_composition": {
+    "collagen_i": 0.1,
+    "collagen_iii": 0.05,
+    "elastin": 0.25,
+    "proteoglycans": 0.03,
+    "water": 0.35,
+    "air": 0.2,
+    "other": 0.02
+  },
+  "cell_composition": {
+    "pneumocyte_type_i": 0.08,
+    "pneumocyte_type_ii": 0.15,
+    "macrophage": 0.02
+  },
+  "porosity": 0.8,
+  "vascularization": "very_high",
+  "innervation": true,
+  "healing_time_weeks": 8,
+  "function": "Gas exchange, surfactant production",
+  "description": "Highly porous tissue for efficient gas exchange. Alveolar walls have high elastin content for breathing mechanics.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 2.6129,
+    "youngs_modulus_voigt": 130.3703,
+    "youngs_modulus_reuss": 0.275,
+    "ultimate_strength_MPa": 0.0871,
+    "poissons_ratio": 0.402,
+    "shear_modulus_MPa": 0.9315
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.076,
+    "water_content_percent": 35.0
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_i": 0.1,
+    "collagen_iii": 0.05,
+    "elastin": 0.25,
+    "proteoglycans": 0.03,
+    "water": 0.35,
+    "air": 0.2,
+    "other": 0.02
+  }
+}
