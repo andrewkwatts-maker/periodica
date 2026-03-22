@@ -1,0 +1,74 @@
+{
+  "Name": "Alumina (Al2O3 99.5%)",
+  "Standard": "ASTM C1161",
+  "Category": "Ceramic",
+  "SubCategory": "Oxide Ceramic",
+  "Description": "High purity aluminum oxide ceramic with excellent hardness and wear resistance",
+  "BaseAlloy": null,
+  "Processing": {
+    "Condition": "Sintered",
+    "SinteringTemperature_K": 1923,
+    "Porosity_percent": 0.5
+  },
+  "ElasticProperties": {
+    "YoungsModulus_GPa": 380,
+    "ShearModulus_GPa": 160,
+    "BulkModulus_GPa": 228,
+    "PoissonsRatio": 0.22
+  },
+  "StrengthProperties": {
+    "FlexuralStrength_MPa": 379,
+    "CompressiveStrength_MPa": 2600,
+    "TensileStrength_MPa": 262,
+    "ShearStrength_MPa": 330
+  },
+  "Hardness": {
+    "Vickers_HV": 1500,
+    "Knoop_HK": 1440,
+    "Mohs": 9.0
+  },
+  "Ductility": {
+    "Elongation_percent": 0,
+    "ReductionOfArea_percent": 0
+  },
+  "FractureMechanics": {
+    "FractureToughness_KIC_MPa_sqrt_m": 4.0,
+    "WeibullModulus": 10,
+    "CriticalFlawSize_um": 30
+  },
+  "ThermalProperties": {
+    "MeltingPoint_K": 2323,
+    "ThermalConductivity_W_mK": 30,
+    "SpecificHeat_J_kgK": 880,
+    "ThermalExpansion_per_K": 8.1e-6,
+    "ThermalShockResistance_deltaT_K": 200
+  },
+  "ElectricalProperties": {
+    "ElectricalResistivity_Ohm_m": 1e14,
+    "DielectricConstant": 9.8,
+    "DielectricStrength_kV_mm": 17
+  },
+  "PhysicalProperties": {
+    "Density_kg_m3": 3950
+  },
+  "WearResistance": {
+    "AbrasionResistance": "Excellent",
+    "ErosionResistance": "Excellent"
+  },
+  "SimulationParameters": {
+    "FEA": {"RecommendedMeshSize_mm": 0.5, "StressStrainModel": "LinearElasticBrittle", "FailureModel": "Weibull"}
+  },
+  "FailureCriteria": {
+    "MaxPrincipalStress_MPa": 262,
+    "MaxTensileStress_MPa": 262,
+    "MaxTemperature_K": 1973
+  },
+  "ServiceConditions": {
+    "MinServiceTemperature_K": 4,
+    "MaxServiceTemperature_K": 1973,
+    "CorrosionResistance": "Excellent",
+    "SafetyFactor_recommended": 5.0
+  },
+  "Applications": ["Cutting tools", "Wear parts", "Electrical insulators", "Biomedical implants"],
+  "Color": "#FFFFFF"
+}

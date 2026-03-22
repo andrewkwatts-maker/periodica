@@ -1,0 +1,37 @@
+{
+  "symbol": "Li",
+  "name": "Lithium",
+  "atomic_number": 3,
+  "atomic_mass": 6.94,
+  "block": "s",
+  "period": 2,
+  "group": 1,
+  "ionization_energy": 5.392,
+  "electronegativity": 0.98,
+  "atomic_radius": 167,
+  "covalent_radius": 128,
+  "melting_point": 453,
+  "boiling_point": 1615,
+  "density": 0.534,
+  "electron_affinity": 59.6,
+  "valence_electrons": 1,
+  "electron_configuration": "1s² 2s¹",
+  "primary_emission_wavelength": 670.8,
+  "visible_emission_wavelength": 670.8,
+  "isotopes": [
+    {
+      "mass_number": 6,
+      "neutrons": 3,
+      "abundance": 7.5,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 7,
+      "neutrons": 4,
+      "abundance": 92.5,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "symbol": "Ti",
+  "name": "Titanium",
+  "atomic_number": 22,
+  "atomic_mass": 47.867,
+  "block": "d",
+  "period": 4,
+  "group": 4,
+  "ionization_energy": 6.828,
+  "electronegativity": 1.54,
+  "atomic_radius": 176,
+  "covalent_radius": 160,
+  "melting_point": 1941,
+  "boiling_point": 3560,
+  "density": 4.54,
+  "electron_affinity": 7.6,
+  "valence_electrons": 4,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d² 4s²",
+  "primary_emission_wavelength": 498.2,
+  "visible_emission_wavelength": 498.2,
+  "isotopes": [
+    {
+      "mass_number": 46,
+      "neutrons": 24,
+      "abundance": 8.25,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 47,
+      "neutrons": 25,
+      "abundance": 7.44,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 48,
+      "neutrons": 26,
+      "abundance": 73.72,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 49,
+      "neutrons": 27,
+      "abundance": 5.41,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 50,
+      "neutrons": 28,
+      "abundance": 5.18,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

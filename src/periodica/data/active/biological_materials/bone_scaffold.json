@@ -1,0 +1,52 @@
+{
+  "name": "Hydroxyapatite Bone Scaffold",
+  "type": "biomaterial_scaffold",
+  "organ_system": "skeletal",
+  "ecm_composition": {
+    "hydroxyapatite": 0.95,
+    "tricalcium_phosphate": 0.03,
+    "silica": 0.02
+  },
+  "cell_composition": {
+    "osteoblast": 0.0,
+    "osteocyte": 0.0,
+    "osteoclast": 0.0
+  },
+  "porosity": 0.70,
+  "pore_size_um": 300,
+  "interconnectivity": 0.95,
+  "vascularization": "none",
+  "innervation": false,
+  "remodeling_rate_per_year": null,
+  "healing_time_weeks": null,
+  "function": "Bone tissue engineering scaffold for guided bone regeneration",
+  "description": "Synthetic porous hydroxyapatite scaffold designed for bone tissue engineering. High porosity and interconnected pore structure promote cell infiltration and vascularization.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 500,
+    "youngs_modulus_voigt": 800,
+    "youngs_modulus_reuss": 300,
+    "ultimate_strength_MPa": 5.0,
+    "poissons_ratio": 0.28,
+    "shear_modulus_MPa": 195
+  },
+  "physical_properties": {
+    "density_g_cm3": 0.95,
+    "water_content_percent": 0.0
+  },
+  "derived_properties": {
+    "stiffness_category": "Hard",
+    "model_used": "Gibson-Ashby porous material model"
+  },
+  "biocompatibility": {
+    "cytotoxicity": "Non-cytotoxic",
+    "hemolysis": "Non-hemolytic",
+    "implant_grade": "ISO 10993 compliant"
+  },
+  "degradation": {
+    "degradable": true,
+    "degradation_time_months": 24,
+    "degradation_products": ["Calcium", "Phosphate"]
+  },
+  "fabrication_method": "3D printing (stereolithography)",
+  "applications": ["Bone defect repair", "Dental implants", "Spinal fusion"]
+}

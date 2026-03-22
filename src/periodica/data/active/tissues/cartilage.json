@@ -1,0 +1,45 @@
+{
+  "name": "Hyaline Cartilage",
+  "type": "connective_tissue",
+  "organism": "Homo sapiens",
+  "location": ["articular_surfaces", "trachea", "nose"],
+  "cell_composition": {
+    "chondrocytes": {
+      "fraction": 0.02,
+      "diameter_um": 15,
+      "density_per_mm3": 10000
+    }
+  },
+  "ecm_composition": {
+    "collagen_ii": 0.15,
+    "proteoglycans": 0.10,
+    "hyaluronan": 0.02,
+    "water": 0.70,
+    "other": 0.03
+  },
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 1.0,
+    "poissons_ratio": 0.45,
+    "compressive_strength_MPa": 5.0,
+    "tensile_strength_MPa": 20.0
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.1,
+    "water_content_percent": 70,
+    "thickness_mm": 2.5,
+    "avascular": true
+  },
+  "functions": [
+    "load_bearing",
+    "shock_absorption",
+    "low_friction_articulation"
+  ],
+  "regeneration": {
+    "capacity": "very_limited",
+    "healing_mechanism": "fibrocartilage_scar"
+  },
+  "metadata": {
+    "common_pathologies": ["osteoarthritis", "chondromalacia"],
+    "source": "literature"
+  }
+}

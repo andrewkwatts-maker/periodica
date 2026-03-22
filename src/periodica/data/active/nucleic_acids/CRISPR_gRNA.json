@@ -1,0 +1,85 @@
+{
+  "name": "CRISPR gRNA",
+  "type": "rna",
+  "organism": "Synthetic",
+  "function": "Genome editing guide",
+  "sequence": "GGGUGGGUUUUGGGUGGGGGGGUUUUAGAGCUAGAAAUAGCAAGUUAAAAUAAGGCUAGUCCGUUAUCAACUUGAAAAAGUGGCACCGAGUCGGUGCUUUU",
+  "length": 101,
+  "gc_content": 45.5,
+  "base_composition": {
+    "G": 34,
+    "U": 29,
+    "A": 26,
+    "C": 12
+  },
+  "molecular_mass": 33040.2,
+  "melting_temperature": 92.6,
+  "complement": "CCCACCCAAAACCCACCCCCCCAAAAUCUCGAUCUUUAUCGUUCAAUUUUAUUCCGAUCAGGCAAUAGUUGAACUUUUUCACCGUGGCUCAGCCACGAAAA",
+  "reverse_complement": "AAAAGCACCGACUCGGUGCCACUUUUUCAAGUUGAUAACGGACUAGCCUUAUUUUAACUUGCUAUUUCUAGCUCUAAAACCCCCCCACCCAAAACCCACCC",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 81,
+        "end": 98,
+        "loop_start": 88,
+        "loop_end": 91,
+        "stem_length": 7,
+        "loop_length": 3,
+        "stem_sequence": "GGCACCG",
+        "loop_sequence": "AGU",
+        "stability": 0.86,
+        "matches": 6
+      },
+      {
+        "start": 81,
+        "end": 98,
+        "loop_start": 87,
+        "loop_end": 92,
+        "stem_length": 6,
+        "loop_length": 5,
+        "stem_sequence": "GGCACC",
+        "loop_sequence": "GAGUC",
+        "stability": 0.83,
+        "matches": 5
+      },
+      {
+        "start": 82,
+        "end": 97,
+        "loop_start": 88,
+        "loop_end": 91,
+        "stem_length": 6,
+        "loop_length": 3,
+        "stem_sequence": "GCACCG",
+        "loop_sequence": "AGU",
+        "stability": 0.83,
+        "matches": 6
+      },
+      {
+        "start": 81,
+        "end": 98,
+        "loop_start": 86,
+        "loop_end": 93,
+        "stem_length": 5,
+        "loop_length": 7,
+        "stem_sequence": "GGCAC",
+        "loop_sequence": "CGAGUCG",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 82,
+        "end": 97,
+        "loop_start": 87,
+        "loop_end": 92,
+        "stem_length": 5,
+        "loop_length": 5,
+        "stem_sequence": "GCACC",
+        "loop_sequence": "GAGUC",
+        "stability": 0.8,
+        "matches": 5
+      }
+    ]
+  },
+  "description": "CRISPR single guide RNA for genome editing."
+}

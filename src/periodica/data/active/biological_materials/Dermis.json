@@ -1,0 +1,46 @@
+{
+  "name": "Dermis",
+  "type": "connective",
+  "ecm_composition": {
+    "collagen": 0.6,
+    "elastin": 0.1,
+    "hyaluronic_acid": 0.05
+  },
+  "ecm_composition_normalized": {
+    "collagen": 0.7999999999999999,
+    "elastin": 0.13333333333333333,
+    "hyaluronic_acid": 0.06666666666666667
+  },
+  "cell_composition": {},
+  "porosity": 30.0,
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 0.4569,
+    "youngs_modulus_voigt": 0.9467,
+    "youngs_modulus_reuss": 0.9184,
+    "ultimate_strength_MPa": 0.0152,
+    "poissons_ratio": 0.35,
+    "shear_modulus_MPa": 0.1692
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.013,
+    "water_content_percent": 0
+  },
+  "derived_properties": {
+    "stiffness_category": "Soft",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "description": "Skin dermal layer",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "cells"
+    ],
+    "derivation_chain": [
+      "cells",
+      "biomaterial_predictor"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.144536+00:00",
+    "model_version": "1.0.0"
+  }
+}

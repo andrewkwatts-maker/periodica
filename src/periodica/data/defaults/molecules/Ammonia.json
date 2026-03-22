@@ -1,0 +1,40 @@
+{
+    "Name": "Ammonia",
+    "Formula": "NH3",
+    "MolecularMass_amu": 17.031,
+    "MolecularMass_g_mol": 17.031,
+    "BondType": "Covalent",
+    "Geometry": "Trigonal Pyramidal",
+    "BondAngle_deg": 107.0,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 195.42,
+    "BoilingPoint_K": 239.81,
+    "Density_g_cm3": 0.000730,
+    "State_STP": "Gas",
+    "Composition": [
+        {"Element": "N", "Count": 1},
+        {"Element": "H", "Count": 3}
+    ],
+    "Bonds": [
+        {"From": "N", "To": "H", "Type": "Single", "Length_pm": 101, "Index": 1},
+        {"From": "N", "To": "H", "Type": "Single", "Length_pm": 101, "Index": 2},
+        {"From": "N", "To": "H", "Type": "Single", "Length_pm": 101, "Index": 3}
+    ],
+    "Atoms3D": [
+        {"element": "N", "x": 0.0, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "H", "x": 0.812, "y": 0.0, "z": -0.601, "index": 1},
+        {"element": "H", "x": -0.406, "y": 0.703, "z": -0.601, "index": 2},
+        {"element": "H", "x": -0.406, "y": -0.703, "z": -0.601, "index": 3}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "single", "length_A": 1.01},
+        {"from": 0, "to": 2, "type": "single", "length_A": 1.01},
+        {"from": 0, "to": 3, "type": "single", "length_A": 1.01}
+    ],
+    "DipoleMoment_D": 1.47,
+    "ElectronConfiguration": "N: 1s2 2s2 2p3, H: 1s1",
+    "Applications": ["Fertilizer production", "Refrigerant", "Cleaning agent", "Chemical synthesis"],
+    "IUPAC_Name": "Azane",
+    "Category": "Inorganic",
+    "Color": "#7E57C2"
+}

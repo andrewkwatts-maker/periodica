@@ -1,0 +1,44 @@
+{
+  "name": "Trabecular Bone",
+  "type": "bone",
+  "ecm_composition": {
+    "hydroxyapatite": 0.5,
+    "collagen": 0.3
+  },
+  "ecm_composition_normalized": {
+    "hydroxyapatite": 0.625,
+    "collagen": 0.37499999999999994
+  },
+  "cell_composition": {},
+  "porosity": 75.0,
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 2285.2513,
+    "youngs_modulus_voigt": 73125.375,
+    "youngs_modulus_reuss": 2.6666,
+    "ultimate_strength_MPa": 19.0438,
+    "poissons_ratio": 0.287,
+    "shear_modulus_MPa": 887.4762
+  },
+  "physical_properties": {
+    "density_g_cm3": 2.35,
+    "water_content_percent": 0
+  },
+  "derived_properties": {
+    "stiffness_category": "Hard",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "description": "Spongy bone tissue",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "cells"
+    ],
+    "derivation_chain": [
+      "cells",
+      "biomaterial_predictor"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.144224+00:00",
+    "model_version": "1.0.0"
+  }
+}

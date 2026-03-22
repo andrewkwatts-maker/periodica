@@ -1,0 +1,29 @@
+{
+  "Name": "Neutron",
+  "Symbol": "n",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 939.56542052,
+  "Mass_kg": 1.67492749804e-27,
+  "Mass_amu": 1.00866491595,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": -9.6623650e-27,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Isospin_I": 0.5,
+  "Isospin_I3": -0.5,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1, "Charge_e": 0.6666666667 },
+    { "Constituent": "Down Quark", "Count": 2, "Charge_e": -0.3333333333 }
+  ],
+  "Stability": "Unstable",
+  "HalfLife_s": 880.3, // Half-life of a free neutron; stable when bound in most nuclei
+  "DecayProducts": ["Proton", "Electron", "Electron Antineutrino"],
+  "Antiparticle": {
+    "Name": "Antineutron",
+    "Symbol": "n̅"
+  },
+  "InteractionForces": ["Strong", "Weak", "Gravitational"] // Free neutron is neutral, so no direct electromagnetic interaction
+}

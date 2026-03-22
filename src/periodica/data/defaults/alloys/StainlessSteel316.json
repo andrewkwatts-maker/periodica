@@ -1,0 +1,148 @@
+{
+  "Name": "Stainless Steel 316",
+  "Formula": "Fe-Cr-Ni-Mo",
+  "Category": "Steel",
+  "SubCategory": "Austenitic Stainless Steel",
+  "Description": "Marine-grade stainless steel with excellent corrosion resistance, especially to chlorides",
+
+  "Components": [
+    {"Element": "Fe", "MinPercent": 62.0, "MaxPercent": 72.0, "Role": "Base"},
+    {"Element": "Cr", "MinPercent": 16.0, "MaxPercent": 18.0, "Role": "Corrosion Resistance"},
+    {"Element": "Ni", "MinPercent": 10.0, "MaxPercent": 14.0, "Role": "Austenite Stabilizer"},
+    {"Element": "Mo", "MinPercent": 2.0, "MaxPercent": 3.0, "Role": "Pitting Resistance"},
+    {"Element": "Mn", "MinPercent": 0.0, "MaxPercent": 2.0, "Role": "Deoxidizer"},
+    {"Element": "Si", "MinPercent": 0.0, "MaxPercent": 1.0, "Role": "Deoxidizer"},
+    {"Element": "C", "MinPercent": 0.0, "MaxPercent": 0.08, "Role": "Strengthening"},
+    {"Element": "N", "MinPercent": 0.0, "MaxPercent": 0.1, "Role": "Strengthening"},
+    {"Element": "P", "MinPercent": 0.0, "MaxPercent": 0.045, "Role": "Impurity"},
+    {"Element": "S", "MinPercent": 0.0, "MaxPercent": 0.03, "Role": "Impurity"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.0,
+    "MeltingPoint_K": 1648,
+    "ThermalConductivity_W_mK": 16.3,
+    "ThermalExpansion_per_K": 16.0e-6,
+    "ElectricalResistivity_Ohm_m": 7.4e-7,
+    "SpecificHeat_J_kgK": 500,
+    "YoungsModulus_GPa": 193,
+    "ShearModulus_GPa": 77,
+    "PoissonsRatio": 0.30,
+    "BrinellHardness_HB": 217
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 515,
+    "YieldStrength_MPa": 205,
+    "Elongation_percent": 40,
+    "ReductionOfArea_percent": 60,
+    "ImpactStrength_J": 150,
+    "FatigueStrength_MPa": 260
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": [],
+    "LatticeParameters": {
+      "a_pm": 359.2,
+      "b_pm": 359.2,
+      "c_pm": 359.2,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 254.0,
+    "StackingFaultEnergy_mJ_m2": 25
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Austenite",
+        "Symbol": "gamma",
+        "Structure": "FCC",
+        "VolumePercent": 100,
+        "Magnetic": false,
+        "Hardness_HV": 190
+      }
+    ],
+    "TransformationTemperatures": {
+      "Md30_K": 243,
+      "SigmaFormation_K": 1023
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 45,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 6,
+      "VoronoiSeedDensity_per_mm2": 494,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 45
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.95
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e11,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.15,
+        "HighAngleBoundaryFraction": 0.55,
+        "TwinBoundaryFraction": 0.30,
+        "GrainBoundaryEnergy_J_m2": 0.82
+      }
+    },
+    "Inclusions": {
+      "Types": ["Cr2O3", "MoO3"],
+      "VolumeFraction": 0.0004,
+      "AverageSize_um": 1.5
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,1], [2,0,0], [2,2,0]],
+      "Directions": [[1,1,0], [1,1,2]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "CorrosionResistance": {
+    "PREN": 24.5,
+    "PassivationFilmComposition": "Cr2O3-MoO3",
+    "PittingPotential_mV_SCE": 400,
+    "CriticalPittingTemperature_K": 293
+  },
+
+  "Applications": ["Marine equipment", "Chemical processing", "Medical implants", "Pharmaceutical equipment", "Food processing"],
+  "ProcessingMethods": ["Cold rolling", "Annealing", "Welding", "Deep drawing"],
+  "Color": "#B0B0B0"
+}

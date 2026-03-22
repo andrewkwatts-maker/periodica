@@ -1,0 +1,52 @@
+{
+  "name": "Red Blood Cell (Erythrocyte)",
+  "type": "erythrocyte",
+  "organism": "Homo sapiens",
+  "tissue_origin": "bone_marrow",
+  "properties": {
+    "diameter_um": 7.5,
+    "thickness_um": 2.5,
+    "volume_fl": 90,
+    "surface_area_um2": 140,
+    "mass_pg": 27,
+    "hemoglobin_content_pg": 27,
+    "lifespan_days": 120
+  },
+  "composition": {
+    "water_percent": 66,
+    "hemoglobin_percent": 33,
+    "lipid_percent": 0.5,
+    "other_protein_percent": 0.5
+  },
+  "components": {
+    "hemoglobin": {
+      "count": 270000000,
+      "per_cell": true
+    },
+    "spectrin": {
+      "count": 200000,
+      "function": "membrane_skeleton"
+    },
+    "band_3": {
+      "count": 1200000,
+      "function": "anion_exchanger"
+    }
+  },
+  "metabolic_properties": {
+    "oxygen_capacity_ml_per_dl": 20,
+    "glucose_consumption_umol_per_hour": 0.5,
+    "atp_production_pathway": "glycolysis_only",
+    "lacks_nucleus": true,
+    "lacks_mitochondria": true
+  },
+  "membrane_composition": {
+    "phospholipid_percent": 50,
+    "cholesterol_percent": 25,
+    "protein_percent": 25
+  },
+  "metadata": {
+    "cell_count_per_ul_blood": 5000000,
+    "hematocrit_percent": 45,
+    "source": "literature"
+  }
+}

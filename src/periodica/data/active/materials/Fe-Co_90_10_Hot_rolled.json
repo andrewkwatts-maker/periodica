@@ -1,0 +1,132 @@
+{
+  "Name": "Fe-Co 90/10 (Hot rolled)",
+  "SourceAlloy": "Fe-Co 90/10",
+  "Category": "Steel",
+  "Processing": "Hot rolled",
+  "Description": "Material derived from Fe-Co 90/10 via hot rolled",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 89.0,
+      "MaxPercent": 91.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "Co",
+      "MinPercent": 9.0,
+      "MaxPercent": 11.0,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.966,
+    "MeltingPoint_K": 1752.5,
+    "ThermalConductivity_W_mK": 57.7,
+    "ThermalExpansion_per_K": 1.4e-05,
+    "ElectricalResistivity_Ohm_m": 1.436e-07,
+    "SpecificHeat_J_kgK": 520
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 662.0,
+    "YieldStrength_MPa": 397.0,
+    "Elongation_percent": 42,
+    "Hardness_HV": 199.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Ferrite",
+        "Symbol": "alpha",
+        "Structure": "BCC",
+        "VolumePercent": 100,
+        "Magnetic": true,
+        "Hardness_HV": 199.0
+      }
+    ],
+    "TransformationTemperatures": {}
+  },
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50.0,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400.0,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 5.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.95
+    },
+    "Defects": {
+      "VacancyConcentration": 1e-05,
+      "DislocationDensity_per_m2": 1000000000000.0,
+      "StressField": {
+        "Type": "VonMises",
+        "MaxStress_MPa": 119.1
+      }
+    },
+    "Inclusions": {
+      "Density_per_mm3": 50,
+      "Types": [
+        {
+          "Type": "Oxide",
+          "Shape": "Globular"
+        }
+      ],
+      "AverageSize_um": 5.0
+    }
+  },
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "Random",
+    "TextureStrength_mrd": 1.0
+  },
+  "CorrosionResistance": {
+    "PREN": 0.0,
+    "PassivationFilmComposition": "None",
+    "PittingPotential_mV_SCE": 0
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolled"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "alloy:Fe-Co 90/10"
+    ],
+    "derivation_chain": [
+      "elements",
+      "alloy",
+      "material"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.036206+00:00",
+    "model_version": "1.0.0"
+  }
+}

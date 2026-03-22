@@ -1,0 +1,30 @@
+{
+  "symbol": "Fr",
+  "name": "Francium",
+  "atomic_number": 87,
+  "atomic_mass": 223,
+  "block": "s",
+  "period": 7,
+  "group": 1,
+  "ionization_energy": 3.89939,
+  "electronegativity": 0.7,
+  "atomic_radius": 348,
+  "covalent_radius": 260,
+  "melting_point": 300,
+  "boiling_point": 950,
+  "density": 1.87,
+  "electron_affinity": 47.0,
+  "valence_electrons": 1,
+  "electron_configuration": "[Rn] 7s¹",
+  "primary_emission_wavelength": 718.0,
+  "visible_emission_wavelength": 700.0,
+  "isotopes": [
+    {
+      "mass_number": 223,
+      "neutrons": 136,
+      "abundance": 0,
+      "is_stable": false,
+      "half_life": "22 minutes"
+    }
+  ]
+}

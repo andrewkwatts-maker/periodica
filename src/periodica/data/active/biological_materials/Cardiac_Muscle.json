@@ -1,0 +1,48 @@
+{
+  "name": "Cardiac Muscle",
+  "type": "muscle_cardiac",
+  "organ_system": "cardiovascular",
+  "ecm_composition": {
+    "collagen_i": 0.03,
+    "collagen_iii": 0.02,
+    "elastin": 0.01,
+    "laminin": 0.02,
+    "water": 0.72,
+    "other": 0.05
+  },
+  "cell_composition": {
+    "cardiomyocyte": 0.75,
+    "fibroblast": 0.1,
+    "endothelial": 0.05
+  },
+  "porosity": 0.0,
+  "vascularization": "very_high",
+  "innervation": true,
+  "healing_time_weeks": 8,
+  "function": "Blood pumping, circulation",
+  "description": "Involuntary striated muscle of the heart. Cardiomyocytes connected by intercalated discs for synchronized contraction.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 30.8064,
+    "youngs_modulus_voigt": 49.5953,
+    "youngs_modulus_reuss": 12.0175,
+    "ultimate_strength_MPa": 1.0269,
+    "poissons_ratio": 0.477,
+    "shear_modulus_MPa": 10.4283
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.026,
+    "water_content_percent": 84.7
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_i": 0.03529411764705882,
+    "collagen_iii": 0.023529411764705882,
+    "elastin": 0.011764705882352941,
+    "laminin": 0.023529411764705882,
+    "water": 0.8470588235294118,
+    "other": 0.05882352941176471
+  }
+}

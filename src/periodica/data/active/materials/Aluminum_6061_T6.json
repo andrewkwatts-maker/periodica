@@ -1,0 +1,79 @@
+{
+  "Name": "Aluminum 6061-T6",
+  "Standard": "AA 6061-T6",
+  "Category": "Aluminum Alloy",
+  "SubCategory": "Precipitation Hardened",
+  "Description": "Heat treatable aluminum alloy with excellent strength-to-weight ratio",
+  "BaseAlloy": "Aluminum_6061",
+  "Processing": {
+    "Condition": "T6",
+    "HeatTreatment": "Solution treated, artificially aged",
+    "ColdWorkPercent": 0,
+    "GrainSizeASTM": 4
+  },
+  "ElasticProperties": {
+    "YoungsModulus_GPa": 68.9,
+    "ShearModulus_GPa": 26.0,
+    "BulkModulus_GPa": 67.6,
+    "PoissonsRatio": 0.33
+  },
+  "StrengthProperties": {
+    "YieldStrength_MPa": 276,
+    "UltimateTensileStrength_MPa": 310,
+    "CompressiveYieldStrength_MPa": 276,
+    "ShearStrength_MPa": 207,
+    "StrainHardeningExponent": 0.085,
+    "StrengthCoefficient_MPa": 405
+  },
+  "Hardness": {
+    "Brinell_HB": 95,
+    "Rockwell_HRB": 60,
+    "Vickers_HV": 107
+  },
+  "Ductility": {
+    "Elongation_percent": 12,
+    "ReductionOfArea_percent": 25
+  },
+  "FractureMechanics": {
+    "FractureToughness_KIC_MPa_sqrt_m": 29,
+    "JIC_kJ_m2": 18,
+    "CharpyImpact_J": {"at_20C": 35, "at_minus40C": 32},
+    "CrackGrowthParameters": {"Paris_C": 1.2e-11, "Paris_m": 3.5, "ThresholdDeltaK_MPa_sqrt_m": 1.5}
+  },
+  "FatigueProperties": {
+    "FatigueLimit_MPa": 96,
+    "FatigueStrengthCoefficient_MPa": 680,
+    "FatigueStrengthExponent": -0.11,
+    "EnduranceLimit_cycles": 5e8
+  },
+  "ThermalProperties": {
+    "MeltingPoint_K": 855,
+    "ThermalConductivity_W_mK": 167,
+    "SpecificHeat_J_kgK": 896,
+    "ThermalExpansion_per_K": 23.6e-6
+  },
+  "ElectricalProperties": {
+    "ElectricalResistivity_Ohm_m": 3.99e-8,
+    "PercentIACS": 43
+  },
+  "PhysicalProperties": {
+    "Density_kg_m3": 2700
+  },
+  "SimulationParameters": {
+    "FEA": {"RecommendedMeshSize_mm": 1.5, "StressStrainModel": "BilinearIsotropicHardening", "TangentModulus_GPa": 0.69}
+  },
+  "FailureCriteria": {
+    "MaxPrincipalStress_MPa": 310,
+    "MaxShearStress_MPa": 207,
+    "VonMisesStress_MPa": 276,
+    "MaxTemperature_K": 423
+  },
+  "ServiceConditions": {
+    "MinServiceTemperature_K": 4,
+    "MaxServiceTemperature_K": 423,
+    "CorrosionResistance": "Excellent",
+    "SafetyFactor_recommended": 1.5
+  },
+  "Applications": ["Aircraft structures", "Bicycle frames", "Marine fittings"],
+  "Color": "#C0C0C0"
+}

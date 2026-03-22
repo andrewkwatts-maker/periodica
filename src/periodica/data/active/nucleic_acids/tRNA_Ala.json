@@ -1,0 +1,87 @@
+{
+  "name": "tRNA Ala",
+  "type": "trna",
+  "organism": "Escherichia coli",
+  "function": "Amino acid transport - carries Alanine",
+  "sequence": "GGGGCUAUAGCUCAGUGGUAGAGCGCAUGCUUUGCAUGCAUGAGGUUAGCGGUUCGAUCCCGCUUAGCUCCACCA",
+  "length": 75,
+  "gc_content": 56.0,
+  "base_composition": {
+    "G": 23,
+    "C": 19,
+    "U": 19,
+    "A": 14
+  },
+  "molecular_mass": 24315.0,
+  "melting_temperature": 95.4,
+  "complement": "CCCCGAUAUCGAGUCACCAUCUCGCGUACGAAACGUACGUACUCCAAUCGCCAAGCUAGGGCGAAUCGAGGUGGU",
+  "reverse_complement": "UGGUGGAGCUAAGCGGGAUCGAACCGCUAACCUCAUGCAUGCAAAGCAUGCGCUCUACCACUGAGCUAUAGCCCC",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 48,
+        "end": 63,
+        "loop_start": 52,
+        "loop_end": 59,
+        "stem_length": 4,
+        "loop_length": 7,
+        "stem_sequence": "GCGG",
+        "loop_sequence": "UUCGAUC",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 47,
+        "end": 64,
+        "loop_start": 52,
+        "loop_end": 59,
+        "stem_length": 5,
+        "loop_length": 7,
+        "stem_sequence": "AGCGG",
+        "loop_sequence": "UUCGAUC",
+        "stability": 0.8,
+        "matches": 5
+      },
+      {
+        "start": 48,
+        "end": 63,
+        "loop_start": 53,
+        "loop_end": 58,
+        "stem_length": 5,
+        "loop_length": 5,
+        "stem_sequence": "GCGGU",
+        "loop_sequence": "UCGAU",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 9,
+        "end": 24,
+        "loop_start": 13,
+        "loop_end": 20,
+        "stem_length": 4,
+        "loop_length": 7,
+        "stem_sequence": "GCUC",
+        "loop_sequence": "AGUGGUA",
+        "stability": 0.75,
+        "matches": 4
+      },
+      {
+        "start": 47,
+        "end": 64,
+        "loop_start": 51,
+        "loop_end": 60,
+        "stem_length": 4,
+        "loop_length": 9,
+        "stem_sequence": "AGCG",
+        "loop_sequence": "GUUCGAUCC",
+        "stability": 0.75,
+        "matches": 4
+      }
+    ]
+  },
+  "description": "Transfer RNA for alanine with GCC anticodon.",
+  "anticodon": "GCC",
+  "amino_acid": "Alanine"
+}

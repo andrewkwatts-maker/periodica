@@ -1,0 +1,73 @@
+{
+  "name": "tRNA-Phe Anticodon Stem-Loop",
+  "type": "RNA",
+  "organism": "Saccharomyces cerevisiae",
+  "function": "Transfer RNA",
+  "sequence": "GGGAGAUCGCCAAGAUGGCAGAACUCCGCCUCC",
+  "length": 33,
+  "gc_content": 63.6,
+  "base_composition": {
+    "G": 10,
+    "A": 8,
+    "U": 4,
+    "C": 11
+  },
+  "molecular_mass": 10667.6,
+  "melting_temperature": 91.6,
+  "complement": "CCCUCUAGCGGUUCUACCGUCUUGAGGCGGAGG",
+  "reverse_complement": "GGAGGCGGAGUUCUGCCAUCUUGGCGAUCUCCC",
+  "secondary_structures": {
+    "hairpins": 3,
+    "details": [
+      {
+        "start": 7,
+        "end": 20,
+        "loop_start": 12,
+        "loop_end": 15,
+        "stem_length": 5,
+        "loop_length": 3,
+        "stem_sequence": "CGCCA",
+        "loop_sequence": "AGA",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 16,
+        "end": 30,
+        "loop_start": 21,
+        "loop_end": 25,
+        "stem_length": 5,
+        "loop_length": 4,
+        "stem_sequence": "GGCAG",
+        "loop_sequence": "AACU",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 8,
+        "end": 19,
+        "loop_start": 12,
+        "loop_end": 15,
+        "stem_length": 4,
+        "loop_length": 3,
+        "stem_sequence": "GCCA",
+        "loop_sequence": "AGA",
+        "stability": 0.75,
+        "matches": 4
+      }
+    ]
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.129395+00:00",
+    "model_version": "1.0.0"
+  }
+}

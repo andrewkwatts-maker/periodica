@@ -1,0 +1,50 @@
+{
+    "Name": "Sulfuric Acid",
+    "Formula": "H2SO4",
+    "MolecularMass_amu": 98.079,
+    "MolecularMass_g_mol": 98.079,
+    "BondType": "Covalent",
+    "Geometry": "Tetrahedral",
+    "BondAngle_deg": 109.5,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 283.5,
+    "BoilingPoint_K": 610.0,
+    "Density_g_cm3": 1.84,
+    "State_STP": "Liquid",
+    "Composition": [
+        {"Element": "H", "Count": 2},
+        {"Element": "S", "Count": 1},
+        {"Element": "O", "Count": 4}
+    ],
+    "Bonds": [
+        {"From": "S", "To": "O", "Type": "Double", "Length_pm": 142, "Index": 1},
+        {"From": "S", "To": "O", "Type": "Double", "Length_pm": 142, "Index": 2},
+        {"From": "S", "To": "O", "Type": "Single", "Length_pm": 157, "Index": 3},
+        {"From": "S", "To": "O", "Type": "Single", "Length_pm": 157, "Index": 4},
+        {"From": "O", "To": "H", "Type": "Single", "Length_pm": 97, "Index": 5},
+        {"From": "O", "To": "H", "Type": "Single", "Length_pm": 97, "Index": 6}
+    ],
+    "Atoms3D": [
+        {"element": "S", "x": 0.0, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "O", "x": 0.82, "y": 0.82, "z": 0.82, "index": 1},
+        {"element": "O", "x": -0.82, "y": -0.82, "z": 0.82, "index": 2},
+        {"element": "O", "x": 0.906, "y": -0.906, "z": -0.906, "index": 3},
+        {"element": "O", "x": -0.906, "y": 0.906, "z": -0.906, "index": 4},
+        {"element": "H", "x": 1.67, "y": -1.47, "z": -0.70, "index": 5},
+        {"element": "H", "x": -1.67, "y": 1.47, "z": -0.70, "index": 6}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "double", "length_A": 1.42},
+        {"from": 0, "to": 2, "type": "double", "length_A": 1.42},
+        {"from": 0, "to": 3, "type": "single", "length_A": 1.57},
+        {"from": 0, "to": 4, "type": "single", "length_A": 1.57},
+        {"from": 3, "to": 5, "type": "single", "length_A": 0.97},
+        {"from": 4, "to": 6, "type": "single", "length_A": 0.97}
+    ],
+    "DipoleMoment_D": 2.72,
+    "ElectronConfiguration": "H: 1s1, S: 1s2 2s2 2p6 3s2 3p4, O: 1s2 2s2 2p4",
+    "Applications": ["Battery acid", "Fertilizer production", "Chemical synthesis", "Industrial processes"],
+    "IUPAC_Name": "Sulfuric acid",
+    "Category": "Inorganic",
+    "Color": "#FFEB3B"
+}

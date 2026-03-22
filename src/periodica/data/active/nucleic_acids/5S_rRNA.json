@@ -1,0 +1,85 @@
+{
+  "name": "5S rRNA",
+  "type": "rrna",
+  "organism": "Escherichia coli",
+  "function": "Ribosomal component - large subunit",
+  "sequence": "UGCCUGGCGGCCGUAGCGCGGUGGUCCCACCUGACCCCAUGCCGAACUCAGAAGUGAAACGCCGUAGCGCCGAUGGUAGUGUGGGGUCUCCCCAUGCGAGAGUAGGGAACUGCCAGGCAU",
+  "length": 120,
+  "gc_content": 64.2,
+  "base_composition": {
+    "U": 20,
+    "G": 41,
+    "C": 36,
+    "A": 23
+  },
+  "molecular_mass": 39076.0,
+  "melting_temperature": 101.6,
+  "complement": "ACGGACCGCCGGCAUCGCGCCACCAGGGUGGACUGGGGUACGGCUUGAGUCUUCACUUUGCGGCAUCGCGGCUACCAUCACACCCCAGAGGGGUACGCUCUCAUCCCUUGACGGUCCGUA",
+  "reverse_complement": "AUGCCUGGCAGUUCCCUACUCUCGCAUGGGGAGACCCCACACUACCAUCGGCGCUACGGCGUUUCACUUCUGAGUUCGGCAUGGGGUCAGGUGGGACCACCGCGCUACGGCCGCCAGGCA",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 59,
+        "end": 72,
+        "loop_start": 64,
+        "loop_end": 67,
+        "stem_length": 5,
+        "loop_length": 3,
+        "stem_sequence": "CGCCG",
+        "loop_sequence": "UAG",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 82,
+        "end": 93,
+        "loop_start": 86,
+        "loop_end": 89,
+        "stem_length": 4,
+        "loop_length": 3,
+        "stem_sequence": "GGGG",
+        "loop_sequence": "UCU",
+        "stability": 1.0,
+        "matches": 4
+      },
+      {
+        "start": 80,
+        "end": 95,
+        "loop_start": 86,
+        "loop_end": 89,
+        "stem_length": 6,
+        "loop_length": 3,
+        "stem_sequence": "GUGGGG",
+        "loop_sequence": "UCU",
+        "stability": 0.83,
+        "matches": 5
+      },
+      {
+        "start": 18,
+        "end": 32,
+        "loop_start": 23,
+        "loop_end": 27,
+        "stem_length": 5,
+        "loop_length": 4,
+        "stem_sequence": "CGGUG",
+        "loop_sequence": "GUCC",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 22,
+        "end": 36,
+        "loop_start": 27,
+        "loop_end": 31,
+        "stem_length": 5,
+        "loop_length": 4,
+        "stem_sequence": "GGUCC",
+        "loop_sequence": "CACC",
+        "stability": 0.8,
+        "matches": 4
+      }
+    ]
+  },
+  "description": "5S ribosomal RNA, component of the 50S ribosomal subunit."
+}

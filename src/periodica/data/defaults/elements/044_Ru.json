@@ -1,0 +1,72 @@
+{
+  "symbol": "Ru",
+  "name": "Ruthenium",
+  "atomic_number": 44,
+  "atomic_mass": 101.07,
+  "block": "d",
+  "period": 5,
+  "group": 8,
+  "ionization_energy": 7.361,
+  "electronegativity": 2.2,
+  "atomic_radius": 178,
+  "covalent_radius": 146,
+  "melting_point": 2607,
+  "boiling_point": 4423,
+  "density": 12.37,
+  "electron_affinity": 101.3,
+  "valence_electrons": 8,
+  "electron_configuration": "[Kr] 4d⁷ 5s¹",
+  "primary_emission_wavelength": 372.8,
+  "visible_emission_wavelength": 465.0,
+  "isotopes": [
+    {
+      "mass_number": 96,
+      "neutrons": 52,
+      "abundance": 5.54,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 98,
+      "neutrons": 54,
+      "abundance": 1.87,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 99,
+      "neutrons": 55,
+      "abundance": 12.76,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 100,
+      "neutrons": 56,
+      "abundance": 12.6,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 101,
+      "neutrons": 57,
+      "abundance": 17.06,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 102,
+      "neutrons": 58,
+      "abundance": 31.55,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 104,
+      "neutrons": 60,
+      "abundance": 18.62,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

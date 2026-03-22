@@ -1,0 +1,72 @@
+{
+  "symbol": "Yb",
+  "name": "Ytterbium",
+  "atomic_number": 70,
+  "atomic_mass": 173.045,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 6.25416,
+  "electronegativity": 1.1,
+  "atomic_radius": 222,
+  "covalent_radius": 187,
+  "melting_point": 1097,
+  "boiling_point": 1469,
+  "density": 6.9,
+  "electron_affinity": -1.93,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f¹⁴ 6s²",
+  "primary_emission_wavelength": 398.8,
+  "visible_emission_wavelength": 398.8,
+  "isotopes": [
+    {
+      "mass_number": 168,
+      "neutrons": 98,
+      "abundance": 0.123,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 170,
+      "neutrons": 100,
+      "abundance": 2.982,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 171,
+      "neutrons": 101,
+      "abundance": 14.09,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 172,
+      "neutrons": 102,
+      "abundance": 21.69,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 173,
+      "neutrons": 103,
+      "abundance": 16.103,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 174,
+      "neutrons": 104,
+      "abundance": 32.026,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 176,
+      "neutrons": 106,
+      "abundance": 12.996,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

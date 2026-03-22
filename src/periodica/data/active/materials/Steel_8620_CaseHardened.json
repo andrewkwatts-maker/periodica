@@ -1,0 +1,370 @@
+{
+  "Name": "AISI 8620 Case Hardened Steel",
+  "Standard": "AISI/SAE 8620",
+  "Category": "Structural Steel",
+  "SubCategory": "Case Hardening Steel",
+  "MaterialType": "gradient_hardened",
+  "Description": "Carburized and hardened low-alloy steel with hard martensitic case and tough core. Used for gears, shafts, and bearings.",
+
+  "Processing": {
+    "Condition": "Carburized + Oil Quenched + Tempered",
+    "CarburizingTemperature_K": 1198,
+    "CarburizingTime_h": 8,
+    "CaseDepth_mm": 1.5,
+    "QuenchMedium": "Oil",
+    "TemperingTemperature_K": 450,
+    "TemperingTime_h": 2
+  },
+
+  "Composition_wt_percent": {
+    "Fe": "balance",
+    "C": "0.18-0.23 (core) / 0.8-1.0 (case)",
+    "Mn": "0.70-0.90",
+    "Ni": "0.40-0.70",
+    "Cr": "0.40-0.60",
+    "Mo": "0.15-0.25",
+    "Si": "0.15-0.35"
+  },
+
+  "ElasticProperties": {
+    "YoungsModulus_GPa": 207,
+    "ShearModulus_GPa": 80,
+    "BulkModulus_GPa": 160,
+    "PoissonsRatio": 0.29,
+    "_note": "Elastic properties are relatively uniform through depth"
+  },
+
+  "CoreProperties": {
+    "Hardness_HRC": 32,
+    "Hardness_HV": 310,
+    "YieldStrength_MPa": 620,
+    "UltimateTensileStrength_MPa": 830,
+    "Elongation_percent": 18,
+    "ImpactEnergy_J": 80
+  },
+
+  "CaseProperties": {
+    "Hardness_HRC": 62,
+    "Hardness_HV": 750,
+    "YieldStrength_MPa": 1800,
+    "UltimateTensileStrength_MPa": 2100,
+    "ResidualStress_MPa": -350
+  },
+
+  "GradientProfiles": {
+    "Hardness_HV": {
+      "type": "error_function",
+      "surface_value": 750,
+      "core_value": 310,
+      "case_depth_mm": 1.5,
+      "transition_sharpness": 2.5
+    },
+    "CarbonContent_wt_percent": {
+      "type": "error_function",
+      "surface_value": 0.85,
+      "core_value": 0.20,
+      "case_depth_mm": 1.5,
+      "transition_sharpness": 2.0
+    },
+    "YieldStrength_MPa": {
+      "type": "correlated",
+      "correlation_with": "Hardness_HV",
+      "formula": "sigma_y = 3.0 * HV"
+    },
+    "ResidualStress_MPa": {
+      "type": "polynomial_depth",
+      "coefficients": [-350, 700, -800, 450],
+      "depth_range_mm": [0, 2.0]
+    }
+  },
+
+  "SpatialFields": {
+    "FourierFields": [
+      {
+        "property": "Density_kg_m3",
+        "base_value": 7850,
+        "domain_size_m": [0.01, 0.01, 0.005],
+        "coefficients": [
+          {"n": 1, "m": 0, "l": 0, "amplitude": 5, "phase": 0.0},
+          {"n": 0, "m": 1, "l": 0, "amplitude": 5, "phase": 0.0},
+          {"n": 0, "m": 0, "l": 1, "amplitude": 3, "phase": 0.0}
+        ],
+        "boundary_condition": "periodic"
+      },
+      {
+        "property": "ThermalConductivity_W_mK",
+        "base_value": 42,
+        "domain_size_m": [0.01, 0.01, 0.005],
+        "coefficients": [
+          {"n": 1, "m": 0, "l": 0, "amplitude": 2.0, "phase": 0.0},
+          {"n": 0, "m": 1, "l": 0, "amplitude": 2.0, "phase": 0.0},
+          {"n": 0, "m": 0, "l": 2, "amplitude": 1.5, "phase": 0.0}
+        ],
+        "boundary_condition": "periodic"
+      }
+    ],
+
+    "WaveletFields": [
+      {
+        "config": {
+          "property": "Hardness_HV",
+          "wavelet_family": "db4",
+          "decomposition_level": 3,
+          "domain_size_m": [0.01, 0.01, 0.005],
+          "grid_resolution": [32, 32, 32],
+          "base_value": 530
+        },
+        "coefficients": {
+          "approximation": [],
+          "detail_levels": []
+        },
+        "_note": "Approximation follows error function depth profile"
+      }
+    ],
+
+    "StochasticFields": [
+      {
+        "property": "Hardness_HV",
+        "mean": 0,
+        "std_dev": 25,
+        "correlation_length_m": [0.0005, 0.0005, 0.0003],
+        "covariance_model": "exponential",
+        "num_terms": 30,
+        "domain_size_m": [0.01, 0.01, 0.005],
+        "random_seeds": [0.123, -0.456, 0.789, -1.012, 0.345, -0.678, 0.901, -1.234,
+                         0.567, -0.890, 1.123, -0.456, 0.789, -1.012, 0.345, -0.678,
+                         0.901, -1.234, 0.567, -0.890, 1.123, -0.456, 0.789, -1.012,
+                         0.345, -0.678, 0.901, -1.234, 0.567, -0.890],
+        "_note": "Adds scatter to gradient profile from prior austenite grain variation"
+      },
+      {
+        "property": "YoungsModulus_GPa",
+        "mean": 207,
+        "std_dev": 5.0,
+        "correlation_length_m": [0.001, 0.001, 0.001],
+        "covariance_model": "exponential",
+        "num_terms": 30,
+        "domain_size_m": [0.01, 0.01, 0.005],
+        "random_seeds": [0.234, -0.567, 0.890, -1.123, 0.456, -0.789, 1.012, -0.345,
+                         0.678, -0.901, 1.234, -0.567, 0.890, -1.123, 0.456, -0.789,
+                         1.012, -0.345, 0.678, -0.901, 1.234, -0.567, 0.890, -1.123,
+                         0.456, -0.789, 1.012, -0.345, 0.678, -0.901]
+      },
+      {
+        "property": "ThermalConductivity_W_mK",
+        "mean": 42,
+        "std_dev": 3.0,
+        "correlation_length_m": [0.001, 0.001, 0.001],
+        "covariance_model": "exponential",
+        "num_terms": 30,
+        "domain_size_m": [0.01, 0.01, 0.005],
+        "random_seeds": [0.345, -0.678, 0.901, -1.234, 0.567, -0.890, 1.123, -0.456,
+                         0.789, -1.012, 0.345, -0.678, 0.901, -1.234, 0.567, -0.890,
+                         1.123, -0.456, 0.789, -1.012, 0.345, -0.678, 0.901, -1.234,
+                         0.567, -0.890, 1.123, -0.456, 0.789, -1.012]
+      }
+    ]
+  },
+
+  "TemperatureDependencies": [
+    {
+      "property": "YoungsModulus_GPa",
+      "model": "polynomial",
+      "reference_T_K": 293.15,
+      "reference_value": 207,
+      "valid_range_K": [200, 800],
+      "coefficients": {
+        "a0": 207,
+        "a1": -0.03,
+        "a2": -2.0e-5
+      }
+    },
+    {
+      "property": "Hardness_HV",
+      "model": "tabulated",
+      "reference_T_K": 293.15,
+      "reference_value": 530,
+      "valid_range_K": [200, 800],
+      "tabulated_data": [
+        [293, 530],
+        [373, 520],
+        [473, 500],
+        [573, 450],
+        [673, 380],
+        [773, 300]
+      ],
+      "_note": "Case hardness decreases significantly above tempering temperature"
+    },
+    {
+      "property": "ThermalConductivity_W_mK",
+      "model": "polynomial",
+      "reference_T_K": 293.15,
+      "reference_value": 42,
+      "valid_range_K": [200, 800],
+      "coefficients": {
+        "a0": 42,
+        "a1": 0.015,
+        "a2": -5.0e-6
+      }
+    },
+    {
+      "property": "SpecificHeat_J_kgK",
+      "model": "polynomial",
+      "reference_T_K": 293.15,
+      "reference_value": 477,
+      "valid_range_K": [200, 1000],
+      "coefficients": {
+        "a0": 477,
+        "a1": 0.15,
+        "a2": 2.0e-5
+      }
+    },
+    {
+      "property": "ThermalExpansion_per_K",
+      "model": "linear",
+      "reference_T_K": 293.15,
+      "reference_value": 12.6e-6,
+      "valid_range_K": [200, 800],
+      "coefficients": {
+        "alpha": 0.0001
+      }
+    },
+    {
+      "property": "YieldStrength_MPa",
+      "model": "tabulated",
+      "reference_T_K": 293.15,
+      "reference_value": 620,
+      "valid_range_K": [200, 800],
+      "tabulated_data": [
+        [293, 620],
+        [373, 590],
+        [473, 530],
+        [573, 450],
+        [673, 350],
+        [773, 250]
+      ]
+    }
+  ],
+
+  "PressureDependencies": [
+    {
+      "property": "Density_kg_m3",
+      "model": "birch_murnaghan_3rd",
+      "K0_GPa": 160,
+      "K0_prime": 4.0,
+      "reference_pressure_Pa": 101325,
+      "reference_density_kg_m3": 7850
+    }
+  ],
+
+  "ThermalProperties": {
+    "MeltingPoint_K": 1753,
+    "ThermalConductivity_W_mK": 42,
+    "SpecificHeat_J_kgK": 477,
+    "ThermalExpansion_per_K": 12.6e-6
+  },
+
+  "PhysicalProperties": {
+    "Density_kg_m3": 7850
+  },
+
+  "ElectricalProperties": {
+    "ElectricalResistivity_Ohm_m": 2.2e-7
+  },
+
+  "OpticalProperties": {
+    "refractive_index": {
+      "model": "drude",
+      "plasma_frequency_eV": 4.0,
+      "damping_eV": 0.5
+    },
+    "emissivity": 0.30,
+    "surface_roughness_um": 0.4,
+    "color_RGB_polished": [190, 195, 200],
+    "color_RGB_tempered": [150, 130, 100]
+  },
+
+  "FatigueProperties": {
+    "BendingFatigueLimit_MPa": 850,
+    "ContactFatigueLimit_MPa": 1500,
+    "EnduranceLimit_cycles": 1e7,
+    "_note": "Case hardening significantly improves fatigue resistance"
+  },
+
+  "WearProperties": {
+    "WearCoefficient_mm3_Nm": 1e-7,
+    "WearMechanism": "Abrasive/Adhesive",
+    "SlidingVelocityLimit_m_s": 5.0
+  },
+
+  "ContactMechanics": {
+    "HertzianContactModel": true,
+    "EffectiveCaseDepth_mm": 0.5,
+    "MaxContactStress_MPa": 2500
+  },
+
+  "SimulationParameters": {
+    "FEA": {
+      "RecommendedMeshSize_mm": 0.25,
+      "MinElementsInCase": 6,
+      "StressStrainModel": "ElastoPlastic",
+      "GradientInterpolation": "linear"
+    },
+    "DepthProfile": {
+      "SamplingMethod": "error_function",
+      "NumLayers": 20,
+      "CaseCoreBoundary_mm": 1.5
+    }
+  },
+
+  "FailureCriteria": {
+    "CaseSpalling": {
+      "MaxShearStress_MPa": 900,
+      "CriticalDepth_mm": 0.3
+    },
+    "CoreYielding": {
+      "MaxVonMisesStress_MPa": 620
+    },
+    "FatigueCracking": {
+      "Threshold_MPa": 600,
+      "R_ratio": -1
+    }
+  },
+
+  "ValidationData": {
+    "source": "ASM Handbook Vol. 4, Boyer & Gall (1985)",
+    "measurements": [
+      {
+        "property": "SurfaceHardness_HRC",
+        "conditions": {"depth_mm": 0, "T_K": 293},
+        "value": 62,
+        "uncertainty": 2,
+        "method": "Rockwell_C"
+      },
+      {
+        "property": "CoreHardness_HRC",
+        "conditions": {"depth_mm": 3.0, "T_K": 293},
+        "value": 32,
+        "uncertainty": 3,
+        "method": "Rockwell_C"
+      },
+      {
+        "property": "EffectiveCaseDepth_mm",
+        "conditions": {"criterion": "50HRC", "T_K": 293},
+        "value": 1.5,
+        "uncertainty": 0.2,
+        "method": "microhardness_traverse"
+      }
+    ]
+  },
+
+  "Applications": [
+    "Automotive gears",
+    "Transmission shafts",
+    "Bearings",
+    "Camshafts",
+    "Piston pins"
+  ],
+
+  "Notes": "Properties vary significantly with depth from surface. The hardness gradient is critical for contact fatigue resistance while maintaining core toughness for bending loads."
+}

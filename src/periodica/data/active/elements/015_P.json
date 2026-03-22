@@ -1,0 +1,30 @@
+{
+  "symbol": "P",
+  "name": "Phosphorus",
+  "atomic_number": 15,
+  "atomic_mass": 30.974,
+  "block": "p",
+  "period": 3,
+  "group": 15,
+  "ionization_energy": 10.487,
+  "electronegativity": 2.19,
+  "atomic_radius": 98,
+  "covalent_radius": 107,
+  "melting_point": 317,
+  "boiling_point": 550,
+  "density": 1.82,
+  "electron_affinity": 72.0,
+  "valence_electrons": 5,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p³",
+  "primary_emission_wavelength": 253.6,
+  "visible_emission_wavelength": 450.0,
+  "isotopes": [
+    {
+      "mass_number": 31,
+      "neutrons": 16,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

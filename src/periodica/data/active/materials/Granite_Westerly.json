@@ -1,0 +1,315 @@
+{
+  "Name": "Westerly Granite",
+  "Standard": "ASTM D7012",
+  "Category": "Natural Rock",
+  "SubCategory": "Igneous - Granitic",
+  "MaterialType": "heterogeneous_polycrystalline",
+  "Description": "Fine-grained granite from Westerly, Rhode Island. Commonly used as reference rock in geomechanics research.",
+
+  "MineralComposition": {
+    "Quartz": {
+      "volume_fraction": 0.33,
+      "grain_size_mm": 0.5,
+      "properties": {
+        "YoungsModulus_GPa": 95.6,
+        "Density_kg_m3": 2650,
+        "ThermalExpansion_per_K": 12.3e-6,
+        "PoissonsRatio": 0.08
+      }
+    },
+    "Feldspar": {
+      "volume_fraction": 0.60,
+      "grain_size_mm": 1.0,
+      "properties": {
+        "YoungsModulus_GPa": 69.8,
+        "Density_kg_m3": 2560,
+        "ThermalExpansion_per_K": 8.0e-6,
+        "PoissonsRatio": 0.28
+      }
+    },
+    "Mica": {
+      "volume_fraction": 0.07,
+      "grain_size_mm": 0.3,
+      "properties": {
+        "YoungsModulus_GPa": 35.0,
+        "Density_kg_m3": 2800,
+        "ThermalExpansion_per_K": 15.0e-6,
+        "PoissonsRatio": 0.25
+      }
+    }
+  },
+
+  "ElasticProperties": {
+    "YoungsModulus_GPa": 70.5,
+    "ShearModulus_GPa": 28.5,
+    "BulkModulus_GPa": 47.0,
+    "PoissonsRatio": 0.24
+  },
+
+  "StrengthProperties": {
+    "YieldStrength_MPa": 150,
+    "UltimateTensileStrength_MPa": 14,
+    "CompressiveStrength_MPa": 200,
+    "ShearStrength_MPa": 30,
+    "BrazilianTensileStrength_MPa": 10
+  },
+
+  "Hardness": {
+    "Mohs": 6.5,
+    "Vickers_HV": 800
+  },
+
+  "FractureMechanics": {
+    "FractureToughness_KIC_MPa_sqrt_m": 1.74,
+    "FractureEnergy_J_m2": 40,
+    "CriticalGriffithLength_mm": 0.2
+  },
+
+  "ThermalProperties": {
+    "MeltingPoint_K": 1473,
+    "ThermalConductivity_W_mK": 3.0,
+    "SpecificHeat_J_kgK": 790,
+    "ThermalExpansion_per_K": 8.0e-6,
+    "ThermalDiffusivity_mm2_s": 1.4,
+    "QuartzTransitionTemperature_K": 846
+  },
+
+  "PhysicalProperties": {
+    "Density_kg_m3": 2640,
+    "Porosity_percent": 0.9,
+    "Permeability_m2": 1e-19
+  },
+
+  "ElectricalProperties": {
+    "ElectricalResistivity_Ohm_m": 1e6
+  },
+
+  "SpatialFields": {
+    "FourierFields": [
+      {
+        "property": "Density_kg_m3",
+        "base_value": 2640,
+        "domain_size_m": [0.05, 0.05, 0.05],
+        "coefficients": [
+          {"n": 2, "m": 0, "l": 0, "amplitude": 15, "phase": 0.0},
+          {"n": 0, "m": 2, "l": 0, "amplitude": 15, "phase": 0.0},
+          {"n": 0, "m": 0, "l": 2, "amplitude": 12, "phase": 0.0},
+          {"n": 1, "m": 1, "l": 0, "amplitude": 8, "phase": 0.78}
+        ],
+        "boundary_condition": "periodic"
+      },
+      {
+        "property": "ShearModulus_GPa",
+        "base_value": 28.5,
+        "domain_size_m": [0.05, 0.05, 0.05],
+        "coefficients": [
+          {"n": 1, "m": 0, "l": 0, "amplitude": 2.0, "phase": 0.0},
+          {"n": 0, "m": 1, "l": 0, "amplitude": 2.0, "phase": 0.0},
+          {"n": 0, "m": 0, "l": 1, "amplitude": 1.5, "phase": 0.0}
+        ],
+        "boundary_condition": "periodic"
+      },
+      {
+        "property": "BulkModulus_GPa",
+        "base_value": 47.0,
+        "domain_size_m": [0.05, 0.05, 0.05],
+        "coefficients": [
+          {"n": 1, "m": 0, "l": 0, "amplitude": 3.0, "phase": 0.0},
+          {"n": 0, "m": 1, "l": 0, "amplitude": 3.0, "phase": 0.0},
+          {"n": 0, "m": 0, "l": 1, "amplitude": 2.5, "phase": 0.0}
+        ],
+        "boundary_condition": "periodic"
+      }
+    ],
+
+    "StochasticFields": [
+      {
+        "property": "YoungsModulus_GPa",
+        "mean": 70.5,
+        "std_dev": 8.5,
+        "correlation_length_m": [0.002, 0.002, 0.0016],
+        "covariance_model": "exponential",
+        "num_terms": 50,
+        "domain_size_m": [0.1, 0.1, 0.1],
+        "random_seeds": [0.234, -1.023, 0.876, 1.432, -0.567, 0.891, -1.234, 0.456,
+                         -0.789, 1.012, -0.345, 0.678, -0.901, 1.234, -0.567, 0.890,
+                         -1.123, 0.456, -0.789, 1.012, 0.345, -0.678, 0.901, -1.234,
+                         0.567, -0.890, 1.123, -0.456, 0.789, -1.012, 0.345, 0.678,
+                         -0.901, 1.234, -0.567, 0.890, -1.123, 0.456, -0.789, 1.012,
+                         0.345, -0.678, 0.901, -1.234, 0.567, -0.890, 1.123, -0.456,
+                         0.789, -1.012]
+      },
+      {
+        "property": "ThermalConductivity_W_mK",
+        "mean": 3.0,
+        "std_dev": 0.3,
+        "correlation_length_m": [0.002, 0.002, 0.0016],
+        "covariance_model": "exponential",
+        "num_terms": 30,
+        "domain_size_m": [0.1, 0.1, 0.1],
+        "random_seeds": [0.543, -0.876, 1.234, -0.567, 0.890, -1.123, 0.456, -0.789,
+                         1.012, -0.345, 0.678, -0.901, 1.234, -0.567, 0.890, -1.123,
+                         0.456, -0.789, 1.012, 0.345, -0.678, 0.901, -1.234, 0.567,
+                         -0.890, 1.123, -0.456, 0.789, -1.012, 0.345]
+      },
+      {
+        "property": "ShearModulus_GPa",
+        "mean": 28.5,
+        "std_dev": 3.5,
+        "correlation_length_m": [0.002, 0.002, 0.0016],
+        "covariance_model": "exponential",
+        "num_terms": 30,
+        "domain_size_m": [0.1, 0.1, 0.1],
+        "random_seeds": [0.321, -0.654, 0.987, -0.321, 0.654, -0.987, 0.123, -0.456,
+                         0.789, -0.123, 0.456, -0.789, 0.321, -0.654, 0.987, -0.321,
+                         0.654, -0.987, 0.123, -0.456, 0.789, -0.123, 0.456, -0.789,
+                         0.321, -0.654, 0.987, -0.321, 0.654, -0.987]
+      },
+      {
+        "property": "Hardness_HV",
+        "mean": 800,
+        "std_dev": 80,
+        "correlation_length_m": [0.001, 0.001, 0.001],
+        "covariance_model": "exponential",
+        "num_terms": 30,
+        "domain_size_m": [0.1, 0.1, 0.1],
+        "random_seeds": [0.111, -0.222, 0.333, -0.444, 0.555, -0.666, 0.777, -0.888,
+                         0.999, -0.111, 0.222, -0.333, 0.444, -0.555, 0.666, -0.777,
+                         0.888, -0.999, 0.111, -0.222, 0.333, -0.444, 0.555, -0.666,
+                         0.777, -0.888, 0.999, -0.111, 0.222, -0.333]
+      }
+    ]
+  },
+
+  "TemperatureDependencies": [
+    {
+      "property": "YoungsModulus_GPa",
+      "model": "tabulated",
+      "reference_T_K": 293.15,
+      "reference_value": 70.5,
+      "valid_range_K": [200, 1100],
+      "tabulated_data": [
+        [293, 70.5],
+        [373, 69.0],
+        [473, 66.5],
+        [573, 62.0],
+        [673, 55.0],
+        [773, 45.0],
+        [846, 35.0],
+        [873, 30.0],
+        [973, 22.0],
+        [1073, 15.0]
+      ]
+    },
+    {
+      "property": "ThermalExpansion_per_K",
+      "model": "tabulated",
+      "reference_T_K": 293.15,
+      "reference_value": 8.0e-6,
+      "valid_range_K": [200, 1100],
+      "tabulated_data": [
+        [293, 8.0e-6],
+        [473, 10.0e-6],
+        [673, 15.0e-6],
+        [846, 45.0e-6],
+        [873, 12.0e-6],
+        [1073, 14.0e-6]
+      ]
+    },
+    {
+      "property": "ThermalConductivity_W_mK",
+      "model": "polynomial",
+      "reference_T_K": 293.15,
+      "reference_value": 3.0,
+      "valid_range_K": [200, 1100],
+      "coefficients": {
+        "a0": 3.0,
+        "a1": -0.002,
+        "a2": -1.0e-6
+      }
+    }
+  ],
+
+  "PressureDependencies": [
+    {
+      "property": "Density_kg_m3",
+      "model": "birch_murnaghan_3rd",
+      "K0_GPa": 47.0,
+      "K0_prime": 4.5,
+      "reference_pressure_Pa": 101325,
+      "reference_density_kg_m3": 2640
+    }
+  ],
+
+  "OpticalProperties": {
+    "model": "tabulated",
+    "refractive_index": {
+      "model": "constant",
+      "value": 1.55
+    },
+    "emissivity": 0.90,
+    "surface_roughness_um": 50.0,
+    "reflectance_spectrum": {
+      "wavelengths_nm": [400, 450, 500, 550, 600, 650, 700],
+      "values": [0.12, 0.15, 0.18, 0.20, 0.22, 0.24, 0.26]
+    },
+    "color_RGB_natural": [128, 128, 128],
+    "color_RGB_polished": [160, 155, 150]
+  },
+
+  "MicrostructureModel": {
+    "type": "voronoi_tessellation",
+    "seed_density_per_mm3": 125,
+    "anisotropy_ratio": [1.0, 1.0, 0.85],
+    "grain_boundary_width_um": 5,
+    "initial_crack_density_per_mm3": 0.05
+  },
+
+  "FailureCriteria": {
+    "MaxPrincipalStress_MPa": 14,
+    "MohrCoulomb": {
+      "cohesion_MPa": 30,
+      "friction_angle_deg": 50
+    },
+    "DruckerPrager": {
+      "alpha": 0.29,
+      "k_MPa": 25
+    }
+  },
+
+  "ValidationData": {
+    "source": "Haimson & Chang (2000), Heard (1963)",
+    "measurements": [
+      {
+        "property": "YoungsModulus_GPa",
+        "conditions": {"T_K": 293, "P_Pa": 101325},
+        "value": 70.0,
+        "uncertainty": 5.0,
+        "method": "uniaxial_compression"
+      },
+      {
+        "property": "CompressiveStrength_MPa",
+        "conditions": {"T_K": 293, "P_Pa": 101325, "confining_MPa": 0},
+        "value": 200,
+        "uncertainty": 15,
+        "method": "uniaxial_compression"
+      },
+      {
+        "property": "YoungsModulus_GPa",
+        "conditions": {"T_K": 573, "P_Pa": 101325},
+        "value": 62.0,
+        "uncertainty": 6.0,
+        "method": "heated_compression"
+      }
+    ]
+  },
+
+  "Applications": [
+    "Geomechanics research",
+    "Nuclear waste repository design",
+    "Geothermal reservoir modeling",
+    "Structural geology studies"
+  ],
+
+  "Notes": "Westerly granite exhibits significant thermal damage above quartz alpha-beta transition (573C). Properties show strong temperature dependence due to differential thermal expansion of quartz vs feldspar grains."
+}

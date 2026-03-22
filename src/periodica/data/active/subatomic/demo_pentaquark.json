@@ -1,0 +1,31 @@
+{
+  "Name": "Pentaquark Pc(4380)",
+  "Symbol": "Pc+",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Exotic Composite Particle"],
+  "Charge_e": 1,
+  "Mass_MeVc2": 4380,
+  "Mass_kg": 7.80e-27,
+  "Mass_amu": 4.70,
+  "Spin_hbar": 1.5,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Isospin_I": 0.5,
+  "Isospin_I3": 0.5,
+  "Parity_P": -1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 2, "Charge_e": 0.6666666667 },
+    { "Constituent": "Down Quark", "Count": 1, "Charge_e": -0.3333333333 },
+    { "Constituent": "Charm Quark", "Count": 1, "Charge_e": 0.6666666667 },
+    { "Constituent": "Anticharm Quark", "Count": 1, "Charge_e": -0.6666666667 }
+  ],
+  "Stability": "Unstable",
+  "HalfLife_s": 1e-23,
+  "DecayProducts": ["Proton", "J/Psi"],
+  "Antiparticle": {
+    "Name": "Anti-Pentaquark Pc(4380)",
+    "Symbol": "Pc-"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

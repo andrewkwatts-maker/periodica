@@ -1,0 +1,32 @@
+{
+  "name": "Methionine",
+  "symbol": "M",
+  "category": "nonpolar_aliphatic",
+  "charge_pH7": -0.006,
+  "isoelectric_point": 5.75,
+  "hydropathy_index": 1.9,
+  "helix_propensity": 1.45,
+  "sheet_propensity": 1.05,
+  "turn_propensity": 0.6,
+  "pKa_carboxyl": 2.28,
+  "pKa_amino": 9.21,
+  "pKa_sidechain": null,
+  "sidechain_ionization": null,
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147424+00:00",
+    "model_version": "1.0.0"
+  }
+}

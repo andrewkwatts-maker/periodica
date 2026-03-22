@@ -1,0 +1,34 @@
+{
+    "Name": "Sodium Chloride",
+    "Formula": "NaCl",
+    "MolecularMass_amu": 58.44,
+    "MolecularMass_g_mol": 58.44,
+    "BondType": "Ionic",
+    "Geometry": "Face-centered Cubic",
+    "BondAngle_deg": 90.0,
+    "Polarity": "Ionic",
+    "MeltingPoint_K": 1074.0,
+    "BoilingPoint_K": 1686.0,
+    "Density_g_cm3": 2.165,
+    "State_STP": "Solid",
+    "Composition": [
+        {"Element": "Na", "Count": 1},
+        {"Element": "Cl", "Count": 1}
+    ],
+    "Bonds": [
+        {"From": "Na", "To": "Cl", "Type": "Ionic", "Length_pm": 282, "Index": 1}
+    ],
+    "Atoms3D": [
+        {"element": "Na", "x": 0.0, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "Cl", "x": 2.82, "y": 0.0, "z": 0.0, "index": 1}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "ionic", "length_A": 2.82}
+    ],
+    "DipoleMoment_D": 9.0,
+    "ElectronConfiguration": "Na: 1s2 2s2 2p6 3s1, Cl: 1s2 2s2 2p6 3s2 3p5",
+    "Applications": ["Table salt", "Food preservation", "De-icing", "Chemical production"],
+    "IUPAC_Name": "Sodium chloride",
+    "Category": "Ionic",
+    "Color": "#ECEFF1"
+}

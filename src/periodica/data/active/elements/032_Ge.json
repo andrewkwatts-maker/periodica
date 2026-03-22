@@ -1,0 +1,58 @@
+{
+  "symbol": "Ge",
+  "name": "Germanium",
+  "atomic_number": 32,
+  "atomic_mass": 72.63,
+  "block": "p",
+  "period": 4,
+  "group": 14,
+  "ionization_energy": 7.899,
+  "electronegativity": 2.01,
+  "atomic_radius": 125,
+  "covalent_radius": 120,
+  "melting_point": 1211.4,
+  "boiling_point": 3106,
+  "density": 5.32,
+  "electron_affinity": 119.0,
+  "valence_electrons": 4,
+  "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p²",
+  "primary_emission_wavelength": 303.9,
+  "visible_emission_wavelength": 468.0,
+  "isotopes": [
+    {
+      "mass_number": 70,
+      "neutrons": 38,
+      "abundance": 20.57,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 72,
+      "neutrons": 40,
+      "abundance": 27.45,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 73,
+      "neutrons": 41,
+      "abundance": 7.75,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 74,
+      "neutrons": 42,
+      "abundance": 36.5,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 76,
+      "neutrons": 44,
+      "abundance": 7.73,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

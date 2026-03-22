@@ -1,0 +1,72 @@
+{
+  "symbol": "Ba",
+  "name": "Barium",
+  "atomic_number": 56,
+  "atomic_mass": 137.327,
+  "block": "s",
+  "period": 6,
+  "group": 2,
+  "ionization_energy": 5.212,
+  "electronegativity": 0.89,
+  "atomic_radius": 253,
+  "covalent_radius": 215,
+  "melting_point": 1000,
+  "boiling_point": 2118,
+  "density": 3.51,
+  "electron_affinity": 13.95,
+  "valence_electrons": 2,
+  "electron_configuration": "[Xe] 6s²",
+  "primary_emission_wavelength": 553.6,
+  "visible_emission_wavelength": 553.6,
+  "isotopes": [
+    {
+      "mass_number": 130,
+      "neutrons": 74,
+      "abundance": 0.106,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 132,
+      "neutrons": 76,
+      "abundance": 0.101,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 134,
+      "neutrons": 78,
+      "abundance": 2.417,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 135,
+      "neutrons": 79,
+      "abundance": 6.592,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 136,
+      "neutrons": 80,
+      "abundance": 7.854,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 137,
+      "neutrons": 81,
+      "abundance": 11.232,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 138,
+      "neutrons": 82,
+      "abundance": 71.698,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

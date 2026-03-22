@@ -1,0 +1,39 @@
+{
+  "Name": "Omega-",
+  "Symbol": "Omega-",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle", "Strange Baryon"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 1672.45,
+  "Mass_kg": 2.98e-27,
+  "Mass_amu": 1.793,
+  "Spin_hbar": 1.5,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Strangeness": -3,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Strange Quark", "Count": 3, "Charge_e": -0.3333333333, "Symbol": "s" }
+  ],
+  "QuarkContent": "sss",
+  "Stability": "Unstable",
+  "HalfLife_s": 8.21e-11,
+  "DecayProducts": ["Lambda", "Kaon-", "Xi0", "Pion-"],
+  "DecayModes": [
+    { "Products": ["Lambda", "Kaon-"], "BranchingRatio": 0.678 },
+    { "Products": ["Xi0", "Pion-"], "BranchingRatio": 0.236 },
+    { "Products": ["Xi-", "Pion0"], "BranchingRatio": 0.086 }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Omega+",
+    "Symbol": "Anti-Omega+"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"],
+  "Discovery": {
+    "Year": 1964,
+    "Location": "Brookhaven",
+    "Notes": "Predicted by Gell-Mann's quark model in 1962"
+  }
+}

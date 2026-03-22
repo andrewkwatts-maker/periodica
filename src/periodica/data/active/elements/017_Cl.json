@@ -1,0 +1,37 @@
+{
+  "symbol": "Cl",
+  "name": "Chlorine",
+  "atomic_number": 17,
+  "atomic_mass": 35.45,
+  "block": "p",
+  "period": 3,
+  "group": 17,
+  "ionization_energy": 12.968,
+  "electronegativity": 3.16,
+  "atomic_radius": 79,
+  "covalent_radius": 102,
+  "melting_point": 171,
+  "boiling_point": 239,
+  "density": 0.0032,
+  "electron_affinity": 349.0,
+  "valence_electrons": 7,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁵",
+  "primary_emission_wavelength": 479.5,
+  "visible_emission_wavelength": 479.5,
+  "isotopes": [
+    {
+      "mass_number": 35,
+      "neutrons": 18,
+      "abundance": 75.76,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 37,
+      "neutrons": 20,
+      "abundance": 24.24,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

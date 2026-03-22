@@ -1,0 +1,48 @@
+{
+  "name": "Brain (White Matter)",
+  "type": "brain_white",
+  "organ_system": "nervous",
+  "ecm_composition": {
+    "collagen_iv": 0.01,
+    "laminin": 0.01,
+    "myelin": 0.15,
+    "hyaluronan": 0.03,
+    "water": 0.7,
+    "other": 0.05
+  },
+  "cell_composition": {
+    "oligodendrocyte": 0.3,
+    "astrocyte": 0.15,
+    "microglia": 0.03
+  },
+  "porosity": 0.0,
+  "vascularization": "high",
+  "innervation": true,
+  "healing_time_weeks": 52,
+  "function": "Signal transmission between brain regions",
+  "description": "Inner brain region composed of myelinated axon bundles. Myelin sheath provides electrical insulation.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 2.2526,
+    "youngs_modulus_voigt": 4.4737,
+    "youngs_modulus_reuss": 0.0315,
+    "ultimate_strength_MPa": 0.0751,
+    "poissons_ratio": 0.461,
+    "shear_modulus_MPa": 0.7712
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.006,
+    "water_content_percent": 73.7
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_iv": 0.010526315789473686,
+    "laminin": 0.010526315789473686,
+    "myelin": 0.15789473684210525,
+    "hyaluronan": 0.031578947368421054,
+    "water": 0.7368421052631579,
+    "other": 0.052631578947368425
+  }
+}

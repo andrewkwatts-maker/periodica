@@ -1,0 +1,85 @@
+{
+  "name": "U6 snRNA",
+  "type": "snrna",
+  "organism": "Homo sapiens",
+  "function": "RNA splicing",
+  "sequence": "GUGCUCCGAUUUCGUGGUGCACAGUUUCUGAGCGUGUGAUCGUCUGUUCGUUUUACAUGAC",
+  "length": 61,
+  "gc_content": 49.2,
+  "base_composition": {
+    "G": 17,
+    "U": 23,
+    "C": 13,
+    "A": 8
+  },
+  "molecular_mass": 19634.2,
+  "melting_temperature": 88.4,
+  "complement": "CACGAGGCUAAAGCACCACGUGUCAAAGACUCGCACACUAGCAGACAAGCAAAAUGUACUG",
+  "reverse_complement": "GUCAUGUAAAACGAACAGACGAUCACACGCUCAGAAACUGUGCACCACGAAAUCGGAGCAC",
+  "secondary_structures": {
+    "hairpins": 9,
+    "details": [
+      {
+        "start": 2,
+        "end": 20,
+        "loop_start": 7,
+        "loop_end": 15,
+        "stem_length": 5,
+        "loop_length": 8,
+        "stem_sequence": "GCUCC",
+        "loop_sequence": "GAUUUCGU",
+        "stability": 0.8,
+        "matches": 4
+      },
+      {
+        "start": 0,
+        "end": 22,
+        "loop_start": 7,
+        "loop_end": 15,
+        "stem_length": 7,
+        "loop_length": 8,
+        "stem_sequence": "GUGCUCC",
+        "loop_sequence": "GAUUUCGU",
+        "stability": 0.71,
+        "matches": 6
+      },
+      {
+        "start": 0,
+        "end": 22,
+        "loop_start": 6,
+        "loop_end": 16,
+        "stem_length": 6,
+        "loop_length": 10,
+        "stem_sequence": "GUGCUC",
+        "loop_sequence": "CGAUUUCGUG",
+        "stability": 0.67,
+        "matches": 5
+      },
+      {
+        "start": 1,
+        "end": 21,
+        "loop_start": 7,
+        "loop_end": 15,
+        "stem_length": 6,
+        "loop_length": 8,
+        "stem_sequence": "UGCUCC",
+        "loop_sequence": "GAUUUCGU",
+        "stability": 0.67,
+        "matches": 5
+      },
+      {
+        "start": 18,
+        "end": 33,
+        "loop_start": 24,
+        "loop_end": 27,
+        "stem_length": 6,
+        "loop_length": 3,
+        "stem_sequence": "GCACAG",
+        "loop_sequence": "UUU",
+        "stability": 0.67,
+        "matches": 5
+      }
+    ]
+  },
+  "description": "U6 small nuclear RNA, essential component of spliceosome."
+}

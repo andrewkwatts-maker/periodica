@@ -1,0 +1,132 @@
+{
+  "Name": "Cupronickel 70/30 (Hot rolled)",
+  "SourceAlloy": "Cupronickel 70/30",
+  "Category": "Copper Alloy",
+  "Processing": "Hot rolled",
+  "Description": "Material derived from Cupronickel 70/30 via hot rolled",
+  "Components": [
+    {
+      "Element": "Cu",
+      "MinPercent": 69.0,
+      "MaxPercent": 71.0,
+      "Role": "Base"
+    },
+    {
+      "Element": "Ni",
+      "MinPercent": 27.0,
+      "MaxPercent": 33.0,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.944,
+    "MeltingPoint_K": 1424.8,
+    "ThermalConductivity_W_mK": 215.6,
+    "ThermalExpansion_per_K": 1.4e-05,
+    "ElectricalResistivity_Ohm_m": 8.27e-08,
+    "SpecificHeat_J_kgK": 520
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 549.0,
+    "YieldStrength_MPa": 329.0,
+    "Elongation_percent": 42,
+    "Hardness_HV": 165.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "LatticeParameters": {
+      "a_pm": 361.5,
+      "b_pm": 361.5,
+      "c_pm": 361.5,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "AtomsPerUnitCell": 4
+  },
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Austenite",
+        "Symbol": "gamma",
+        "Structure": "FCC",
+        "VolumePercent": 100,
+        "Magnetic": false,
+        "Hardness_HV": 165.0
+      }
+    ],
+    "TransformationTemperatures": {}
+  },
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50.0,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400.0,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 50.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.95
+    },
+    "Defects": {
+      "VacancyConcentration": 1e-05,
+      "DislocationDensity_per_m2": 1000000000000.0,
+      "StressField": {
+        "Type": "VonMises",
+        "MaxStress_MPa": 98.7
+      }
+    },
+    "Inclusions": {
+      "Density_per_mm3": 50,
+      "Types": [
+        {
+          "Type": "Oxide",
+          "Shape": "Globular"
+        }
+      ],
+      "AverageSize_um": 5.0
+    }
+  },
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "Random",
+    "TextureStrength_mrd": 1.0
+  },
+  "CorrosionResistance": {
+    "PREN": 0.0,
+    "PassivationFilmComposition": "None",
+    "PittingPotential_mV_SCE": 0
+  },
+  "Applications": [
+    "Electrical connectors",
+    "Heat exchangers",
+    "Marine hardware"
+  ],
+  "ProcessingMethods": [
+    "Hot rolled"
+  ],
+  "Color": "#B87333",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "alloy:Cupronickel 70/30"
+    ],
+    "derivation_chain": [
+      "elements",
+      "alloy",
+      "material"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.036152+00:00",
+    "model_version": "1.0.0"
+  }
+}

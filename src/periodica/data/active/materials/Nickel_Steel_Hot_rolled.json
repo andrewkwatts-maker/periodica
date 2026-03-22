@@ -1,0 +1,144 @@
+{
+  "Name": "Nickel Steel (Hot rolled)",
+  "SourceAlloy": "Nickel Steel",
+  "Category": "Steel",
+  "Processing": "Hot rolled",
+  "Description": "Material derived from Nickel Steel via hot rolled",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 94.65,
+      "MaxPercent": 96.65,
+      "Role": "Base"
+    },
+    {
+      "Element": "C",
+      "MinPercent": 0.32,
+      "MaxPercent": 0.38,
+      "Role": "Trace"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 0.45,
+      "MaxPercent": 0.55,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Ni",
+      "MinPercent": 3.15,
+      "MaxPercent": 3.85,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.834,
+    "MeltingPoint_K": 1650.7,
+    "ThermalConductivity_W_mK": 27.7,
+    "ThermalExpansion_per_K": 1.8e-05,
+    "ElectricalResistivity_Ohm_m": 3.75e-07,
+    "SpecificHeat_J_kgK": 560
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 791.0,
+    "YieldStrength_MPa": 474.0,
+    "Elongation_percent": 26,
+    "Hardness_HV": 237.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Ferrite",
+        "Symbol": "alpha",
+        "Structure": "BCC",
+        "VolumePercent": 100,
+        "Magnetic": true,
+        "Hardness_HV": 237.0
+      }
+    ],
+    "TransformationTemperatures": {}
+  },
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 50.0,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 400.0,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 5.0
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.08,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.95
+    },
+    "Defects": {
+      "VacancyConcentration": 1e-05,
+      "DislocationDensity_per_m2": 1000000000000.0,
+      "StressField": {
+        "Type": "VonMises",
+        "MaxStress_MPa": 142.2
+      }
+    },
+    "Inclusions": {
+      "Density_per_mm3": 50,
+      "Types": [
+        {
+          "Type": "MnS",
+          "Shape": "Elongated"
+        }
+      ],
+      "AverageSize_um": 5.0
+    }
+  },
+  "CrystallographicOrientation": {
+    "PreferredOrientation": true,
+    "TextureType": "Random",
+    "TextureStrength_mrd": 1.0
+  },
+  "CorrosionResistance": {
+    "PREN": 0.0,
+    "PassivationFilmComposition": "None",
+    "PittingPotential_mV_SCE": 0
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolled"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "alloy:Nickel Steel"
+    ],
+    "derivation_chain": [
+      "elements",
+      "alloy",
+      "material"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.036050+00:00",
+    "model_version": "1.0.0"
+  }
+}

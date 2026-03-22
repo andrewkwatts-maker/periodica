@@ -1,0 +1,30 @@
+{
+  "symbol": "At",
+  "name": "Astatine",
+  "atomic_number": 85,
+  "atomic_mass": 210,
+  "block": "p",
+  "period": 6,
+  "group": 17,
+  "ionization_energy": 9.31751,
+  "electronegativity": 2.2,
+  "atomic_radius": 127,
+  "covalent_radius": 150,
+  "melting_point": 575,
+  "boiling_point": 610,
+  "density": 7.0,
+  "electron_affinity": 270.0,
+  "valence_electrons": 7,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵",
+  "primary_emission_wavelength": 300.0,
+  "visible_emission_wavelength": 420.0,
+  "isotopes": [
+    {
+      "mass_number": 210,
+      "neutrons": 125,
+      "abundance": 0,
+      "is_stable": false,
+      "half_life": "8.1 hours"
+    }
+  ]
+}

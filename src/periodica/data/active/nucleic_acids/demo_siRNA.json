@@ -1,0 +1,43 @@
+{
+  "name": "siRNA KRAS G12C",
+  "type": "sirna",
+  "organism": "Homo sapiens",
+  "function": "Gene silencing of KRAS G12C mutation",
+  "sequence": "GUUGGAGCUUGUGGCGUAGUU",
+  "length": 21,
+  "gc_content": 52.4,
+  "base_composition": {
+    "G": 8,
+    "U": 6,
+    "A": 2,
+    "C": 3
+  },
+  "molecular_mass": 6757.2,
+  "melting_temperature": 58.5,
+  "complement": "CAACCUCGAACACCGCAUCAA",
+  "reverse_complement": "AACUACGCCACAAGCUCCAAC",
+  "secondary_structures": {
+    "hairpins": 1,
+    "details": [
+      {
+        "start": 5,
+        "end": 17,
+        "loop_start": 9,
+        "loop_end": 13,
+        "stem_length": 4,
+        "loop_length": 4,
+        "stem_sequence": "GAGC",
+        "loop_sequence": "UUGU",
+        "stability": 0.7,
+        "matches": 3
+      }
+    ]
+  },
+  "description": "Small interfering RNA targeting KRAS G12C oncogenic mutation. Used in cancer research and potential therapeutics.",
+  "target_gene": "KRAS",
+  "target_mutation": "G12C",
+  "guide_strand": "GUUGGAGCUUGUGGCGUAG",
+  "passenger_strand": "CUACGCCACAAGCUCCAACUU",
+  "overhang_5": "",
+  "overhang_3": "UU"
+}

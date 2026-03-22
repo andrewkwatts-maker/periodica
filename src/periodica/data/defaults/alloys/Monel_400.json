@@ -1,0 +1,146 @@
+{
+  "Name": "Monel 400",
+  "Formula": "Ni-Cu",
+  "Category": "Nickel Alloy",
+  "SubCategory": "Nickel-Copper Alloy",
+  "Description": "Corrosion-resistant nickel-copper alloy with excellent resistance to seawater and acids",
+
+  "Components": [
+    {"Element": "Ni", "MinPercent": 63.0, "MaxPercent": 70.0, "Role": "Base"},
+    {"Element": "Cu", "MinPercent": 28.0, "MaxPercent": 34.0, "Role": "Corrosion Resistance"},
+    {"Element": "Fe", "MinPercent": 0.0, "MaxPercent": 2.5, "Role": "Strengthening"},
+    {"Element": "Mn", "MinPercent": 0.0, "MaxPercent": 2.0, "Role": "Deoxidizer"},
+    {"Element": "C", "MinPercent": 0.0, "MaxPercent": 0.3, "Role": "Strengthening"},
+    {"Element": "Si", "MinPercent": 0.0, "MaxPercent": 0.5, "Role": "Deoxidizer"},
+    {"Element": "S", "MinPercent": 0.0, "MaxPercent": 0.024, "Role": "Impurity"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 8.80,
+    "MeltingPoint_K": 1573,
+    "ThermalConductivity_W_mK": 21.8,
+    "ThermalExpansion_per_K": 13.9e-6,
+    "ElectricalResistivity_Ohm_m": 5.47e-7,
+    "SpecificHeat_J_kgK": 427,
+    "YoungsModulus_GPa": 179,
+    "ShearModulus_GPa": 66,
+    "PoissonsRatio": 0.32,
+    "BrinellHardness_HB": 130
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 550,
+    "YieldStrength_MPa": 240,
+    "Elongation_percent": 48,
+    "ReductionOfArea_percent": 68,
+    "ImpactStrength_J": 200,
+    "FatigueStrength_MPa": 240
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": [],
+    "LatticeParameters": {
+      "a_pm": 358.0,
+      "b_pm": 358.0,
+      "c_pm": 358.0,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 253.1,
+    "StackingFaultEnergy_mJ_m2": 80
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Solid Solution",
+        "Symbol": "alpha",
+        "Structure": "FCC",
+        "VolumePercent": 100,
+        "SolidSolution": true,
+        "Hardness_HV": 140
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 1573,
+      "Liquidus_K": 1623
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 60,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.35,
+      "ASTMGrainSizeNumber": 5,
+      "VoronoiSeedDensity_per_mm2": 278,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.0,
+      "TwinDensity_per_mm": 100
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Simplex",
+      "NoiseScale": 0.1,
+      "NoiseOctaves": 2,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.99
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e10,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.1,
+        "HighAngleBoundaryFraction": 0.55,
+        "TwinBoundaryFraction": 0.35,
+        "GrainBoundaryEnergy_J_m2": 0.75
+      }
+    },
+    "Inclusions": {
+      "Types": [],
+      "VolumeFraction": 0.0001,
+      "AverageSize_um": 1
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,1], [2,0,0], [2,2,0]],
+      "Directions": [[1,1,0], [1,1,2]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "CorrosionResistance": {
+    "SeawaterCorrosionRate_mm_yr": 0.025,
+    "HydrochloricAcidResistance": "Excellent",
+    "SulfuricAcidResistance": "Good",
+    "HydrofluoricAcidResistance": "Excellent",
+    "AlkalineResistance": "Excellent"
+  },
+
+  "Applications": ["Marine engineering", "Chemical processing", "Valves and pumps", "Heat exchangers", "Oil well tools"],
+  "ProcessingMethods": ["Hot working", "Cold working", "Welding", "Machining"],
+  "Color": "#A9A9A9"
+}

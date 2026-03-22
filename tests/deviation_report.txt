@@ -1,0 +1,77 @@
+========================================================================================================================
+DEVIATION REPORT - ORDERED BY SIGMA FROM REFERENCE DATA
+========================================================================================================================
+
+SUMMARY STATISTICS:
+--------------------------------------------------
+  Total comparisons: 82
+  Mean % error: 1.006%
+  Max % error: 19.021%
+  Std % error: 3.991%
+  Mean sigma: 929.76
+  Max sigma: 6216.44
+  Comparisons > 3s: 5
+  Comparisons > 5s: 4
+
+BY CATEGORY:
+--------------------------------------------------
+  Amino Acid: 40 comparisons, mean error = 0.229%
+  Hadron: 30 comparisons, mean error = 0.000%
+  Protein: 12 comparisons, mean error = 6.113%
+
+TOP 50 DEVIATIONS (ORDERED BY SIGMA):
+------------------------------------------------------------------------------------------------------------------------
+Category        | Entity                    | Property             |   Calculated |    Reference |  Error% |    Sigma | Source
+------------------------------------------------------------------------------------------------------------------------
+Protein         | Myoglobin                 | molecular_mass       | calc=  14091.7200 | ref=  17199.9400 | err= 18.07% |  6216.4s | UniProt P02185 (mature) / Henderson-Hasselbalch
+Protein         | Cytochrome C              | molecular_mass       | calc=   9584.4500 | ref=  11701.5700 | err= 18.09% |  4234.2s | UniProt P00004 (mature) / Henderson-Hasselbalch
+Protein         | Ubiquitin                 | molecular_mass       | calc=   7008.8800 | ref=   8564.8700 | err= 18.17% |  3112.0s | UniProt P0CG48 / Henderson-Hasselbalch
+Protein         | Insulin B                 | molecular_mass       | calc=   2777.5700 | ref=   3429.9700 | err= 19.02% |  1304.8s | UniProt P01308 / Henderson-Hasselbalch
+Amino Acid      | Tryptophan (W)            | isoelectric_point    | calc=      6.1100 | ref=      5.8900 | err=  3.74% |     4.4s | Lehninger
+Amino Acid      | Aspartic Acid (D)         | isoelectric_point    | calc=      2.8700 | ref=      2.7700 | err=  3.61% |     2.0s | Lehninger
+Amino Acid      | Isoleucine (I)            | isoelectric_point    | calc=      5.9800 | ref=      6.0200 | err=  0.66% |     0.8s | Lehninger
+Amino Acid      | Alanine (A)               | isoelectric_point    | calc=      6.0100 | ref=      6.0000 | err=  0.17% |     0.2s | Lehninger
+Amino Acid      | Histidine (H)             | isoelectric_point    | calc=      7.5800 | ref=      7.5900 | err=  0.13% |     0.2s | Lehninger
+Amino Acid      | Methionine (M)            | isoelectric_point    | calc=      5.7500 | ref=      5.7400 | err=  0.17% |     0.2s | Lehninger
+Amino Acid      | Proline (P)               | isoelectric_point    | calc=      6.2900 | ref=      6.3000 | err=  0.16% |     0.2s | Lehninger
+Amino Acid      | Threonine (T)             | isoelectric_point    | calc=      5.5900 | ref=      5.6000 | err=  0.18% |     0.2s | Lehninger
+Amino Acid      | Valine (V)                | isoelectric_point    | calc=      5.9700 | ref=      5.9600 | err=  0.17% |     0.2s | Lehninger
+Amino Acid      | Tyrosine (Y)              | isoelectric_point    | calc=      5.6500 | ref=      5.6600 | err=  0.18% |     0.2s | Lehninger
+Hadron          | Neutron                   | mass                 | calc=    939.5654 | ref=    939.5654 | err=  0.00% |     0.0s | PDG 2024
+Hadron          | Proton                    | mass                 | calc=    938.2721 | ref=    938.2721 | err=  0.00% |     0.0s | PDG 2024
+Protein         | Ubiquitin                 | isoelectric_point    | calc=      7.6800 | ref=      7.6800 | err=  0.00% |      N/A | UniProt P0CG48 / Henderson-Hasselbalch
+Protein         | Ubiquitin                 | gravy                | calc=     -0.4890 | ref=     -0.4890 | err=  0.00% |      N/A | UniProt P0CG48 / Henderson-Hasselbalch
+Protein         | Insulin B                 | isoelectric_point    | calc=      7.0900 | ref=      7.0900 | err=  0.00% |      N/A | UniProt P01308 / Henderson-Hasselbalch
+Protein         | Insulin B                 | gravy                | calc=      0.2200 | ref=      0.2200 | err=  0.00% |      N/A | UniProt P01308 / Henderson-Hasselbalch
+Protein         | Myoglobin                 | isoelectric_point    | calc=      9.3600 | ref=      9.3600 | err=  0.00% |      N/A | UniProt P02185 (mature) / Henderson-Hasselbalch
+Protein         | Myoglobin                 | gravy                | calc=     -0.3670 | ref=     -0.3670 | err=  0.00% |      N/A | UniProt P02185 (mature) / Henderson-Hasselbalch
+Protein         | Cytochrome C              | isoelectric_point    | calc=     10.0200 | ref=     10.0200 | err=  0.00% |      N/A | UniProt P00004 (mature) / Henderson-Hasselbalch
+Protein         | Cytochrome C              | gravy                | calc=     -0.9020 | ref=     -0.9020 | err=  0.00% |      N/A | UniProt P00004 (mature) / Henderson-Hasselbalch
+Amino Acid      | Alanine (A)               | hydropathy_index     | calc=      1.8000 | ref=      1.8000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Cysteine (C)              | isoelectric_point    | calc=      5.0700 | ref=      5.0700 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Cysteine (C)              | hydropathy_index     | calc=      2.5000 | ref=      2.5000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Aspartic Acid (D)         | hydropathy_index     | calc=     -3.5000 | ref=     -3.5000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Glutamic Acid (E)         | isoelectric_point    | calc=      3.2200 | ref=      3.2200 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Glutamic Acid (E)         | hydropathy_index     | calc=     -3.5000 | ref=     -3.5000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Phenylalanine (F)         | isoelectric_point    | calc=      5.4800 | ref=      5.4800 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Phenylalanine (F)         | hydropathy_index     | calc=      2.8000 | ref=      2.8000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Glycine (G)               | isoelectric_point    | calc=      5.9700 | ref=      5.9700 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Glycine (G)               | hydropathy_index     | calc=     -0.4000 | ref=     -0.4000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Histidine (H)             | hydropathy_index     | calc=     -3.2000 | ref=     -3.2000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Isoleucine (I)            | hydropathy_index     | calc=      4.5000 | ref=      4.5000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Lysine (K)                | isoelectric_point    | calc=      9.7400 | ref=      9.7400 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Lysine (K)                | hydropathy_index     | calc=     -3.9000 | ref=     -3.9000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Leucine (L)               | isoelectric_point    | calc=      5.9800 | ref=      5.9800 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Leucine (L)               | hydropathy_index     | calc=      3.8000 | ref=      3.8000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Methionine (M)            | hydropathy_index     | calc=      1.9000 | ref=      1.9000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Asparagine (N)            | isoelectric_point    | calc=      5.4100 | ref=      5.4100 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Asparagine (N)            | hydropathy_index     | calc=     -3.5000 | ref=     -3.5000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Proline (P)               | hydropathy_index     | calc=     -1.6000 | ref=     -1.6000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Glutamine (Q)             | isoelectric_point    | calc=      5.6500 | ref=      5.6500 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Glutamine (Q)             | hydropathy_index     | calc=     -3.5000 | ref=     -3.5000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Arginine (R)              | isoelectric_point    | calc=     10.7600 | ref=     10.7600 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Arginine (R)              | hydropathy_index     | calc=     -4.5000 | ref=     -4.5000 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Serine (S)                | isoelectric_point    | calc=      5.6800 | ref=      5.6800 | err=  0.00% |      N/A | Lehninger
+Amino Acid      | Serine (S)                | hydropathy_index     | calc=     -0.8000 | ref=     -0.8000 | err=  0.00% |      N/A | Lehninger
+
+========================================================================================================================

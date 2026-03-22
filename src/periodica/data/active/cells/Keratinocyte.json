@@ -1,0 +1,39 @@
+{
+  "name": "Keratinocyte",
+  "type": "epithelial",
+  "organism": "Homo sapiens",
+  "diameter_um": 30,
+  "volume_fL": 14137.17,
+  "mass_pg": 14844.03,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 2827.43,
+  "surface_volume_ratio": 0.2,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 154.0,
+  "o2_consumption_per_s": 26.0,
+  "estimated_doubling_time_hours": 438013383.5,
+  "diffusion_time_ms": 450.0,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "description": "Skin epidermal cell",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "cell_components"
+    ],
+    "derivation_chain": [
+      "cell_components",
+      "cell_predictor"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.142545+00:00",
+    "model_version": "1.0.0"
+  }
+}

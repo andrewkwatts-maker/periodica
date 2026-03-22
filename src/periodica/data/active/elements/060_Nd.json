@@ -1,0 +1,72 @@
+{
+  "symbol": "Nd",
+  "name": "Neodymium",
+  "atomic_number": 60,
+  "atomic_mass": 144.242,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 5.525,
+  "electronegativity": 1.14,
+  "atomic_radius": 206,
+  "covalent_radius": 201,
+  "melting_point": 1297,
+  "boiling_point": 3347,
+  "density": 7.01,
+  "electron_affinity": 50.0,
+  "valence_electrons": 6,
+  "electron_configuration": "[Xe] 4f⁴ 6s²",
+  "primary_emission_wavelength": 463.4,
+  "visible_emission_wavelength": 463.4,
+  "isotopes": [
+    {
+      "mass_number": 142,
+      "neutrons": 82,
+      "abundance": 27.152,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 143,
+      "neutrons": 83,
+      "abundance": 12.174,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 144,
+      "neutrons": 84,
+      "abundance": 23.798,
+      "is_stable": false,
+      "half_life": "2.29e15 years"
+    },
+    {
+      "mass_number": 145,
+      "neutrons": 85,
+      "abundance": 8.293,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 146,
+      "neutrons": 86,
+      "abundance": 17.189,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 148,
+      "neutrons": 88,
+      "abundance": 5.756,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 150,
+      "neutrons": 90,
+      "abundance": 5.638,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "Name": "Delta+",
+  "Symbol": "Delta+",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle", "Delta Baryon"],
+  "Charge_e": 1,
+  "Mass_MeVc2": 1232,
+  "Mass_kg": 2.19e-27,
+  "Mass_amu": 1.319,
+  "Spin_hbar": 1.5,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Isospin_I": 1.5,
+  "Isospin_I3": 0.5,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 2, "Charge_e": 0.6666666667, "Symbol": "u" },
+    { "Constituent": "Down Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "d" }
+  ],
+  "QuarkContent": "uud",
+  "Stability": "Unstable",
+  "HalfLife_s": 5.63e-24,
+  "DecayProducts": ["Proton", "Pion0", "Neutron", "Pion+"],
+  "DecayModes": [
+    { "Products": ["Proton", "Pion0"], "BranchingRatio": 0.66 },
+    { "Products": ["Neutron", "Pion+"], "BranchingRatio": 0.33 }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Delta-",
+    "Symbol": "Anti-Delta-"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"],
+  "Discovery": {
+    "Year": 1952,
+    "Location": "Bevatron"
+  }
+}

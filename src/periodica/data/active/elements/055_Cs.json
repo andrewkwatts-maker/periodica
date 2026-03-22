@@ -1,0 +1,30 @@
+{
+  "symbol": "Cs",
+  "name": "Cesium",
+  "atomic_number": 55,
+  "atomic_mass": 132.905,
+  "block": "s",
+  "period": 6,
+  "group": 1,
+  "ionization_energy": 3.894,
+  "electronegativity": 0.79,
+  "atomic_radius": 298,
+  "covalent_radius": 244,
+  "melting_point": 301.59,
+  "boiling_point": 944,
+  "density": 1.93,
+  "electron_affinity": 45.5,
+  "valence_electrons": 1,
+  "electron_configuration": "[Xe] 6s¹",
+  "primary_emission_wavelength": 852.1,
+  "visible_emission_wavelength": 455.5,
+  "isotopes": [
+    {
+      "mass_number": 133,
+      "neutrons": 78,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

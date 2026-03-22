@@ -1,0 +1,24 @@
+{
+  "name": "Proteasome (26S)",
+  "component_type": "complex",
+  "description": "Protein degradation complex",
+  "properties": {
+    "diameter_nm": 15,
+    "copy_number": 30000
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "proteins",
+      "nucleic_acids"
+    ],
+    "derivation_chain": [
+      "proteins",
+      "nucleic_acids",
+      "cell_component"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.141257+00:00",
+    "model_version": "1.0.0"
+  }
+}

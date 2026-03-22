@@ -1,0 +1,50 @@
+{
+  "name": "Skin (Dermis)",
+  "type": "skin",
+  "organ_system": "integumentary",
+  "ecm_composition": {
+    "collagen_i": 0.25,
+    "collagen_iii": 0.1,
+    "elastin": 0.04,
+    "proteoglycans": 0.02,
+    "hyaluronan": 0.02,
+    "water": 0.55,
+    "other": 0.02
+  },
+  "cell_composition": {
+    "fibroblast": 0.05,
+    "keratinocyte": 0.1,
+    "melanocyte": 0.01
+  },
+  "porosity": 0.0,
+  "vascularization": "high",
+  "innervation": true,
+  "healing_time_weeks": 3,
+  "function": "Protection, thermoregulation, sensation",
+  "description": "Largest organ providing barrier function. Dermis contains collagen and elastin for mechanical strength and elasticity.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 155.0447,
+    "youngs_modulus_voigt": 310.0442,
+    "youngs_modulus_reuss": 0.0453,
+    "ultimate_strength_MPa": 5.1682,
+    "poissons_ratio": 0.432,
+    "shear_modulus_MPa": 54.1168
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.113,
+    "water_content_percent": 55.0
+  },
+  "derived_properties": {
+    "stiffness_category": "Stiff",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_i": 0.25,
+    "collagen_iii": 0.1,
+    "elastin": 0.04,
+    "proteoglycans": 0.02,
+    "hyaluronan": 0.02,
+    "water": 0.55,
+    "other": 0.02
+  }
+}

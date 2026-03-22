@@ -1,0 +1,32 @@
+{
+  "name": "Tyrosine",
+  "symbol": "Y",
+  "category": "nonpolar_aromatic",
+  "charge_pH7": -0.009,
+  "isoelectric_point": 5.65,
+  "hydropathy_index": -1.3,
+  "helix_propensity": 0.69,
+  "sheet_propensity": 1.47,
+  "turn_propensity": 1.14,
+  "pKa_carboxyl": 2.2,
+  "pKa_amino": 9.11,
+  "pKa_sidechain": 10.07,
+  "sidechain_ionization": "acidic",
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147478+00:00",
+    "model_version": "1.0.0"
+  }
+}

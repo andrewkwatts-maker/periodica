@@ -1,0 +1,37 @@
+{
+  "name": "Endoplasmic Reticulum",
+  "type": "endoplasmic_reticulum",
+  "organism": "Eukaryota (general)",
+  "function": "protein_processing",
+  "localization": ["cytoplasm"],
+  "description": "Extensive membrane network involved in protein and lipid synthesis.",
+  "subtypes": {
+    "rough_ER": {
+      "ribosomes": true,
+      "function": "Protein synthesis and folding",
+      "proteins": ["Secretory proteins", "Membrane proteins", "Lysosomal proteins"]
+    },
+    "smooth_ER": {
+      "ribosomes": false,
+      "function": "Lipid synthesis, calcium storage, detoxification",
+      "processes": ["Lipid biosynthesis", "Steroid hormone synthesis", "Drug metabolism"]
+    }
+  },
+  "surface_area_percent": 50,
+  "copy_number_per_cell": 1,
+  "key_proteins": {
+    "BiP": "Molecular chaperone for protein folding",
+    "PDI": "Disulfide bond formation",
+    "Calnexin": "Glycoprotein quality control",
+    "Sec61": "Protein translocation channel",
+    "SERCA": "Calcium pump"
+  },
+  "processes": {
+    "protein_translocation": "Co-translational import of nascent proteins",
+    "protein_folding": "Chaperone-assisted folding",
+    "glycosylation": "N-linked glycan attachment",
+    "quality_control": "ERAD - ER-associated degradation",
+    "lipid_synthesis": "Phospholipid and cholesterol synthesis"
+  },
+  "connection_to": ["Golgi apparatus", "Nucleus", "Plasma membrane"]
+}

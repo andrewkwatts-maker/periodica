@@ -1,0 +1,42 @@
+{
+  "name": "Macrophage",
+  "type": "macrophage",
+  "organism": "Homo sapiens",
+  "diameter_um": 21.0,
+  "volume_fL": 4849.05,
+  "mass_pg": 5091.5,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 1385.44,
+  "surface_volume_ratio": 0.2857,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 69.0,
+  "o2_consumption_per_s": 11.0,
+  "estimated_doubling_time_hours": 335205326.2,
+  "diffusion_time_ms": 220.5,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "tissue": "connective",
+  "function": "Phagocytosis and antigen presentation",
+  "nucleus": true,
+  "mitochondria_count": 300,
+  "lifespan_days": 60,
+  "key_proteins": [
+    "CD14",
+    "CD68",
+    "MHC-II",
+    "Mannose receptor"
+  ],
+  "phagocytic_capacity": 100,
+  "subtypes": [
+    "M1 (pro-inflammatory)",
+    "M2 (anti-inflammatory)"
+  ],
+  "description": "Professional phagocytes that engulf pathogens and cellular debris. Present antigens to T cells and secrete cytokines."
+}

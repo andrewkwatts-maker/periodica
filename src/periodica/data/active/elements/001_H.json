@@ -1,0 +1,43 @@
+{
+  "symbol": "H",
+  "name": "Hydrogen",
+  "atomic_number": 1,
+  "atomic_mass": 1.008,
+  "block": "s",
+  "period": 1,
+  "group": 1,
+  "ionization_energy": 13.598,
+  "electronegativity": 2.2,
+  "atomic_radius": 53,
+  "covalent_radius": 31,
+  "melting_point": 14.01,
+  "boiling_point": 20.28,
+  "density": 8.988e-05,
+  "electron_affinity": 72.8,
+  "valence_electrons": 1,
+  "electron_configuration": "1s¹",
+  "primary_emission_wavelength": 656.3,
+  "isotopes": [
+    {
+      "mass_number": 1,
+      "neutrons": 0,
+      "abundance": 99.9885,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 2,
+      "neutrons": 1,
+      "abundance": 0.0115,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 3,
+      "neutrons": 2,
+      "abundance": 0.0,
+      "is_stable": false,
+      "half_life": "12.32 years"
+    }
+  ]
+}

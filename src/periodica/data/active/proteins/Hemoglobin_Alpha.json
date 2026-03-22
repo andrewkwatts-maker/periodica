@@ -1,0 +1,36 @@
+{
+  "name": "Hemoglobin Alpha Chain",
+  "symbol": "HBA1",
+  "organism": "Homo sapiens",
+  "function": "oxygen_transport",
+  "localization": "cytoplasm",
+  "sequence": "MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSH",
+  "composition": {
+    "C": 738,
+    "H": 1166,
+    "N": 206,
+    "O": 224,
+    "S": 2,
+    "Fe": 1
+  },
+  "properties": {
+    "molecular_mass": 15126.4,
+    "isoelectric_point": 8.72,
+    "length": 141,
+    "helix_percent": 75.2,
+    "sheet_percent": 0,
+    "gravy": -0.45
+  },
+  "cofactors": [
+    {
+      "name": "Heme",
+      "type": "prosthetic_group",
+      "stoichiometry": 1
+    }
+  ],
+  "metadata": {
+    "uniprot_id": "P69905",
+    "pdb_id": "1HHO",
+    "source": "UniProt"
+  }
+}

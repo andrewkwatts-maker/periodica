@@ -1,0 +1,65 @@
+{
+  "symbol": "Er",
+  "name": "Erbium",
+  "atomic_number": 68,
+  "atomic_mass": 167.259,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 6.1077,
+  "electronegativity": 1.24,
+  "atomic_radius": 226,
+  "covalent_radius": 189,
+  "melting_point": 1802,
+  "boiling_point": 3141,
+  "density": 9.07,
+  "electron_affinity": 33.4,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f¹² 6s²",
+  "primary_emission_wavelength": 400.8,
+  "visible_emission_wavelength": 400.8,
+  "isotopes": [
+    {
+      "mass_number": 162,
+      "neutrons": 94,
+      "abundance": 0.139,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 164,
+      "neutrons": 96,
+      "abundance": 1.601,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 166,
+      "neutrons": 98,
+      "abundance": 33.503,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 167,
+      "neutrons": 99,
+      "abundance": 22.869,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 168,
+      "neutrons": 100,
+      "abundance": 26.978,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 170,
+      "neutrons": 102,
+      "abundance": 14.91,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

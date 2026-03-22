@@ -1,0 +1,37 @@
+{
+  "symbol": "Ta",
+  "name": "Tantalum",
+  "atomic_number": 73,
+  "atomic_mass": 180.948,
+  "block": "d",
+  "period": 6,
+  "group": 5,
+  "ionization_energy": 7.54957,
+  "electronegativity": 1.5,
+  "atomic_radius": 200,
+  "covalent_radius": 170,
+  "melting_point": 3290,
+  "boiling_point": 5731,
+  "density": 16.69,
+  "electron_affinity": 31.0,
+  "valence_electrons": 5,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d³ 6s²",
+  "primary_emission_wavelength": 331.1,
+  "visible_emission_wavelength": 405.0,
+  "isotopes": [
+    {
+      "mass_number": 180,
+      "neutrons": 107,
+      "abundance": 0.012,
+      "is_stable": false,
+      "half_life": "8.125 hours"
+    },
+    {
+      "mass_number": 181,
+      "neutrons": 108,
+      "abundance": 99.988,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

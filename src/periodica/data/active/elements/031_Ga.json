@@ -1,0 +1,37 @@
+{
+  "symbol": "Ga",
+  "name": "Gallium",
+  "atomic_number": 31,
+  "atomic_mass": 69.723,
+  "block": "p",
+  "period": 4,
+  "group": 13,
+  "ionization_energy": 5.999,
+  "electronegativity": 1.81,
+  "atomic_radius": 136,
+  "covalent_radius": 122,
+  "melting_point": 302.91,
+  "boiling_point": 2477,
+  "density": 5.91,
+  "electron_affinity": 28.9,
+  "valence_electrons": 3,
+  "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p¹",
+  "primary_emission_wavelength": 417.2,
+  "visible_emission_wavelength": 417.2,
+  "isotopes": [
+    {
+      "mass_number": 69,
+      "neutrons": 38,
+      "abundance": 60.108,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 71,
+      "neutrons": 40,
+      "abundance": 39.892,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

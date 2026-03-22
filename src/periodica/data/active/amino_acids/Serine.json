@@ -1,0 +1,32 @@
+{
+  "name": "Serine",
+  "symbol": "S",
+  "category": "polar_uncharged",
+  "charge_pH7": -0.007,
+  "isoelectric_point": 5.68,
+  "hydropathy_index": -0.8,
+  "helix_propensity": 0.77,
+  "sheet_propensity": 0.75,
+  "turn_propensity": 1.43,
+  "pKa_carboxyl": 2.21,
+  "pKa_amino": 9.15,
+  "pKa_sidechain": null,
+  "sidechain_ionization": null,
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147451+00:00",
+    "model_version": "1.0.0"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "Name": "Al-Zn-Mg-Cu High Strength",
+  "Formula": "Al-Cr-Cu-Mg-Zn",
+  "Category": "Aluminum Alloy",
+  "SubCategory": "Al-Cu Wrought Alloy",
+  "Description": "Auto-generated aluminum alloy with Zn 7.5%, Mg 2.5%, Cu 2.0%, Cr 0.2%",
+  "Components": [
+    {
+      "Element": "Al",
+      "MinPercent": 86.8,
+      "MaxPercent": 88.8,
+      "Role": "Base"
+    },
+    {
+      "Element": "Cr",
+      "MinPercent": 0.18,
+      "MaxPercent": 0.22,
+      "Role": "Trace"
+    },
+    {
+      "Element": "Cu",
+      "MinPercent": 1.8,
+      "MaxPercent": 2.2,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Mg",
+      "MinPercent": 2.25,
+      "MaxPercent": 2.75,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Zn",
+      "MinPercent": 6.75,
+      "MaxPercent": 8.25,
+      "Role": "Alloying"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 2.836,
+    "MeltingPoint_K": 815.0,
+    "ThermalConductivity_W_mK": 68.7,
+    "ThermalExpansion_per_K": 2e-05,
+    "ElectricalResistivity_Ohm_m": 2.308e-07,
+    "SpecificHeat_J_kgK": 580
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 471.0,
+    "YieldStrength_MPa": 283.0,
+    "Elongation_percent": 18,
+    "Hardness_HV": 141.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "LatticeParameters": {
+      "a_pm": 404.9,
+      "b_pm": 404.9,
+      "c_pm": 404.9,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "AtomsPerUnitCell": 4
+  },
+  "Applications": [
+    "Aerospace",
+    "Automotive",
+    "Lightweight structures"
+  ],
+  "ProcessingMethods": [
+    "Extrusion",
+    "Rolling",
+    "Casting"
+  ],
+  "Color": "#C0C0C0",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Al",
+      "element:Zn",
+      "element:Mg",
+      "element:Cu",
+      "element:Cr"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022704+00:00",
+    "model_version": "1.0.0"
+  }
+}

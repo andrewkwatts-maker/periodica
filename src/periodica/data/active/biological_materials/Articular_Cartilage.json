@@ -1,0 +1,44 @@
+{
+  "name": "Articular Cartilage",
+  "type": "cartilage",
+  "organ_system": "skeletal",
+  "ecm_composition": {
+    "collagen_ii": 0.15,
+    "proteoglycans": 0.1,
+    "hyaluronan": 0.02,
+    "water": 0.7,
+    "other": 0.03
+  },
+  "cell_composition": {
+    "chondrocyte": 0.02
+  },
+  "porosity": 0.0,
+  "vascularization": "none",
+  "innervation": false,
+  "healing_time_weeks": 24,
+  "function": "Low-friction joint surface, shock absorption",
+  "description": "Avascular tissue covering joint surfaces. High water content provides load-bearing capacity through interstitial fluid pressurization.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 60.0322,
+    "youngs_modulus_voigt": 120.031,
+    "youngs_modulus_reuss": 0.0333,
+    "ultimate_strength_MPa": 2.0011,
+    "poissons_ratio": 0.455,
+    "shear_modulus_MPa": 20.6296
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.065,
+    "water_content_percent": 70.0
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_ii": 0.15,
+    "proteoglycans": 0.1,
+    "hyaluronan": 0.02,
+    "water": 0.7,
+    "other": 0.03
+  }
+}

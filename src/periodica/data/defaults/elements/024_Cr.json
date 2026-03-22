@@ -1,0 +1,51 @@
+{
+  "symbol": "Cr",
+  "name": "Chromium",
+  "atomic_number": 24,
+  "atomic_mass": 51.996,
+  "block": "d",
+  "period": 4,
+  "group": 6,
+  "ionization_energy": 6.767,
+  "electronegativity": 1.66,
+  "atomic_radius": 166,
+  "covalent_radius": 139,
+  "melting_point": 2180,
+  "boiling_point": 2944,
+  "density": 7.19,
+  "electron_affinity": 64.3,
+  "valence_electrons": 6,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁵ 4s¹",
+  "primary_emission_wavelength": 425.4,
+  "visible_emission_wavelength": 425.4,
+  "isotopes": [
+    {
+      "mass_number": 50,
+      "neutrons": 26,
+      "abundance": 4.345,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 52,
+      "neutrons": 28,
+      "abundance": 83.789,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 53,
+      "neutrons": 29,
+      "abundance": 9.501,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 54,
+      "neutrons": 30,
+      "abundance": 2.365,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

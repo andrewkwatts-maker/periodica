@@ -1,0 +1,37 @@
+{
+  "Name": "Xi-",
+  "Symbol": "Xi-",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle", "Cascade Baryon", "Strange Baryon"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 1321.71,
+  "Mass_kg": 2.36e-27,
+  "Mass_amu": 1.417,
+  "Spin_hbar": 0.5,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Strangeness": -2,
+  "Isospin_I": 0.5,
+  "Isospin_I3": -0.5,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Down Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "d" },
+    { "Constituent": "Strange Quark", "Count": 2, "Charge_e": -0.3333333333, "Symbol": "s" }
+  ],
+  "QuarkContent": "dss",
+  "Stability": "Unstable",
+  "HalfLife_s": 1.639e-10,
+  "DecayProducts": ["Lambda", "Pion-"],
+  "DecayModes": [
+    { "Products": ["Lambda", "Pion-"], "BranchingRatio": 0.9988 }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Xi+",
+    "Symbol": "Anti-Xi+"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"],
+  "Discovery": {
+    "Year": 1952,
+    "Location": "Manchester"
+  }
+}

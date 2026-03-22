@@ -1,0 +1,37 @@
+{
+    "Name": "Water",
+    "Formula": "H2O",
+    "MolecularMass_amu": 18.015,
+    "MolecularMass_g_mol": 18.015,
+    "BondType": "Covalent",
+    "Geometry": "Bent",
+    "BondAngle_deg": 104.5,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 273.15,
+    "BoilingPoint_K": 373.15,
+    "Density_g_cm3": 1.0,
+    "State_STP": "Liquid",
+    "Composition": [
+        {"Element": "H", "Count": 2},
+        {"Element": "O", "Count": 1}
+    ],
+    "Bonds": [
+        {"From": "O", "To": "H", "Type": "Single", "Length_pm": 96, "Index": 1},
+        {"From": "O", "To": "H", "Type": "Single", "Length_pm": 96, "Index": 2}
+    ],
+    "Atoms3D": [
+        {"element": "O", "x": 0.0, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "H", "x": 0.757, "y": 0.587, "z": 0.0, "index": 1},
+        {"element": "H", "x": -0.757, "y": 0.587, "z": 0.0, "index": 2}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "single", "length_A": 0.96},
+        {"from": 0, "to": 2, "type": "single", "length_A": 0.96}
+    ],
+    "DipoleMoment_D": 1.85,
+    "ElectronConfiguration": "O: 1s2 2s2 2p4, H: 1s1",
+    "Applications": ["Universal solvent", "Biological processes", "Industrial cooling", "Agriculture"],
+    "IUPAC_Name": "Oxidane",
+    "Category": "Inorganic",
+    "Color": "#4FC3F7"
+}

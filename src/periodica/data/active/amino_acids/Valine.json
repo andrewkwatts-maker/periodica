@@ -1,0 +1,32 @@
+{
+  "name": "Valine",
+  "symbol": "V",
+  "category": "nonpolar_aliphatic",
+  "charge_pH7": -0.002,
+  "isoelectric_point": 5.97,
+  "hydropathy_index": 4.2,
+  "helix_propensity": 1.06,
+  "sheet_propensity": 1.7,
+  "turn_propensity": 0.5,
+  "pKa_carboxyl": 2.32,
+  "pKa_amino": 9.62,
+  "pKa_sidechain": null,
+  "sidechain_ionization": null,
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147487+00:00",
+    "model_version": "1.0.0"
+  }
+}

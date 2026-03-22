@@ -1,0 +1,37 @@
+{
+  "Name": "Sigma-",
+  "Symbol": "Sigma-",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle", "Sigma Baryon", "Strange Baryon"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 1197.449,
+  "Mass_kg": 2.14e-27,
+  "Mass_amu": 1.284,
+  "Spin_hbar": 0.5,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Strangeness": -1,
+  "Isospin_I": 1,
+  "Isospin_I3": -1,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Down Quark", "Count": 2, "Charge_e": -0.3333333333, "Symbol": "d" },
+    { "Constituent": "Strange Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "s" }
+  ],
+  "QuarkContent": "dds",
+  "Stability": "Unstable",
+  "HalfLife_s": 1.479e-10,
+  "DecayProducts": ["Neutron", "Pion-"],
+  "DecayModes": [
+    { "Products": ["Neutron", "Pion-"], "BranchingRatio": 0.9984 }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Sigma+",
+    "Symbol": "Anti-Sigma+"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"],
+  "Discovery": {
+    "Year": 1953,
+    "Location": "Brookhaven"
+  }
+}

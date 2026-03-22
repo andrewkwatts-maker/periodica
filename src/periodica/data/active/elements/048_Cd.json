@@ -1,0 +1,79 @@
+{
+  "symbol": "Cd",
+  "name": "Cadmium",
+  "atomic_number": 48,
+  "atomic_mass": 112.414,
+  "block": "d",
+  "period": 5,
+  "group": 12,
+  "ionization_energy": 8.994,
+  "electronegativity": 1.69,
+  "atomic_radius": 161,
+  "covalent_radius": 144,
+  "melting_point": 594.22,
+  "boiling_point": 1040,
+  "density": 8.65,
+  "electron_affinity": 0,
+  "valence_electrons": 2,
+  "electron_configuration": "[Kr] 4d¹⁰ 5s²",
+  "primary_emission_wavelength": 228.8,
+  "visible_emission_wavelength": 480.0,
+  "isotopes": [
+    {
+      "mass_number": 106,
+      "neutrons": 58,
+      "abundance": 1.25,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 108,
+      "neutrons": 60,
+      "abundance": 0.89,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 110,
+      "neutrons": 62,
+      "abundance": 12.49,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 111,
+      "neutrons": 63,
+      "abundance": 12.8,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 112,
+      "neutrons": 64,
+      "abundance": 24.13,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 113,
+      "neutrons": 65,
+      "abundance": 12.22,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 114,
+      "neutrons": 66,
+      "abundance": 28.73,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 116,
+      "neutrons": 68,
+      "abundance": 7.49,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "Name": "Borosilicate Glass",
+  "Standard": "ASTM C830",
+  "Category": "Ceramic",
+  "SubCategory": "Glass",
+  "Description": "Low thermal expansion glass with excellent chemical durability",
+  "BaseAlloy": null,
+  "Processing": {
+    "Condition": "Annealed",
+    "AnnealingTemp_K": 833
+  },
+  "ElasticProperties": {
+    "YoungsModulus_GPa": 64,
+    "ShearModulus_GPa": 26.5,
+    "BulkModulus_GPa": 38,
+    "PoissonsRatio": 0.20
+  },
+  "StrengthProperties": {
+    "FlexuralStrength_MPa": 69,
+    "CompressiveStrength_MPa": 1100,
+    "TensileStrength_MPa": 41
+  },
+  "Hardness": {
+    "Vickers_HV": 590,
+    "Knoop_HK": 418,
+    "Mohs": 6.5
+  },
+  "FractureMechanics": {
+    "FractureToughness_KIC_MPa_sqrt_m": 0.76,
+    "WeibullModulus": 5
+  },
+  "ThermalProperties": {
+    "SofteningPoint_K": 1093,
+    "ThermalConductivity_W_mK": 1.14,
+    "SpecificHeat_J_kgK": 830,
+    "ThermalExpansion_per_K": 3.3e-6,
+    "ThermalShockResistance_deltaT_K": 180
+  },
+  "ElectricalProperties": {
+    "ElectricalResistivity_Ohm_m": 1e12,
+    "DielectricConstant": 4.6
+  },
+  "OpticalProperties": {
+    "RefractiveIndex": 1.474,
+    "TransmittanceVisible_percent": 91,
+    "AbbeNumber": 65.4
+  },
+  "PhysicalProperties": {
+    "Density_kg_m3": 2230
+  },
+  "SimulationParameters": {
+    "FEA": {"RecommendedMeshSize_mm": 0.5, "StressStrainModel": "LinearElasticBrittle"}
+  },
+  "FailureCriteria": {
+    "MaxTensileStress_MPa": 41,
+    "MaxTemperature_K": 773
+  },
+  "ServiceConditions": {
+    "MinServiceTemperature_K": 4,
+    "MaxServiceTemperature_K": 773,
+    "CorrosionResistance": "Excellent",
+    "SafetyFactor_recommended": 5.0
+  },
+  "Applications": ["Laboratory glassware", "Optics", "Cookware", "Lighting"],
+  "Color": "#E8E8E8"
+}

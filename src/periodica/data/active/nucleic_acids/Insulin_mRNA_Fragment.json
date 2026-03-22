@@ -1,0 +1,24 @@
+{
+  "name": "Insulin mRNA Fragment",
+  "type": "mrna",
+  "organism": "Homo sapiens",
+  "function": "Protein coding - Insulin signal peptide",
+  "sequence": "AUGGCCCUGGUAAUGAUUCUCUACUUGCCUGGACUCCUUUUUUGCUACUCCUGGUUGGCGCUUGCCUGAAC",
+  "length": 71,
+  "gc_content": 50.7,
+  "base_composition": {
+    "A": 9,
+    "U": 26,
+    "G": 16,
+    "C": 20
+  },
+  "molecular_mass": 22693.2,
+  "melting_temperature": 93.0,
+  "complement": "UACCGGGACCAUUACUAAGAGAUGAACGGACCUGAGGAAAAAACGAUGAGGACCAACCGCGAACGGACUUG",
+  "reverse_complement": "GUUCAGGCAAGCGCCAACCAGGAGUAGCAAAAAAGGAGUCCAGGCAAGUAGAGAAUCAUUACCAGGGCCAU",
+  "secondary_structures": {
+    "hairpins": 0,
+    "details": []
+  },
+  "description": "5' region of human insulin mRNA encoding signal peptide."
+}

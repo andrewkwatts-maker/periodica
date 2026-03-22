@@ -1,0 +1,30 @@
+{
+  "symbol": "Ds",
+  "name": "Darmstadtium",
+  "atomic_number": 110,
+  "atomic_mass": 281,
+  "block": "d",
+  "period": 7,
+  "group": 10,
+  "ionization_energy": 8.3,
+  "electronegativity": 2.3,
+  "atomic_radius": 128,
+  "covalent_radius": 128,
+  "melting_point": 2300,
+  "boiling_point": null,
+  "density": 34.8,
+  "electron_affinity": null,
+  "valence_electrons": 10,
+  "electron_configuration": "[Rn] 5f¹⁴ 6d⁸ 7s²",
+  "primary_emission_wavelength": null,
+  "visible_emission_wavelength": null,
+  "isotopes": [
+    {
+      "mass_number": 281,
+      "neutrons": 171,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "14 seconds"
+    }
+  ]
+}

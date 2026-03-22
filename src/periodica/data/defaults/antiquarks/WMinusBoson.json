@@ -1,0 +1,26 @@
+{
+  "Name": "W Minus Boson",
+  "Symbol": "W⁻",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Gauge Boson", "Force Carrier", "Fundamental Particle"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 80379.0, // Same mass as W+
+  "Mass_kg": 1.43285e-25,
+  "Mass_amu": 86.299,
+  "Spin_hbar": 1.0,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 1.0,
+  "Isospin_I3": -1.0,
+  "Parity_P": null,
+  "Composition": [], // Fundamental
+  "Stability": "Unstable",
+  "HalfLife_s": 3.1e-25, // Same half-life as W+
+  "DecayProducts": ["Electron Antineutrino", "Electron", "Muon Antineutrino", "Muon", "Tau Antineutrino", "Tau", "Antiquark-Quark pairs"], // Decay products are antiparticles of W+ decay products
+  "Antiparticle": {
+    "Name": "W Plus Boson",
+    "Symbol": "W⁺"
+  },
+  "InteractionForces": ["Weak", "Electromagnetic", "Gravitational"]
+}

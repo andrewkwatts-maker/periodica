@@ -1,0 +1,89 @@
+{
+  "Name": "Low Carbon Steel",
+  "Formula": "Fe-C-Mn-Si",
+  "Category": "Steel",
+  "SubCategory": "Low Carbon Steel",
+  "Description": "Auto-generated steel with C 0.1%, Mn 0.8%, Si 0.3%",
+  "Components": [
+    {
+      "Element": "Fe",
+      "MinPercent": 97.75,
+      "MaxPercent": 99.75,
+      "Role": "Base"
+    },
+    {
+      "Element": "C",
+      "MinPercent": 0.14,
+      "MaxPercent": 0.16,
+      "Role": "Trace"
+    },
+    {
+      "Element": "Mn",
+      "MinPercent": 0.72,
+      "MaxPercent": 0.88,
+      "Role": "Alloying"
+    },
+    {
+      "Element": "Si",
+      "MinPercent": 0.27,
+      "MaxPercent": 0.33,
+      "Role": "Trace"
+    }
+  ],
+  "PhysicalProperties": {
+    "Density_g_cm3": 7.784,
+    "MeltingPoint_K": 1648.4,
+    "ThermalConductivity_W_mK": 27.5,
+    "ThermalExpansion_per_K": 1.8e-05,
+    "ElectricalResistivity_Ohm_m": 3.789e-07,
+    "SpecificHeat_J_kgK": 560
+  },
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 790.0,
+    "YieldStrength_MPa": 474.0,
+    "Elongation_percent": 26,
+    "Hardness_HV": 237.0
+  },
+  "LatticeProperties": {
+    "PrimaryStructure": "BCC",
+    "LatticeParameters": {
+      "a_pm": 286.6,
+      "b_pm": 286.6,
+      "c_pm": 286.6,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "AtomicPackingFactor": 0.68,
+    "CoordinationNumber": 8,
+    "AtomsPerUnitCell": 2
+  },
+  "Applications": [
+    "Structural components",
+    "Machinery",
+    "Construction"
+  ],
+  "ProcessingMethods": [
+    "Hot rolling",
+    "Forging",
+    "Heat treatment"
+  ],
+  "Color": "#808080",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:Fe",
+      "element:C",
+      "element:Mn",
+      "element:Si"
+    ],
+    "derivation_chain": [
+      "elements",
+      "rule_of_mixtures",
+      "alloy"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.022266+00:00",
+    "model_version": "1.0.0"
+  }
+}

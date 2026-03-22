@@ -1,0 +1,44 @@
+{
+  "name": "Spermatozoon",
+  "type": "spermatozoon",
+  "organism": "Homo sapiens",
+  "diameter_um": 5.0,
+  "volume_fL": 65.45,
+  "mass_pg": 68.72,
+  "density_g_cm3": 1.05,
+  "surface_area_um2": 78.54,
+  "surface_volume_ratio": 1.2,
+  "metabolic_rate_fW": 0.0,
+  "atp_turnover_per_s": 3.0,
+  "o2_consumption_per_s": 0.0,
+  "estimated_doubling_time_hours": 114254665.4,
+  "diffusion_time_ms": 12.5,
+  "derived_properties": {
+    "metabolic_scaling": {
+      "law": "Kleiber's Law",
+      "equation": "B = B₀ × M^0.75",
+      "B0": 3.5e-12,
+      "exponent": 0.75
+    },
+    "geometric_model": "Spherical approximation"
+  },
+  "total_length_um": 50.0,
+  "tissue": "reproductive",
+  "function": "Male gamete",
+  "nucleus": true,
+  "mitochondria_count": 75,
+  "lifespan_days": 5,
+  "key_proteins": [
+    "Protamines",
+    "Acrosin",
+    "Izumo1",
+    "Dynein"
+  ],
+  "structures": [
+    "head",
+    "midpiece",
+    "tail"
+  ],
+  "flagellum_length_um": 45,
+  "description": "Highly specialized motile cells. Head contains condensed DNA, midpiece has mitochondria for energy, tail provides motility."
+}

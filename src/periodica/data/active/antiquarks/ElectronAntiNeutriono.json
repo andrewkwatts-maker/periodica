@@ -1,0 +1,26 @@
+{
+  "Name": "Electron Antineutrino",
+  "Symbol": "ν̅_e",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Antilepton", "Fundamental Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 0.0000000022, // Same tiny mass
+  "Mass_kg": 3.921856e-36,
+  "Mass_amu": 2.359e-12,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": -1, // Opposite sign for lepton number
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": null,
+  "Composition": [], // Fundamental
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Electron Neutrino",
+    "Symbol": "ν_e"
+  },
+  "InteractionForces": ["Weak", "Gravitational"]
+}

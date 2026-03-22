@@ -1,0 +1,97 @@
+{
+  "name": "CpG Island Fragment",
+  "type": "DNA",
+  "organism": "Synthetic",
+  "function": "Epigenetic regulation",
+  "sequence": "GCGCGCGTACGCGCGATCGCGCGCGATACGCGCG",
+  "length": 34,
+  "gc_content": 79.4,
+  "base_composition": {
+    "G": 14,
+    "C": 13,
+    "T": 3,
+    "A": 4
+  },
+  "molecular_mass": 11083.8,
+  "melting_temperature": 80.0,
+  "complement": "CGCGCGCATGCGCGCTAGCGCGCGCTATGCGCGC",
+  "reverse_complement": "CGCGCGTATCGCGCGCGATCGCGCGTACGCGCGC",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 0,
+        "end": 24,
+        "loop_start": 7,
+        "loop_end": 17,
+        "stem_length": 7,
+        "loop_length": 10,
+        "stem_sequence": "GCGCGCG",
+        "loop_sequence": "TACGCGCGAT",
+        "stability": 1.0,
+        "matches": 7
+      },
+      {
+        "start": 0,
+        "end": 16,
+        "loop_start": 6,
+        "loop_end": 10,
+        "stem_length": 6,
+        "loop_length": 4,
+        "stem_sequence": "GCGCGC",
+        "loop_sequence": "GTAC",
+        "stability": 1.0,
+        "matches": 5
+      },
+      {
+        "start": 0,
+        "end": 22,
+        "loop_start": 6,
+        "loop_end": 16,
+        "stem_length": 6,
+        "loop_length": 10,
+        "stem_sequence": "GCGCGC",
+        "loop_sequence": "GTACGCGCGA",
+        "stability": 1.0,
+        "matches": 5
+      },
+      {
+        "start": 1,
+        "end": 23,
+        "loop_start": 7,
+        "loop_end": 17,
+        "stem_length": 6,
+        "loop_length": 10,
+        "stem_sequence": "CGCGCG",
+        "loop_sequence": "TACGCGCGAT",
+        "stability": 1.0,
+        "matches": 6
+      },
+      {
+        "start": 9,
+        "end": 25,
+        "loop_start": 15,
+        "loop_end": 19,
+        "stem_length": 6,
+        "loop_length": 4,
+        "stem_sequence": "CGCGCG",
+        "loop_sequence": "ATCG",
+        "stability": 1.0,
+        "matches": 6
+      }
+    ]
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.131049+00:00",
+    "model_version": "1.0.0"
+  }
+}

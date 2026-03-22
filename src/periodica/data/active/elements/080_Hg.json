@@ -1,0 +1,72 @@
+{
+  "symbol": "Hg",
+  "name": "Mercury",
+  "atomic_number": 80,
+  "atomic_mass": 200.592,
+  "block": "d",
+  "period": 6,
+  "group": 12,
+  "ionization_energy": 10.4375,
+  "electronegativity": 2.0,
+  "atomic_radius": 171,
+  "covalent_radius": 132,
+  "melting_point": 234,
+  "boiling_point": 630,
+  "density": 13.53,
+  "electron_affinity": 0,
+  "valence_electrons": 2,
+  "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s²",
+  "primary_emission_wavelength": 253.7,
+  "visible_emission_wavelength": 546.1,
+  "isotopes": [
+    {
+      "mass_number": 196,
+      "neutrons": 116,
+      "abundance": 0.15,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 198,
+      "neutrons": 118,
+      "abundance": 9.97,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 199,
+      "neutrons": 119,
+      "abundance": 16.87,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 200,
+      "neutrons": 120,
+      "abundance": 23.1,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 201,
+      "neutrons": 121,
+      "abundance": 13.18,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 202,
+      "neutrons": 122,
+      "abundance": 29.86,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 204,
+      "neutrons": 124,
+      "abundance": 6.87,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

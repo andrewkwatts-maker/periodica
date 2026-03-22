@@ -1,0 +1,33 @@
+{
+    "Name": "Oxygen",
+    "Formula": "O2",
+    "MolecularMass_amu": 32.00,
+    "MolecularMass_g_mol": 32.00,
+    "BondType": "Covalent",
+    "Geometry": "Linear",
+    "BondAngle_deg": 180.0,
+    "Polarity": "Nonpolar",
+    "MeltingPoint_K": 54.36,
+    "BoilingPoint_K": 90.19,
+    "Density_g_cm3": 0.001429,
+    "State_STP": "Gas",
+    "Composition": [
+        {"Element": "O", "Count": 2}
+    ],
+    "Bonds": [
+        {"From": "O", "To": "O", "Type": "Double", "Length_pm": 121, "Index": 1}
+    ],
+    "Atoms3D": [
+        {"element": "O", "x": -0.605, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "O", "x": 0.605, "y": 0.0, "z": 0.0, "index": 1}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "double", "length_A": 1.21}
+    ],
+    "DipoleMoment_D": 0.0,
+    "ElectronConfiguration": "O: 1s2 2s2 2p4",
+    "Applications": ["Respiration", "Combustion", "Medical oxygen", "Steel production"],
+    "IUPAC_Name": "Dioxygen",
+    "Category": "Inorganic",
+    "Color": "#F44336"
+}

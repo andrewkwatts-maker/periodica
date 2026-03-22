@@ -1,0 +1,44 @@
+{
+  "name": "Ribosome (80S)",
+  "type": "ribosome",
+  "organism": "Homo sapiens",
+  "function": "protein_synthesis",
+  "compartment": "cytoplasm",
+  "subunits": {
+    "large": {
+      "name": "60S",
+      "rRNA": ["28S", "5.8S", "5S"],
+      "protein_count": 47
+    },
+    "small": {
+      "name": "40S",
+      "rRNA": ["18S"],
+      "protein_count": 33
+    }
+  },
+  "properties": {
+    "molecular_mass_MDa": 4.2,
+    "diameter_nm": 25,
+    "sedimentation_coefficient": "80S",
+    "copy_number_per_cell": 10000000,
+    "protein_count": 80,
+    "rna_content_percent": 60
+  },
+  "composition": {
+    "C": 180000,
+    "H": 270000,
+    "N": 50000,
+    "O": 110000,
+    "P": 8000,
+    "Mg": 100
+  },
+  "activity": {
+    "translation_rate_aa_per_second": 6,
+    "energy_cost_atp_per_aa": 4,
+    "error_rate": 0.0001
+  },
+  "metadata": {
+    "pdb_id": "4UG0",
+    "created_by": "system"
+  }
+}

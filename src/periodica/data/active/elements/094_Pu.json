@@ -1,0 +1,30 @@
+{
+  "symbol": "Pu",
+  "name": "Plutonium",
+  "atomic_number": 94,
+  "atomic_mass": 244,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 6.026,
+  "electronegativity": 1.28,
+  "atomic_radius": 175,
+  "covalent_radius": 187,
+  "melting_point": 913,
+  "boiling_point": 3505,
+  "density": 19.85,
+  "electron_affinity": null,
+  "valence_electrons": 6,
+  "electron_configuration": "[Rn] 5f⁶ 7s²",
+  "primary_emission_wavelength": 421.0,
+  "visible_emission_wavelength": 421.0,
+  "isotopes": [
+    {
+      "mass_number": 244,
+      "neutrons": 150,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "80 million years"
+    }
+  ]
+}

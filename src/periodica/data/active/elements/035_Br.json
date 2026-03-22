@@ -1,0 +1,37 @@
+{
+  "symbol": "Br",
+  "name": "Bromine",
+  "atomic_number": 35,
+  "atomic_mass": 79.904,
+  "block": "p",
+  "period": 4,
+  "group": 17,
+  "ionization_energy": 11.814,
+  "electronegativity": 2.96,
+  "atomic_radius": 94,
+  "covalent_radius": 120,
+  "melting_point": 265.8,
+  "boiling_point": 332,
+  "density": 3.12,
+  "electron_affinity": 324.6,
+  "valence_electrons": 7,
+  "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p⁵",
+  "primary_emission_wavelength": 827.2,
+  "visible_emission_wavelength": 478.0,
+  "isotopes": [
+    {
+      "mass_number": 79,
+      "neutrons": 44,
+      "abundance": 50.69,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 81,
+      "neutrons": 46,
+      "abundance": 49.31,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

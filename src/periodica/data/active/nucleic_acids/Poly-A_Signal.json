@@ -1,0 +1,97 @@
+{
+  "name": "Poly-A Signal",
+  "type": "DNA",
+  "organism": "Mammalian consensus",
+  "function": "mRNA polyadenylation signal",
+  "sequence": "TTTTAATAAAAGATCCTTTATTTT",
+  "length": 24,
+  "gc_content": 12.5,
+  "base_composition": {
+    "T": 13,
+    "A": 8,
+    "G": 1,
+    "C": 2
+  },
+  "molecular_mass": 7777.8,
+  "melting_temperature": 43.3,
+  "complement": "AAAATTATTTTCTAGGAAATAAAA",
+  "reverse_complement": "AAAATAAAGGATCTTTTATTAAAA",
+  "secondary_structures": {
+    "hairpins": 10,
+    "details": [
+      {
+        "start": 8,
+        "end": 19,
+        "loop_start": 12,
+        "loop_end": 15,
+        "stem_length": 4,
+        "loop_length": 3,
+        "stem_sequence": "AAAG",
+        "loop_sequence": "ATC",
+        "stability": 0.25,
+        "matches": 4
+      },
+      {
+        "start": 7,
+        "end": 20,
+        "loop_start": 12,
+        "loop_end": 15,
+        "stem_length": 5,
+        "loop_length": 3,
+        "stem_sequence": "AAAAG",
+        "loop_sequence": "ATC",
+        "stability": 0.2,
+        "matches": 4
+      },
+      {
+        "start": 8,
+        "end": 23,
+        "loop_start": 13,
+        "loop_end": 18,
+        "stem_length": 5,
+        "loop_length": 5,
+        "stem_sequence": "AAAGA",
+        "loop_sequence": "TCCTT",
+        "stability": 0.2,
+        "matches": 4
+      },
+      {
+        "start": 3,
+        "end": 23,
+        "loop_start": 10,
+        "loop_end": 16,
+        "stem_length": 7,
+        "loop_length": 6,
+        "stem_sequence": "TAATAAA",
+        "loop_sequence": "AGATCC",
+        "stability": 0.0,
+        "matches": 6
+      },
+      {
+        "start": 4,
+        "end": 22,
+        "loop_start": 11,
+        "loop_end": 15,
+        "stem_length": 7,
+        "loop_length": 4,
+        "stem_sequence": "AATAAAA",
+        "loop_sequence": "GATC",
+        "stability": 0.0,
+        "matches": 6
+      }
+    ]
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.129899+00:00",
+    "model_version": "1.0.0"
+  }
+}

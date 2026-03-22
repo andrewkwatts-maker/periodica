@@ -1,0 +1,30 @@
+{
+  "symbol": "Nb",
+  "name": "Niobium",
+  "atomic_number": 41,
+  "atomic_mass": 92.906,
+  "block": "d",
+  "period": 5,
+  "group": 5,
+  "ionization_energy": 6.759,
+  "electronegativity": 1.6,
+  "atomic_radius": 198,
+  "covalent_radius": 164,
+  "melting_point": 2750,
+  "boiling_point": 5017,
+  "density": 8.57,
+  "electron_affinity": 86.1,
+  "valence_electrons": 5,
+  "electron_configuration": "[Kr] 4d⁴ 5s¹",
+  "primary_emission_wavelength": 405.9,
+  "visible_emission_wavelength": 405.9,
+  "isotopes": [
+    {
+      "mass_number": 93,
+      "neutrons": 52,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

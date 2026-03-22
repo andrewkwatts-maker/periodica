@@ -1,0 +1,51 @@
+{
+  "name": "Adipose Tissue (White)",
+  "type": "adipose",
+  "organ_system": "endocrine",
+  "ecm_composition": {
+    "collagen_iv": 0.02,
+    "collagen_vi": 0.02,
+    "laminin": 0.02,
+    "fibronectin": 0.01,
+    "water": 0.1,
+    "lipid": 0.7,
+    "other": 0.03
+  },
+  "cell_composition": {
+    "adipocyte": 0.8,
+    "fibroblast": 0.02,
+    "macrophage": 0.01,
+    "stem_cell": 0.02
+  },
+  "porosity": 0.0,
+  "vascularization": "moderate",
+  "innervation": true,
+  "healing_time_weeks": 4,
+  "function": "Energy storage, insulation, endocrine signaling",
+  "description": "Connective tissue specialized for lipid storage. Major endocrine organ secreting adipokines.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 5.5682,
+    "youngs_modulus_voigt": 9.9444,
+    "youngs_modulus_reuss": 1.192,
+    "ultimate_strength_MPa": 0.1856,
+    "poissons_ratio": 0.367,
+    "shear_modulus_MPa": 2.0371
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.018,
+    "water_content_percent": 11.1
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_iv": 0.022222222222222227,
+    "collagen_vi": 0.022222222222222227,
+    "laminin": 0.022222222222222227,
+    "fibronectin": 0.011111111111111113,
+    "water": 0.11111111111111113,
+    "lipid": 0.7777777777777778,
+    "other": 0.03333333333333333
+  }
+}

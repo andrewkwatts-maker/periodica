@@ -1,0 +1,159 @@
+{
+  "Name": "Aluminum 6061",
+  "Formula": "Al-Mg-Si",
+  "Category": "Aluminum Alloy",
+  "SubCategory": "6xxx Series (Heat Treatable)",
+  "Description": "General-purpose structural aluminum with good weldability, corrosion resistance, and machinability",
+
+  "Components": [
+    {"Element": "Al", "MinPercent": 95.85, "MaxPercent": 98.56, "Role": "Base"},
+    {"Element": "Mg", "MinPercent": 0.8, "MaxPercent": 1.2, "Role": "Strengthening"},
+    {"Element": "Si", "MinPercent": 0.4, "MaxPercent": 0.8, "Role": "Strengthening"},
+    {"Element": "Fe", "MinPercent": 0.0, "MaxPercent": 0.7, "Role": "Impurity"},
+    {"Element": "Cu", "MinPercent": 0.15, "MaxPercent": 0.4, "Role": "Strengthening"},
+    {"Element": "Cr", "MinPercent": 0.04, "MaxPercent": 0.35, "Role": "Grain Control"},
+    {"Element": "Mn", "MinPercent": 0.0, "MaxPercent": 0.15, "Role": "Grain Control"},
+    {"Element": "Zn", "MinPercent": 0.0, "MaxPercent": 0.25, "Role": "Impurity"},
+    {"Element": "Ti", "MinPercent": 0.0, "MaxPercent": 0.15, "Role": "Grain Refiner"}
+  ],
+
+  "PhysicalProperties": {
+    "Density_g_cm3": 2.70,
+    "MeltingPoint_K": 855,
+    "ThermalConductivity_W_mK": 167,
+    "ThermalExpansion_per_K": 23.6e-6,
+    "ElectricalResistivity_Ohm_m": 3.99e-8,
+    "SpecificHeat_J_kgK": 896,
+    "YoungsModulus_GPa": 68.9,
+    "ShearModulus_GPa": 26,
+    "PoissonsRatio": 0.33,
+    "BrinellHardness_HB": 95
+  },
+
+  "MechanicalProperties": {
+    "TensileStrength_MPa": 310,
+    "YieldStrength_MPa": 276,
+    "Elongation_percent": 12,
+    "ReductionOfArea_percent": 25,
+    "ImpactStrength_J": 35,
+    "FatigueStrength_MPa": 97,
+    "FractureToughness_MPa_sqrt_m": 29
+  },
+
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC",
+    "SecondaryStructures": ["Mg2Si"],
+    "LatticeParameters": {
+      "a_pm": 404.9,
+      "b_pm": 404.9,
+      "c_pm": 404.9,
+      "alpha_deg": 90,
+      "beta_deg": 90,
+      "gamma_deg": 90
+    },
+    "SpaceGroup": "Fm-3m",
+    "SpaceGroupNumber": 225,
+    "PointGroup": "m-3m",
+    "AtomsPerUnitCell": 4,
+    "AtomicPackingFactor": 0.74,
+    "CoordinationNumber": 12,
+    "BurgersVector_pm": 286.3,
+    "StackingFaultEnergy_mJ_m2": 166
+  },
+
+  "PhaseComposition": {
+    "Phases": [
+      {
+        "Name": "Alpha Aluminum",
+        "Symbol": "alpha",
+        "Structure": "FCC",
+        "VolumePercent": 98,
+        "Hardness_HV": 105
+      },
+      {
+        "Name": "Beta Prime",
+        "Symbol": "beta'",
+        "Structure": "Monoclinic",
+        "Composition": "Mg2Si",
+        "VolumePercent": 2,
+        "Hardness_HV": 450
+      }
+    ],
+    "TransformationTemperatures": {
+      "Solidus_K": 855,
+      "Liquidus_K": 925,
+      "SolutionTreatment_K": 803,
+      "AgingTemperature_K": 433
+    }
+  },
+
+  "Microstructure": {
+    "GrainStructure": {
+      "AverageGrainSize_um": 80,
+      "GrainSizeDistribution": "LogNormal",
+      "GrainSizeStdDev": 0.4,
+      "ASTMGrainSizeNumber": 4,
+      "VoronoiSeedDensity_per_mm2": 156,
+      "GrainBoundaryWidth_nm": 0.5,
+      "GrainAspectRatio": 1.5
+    },
+    "PhaseDistribution": {
+      "NoiseType": "Perlin",
+      "NoiseScale": 0.06,
+      "NoiseOctaves": 3,
+      "NoisePersistence": 0.5,
+      "PhaseThreshold": 0.9
+    },
+    "Defects": {
+      "PointDefects": {
+        "VacancyConcentration": 1e-5,
+        "InterstitialConcentration": 1e-7
+      },
+      "Dislocations": {
+        "DislocationDensity_per_m2": 1e12,
+        "BurgersVectorType": "a/2<110>",
+        "SlipSystems": ["111<110>"]
+      },
+      "GrainBoundaries": {
+        "LowAngleBoundaryFraction": 0.2,
+        "HighAngleBoundaryFraction": 0.75,
+        "TwinBoundaryFraction": 0.05,
+        "GrainBoundaryEnergy_J_m2": 0.50
+      }
+    },
+    "Precipitates": {
+      "Types": ["GP zones", "beta''", "beta'", "beta"],
+      "VolumeFraction": 0.02,
+      "AverageSize_nm": 30,
+      "Distribution": "Matrix"
+    }
+  },
+
+  "CrystallographicOrientation": {
+    "PreferredOrientation": false,
+    "TextureType": "Random",
+    "MillerIndices": {
+      "Planes": [[1,1,1], [2,0,0], [2,2,0]],
+      "Directions": [[1,1,0], [1,1,2]]
+    },
+    "ODF": {
+      "Phi1_range": [0, 360],
+      "Phi_range": [0, 90],
+      "Phi2_range": [0, 90]
+    },
+    "TextureStrength_mrd": 1.0
+  },
+
+  "HeatTreatmentResponse": {
+    "Tempers": {
+      "O": {"Description": "Annealed", "YieldStrength_MPa": 55},
+      "T4": {"Description": "Solution treated, naturally aged", "YieldStrength_MPa": 145},
+      "T6": {"Description": "Solution treated, artificially aged", "YieldStrength_MPa": 276},
+      "T651": {"Description": "T6 + stress relieved by stretching", "YieldStrength_MPa": 276}
+    }
+  },
+
+  "Applications": ["Structural components", "Bicycle frames", "Marine fittings", "Aircraft fittings", "Automotive parts"],
+  "ProcessingMethods": ["Extrusion", "Rolling", "Forging", "Welding", "Machining"],
+  "Color": "#C0C0C0"
+}

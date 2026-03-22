@@ -1,0 +1,30 @@
+{
+  "symbol": "Am",
+  "name": "Americium",
+  "atomic_number": 95,
+  "atomic_mass": 243,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 5.974,
+  "electronegativity": 1.13,
+  "atomic_radius": 175,
+  "covalent_radius": 180,
+  "melting_point": 1449,
+  "boiling_point": 2880,
+  "density": 12.0,
+  "electron_affinity": null,
+  "valence_electrons": 7,
+  "electron_configuration": "[Rn] 5f⁷ 7s²",
+  "primary_emission_wavelength": 408.9,
+  "visible_emission_wavelength": 408.9,
+  "isotopes": [
+    {
+      "mass_number": 243,
+      "neutrons": 148,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "7,370 years"
+    }
+  ]
+}

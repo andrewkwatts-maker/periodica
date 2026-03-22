@@ -1,0 +1,58 @@
+{
+  "symbol": "Zn",
+  "name": "Zinc",
+  "atomic_number": 30,
+  "atomic_mass": 65.38,
+  "block": "d",
+  "period": 4,
+  "group": 12,
+  "ionization_energy": 9.394,
+  "electronegativity": 1.65,
+  "atomic_radius": 142,
+  "covalent_radius": 122,
+  "melting_point": 693,
+  "boiling_point": 1180,
+  "density": 7.14,
+  "electron_affinity": 0,
+  "valence_electrons": 12,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s²",
+  "primary_emission_wavelength": 213.9,
+  "visible_emission_wavelength": 468.0,
+  "isotopes": [
+    {
+      "mass_number": 64,
+      "neutrons": 34,
+      "abundance": 49.17,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 66,
+      "neutrons": 36,
+      "abundance": 27.73,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 67,
+      "neutrons": 37,
+      "abundance": 4.04,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 68,
+      "neutrons": 38,
+      "abundance": 18.45,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 70,
+      "neutrons": 40,
+      "abundance": 0.61,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

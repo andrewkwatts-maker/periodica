@@ -1,0 +1,37 @@
+{
+  "symbol": "Sb",
+  "name": "Antimony",
+  "atomic_number": 51,
+  "atomic_mass": 121.76,
+  "block": "p",
+  "period": 5,
+  "group": 15,
+  "ionization_energy": 8.608,
+  "electronegativity": 2.05,
+  "atomic_radius": 133,
+  "covalent_radius": 139,
+  "melting_point": 903.78,
+  "boiling_point": 1860,
+  "density": 6.68,
+  "electron_affinity": 103.2,
+  "valence_electrons": 5,
+  "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p³",
+  "primary_emission_wavelength": 259.8,
+  "visible_emission_wavelength": 450.0,
+  "isotopes": [
+    {
+      "mass_number": 121,
+      "neutrons": 70,
+      "abundance": 57.21,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 123,
+      "neutrons": 72,
+      "abundance": 42.79,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "symbol": "Tm",
+  "name": "Thulium",
+  "atomic_number": 69,
+  "atomic_mass": 168.934,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 6.18431,
+  "electronegativity": 1.25,
+  "atomic_radius": 222,
+  "covalent_radius": 190,
+  "melting_point": 1818,
+  "boiling_point": 2223,
+  "density": 9.32,
+  "electron_affinity": 99.0,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f¹³ 6s²",
+  "primary_emission_wavelength": 371.8,
+  "visible_emission_wavelength": 465.0,
+  "isotopes": [
+    {
+      "mass_number": 169,
+      "neutrons": 100,
+      "abundance": 100,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

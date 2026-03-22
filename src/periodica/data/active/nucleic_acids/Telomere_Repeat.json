@@ -1,0 +1,35 @@
+{
+  "name": "Telomere Repeat",
+  "type": "DNA",
+  "organism": "Homo sapiens",
+  "function": "Chromosome end protection",
+  "sequence": "TTAGGGTTAGGGTTAGGGTTAGGGTTAGGG",
+  "length": 30,
+  "gc_content": 50.0,
+  "base_composition": {
+    "T": 10,
+    "A": 5,
+    "G": 15
+  },
+  "molecular_mass": 10046.0,
+  "melting_temperature": 61.4,
+  "complement": "AATCCCAATCCCAATCCCAATCCCAATCCC",
+  "reverse_complement": "CCCTAACCCTAACCCTAACCCTAACCCTAA",
+  "secondary_structures": {
+    "hairpins": 0,
+    "details": []
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "elements"
+    ],
+    "derivation_chain": [
+      "elements",
+      "nucleic_acid_predictor"
+    ],
+    "confidence": 0.85,
+    "timestamp": "2026-03-22T03:25:53.138987+00:00",
+    "model_version": "1.0.0"
+  }
+}

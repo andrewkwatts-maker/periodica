@@ -1,0 +1,30 @@
+{
+  "symbol": "Cf",
+  "name": "Californium",
+  "atomic_number": 98,
+  "atomic_mass": 251,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 6.282,
+  "electronegativity": 1.3,
+  "atomic_radius": 186,
+  "covalent_radius": 168,
+  "melting_point": 1173,
+  "boiling_point": 1743,
+  "density": 15.1,
+  "electron_affinity": null,
+  "valence_electrons": 10,
+  "electron_configuration": "[Rn] 5f¹⁰ 7s²",
+  "primary_emission_wavelength": 415.0,
+  "visible_emission_wavelength": 415.0,
+  "isotopes": [
+    {
+      "mass_number": 251,
+      "neutrons": 153,
+      "abundance": 100.0,
+      "is_stable": false,
+      "half_life": "898 years"
+    }
+  ]
+}

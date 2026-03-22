@@ -1,0 +1,44 @@
+{
+  "name": "Keratin Type I Fragment",
+  "organism": "Homo sapiens",
+  "function": "Structural protein of hair, nails, and epidermis",
+  "localization": "cytoplasm",
+  "sequence": "MSRQSSVSFRSGGSRSGGGGGGGLGSGGSIRSSYSRFSSSGGRGGGGRFSSS",
+  "length": 52,
+  "molecular_mass": 5045.4,
+  "isoelectric_point": 11.8,
+  "charge_pH7": 6.0,
+  "gravy": -1.2,
+  "amino_acid_composition": {
+    "F": 2,
+    "G": 18,
+    "I": 1,
+    "L": 1,
+    "M": 1,
+    "Q": 1,
+    "R": 8,
+    "S": 18,
+    "V": 1,
+    "Y": 1
+  },
+  "secondary_structure": {
+    "helix_percent": 85.0,
+    "sheet_percent": 0.0,
+    "turn_percent": 5.0,
+    "coil_percent": 10.0
+  },
+  "residues": [
+    {"residue": "M", "position": 1, "structure": "H", "helix_score": 1.45, "sheet_score": 0.97, "turn_score": 0.64, "phi": -57.0, "psi": -47.0},
+    {"residue": "S", "position": 2, "structure": "H", "helix_score": 1.35, "sheet_score": 0.90, "turn_score": 0.72, "phi": -60.0, "psi": -45.0},
+    {"residue": "R", "position": 3, "structure": "H", "helix_score": 1.21, "sheet_score": 0.93, "turn_score": 0.88, "phi": -63.0, "psi": -42.0},
+    {"residue": "Q", "position": 4, "structure": "H", "helix_score": 1.16, "sheet_score": 0.93, "turn_score": 0.91, "phi": -57.0, "psi": -47.0},
+    {"residue": "S", "position": 5, "structure": "H", "helix_score": 1.10, "sheet_score": 0.95, "turn_score": 0.95, "phi": -60.0, "psi": -45.0}
+  ],
+  "disulfide_bonds": [],
+  "extinction_coefficient": {
+    "reduced": 1490,
+    "oxidized": 1490
+  },
+  "uniprot_id": "P04264",
+  "description": "Fragment from keratin type I cytoskeletal 10. Part of the intermediate filament network in epithelial cells."
+}

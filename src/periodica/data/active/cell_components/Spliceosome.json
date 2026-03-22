@@ -1,0 +1,24 @@
+{
+  "name": "Spliceosome",
+  "component_type": "complex",
+  "description": "Pre-mRNA splicing complex",
+  "properties": {
+    "diameter_nm": 40,
+    "copy_number": 100000
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "proteins",
+      "nucleic_acids"
+    ],
+    "derivation_chain": [
+      "proteins",
+      "nucleic_acids",
+      "cell_component"
+    ],
+    "confidence": 0.7,
+    "timestamp": "2026-03-22T03:25:53.141273+00:00",
+    "model_version": "1.0.0"
+  }
+}

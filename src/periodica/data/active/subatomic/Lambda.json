@@ -1,0 +1,39 @@
+{
+  "Name": "Lambda",
+  "Symbol": "Lambda0",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle", "Strange Baryon"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 1115.683,
+  "Mass_kg": 1.989e-27,
+  "Mass_amu": 1.197,
+  "Spin_hbar": 0.5,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Strangeness": -1,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1, "Charge_e": 0.6666666667, "Symbol": "u" },
+    { "Constituent": "Down Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "d" },
+    { "Constituent": "Strange Quark", "Count": 1, "Charge_e": -0.3333333333, "Symbol": "s" }
+  ],
+  "QuarkContent": "uds",
+  "Stability": "Unstable",
+  "HalfLife_s": 2.632e-10,
+  "DecayProducts": ["Proton", "Pion-", "Neutron", "Pion0"],
+  "DecayModes": [
+    { "Products": ["Proton", "Pion-"], "BranchingRatio": 0.639 },
+    { "Products": ["Neutron", "Pion0"], "BranchingRatio": 0.358 }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Lambda",
+    "Symbol": "Anti-Lambda0"
+  },
+  "InteractionForces": ["Strong", "Weak", "Gravitational"],
+  "Discovery": {
+    "Year": 1950,
+    "Location": "Manchester"
+  }
+}

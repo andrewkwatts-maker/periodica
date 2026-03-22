@@ -1,0 +1,266 @@
+{
+  "name": "Insulin Chain A",
+  "organism": "Homo sapiens",
+  "function": "Glucose regulation",
+  "localization": "extracellular",
+  "sequence": "GIVEQCCTSICSLYQLENYCN",
+  "length": 21,
+  "molecular_mass": 1949.7,
+  "isoelectric_point": 3.13,
+  "charge_pH7": -2.25,
+  "gravy": 0.214,
+  "amino_acid_composition": {
+    "G": 1,
+    "I": 2,
+    "V": 1,
+    "E": 2,
+    "Q": 2,
+    "C": 4,
+    "T": 1,
+    "S": 2,
+    "L": 2,
+    "Y": 2,
+    "N": 2
+  },
+  "secondary_structure": {
+    "helix_percent": 0.0,
+    "sheet_percent": 81.0,
+    "turn_percent": 19.0,
+    "coil_percent": 0.0
+  },
+  "residues": [
+    {
+      "residue": "G",
+      "position": 1,
+      "structure": "T",
+      "helix_score": 1.226,
+      "sheet_score": 1.27,
+      "turn_score": 0.85,
+      "phi": -3.1,
+      "psi": -43.0
+    },
+    {
+      "residue": "I",
+      "position": 2,
+      "structure": "E",
+      "helix_score": 1.156,
+      "sheet_score": 1.286,
+      "turn_score": 0.907,
+      "phi": -111.3,
+      "psi": 126.1
+    },
+    {
+      "residue": "V",
+      "position": 3,
+      "structure": "E",
+      "helix_score": 1.106,
+      "sheet_score": 1.298,
+      "turn_score": 0.947,
+      "phi": -127.7,
+      "psi": 90.7
+    },
+    {
+      "residue": "E",
+      "position": 4,
+      "structure": "E",
+      "helix_score": 1.087,
+      "sheet_score": 1.307,
+      "turn_score": 0.949,
+      "phi": -119.6,
+      "psi": 115.3
+    },
+    {
+      "residue": "Q",
+      "position": 5,
+      "structure": "E",
+      "helix_score": 1.064,
+      "sheet_score": 1.257,
+      "turn_score": 1.002,
+      "phi": -101.4,
+      "psi": 124.0
+    },
+    {
+      "residue": "C",
+      "position": 6,
+      "structure": "E",
+      "helix_score": 1.13,
+      "sheet_score": 1.366,
+      "turn_score": 0.881,
+      "phi": -101.1,
+      "psi": 148.5
+    },
+    {
+      "residue": "C",
+      "position": 7,
+      "structure": "E",
+      "helix_score": 1.081,
+      "sheet_score": 1.314,
+      "turn_score": 0.961,
+      "phi": -151.7,
+      "psi": 145.5
+    },
+    {
+      "residue": "T",
+      "position": 8,
+      "structure": "E",
+      "helix_score": 0.908,
+      "sheet_score": 1.192,
+      "turn_score": 1.064,
+      "phi": -129.5,
+      "psi": 121.1
+    },
+    {
+      "residue": "S",
+      "position": 9,
+      "structure": "T",
+      "helix_score": 0.874,
+      "sheet_score": 1.311,
+      "turn_score": 1.048,
+      "phi": -69.7,
+      "psi": -117.6
+    },
+    {
+      "residue": "I",
+      "position": 10,
+      "structure": "E",
+      "helix_score": 0.828,
+      "sheet_score": 1.358,
+      "turn_score": 1.066,
+      "phi": -117.4,
+      "psi": 140.2
+    },
+    {
+      "residue": "C",
+      "position": 11,
+      "structure": "E",
+      "helix_score": 0.873,
+      "sheet_score": 1.347,
+      "turn_score": 1.042,
+      "phi": -99.6,
+      "psi": 108.1
+    },
+    {
+      "residue": "S",
+      "position": 12,
+      "structure": "T",
+      "helix_score": 1.069,
+      "sheet_score": 1.361,
+      "turn_score": 0.976,
+      "phi": -34.1,
+      "psi": -12.8
+    },
+    {
+      "residue": "L",
+      "position": 13,
+      "structure": "E",
+      "helix_score": 1.156,
+      "sheet_score": 1.256,
+      "turn_score": 0.951,
+      "phi": -125.5,
+      "psi": 127.8
+    },
+    {
+      "residue": "Y",
+      "position": 14,
+      "structure": "E",
+      "helix_score": 1.144,
+      "sheet_score": 1.274,
+      "turn_score": 0.966,
+      "phi": -129.3,
+      "psi": 79.3
+    },
+    {
+      "residue": "Q",
+      "position": 15,
+      "structure": "E",
+      "helix_score": 1.094,
+      "sheet_score": 1.257,
+      "turn_score": 1.04,
+      "phi": -127.5,
+      "psi": 115.2
+    },
+    {
+      "residue": "L",
+      "position": 16,
+      "structure": "E",
+      "helix_score": 1.094,
+      "sheet_score": 1.257,
+      "turn_score": 1.04,
+      "phi": -86.7,
+      "psi": 153.1
+    },
+    {
+      "residue": "E",
+      "position": 17,
+      "structure": "E",
+      "helix_score": 1.081,
+      "sheet_score": 1.275,
+      "turn_score": 1.054,
+      "phi": -106.5,
+      "psi": 115.7
+    },
+    {
+      "residue": "N",
+      "position": 18,
+      "structure": "E",
+      "helix_score": 1.042,
+      "sheet_score": 1.248,
+      "turn_score": 1.113,
+      "phi": -127.0,
+      "psi": 124.5
+    },
+    {
+      "residue": "Y",
+      "position": 19,
+      "structure": "E",
+      "helix_score": 0.937,
+      "sheet_score": 1.184,
+      "turn_score": 1.109,
+      "phi": -136.9,
+      "psi": 92.7
+    },
+    {
+      "residue": "C",
+      "position": 20,
+      "structure": "E",
+      "helix_score": 0.908,
+      "sheet_score": 1.171,
+      "turn_score": 1.13,
+      "phi": -127.5,
+      "psi": 111.8
+    },
+    {
+      "residue": "N",
+      "position": 21,
+      "structure": "T",
+      "helix_score": 0.848,
+      "sheet_score": 0.962,
+      "turn_score": 1.238,
+      "phi": -42.1,
+      "psi": -26.3
+    }
+  ],
+  "disulfide_bonds": [
+    [
+      6,
+      20
+    ]
+  ],
+  "extinction_coefficient": {
+    "reduced": 2980,
+    "oxidized": 3230
+  },
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "amino_acids"
+    ],
+    "derivation_chain": [
+      "amino_acids",
+      "protein_predictor"
+    ],
+    "confidence": 0.8,
+    "timestamp": "2026-03-22T03:25:53.116203+00:00",
+    "model_version": "1.0.0"
+  }
+}

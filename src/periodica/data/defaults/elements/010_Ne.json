@@ -1,0 +1,44 @@
+{
+  "symbol": "Ne",
+  "name": "Neon",
+  "atomic_number": 10,
+  "atomic_mass": 20.18,
+  "block": "p",
+  "period": 2,
+  "group": 18,
+  "ionization_energy": 21.565,
+  "electronegativity": null,
+  "atomic_radius": 38,
+  "covalent_radius": 58,
+  "melting_point": 24,
+  "boiling_point": 27,
+  "density": 0.0009,
+  "electron_affinity": 0,
+  "valence_electrons": 8,
+  "electron_configuration": "1s² 2s² 2p⁶",
+  "primary_emission_wavelength": 640.2,
+  "visible_emission_wavelength": 640.2,
+  "isotopes": [
+    {
+      "mass_number": 20,
+      "neutrons": 10,
+      "abundance": 90.48,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 21,
+      "neutrons": 11,
+      "abundance": 0.27,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 22,
+      "neutrons": 12,
+      "abundance": 9.25,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

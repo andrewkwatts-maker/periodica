@@ -1,0 +1,58 @@
+{
+  "name": "Peroxisome",
+  "type": "peroxisome",
+  "organism": "Eukaryota (general)",
+  "function": "lipid_metabolism",
+  "localization": ["cytoplasm"],
+  "description": "Single-membrane organelle involved in oxidative reactions, including fatty acid beta-oxidation and reactive oxygen species metabolism.",
+  "structure": {
+    "membrane": {
+      "composition": "Phospholipids, peroxins",
+      "function": "Contains oxidative enzymes, protein import"
+    },
+    "matrix": {
+      "contents": ["Catalase", "Urate oxidase", "Acyl-CoA oxidases"],
+      "function": "Oxidative metabolism, H2O2 decomposition"
+    },
+    "crystalline_core": {
+      "composition": "Urate oxidase (in some organisms)",
+      "function": "Uric acid oxidation"
+    }
+  },
+  "dimensions": {
+    "diameter_um": 0.5
+  },
+  "copy_number_per_cell": 400,
+  "genome": {
+    "type": null,
+    "size_bp": 0,
+    "genes": 0,
+    "protein_coding_genes": 0,
+    "tRNA_genes": 0,
+    "rRNA_genes": 0
+  },
+  "key_enzymes": {
+    "Catalase": {
+      "name": "Catalase",
+      "function": "H2O2 decomposition to H2O and O2",
+      "EC_number": "1.11.1.6"
+    },
+    "Acyl_CoA_oxidase": {
+      "name": "Acyl-CoA oxidase",
+      "function": "First step of fatty acid beta-oxidation",
+      "EC_number": "1.3.3.6"
+    },
+    "D_amino_acid_oxidase": {
+      "name": "D-amino acid oxidase",
+      "function": "D-amino acid oxidation",
+      "EC_number": "1.4.3.3"
+    },
+    "Xanthine_oxidase": {
+      "name": "Xanthine oxidase",
+      "function": "Purine catabolism",
+      "EC_number": "1.17.3.2"
+    }
+  },
+  "H2O2_production_rate_nmol_per_min_per_mg": 50,
+  "beta_oxidation_rate_nmol_per_min_per_mg": 10
+}

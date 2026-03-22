@@ -1,0 +1,30 @@
+{
+  "symbol": "Co",
+  "name": "Cobalt",
+  "atomic_number": 27,
+  "atomic_mass": 58.933,
+  "block": "d",
+  "period": 4,
+  "group": 9,
+  "ionization_energy": 7.881,
+  "electronegativity": 1.88,
+  "atomic_radius": 152,
+  "covalent_radius": 126,
+  "melting_point": 1768,
+  "boiling_point": 3200,
+  "density": 8.9,
+  "electron_affinity": 63.7,
+  "valence_electrons": 9,
+  "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁷ 4s²",
+  "primary_emission_wavelength": 345.4,
+  "visible_emission_wavelength": 535.0,
+  "isotopes": [
+    {
+      "mass_number": 59,
+      "neutrons": 32,
+      "abundance": 100.0,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

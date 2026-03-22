@@ -1,0 +1,44 @@
+{
+  "name": "Tendon",
+  "type": "connective",
+  "ecm_composition": {
+    "collagen": 0.8,
+    "elastin": 0.05
+  },
+  "ecm_composition_normalized": {
+    "collagen": 0.9411764705882353,
+    "elastin": 0.058823529411764705
+  },
+  "cell_composition": {},
+  "porosity": 10.0,
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 0.7852,
+    "youngs_modulus_voigt": 0.9765,
+    "youngs_modulus_reuss": 0.9623,
+    "ultimate_strength_MPa": 0.0262,
+    "poissons_ratio": 0.35,
+    "shear_modulus_MPa": 0.2908
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.006,
+    "water_content_percent": 0
+  },
+  "derived_properties": {
+    "stiffness_category": "Soft",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "description": "Dense connective tissue",
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "cells"
+    ],
+    "derivation_chain": [
+      "cells",
+      "biomaterial_predictor"
+    ],
+    "confidence": 0.6,
+    "timestamp": "2026-03-22T03:25:53.144309+00:00",
+    "model_version": "1.0.0"
+  }
+}

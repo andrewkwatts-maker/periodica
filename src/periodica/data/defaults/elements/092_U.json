@@ -1,0 +1,37 @@
+{
+  "symbol": "U",
+  "name": "Uranium",
+  "atomic_number": 92,
+  "atomic_mass": 238.029,
+  "block": "f",
+  "period": 7,
+  "group": null,
+  "ionization_energy": 6.194,
+  "electronegativity": 1.38,
+  "atomic_radius": 175,
+  "covalent_radius": 196,
+  "melting_point": 1405,
+  "boiling_point": 4404,
+  "density": 19.1,
+  "electron_affinity": 50.9,
+  "valence_electrons": 6,
+  "electron_configuration": "[Rn] 5f³ 6d¹ 7s²",
+  "primary_emission_wavelength": 591.5,
+  "visible_emission_wavelength": 591.5,
+  "isotopes": [
+    {
+      "mass_number": 238,
+      "neutrons": 146,
+      "abundance": 99.274,
+      "is_stable": false,
+      "half_life": "4.468 billion years"
+    },
+    {
+      "mass_number": 235,
+      "neutrons": 143,
+      "abundance": 0.72,
+      "is_stable": false,
+      "half_life": "703.8 million years"
+    }
+  ]
+}

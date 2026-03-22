@@ -1,0 +1,32 @@
+{
+  "name": "Cysteine",
+  "symbol": "C",
+  "category": "special",
+  "charge_pH7": -0.062,
+  "isoelectric_point": 5.07,
+  "hydropathy_index": 2.5,
+  "helix_propensity": 0.7,
+  "sheet_propensity": 1.19,
+  "turn_propensity": 1.19,
+  "pKa_carboxyl": 1.96,
+  "pKa_amino": 10.28,
+  "pKa_sidechain": 8.18,
+  "sidechain_ionization": "acidic",
+  "can_form_disulfide": true,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147348+00:00",
+    "model_version": "1.0.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "symbol": "C",
+  "name": "Carbon",
+  "atomic_number": 6,
+  "atomic_mass": 12.011,
+  "block": "p",
+  "period": 2,
+  "group": 14,
+  "ionization_energy": 11.26,
+  "electronegativity": 2.55,
+  "atomic_radius": 67,
+  "covalent_radius": 77,
+  "melting_point": 3823,
+  "boiling_point": 4098,
+  "density": 2.267,
+  "electron_affinity": 121.9,
+  "valence_electrons": 4,
+  "electron_configuration": "1s² 2s² 2p²",
+  "primary_emission_wavelength": 247.9,
+  "isotopes": [
+    {
+      "mass_number": 12,
+      "neutrons": 6,
+      "abundance": 98.93,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 13,
+      "neutrons": 7,
+      "abundance": 1.07,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 14,
+      "neutrons": 8,
+      "abundance": 0.0,
+      "is_stable": false,
+      "half_life": "5,730 years"
+    }
+  ]
+}

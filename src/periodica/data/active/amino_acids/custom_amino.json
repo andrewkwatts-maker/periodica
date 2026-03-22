@@ -1,0 +1,22 @@
+{
+  "name": "Selenocysteine",
+  "symbol": "U",
+  "three_letter_code": "Sec",
+  "molecular_formula": "C3H7NO2Se",
+  "molecular_mass": 168.05,
+  "atoms": {"C": 3, "H": 7, "N": 1, "O": 2, "Se": 1},
+  "pKa_carboxyl": 2.0,
+  "pKa_amino": 10.0,
+  "pKa_sidechain": 5.2,
+  "isoelectric_point": 5.47,
+  "hydropathy_index": -0.5,
+  "category": "special",
+  "polarity": "polar",
+  "charge_pH7": -0.1,
+  "helix_propensity": 0.8,
+  "sheet_propensity": 1.1,
+  "turn_propensity": 0.9,
+  "codon_count": 1,
+  "codons": ["UGA"],
+  "description": "The 21st proteinogenic amino acid, incorporated at UGA codons in specific contexts. Contains selenium instead of sulfur."
+}

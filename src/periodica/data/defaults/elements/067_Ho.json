@@ -1,0 +1,30 @@
+{
+  "symbol": "Ho",
+  "name": "Holmium",
+  "atomic_number": 67,
+  "atomic_mass": 164.93,
+  "block": "f",
+  "period": 6,
+  "group": null,
+  "ionization_energy": 6.0215,
+  "electronegativity": 1.23,
+  "atomic_radius": 226,
+  "covalent_radius": 192,
+  "melting_point": 1734,
+  "boiling_point": 2973,
+  "density": 8.79,
+  "electron_affinity": 33.4,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 4f¹¹ 6s²",
+  "primary_emission_wavelength": 405.4,
+  "visible_emission_wavelength": 405.4,
+  "isotopes": [
+    {
+      "mass_number": 165,
+      "neutrons": 98,
+      "abundance": 100,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

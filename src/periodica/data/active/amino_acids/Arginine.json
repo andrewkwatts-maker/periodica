@@ -1,0 +1,32 @@
+{
+  "name": "Arginine",
+  "symbol": "R",
+  "category": "polar_positive",
+  "charge_pH7": 0.991,
+  "isoelectric_point": 10.76,
+  "hydropathy_index": -4.5,
+  "helix_propensity": 0.98,
+  "sheet_propensity": 0.93,
+  "turn_propensity": 0.95,
+  "pKa_carboxyl": 2.17,
+  "pKa_amino": 9.04,
+  "pKa_sidechain": 12.48,
+  "sidechain_ionization": "basic",
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147315+00:00",
+    "model_version": "1.0.0"
+  }
+}

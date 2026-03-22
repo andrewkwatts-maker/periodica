@@ -1,0 +1,32 @@
+{
+  "name": "Lysine",
+  "symbol": "K",
+  "category": "polar_positive",
+  "charge_pH7": 0.989,
+  "isoelectric_point": 9.74,
+  "hydropathy_index": -3.9,
+  "helix_propensity": 1.16,
+  "sheet_propensity": 0.74,
+  "turn_propensity": 1.01,
+  "pKa_carboxyl": 2.18,
+  "pKa_amino": 8.95,
+  "pKa_sidechain": 10.53,
+  "sidechain_ionization": "basic",
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147414+00:00",
+    "model_version": "1.0.0"
+  }
+}

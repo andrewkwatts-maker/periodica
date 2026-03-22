@@ -1,0 +1,37 @@
+{
+  "Name": "Xi0",
+  "Symbol": "Xi0",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle", "Cascade Baryon", "Strange Baryon"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 1314.86,
+  "Mass_kg": 2.34e-27,
+  "Mass_amu": 1.410,
+  "Spin_hbar": 0.5,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 1,
+  "Strangeness": -2,
+  "Isospin_I": 0.5,
+  "Isospin_I3": 0.5,
+  "Parity_P": 1,
+  "Composition": [
+    { "Constituent": "Up Quark", "Count": 1, "Charge_e": 0.6666666667, "Symbol": "u" },
+    { "Constituent": "Strange Quark", "Count": 2, "Charge_e": -0.3333333333, "Symbol": "s" }
+  ],
+  "QuarkContent": "uss",
+  "Stability": "Unstable",
+  "HalfLife_s": 2.9e-10,
+  "DecayProducts": ["Lambda", "Pion0"],
+  "DecayModes": [
+    { "Products": ["Lambda", "Pion0"], "BranchingRatio": 0.9952 }
+  ],
+  "Antiparticle": {
+    "Name": "Anti-Xi0",
+    "Symbol": "Anti-Xi0"
+  },
+  "InteractionForces": ["Strong", "Weak", "Gravitational"],
+  "Discovery": {
+    "Year": 1959,
+    "Location": "Brookhaven"
+  }
+}

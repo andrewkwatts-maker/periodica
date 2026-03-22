@@ -1,0 +1,93 @@
+{
+  "symbol": "Sn",
+  "name": "Tin",
+  "atomic_number": 50,
+  "atomic_mass": 118.71,
+  "block": "p",
+  "period": 5,
+  "group": 14,
+  "ionization_energy": 7.344,
+  "electronegativity": 1.96,
+  "atomic_radius": 145,
+  "covalent_radius": 139,
+  "melting_point": 505.08,
+  "boiling_point": 2875,
+  "density": 7.29,
+  "electron_affinity": 107.3,
+  "valence_electrons": 4,
+  "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p²",
+  "primary_emission_wavelength": 380.1,
+  "visible_emission_wavelength": 380.1,
+  "isotopes": [
+    {
+      "mass_number": 112,
+      "neutrons": 62,
+      "abundance": 0.97,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 114,
+      "neutrons": 64,
+      "abundance": 0.66,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 115,
+      "neutrons": 65,
+      "abundance": 0.34,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 116,
+      "neutrons": 66,
+      "abundance": 14.54,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 117,
+      "neutrons": 67,
+      "abundance": 7.68,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 118,
+      "neutrons": 68,
+      "abundance": 24.22,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 119,
+      "neutrons": 69,
+      "abundance": 8.59,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 120,
+      "neutrons": 70,
+      "abundance": 32.58,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 122,
+      "neutrons": 72,
+      "abundance": 4.63,
+      "is_stable": true,
+      "half_life": null
+    },
+    {
+      "mass_number": 124,
+      "neutrons": 74,
+      "abundance": 5.79,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

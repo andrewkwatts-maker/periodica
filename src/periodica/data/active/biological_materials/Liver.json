@@ -1,0 +1,52 @@
+{
+  "name": "Liver",
+  "type": "liver",
+  "organ_system": "digestive",
+  "ecm_composition": {
+    "collagen_i": 0.03,
+    "collagen_iii": 0.02,
+    "collagen_iv": 0.02,
+    "laminin": 0.02,
+    "fibronectin": 0.02,
+    "water": 0.7,
+    "other": 0.04
+  },
+  "cell_composition": {
+    "hepatocyte": 0.6,
+    "kupffer_cell": 0.05,
+    "stellate_cell": 0.05,
+    "endothelial": 0.1
+  },
+  "porosity": 0.0,
+  "vascularization": "very_high",
+  "innervation": true,
+  "regeneration": true,
+  "healing_time_weeks": 8,
+  "function": "Metabolism, detoxification, protein synthesis, bile production",
+  "description": "Largest solid organ with remarkable regenerative capacity. Lobular structure with dual blood supply.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 38.8282,
+    "youngs_modulus_voigt": 59.2235,
+    "youngs_modulus_reuss": 18.4328,
+    "ultimate_strength_MPa": 1.2943,
+    "poissons_ratio": 0.474,
+    "shear_modulus_MPa": 13.1752
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.041,
+    "water_content_percent": 82.4
+  },
+  "derived_properties": {
+    "stiffness_category": "Intermediate",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_i": 0.03529411764705882,
+    "collagen_iii": 0.023529411764705882,
+    "collagen_iv": 0.023529411764705882,
+    "laminin": 0.023529411764705882,
+    "fibronectin": 0.023529411764705882,
+    "water": 0.8235294117647058,
+    "other": 0.047058823529411764
+  }
+}

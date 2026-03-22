@@ -1,0 +1,255 @@
+{
+  "name": "Insulin A Chain",
+  "organism": "Homo sapiens",
+  "function": "Glucose metabolism regulation",
+  "localization": "extracellular",
+  "sequence": "GIVEQCCTSICSLYQLENYCN",
+  "length": 21,
+  "molecular_mass": 2401.73,
+  "isoelectric_point": 3.13,
+  "charge_pH7": -2.25,
+  "gravy": 0.214,
+  "amino_acid_composition": {
+    "G": 1,
+    "I": 2,
+    "V": 1,
+    "E": 2,
+    "Q": 2,
+    "C": 4,
+    "T": 1,
+    "S": 2,
+    "L": 2,
+    "Y": 2,
+    "N": 2
+  },
+  "secondary_structure": {
+    "helix_percent": 0.0,
+    "sheet_percent": 71.4,
+    "turn_percent": 23.8,
+    "coil_percent": 4.8
+  },
+  "residues": [
+    {
+      "residue": "G",
+      "position": 1,
+      "structure": "C",
+      "helix_score": 1.055,
+      "sheet_score": 1.105,
+      "turn_score": 0.818,
+      "phi": -26.9,
+      "psi": 4.6
+    },
+    {
+      "residue": "I",
+      "position": 2,
+      "structure": "E",
+      "helix_score": 1.066,
+      "sheet_score": 1.104,
+      "turn_score": 0.85,
+      "phi": -132.2,
+      "psi": 104.7
+    },
+    {
+      "residue": "V",
+      "position": 3,
+      "structure": "E",
+      "helix_score": 1.005,
+      "sheet_score": 1.118,
+      "turn_score": 0.907,
+      "phi": -137.6,
+      "psi": 134.3
+    },
+    {
+      "residue": "E",
+      "position": 4,
+      "structure": "E",
+      "helix_score": 0.961,
+      "sheet_score": 1.129,
+      "turn_score": 0.947,
+      "phi": -106.8,
+      "psi": 128.5
+    },
+    {
+      "residue": "Q",
+      "position": 5,
+      "structure": "E",
+      "helix_score": 0.999,
+      "sheet_score": 1.191,
+      "turn_score": 0.861,
+      "phi": -99.8,
+      "psi": 129.6
+    },
+    {
+      "residue": "C",
+      "position": 6,
+      "structure": "E",
+      "helix_score": 0.954,
+      "sheet_score": 1.07,
+      "turn_score": 0.999,
+      "phi": -111.9,
+      "psi": 110.2
+    },
+    {
+      "residue": "C",
+      "position": 7,
+      "structure": "E",
+      "helix_score": 0.957,
+      "sheet_score": 1.056,
+      "turn_score": 0.994,
+      "phi": -101.3,
+      "psi": 126.2
+    },
+    {
+      "residue": "T",
+      "position": 8,
+      "structure": "E",
+      "helix_score": 0.841,
+      "sheet_score": 1.173,
+      "turn_score": 1.059,
+      "phi": -110.9,
+      "psi": 119.5
+    },
+    {
+      "residue": "S",
+      "position": 9,
+      "structure": "T",
+      "helix_score": 0.793,
+      "sheet_score": 1.123,
+      "turn_score": 1.123,
+      "phi": -23.0,
+      "psi": -21.1
+    },
+    {
+      "residue": "I",
+      "position": 10,
+      "structure": "E",
+      "helix_score": 0.866,
+      "sheet_score": 1.139,
+      "turn_score": 1.037,
+      "phi": -108.1,
+      "psi": 121.7
+    },
+    {
+      "residue": "C",
+      "position": 11,
+      "structure": "E",
+      "helix_score": 0.864,
+      "sheet_score": 1.179,
+      "turn_score": 1.03,
+      "phi": -144.1,
+      "psi": 133.1
+    },
+    {
+      "residue": "S",
+      "position": 12,
+      "structure": "E",
+      "helix_score": 0.904,
+      "sheet_score": 1.166,
+      "turn_score": 1.033,
+      "phi": -105.3,
+      "psi": 93.9
+    },
+    {
+      "residue": "L",
+      "position": 13,
+      "structure": "E",
+      "helix_score": 0.967,
+      "sheet_score": 1.244,
+      "turn_score": 0.913,
+      "phi": -107.1,
+      "psi": 131.2
+    },
+    {
+      "residue": "Y",
+      "position": 14,
+      "structure": "E",
+      "helix_score": 1.029,
+      "sheet_score": 1.069,
+      "turn_score": 0.951,
+      "phi": -91.5,
+      "psi": 114.3
+    },
+    {
+      "residue": "Q",
+      "position": 15,
+      "structure": "E",
+      "helix_score": 1.024,
+      "sheet_score": 1.026,
+      "turn_score": 1.004,
+      "phi": -116.4,
+      "psi": 104.4
+    },
+    {
+      "residue": "L",
+      "position": 16,
+      "structure": "E",
+      "helix_score": 1.013,
+      "sheet_score": 1.129,
+      "turn_score": 0.963,
+      "phi": -127.3,
+      "psi": 131.2
+    },
+    {
+      "residue": "E",
+      "position": 17,
+      "structure": "E",
+      "helix_score": 0.94,
+      "sheet_score": 1.113,
+      "turn_score": 1.049,
+      "phi": -129.8,
+      "psi": 122.9
+    },
+    {
+      "residue": "N",
+      "position": 18,
+      "structure": "T",
+      "helix_score": 0.937,
+      "sheet_score": 1.03,
+      "turn_score": 1.109,
+      "phi": -47.1,
+      "psi": -53.2
+    },
+    {
+      "residue": "Y",
+      "position": 19,
+      "structure": "T",
+      "helix_score": 0.908,
+      "sheet_score": 1.018,
+      "turn_score": 1.13,
+      "phi": -48.8,
+      "psi": 14.0
+    },
+    {
+      "residue": "C",
+      "position": 20,
+      "structure": "T",
+      "helix_score": 0.848,
+      "sheet_score": 0.962,
+      "turn_score": 1.238,
+      "phi": -56.1,
+      "psi": -11.6
+    },
+    {
+      "residue": "N",
+      "position": 21,
+      "structure": "T",
+      "helix_score": 0.682,
+      "sheet_score": 1.11,
+      "turn_score": 1.363,
+      "phi": -73.9,
+      "psi": 41.5
+    }
+  ],
+  "disulfide_bonds": [
+    [
+      6,
+      20
+    ]
+  ],
+  "extinction_coefficient": {
+    "reduced": 2980,
+    "oxidized": 3230
+  },
+  "uniprot_id": "P01308",
+  "description": "Insulin A chain - works with B chain to regulate blood glucose levels."
+}

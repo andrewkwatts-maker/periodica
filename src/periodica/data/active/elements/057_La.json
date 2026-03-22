@@ -1,0 +1,37 @@
+{
+  "symbol": "La",
+  "name": "Lanthanum",
+  "atomic_number": 57,
+  "atomic_mass": 138.905,
+  "block": "f",
+  "period": 6,
+  "group": 3,
+  "ionization_energy": 5.577,
+  "electronegativity": 1.1,
+  "atomic_radius": 195,
+  "covalent_radius": 207,
+  "melting_point": 1193,
+  "boiling_point": 3737,
+  "density": 6.16,
+  "electron_affinity": 48.0,
+  "valence_electrons": 3,
+  "electron_configuration": "[Xe] 5d¹ 6s²",
+  "primary_emission_wavelength": 550.1,
+  "visible_emission_wavelength": 550.1,
+  "isotopes": [
+    {
+      "mass_number": 138,
+      "neutrons": 81,
+      "abundance": 0.089,
+      "is_stable": false,
+      "half_life": "1.02e11 years"
+    },
+    {
+      "mass_number": 139,
+      "neutrons": 82,
+      "abundance": 99.911,
+      "is_stable": true,
+      "half_life": null
+    }
+  ]
+}

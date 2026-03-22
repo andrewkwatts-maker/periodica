@@ -1,0 +1,350 @@
+{
+  "name": "Insulin B Chain",
+  "organism": "Homo sapiens",
+  "function": "Glucose metabolism regulation",
+  "localization": "extracellular",
+  "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTPKT",
+  "length": 30,
+  "molecular_mass": 3447.98,
+  "isoelectric_point": 7.09,
+  "charge_pH7": 0.06,
+  "gravy": 0.22,
+  "amino_acid_composition": {
+    "F": 3,
+    "V": 3,
+    "N": 1,
+    "Q": 1,
+    "H": 2,
+    "L": 4,
+    "C": 2,
+    "G": 3,
+    "S": 1,
+    "E": 2,
+    "A": 1,
+    "Y": 2,
+    "R": 1,
+    "T": 2,
+    "P": 1,
+    "K": 1
+  },
+  "secondary_structure": {
+    "helix_percent": 13.3,
+    "sheet_percent": 50.0,
+    "turn_percent": 33.3,
+    "coil_percent": 3.3
+  },
+  "residues": [
+    {
+      "residue": "F",
+      "position": 1,
+      "structure": "E",
+      "helix_score": 0.993,
+      "sheet_score": 1.268,
+      "turn_score": 0.91,
+      "phi": -107.1,
+      "psi": 100.1
+    },
+    {
+      "residue": "V",
+      "position": 2,
+      "structure": "E",
+      "helix_score": 0.994,
+      "sheet_score": 1.188,
+      "turn_score": 0.918,
+      "phi": -106.5,
+      "psi": 109.9
+    },
+    {
+      "residue": "N",
+      "position": 3,
+      "structure": "E",
+      "helix_score": 1.03,
+      "sheet_score": 1.207,
+      "turn_score": 0.863,
+      "phi": -119.9,
+      "psi": 128.5
+    },
+    {
+      "residue": "Q",
+      "position": 4,
+      "structure": "E",
+      "helix_score": 0.983,
+      "sheet_score": 1.204,
+      "turn_score": 0.91,
+      "phi": -97.9,
+      "psi": 138.0
+    },
+    {
+      "residue": "H",
+      "position": 5,
+      "structure": "E",
+      "helix_score": 0.903,
+      "sheet_score": 1.114,
+      "turn_score": 1.047,
+      "phi": -131.9,
+      "psi": 146.4
+    },
+    {
+      "residue": "L",
+      "position": 6,
+      "structure": "T",
+      "helix_score": 0.861,
+      "sheet_score": 0.979,
+      "turn_score": 1.18,
+      "phi": -74.7,
+      "psi": 4.6
+    },
+    {
+      "residue": "C",
+      "position": 7,
+      "structure": "T",
+      "helix_score": 0.909,
+      "sheet_score": 0.976,
+      "turn_score": 1.093,
+      "phi": -61.8,
+      "psi": 12.3
+    },
+    {
+      "residue": "G",
+      "position": 8,
+      "structure": "T",
+      "helix_score": 0.923,
+      "sheet_score": 1.004,
+      "turn_score": 1.037,
+      "phi": -84.0,
+      "psi": -12.7
+    },
+    {
+      "residue": "S",
+      "position": 9,
+      "structure": "E",
+      "helix_score": 0.931,
+      "sheet_score": 1.123,
+      "turn_score": 0.973,
+      "phi": -126.8,
+      "psi": 136.5
+    },
+    {
+      "residue": "H",
+      "position": 10,
+      "structure": "C",
+      "helix_score": 0.974,
+      "sheet_score": 0.99,
+      "turn_score": 0.994,
+      "phi": -10.5,
+      "psi": 29.5
+    },
+    {
+      "residue": "L",
+      "position": 11,
+      "structure": "H",
+      "helix_score": 1.077,
+      "sheet_score": 0.939,
+      "turn_score": 0.919,
+      "phi": -73.2,
+      "psi": -55.1
+    },
+    {
+      "residue": "V",
+      "position": 12,
+      "structure": "H",
+      "helix_score": 1.169,
+      "sheet_score": 1.017,
+      "turn_score": 0.78,
+      "phi": -57.9,
+      "psi": -43.6
+    },
+    {
+      "residue": "E",
+      "position": 13,
+      "structure": "H",
+      "helix_score": 1.157,
+      "sheet_score": 1.12,
+      "turn_score": 0.739,
+      "phi": -52.4,
+      "psi": -25.3
+    },
+    {
+      "residue": "A",
+      "position": 14,
+      "structure": "H",
+      "helix_score": 1.187,
+      "sheet_score": 1.181,
+      "turn_score": 0.687,
+      "phi": -69.5,
+      "psi": -44.4
+    },
+    {
+      "residue": "L",
+      "position": 15,
+      "structure": "E",
+      "helix_score": 1.166,
+      "sheet_score": 1.239,
+      "turn_score": 0.674,
+      "phi": -132.1,
+      "psi": 153.6
+    },
+    {
+      "residue": "Y",
+      "position": 16,
+      "structure": "E",
+      "helix_score": 1.114,
+      "sheet_score": 1.166,
+      "turn_score": 0.773,
+      "phi": -128.9,
+      "psi": 112.9
+    },
+    {
+      "residue": "L",
+      "position": 17,
+      "structure": "E",
+      "helix_score": 0.98,
+      "sheet_score": 1.22,
+      "turn_score": 0.89,
+      "phi": -114.8,
+      "psi": 105.3
+    },
+    {
+      "residue": "V",
+      "position": 18,
+      "structure": "E",
+      "helix_score": 0.993,
+      "sheet_score": 1.154,
+      "turn_score": 0.901,
+      "phi": -105.7,
+      "psi": 115.5
+    },
+    {
+      "residue": "C",
+      "position": 19,
+      "structure": "E",
+      "helix_score": 0.96,
+      "sheet_score": 1.101,
+      "turn_score": 0.953,
+      "phi": -100.6,
+      "psi": 117.4
+    },
+    {
+      "residue": "G",
+      "position": 20,
+      "structure": "T",
+      "helix_score": 0.943,
+      "sheet_score": 0.999,
+      "turn_score": 1.013,
+      "phi": -64.8,
+      "psi": 14.3
+    },
+    {
+      "residue": "E",
+      "position": 21,
+      "structure": "T",
+      "helix_score": 0.931,
+      "sheet_score": 1.01,
+      "turn_score": 1.014,
+      "phi": -37.9,
+      "psi": -2.3
+    },
+    {
+      "residue": "R",
+      "position": 22,
+      "structure": "T",
+      "helix_score": 0.941,
+      "sheet_score": 0.964,
+      "turn_score": 1.029,
+      "phi": -37.1,
+      "psi": 23.8
+    },
+    {
+      "residue": "G",
+      "position": 23,
+      "structure": "T",
+      "helix_score": 0.94,
+      "sheet_score": 1.004,
+      "turn_score": 1.021,
+      "phi": -101.9,
+      "psi": -41.8
+    },
+    {
+      "residue": "F",
+      "position": 24,
+      "structure": "E",
+      "helix_score": 0.977,
+      "sheet_score": 1.067,
+      "turn_score": 0.936,
+      "phi": -121.4,
+      "psi": 91.3
+    },
+    {
+      "residue": "F",
+      "position": 25,
+      "structure": "E",
+      "helix_score": 0.843,
+      "sheet_score": 1.093,
+      "turn_score": 1.047,
+      "phi": -91.3,
+      "psi": 106.1
+    },
+    {
+      "residue": "Y",
+      "position": 26,
+      "structure": "E",
+      "helix_score": 0.869,
+      "sheet_score": 1.066,
+      "turn_score": 1.056,
+      "phi": -107.1,
+      "psi": 104.0
+    },
+    {
+      "residue": "T",
+      "position": 27,
+      "structure": "E",
+      "helix_score": 0.906,
+      "sheet_score": 1.129,
+      "turn_score": 0.97,
+      "phi": -140.2,
+      "psi": 108.0
+    },
+    {
+      "residue": "P",
+      "position": 28,
+      "structure": "T",
+      "helix_score": 0.868,
+      "sheet_score": 1.087,
+      "turn_score": 1.032,
+      "phi": -61.8,
+      "psi": 156.5
+    },
+    {
+      "residue": "K",
+      "position": 29,
+      "structure": "T",
+      "helix_score": 0.816,
+      "sheet_score": 1.028,
+      "turn_score": 1.118,
+      "phi": -91.3,
+      "psi": -51.6
+    },
+    {
+      "residue": "T",
+      "position": 30,
+      "structure": "T",
+      "helix_score": 0.847,
+      "sheet_score": 0.917,
+      "turn_score": 1.113,
+      "phi": -63.6,
+      "psi": 15.2
+    }
+  ],
+  "disulfide_bonds": [
+    [
+      7,
+      19
+    ]
+  ],
+  "extinction_coefficient": {
+    "reduced": 2980,
+    "oxidized": 3105
+  },
+  "uniprot_id": "P01308",
+  "description": "Insulin B chain - contains important receptor binding residues."
+}

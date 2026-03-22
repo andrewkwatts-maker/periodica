@@ -1,0 +1,32 @@
+{
+  "name": "Asparagine",
+  "symbol": "N",
+  "category": "polar_uncharged",
+  "charge_pH7": -0.016,
+  "isoelectric_point": 5.41,
+  "hydropathy_index": -3.5,
+  "helix_propensity": 0.67,
+  "sheet_propensity": 0.89,
+  "turn_propensity": 1.56,
+  "pKa_carboxyl": 2.02,
+  "pKa_amino": 8.8,
+  "pKa_sidechain": null,
+  "sidechain_ionization": null,
+  "can_form_disulfide": false,
+  "_derivation": {
+    "source": "auto_generated",
+    "derived_from": [
+      "element:C",
+      "element:H",
+      "element:N",
+      "element:O"
+    ],
+    "derivation_chain": [
+      "elements",
+      "amino_acid_predictor"
+    ],
+    "confidence": 0.9,
+    "timestamp": "2026-03-22T03:25:53.147327+00:00",
+    "model_version": "1.0.0"
+  }
+}

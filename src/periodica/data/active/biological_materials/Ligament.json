@@ -1,0 +1,46 @@
+{
+  "name": "Ligament",
+  "type": "ligament",
+  "organ_system": "musculoskeletal",
+  "ecm_composition": {
+    "collagen_i": 0.6,
+    "collagen_iii": 0.1,
+    "elastin": 0.05,
+    "proteoglycans": 0.03,
+    "water": 0.2,
+    "other": 0.02
+  },
+  "cell_composition": {
+    "fibroblast": 0.05
+  },
+  "porosity": 0.0,
+  "vascularization": "low",
+  "innervation": true,
+  "healing_time_weeks": 16,
+  "function": "Connect bone to bone, joint stability",
+  "description": "Dense connective tissue similar to tendon but with more elastin for slight extensibility at joints.",
+  "mechanical_properties": {
+    "youngs_modulus_MPa": 330.1862,
+    "youngs_modulus_voigt": 660.0503,
+    "youngs_modulus_reuss": 0.3222,
+    "ultimate_strength_MPa": 11.0062,
+    "poissons_ratio": 0.38,
+    "shear_modulus_MPa": 119.6327
+  },
+  "physical_properties": {
+    "density_g_cm3": 1.221,
+    "water_content_percent": 20.0
+  },
+  "derived_properties": {
+    "stiffness_category": "Stiff",
+    "model_used": "Voigt-Reuss average with Gibson-Ashby porosity correction"
+  },
+  "ecm_composition_normalized": {
+    "collagen_i": 0.6,
+    "collagen_iii": 0.1,
+    "elastin": 0.05,
+    "proteoglycans": 0.03,
+    "water": 0.2,
+    "other": 0.02
+  }
+}

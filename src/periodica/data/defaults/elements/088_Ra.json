@@ -1,0 +1,30 @@
+{
+  "symbol": "Ra",
+  "name": "Radium",
+  "atomic_number": 88,
+  "atomic_mass": 226,
+  "block": "s",
+  "period": 7,
+  "group": 2,
+  "ionization_energy": 5.27892,
+  "electronegativity": 0.9,
+  "atomic_radius": 283,
+  "covalent_radius": 221,
+  "melting_point": 973,
+  "boiling_point": 2010,
+  "density": 5.5,
+  "electron_affinity": 9.6,
+  "valence_electrons": 2,
+  "electron_configuration": "[Rn] 7s²",
+  "primary_emission_wavelength": 550.0,
+  "visible_emission_wavelength": 482.6,
+  "isotopes": [
+    {
+      "mass_number": 226,
+      "neutrons": 138,
+      "abundance": 0,
+      "is_stable": false,
+      "half_life": "1600 years"
+    }
+  ]
+}

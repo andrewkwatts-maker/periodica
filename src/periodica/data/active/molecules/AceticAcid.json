@@ -1,0 +1,53 @@
+{
+    "Name": "Acetic Acid",
+    "Formula": "CH3COOH",
+    "MolecularMass_amu": 60.052,
+    "MolecularMass_g_mol": 60.052,
+    "BondType": "Covalent",
+    "Geometry": "Trigonal Planar",
+    "BondAngle_deg": 120.0,
+    "Polarity": "Polar",
+    "MeltingPoint_K": 289.8,
+    "BoilingPoint_K": 391.1,
+    "Density_g_cm3": 1.049,
+    "State_STP": "Liquid",
+    "Composition": [
+        {"Element": "C", "Count": 2},
+        {"Element": "H", "Count": 4},
+        {"Element": "O", "Count": 2}
+    ],
+    "Bonds": [
+        {"From": "C", "To": "C", "Type": "Single", "Length_pm": 154, "Index": 1},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 2},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 3},
+        {"From": "C", "To": "H", "Type": "Single", "Length_pm": 109, "Index": 4},
+        {"From": "C", "To": "O", "Type": "Double", "Length_pm": 123, "Index": 5},
+        {"From": "C", "To": "O", "Type": "Single", "Length_pm": 136, "Index": 6},
+        {"From": "O", "To": "H", "Type": "Single", "Length_pm": 97, "Index": 7}
+    ],
+    "Atoms3D": [
+        {"element": "C", "x": -1.27, "y": 0.0, "z": 0.0, "index": 0},
+        {"element": "C", "x": 0.27, "y": 0.0, "z": 0.0, "index": 1},
+        {"element": "O", "x": 0.89, "y": 1.07, "z": 0.0, "index": 2},
+        {"element": "O", "x": 0.89, "y": -1.18, "z": 0.0, "index": 3},
+        {"element": "H", "x": -1.63, "y": 0.513, "z": 0.889, "index": 4},
+        {"element": "H", "x": -1.63, "y": 0.513, "z": -0.889, "index": 5},
+        {"element": "H", "x": -1.63, "y": -1.026, "z": 0.0, "index": 6},
+        {"element": "H", "x": 1.85, "y": -1.18, "z": 0.0, "index": 7}
+    ],
+    "Bonds3D": [
+        {"from": 0, "to": 1, "type": "single", "length_A": 1.54},
+        {"from": 1, "to": 2, "type": "double", "length_A": 1.23},
+        {"from": 1, "to": 3, "type": "single", "length_A": 1.36},
+        {"from": 0, "to": 4, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 5, "type": "single", "length_A": 1.09},
+        {"from": 0, "to": 6, "type": "single", "length_A": 1.09},
+        {"from": 3, "to": 7, "type": "single", "length_A": 0.97}
+    ],
+    "DipoleMoment_D": 1.74,
+    "ElectronConfiguration": "C: 1s2 2s2 2p2, H: 1s1, O: 1s2 2s2 2p4",
+    "Applications": ["Vinegar", "Chemical synthesis", "Preservative", "Descaling agent"],
+    "IUPAC_Name": "Acetic acid",
+    "Category": "Organic",
+    "Color": "#FF9800"
+}
