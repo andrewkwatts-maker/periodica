@@ -1,6 +1,6 @@
 # Periodica
 
-A rigorous scientific computation library for particle physics, nuclear physics, atomic chemistry, molecular chemistry, materials science, alloy thermodynamics, and biological systems.
+A rigorous scientific computation and estimation library for particle physics, nuclear physics, atomic chemistry, molecular chemistry, materials science, alloy thermodynamics, and biological systems.
 
 All 12 scientific domains are fully data-driven: properties come from bundled JSON data sheets (424 files covering 118 elements, quarks, hadrons, molecules, alloys, materials, amino acids, proteins, nucleic acids, cells, and biomaterials), not hardcoded lookup tables. Changes to data sheets cascade dynamically through the derivation chain.
 
