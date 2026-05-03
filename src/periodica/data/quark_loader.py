@@ -13,21 +13,38 @@ from periodica.core.quark_enums import ParticleType, QuarkGeneration
 
 
 class QuarkDataLoader:
-    """Loads particle data from JSON files"""
+    """Loads particle data from JSON files.
 
-    def __init__(self, base_dir: Optional[str] = None):
+    Quarks/antiquarks specifically can also be sourced from the metaphysica
+    simulated-prediction layer — see :mod:`periodica.data.quark_source`.
+    Pass ``source="simulated"`` to override per-instance, or set the global
+    default via the ``PERIODICA_QUARK_SOURCE`` environment variable / the
+    :func:`set_quark_source` setter.
+    """
+
+    def __init__(
+        self,
+        base_dir: Optional[str] = None,
+        source: Optional[str] = None,
+    ):
         """
         Initialize the loader.
 
         Args:
             base_dir: Path to base directory containing Quarks/AntiQuarks folders.
                      If None, uses parent of this file's directory.
+            source: Either ``"experimental"`` (default) — read PDG values
+                    from bundled JSON — or ``"simulated"`` — fetch
+                    metaphysica's G₂-derived predictions via
+                    ``metaphysica.Get``. ``None`` defers to
+                    :func:`periodica.data.quark_source.get_quark_source`.
         """
         if base_dir is None:
             # Default to data directory (where this file is located)
             base_dir = Path(__file__).parent
 
         self.base_dir = Path(base_dir)
+        self.source = source   # None = follow global; resolved at load time
         self.particles: List[Dict] = []
         self.particles_by_name: Dict[str, Dict] = {}
         self.particles_by_symbol: Dict[str, Dict] = {}
@@ -51,19 +68,41 @@ class QuarkDataLoader:
         """
         loaded_particles = []
 
-        # Load from Quarks directory (Standard Model particles)
-        if self.quarks_dir.exists():
-            for json_file in self.quarks_dir.glob("*.json"):
-                particle = self._load_particle_file(json_file, is_antiparticle=False)
-                if particle:
-                    loaded_particles.append(particle)
+        # Resolve the data source — instance > global > env > default
+        from periodica.data.quark_source import (
+            get_quark_source, load_quark, list_quark_names,
+            EXPERIMENTAL, SIMULATED,
+        )
+        active_source = (self.source or get_quark_source()).strip().lower()
 
-        # Load from AntiQuarks directory
-        if include_antiparticles and self.antiquarks_dir.exists():
-            for json_file in self.antiquarks_dir.glob("*.json"):
-                particle = self._load_particle_file(json_file, is_antiparticle=True)
-                if particle:
-                    loaded_particles.append(particle)
+        if active_source == SIMULATED:
+            # Pull every quark + antiquark via metaphysica.Get
+            for name in list_quark_names(source=SIMULATED):
+                d = load_quark(name, source=SIMULATED)
+                if d is None:
+                    continue
+                # metaphysica's Get tags Anti* names with their own Antiparticle
+                # block — flag whether this is an antiquark for the rest of
+                # the pipeline.
+                lname = name.lower()
+                if not include_antiparticles and lname.startswith("anti"):
+                    continue
+                d["_is_antiparticle"] = lname.startswith("anti")
+                d["_source_file"] = f"<metaphysica:{name}>"
+                loaded_particles.append(d)
+        else:
+            # Experimental (PDG) — bundled JSON. Original code path.
+            if self.quarks_dir.exists():
+                for json_file in self.quarks_dir.glob("*.json"):
+                    particle = self._load_particle_file(json_file, is_antiparticle=False)
+                    if particle:
+                        loaded_particles.append(particle)
+
+            if include_antiparticles and self.antiquarks_dir.exists():
+                for json_file in self.antiquarks_dir.glob("*.json"):
+                    particle = self._load_particle_file(json_file, is_antiparticle=True)
+                    if particle:
+                        loaded_particles.append(particle)
 
         # Load from SubAtomic directory (composite particles)
         if include_composite and self.subatomic_dir.exists():

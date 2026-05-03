@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "periodica"
-version = "1.1.0"
+version = "1.3.1"
 description = "Data-driven scientific computation: particle/nuclear/atomic/molecular physics, materials, alloys, polymers, ceramics, composites, proteins. Generic Get()/Save()/sample() composer + 3D microstructure export (STL/OBJ/VTK/SDF/HLSL) + AlphaFold-validated protein folding."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -60,6 +60,13 @@ full = [
     "google-generativeai>=0.3.0",
     "matplotlib>=3.7",
     "scipy>=1.11",
+]
+# `simulated` extra enables the `quark_source = "simulated"` path: quark
+# datasheets sourced from the G2-manifold-derived metaphysica predictions
+# instead of the bundled PDG JSON. Default source remains "experimental"
+# and never imports metaphysica.
+simulated = [
+    "metaphysica>=1.3.1",
 ]
 test = [
     "pytest>=7.0.0",

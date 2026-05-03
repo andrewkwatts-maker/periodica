@@ -58,6 +58,15 @@ from periodica.data.quark_loader import (
     QuarkDataLoader,
     get_quark_loader,
 )
+from periodica.data.quark_source import (
+    EXPERIMENTAL,
+    SIMULATED,
+    get_quark_source,
+    set_quark_source,
+    load_quark,
+    list_quark_names,
+    iter_quarks,
+)
 
 # ---------------------------------------------------------------------------
 # Subatomic (composite) particle loader
@@ -106,9 +115,17 @@ __all__ = [
     "MoleculeDataLoader",
     "get_molecule_loader",
     "get_all_molecules",
-    # Quark loader
+    # Quark loader (legacy + classic)
     "QuarkDataLoader",
     "get_quark_loader",
+    # Quark data source switch (experimental ↔ simulated/metaphysica)
+    "EXPERIMENTAL",
+    "SIMULATED",
+    "get_quark_source",
+    "set_quark_source",
+    "load_quark",
+    "list_quark_names",
+    "iter_quarks",
     # Subatomic loader
     "SubatomicDataLoader",
     "get_subatomic_loader",

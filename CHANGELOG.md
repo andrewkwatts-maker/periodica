@@ -4,6 +4,46 @@ All notable changes to periodica are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project follows [Semantic Versioning](https://semver.org/).
 
+## [1.3.1] — 2026-05-03
+
+Quark datasheet source switch + EML stack version sync. Periodica's
+quark data can now be sourced two ways with a single config knob, with
+no impact on the slim install path.
+
+### Added
+
+- **`periodica.data.quark_source` module** — public ``load_quark()``,
+  ``list_quark_names()``, ``iter_quarks()``, ``get_quark_source()``,
+  ``set_quark_source()`` plus the constants ``EXPERIMENTAL`` and
+  ``SIMULATED``. Honours the ``PERIODICA_QUARK_SOURCE`` environment
+  variable for shell-level config.
+- **Two quark data sources**:
+  * ``"experimental"`` (default) — bundled PDG JSON in
+    ``data/active/quarks/``. The current behaviour. No new dependencies.
+  * ``"simulated"`` — fetches each quark via
+    ``metaphysica.Get(name)``, returning the G₂-manifold-derived
+    prediction with the same dict shape plus an extra ``pm_prediction``
+    block carrying the EML expression and percent-error metadata.
+- **`QuarkDataLoader` honours the source switch.** Pass ``source="simulated"``
+  to the constructor to override per-instance, otherwise the global
+  setting is consulted.
+- **New `[simulated]` optional extra**:
+  ``pip install periodica[simulated]`` installs ``metaphysica>=1.3.1``.
+  The base install (`pip install periodica`) is unchanged: only
+  ``numpy>=1.24``.
+- **98 new diff tests** in ``tests/test_quark_source_diff.py`` —
+  conserved-quantum-number agreement (charge, spin, isospin, baryon
+  number), antiparticle-name parity, derived-type consistency
+  (``ParticleType`` / ``QuarkGeneration`` enum agreement), mass deviation
+  recording, and `pm_prediction` block well-formedness. The whole file
+  cleanly skips when metaphysica isn't installed.
+
+### Changed
+
+- ``pyproject.toml``: bumped to ``1.3.1`` to align periodica with the
+  rest of the EML stack (``eml-math 1.3.1``, ``eml-spectral 1.3.1``,
+  ``metaphysica 1.3.1``).
+
 ## [1.1.0] — 2026-05-03
 
 Major minor release: a generic, content-agnostic composition + sampling
