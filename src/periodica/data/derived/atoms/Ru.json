@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 102,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 44,
+    "N": 58,
+    "P": 44
+  },
+  "Constituents": [
+    {
+      "Count": 44,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 58,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 44,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 44,
+  "Mass_MeVc2": 95801.250223,
+  "Mass_amu": 102.84686717242286,
+  "Mass_kg": 0,
+  "Name": "Ru",
+  "Symbol": "Ru"
+}

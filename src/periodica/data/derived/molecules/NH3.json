@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 17,
+  "Charge_e": 0,
+  "Composition": {
+    "H": 3,
+    "N": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 3,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 10,
+  "Mass_MeVc2": 15964.78881474,
+  "Mass_amu": 17.138904876950647,
+  "Mass_kg": 0,
+  "Name": "NH3"
+}

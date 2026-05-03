@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 235,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 92,
+    "N": 143,
+    "P": 92
+  },
+  "Constituents": [
+    {
+      "Count": 92,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 143,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 92,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 92,
+  "Mass_MeVc2": 220725.89914848,
+  "Mass_amu": 236.958987261616,
+  "Mass_kg": 0,
+  "Name": "U-235"
+}

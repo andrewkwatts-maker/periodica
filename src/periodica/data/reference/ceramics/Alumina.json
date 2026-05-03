@@ -1,0 +1,10 @@
+{
+  "Name": "Alumina",
+  "Symbol": "Alumina",
+  "Density_kgm3": 3950,
+  "YoungsModulus_GPa": 380,
+  "CompressiveStrength_MPa": 2500,
+  "FlexuralStrength_MPa": 379,
+  "MeltingPoint_K": 2345,
+  "source": "Sintered alpha-Al2O3, 99.5% purity (MatWeb)"
+}

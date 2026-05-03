@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 1,
+    "N": 0,
+    "P": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 0,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 1,
+  "Mass_MeVc2": 938.78308711,
+  "Mass_amu": 1.0078250465300649,
+  "Mass_kg": 0,
+  "Name": "H-1"
+}

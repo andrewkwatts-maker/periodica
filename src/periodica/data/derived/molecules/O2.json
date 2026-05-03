@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 32,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 16,
+  "Mass_MeVc2": 30053.576122079998,
+  "Mass_amu": 32.26383939968104,
+  "Mass_kg": 0,
+  "Name": "O2"
+}

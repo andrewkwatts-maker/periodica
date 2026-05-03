@@ -1,0 +1,8 @@
+{
+  "Name": "Ammonia",
+  "Symbol": "NH3",
+  "Composition": { "N": 1, "H": 3 },
+  "Charge_e": 0,
+  "Mass_amu": 17.031,
+  "source": "IUPAC standard atomic weights"
+}

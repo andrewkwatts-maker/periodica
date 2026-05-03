@@ -1,0 +1,40 @@
+{
+  "BaryonNumber_B": 102,
+  "Charge_e": 0,
+  "Composition": {
+    "Al": 2,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Al",
+      "Symbol": "Al"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 50,
+  "Mass_MeVc2": 95796.55622253999,
+  "Mass_amu": 102.84182795590324,
+  "Mass_kg": 0,
+  "Name": "Alumina",
+  "Properties": {
+    "CompressiveStrength_MPa": 2500,
+    "Density_kgm3": 3950,
+    "FlexuralStrength_MPa": 379,
+    "FractureToughness_MPa_m05": 4.0,
+    "HardnessHV": 1500,
+    "MeltingPoint_K": 2345,
+    "PoissonsRatio": 0.22,
+    "ShearModulus_GPa": 152,
+    "ThermalConductivity_WmK": 30,
+    "YoungsModulus_GPa": 380
+  }
+}

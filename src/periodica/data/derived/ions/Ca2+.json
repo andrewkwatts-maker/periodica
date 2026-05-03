@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 40,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 18,
+    "N": 20,
+    "P": 20
+  },
+  "Constituents": [
+    {
+      "Count": 20,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 20,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 18,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 18,
+  "Mass_MeVc2": 37565.948154699996,
+  "Mass_amu": 40.328702089783164,
+  "Mass_kg": 0,
+  "Name": "Ca2+"
+}

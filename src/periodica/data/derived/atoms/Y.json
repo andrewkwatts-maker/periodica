@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 89,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 39,
+    "N": 50,
+    "P": 39
+  },
+  "Constituents": [
+    {
+      "Count": 39,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 50,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 39,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 39,
+  "Mass_MeVc2": 83590.81142329,
+  "Mass_amu": 89.73842261217254,
+  "Mass_kg": 0,
+  "Name": "Y",
+  "Symbol": "Y"
+}

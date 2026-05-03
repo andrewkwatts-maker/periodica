@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 60,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 27,
+    "N": 33,
+    "P": 27
+  },
+  "Constituents": [
+    {
+      "Count": 27,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 33,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 27,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 27,
+  "Mass_MeVc2": 56352.80222913,
+  "Mass_amu": 60.49721848266175,
+  "Mass_kg": 0,
+  "Name": "Co-60"
+}

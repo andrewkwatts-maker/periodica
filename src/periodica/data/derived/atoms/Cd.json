@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 114,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 48,
+    "N": 66,
+    "P": 48
+  },
+  "Constituents": [
+    {
+      "Count": 48,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 66,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 48,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 48,
+  "Mass_MeVc2": 107072.9059356,
+  "Mass_amu": 114.94748668614312,
+  "Mass_kg": 0,
+  "Name": "Cd",
+  "Symbol": "Cd"
+}

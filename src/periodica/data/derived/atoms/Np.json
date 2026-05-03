@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 237,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 93,
+    "N": 144,
+    "P": 93
+  },
+  "Constituents": [
+    {
+      "Count": 93,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 144,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 93,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 93,
+  "Mass_MeVc2": 222604.24765610998,
+  "Mass_amu": 238.97547722409604,
+  "Mass_kg": 0,
+  "Name": "Np",
+  "Symbol": "Np"
+}

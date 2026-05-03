@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 16,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 8,
+    "N": 8,
+    "P": 8
+  },
+  "Constituents": [
+    {
+      "Count": 8,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 8,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 8,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 8,
+  "Mass_MeVc2": 15026.788061039999,
+  "Mass_amu": 16.13191969984052,
+  "Mass_kg": 0,
+  "Name": "O-16"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 289,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 114,
+    "N": 175,
+    "P": 114
+  },
+  "Constituents": [
+    {
+      "Count": 114,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 175,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 114,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 114,
+  "Mass_MeVc2": 271445.22052154,
+  "Mass_amu": 291.4084155956774,
+  "Mass_kg": 0,
+  "Name": "Fl",
+  "Symbol": "Fl"
+}

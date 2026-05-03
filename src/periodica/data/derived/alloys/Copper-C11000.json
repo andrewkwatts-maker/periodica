@@ -1,0 +1,34 @@
+{
+  "BaryonNumber_B": 63,
+  "Charge_e": 0,
+  "Composition": {
+    "Cu": 1.0
+  },
+  "Constituents": [
+    {
+      "Count": 1.0,
+      "Resolved": "Cu",
+      "Symbol": "Cu"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 29,
+  "Mass_MeVc2": 59169.93382386999,
+  "Mass_amu": 63.52153349167189,
+  "Mass_kg": 0,
+  "Name": "Copper-C11000",
+  "Properties": {
+    "Density_kgm3": 8960,
+    "ElectricalResistivity_ohmm": 1.68e-08,
+    "HardnessHB": 50,
+    "MeltingPoint_K": 1357.77,
+    "PoissonsRatio": 0.34,
+    "ShearModulus_GPa": 44,
+    "TensileStrength_MPa": 220,
+    "ThermalConductivity_WmK": 391,
+    "YieldStrength_MPa": 70,
+    "YoungsModulus_GPa": 110
+  }
+}

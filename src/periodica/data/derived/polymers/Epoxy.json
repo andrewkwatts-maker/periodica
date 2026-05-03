@@ -1,0 +1,40 @@
+{
+  "BaryonNumber_B": 340,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 21,
+    "H": 24,
+    "O": 4
+  },
+  "Constituents": [
+    {
+      "Count": 21,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 24,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 182,
+  "Mass_MeVc2": 319309.85829618,
+  "Mass_amu": 342.7932151885719,
+  "Mass_kg": 0,
+  "Name": "Epoxy",
+  "Properties": {
+    "Density_kgm3": 1200,
+    "GlassTransition_K": 393,
+    "TensileStrength_MPa": 60,
+    "YoungsModulus_GPa": 3.5
+  }
+}

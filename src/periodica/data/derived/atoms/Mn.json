@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 55,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 25,
+    "N": 30,
+    "P": 25
+  },
+  "Constituents": [
+    {
+      "Count": 25,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 30,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 25,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 25,
+  "Mass_MeVc2": 51656.53979334999,
+  "Mass_amu": 55.45557364175163,
+  "Mass_kg": 0,
+  "Name": "Mn",
+  "Symbol": "Mn"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 187,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 75,
+    "N": 112,
+    "P": 75
+  },
+  "Constituents": [
+    {
+      "Count": 75,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 112,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 75,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 75,
+  "Mass_MeVc2": 175640.05863148998,
+  "Mass_amu": 188.55734907615488,
+  "Mass_kg": 0,
+  "Name": "Re",
+  "Symbol": "Re"
+}

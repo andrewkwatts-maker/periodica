@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 226,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 88,
+    "N": 138,
+    "P": 88
+  },
+  "Constituents": [
+    {
+      "Count": 88,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 138,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 88,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 88,
+  "Mass_MeVc2": 212272.93969744,
+  "Mass_amu": 227.88436249574573,
+  "Mass_kg": 0,
+  "Name": "Ra",
+  "Symbol": "Ra"
+}

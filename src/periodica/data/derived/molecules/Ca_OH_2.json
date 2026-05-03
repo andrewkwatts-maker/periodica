@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 74,
+  "Charge_e": 0,
+  "Composition": {
+    "Ca": 1,
+    "H": 2,
+    "O": 2
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ca",
+      "Symbol": "Ca"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    },
+    {
+      "Count": 2,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 38,
+  "Mass_MeVc2": 69498.1124489,
+  "Mass_amu": 74.60928874234246,
+  "Mass_kg": 0,
+  "Name": "Ca_OH_2"
+}

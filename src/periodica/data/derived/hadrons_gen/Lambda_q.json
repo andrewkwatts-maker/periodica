@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": 0,
+  "Composition": {
+    "d": 1,
+    "s": 1,
+    "u": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Up Quark",
+      "Symbol": "u"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Down Quark",
+      "Symbol": "d"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Strange Quark",
+      "Symbol": "s"
+    }
+  ],
+  "LeptonNumber_L": 0,
+  "Mass_MeVc2": 101.9,
+  "Mass_amu": 0.1019874,
+  "Mass_kg": 0,
+  "Name": "Lambda_q"
+}

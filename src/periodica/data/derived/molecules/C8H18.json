@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 114,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 8,
+    "H": 18
+  },
+  "Constituents": [
+    {
+      "Count": 8,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 18,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 66,
+  "Mass_MeVc2": 107058.82393422,
+  "Mass_amu": 114.93236903658429,
+  "Mass_kg": 0,
+  "Name": "C8H18"
+}

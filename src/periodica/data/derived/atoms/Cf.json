@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 251,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 98,
+    "N": 153,
+    "P": 98
+  },
+  "Constituents": [
+    {
+      "Count": 98,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 153,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 98,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 98,
+  "Mass_MeVc2": 235754.25187634001,
+  "Mass_amu": 253.09258670029635,
+  "Mass_kg": 0,
+  "Name": "Cf",
+  "Symbol": "Cf"
+}

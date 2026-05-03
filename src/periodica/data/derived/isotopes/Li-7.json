@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 7,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 3,
+    "N": 4,
+    "P": 3
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 4,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 3,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 3,
+  "Mass_MeVc2": 6574.61094341,
+  "Mass_amu": 7.058134803390195,
+  "Mass_kg": 0,
+  "Name": "Li-7"
+}

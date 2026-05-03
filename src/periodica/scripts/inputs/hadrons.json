@@ -1,0 +1,21 @@
+{
+  "from": "fundamentals",
+  "tier": "hadrons_gen",
+  "rows": [
+    { "name": "Proton_q",        "spec": { "u": 2, "d": 1 } },
+    { "name": "Neutron_q",       "spec": { "u": 1, "d": 2 } },
+    { "name": "DeltaPlusPlus_q", "spec": { "u": 3 } },
+    { "name": "DeltaPlus_q",     "spec": { "u": 2, "d": 1 } },
+    { "name": "DeltaZero_q",     "spec": { "u": 1, "d": 2 } },
+    { "name": "DeltaMinus_q",    "spec": { "d": 3 } },
+    { "name": "Lambda_q",        "spec": { "u": 1, "d": 1, "s": 1 } },
+    { "name": "SigmaPlus_q",     "spec": { "u": 2, "s": 1 } },
+    { "name": "SigmaZero_q",     "spec": { "u": 1, "d": 1, "s": 1 } },
+    { "name": "SigmaMinus_q",    "spec": { "d": 2, "s": 1 } },
+    { "name": "XiZero_q",        "spec": { "u": 1, "s": 2 } },
+    { "name": "XiMinus_q",       "spec": { "d": 1, "s": 2 } },
+    { "name": "OmegaMinus_q",    "spec": { "s": 3 } },
+    { "name": "LambdaC_q",       "spec": { "u": 1, "d": 1, "c": 1 } },
+    { "name": "LambdaB_q",       "spec": { "u": 1, "d": 1, "b": 1 } }
+  ]
+}

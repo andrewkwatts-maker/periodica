@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 278,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 109,
+    "N": 169,
+    "P": 109
+  },
+  "Constituents": [
+    {
+      "Count": 109,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 169,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 109,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 109,
+  "Mass_MeVc2": 261113.91256286998,
+  "Mass_amu": 280.3173008673271,
+  "Mass_kg": 0,
+  "Name": "Mt",
+  "Symbol": "Mt"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 152,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 62,
+    "N": 90,
+    "P": 62
+  },
+  "Constituents": [
+    {
+      "Count": 62,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 90,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 62,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 62,
+  "Mass_MeVc2": 142765.43924762,
+  "Mass_amu": 153.26499532036402,
+  "Mass_kg": 0,
+  "Name": "Sm",
+  "Symbol": "Sm"
+}

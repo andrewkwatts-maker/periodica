@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 268,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 105,
+    "N": 163,
+    "P": 105
+  },
+  "Constituents": [
+    {
+      "Count": 105,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 163,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 105,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 105,
+  "Mass_MeVc2": 251721.38769131,
+  "Mass_amu": 270.23401118550686,
+  "Mass_kg": 0,
+  "Name": "Db",
+  "Symbol": "Db"
+}

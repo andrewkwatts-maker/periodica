@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 164,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 66,
+    "N": 98,
+    "P": 66
+  },
+  "Constituents": [
+    {
+      "Count": 66,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 98,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 66,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 66,
+  "Mass_MeVc2": 154037.09496021998,
+  "Mass_amu": 165.36561483408428,
+  "Mass_kg": 0,
+  "Name": "Dy",
+  "Symbol": "Dy"
+}

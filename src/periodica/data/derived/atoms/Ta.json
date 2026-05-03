@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 181,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 73,
+    "N": 108,
+    "P": 73
+  },
+  "Constituents": [
+    {
+      "Count": 73,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 108,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 73,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 73,
+  "Mass_MeVc2": 170004.23077519,
+  "Mass_amu": 182.50703931929476,
+  "Mass_kg": 0,
+  "Name": "Ta",
+  "Symbol": "Ta"
+}

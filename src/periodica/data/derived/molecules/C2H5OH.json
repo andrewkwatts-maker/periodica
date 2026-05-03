@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 46,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 2,
+    "H": 6,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 6,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 26,
+  "Mass_MeVc2": 43199.66867526,
+  "Mass_amu": 46.37674952878169,
+  "Mass_kg": 0,
+  "Name": "C2H5OH"
+}

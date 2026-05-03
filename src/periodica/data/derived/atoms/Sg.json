@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 269,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 106,
+    "N": 163,
+    "P": 106
+  },
+  "Constituents": [
+    {
+      "Count": 106,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 163,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 106,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 106,
+  "Mass_MeVc2": 252660.17077842,
+  "Mass_amu": 271.24183623203686,
+  "Mass_kg": 0,
+  "Name": "Sg",
+  "Symbol": "Sg"
+}

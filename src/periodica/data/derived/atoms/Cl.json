@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 35,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 17,
+    "N": 18,
+    "P": 17
+  },
+  "Constituents": [
+    {
+      "Count": 17,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 18,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 17,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 17,
+  "Mass_MeVc2": 32871.49005023,
+  "Mass_amu": 35.288994278111105,
+  "Mass_kg": 0,
+  "Name": "Cl",
+  "Symbol": "Cl"
+}

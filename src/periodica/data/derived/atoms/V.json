@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 51,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 23,
+    "N": 28,
+    "P": 23
+  },
+  "Constituents": [
+    {
+      "Count": 23,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 28,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 23,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 23,
+  "Mass_MeVc2": 47899.84277809,
+  "Mass_amu": 51.422593716791496,
+  "Mass_kg": 0,
+  "Name": "V",
+  "Symbol": "V"
+}

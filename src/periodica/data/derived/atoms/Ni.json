@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 58,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 28,
+    "N": 30,
+    "P": 28
+  },
+  "Constituents": [
+    {
+      "Count": 28,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 30,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 28,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 28,
+  "Mass_MeVc2": 54472.889054679996,
+  "Mass_amu": 58.47904878134182,
+  "Mass_kg": 0,
+  "Name": "Ni",
+  "Symbol": "Ni"
+}

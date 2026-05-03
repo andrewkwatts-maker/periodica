@@ -1,0 +1,37 @@
+{
+  "BaryonNumber_B": 28,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 2,
+    "H": 4
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 4,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 16,
+  "Mass_MeVc2": 26295.314440000002,
+  "Mass_amu": 28.22917973588104,
+  "Mass_kg": 0,
+  "Name": "HDPE",
+  "Properties": {
+    "Density_kgm3": 970,
+    "ElongationAtBreak_pct": 800,
+    "GlassTransition_K": 148,
+    "MeltingPoint_K": 408,
+    "TensileStrength_MPa": 25,
+    "ThermalConductivity_WmK": 0.46,
+    "YoungsModulus_GPa": 0.8
+  }
+}

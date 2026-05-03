@@ -1,0 +1,46 @@
+{
+  "BaryonNumber_B": 67.6,
+  "Charge_e": 0,
+  "Composition": {
+    "Cu": 0.88,
+    "Sn": 0.08,
+    "Zn": 0.04
+  },
+  "Constituents": [
+    {
+      "Count": 0.88,
+      "Resolved": "Cu",
+      "Symbol": "Cu"
+    },
+    {
+      "Count": 0.08,
+      "Resolved": "Sn",
+      "Symbol": "Sn"
+    },
+    {
+      "Count": 0.04,
+      "Resolved": "Zn",
+      "Symbol": "Zn"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 30.72,
+  "Mass_MeVc2": 63490.589144796795,
+  "Mass_amu": 68.15994752963961,
+  "Mass_kg": 0,
+  "Name": "Bronze-C90300",
+  "Properties": {
+    "Density_kgm3": 8800,
+    "ElectricalResistivity_ohmm": 1.5e-07,
+    "HardnessHB": 70,
+    "MeltingPoint_K": 1313,
+    "PoissonsRatio": 0.34,
+    "ShearModulus_GPa": 38,
+    "TensileStrength_MPa": 310,
+    "ThermalConductivity_WmK": 75,
+    "YieldStrength_MPa": 145,
+    "YoungsModulus_GPa": 100
+  }
+}

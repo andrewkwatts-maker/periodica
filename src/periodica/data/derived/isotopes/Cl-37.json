@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 37,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 17,
+    "N": 20,
+    "P": 17
+  },
+  "Constituents": [
+    {
+      "Count": 17,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 20,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 17,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 17,
+  "Mass_MeVc2": 34750.62089127,
+  "Mass_amu": 37.306324110011104,
+  "Mass_kg": 0,
+  "Name": "Cl-37"
+}

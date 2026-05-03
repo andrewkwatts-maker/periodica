@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": -1,
+  "Composition": {
+    "s": 3
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "Strange Quark",
+      "Symbol": "s"
+    }
+  ],
+  "LeptonNumber_L": 0,
+  "Mass_MeVc2": 285,
+  "Mass_amu": 0.30594,
+  "Mass_kg": 0,
+  "Name": "OmegaMinus_q"
+}

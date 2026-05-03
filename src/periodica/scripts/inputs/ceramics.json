@@ -1,0 +1,99 @@
+{
+  "from": "atoms",
+  "tier": "ceramics",
+  "requires": ["atoms"],
+  "rows": [
+    {
+      "name": "Alumina",
+      "spec": { "Al": 2, "O": 3 },
+      "properties": {
+        "Density_kgm3": 3950,
+        "YoungsModulus_GPa": 380,
+        "ShearModulus_GPa": 152,
+        "PoissonsRatio": 0.22,
+        "CompressiveStrength_MPa": 2500,
+        "FlexuralStrength_MPa": 379,
+        "FractureToughness_MPa_m05": 4.0,
+        "HardnessHV": 1500,
+        "ThermalConductivity_WmK": 30,
+        "MeltingPoint_K": 2345
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "Zirconia",
+      "spec": { "Zr": 1, "O": 2 },
+      "properties": {
+        "Density_kgm3": 6050,
+        "YoungsModulus_GPa": 200,
+        "PoissonsRatio": 0.31,
+        "CompressiveStrength_MPa": 2200,
+        "FlexuralStrength_MPa": 900,
+        "FractureToughness_MPa_m05": 7.0,
+        "HardnessHV": 1200,
+        "ThermalConductivity_WmK": 2.0,
+        "MeltingPoint_K": 2988
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "SiliconCarbide",
+      "spec": { "Si": 1, "C": 1 },
+      "properties": {
+        "Density_kgm3": 3210,
+        "YoungsModulus_GPa": 410,
+        "PoissonsRatio": 0.14,
+        "CompressiveStrength_MPa": 3900,
+        "FlexuralStrength_MPa": 460,
+        "FractureToughness_MPa_m05": 4.6,
+        "HardnessHV": 2800,
+        "ThermalConductivity_WmK": 120,
+        "MeltingPoint_K": 3003
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "SiliconNitride",
+      "spec": { "Si": 3, "N": 4 },
+      "properties": {
+        "Density_kgm3": 3200,
+        "YoungsModulus_GPa": 310,
+        "PoissonsRatio": 0.27,
+        "CompressiveStrength_MPa": 3500,
+        "FlexuralStrength_MPa": 800,
+        "FractureToughness_MPa_m05": 6.0,
+        "HardnessHV": 1600,
+        "ThermalConductivity_WmK": 30,
+        "MeltingPoint_K": 2173
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "Quartz-SiO2",
+      "spec": { "Si": 1, "O": 2 },
+      "properties": {
+        "Density_kgm3": 2650,
+        "YoungsModulus_GPa": 73,
+        "PoissonsRatio": 0.17,
+        "CompressiveStrength_MPa": 1100,
+        "HardnessHV": 1100,
+        "ThermalConductivity_WmK": 1.4,
+        "MeltingPoint_K": 1986
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "BoronCarbide",
+      "spec": { "B": 4, "C": 1 },
+      "properties": {
+        "Density_kgm3": 2520,
+        "YoungsModulus_GPa": 460,
+        "CompressiveStrength_MPa": 4500,
+        "HardnessHV": 3500,
+        "ThermalConductivity_WmK": 30,
+        "MeltingPoint_K": 2718
+      },
+      "field": { "model": "homogeneous" }
+    }
+  ]
+}

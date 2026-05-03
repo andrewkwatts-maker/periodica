@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 27,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 13,
+    "N": 14,
+    "P": 13
+  },
+  "Constituents": [
+    {
+      "Count": 13,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 14,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 13,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 13,
+  "Mass_MeVc2": 25358.09601971,
+  "Mass_amu": 27.223034428190843,
+  "Mass_kg": 0,
+  "Name": "Al-27"
+}

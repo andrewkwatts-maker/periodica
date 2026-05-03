@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 44,
+  "Charge_e": 0,
+  "Composition": {
+    "N": 2,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 22,
+  "Mass_MeVc2": 41323.667167859996,
+  "Mass_amu": 44.362779174561425,
+  "Mass_kg": 0,
+  "Name": "N2O"
+}

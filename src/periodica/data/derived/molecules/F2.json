@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 38,
+  "Charge_e": 0,
+  "Composition": {
+    "F": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "F",
+      "Symbol": "F"
+    }
+  ],
+  "LeptonNumber_L": 18,
+  "Mass_MeVc2": 35689.40397838,
+  "Mass_amu": 38.31414915654117,
+  "Mass_kg": 0,
+  "Name": "F2"
+}

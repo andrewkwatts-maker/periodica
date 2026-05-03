@@ -1,0 +1,9 @@
+{
+  "Name": "Hydrogen",
+  "Symbol": "H",
+  "AtomicNumber": 1,
+  "Charge_e": 0,
+  "Mass_amu": 1.00784,
+  "MostAbundantIsotope": { "MassNumber": 1, "Neutrons": 0, "Abundance": 99.9885 },
+  "source": "IUPAC 2021 standard atomic weights"
+}

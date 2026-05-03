@@ -1,6 +1,7 @@
 {
   "Name": "Higgs Boson",
   "Symbol": "H",
+  "Aliases": ["Higgs", "H_Boson"],
   "Type": "Subatomic Particle",
   "Classification": ["Boson", "Scalar Boson", "Fundamental Particle"],
   "Charge_e": 0,

@@ -1,0 +1,10 @@
+{
+  "Name": "Titanium-Ti6Al4V",
+  "Symbol": "Titanium-Ti6Al4V",
+  "Density_kgm3": 4430,
+  "YoungsModulus_GPa": 113.8,
+  "TensileStrength_MPa": 950,
+  "YieldStrength_MPa": 880,
+  "MeltingPoint_K": 1933,
+  "source": "ASTM B348 Grade 5"
+}

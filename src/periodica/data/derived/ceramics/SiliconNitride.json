@@ -1,0 +1,39 @@
+{
+  "BaryonNumber_B": 140,
+  "Charge_e": 0,
+  "Composition": {
+    "N": 4,
+    "Si": 3
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "Si",
+      "Symbol": "Si"
+    },
+    {
+      "Count": 4,
+      "Resolved": "N",
+      "Symbol": "N"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 70,
+  "Mass_MeVc2": 131484.3955341,
+  "Mass_amu": 141.15429737360455,
+  "Mass_kg": 0,
+  "Name": "SiliconNitride",
+  "Properties": {
+    "CompressiveStrength_MPa": 3500,
+    "Density_kgm3": 3200,
+    "FlexuralStrength_MPa": 800,
+    "FractureToughness_MPa_m05": 6.0,
+    "HardnessHV": 1600,
+    "MeltingPoint_K": 2173,
+    "PoissonsRatio": 0.27,
+    "ThermalConductivity_WmK": 30,
+    "YoungsModulus_GPa": 310
+  }
+}

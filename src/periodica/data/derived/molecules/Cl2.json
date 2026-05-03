@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 70,
+  "Charge_e": 0,
+  "Composition": {
+    "Cl": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Cl",
+      "Symbol": "Cl"
+    }
+  ],
+  "LeptonNumber_L": 34,
+  "Mass_MeVc2": 65742.98010046,
+  "Mass_amu": 70.57798855622221,
+  "Mass_kg": 0,
+  "Name": "Cl2"
+}

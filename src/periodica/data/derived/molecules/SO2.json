@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 64,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 2,
+    "S": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "S",
+      "Symbol": "S"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 32,
+  "Mass_MeVc2": 60107.152244159995,
+  "Mass_amu": 64.52767879936208,
+  "Mass_kg": 0,
+  "Name": "SO2"
+}

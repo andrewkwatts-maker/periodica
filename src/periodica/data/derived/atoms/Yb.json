@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 174,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 70,
+    "N": 104,
+    "P": 70
+  },
+  "Constituents": [
+    {
+      "Count": 70,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 104,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 70,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 70,
+  "Mass_MeVc2": 163429.61983178,
+  "Mass_amu": 175.44890451590456,
+  "Mass_kg": 0,
+  "Name": "Yb",
+  "Symbol": "Yb"
+}

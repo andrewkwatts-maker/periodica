@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": -1,
+  "Composition": {
+    "d": 2,
+    "s": 1
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Down Quark",
+      "Symbol": "d"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Strange Quark",
+      "Symbol": "s"
+    }
+  ],
+  "LeptonNumber_L": 0,
+  "Mass_MeVc2": 104.4,
+  "Mass_amu": 0.101990082,
+  "Mass_kg": 0,
+  "Name": "SigmaMinus_q"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 45,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 21,
+    "N": 24,
+    "P": 21
+  },
+  "Constituents": [
+    {
+      "Count": 21,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 24,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 21,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 21,
+  "Mass_MeVc2": 42264.014921789996,
+  "Mass_amu": 45.372283959931366,
+  "Mass_kg": 0,
+  "Name": "Sc",
+  "Symbol": "Sc"
+}

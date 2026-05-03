@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 158,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 64,
+    "N": 94,
+    "P": 64
+  },
+  "Constituents": [
+    {
+      "Count": 64,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 94,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 64,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 64,
+  "Mass_MeVc2": 148401.26710392,
+  "Mass_amu": 159.31530507722414,
+  "Mass_kg": 0,
+  "Name": "Gd",
+  "Symbol": "Gd"
+}

@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 180,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 6,
+    "H": 12,
+    "O": 6
+  },
+  "Constituents": [
+    {
+      "Count": 6,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 12,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 6,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 96,
+  "Mass_MeVc2": 169046.67168624,
+  "Mass_amu": 181.47905740668622,
+  "Mass_kg": 0,
+  "Name": "Glucose"
+}

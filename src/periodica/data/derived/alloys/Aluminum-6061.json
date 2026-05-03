@@ -1,0 +1,58 @@
+{
+  "BaryonNumber_B": 27.025999999999996,
+  "Charge_e": 0,
+  "Composition": {
+    "Al": 0.975,
+    "Cr": 0.002,
+    "Cu": 0.003,
+    "Mg": 0.01,
+    "Si": 0.006
+  },
+  "Constituents": [
+    {
+      "Count": 0.975,
+      "Resolved": "Al",
+      "Symbol": "Al"
+    },
+    {
+      "Count": 0.01,
+      "Resolved": "Mg",
+      "Symbol": "Mg"
+    },
+    {
+      "Count": 0.006,
+      "Resolved": "Si",
+      "Symbol": "Si"
+    },
+    {
+      "Count": 0.003,
+      "Resolved": "Cu",
+      "Symbol": "Cu"
+    },
+    {
+      "Count": 0.002,
+      "Resolved": "Cr",
+      "Symbol": "Cr"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 13.013999999999998,
+  "Mass_MeVc2": 25382.51376797578,
+  "Mass_amu": 27.249247957833667,
+  "Mass_kg": 0,
+  "Name": "Aluminum-6061",
+  "Properties": {
+    "Density_kgm3": 2700,
+    "ElectricalResistivity_ohmm": 3.99e-08,
+    "HardnessHB": 95,
+    "MeltingPoint_K": 855,
+    "PoissonsRatio": 0.33,
+    "ShearModulus_GPa": 26,
+    "TensileStrength_MPa": 310,
+    "ThermalConductivity_WmK": 167,
+    "YieldStrength_MPa": 276,
+    "YoungsModulus_GPa": 68.9
+  }
+}

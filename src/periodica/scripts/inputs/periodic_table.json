@@ -1,0 +1,1071 @@
+{
+  "from": [
+    "subatomic",
+    "fundamentals"
+  ],
+  "tier": "atoms",
+  "rows": [
+    {
+      "name": "H",
+      "spec": {
+        "P": 1,
+        "N": 0,
+        "E": 1
+      },
+      "symbol": "H"
+    },
+    {
+      "name": "He",
+      "spec": {
+        "P": 2,
+        "N": 2,
+        "E": 2
+      },
+      "symbol": "He"
+    },
+    {
+      "name": "Li",
+      "spec": {
+        "P": 3,
+        "N": 4,
+        "E": 3
+      },
+      "symbol": "Li"
+    },
+    {
+      "name": "Be",
+      "spec": {
+        "P": 4,
+        "N": 5,
+        "E": 4
+      },
+      "symbol": "Be"
+    },
+    {
+      "name": "B",
+      "spec": {
+        "P": 5,
+        "N": 6,
+        "E": 5
+      },
+      "symbol": "B"
+    },
+    {
+      "name": "C",
+      "spec": {
+        "P": 6,
+        "N": 6,
+        "E": 6
+      },
+      "symbol": "C"
+    },
+    {
+      "name": "N",
+      "spec": {
+        "P": 7,
+        "N": 7,
+        "E": 7
+      },
+      "symbol": "N"
+    },
+    {
+      "name": "O",
+      "spec": {
+        "P": 8,
+        "N": 8,
+        "E": 8
+      },
+      "symbol": "O"
+    },
+    {
+      "name": "F",
+      "spec": {
+        "P": 9,
+        "N": 10,
+        "E": 9
+      },
+      "symbol": "F"
+    },
+    {
+      "name": "Ne",
+      "spec": {
+        "P": 10,
+        "N": 10,
+        "E": 10
+      },
+      "symbol": "Ne"
+    },
+    {
+      "name": "Na",
+      "spec": {
+        "P": 11,
+        "N": 12,
+        "E": 11
+      },
+      "symbol": "Na"
+    },
+    {
+      "name": "Mg",
+      "spec": {
+        "P": 12,
+        "N": 12,
+        "E": 12
+      },
+      "symbol": "Mg"
+    },
+    {
+      "name": "Al",
+      "spec": {
+        "P": 13,
+        "N": 14,
+        "E": 13
+      },
+      "symbol": "Al"
+    },
+    {
+      "name": "Si",
+      "spec": {
+        "P": 14,
+        "N": 14,
+        "E": 14
+      },
+      "symbol": "Si"
+    },
+    {
+      "name": "P",
+      "spec": {
+        "P": 15,
+        "N": 16,
+        "E": 15
+      },
+      "symbol": "P"
+    },
+    {
+      "name": "S",
+      "spec": {
+        "P": 16,
+        "N": 16,
+        "E": 16
+      },
+      "symbol": "S"
+    },
+    {
+      "name": "Cl",
+      "spec": {
+        "P": 17,
+        "N": 18,
+        "E": 17
+      },
+      "symbol": "Cl"
+    },
+    {
+      "name": "Ar",
+      "spec": {
+        "P": 18,
+        "N": 22,
+        "E": 18
+      },
+      "symbol": "Ar"
+    },
+    {
+      "name": "K",
+      "spec": {
+        "P": 19,
+        "N": 20,
+        "E": 19
+      },
+      "symbol": "K"
+    },
+    {
+      "name": "Ca",
+      "spec": {
+        "P": 20,
+        "N": 20,
+        "E": 20
+      },
+      "symbol": "Ca"
+    },
+    {
+      "name": "Sc",
+      "spec": {
+        "P": 21,
+        "N": 24,
+        "E": 21
+      },
+      "symbol": "Sc"
+    },
+    {
+      "name": "Ti",
+      "spec": {
+        "P": 22,
+        "N": 26,
+        "E": 22
+      },
+      "symbol": "Ti"
+    },
+    {
+      "name": "V",
+      "spec": {
+        "P": 23,
+        "N": 28,
+        "E": 23
+      },
+      "symbol": "V"
+    },
+    {
+      "name": "Cr",
+      "spec": {
+        "P": 24,
+        "N": 28,
+        "E": 24
+      },
+      "symbol": "Cr"
+    },
+    {
+      "name": "Mn",
+      "spec": {
+        "P": 25,
+        "N": 30,
+        "E": 25
+      },
+      "symbol": "Mn"
+    },
+    {
+      "name": "Fe",
+      "spec": {
+        "P": 26,
+        "N": 30,
+        "E": 26
+      },
+      "symbol": "Fe"
+    },
+    {
+      "name": "Co",
+      "spec": {
+        "P": 27,
+        "N": 32,
+        "E": 27
+      },
+      "symbol": "Co"
+    },
+    {
+      "name": "Ni",
+      "spec": {
+        "P": 28,
+        "N": 30,
+        "E": 28
+      },
+      "symbol": "Ni"
+    },
+    {
+      "name": "Cu",
+      "spec": {
+        "P": 29,
+        "N": 34,
+        "E": 29
+      },
+      "symbol": "Cu"
+    },
+    {
+      "name": "Zn",
+      "spec": {
+        "P": 30,
+        "N": 34,
+        "E": 30
+      },
+      "symbol": "Zn"
+    },
+    {
+      "name": "Ga",
+      "spec": {
+        "P": 31,
+        "N": 38,
+        "E": 31
+      },
+      "symbol": "Ga"
+    },
+    {
+      "name": "Ge",
+      "spec": {
+        "P": 32,
+        "N": 42,
+        "E": 32
+      },
+      "symbol": "Ge"
+    },
+    {
+      "name": "As",
+      "spec": {
+        "P": 33,
+        "N": 42,
+        "E": 33
+      },
+      "symbol": "As"
+    },
+    {
+      "name": "Se",
+      "spec": {
+        "P": 34,
+        "N": 46,
+        "E": 34
+      },
+      "symbol": "Se"
+    },
+    {
+      "name": "Br",
+      "spec": {
+        "P": 35,
+        "N": 44,
+        "E": 35
+      },
+      "symbol": "Br"
+    },
+    {
+      "name": "Kr",
+      "spec": {
+        "P": 36,
+        "N": 48,
+        "E": 36
+      },
+      "symbol": "Kr"
+    },
+    {
+      "name": "Rb",
+      "spec": {
+        "P": 37,
+        "N": 48,
+        "E": 37
+      },
+      "symbol": "Rb"
+    },
+    {
+      "name": "Sr",
+      "spec": {
+        "P": 38,
+        "N": 50,
+        "E": 38
+      },
+      "symbol": "Sr"
+    },
+    {
+      "name": "Y",
+      "spec": {
+        "P": 39,
+        "N": 50,
+        "E": 39
+      },
+      "symbol": "Y"
+    },
+    {
+      "name": "Zr",
+      "spec": {
+        "P": 40,
+        "N": 50,
+        "E": 40
+      },
+      "symbol": "Zr"
+    },
+    {
+      "name": "Nb",
+      "spec": {
+        "P": 41,
+        "N": 52,
+        "E": 41
+      },
+      "symbol": "Nb"
+    },
+    {
+      "name": "Mo",
+      "spec": {
+        "P": 42,
+        "N": 56,
+        "E": 42
+      },
+      "symbol": "Mo"
+    },
+    {
+      "name": "Tc",
+      "spec": {
+        "P": 43,
+        "N": 54,
+        "E": 43
+      },
+      "symbol": "Tc"
+    },
+    {
+      "name": "Ru",
+      "spec": {
+        "P": 44,
+        "N": 58,
+        "E": 44
+      },
+      "symbol": "Ru"
+    },
+    {
+      "name": "Rh",
+      "spec": {
+        "P": 45,
+        "N": 58,
+        "E": 45
+      },
+      "symbol": "Rh"
+    },
+    {
+      "name": "Pd",
+      "spec": {
+        "P": 46,
+        "N": 60,
+        "E": 46
+      },
+      "symbol": "Pd"
+    },
+    {
+      "name": "Ag",
+      "spec": {
+        "P": 47,
+        "N": 60,
+        "E": 47
+      },
+      "symbol": "Ag"
+    },
+    {
+      "name": "Cd",
+      "spec": {
+        "P": 48,
+        "N": 66,
+        "E": 48
+      },
+      "symbol": "Cd"
+    },
+    {
+      "name": "In",
+      "spec": {
+        "P": 49,
+        "N": 66,
+        "E": 49
+      },
+      "symbol": "In"
+    },
+    {
+      "name": "Sn",
+      "spec": {
+        "P": 50,
+        "N": 70,
+        "E": 50
+      },
+      "symbol": "Sn"
+    },
+    {
+      "name": "Sb",
+      "spec": {
+        "P": 51,
+        "N": 70,
+        "E": 51
+      },
+      "symbol": "Sb"
+    },
+    {
+      "name": "Te",
+      "spec": {
+        "P": 52,
+        "N": 78,
+        "E": 52
+      },
+      "symbol": "Te"
+    },
+    {
+      "name": "I",
+      "spec": {
+        "P": 53,
+        "N": 74,
+        "E": 53
+      },
+      "symbol": "I"
+    },
+    {
+      "name": "Xe",
+      "spec": {
+        "P": 54,
+        "N": 78,
+        "E": 54
+      },
+      "symbol": "Xe"
+    },
+    {
+      "name": "Cs",
+      "spec": {
+        "P": 55,
+        "N": 78,
+        "E": 55
+      },
+      "symbol": "Cs"
+    },
+    {
+      "name": "Ba",
+      "spec": {
+        "P": 56,
+        "N": 82,
+        "E": 56
+      },
+      "symbol": "Ba"
+    },
+    {
+      "name": "La",
+      "spec": {
+        "P": 57,
+        "N": 82,
+        "E": 57
+      },
+      "symbol": "La"
+    },
+    {
+      "name": "Ce",
+      "spec": {
+        "P": 58,
+        "N": 82,
+        "E": 58
+      },
+      "symbol": "Ce"
+    },
+    {
+      "name": "Pr",
+      "spec": {
+        "P": 59,
+        "N": 82,
+        "E": 59
+      },
+      "symbol": "Pr"
+    },
+    {
+      "name": "Nd",
+      "spec": {
+        "P": 60,
+        "N": 82,
+        "E": 60
+      },
+      "symbol": "Nd"
+    },
+    {
+      "name": "Pm",
+      "spec": {
+        "P": 61,
+        "N": 84,
+        "E": 61
+      },
+      "symbol": "Pm"
+    },
+    {
+      "name": "Sm",
+      "spec": {
+        "P": 62,
+        "N": 90,
+        "E": 62
+      },
+      "symbol": "Sm"
+    },
+    {
+      "name": "Eu",
+      "spec": {
+        "P": 63,
+        "N": 90,
+        "E": 63
+      },
+      "symbol": "Eu"
+    },
+    {
+      "name": "Gd",
+      "spec": {
+        "P": 64,
+        "N": 94,
+        "E": 64
+      },
+      "symbol": "Gd"
+    },
+    {
+      "name": "Tb",
+      "spec": {
+        "P": 65,
+        "N": 94,
+        "E": 65
+      },
+      "symbol": "Tb"
+    },
+    {
+      "name": "Dy",
+      "spec": {
+        "P": 66,
+        "N": 98,
+        "E": 66
+      },
+      "symbol": "Dy"
+    },
+    {
+      "name": "Ho",
+      "spec": {
+        "P": 67,
+        "N": 98,
+        "E": 67
+      },
+      "symbol": "Ho"
+    },
+    {
+      "name": "Er",
+      "spec": {
+        "P": 68,
+        "N": 98,
+        "E": 68
+      },
+      "symbol": "Er"
+    },
+    {
+      "name": "Tm",
+      "spec": {
+        "P": 69,
+        "N": 100,
+        "E": 69
+      },
+      "symbol": "Tm"
+    },
+    {
+      "name": "Yb",
+      "spec": {
+        "P": 70,
+        "N": 104,
+        "E": 70
+      },
+      "symbol": "Yb"
+    },
+    {
+      "name": "Lu",
+      "spec": {
+        "P": 71,
+        "N": 104,
+        "E": 71
+      },
+      "symbol": "Lu"
+    },
+    {
+      "name": "Hf",
+      "spec": {
+        "P": 72,
+        "N": 108,
+        "E": 72
+      },
+      "symbol": "Hf"
+    },
+    {
+      "name": "Ta",
+      "spec": {
+        "P": 73,
+        "N": 108,
+        "E": 73
+      },
+      "symbol": "Ta"
+    },
+    {
+      "name": "W",
+      "spec": {
+        "P": 74,
+        "N": 110,
+        "E": 74
+      },
+      "symbol": "W"
+    },
+    {
+      "name": "Re",
+      "spec": {
+        "P": 75,
+        "N": 112,
+        "E": 75
+      },
+      "symbol": "Re"
+    },
+    {
+      "name": "Os",
+      "spec": {
+        "P": 76,
+        "N": 116,
+        "E": 76
+      },
+      "symbol": "Os"
+    },
+    {
+      "name": "Ir",
+      "spec": {
+        "P": 77,
+        "N": 116,
+        "E": 77
+      },
+      "symbol": "Ir"
+    },
+    {
+      "name": "Pt",
+      "spec": {
+        "P": 78,
+        "N": 117,
+        "E": 78
+      },
+      "symbol": "Pt"
+    },
+    {
+      "name": "Au",
+      "spec": {
+        "P": 79,
+        "N": 118,
+        "E": 79
+      },
+      "symbol": "Au"
+    },
+    {
+      "name": "Hg",
+      "spec": {
+        "P": 80,
+        "N": 122,
+        "E": 80
+      },
+      "symbol": "Hg"
+    },
+    {
+      "name": "Tl",
+      "spec": {
+        "P": 81,
+        "N": 124,
+        "E": 81
+      },
+      "symbol": "Tl"
+    },
+    {
+      "name": "Pb",
+      "spec": {
+        "P": 82,
+        "N": 126,
+        "E": 82
+      },
+      "symbol": "Pb"
+    },
+    {
+      "name": "Bi",
+      "spec": {
+        "P": 83,
+        "N": 126,
+        "E": 83
+      },
+      "symbol": "Bi"
+    },
+    {
+      "name": "Po",
+      "spec": {
+        "P": 84,
+        "N": 125,
+        "E": 84
+      },
+      "symbol": "Po"
+    },
+    {
+      "name": "At",
+      "spec": {
+        "P": 85,
+        "N": 125,
+        "E": 85
+      },
+      "symbol": "At"
+    },
+    {
+      "name": "Rn",
+      "spec": {
+        "P": 86,
+        "N": 136,
+        "E": 86
+      },
+      "symbol": "Rn"
+    },
+    {
+      "name": "Fr",
+      "spec": {
+        "P": 87,
+        "N": 136,
+        "E": 87
+      },
+      "symbol": "Fr"
+    },
+    {
+      "name": "Ra",
+      "spec": {
+        "P": 88,
+        "N": 138,
+        "E": 88
+      },
+      "symbol": "Ra"
+    },
+    {
+      "name": "Ac",
+      "spec": {
+        "P": 89,
+        "N": 138,
+        "E": 89
+      },
+      "symbol": "Ac"
+    },
+    {
+      "name": "Th",
+      "spec": {
+        "P": 90,
+        "N": 142,
+        "E": 90
+      },
+      "symbol": "Th"
+    },
+    {
+      "name": "Pa",
+      "spec": {
+        "P": 91,
+        "N": 140,
+        "E": 91
+      },
+      "symbol": "Pa"
+    },
+    {
+      "name": "U",
+      "spec": {
+        "P": 92,
+        "N": 146,
+        "E": 92
+      },
+      "symbol": "U"
+    },
+    {
+      "name": "Np",
+      "spec": {
+        "P": 93,
+        "N": 144,
+        "E": 93
+      },
+      "symbol": "Np"
+    },
+    {
+      "name": "Pu",
+      "spec": {
+        "P": 94,
+        "N": 150,
+        "E": 94
+      },
+      "symbol": "Pu"
+    },
+    {
+      "name": "Am",
+      "spec": {
+        "P": 95,
+        "N": 148,
+        "E": 95
+      },
+      "symbol": "Am"
+    },
+    {
+      "name": "Cm",
+      "spec": {
+        "P": 96,
+        "N": 151,
+        "E": 96
+      },
+      "symbol": "Cm"
+    },
+    {
+      "name": "Bk",
+      "spec": {
+        "P": 97,
+        "N": 150,
+        "E": 97
+      },
+      "symbol": "Bk"
+    },
+    {
+      "name": "Cf",
+      "spec": {
+        "P": 98,
+        "N": 153,
+        "E": 98
+      },
+      "symbol": "Cf"
+    },
+    {
+      "name": "Es",
+      "spec": {
+        "P": 99,
+        "N": 153,
+        "E": 99
+      },
+      "symbol": "Es"
+    },
+    {
+      "name": "Fm",
+      "spec": {
+        "P": 100,
+        "N": 157,
+        "E": 100
+      },
+      "symbol": "Fm"
+    },
+    {
+      "name": "Md",
+      "spec": {
+        "P": 101,
+        "N": 157,
+        "E": 101
+      },
+      "symbol": "Md"
+    },
+    {
+      "name": "No",
+      "spec": {
+        "P": 102,
+        "N": 157,
+        "E": 102
+      },
+      "symbol": "No"
+    },
+    {
+      "name": "Lr",
+      "spec": {
+        "P": 103,
+        "N": 163,
+        "E": 103
+      },
+      "symbol": "Lr"
+    },
+    {
+      "name": "Rf",
+      "spec": {
+        "P": 104,
+        "N": 163,
+        "E": 104
+      },
+      "symbol": "Rf"
+    },
+    {
+      "name": "Db",
+      "spec": {
+        "P": 105,
+        "N": 163,
+        "E": 105
+      },
+      "symbol": "Db"
+    },
+    {
+      "name": "Sg",
+      "spec": {
+        "P": 106,
+        "N": 163,
+        "E": 106
+      },
+      "symbol": "Sg"
+    },
+    {
+      "name": "Bh",
+      "spec": {
+        "P": 107,
+        "N": 163,
+        "E": 107
+      },
+      "symbol": "Bh"
+    },
+    {
+      "name": "Hs",
+      "spec": {
+        "P": 108,
+        "N": 161,
+        "E": 108
+      },
+      "symbol": "Hs"
+    },
+    {
+      "name": "Mt",
+      "spec": {
+        "P": 109,
+        "N": 169,
+        "E": 109
+      },
+      "symbol": "Mt"
+    },
+    {
+      "name": "Ds",
+      "spec": {
+        "P": 110,
+        "N": 171,
+        "E": 110
+      },
+      "symbol": "Ds"
+    },
+    {
+      "name": "Rg",
+      "spec": {
+        "P": 111,
+        "N": 171,
+        "E": 111
+      },
+      "symbol": "Rg"
+    },
+    {
+      "name": "Cn",
+      "spec": {
+        "P": 112,
+        "N": 173,
+        "E": 112
+      },
+      "symbol": "Cn"
+    },
+    {
+      "name": "Nh",
+      "spec": {
+        "P": 113,
+        "N": 173,
+        "E": 113
+      },
+      "symbol": "Nh"
+    },
+    {
+      "name": "Fl",
+      "spec": {
+        "P": 114,
+        "N": 175,
+        "E": 114
+      },
+      "symbol": "Fl"
+    },
+    {
+      "name": "Mc",
+      "spec": {
+        "P": 115,
+        "N": 175,
+        "E": 115
+      },
+      "symbol": "Mc"
+    },
+    {
+      "name": "Lv",
+      "spec": {
+        "P": 116,
+        "N": 177,
+        "E": 116
+      },
+      "symbol": "Lv"
+    },
+    {
+      "name": "Ts",
+      "spec": {
+        "P": 117,
+        "N": 177,
+        "E": 117
+      },
+      "symbol": "Ts"
+    },
+    {
+      "name": "Og",
+      "spec": {
+        "P": 118,
+        "N": 176,
+        "E": 118
+      },
+      "symbol": "Og"
+    }
+  ]
+}

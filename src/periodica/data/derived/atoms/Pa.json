@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 231,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 91,
+    "N": 140,
+    "P": 91
+  },
+  "Constituents": [
+    {
+      "Count": 91,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 140,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 91,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 91,
+  "Mass_MeVc2": 216968.41979980998,
+  "Mass_amu": 232.92516746723592,
+  "Mass_kg": 0,
+  "Name": "Pa",
+  "Symbol": "Pa"
+}

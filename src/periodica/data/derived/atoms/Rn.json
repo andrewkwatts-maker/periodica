@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 222,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 86,
+    "N": 136,
+    "P": 86
+  },
+  "Constituents": [
+    {
+      "Count": 86,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 136,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 86,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 86,
+  "Mass_MeVc2": 208516.24268218002,
+  "Mass_amu": 223.85138257078557,
+  "Mass_kg": 0,
+  "Name": "Rn",
+  "Symbol": "Rn"
+}

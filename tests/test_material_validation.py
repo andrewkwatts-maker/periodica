@@ -176,7 +176,7 @@ class TestGraniteValidation:
         from pathlib import Path
         from periodica.utils.transforms.material_sampler import MaterialSampler
 
-        granite_path = Path(__file__).parent.parent / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
+        granite_path = Path(__file__).parent.parent / 'src' / 'periodica' / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
         if not granite_path.exists():
             pytest.skip("Granite material file not found")
 
@@ -199,7 +199,7 @@ class TestGraniteValidation:
         from pathlib import Path
         from periodica.utils.transforms.material_sampler import MaterialSampler
 
-        granite_path = Path(__file__).parent.parent / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
+        granite_path = Path(__file__).parent.parent / 'src' / 'periodica' / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
         if not granite_path.exists():
             pytest.skip("Granite material file not found")
 
@@ -226,7 +226,7 @@ class TestGraniteValidation:
         from pathlib import Path
         from periodica.utils.transforms.material_sampler import MaterialSampler
 
-        granite_path = Path(__file__).parent.parent / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
+        granite_path = Path(__file__).parent.parent / 'src' / 'periodica' / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
         if not granite_path.exists():
             pytest.skip("Granite material file not found")
 

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 142,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 60,
+    "N": 82,
+    "P": 60
+  },
+  "Constituents": [
+    {
+      "Count": 60,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 82,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 60,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 60,
+  "Mass_MeVc2": 133371.34970924,
+  "Mass_amu": 143.18002589970388,
+  "Mass_kg": 0,
+  "Name": "Nd",
+  "Symbol": "Nd"
+}

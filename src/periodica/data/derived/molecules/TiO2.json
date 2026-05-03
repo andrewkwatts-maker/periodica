@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 80,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 2,
+    "Ti": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ti",
+      "Symbol": "Ti"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 38,
+  "Mass_MeVc2": 75135.50497201999,
+  "Mass_amu": 80.66127823804247,
+  "Mass_kg": 0,
+  "Name": "TiO2"
+}

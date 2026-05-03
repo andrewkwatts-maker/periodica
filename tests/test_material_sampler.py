@@ -441,7 +441,7 @@ class TestGraniteMaterial:
         import json
         from pathlib import Path
 
-        granite_path = Path(__file__).parent.parent / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
+        granite_path = Path(__file__).parent.parent / 'src' / 'periodica' / 'data' / 'active' / 'materials' / 'Granite_Westerly.json'
         if not granite_path.exists():
             pytest.skip("Granite material file not found")
 

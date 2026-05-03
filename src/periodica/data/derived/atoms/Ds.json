@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 281,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 110,
+    "N": 171,
+    "P": 110
+  },
+  "Constituents": [
+    {
+      "Count": 110,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 171,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 110,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 110,
+  "Mass_MeVc2": 263931.82649102004,
+  "Mass_amu": 283.34245574575715,
+  "Mass_kg": 0,
+  "Name": "Ds",
+  "Symbol": "Ds"
+}

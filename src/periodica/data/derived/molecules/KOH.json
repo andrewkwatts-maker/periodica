@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 56,
+  "Charge_e": 0,
+  "Composition": {
+    "H": 1,
+    "K": 1,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "K",
+      "Symbol": "K"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    },
+    {
+      "Count": 1,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 28,
+  "Mass_MeVc2": 52593.75821364,
+  "Mass_amu": 56.461718949441824,
+  "Mass_kg": 0,
+  "Name": "KOH"
+}

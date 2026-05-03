@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 293,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 116,
+    "N": 177,
+    "P": 116
+  },
+  "Constituents": [
+    {
+      "Count": 116,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 177,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 116,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 116,
+  "Mass_MeVc2": 275201.91753679997,
+  "Mass_amu": 295.44139552063757,
+  "Mass_kg": 0,
+  "Name": "Lv",
+  "Symbol": "Lv"
+}

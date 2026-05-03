@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 80,
+  "Charge_e": 0,
+  "Composition": {
+    "Br": 1,
+    "H": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Br",
+      "Symbol": "Br"
+    }
+  ],
+  "LeptonNumber_L": 36,
+  "Mass_MeVc2": 75137.06963884,
+  "Mass_amu": 80.66295797688232,
+  "Mass_kg": 0,
+  "Name": "HBr"
+}

@@ -1,0 +1,9 @@
+{
+  "Name": "Helium",
+  "Symbol": "He",
+  "AtomicNumber": 2,
+  "Charge_e": 0,
+  "Mass_amu": 4.002602,
+  "MostAbundantIsotope": { "MassNumber": 4, "Neutrons": 2, "Abundance": 99.999866 },
+  "source": "IUPAC 2021"
+}

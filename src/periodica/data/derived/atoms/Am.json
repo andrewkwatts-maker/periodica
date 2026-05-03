@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 243,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 95,
+    "N": 148,
+    "P": 95
+  },
+  "Constituents": [
+    {
+      "Count": 95,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 148,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 95,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 95,
+  "Mass_MeVc2": 228240.07551241,
+  "Mass_amu": 245.02578698095616,
+  "Mass_kg": 0,
+  "Name": "Am",
+  "Symbol": "Am"
+}

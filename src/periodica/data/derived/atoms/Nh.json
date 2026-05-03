@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 286,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 113,
+    "N": 173,
+    "P": 113
+  },
+  "Constituents": [
+    {
+      "Count": 113,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 173,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 113,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 113,
+  "Mass_MeVc2": 268627.30659338995,
+  "Mass_amu": 288.38326071724737,
+  "Mass_kg": 0,
+  "Name": "Nh",
+  "Symbol": "Nh"
+}

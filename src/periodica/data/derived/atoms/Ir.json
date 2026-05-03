@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 193,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 77,
+    "N": 116,
+    "P": 77
+  },
+  "Constituents": [
+    {
+      "Count": 77,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 116,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 77,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 77,
+  "Mass_MeVc2": 181275.88648779,
+  "Mass_amu": 194.607658833015,
+  "Mass_kg": 0,
+  "Name": "Ir",
+  "Symbol": "Ir"
+}

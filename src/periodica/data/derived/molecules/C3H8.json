@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 44,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 3,
+    "H": 8
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 8,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 26,
+  "Mass_MeVc2": 41320.53783422,
+  "Mass_amu": 44.35941969688169,
+  "Mass_kg": 0,
+  "Name": "C3H8"
+}

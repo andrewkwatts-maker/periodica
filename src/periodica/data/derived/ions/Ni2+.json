@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 59,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 26,
+    "N": 31,
+    "P": 28
+  },
+  "Constituents": [
+    {
+      "Count": 28,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 31,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 26,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 26,
+  "Mass_MeVc2": 55411.4324773,
+  "Mass_amu": 59.486616537473694,
+  "Mass_kg": 0,
+  "Name": "Ni2+"
+}

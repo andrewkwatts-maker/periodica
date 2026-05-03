@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 72,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 5,
+    "H": 12
+  },
+  "Constituents": [
+    {
+      "Count": 5,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 12,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 42,
+  "Mass_MeVc2": 67615.85227422,
+  "Mass_amu": 72.58859943276273,
+  "Mass_kg": 0,
+  "Name": "C5H12"
+}

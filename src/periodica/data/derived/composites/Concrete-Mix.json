@@ -1,0 +1,56 @@
+{
+  "BaryonNumber_B": 132,
+  "Charge_e": 0,
+  "Composition": {
+    "Ca": 1,
+    "O": 4,
+    "Si": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ca",
+      "Symbol": "Ca"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Si",
+      "Symbol": "Si"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "macro_scale_m": 0.01,
+    "model": "homogeneous",
+    "scale_dependent": {
+      "aggregate": {
+        "YoungsModulus_GPa": 60,
+        "fraction": 0.7
+      },
+      "cement_paste": {
+        "YoungsModulus_GPa": 25,
+        "fraction": 0.25
+      },
+      "voids": {
+        "YoungsModulus_GPa": 0,
+        "fraction": 0.05
+      }
+    }
+  },
+  "LeptonNumber_L": 66,
+  "Mass_MeVc2": 123971.00150357999,
+  "Mass_amu": 133.0883375236843,
+  "Mass_kg": 0,
+  "Name": "Concrete-Mix",
+  "Properties": {
+    "CompressiveStrength_MPa": 35,
+    "Density_kgm3": 2400,
+    "TensileStrength_MPa": 3.5,
+    "ThermalConductivity_WmK": 1.7,
+    "YoungsModulus_GPa": 30
+  }
+}

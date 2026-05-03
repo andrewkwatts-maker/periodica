@@ -1,0 +1,8 @@
+{
+  "Name": "Water",
+  "Symbol": "H2O",
+  "Composition": { "H": 2, "O": 1 },
+  "Charge_e": 0,
+  "Mass_amu": 18.01528,
+  "source": "IUPAC standard atomic weights"
+}

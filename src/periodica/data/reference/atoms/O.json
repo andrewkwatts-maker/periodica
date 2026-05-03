@@ -1,0 +1,9 @@
+{
+  "Name": "Oxygen",
+  "Symbol": "O",
+  "AtomicNumber": 8,
+  "Charge_e": 0,
+  "Mass_amu": 15.999,
+  "MostAbundantIsotope": { "MassNumber": 16, "Neutrons": 8, "Abundance": 99.757 },
+  "source": "IUPAC 2021"
+}

@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 18,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 8,
+    "N": 10,
+    "P": 8
+  },
+  "Constituents": [
+    {
+      "Count": 8,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 10,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 8,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 8,
+  "Mass_MeVc2": 16905.91890208,
+  "Mass_amu": 18.14924953174052,
+  "Mass_kg": 0,
+  "Name": "O-18"
+}

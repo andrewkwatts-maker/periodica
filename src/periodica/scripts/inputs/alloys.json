@@ -1,0 +1,265 @@
+{
+  "from": "atoms",
+  "tier": "alloys",
+  "requires": [
+    "atoms"
+  ],
+  "rows": [
+    {
+      "name": "Steel-1018",
+      "spec": {
+        "Fe": 0.99,
+        "C": 0.01
+      },
+      "properties": {
+        "Density_kgm3": 7870,
+        "YoungsModulus_GPa": 200,
+        "ShearModulus_GPa": 79.3,
+        "PoissonsRatio": 0.29,
+        "TensileStrength_MPa": 440,
+        "YieldStrength_MPa": 370,
+        "HardnessHB": 126,
+        "ThermalConductivity_WmK": 51.9,
+        "MeltingPoint_K": 1798,
+        "ElectricalResistivity_ohmm": 1.43e-07
+      },
+      "field": {
+        "model": "microstructure_voronoi",
+        "macro_scale_m": 0.0001,
+        "grain_density": 1000000000000000.0,
+        "phases": {
+          "ferrite": {
+            "fraction": 0.85,
+            "YoungsModulus_GPa": 195,
+            "TensileStrength_MPa": 380,
+            "HardnessHB": 100
+          },
+          "pearlite": {
+            "fraction": 0.15,
+            "YoungsModulus_GPa": 220,
+            "TensileStrength_MPa": 700,
+            "HardnessHB": 250
+          }
+        }
+      }
+    },
+    {
+      "name": "Stainless-304",
+      "spec": {
+        "Fe": 0.71,
+        "Cr": 0.18,
+        "Ni": 0.08,
+        "Mn": 0.02,
+        "C": 0.001
+      },
+      "properties": {
+        "Density_kgm3": 8000,
+        "YoungsModulus_GPa": 193,
+        "ShearModulus_GPa": 77,
+        "PoissonsRatio": 0.29,
+        "TensileStrength_MPa": 515,
+        "YieldStrength_MPa": 205,
+        "HardnessHB": 201,
+        "ThermalConductivity_WmK": 16.2,
+        "MeltingPoint_K": 1700,
+        "ElectricalResistivity_ohmm": 7.2e-07
+      },
+      "field": {
+        "model": "microstructure_voronoi",
+        "macro_scale_m": 0.0001,
+        "grain_density": 1000000000000000.0,
+        "phases": {
+          "austenite": {
+            "fraction": 0.95,
+            "YoungsModulus_GPa": 195,
+            "TensileStrength_MPa": 520
+          },
+          "ferrite": {
+            "fraction": 0.05,
+            "YoungsModulus_GPa": 210,
+            "TensileStrength_MPa": 480
+          }
+        }
+      }
+    },
+    {
+      "name": "Aluminum-6061",
+      "spec": {
+        "Al": 0.975,
+        "Mg": 0.01,
+        "Si": 0.006,
+        "Cu": 0.003,
+        "Cr": 0.002
+      },
+      "properties": {
+        "Density_kgm3": 2700,
+        "YoungsModulus_GPa": 68.9,
+        "ShearModulus_GPa": 26,
+        "PoissonsRatio": 0.33,
+        "TensileStrength_MPa": 310,
+        "YieldStrength_MPa": 276,
+        "HardnessHB": 95,
+        "ThermalConductivity_WmK": 167,
+        "MeltingPoint_K": 855,
+        "ElectricalResistivity_ohmm": 3.99e-08
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    },
+    {
+      "name": "Titanium-Ti6Al4V",
+      "spec": {
+        "Ti": 0.9,
+        "Al": 0.06,
+        "V": 0.04
+      },
+      "properties": {
+        "Density_kgm3": 4430,
+        "YoungsModulus_GPa": 113.8,
+        "ShearModulus_GPa": 44,
+        "PoissonsRatio": 0.34,
+        "TensileStrength_MPa": 950,
+        "YieldStrength_MPa": 880,
+        "HardnessHB": 334,
+        "ThermalConductivity_WmK": 6.7,
+        "MeltingPoint_K": 1933,
+        "ElectricalResistivity_ohmm": 1.78e-06
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    },
+    {
+      "name": "Copper-C11000",
+      "spec": {
+        "Cu": 1.0
+      },
+      "properties": {
+        "Density_kgm3": 8960,
+        "YoungsModulus_GPa": 110,
+        "ShearModulus_GPa": 44,
+        "PoissonsRatio": 0.34,
+        "TensileStrength_MPa": 220,
+        "YieldStrength_MPa": 70,
+        "HardnessHB": 50,
+        "ThermalConductivity_WmK": 391,
+        "MeltingPoint_K": 1357.77,
+        "ElectricalResistivity_ohmm": 1.68e-08
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    },
+    {
+      "name": "Brass-C26000",
+      "spec": {
+        "Cu": 0.7,
+        "Zn": 0.3
+      },
+      "properties": {
+        "Density_kgm3": 8530,
+        "YoungsModulus_GPa": 110,
+        "ShearModulus_GPa": 39,
+        "PoissonsRatio": 0.375,
+        "TensileStrength_MPa": 315,
+        "YieldStrength_MPa": 200,
+        "HardnessHB": 65,
+        "ThermalConductivity_WmK": 120,
+        "MeltingPoint_K": 1188,
+        "ElectricalResistivity_ohmm": 6.2e-08
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    },
+    {
+      "name": "Bronze-C90300",
+      "spec": {
+        "Cu": 0.88,
+        "Sn": 0.08,
+        "Zn": 0.04
+      },
+      "properties": {
+        "Density_kgm3": 8800,
+        "YoungsModulus_GPa": 100,
+        "ShearModulus_GPa": 38,
+        "PoissonsRatio": 0.34,
+        "TensileStrength_MPa": 310,
+        "YieldStrength_MPa": 145,
+        "HardnessHB": 70,
+        "ThermalConductivity_WmK": 75,
+        "MeltingPoint_K": 1313,
+        "ElectricalResistivity_ohmm": 1.5e-07
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    },
+    {
+      "name": "Inconel-718",
+      "spec": {
+        "Ni": 0.53,
+        "Cr": 0.19,
+        "Fe": 0.17,
+        "Nb": 0.05,
+        "Mo": 0.03,
+        "Ti": 0.009,
+        "Al": 0.005
+      },
+      "properties": {
+        "Density_kgm3": 8190,
+        "YoungsModulus_GPa": 205,
+        "ShearModulus_GPa": 77,
+        "PoissonsRatio": 0.31,
+        "TensileStrength_MPa": 1240,
+        "YieldStrength_MPa": 1036,
+        "HardnessHB": 331,
+        "ThermalConductivity_WmK": 11.4,
+        "MeltingPoint_K": 1609,
+        "ElectricalResistivity_ohmm": 1.25e-06
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    },
+    {
+      "name": "Solder-Sn63Pb37",
+      "spec": {
+        "Sn": 0.63,
+        "Pb": 0.37
+      },
+      "properties": {
+        "Density_kgm3": 8400,
+        "YoungsModulus_GPa": 30,
+        "TensileStrength_MPa": 50,
+        "ThermalConductivity_WmK": 50,
+        "MeltingPoint_K": 456
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    },
+    {
+      "name": "Magnesium-AZ31B",
+      "spec": {
+        "Mg": 0.96,
+        "Al": 0.03,
+        "Zn": 0.01
+      },
+      "properties": {
+        "Density_kgm3": 1770,
+        "YoungsModulus_GPa": 45,
+        "ShearModulus_GPa": 17,
+        "PoissonsRatio": 0.35,
+        "TensileStrength_MPa": 260,
+        "YieldStrength_MPa": 200,
+        "ThermalConductivity_WmK": 96,
+        "MeltingPoint_K": 905
+      },
+      "field": {
+        "model": "homogeneous"
+      }
+    }
+  ]
+}

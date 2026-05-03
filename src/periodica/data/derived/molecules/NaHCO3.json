@@ -1,0 +1,37 @@
+{
+  "BaryonNumber_B": 84,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 1,
+    "H": 1,
+    "Na": 1,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Na",
+      "Symbol": "Na"
+    },
+    {
+      "Count": 1,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 42,
+  "Mass_MeVc2": 78890.63732046,
+  "Mass_amu": 84.69257842416272,
+  "Mass_kg": 0,
+  "Name": "NaHCO3"
+}

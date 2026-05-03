@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 227,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 89,
+    "N": 138,
+    "P": 89
+  },
+  "Constituents": [
+    {
+      "Count": 89,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 138,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 89,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 89,
+  "Mass_MeVc2": 213211.72278455002,
+  "Mass_amu": 228.8921875422758,
+  "Mass_kg": 0,
+  "Name": "Ac",
+  "Symbol": "Ac"
+}

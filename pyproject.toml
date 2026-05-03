@@ -4,17 +4,25 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "periodica"
-version = "1.0.0"
-description = "Scientific computation library for particle physics, nuclear physics, atomic chemistry, molecular chemistry, materials science, and biology"
+version = "1.1.0"
+description = "Data-driven scientific computation: particle/nuclear/atomic/molecular physics, materials, alloys, polymers, ceramics, composites, proteins. Generic Get()/Save()/sample() composer + 3D microstructure export (STL/OBJ/VTK/SDF/HLSL) + AlphaFold-validated protein folding."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 authors = [{name = "Andrew Watts"}]
-keywords = ["chemistry", "physics", "periodic-table", "elements", "molecules", "alloys", "materials-science", "nuclear-physics", "particle-physics", "biochemistry"]
+keywords = [
+    "chemistry", "physics", "periodic-table", "elements", "molecules",
+    "alloys", "polymers", "ceramics", "composites", "materials-science",
+    "nuclear-physics", "particle-physics", "biochemistry",
+    "protein-folding", "alphafold", "microstructure", "voronoi",
+    "rmsd", "kabsch", "stl-export", "vtk", "hlsl", "shader-export",
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -22,21 +30,43 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Chemistry",
     "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Typing :: Typed",
 ]
 dependencies = [
     "numpy>=1.24.0",
-    "google-generativeai>=0.3.0",
 ]
 
 [project.urls]
-Homepage = "https://github.com/andrewkwatts-maker/periodica"
-Repository = "https://github.com/andrewkwatts-maker/periodica"
+Homepage      = "https://github.com/andrewkwatts-maker/periodica"
+Repository    = "https://github.com/andrewkwatts-maker/periodica"
+Issues        = "https://github.com/andrewkwatts-maker/periodica/issues"
+Changelog     = "https://github.com/andrewkwatts-maker/periodica/blob/main/CHANGELOG.md"
+
+[project.scripts]
+periodica = "periodica.__main__:main"
 
 [project.optional-dependencies]
+# The slim install (`pip install periodica`) needs only numpy. Everything in
+# the core API works on slim: Get/Save/Scope, sampling, folding, optimization,
+# generators, CLI, exports.
+#
+# The `full` extra (`pip install periodica[full]`) pulls in ergonomic libraries
+# for plotting, downstream scientific work, and AI-assisted helpers. These are
+# never imported by periodica itself; they are intended for user code that
+# wants to extend periodica without separately discovering compatible versions.
+full = [
+    "google-generativeai>=0.3.0",
+    "matplotlib>=3.7",
+    "scipy>=1.11",
+]
 test = [
     "pytest>=7.0.0",
     "pytest-html>=4.0.0",
     "pytest-json-report>=1.5.0",
+    "twine>=5.0",
+    "build>=1.0",
 ]
 docs = ["pdoc>=14.0.0"]
 
@@ -44,7 +74,17 @@ docs = ["pdoc>=14.0.0"]
 where = ["src"]
 
 [tool.setuptools.package-data]
-periodica = ["data/active/**/*.json", "data/defaults/**/*.json", "data/config/**/*.json", "py.typed"]
+periodica = [
+    "data/active/**/*.json",
+    "data/defaults/**/*.json",
+    "data/config/**/*.json",
+    "data/derived/**/*.json",
+    "data/reference/**/*.json",
+    "data/reference/**/*.pdb",
+    "data/reference/README.md",
+    "scripts/inputs/*.json",
+    "py.typed",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

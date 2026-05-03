@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 257,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 100,
+    "N": 157,
+    "P": 100
+  },
+  "Constituents": [
+    {
+      "Count": 100,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 157,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 100,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 100,
+  "Mass_MeVc2": 241390.07973263998,
+  "Mass_amu": 259.1428964571565,
+  "Mass_kg": 0,
+  "Name": "Fm",
+  "Symbol": "Fm"
+}

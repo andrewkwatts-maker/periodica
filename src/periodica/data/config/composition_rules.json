@@ -1,0 +1,24 @@
+{
+  "_comment": "Rules consumed by periodica.get — all data-driven, no hardcoded chemistry. Edit this file to extend the system to new tiers or property arithmetic without touching code.",
+  "version": 1,
+
+  "tier_definitions": [
+    { "name": "fundamentals", "source": "active/quarks",      "is_active": true },
+    { "name": "subatomic",    "source": "active/subatomic",   "is_active": true },
+    { "name": "amino_acids",  "source": "active/amino_acids", "is_active": true },
+    { "name": "proteins",     "source": "active/proteins",    "is_active": true }
+  ],
+
+  "derived_root": "derived",
+
+  "additive_properties": [
+    "Charge_e",
+    "Mass_MeVc2",
+    "Mass_kg",
+    "Mass_amu",
+    "BaryonNumber_B",
+    "LeptonNumber_L"
+  ],
+
+  "placeholder_prefixes": ["demo_", "example_"]
+}

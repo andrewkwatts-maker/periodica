@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 184,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 74,
+    "N": 110,
+    "P": 74
+  },
+  "Constituents": [
+    {
+      "Count": 74,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 110,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 74,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 74,
+  "Mass_MeVc2": 172822.14470334,
+  "Mass_amu": 185.53219419772483,
+  "Mass_kg": 0,
+  "Name": "W",
+  "Symbol": "W"
+}

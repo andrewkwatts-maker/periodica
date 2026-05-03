@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 80,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 3,
+    "S": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "S",
+      "Symbol": "S"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 40,
+  "Mass_MeVc2": 75133.9403052,
+  "Mass_amu": 80.65959849920259,
+  "Mass_kg": 0,
+  "Name": "SO3"
+}

@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 39,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 19,
+    "N": 20,
+    "P": 19
+  },
+  "Constituents": [
+    {
+      "Count": 19,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 20,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 19,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 19,
+  "Mass_MeVc2": 36628.187065490005,
+  "Mass_amu": 39.321974203071235,
+  "Mass_kg": 0,
+  "Name": "K-39"
+}

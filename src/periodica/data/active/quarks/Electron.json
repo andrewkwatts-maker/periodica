@@ -1,6 +1,7 @@
 {
   "Name": "Electron",
   "Symbol": "e⁻",
+  "Aliases": ["e", "E"],
   "Type": "Subatomic Particle",
   "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
   "Charge_e": -1,

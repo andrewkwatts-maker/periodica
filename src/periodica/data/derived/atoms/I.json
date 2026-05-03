@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 127,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 53,
+    "N": 74,
+    "P": 53
+  },
+  "Constituents": [
+    {
+      "Count": 53,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 74,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 53,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 53,
+  "Mass_MeVc2": 119283.34473530998,
+  "Mass_amu": 128.05593124639344,
+  "Mass_kg": 0,
+  "Name": "I",
+  "Symbol": "I"
+}

@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 56,
+  "Charge_e": 0,
+  "Composition": {
+    "Ca": 1,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ca",
+      "Symbol": "Ca"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 28,
+  "Mass_MeVc2": 52593.75821364,
+  "Mass_amu": 56.46171894944182,
+  "Mass_kg": 0,
+  "Name": "CaO"
+}

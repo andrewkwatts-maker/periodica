@@ -1,0 +1,35 @@
+{
+  "BaryonNumber_B": 152.56,
+  "Charge_e": 0,
+  "Composition": {
+    "Pb": 0.37,
+    "Sn": 0.63
+  },
+  "Constituents": [
+    {
+      "Count": 0.63,
+      "Resolved": "Sn",
+      "Symbol": "Sn"
+    },
+    {
+      "Count": 0.37,
+      "Resolved": "Pb",
+      "Symbol": "Pb"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 61.84,
+  "Mass_MeVc2": 143291.7210564568,
+  "Mass_amu": 153.82998205240324,
+  "Mass_kg": 0,
+  "Name": "Solder-Sn63Pb37",
+  "Properties": {
+    "Density_kgm3": 8400,
+    "MeltingPoint_K": 456,
+    "TensileStrength_MPa": 50,
+    "ThermalConductivity_WmK": 50,
+    "YoungsModulus_GPa": 30
+  }
+}

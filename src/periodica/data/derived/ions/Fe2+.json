@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 56,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 24,
+    "N": 30,
+    "P": 26
+  },
+  "Constituents": [
+    {
+      "Count": 26,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 30,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 24,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 24,
+  "Mass_MeVc2": 52594.30088256,
+  "Mass_amu": 56.462301528463556,
+  "Mass_kg": 0,
+  "Name": "Fe2+"
+}

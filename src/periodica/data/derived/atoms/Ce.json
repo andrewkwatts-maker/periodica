@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 140,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 58,
+    "N": 82,
+    "P": 58
+  },
+  "Constituents": [
+    {
+      "Count": 58,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 82,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 58,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 58,
+  "Mass_MeVc2": 131493.78353502,
+  "Mass_amu": 141.16437580664376,
+  "Mass_kg": 0,
+  "Name": "Ce",
+  "Symbol": "Ce"
+}

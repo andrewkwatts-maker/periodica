@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 2,
+  "Charge_e": 0,
+  "Composition": {
+    "H": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 2,
+  "Mass_MeVc2": 1877.56617422,
+  "Mass_amu": 2.0156500930601298,
+  "Mass_kg": 0,
+  "Name": "H2"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 85,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 37,
+    "N": 48,
+    "P": 37
+  },
+  "Constituents": [
+    {
+      "Count": 37,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 48,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 37,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 37,
+  "Mass_MeVc2": 79834.11440803,
+  "Mass_amu": 85.70544268721241,
+  "Mass_kg": 0,
+  "Name": "Rb",
+  "Symbol": "Rb"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 266,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 103,
+    "N": 163,
+    "P": 103
+  },
+  "Constituents": [
+    {
+      "Count": 103,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 163,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 103,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 103,
+  "Mass_MeVc2": 249843.82151709,
+  "Mass_amu": 268.21836109244674,
+  "Mass_kg": 0,
+  "Name": "Lr",
+  "Symbol": "Lr"
+}

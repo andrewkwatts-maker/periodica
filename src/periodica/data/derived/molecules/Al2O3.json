@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 102,
+  "Charge_e": 0,
+  "Composition": {
+    "Al": 2,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Al",
+      "Symbol": "Al"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 50,
+  "Mass_MeVc2": 95796.55622253999,
+  "Mass_amu": 102.84182795590324,
+  "Mass_kg": 0,
+  "Name": "Al2O3"
+}

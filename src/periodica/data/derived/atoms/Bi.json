@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 209,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 83,
+    "N": 126,
+    "P": 83
+  },
+  "Constituents": [
+    {
+      "Count": 83,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 126,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 83,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 83,
+  "Mass_MeVc2": 196304.23921564998,
+  "Mass_amu": 210.7412582716954,
+  "Mass_kg": 0,
+  "Name": "Bi",
+  "Symbol": "Bi"
+}

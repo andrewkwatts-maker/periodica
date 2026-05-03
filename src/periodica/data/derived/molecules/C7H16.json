@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 100,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 7,
+    "H": 16
+  },
+  "Constituents": [
+    {
+      "Count": 7,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 16,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 58,
+  "Mass_MeVc2": 93911.16671421999,
+  "Mass_amu": 100.81777916864377,
+  "Mass_kg": 0,
+  "Name": "C7H16"
+}

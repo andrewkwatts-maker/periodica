@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 267,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 104,
+    "N": 163,
+    "P": 104
+  },
+  "Constituents": [
+    {
+      "Count": 104,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 163,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 104,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 104,
+  "Mass_MeVc2": 250782.6046042,
+  "Mass_amu": 269.22618613897674,
+  "Mass_kg": 0,
+  "Name": "Rf",
+  "Symbol": "Rf"
+}

@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 18,
+  "Charge_e": 0,
+  "Composition": {
+    "H": 2,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 10,
+  "Mass_MeVc2": 16904.354235259998,
+  "Mass_amu": 18.14756979290065,
+  "Mass_kg": 0,
+  "Name": "H2O"
+}

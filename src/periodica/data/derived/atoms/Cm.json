@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 247,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 96,
+    "N": 151,
+    "P": 96
+  },
+  "Constituents": [
+    {
+      "Count": 96,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 151,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 96,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 96,
+  "Mass_MeVc2": 231997.55486108,
+  "Mass_amu": 249.05960677533625,
+  "Mass_kg": 0,
+  "Name": "Cm",
+  "Symbol": "Cm"
+}

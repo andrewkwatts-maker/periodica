@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 30,
+  "Charge_e": 0,
+  "Composition": {
+    "N": 1,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 15,
+  "Mass_MeVc2": 28175.22761445,
+  "Mass_amu": 30.247349437200974,
+  "Mass_kg": 0,
+  "Name": "NO"
+}

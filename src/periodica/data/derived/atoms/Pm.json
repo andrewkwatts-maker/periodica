@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 145,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 61,
+    "N": 84,
+    "P": 61
+  },
+  "Constituents": [
+    {
+      "Count": 61,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 84,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 61,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 61,
+  "Mass_MeVc2": 136189.26363739,
+  "Mass_amu": 146.20518077813395,
+  "Mass_kg": 0,
+  "Name": "Pm",
+  "Symbol": "Pm"
+}

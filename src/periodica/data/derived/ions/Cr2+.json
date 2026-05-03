@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 52,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 22,
+    "N": 28,
+    "P": 24
+  },
+  "Constituents": [
+    {
+      "Count": 24,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 28,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 22,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 22,
+  "Mass_MeVc2": 48837.6038673,
+  "Mass_amu": 52.42932160350343,
+  "Mass_kg": 0,
+  "Name": "Cr2+"
+}

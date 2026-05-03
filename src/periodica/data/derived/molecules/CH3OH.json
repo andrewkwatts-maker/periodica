@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 32,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 1,
+    "H": 4,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 4,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 18,
+  "Mass_MeVc2": 30052.01145526,
+  "Mass_amu": 32.26215966084117,
+  "Mass_kg": 0,
+  "Name": "CH3OH"
+}

@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 58,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 4,
+    "H": 10
+  },
+  "Constituents": [
+    {
+      "Count": 4,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 10,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 34,
+  "Mass_MeVc2": 54468.19505422,
+  "Mass_amu": 58.47400956482221,
+  "Mass_kg": 0,
+  "Name": "C4H10"
+}

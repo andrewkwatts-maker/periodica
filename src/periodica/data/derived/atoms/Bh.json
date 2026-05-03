@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 270,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 107,
+    "N": 163,
+    "P": 107
+  },
+  "Constituents": [
+    {
+      "Count": 107,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 163,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 107,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 107,
+  "Mass_MeVc2": 253598.95386553,
+  "Mass_amu": 272.249661278567,
+  "Mass_kg": 0,
+  "Name": "Bh",
+  "Symbol": "Bh"
+}

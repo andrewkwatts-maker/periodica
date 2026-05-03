@@ -1,0 +1,44 @@
+{
+  "BaryonNumber_B": 60,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 2,
+    "Si": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Si",
+      "Symbol": "Si"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "axial": {
+      "TensileStrength_MPa": 1500,
+      "YoungsModulus_GPa": 70
+    },
+    "fiber_direction": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "model": "anisotropic_axial",
+    "transverse": {
+      "TensileStrength_MPa": 40,
+      "YoungsModulus_GPa": 7
+    }
+  },
+  "LeptonNumber_L": 30,
+  "Mass_MeVc2": 56350.4552289,
+  "Mass_amu": 60.49469887440195,
+  "Mass_kg": 0,
+  "Name": "GFRP",
+  "Properties": {
+    "Density_kgm3": 1900
+  }
+}

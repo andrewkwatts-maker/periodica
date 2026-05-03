@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 26,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 2,
+    "H": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 2,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 14,
+  "Mass_MeVc2": 24417.74826578,
+  "Mass_amu": 26.213529642820912,
+  "Mass_kg": 0,
+  "Name": "C2H2"
+}

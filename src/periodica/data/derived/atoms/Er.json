@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 166,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 68,
+    "N": 98,
+    "P": 68
+  },
+  "Constituents": [
+    {
+      "Count": 68,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 98,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 68,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 68,
+  "Mass_MeVc2": 155914.66113444,
+  "Mass_amu": 167.38126492714443,
+  "Mass_kg": 0,
+  "Name": "Er",
+  "Symbol": "Er"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 258,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 101,
+    "N": 157,
+    "P": 101
+  },
+  "Constituents": [
+    {
+      "Count": 101,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 157,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 101,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 101,
+  "Mass_MeVc2": 242328.86281975,
+  "Mass_amu": 260.1507215036866,
+  "Mass_kg": 0,
+  "Name": "Md",
+  "Symbol": "Md"
+}

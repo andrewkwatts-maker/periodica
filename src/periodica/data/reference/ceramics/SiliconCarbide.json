@@ -1,0 +1,9 @@
+{
+  "Name": "SiliconCarbide",
+  "Symbol": "SiliconCarbide",
+  "Density_kgm3": 3210,
+  "YoungsModulus_GPa": 410,
+  "CompressiveStrength_MPa": 3900,
+  "MeltingPoint_K": 3003,
+  "source": "Sintered alpha-SiC (MatWeb)"
+}

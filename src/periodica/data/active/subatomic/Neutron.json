@@ -1,6 +1,7 @@
 {
   "Name": "Neutron",
   "Symbol": "n",
+  "Aliases": ["N"],
   "Type": "Subatomic Particle",
   "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle"],
   "Charge_e": 0,

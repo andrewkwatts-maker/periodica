@@ -1,0 +1,37 @@
+{
+  "BaryonNumber_B": 89,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 3,
+    "H": 7,
+    "N": 1,
+    "O": 2
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 7,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 48,
+  "Mass_MeVc2": 83583.7704226,
+  "Mass_amu": 89.7308637873931,
+  "Mass_kg": 0,
+  "Name": "Alanine"
+}

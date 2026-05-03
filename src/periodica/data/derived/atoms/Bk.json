@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 247,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 97,
+    "N": 150,
+    "P": 97
+  },
+  "Constituents": [
+    {
+      "Count": 97,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 150,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 97,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 97,
+  "Mass_MeVc2": 231996.77252767,
+  "Mass_amu": 249.05876690591631,
+  "Mass_kg": 0,
+  "Name": "Bk",
+  "Symbol": "Bk"
+}

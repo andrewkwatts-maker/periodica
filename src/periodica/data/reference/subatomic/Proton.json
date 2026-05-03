@@ -1,0 +1,12 @@
+{
+  "Name": "Proton",
+  "Symbol": "p",
+  "Charge_e": 1,
+  "Mass_MeVc2": 938.27208816,
+  "Mass_amu": 1.007276466621,
+  "Mass_kg": 1.67262192369e-27,
+  "BaryonNumber_B": 1,
+  "LeptonNumber_L": 0,
+  "Spin_hbar": 0.5,
+  "source": "CODATA 2018 / PDG"
+}

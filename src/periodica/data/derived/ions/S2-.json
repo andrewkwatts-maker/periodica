@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 32,
+  "Charge_e": -2,
+  "Composition": {
+    "E": 18,
+    "N": 16,
+    "P": 16
+  },
+  "Constituents": [
+    {
+      "Count": 16,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 16,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 18,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 18,
+  "Mass_MeVc2": 30054.598119979997,
+  "Mass_amu": 32.26493655949917,
+  "Mass_kg": 0,
+  "Name": "S2-"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 97,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 43,
+    "N": 54,
+    "P": 43
+  },
+  "Constituents": [
+    {
+      "Count": 43,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 54,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 43,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 43,
+  "Mass_MeVc2": 91104.20545380999,
+  "Mass_amu": 97.8043824620928,
+  "Mass_kg": 0,
+  "Name": "Tc",
+  "Symbol": "Tc"
+}

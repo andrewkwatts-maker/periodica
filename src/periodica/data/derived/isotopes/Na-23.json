@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 23,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 11,
+    "N": 12,
+    "P": 11
+  },
+  "Constituents": [
+    {
+      "Count": 11,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 12,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 11,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 11,
+  "Mass_MeVc2": 21601.39900445,
+  "Mass_amu": 23.190054503230716,
+  "Mass_kg": 0,
+  "Name": "Na-23"
+}

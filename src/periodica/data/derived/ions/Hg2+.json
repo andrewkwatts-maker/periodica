@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 201,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 78,
+    "N": 121,
+    "P": 80
+  },
+  "Constituents": [
+    {
+      "Count": 80,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 121,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 78,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 78,
+  "Mass_MeVc2": 188789.04085382,
+  "Mass_amu": 202.67336139253706,
+  "Mass_kg": 0,
+  "Name": "Hg2+"
+}

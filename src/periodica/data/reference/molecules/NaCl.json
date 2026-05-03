@@ -1,0 +1,8 @@
+{
+  "Name": "Sodium Chloride",
+  "Symbol": "NaCl",
+  "Composition": { "Na": 1, "Cl": 1 },
+  "Charge_e": 0,
+  "Mass_amu": 58.443,
+  "source": "IUPAC standard atomic weights"
+}

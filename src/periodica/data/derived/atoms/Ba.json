@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 138,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 56,
+    "N": 82,
+    "P": 56
+  },
+  "Constituents": [
+    {
+      "Count": 56,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 82,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 56,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 56,
+  "Mass_MeVc2": 129616.21736079999,
+  "Mass_amu": 139.14872571358364,
+  "Mass_kg": 0,
+  "Name": "Ba",
+  "Symbol": "Ba"
+}

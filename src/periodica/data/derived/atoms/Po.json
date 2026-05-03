@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 209,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 84,
+    "N": 125,
+    "P": 84
+  },
+  "Constituents": [
+    {
+      "Count": 84,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 125,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 84,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 84,
+  "Mass_MeVc2": 196303.45688224,
+  "Mass_amu": 210.74041840227545,
+  "Mass_kg": 0,
+  "Name": "Po",
+  "Symbol": "Po"
+}

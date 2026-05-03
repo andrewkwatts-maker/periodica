@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 4,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 2,
+    "N": 2,
+    "P": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 2,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 2,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 2,
+  "Mass_MeVc2": 3756.6970152599997,
+  "Mass_amu": 4.03297992496013,
+  "Mass_kg": 0,
+  "Name": "He",
+  "Symbol": "He"
+}

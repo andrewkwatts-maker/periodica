@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 17,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 8,
+    "N": 9,
+    "P": 8
+  },
+  "Constituents": [
+    {
+      "Count": 8,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 9,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 8,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 8,
+  "Mass_MeVc2": 15966.353481559998,
+  "Mass_amu": 17.14058461579052,
+  "Mass_kg": 0,
+  "Name": "O-17"
+}

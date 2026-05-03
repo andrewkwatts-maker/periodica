@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 3,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 2,
+    "N": 1,
+    "P": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 2,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 2,
+  "Mass_MeVc2": 2817.13159474,
+  "Mass_amu": 3.02431500901013,
+  "Mass_kg": 0,
+  "Name": "He-3"
+}

@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 197,
+  "Charge_e": 3,
+  "Composition": {
+    "E": 76,
+    "N": 118,
+    "P": 79
+  },
+  "Constituents": [
+    {
+      "Count": 79,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 118,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 76,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 76,
+  "Mass_MeVc2": 185031.0505062,
+  "Mass_amu": 198.63899301824796,
+  "Mass_kg": 0,
+  "Name": "Au3+"
+}

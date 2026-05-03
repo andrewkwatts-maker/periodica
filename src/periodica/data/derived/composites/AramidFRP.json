@@ -1,0 +1,56 @@
+{
+  "BaryonNumber_B": 238,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 14,
+    "H": 10,
+    "N": 2,
+    "O": 2
+  },
+  "Constituents": [
+    {
+      "Count": 14,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 10,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 2,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "axial": {
+      "TensileStrength_MPa": 2700,
+      "YoungsModulus_GPa": 120
+    },
+    "fiber_direction": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "model": "anisotropic_axial",
+    "transverse": {
+      "TensileStrength_MPa": 30,
+      "YoungsModulus_GPa": 5
+    }
+  },
+  "LeptonNumber_L": 124,
+  "Mass_MeVc2": 223519.56074092002,
+  "Mass_amu": 239.95810618802807,
+  "Mass_kg": 0,
+  "Name": "AramidFRP",
+  "Properties": {
+    "Density_kgm3": 1380
+  }
+}

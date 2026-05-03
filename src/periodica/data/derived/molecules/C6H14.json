@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 86,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 6,
+    "H": 14
+  },
+  "Constituents": [
+    {
+      "Count": 6,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 14,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 50,
+  "Mass_MeVc2": 80763.50949422001,
+  "Mass_amu": 86.70318930070324,
+  "Mass_kg": 0,
+  "Name": "C6H14"
+}

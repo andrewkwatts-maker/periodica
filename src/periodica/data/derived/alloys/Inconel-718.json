@@ -1,0 +1,70 @@
+{
+  "BaryonNumber_B": 58.297000000000004,
+  "Charge_e": 0,
+  "Composition": {
+    "Al": 0.005,
+    "Cr": 0.19,
+    "Fe": 0.17,
+    "Mo": 0.03,
+    "Nb": 0.05,
+    "Ni": 0.53,
+    "Ti": 0.009
+  },
+  "Constituents": [
+    {
+      "Count": 0.53,
+      "Resolved": "Ni",
+      "Symbol": "Ni"
+    },
+    {
+      "Count": 0.19,
+      "Resolved": "Cr",
+      "Symbol": "Cr"
+    },
+    {
+      "Count": 0.17,
+      "Resolved": "Fe",
+      "Symbol": "Fe"
+    },
+    {
+      "Count": 0.05,
+      "Resolved": "Nb",
+      "Symbol": "Nb"
+    },
+    {
+      "Count": 0.03,
+      "Resolved": "Mo",
+      "Symbol": "Mo"
+    },
+    {
+      "Count": 0.009,
+      "Resolved": "Ti",
+      "Symbol": "Ti"
+    },
+    {
+      "Count": 0.005,
+      "Resolved": "Al",
+      "Symbol": "Al"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 27.393000000000004,
+  "Mass_MeVc2": 54752.414860954304,
+  "Mass_amu": 58.77913206211687,
+  "Mass_kg": 0,
+  "Name": "Inconel-718",
+  "Properties": {
+    "Density_kgm3": 8190,
+    "ElectricalResistivity_ohmm": 1.25e-06,
+    "HardnessHB": 331,
+    "MeltingPoint_K": 1609,
+    "PoissonsRatio": 0.31,
+    "ShearModulus_GPa": 77,
+    "TensileStrength_MPa": 1240,
+    "ThermalConductivity_WmK": 11.4,
+    "YieldStrength_MPa": 1036,
+    "YoungsModulus_GPa": 205
+  }
+}

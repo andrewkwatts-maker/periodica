@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 120,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 50,
+    "N": 70,
+    "P": 50
+  },
+  "Constituents": [
+    {
+      "Count": 50,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 70,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 50,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 50,
+  "Mass_MeVc2": 112708.7337919,
+  "Mass_amu": 120.99779644300324,
+  "Mass_kg": 0,
+  "Name": "Sn",
+  "Symbol": "Sn"
+}

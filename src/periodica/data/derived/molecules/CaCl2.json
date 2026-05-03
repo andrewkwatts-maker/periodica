@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 110,
+  "Charge_e": 0,
+  "Composition": {
+    "Ca": 1,
+    "Cl": 2
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ca",
+      "Symbol": "Ca"
+    },
+    {
+      "Count": 2,
+      "Resolved": "Cl",
+      "Symbol": "Cl"
+    }
+  ],
+  "LeptonNumber_L": 54,
+  "Mass_MeVc2": 103309.95025306,
+  "Mass_amu": 110.9077878058235,
+  "Mass_kg": 0,
+  "Name": "CaCl2"
+}

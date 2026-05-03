@@ -1,0 +1,37 @@
+{
+  "BaryonNumber_B": 194,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 8,
+    "H": 10,
+    "N": 4,
+    "O": 2
+  },
+  "Constituents": [
+    {
+      "Count": 8,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 10,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 4,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 102,
+  "Mass_MeVc2": 182195.89357306002,
+  "Mass_amu": 195.59532701346666,
+  "Mass_kg": 0,
+  "Name": "Caffeine"
+}

@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 100,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 1,
+    "Ca": 1,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ca",
+      "Symbol": "Ca"
+    },
+    {
+      "Count": 1,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 50,
+  "Mass_MeVc2": 93917.42538149998,
+  "Mass_amu": 100.82449812400324,
+  "Mass_kg": 0,
+  "Name": "CaCO3"
+}

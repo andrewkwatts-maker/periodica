@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 24,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 12,
+    "N": 12,
+    "P": 12
+  },
+  "Constituents": [
+    {
+      "Count": 12,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 12,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 12,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 12,
+  "Mass_MeVc2": 22540.18209156,
+  "Mass_amu": 24.19787954976078,
+  "Mass_kg": 0,
+  "Name": "Mg-24"
+}

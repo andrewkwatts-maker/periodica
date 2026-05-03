@@ -1,0 +1,47 @@
+{
+  "BaryonNumber_B": 113,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 6,
+    "H": 11,
+    "N": 1,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 6,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 11,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 62,
+  "Mass_MeVc2": 106122.38784734001,
+  "Mass_amu": 113.92706359831404,
+  "Mass_kg": 0,
+  "Name": "Nylon-6",
+  "Properties": {
+    "Density_kgm3": 1140,
+    "GlassTransition_K": 320,
+    "MeltingPoint_K": 493,
+    "TensileStrength_MPa": 80,
+    "YoungsModulus_GPa": 3.0
+  }
+}

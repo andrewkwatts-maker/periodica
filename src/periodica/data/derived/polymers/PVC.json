@@ -1,0 +1,41 @@
+{
+  "BaryonNumber_B": 62,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 2,
+    "Cl": 1,
+    "H": 3
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 3,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Cl",
+      "Symbol": "Cl"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 32,
+  "Mass_MeVc2": 58228.02140312,
+  "Mass_amu": 62.51034896746208,
+  "Mass_kg": 0,
+  "Name": "PVC",
+  "Properties": {
+    "Density_kgm3": 1380,
+    "GlassTransition_K": 354,
+    "TensileStrength_MPa": 50,
+    "ThermalConductivity_WmK": 0.19,
+    "YoungsModulus_GPa": 3.2
+  }
+}

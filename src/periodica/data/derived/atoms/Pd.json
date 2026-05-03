@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 106,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 46,
+    "N": 60,
+    "P": 46
+  },
+  "Constituents": [
+    {
+      "Count": 46,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 60,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 46,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 46,
+  "Mass_MeVc2": 99557.94723826,
+  "Mass_amu": 106.87984709738299,
+  "Mass_kg": 0,
+  "Name": "Pd",
+  "Symbol": "Pd"
+}

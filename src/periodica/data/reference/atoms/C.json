@@ -1,0 +1,9 @@
+{
+  "Name": "Carbon",
+  "Symbol": "C",
+  "AtomicNumber": 6,
+  "Charge_e": 0,
+  "Mass_amu": 12.011,
+  "MostAbundantIsotope": { "MassNumber": 12, "Neutrons": 6, "Abundance": 98.93 },
+  "source": "IUPAC 2021"
+}

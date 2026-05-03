@@ -1,0 +1,8 @@
+{
+  "Name": "Methane",
+  "Symbol": "CH4",
+  "Composition": { "C": 1, "H": 4 },
+  "Charge_e": 0,
+  "Mass_amu": 16.043,
+  "source": "IUPAC standard atomic weights"
+}

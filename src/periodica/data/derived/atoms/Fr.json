@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 223,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 87,
+    "N": 136,
+    "P": 87
+  },
+  "Constituents": [
+    {
+      "Count": 87,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 136,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 87,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 87,
+  "Mass_MeVc2": 209455.02576929,
+  "Mass_amu": 224.85920761731566,
+  "Mass_kg": 0,
+  "Name": "Fr",
+  "Symbol": "Fr"
+}

@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 50,
+  "Charge_e": 0,
+  "Composition": {
+    "H": 2,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 26,
+  "Mass_MeVc2": 46957.930357339996,
+  "Mass_amu": 50.41140919258169,
+  "Mass_kg": 0,
+  "Name": "H2O3"
+}

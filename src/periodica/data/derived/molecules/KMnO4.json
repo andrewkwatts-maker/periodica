@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 158,
+  "Charge_e": 0,
+  "Composition": {
+    "K": 1,
+    "Mn": 1,
+    "O": 4
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "K",
+      "Symbol": "K"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Mn",
+      "Symbol": "Mn"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 76,
+  "Mass_MeVc2": 148391.87910299998,
+  "Mass_amu": 159.30522664418493,
+  "Mass_kg": 0,
+  "Name": "KMnO4"
+}

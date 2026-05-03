@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 133,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 55,
+    "N": 78,
+    "P": 55
+  },
+  "Constituents": [
+    {
+      "Count": 55,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 78,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 55,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 55,
+  "Mass_MeVc2": 124919.17259160998,
+  "Mass_amu": 134.1062410032536,
+  "Mass_kg": 0,
+  "Name": "Cs",
+  "Symbol": "Cs"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 175,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 71,
+    "N": 104,
+    "P": 71
+  },
+  "Constituents": [
+    {
+      "Count": 71,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 104,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 71,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 71,
+  "Mass_MeVc2": 164368.40291888997,
+  "Mass_amu": 176.45672956243462,
+  "Mass_kg": 0,
+  "Name": "Lu",
+  "Symbol": "Lu"
+}

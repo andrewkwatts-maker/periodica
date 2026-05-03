@@ -1,0 +1,36 @@
+{
+  "BaryonNumber_B": 56,
+  "Charge_e": 0,
+  "Composition": {
+    "B": 4,
+    "C": 1
+  },
+  "Constituents": [
+    {
+      "Count": 4,
+      "Resolved": "B",
+      "Symbol": "B"
+    },
+    {
+      "Count": 1,
+      "Resolved": "C",
+      "Symbol": "C"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 26,
+  "Mass_MeVc2": 52595.32288046,
+  "Mass_amu": 56.46339868828169,
+  "Mass_kg": 0,
+  "Name": "BoronCarbide",
+  "Properties": {
+    "CompressiveStrength_MPa": 4500,
+    "Density_kgm3": 2520,
+    "HardnessHV": 3500,
+    "MeltingPoint_K": 2718,
+    "ThermalConductivity_WmK": 30,
+    "YoungsModulus_GPa": 460
+  }
+}

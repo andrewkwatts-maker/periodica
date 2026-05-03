@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 80,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 34,
+    "N": 46,
+    "P": 34
+  },
+  "Constituents": [
+    {
+      "Count": 34,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 46,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 34,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 34,
+  "Mass_MeVc2": 75138.63430566,
+  "Mass_amu": 80.66463771572221,
+  "Mass_kg": 0,
+  "Name": "Se",
+  "Symbol": "Se"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 121,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 51,
+    "N": 70,
+    "P": 51
+  },
+  "Constituents": [
+    {
+      "Count": 51,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 70,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 51,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 51,
+  "Mass_MeVc2": 113647.51687901,
+  "Mass_amu": 122.00562148953331,
+  "Mass_kg": 0,
+  "Name": "Sb",
+  "Symbol": "Sb"
+}

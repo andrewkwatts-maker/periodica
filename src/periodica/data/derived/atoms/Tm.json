@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 169,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 69,
+    "N": 100,
+    "P": 69
+  },
+  "Constituents": [
+    {
+      "Count": 69,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 100,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 69,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 69,
+  "Mass_MeVc2": 158732.57506259,
+  "Mass_amu": 170.40641980557447,
+  "Mass_kg": 0,
+  "Name": "Tm",
+  "Symbol": "Tm"
+}

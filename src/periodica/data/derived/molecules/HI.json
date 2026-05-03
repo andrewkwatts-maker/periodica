@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 128,
+  "Charge_e": 0,
+  "Composition": {
+    "H": 1,
+    "I": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "I",
+      "Symbol": "I"
+    }
+  ],
+  "LeptonNumber_L": 54,
+  "Mass_MeVc2": 120222.12782241998,
+  "Mass_amu": 129.0637562929235,
+  "Mass_kg": 0,
+  "Name": "HI"
+}

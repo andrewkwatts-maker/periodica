@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 207,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 80,
+    "N": 125,
+    "P": 82
+  },
+  "Constituents": [
+    {
+      "Count": 82,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 125,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 80,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 80,
+  "Mass_MeVc2": 194424.86871011998,
+  "Mass_amu": 208.7236711493972,
+  "Mass_kg": 0,
+  "Name": "Pb2+"
+}

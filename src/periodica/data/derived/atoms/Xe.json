@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 132,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 54,
+    "N": 78,
+    "P": 54
+  },
+  "Constituents": [
+    {
+      "Count": 54,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 78,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 54,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 54,
+  "Mass_MeVc2": 123980.3895045,
+  "Mass_amu": 133.0984159567235,
+  "Mass_kg": 0,
+  "Name": "Xe",
+  "Symbol": "Xe"
+}

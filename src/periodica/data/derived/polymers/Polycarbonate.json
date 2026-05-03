@@ -1,0 +1,41 @@
+{
+  "BaryonNumber_B": 254,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 16,
+    "H": 14,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 16,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 14,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 134,
+  "Mass_MeVc2": 238544.78413513998,
+  "Mass_amu": 256.0883461490287,
+  "Mass_kg": 0,
+  "Name": "Polycarbonate",
+  "Properties": {
+    "Density_kgm3": 1200,
+    "GlassTransition_K": 423,
+    "TensileStrength_MPa": 65,
+    "ThermalConductivity_WmK": 0.2,
+    "YoungsModulus_GPa": 2.4
+  }
+}

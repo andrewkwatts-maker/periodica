@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 48,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 24,
+  "Mass_MeVc2": 45080.36418311999,
+  "Mass_amu": 48.395759099521555,
+  "Mass_kg": 0,
+  "Name": "O3"
+}

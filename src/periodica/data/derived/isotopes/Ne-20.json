@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 20,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 10,
+    "N": 10,
+    "P": 10
+  },
+  "Constituents": [
+    {
+      "Count": 10,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 10,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 10,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 10,
+  "Mass_MeVc2": 18783.4850763,
+  "Mass_amu": 20.164899624800647,
+  "Mass_kg": 0,
+  "Name": "Ne-20"
+}

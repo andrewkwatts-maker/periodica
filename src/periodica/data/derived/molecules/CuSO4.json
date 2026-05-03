@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 159,
+  "Charge_e": 0,
+  "Composition": {
+    "Cu": 1,
+    "O": 4,
+    "S": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Cu",
+      "Symbol": "Cu"
+    },
+    {
+      "Count": 1,
+      "Resolved": "S",
+      "Symbol": "S"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 77,
+  "Mass_MeVc2": 149330.66219011,
+  "Mass_amu": 160.31305169071499,
+  "Mass_kg": 0,
+  "Name": "CuSO4"
+}

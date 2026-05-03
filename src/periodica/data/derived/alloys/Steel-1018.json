@@ -1,0 +1,56 @@
+{
+  "BaryonNumber_B": 55.559999999999995,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 0.01,
+    "Fe": 0.99
+  },
+  "Constituents": [
+    {
+      "Count": 0.99,
+      "Resolved": "Fe",
+      "Symbol": "Fe"
+    },
+    {
+      "Count": 0.01,
+      "Resolved": "C",
+      "Symbol": "C"
+    }
+  ],
+  "Field": {
+    "grain_density": 1000000000000000.0,
+    "macro_scale_m": 0.0001,
+    "model": "microstructure_voronoi",
+    "phases": {
+      "ferrite": {
+        "HardnessHB": 100,
+        "TensileStrength_MPa": 380,
+        "YoungsModulus_GPa": 195,
+        "fraction": 0.85
+      },
+      "pearlite": {
+        "HardnessHB": 250,
+        "TensileStrength_MPa": 700,
+        "YoungsModulus_GPa": 220,
+        "fraction": 0.15
+      }
+    }
+  },
+  "LeptonNumber_L": 25.799999999999997,
+  "Mass_MeVc2": 52182.0705621132,
+  "Mass_amu": 56.01975409914767,
+  "Mass_kg": 0,
+  "Name": "Steel-1018",
+  "Properties": {
+    "Density_kgm3": 7870,
+    "ElectricalResistivity_ohmm": 1.43e-07,
+    "HardnessHB": 126,
+    "MeltingPoint_K": 1798,
+    "PoissonsRatio": 0.29,
+    "ShearModulus_GPa": 79.3,
+    "TensileStrength_MPa": 440,
+    "ThermalConductivity_WmK": 51.9,
+    "YieldStrength_MPa": 370,
+    "YoungsModulus_GPa": 200
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 98,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 42,
+    "N": 56,
+    "P": 42
+  },
+  "Constituents": [
+    {
+      "Count": 42,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 56,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 42,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 42,
+  "Mass_MeVc2": 92044.55320774,
+  "Mass_amu": 98.81388724746273,
+  "Mass_kg": 0,
+  "Name": "Mo",
+  "Symbol": "Mo"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 197,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 79,
+    "N": 118,
+    "P": 79
+  },
+  "Constituents": [
+    {
+      "Count": 79,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 118,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 79,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 79,
+  "Mass_MeVc2": 185032.58350304997,
+  "Mass_amu": 198.64063875797515,
+  "Mass_kg": 0,
+  "Name": "Au",
+  "Symbol": "Au"
+}

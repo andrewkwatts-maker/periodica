@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 93,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 41,
+    "N": 52,
+    "P": 41
+  },
+  "Constituents": [
+    {
+      "Count": 41,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 52,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 41,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 41,
+  "Mass_MeVc2": 87347.50843855,
+  "Mass_amu": 93.77140253713267,
+  "Mass_kg": 0,
+  "Name": "Nb",
+  "Symbol": "Nb"
+}

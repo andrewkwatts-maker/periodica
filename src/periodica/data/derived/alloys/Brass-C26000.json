@@ -1,0 +1,40 @@
+{
+  "BaryonNumber_B": 63.3,
+  "Charge_e": 0,
+  "Composition": {
+    "Cu": 0.7,
+    "Zn": 0.3
+  },
+  "Constituents": [
+    {
+      "Count": 0.7,
+      "Resolved": "Cu",
+      "Symbol": "Cu"
+    },
+    {
+      "Count": 0.3,
+      "Resolved": "Zn",
+      "Symbol": "Zn"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 29.299999999999997,
+  "Mass_MeVc2": 59451.568750002996,
+  "Mass_amu": 63.82388100563091,
+  "Mass_kg": 0,
+  "Name": "Brass-C26000",
+  "Properties": {
+    "Density_kgm3": 8530,
+    "ElectricalResistivity_ohmm": 6.2e-08,
+    "HardnessHB": 65,
+    "MeltingPoint_K": 1188,
+    "PoissonsRatio": 0.375,
+    "ShearModulus_GPa": 39,
+    "TensileStrength_MPa": 315,
+    "ThermalConductivity_WmK": 120,
+    "YieldStrength_MPa": 200,
+    "YoungsModulus_GPa": 110
+  }
+}

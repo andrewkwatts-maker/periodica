@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 74,
+  "Charge_e": 0,
+  "Composition": {
+    "Cl": 1,
+    "K": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "K",
+      "Symbol": "K"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Cl",
+      "Symbol": "Cl"
+    }
+  ],
+  "LeptonNumber_L": 36,
+  "Mass_MeVc2": 69499.67711572,
+  "Mass_amu": 74.61096848118234,
+  "Mass_kg": 0,
+  "Name": "KCl"
+}

@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": 0,
+  "Composition": {
+    "s": 2,
+    "u": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Up Quark",
+      "Symbol": "u"
+    },
+    {
+      "Count": 2,
+      "Resolved": "Strange Quark",
+      "Symbol": "s"
+    }
+  ],
+  "LeptonNumber_L": 0,
+  "Mass_MeVc2": 192.2,
+  "Mass_amu": 0.203962359,
+  "Mass_kg": 0,
+  "Name": "XiZero_q"
+}

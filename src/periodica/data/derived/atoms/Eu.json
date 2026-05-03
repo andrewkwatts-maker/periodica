@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 153,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 63,
+    "N": 90,
+    "P": 63
+  },
+  "Constituents": [
+    {
+      "Count": 63,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 90,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 63,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 63,
+  "Mass_MeVc2": 143704.22233472997,
+  "Mass_amu": 154.27282036689408,
+  "Mass_kg": 0,
+  "Name": "Eu",
+  "Symbol": "Eu"
+}

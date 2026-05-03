@@ -1,0 +1,39 @@
+{
+  "BaryonNumber_B": 40,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 1,
+    "Si": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Si",
+      "Symbol": "Si"
+    },
+    {
+      "Count": 1,
+      "Resolved": "C",
+      "Symbol": "C"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 20,
+  "Mass_MeVc2": 37566.9701526,
+  "Mass_amu": 40.3297992496013,
+  "Mass_kg": 0,
+  "Name": "SiliconCarbide",
+  "Properties": {
+    "CompressiveStrength_MPa": 3900,
+    "Density_kgm3": 3210,
+    "FlexuralStrength_MPa": 460,
+    "FractureToughness_MPa_m05": 4.6,
+    "HardnessHV": 2800,
+    "MeltingPoint_K": 3003,
+    "PoissonsRatio": 0.14,
+    "ThermalConductivity_WmK": 120,
+    "YoungsModulus_GPa": 410
+  }
+}

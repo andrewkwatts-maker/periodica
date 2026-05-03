@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 28,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 14,
+    "N": 14,
+    "P": 14
+  },
+  "Constituents": [
+    {
+      "Count": 14,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 14,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 14,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 14,
+  "Mass_MeVc2": 26296.87910682,
+  "Mass_amu": 28.23085947472091,
+  "Mass_kg": 0,
+  "Name": "Si",
+  "Symbol": "Si"
+}

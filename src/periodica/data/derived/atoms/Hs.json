@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 269,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 108,
+    "N": 161,
+    "P": 108
+  },
+  "Constituents": [
+    {
+      "Count": 108,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 161,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 108,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 108,
+  "Mass_MeVc2": 252658.6061116,
+  "Mass_amu": 271.24015649319705,
+  "Mass_kg": 0,
+  "Name": "Hs",
+  "Symbol": "Hs"
+}

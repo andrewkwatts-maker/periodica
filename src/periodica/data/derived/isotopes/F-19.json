@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 19,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 9,
+    "N": 10,
+    "P": 9
+  },
+  "Constituents": [
+    {
+      "Count": 9,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 10,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 9,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 9,
+  "Mass_MeVc2": 17844.70198919,
+  "Mass_amu": 19.157074578270585,
+  "Mass_kg": 0,
+  "Name": "F-19"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 180,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 72,
+    "N": 108,
+    "P": 72
+  },
+  "Constituents": [
+    {
+      "Count": 72,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 108,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 72,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 72,
+  "Mass_MeVc2": 169065.44768808,
+  "Mass_amu": 181.49921427276468,
+  "Mass_kg": 0,
+  "Name": "Hf",
+  "Symbol": "Hf"
+}

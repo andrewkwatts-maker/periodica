@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 180,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 9,
+    "H": 8,
+    "O": 4
+  },
+  "Constituents": [
+    {
+      "Count": 9,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 8,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 94,
+  "Mass_MeVc2": 169048.23635306,
+  "Mass_amu": 181.48073714552612,
+  "Mass_kg": 0,
+  "Name": "Aspirin"
+}

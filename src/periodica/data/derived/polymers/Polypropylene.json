@@ -1,0 +1,36 @@
+{
+  "BaryonNumber_B": 42,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 3,
+    "H": 6
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 6,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 24,
+  "Mass_MeVc2": 39442.97166,
+  "Mass_amu": 42.343769603821556,
+  "Mass_kg": 0,
+  "Name": "Polypropylene",
+  "Properties": {
+    "Density_kgm3": 905,
+    "ElongationAtBreak_pct": 600,
+    "GlassTransition_K": 263,
+    "MeltingPoint_K": 433,
+    "TensileStrength_MPa": 35,
+    "YoungsModulus_GPa": 1.5
+  }
+}

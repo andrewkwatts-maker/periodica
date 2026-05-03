@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 169,
+  "Charge_e": 0,
+  "Composition": {
+    "Ag": 1,
+    "N": 1,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ag",
+      "Symbol": "Ag"
+    },
+    {
+      "Count": 1,
+      "Resolved": "N",
+      "Symbol": "N"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 78,
+  "Mass_MeVc2": 158725.5340619,
+  "Mass_amu": 170.39886098079506,
+  "Mass_kg": 0,
+  "Name": "AgNO3"
+}

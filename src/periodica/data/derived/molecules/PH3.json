@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 34,
+  "Charge_e": 0,
+  "Composition": {
+    "H": 3,
+    "P": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "P",
+      "Symbol": "P"
+    },
+    {
+      "Count": 3,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 18,
+  "Mass_MeVc2": 31931.1422963,
+  "Mass_amu": 34.27948949274117,
+  "Mass_kg": 0,
+  "Name": "PH3"
+}

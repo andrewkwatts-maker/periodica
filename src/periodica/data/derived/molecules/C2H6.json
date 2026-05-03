@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 30,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 2,
+    "H": 6
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 6,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 18,
+  "Mass_MeVc2": 28172.88061422,
+  "Mass_amu": 30.24482982894117,
+  "Mass_kg": 0,
+  "Name": "C2H6"
+}

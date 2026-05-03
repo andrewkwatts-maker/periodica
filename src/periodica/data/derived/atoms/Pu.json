@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 244,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 94,
+    "N": 150,
+    "P": 94
+  },
+  "Constituents": [
+    {
+      "Count": 94,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 150,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 94,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 94,
+  "Mass_MeVc2": 229180.42326634,
+  "Mass_amu": 246.0352917663261,
+  "Mass_kg": 0,
+  "Name": "Pu",
+  "Symbol": "Pu"
+}

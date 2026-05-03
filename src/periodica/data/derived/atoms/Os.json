@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 192,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 76,
+    "N": 116,
+    "P": 76
+  },
+  "Constituents": [
+    {
+      "Count": 76,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 116,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 76,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 76,
+  "Mass_MeVc2": 180337.10340068003,
+  "Mass_amu": 193.59983378648494,
+  "Mass_kg": 0,
+  "Name": "Os",
+  "Symbol": "Os"
+}

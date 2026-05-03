@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 74,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 32,
+    "N": 42,
+    "P": 32
+  },
+  "Constituents": [
+    {
+      "Count": 32,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 42,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 32,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 32,
+  "Mass_MeVc2": 69502.80644936,
+  "Mass_amu": 74.61432795886208,
+  "Mass_kg": 0,
+  "Name": "Ge",
+  "Symbol": "Ge"
+}

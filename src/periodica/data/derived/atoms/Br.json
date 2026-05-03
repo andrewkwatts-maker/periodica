@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 79,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 35,
+    "N": 44,
+    "P": 35
+  },
+  "Constituents": [
+    {
+      "Count": 35,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 44,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 35,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 35,
+  "Mass_MeVc2": 74198.28655173,
+  "Mass_amu": 79.65513293035227,
+  "Mass_kg": 0,
+  "Name": "Br",
+  "Symbol": "Br"
+}

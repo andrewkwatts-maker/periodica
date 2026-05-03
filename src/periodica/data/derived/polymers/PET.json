@@ -1,0 +1,41 @@
+{
+  "BaryonNumber_B": 192,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 10,
+    "H": 8,
+    "O": 4
+  },
+  "Constituents": [
+    {
+      "Count": 10,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 8,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 100,
+  "Mass_MeVc2": 180318.32739884,
+  "Mass_amu": 193.57967692040648,
+  "Mass_kg": 0,
+  "Name": "PET",
+  "Properties": {
+    "Density_kgm3": 1380,
+    "GlassTransition_K": 343,
+    "MeltingPoint_K": 533,
+    "TensileStrength_MPa": 55,
+    "YoungsModulus_GPa": 2.8
+  }
+}

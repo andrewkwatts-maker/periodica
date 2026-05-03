@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 28,
+  "Charge_e": 0,
+  "Composition": {
+    "N": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "N",
+      "Symbol": "N"
+    }
+  ],
+  "LeptonNumber_L": 14,
+  "Mass_MeVc2": 26296.87910682,
+  "Mass_amu": 28.23085947472091,
+  "Mass_kg": 0,
+  "Name": "N2"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 282,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 111,
+    "N": 171,
+    "P": 111
+  },
+  "Constituents": [
+    {
+      "Count": 111,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 171,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 111,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 111,
+  "Mass_MeVc2": 264870.60957813,
+  "Mass_amu": 284.3502807922872,
+  "Mass_kg": 0,
+  "Name": "Rg",
+  "Symbol": "Rg"
+}

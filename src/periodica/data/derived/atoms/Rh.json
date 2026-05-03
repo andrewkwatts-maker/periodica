@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 103,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 45,
+    "N": 58,
+    "P": 45
+  },
+  "Constituents": [
+    {
+      "Count": 45,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 58,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 45,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 45,
+  "Mass_MeVc2": 96740.03331011,
+  "Mass_amu": 103.85469221895292,
+  "Mass_kg": 0,
+  "Name": "Rh",
+  "Symbol": "Rh"
+}

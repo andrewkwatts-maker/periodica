@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 75,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 33,
+    "N": 42,
+    "P": 33
+  },
+  "Constituents": [
+    {
+      "Count": 33,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 42,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 33,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 33,
+  "Mass_MeVc2": 70441.58953647,
+  "Mass_amu": 75.62215300539214,
+  "Mass_kg": 0,
+  "Name": "As",
+  "Symbol": "As"
+}

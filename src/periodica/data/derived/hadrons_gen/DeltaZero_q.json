@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": 0,
+  "Composition": {
+    "d": 2,
+    "u": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Up Quark",
+      "Symbol": "u"
+    },
+    {
+      "Count": 2,
+      "Resolved": "Down Quark",
+      "Symbol": "d"
+    }
+  ],
+  "LeptonNumber_L": 0,
+  "Mass_MeVc2": 11.600000000000001,
+  "Mass_amu": 1.2441e-05,
+  "Mass_kg": 0,
+  "Name": "DeltaZero_q"
+}

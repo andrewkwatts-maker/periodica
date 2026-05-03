@@ -1,6 +1,7 @@
 {
   "Name": "Proton",
   "Symbol": "p",
+  "Aliases": ["P"],
   "Type": "Subatomic Particle",
   "Classification": ["Fermion", "Baryon", "Hadron", "Composite Particle"],
   "Charge_e": 1,

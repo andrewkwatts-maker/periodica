@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 59,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 25,
+    "N": 32,
+    "P": 27
+  },
+  "Constituents": [
+    {
+      "Count": 27,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 32,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 25,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 25,
+  "Mass_MeVc2": 55412.21481070999,
+  "Mass_amu": 59.48745640689363,
+  "Mass_kg": 0,
+  "Name": "Co2+"
+}

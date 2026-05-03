@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 48,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 22,
+    "N": 26,
+    "P": 22
+  },
+  "Constituents": [
+    {
+      "Count": 22,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 26,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 22,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 22,
+  "Mass_MeVc2": 45081.92884994,
+  "Mass_amu": 48.39743883836143,
+  "Mass_kg": 0,
+  "Name": "Ti",
+  "Symbol": "Ti"
+}

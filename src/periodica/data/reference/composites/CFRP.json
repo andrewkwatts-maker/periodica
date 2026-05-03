@@ -1,0 +1,8 @@
+{
+  "Name": "CFRP",
+  "Density_kgm3": 1600,
+  "AxialYoungsModulus_GPa": 230,
+  "TransverseYoungsModulus_GPa": 15,
+  "AxialTensileStrength_MPa": 3500,
+  "source": "Typical unidirectional carbon-epoxy lamina"
+}

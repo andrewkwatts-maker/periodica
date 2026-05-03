@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 20,
+  "Charge_e": 0,
+  "Composition": {
+    "F": 1,
+    "H": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "F",
+      "Symbol": "F"
+    }
+  ],
+  "LeptonNumber_L": 10,
+  "Mass_MeVc2": 18783.485076300003,
+  "Mass_amu": 20.16489962480065,
+  "Mass_kg": 0,
+  "Name": "HF"
+}

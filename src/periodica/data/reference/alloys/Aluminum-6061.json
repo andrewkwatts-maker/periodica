@@ -1,0 +1,10 @@
+{
+  "Name": "Aluminum-6061",
+  "Symbol": "Aluminum-6061",
+  "Density_kgm3": 2700,
+  "YoungsModulus_GPa": 68.9,
+  "TensileStrength_MPa": 310,
+  "YieldStrength_MPa": 276,
+  "MeltingPoint_K": 855,
+  "source": "Aluminum Association 6061-T6"
+}

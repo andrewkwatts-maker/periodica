@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 115,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 49,
+    "N": 66,
+    "P": 49
+  },
+  "Constituents": [
+    {
+      "Count": 49,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 66,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 49,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 49,
+  "Mass_MeVc2": 108011.68902271,
+  "Mass_amu": 115.95531173267318,
+  "Mass_kg": 0,
+  "Name": "In",
+  "Symbol": "In"
+}

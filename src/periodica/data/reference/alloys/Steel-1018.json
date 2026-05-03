@@ -1,0 +1,10 @@
+{
+  "Name": "Steel-1018",
+  "Symbol": "Steel-1018",
+  "Density_kgm3": 7870,
+  "YoungsModulus_GPa": 200,
+  "TensileStrength_MPa": 440,
+  "YieldStrength_MPa": 370,
+  "MeltingPoint_K": 1798,
+  "source": "AISI 1018 cold-drawn, MatWeb / ASM Handbook"
+}

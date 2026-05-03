@@ -1,0 +1,8 @@
+{
+  "Name": "PET",
+  "Density_kgm3": 1380,
+  "YoungsModulus_GPa": 2.8,
+  "TensileStrength_MPa": 55,
+  "MeltingPoint_K": 533,
+  "source": "MatWeb PET typical"
+}

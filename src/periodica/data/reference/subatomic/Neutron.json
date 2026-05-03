@@ -1,0 +1,12 @@
+{
+  "Name": "Neutron",
+  "Symbol": "n",
+  "Charge_e": 0,
+  "Mass_MeVc2": 939.56542052,
+  "Mass_amu": 1.00866491595,
+  "Mass_kg": 1.67492749804e-27,
+  "BaryonNumber_B": 1,
+  "LeptonNumber_L": 0,
+  "Spin_hbar": 0.5,
+  "source": "CODATA 2018 / PDG"
+}

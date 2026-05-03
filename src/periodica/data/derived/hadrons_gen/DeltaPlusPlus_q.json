@@ -1,0 +1,19 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": 2,
+  "Composition": {
+    "u": 3
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "Up Quark",
+      "Symbol": "u"
+    }
+  ],
+  "LeptonNumber_L": 0,
+  "Mass_MeVc2": 6.6000000000000005,
+  "Mass_amu": 7.077e-06,
+  "Mass_kg": 0,
+  "Name": "DeltaPlusPlus_q"
+}

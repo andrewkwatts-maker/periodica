@@ -1,0 +1,116 @@
+{
+  "from": "atoms",
+  "tier": "polymers",
+  "requires": ["atoms"],
+  "rows": [
+    {
+      "name": "HDPE",
+      "spec": { "C": 2, "H": 4 },
+      "properties": {
+        "Density_kgm3": 970,
+        "YoungsModulus_GPa": 0.8,
+        "TensileStrength_MPa": 25,
+        "ElongationAtBreak_pct": 800,
+        "GlassTransition_K": 148,
+        "MeltingPoint_K": 408,
+        "ThermalConductivity_WmK": 0.46
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "LDPE",
+      "spec": { "C": 2, "H": 4 },
+      "properties": {
+        "Density_kgm3": 920,
+        "YoungsModulus_GPa": 0.2,
+        "TensileStrength_MPa": 12,
+        "MeltingPoint_K": 388
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "Polypropylene",
+      "spec": { "C": 3, "H": 6 },
+      "properties": {
+        "Density_kgm3": 905,
+        "YoungsModulus_GPa": 1.5,
+        "TensileStrength_MPa": 35,
+        "ElongationAtBreak_pct": 600,
+        "GlassTransition_K": 263,
+        "MeltingPoint_K": 433
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "PVC",
+      "spec": { "C": 2, "H": 3, "Cl": 1 },
+      "properties": {
+        "Density_kgm3": 1380,
+        "YoungsModulus_GPa": 3.2,
+        "TensileStrength_MPa": 50,
+        "GlassTransition_K": 354,
+        "ThermalConductivity_WmK": 0.19
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "PET",
+      "spec": { "C": 10, "H": 8, "O": 4 },
+      "properties": {
+        "Density_kgm3": 1380,
+        "YoungsModulus_GPa": 2.8,
+        "TensileStrength_MPa": 55,
+        "GlassTransition_K": 343,
+        "MeltingPoint_K": 533
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "Nylon-6",
+      "spec": { "C": 6, "H": 11, "N": 1, "O": 1 },
+      "properties": {
+        "Density_kgm3": 1140,
+        "YoungsModulus_GPa": 3.0,
+        "TensileStrength_MPa": 80,
+        "GlassTransition_K": 320,
+        "MeltingPoint_K": 493
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "Polycarbonate",
+      "spec": { "C": 16, "H": 14, "O": 3 },
+      "properties": {
+        "Density_kgm3": 1200,
+        "YoungsModulus_GPa": 2.4,
+        "TensileStrength_MPa": 65,
+        "GlassTransition_K": 423,
+        "ThermalConductivity_WmK": 0.20
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "Epoxy",
+      "spec": { "C": 21, "H": 24, "O": 4 },
+      "properties": {
+        "Density_kgm3": 1200,
+        "YoungsModulus_GPa": 3.5,
+        "TensileStrength_MPa": 60,
+        "GlassTransition_K": 393
+      },
+      "field": { "model": "homogeneous" }
+    },
+    {
+      "name": "PTFE",
+      "spec": { "C": 2, "F": 4 },
+      "properties": {
+        "Density_kgm3": 2200,
+        "YoungsModulus_GPa": 0.5,
+        "TensileStrength_MPa": 30,
+        "MeltingPoint_K": 600,
+        "ThermalConductivity_WmK": 0.25
+      },
+      "field": { "model": "homogeneous" }
+    }
+  ]
+}

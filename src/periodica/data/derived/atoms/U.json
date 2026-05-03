@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 238,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 92,
+    "N": 146,
+    "P": 92
+  },
+  "Constituents": [
+    {
+      "Count": 92,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 146,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 92,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 92,
+  "Mass_MeVc2": 223544.59541004,
+  "Mass_amu": 239.984982009466,
+  "Mass_kg": 0,
+  "Name": "U",
+  "Symbol": "U"
+}

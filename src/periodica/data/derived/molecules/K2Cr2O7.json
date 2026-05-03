@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 294,
+  "Charge_e": 0,
+  "Composition": {
+    "Cr": 2,
+    "K": 2,
+    "O": 7
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "K",
+      "Symbol": "K"
+    },
+    {
+      "Count": 2,
+      "Resolved": "Cr",
+      "Symbol": "Cr"
+    },
+    {
+      "Count": 7,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 142,
+  "Mass_MeVc2": 276121.14228866,
+  "Mass_amu": 296.42822383166924,
+  "Mass_kg": 0,
+  "Name": "K2Cr2O7"
+}

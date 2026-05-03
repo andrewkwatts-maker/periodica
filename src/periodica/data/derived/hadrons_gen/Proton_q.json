@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 1,
+  "Charge_e": 1,
+  "Composition": {
+    "d": 1,
+    "u": 2
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Up Quark",
+      "Symbol": "u"
+    },
+    {
+      "Count": 1,
+      "Resolved": "Down Quark",
+      "Symbol": "d"
+    }
+  ],
+  "LeptonNumber_L": 0,
+  "Mass_MeVc2": 9.100000000000001,
+  "Mass_amu": 9.759e-06,
+  "Mass_kg": 0,
+  "Name": "Proton_q"
+}

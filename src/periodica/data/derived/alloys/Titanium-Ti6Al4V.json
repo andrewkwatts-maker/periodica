@@ -1,0 +1,46 @@
+{
+  "BaryonNumber_B": 46.86,
+  "Charge_e": 0,
+  "Composition": {
+    "Al": 0.06,
+    "Ti": 0.9,
+    "V": 0.04
+  },
+  "Constituents": [
+    {
+      "Count": 0.9,
+      "Resolved": "Ti",
+      "Symbol": "Ti"
+    },
+    {
+      "Count": 0.06,
+      "Resolved": "Al",
+      "Symbol": "Al"
+    },
+    {
+      "Count": 0.04,
+      "Resolved": "V",
+      "Symbol": "V"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 21.500000000000004,
+  "Mass_MeVc2": 44011.2154372522,
+  "Mass_amu": 47.2479807688884,
+  "Mass_kg": 0,
+  "Name": "Titanium-Ti6Al4V",
+  "Properties": {
+    "Density_kgm3": 4430,
+    "ElectricalResistivity_ohmm": 1.78e-06,
+    "HardnessHB": 334,
+    "MeltingPoint_K": 1933,
+    "PoissonsRatio": 0.34,
+    "ShearModulus_GPa": 44,
+    "TensileStrength_MPa": 950,
+    "ThermalConductivity_WmK": 6.7,
+    "YieldStrength_MPa": 880,
+    "YoungsModulus_GPa": 113.8
+  }
+}

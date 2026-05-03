@@ -1,0 +1,51 @@
+{
+  "BaryonNumber_B": 11.650000000000002,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 0.9,
+    "H": 0.05,
+    "O": 0.05
+  },
+  "Constituents": [
+    {
+      "Count": 0.9,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 0.05,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 0.05,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "axial": {
+      "TensileStrength_MPa": 3500,
+      "YoungsModulus_GPa": 230
+    },
+    "fiber_direction": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "model": "anisotropic_axial",
+    "transverse": {
+      "TensileStrength_MPa": 50,
+      "YoungsModulus_GPa": 15
+    }
+  },
+  "LeptonNumber_L": 5.8500000000000005,
+  "Mass_MeVc2": 10941.3604986095,
+  "Mass_amu": 11.746033034710882,
+  "Mass_kg": 0,
+  "Name": "CFRP",
+  "Properties": {
+    "Density_kgm3": 1600,
+    "MeltingPoint_K": 600
+  }
+}

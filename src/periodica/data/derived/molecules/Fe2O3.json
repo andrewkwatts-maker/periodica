@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 160,
+  "Charge_e": 0,
+  "Composition": {
+    "Fe": 2,
+    "O": 3
+  },
+  "Constituents": [
+    {
+      "Count": 2,
+      "Resolved": "Fe",
+      "Symbol": "Fe"
+    },
+    {
+      "Count": 3,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 76,
+  "Mass_MeVc2": 150271.00994403998,
+  "Mass_amu": 161.3225564760849,
+  "Mass_kg": 0,
+  "Name": "Fe2O3"
+}

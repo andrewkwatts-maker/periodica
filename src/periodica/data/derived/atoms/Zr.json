@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 90,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 40,
+    "N": 50,
+    "P": 40
+  },
+  "Constituents": [
+    {
+      "Count": 40,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 50,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 40,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 40,
+  "Mass_MeVc2": 84529.5945104,
+  "Mass_amu": 90.7462476587026,
+  "Mass_kg": 0,
+  "Name": "Zr",
+  "Symbol": "Zr"
+}

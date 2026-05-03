@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 108,
+  "Charge_e": 1,
+  "Composition": {
+    "E": 46,
+    "N": 61,
+    "P": 47
+  },
+  "Constituents": [
+    {
+      "Count": 47,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 61,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 46,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 46,
+  "Mass_MeVc2": 101435.78474694,
+  "Mass_amu": 108.89578847995399,
+  "Mass_kg": 0,
+  "Name": "Ag+"
+}

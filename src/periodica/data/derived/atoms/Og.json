@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 294,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 118,
+    "N": 176,
+    "P": 118
+  },
+  "Constituents": [
+    {
+      "Count": 118,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 176,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 118,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 118,
+  "Mass_MeVc2": 276139.9182905,
+  "Mass_amu": 296.44838069774767,
+  "Mass_kg": 0,
+  "Name": "Og",
+  "Symbol": "Og"
+}

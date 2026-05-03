@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 39,
+  "Charge_e": 1,
+  "Composition": {
+    "E": 18,
+    "N": 20,
+    "P": 19
+  },
+  "Constituents": [
+    {
+      "Count": 19,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 20,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 18,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 18,
+  "Mass_MeVc2": 36627.67606654,
+  "Mass_amu": 39.32142562316217,
+  "Mass_kg": 0,
+  "Name": "K+"
+}

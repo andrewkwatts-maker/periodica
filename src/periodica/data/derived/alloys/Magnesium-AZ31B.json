@@ -1,0 +1,44 @@
+{
+  "BaryonNumber_B": 24.49,
+  "Charge_e": 0,
+  "Composition": {
+    "Al": 0.03,
+    "Mg": 0.96,
+    "Zn": 0.01
+  },
+  "Constituents": [
+    {
+      "Count": 0.96,
+      "Resolved": "Mg",
+      "Symbol": "Mg"
+    },
+    {
+      "Count": 0.03,
+      "Resolved": "Al",
+      "Symbol": "Al"
+    },
+    {
+      "Count": 0.01,
+      "Resolved": "Zn",
+      "Symbol": "Zn"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 12.21,
+  "Mass_MeVc2": 23000.4048575987,
+  "Mass_amu": 24.691948985998096,
+  "Mass_kg": 0,
+  "Name": "Magnesium-AZ31B",
+  "Properties": {
+    "Density_kgm3": 1770,
+    "MeltingPoint_K": 905,
+    "PoissonsRatio": 0.35,
+    "ShearModulus_GPa": 17,
+    "TensileStrength_MPa": 260,
+    "ThermalConductivity_WmK": 96,
+    "YieldStrength_MPa": 200,
+    "YoungsModulus_GPa": 45
+  }
+}

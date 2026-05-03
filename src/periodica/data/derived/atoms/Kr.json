@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 84,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 36,
+    "N": 48,
+    "P": 36
+  },
+  "Constituents": [
+    {
+      "Count": 36,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 48,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 36,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 36,
+  "Mass_MeVc2": 78895.33132092,
+  "Mass_amu": 84.69761764068235,
+  "Mass_kg": 0,
+  "Name": "Kr",
+  "Symbol": "Kr"
+}

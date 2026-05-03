@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 304,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 4,
+    "Pb": 1,
+    "S": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Pb",
+      "Symbol": "Pb"
+    },
+    {
+      "Count": 1,
+      "Resolved": "S",
+      "Symbol": "S"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 130,
+  "Mass_MeVc2": 285526.18449477997,
+  "Mass_amu": 306.52495142420844,
+  "Mass_kg": 0,
+  "Name": "PbSO4"
+}

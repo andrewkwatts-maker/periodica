@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 294,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 117,
+    "N": 177,
+    "P": 117
+  },
+  "Constituents": [
+    {
+      "Count": 117,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 177,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 117,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 117,
+  "Mass_MeVc2": 276140.70062391,
+  "Mass_amu": 296.44922056716763,
+  "Mass_kg": 0,
+  "Name": "Ts",
+  "Symbol": "Ts"
+}

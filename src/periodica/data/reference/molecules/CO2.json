@@ -1,0 +1,8 @@
+{
+  "Name": "Carbon Dioxide",
+  "Symbol": "CO2",
+  "Composition": { "C": 1, "O": 2 },
+  "Charge_e": 0,
+  "Mass_amu": 44.009,
+  "source": "IUPAC standard atomic weights"
+}

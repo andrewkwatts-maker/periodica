@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 285,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 112,
+    "N": 173,
+    "P": 112
+  },
+  "Constituents": [
+    {
+      "Count": 112,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 173,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 112,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 112,
+  "Mass_MeVc2": 267688.52350628,
+  "Mass_amu": 287.3754356707173,
+  "Mass_kg": 0,
+  "Name": "Cn",
+  "Symbol": "Cn"
+}

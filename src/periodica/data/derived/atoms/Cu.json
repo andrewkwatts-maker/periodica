@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 63,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 29,
+    "N": 34,
+    "P": 29
+  },
+  "Constituents": [
+    {
+      "Count": 29,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 34,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 29,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 29,
+  "Mass_MeVc2": 59169.93382386999,
+  "Mass_amu": 63.52153349167189,
+  "Mass_kg": 0,
+  "Name": "Cu",
+  "Symbol": "Cu"
+}

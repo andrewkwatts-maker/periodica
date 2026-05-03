@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 65,
+  "Charge_e": 2,
+  "Composition": {
+    "E": 28,
+    "N": 35,
+    "P": 30
+  },
+  "Constituents": [
+    {
+      "Count": 30,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 35,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 28,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 28,
+  "Mass_MeVc2": 61047.2603336,
+  "Mass_amu": 65.53692629433382,
+  "Mass_kg": 0,
+  "Name": "Zn2+"
+}

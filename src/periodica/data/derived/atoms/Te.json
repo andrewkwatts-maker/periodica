@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 130,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 52,
+    "N": 78,
+    "P": 52
+  },
+  "Constituents": [
+    {
+      "Count": 52,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 78,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 52,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 52,
+  "Mass_MeVc2": 122102.82333027999,
+  "Mass_amu": 131.08276586366338,
+  "Mass_kg": 0,
+  "Name": "Te",
+  "Symbol": "Te"
+}

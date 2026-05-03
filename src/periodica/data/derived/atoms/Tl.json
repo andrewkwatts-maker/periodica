@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 205,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 81,
+    "N": 124,
+    "P": 81
+  },
+  "Constituents": [
+    {
+      "Count": 81,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 124,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 81,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 81,
+  "Mass_MeVc2": 192547.54220039,
+  "Mass_amu": 206.70827834673528,
+  "Mass_kg": 0,
+  "Name": "Tl",
+  "Symbol": "Tl"
+}

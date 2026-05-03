@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 259,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 102,
+    "N": 157,
+    "P": 102
+  },
+  "Constituents": [
+    {
+      "Count": 102,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 157,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 102,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 102,
+  "Mass_MeVc2": 243267.64590685998,
+  "Mass_amu": 261.1585465502166,
+  "Mass_kg": 0,
+  "Name": "No",
+  "Symbol": "No"
+}

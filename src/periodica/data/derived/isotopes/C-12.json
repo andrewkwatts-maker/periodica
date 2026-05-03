@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 12,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 6,
+    "N": 6,
+    "P": 6
+  },
+  "Constituents": [
+    {
+      "Count": 6,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 6,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 6,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 6,
+  "Mass_MeVc2": 11270.09104578,
+  "Mass_amu": 12.09893977488039,
+  "Mass_kg": 0,
+  "Name": "C-12"
+}

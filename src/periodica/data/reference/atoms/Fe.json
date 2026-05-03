@@ -1,0 +1,9 @@
+{
+  "Name": "Iron",
+  "Symbol": "Fe",
+  "AtomicNumber": 26,
+  "Charge_e": 0,
+  "Mass_amu": 55.845,
+  "MostAbundantIsotope": { "MassNumber": 56, "Neutrons": 30, "Abundance": 91.754 },
+  "source": "IUPAC 2021"
+}

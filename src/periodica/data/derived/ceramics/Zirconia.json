@@ -1,0 +1,39 @@
+{
+  "BaryonNumber_B": 122,
+  "Charge_e": 0,
+  "Composition": {
+    "O": 2,
+    "Zr": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Zr",
+      "Symbol": "Zr"
+    },
+    {
+      "Count": 2,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "Field": {
+    "model": "homogeneous"
+  },
+  "LeptonNumber_L": 56,
+  "Mass_MeVc2": 114583.17063248,
+  "Mass_amu": 123.01008705838365,
+  "Mass_kg": 0,
+  "Name": "Zirconia",
+  "Properties": {
+    "CompressiveStrength_MPa": 2200,
+    "Density_kgm3": 6050,
+    "FlexuralStrength_MPa": 900,
+    "FractureToughness_MPa_m05": 7.0,
+    "HardnessHV": 1200,
+    "MeltingPoint_K": 2988,
+    "PoissonsRatio": 0.31,
+    "ThermalConductivity_WmK": 2.0,
+    "YoungsModulus_GPa": 200
+  }
+}

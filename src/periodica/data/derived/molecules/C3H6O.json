@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 58,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 3,
+    "H": 6,
+    "O": 1
+  },
+  "Constituents": [
+    {
+      "Count": 3,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 6,
+      "Resolved": "H",
+      "Symbol": "H"
+    },
+    {
+      "Count": 1,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 32,
+  "Mass_MeVc2": 54469.75972104,
+  "Mass_amu": 58.47568930366208,
+  "Mass_kg": 0,
+  "Name": "C3H6O"
+}

@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 11,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 5,
+    "N": 6,
+    "P": 5
+  },
+  "Constituents": [
+    {
+      "Count": 5,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 6,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 5,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 5,
+  "Mass_MeVc2": 10331.30795867,
+  "Mass_amu": 11.091114728350325,
+  "Mass_kg": 0,
+  "Name": "B",
+  "Symbol": "B"
+}

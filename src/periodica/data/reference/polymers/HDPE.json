@@ -1,0 +1,8 @@
+{
+  "Name": "HDPE",
+  "Density_kgm3": 970,
+  "YoungsModulus_GPa": 0.8,
+  "TensileStrength_MPa": 25,
+  "MeltingPoint_K": 408,
+  "source": "MatWeb HDPE typical"
+}

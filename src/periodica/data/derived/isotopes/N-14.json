@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 14,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 7,
+    "N": 7,
+    "P": 7
+  },
+  "Constituents": [
+    {
+      "Count": 7,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 7,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 7,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 7,
+  "Mass_MeVc2": 13148.43955341,
+  "Mass_amu": 14.115429737360454,
+  "Mass_kg": 0,
+  "Name": "N-14"
+}

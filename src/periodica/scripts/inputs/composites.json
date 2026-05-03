@@ -1,0 +1,67 @@
+{
+  "from": "atoms",
+  "tier": "composites",
+  "requires": ["atoms"],
+  "rows": [
+    {
+      "name": "CFRP",
+      "spec": { "C": 0.9, "H": 0.05, "O": 0.05 },
+      "properties": {
+        "Density_kgm3": 1600,
+        "MeltingPoint_K": 600
+      },
+      "field": {
+        "model": "anisotropic_axial",
+        "fiber_direction": [1.0, 0.0, 0.0],
+        "axial":      { "YoungsModulus_GPa": 230, "TensileStrength_MPa": 3500 },
+        "transverse": { "YoungsModulus_GPa": 15,  "TensileStrength_MPa": 50 }
+      }
+    },
+    {
+      "name": "GFRP",
+      "spec": { "Si": 1, "O": 2 },
+      "properties": {
+        "Density_kgm3": 1900
+      },
+      "field": {
+        "model": "anisotropic_axial",
+        "fiber_direction": [1.0, 0.0, 0.0],
+        "axial":      { "YoungsModulus_GPa": 70, "TensileStrength_MPa": 1500 },
+        "transverse": { "YoungsModulus_GPa": 7,  "TensileStrength_MPa": 40 }
+      }
+    },
+    {
+      "name": "AramidFRP",
+      "spec": { "C": 14, "H": 10, "N": 2, "O": 2 },
+      "properties": {
+        "Density_kgm3": 1380
+      },
+      "field": {
+        "model": "anisotropic_axial",
+        "fiber_direction": [1.0, 0.0, 0.0],
+        "axial":      { "YoungsModulus_GPa": 120, "TensileStrength_MPa": 2700 },
+        "transverse": { "YoungsModulus_GPa": 5,   "TensileStrength_MPa": 30 }
+      }
+    },
+    {
+      "name": "Concrete-Mix",
+      "spec": { "Ca": 1, "Si": 1, "O": 4 },
+      "properties": {
+        "Density_kgm3": 2400,
+        "YoungsModulus_GPa": 30,
+        "CompressiveStrength_MPa": 35,
+        "TensileStrength_MPa": 3.5,
+        "ThermalConductivity_WmK": 1.7
+      },
+      "field": {
+        "model": "homogeneous",
+        "macro_scale_m": 1e-2,
+        "scale_dependent": {
+          "cement_paste": { "fraction": 0.25, "YoungsModulus_GPa": 25 },
+          "aggregate":    { "fraction": 0.70, "YoungsModulus_GPa": 60 },
+          "voids":        { "fraction": 0.05, "YoungsModulus_GPa": 0 }
+        }
+      }
+    }
+  ]
+}

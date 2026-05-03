@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 252,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 99,
+    "N": 153,
+    "P": 99
+  },
+  "Constituents": [
+    {
+      "Count": 99,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 153,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 99,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 99,
+  "Mass_MeVc2": 236693.03496345,
+  "Mass_amu": 254.10041174682644,
+  "Mass_kg": 0,
+  "Name": "Es",
+  "Symbol": "Es"
+}

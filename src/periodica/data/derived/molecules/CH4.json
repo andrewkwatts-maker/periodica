@@ -1,0 +1,25 @@
+{
+  "BaryonNumber_B": 16,
+  "Charge_e": 0,
+  "Composition": {
+    "C": 1,
+    "H": 4
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "C",
+      "Symbol": "C"
+    },
+    {
+      "Count": 4,
+      "Resolved": "H",
+      "Symbol": "H"
+    }
+  ],
+  "LeptonNumber_L": 10,
+  "Mass_MeVc2": 15025.22339422,
+  "Mass_amu": 16.13023996100065,
+  "Mass_kg": 0,
+  "Name": "CH4"
+}

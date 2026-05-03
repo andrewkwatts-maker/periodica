@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 159,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 65,
+    "N": 94,
+    "P": 65
+  },
+  "Constituents": [
+    {
+      "Count": 65,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 94,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 65,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 65,
+  "Mass_MeVc2": 149340.05019103,
+  "Mass_amu": 160.32313012375423,
+  "Mass_kg": 0,
+  "Name": "Tb",
+  "Symbol": "Tb"
+}

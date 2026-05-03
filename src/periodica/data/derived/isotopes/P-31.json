@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 31,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 15,
+    "N": 16,
+    "P": 15
+  },
+  "Constituents": [
+    {
+      "Count": 15,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 16,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 15,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 15,
+  "Mass_MeVc2": 29114.79303497,
+  "Mass_amu": 31.256014353150974,
+  "Mass_kg": 0,
+  "Name": "P-31"
+}

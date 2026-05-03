@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 165,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 67,
+    "N": 98,
+    "P": 67
+  },
+  "Constituents": [
+    {
+      "Count": 67,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 98,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 67,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 67,
+  "Mass_MeVc2": 154975.87804733,
+  "Mass_amu": 166.37343988061437,
+  "Mass_kg": 0,
+  "Name": "Ho",
+  "Symbol": "Ho"
+}

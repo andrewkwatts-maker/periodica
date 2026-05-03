@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 195,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 78,
+    "N": 117,
+    "P": 78
+  },
+  "Constituents": [
+    {
+      "Count": 78,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 117,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 78,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 78,
+  "Mass_MeVc2": 183154.23499542,
+  "Mass_amu": 196.62414879549505,
+  "Mass_kg": 0,
+  "Name": "Pt",
+  "Symbol": "Pt"
+}

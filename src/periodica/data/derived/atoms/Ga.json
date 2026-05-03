@@ -1,0 +1,32 @@
+{
+  "BaryonNumber_B": 69,
+  "Charge_e": 0,
+  "Composition": {
+    "E": 31,
+    "N": 38,
+    "P": 31
+  },
+  "Constituents": [
+    {
+      "Count": 31,
+      "Resolved": "Proton",
+      "Symbol": "P"
+    },
+    {
+      "Count": 38,
+      "Resolved": "Neutron",
+      "Symbol": "N"
+    },
+    {
+      "Count": 31,
+      "Resolved": "Electron",
+      "Symbol": "E"
+    }
+  ],
+  "LeptonNumber_L": 31,
+  "Mass_MeVc2": 64805.76168017,
+  "Mass_amu": 69.57184324853202,
+  "Mass_kg": 0,
+  "Name": "Ga",
+  "Symbol": "Ga"
+}

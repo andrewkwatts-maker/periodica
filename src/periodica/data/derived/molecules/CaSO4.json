@@ -1,0 +1,31 @@
+{
+  "BaryonNumber_B": 136,
+  "Charge_e": 0,
+  "Composition": {
+    "Ca": 1,
+    "O": 4,
+    "S": 1
+  },
+  "Constituents": [
+    {
+      "Count": 1,
+      "Resolved": "Ca",
+      "Symbol": "Ca"
+    },
+    {
+      "Count": 1,
+      "Resolved": "S",
+      "Symbol": "S"
+    },
+    {
+      "Count": 4,
+      "Resolved": "O",
+      "Symbol": "O"
+    }
+  ],
+  "LeptonNumber_L": 68,
+  "Mass_MeVc2": 127727.69851884,
+  "Mass_amu": 137.1213174486444,
+  "Mass_kg": 0,
+  "Name": "CaSO4"
+}
