@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "periodica"
-version = "1.4.0"
+version = "2.0.0a0"
 description = "Data-driven scientific computation: particle/nuclear/atomic/molecular physics, materials, alloys, polymers, ceramics, composites, proteins. Generic Get()/Save()/sample() composer + 3D microstructure export (STL/OBJ/VTK/SDF/HLSL) + AlphaFold-validated protein folding."
 readme = "README.md"
 requires-python = ">=3.10"
