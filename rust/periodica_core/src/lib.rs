@@ -85,7 +85,7 @@ mod tests {
     fn version_is_published() {
         assert!(!PERIODICA_CORE_VERSION.is_empty());
         // Major version must agree with the Python package on PyPI.
-        assert!(PERIODICA_CORE_VERSION.starts_with('1'));
+        assert!(PERIODICA_CORE_VERSION.starts_with('2'));
     }
 
     #[test]
