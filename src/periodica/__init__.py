@@ -1,4 +1,4 @@
-"""
+﻿"""
 Periodica -- Scientific computation library.
 
 Covers particle physics, nuclear physics, atomic chemistry, molecular chemistry,
@@ -35,7 +35,24 @@ Core enums::
 
 __version__ = "1.1.0"
 
-# ── Generic composition + named registry (primary API) ─────────────────
+# â”€â”€â”€ Optional Rust acceleration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# The Rust core (``periodica._periodica_core``, built from
+# ``rust/periodica_core/`` via maturin) is strictly opt-in â€” see the
+# ``[rust]`` extra in ``pyproject.toml`` and the ``with-arithmos`` /
+# ``with-physica`` feature flags. PyPI consumers without a Rust toolchain
+# fall back to the pure-Python implementations transparently. Engine
+# consumers that vendor periodica via git submodule see this flag flip to
+# True and gain the deterministic Rust path automatically.
+_HAS_RUST = False
+try:
+    from periodica._periodica_core import (  # type: ignore[import-not-found]
+        Get as _Get_Rust,  # noqa: F401  (made available to the dispatcher below)
+    )
+    _HAS_RUST = True
+except ImportError:
+    pass
+
+# â”€â”€ Generic composition + named registry (primary API) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 from periodica.get import (
     Get,
     Save,
@@ -79,11 +96,11 @@ from periodica.export import (
     export_hlsl,
 )
 
-# ── Constants & data manager (no hardcoded chemistry) ──────────────────
+# â”€â”€ Constants & data manager (no hardcoded chemistry) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 from periodica.utils.physics_calculator import PhysicsConstants
 from periodica.data.data_manager import DataManager, DataCategory
 
-# ── Core enums (descriptive metadata, no behaviour) ─────────────────────
+# â”€â”€ Core enums (descriptive metadata, no behaviour) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 from periodica.core.pt_enums import PTPropertyName, PTLayoutMode
 from periodica.core.molecule_enums import (
     MoleculeLayoutMode, BondType, MoleculeCategory,

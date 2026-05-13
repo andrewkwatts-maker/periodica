@@ -1,4 +1,4 @@
-[build-system]
+﻿[build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
@@ -68,6 +68,13 @@ full = [
 simulated = [
     "metaphysica>=1.3.1",
 ]
+# `rust` extra enables the maturin-built `periodica._periodica_core` extension
+# module. Without this extra, periodica is pure Python (default) and the
+# ``_HAS_RUST`` flag in ``__init__.py`` stays False. With it, ``pip install
+# periodica[rust]`` triggers the maturin build and the Rust core ships
+# alongside the Python package. See ``rust/periodica_core/Cargo.toml`` for the
+# crate's own feature flags (``with-arithmos``, ``with-physica``).
+rust = ["maturin>=1.7,<2.0"]
 test = [
     "pytest>=7.0.0",
     "pytest-html>=4.0.0",
@@ -76,6 +83,17 @@ test = [
     "build>=1.0",
 ]
 docs = ["pdoc>=14.0.0"]
+
+# â”€â”€ Optional Rust acceleration (maturin) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Configuration is loaded only when maturin is the active build backend
+# (``pip install periodica[rust]`` or ``maturin develop --features python``).
+# The default setuptools build ignores this section. Mirrors metaphysica's
+# pattern for a unified ``rust = ["maturin"]`` opt-in across our PyPI libs.
+[tool.maturin]
+manifest-path = "rust/periodica_core/Cargo.toml"
+module-name = "periodica._periodica_core"
+features = ["python"]
+python-source = "src"
 
 [tool.setuptools.packages.find]
 where = ["src"]
