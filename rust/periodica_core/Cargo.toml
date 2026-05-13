@@ -1,0 +1,44 @@
+﻿[package]
+name = "periodica_core"
+version = "1.3.1"
+edition = "2021"
+description = "Periodica core: data-driven scientific composition, sampling, predictors, alloy and protein engines, shader export, Fourier baking."
+license = "MIT"
+authors = ["Andrew Keith Watts <AndrewKWatts@gmail.com>"]
+repository = "https://github.com/andrewkwatts-maker/periodica"
+
+[lib]
+name = "periodica_core"
+crate-type = ["cdylib", "lib"]
+
+[features]
+default = []
+python = ["pyo3"]
+with-arithmos = ["arithmos_core"]
+with-physica = ["physica_core"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+ndarray = "0.16"
+dashmap = "5.5"
+rayon = "1.10"
+once_cell = "1.19"
+parking_lot = "0.12"
+anyhow = "1.0"
+thiserror = "1.0"
+pyo3 = { version = "0.22", features = ["extension-module"], optional = true }
+arithmos_core = { path = "../../../Arithmos/rust/arithmos_core", optional = true }
+physica_core = { path = "../../../metaphysica/rust/physica_core", optional = true }
+
+# NOTE: ndarray-linalg with openblas-static is heavy and frequently fails on
+# Windows; deferring SVD-dependent features (kabsch_rmsd) until a portable
+# linear-algebra backend is selected. See `protein.rs` TODO.
+
+[dev-dependencies]
+tempfile = "3.8"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
