@@ -42,7 +42,9 @@ import hashlib
 import math
 from typing import Any, Callable, Dict, Mapping, Optional, Sequence, Tuple, Union
 
+# Rust impl: rust/periodica_core/src/sample.rs
 from periodica.get import Get, UnknownName
+from periodica._dispatch import _HAS_RUST, _native
 
 
 Point = Tuple[float, float, float]
@@ -281,6 +283,13 @@ def data_sheet(name_or_entry: Union[str, dict]) -> dict:
     Accepts either a name (resolved via Get) or a pre-fetched entry dict.
     Raises UnknownName when the name doesn't resolve.
     """
+    if isinstance(name_or_entry, str) and _HAS_RUST and _native is not None:
+        fn = getattr(_native, "py_data_sheet", None)
+        if fn is not None:
+            try:
+                return fn(name_or_entry)
+            except Exception:
+                pass  # Fall through to Python path below.
     if isinstance(name_or_entry, str):
         entry = Get(name_or_entry)
     elif isinstance(name_or_entry, dict):
@@ -309,6 +318,15 @@ def sample(
     For homogeneous materials with no `scale_dependent` block, `at` and
     `scale_m` are ignored - the bulk value is returned.
     """
+    # Rust fast path for string-name + scalar properties.
+    if isinstance(name_or_entry, str) and _HAS_RUST and _native is not None:
+        fn = getattr(_native, "py_sample", None)
+        if fn is not None:
+            at_tuple = tuple(float(c) for c in at) if at is not None else None
+            try:
+                return fn(name_or_entry, prop, at_tuple, scale_m)
+            except Exception:
+                pass  # Fall through to Python path below.
     if isinstance(name_or_entry, str):
         entry = Get(name_or_entry)
     elif isinstance(name_or_entry, dict):
