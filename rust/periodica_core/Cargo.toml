@@ -27,13 +27,13 @@ once_cell = "1.19"
 parking_lot = "0.12"
 anyhow = "1.0"
 thiserror = "1.0"
+# Pure-Rust linear algebra — used for Kabsch SVD in protein.rs (no OpenBLAS required).
+nalgebra = "0.33"
+# Seeded RNG for deterministic alloy composition search.
+rand = { version = "0.8", features = ["small_rng"] }
 pyo3 = { version = "0.22", features = ["extension-module"], optional = true }
 arithmos_core = { path = "../../../Arithmos/rust/arithmos_core", optional = true }
 physica_core = { path = "../../../metaphysica/rust/physica_core", optional = true }
-
-# NOTE: ndarray-linalg with openblas-static is heavy and frequently fails on
-# Windows; deferring SVD-dependent features (kabsch_rmsd) until a portable
-# linear-algebra backend is selected. See `protein.rs` TODO.
 
 [dev-dependencies]
 tempfile = "3.8"

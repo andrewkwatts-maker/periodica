@@ -157,6 +157,267 @@ fn py_export_glsl(
         .map_err(|e| PyValueError::new_err(e.to_string()))
 }
 
+// ─── protein functions ────────────────────────────────────────────────────────
+
+/// Compute Kabsch RMSD (Å) between two Nx3 point sets.
+/// `a` and `b` are Python lists of [x, y, z] triples.
+#[pyfunction]
+fn py_kabsch_rmsd(a: Vec<Vec<f64>>, b: Vec<Vec<f64>>) -> PyResult<f64> {
+    use ndarray::Array2;
+    if a.is_empty() || b.is_empty() {
+        return Ok(0.0);
+    }
+    let n = a.len();
+    if n != b.len() {
+        return Err(pyo3::exceptions::PyValueError::new_err("a and b must have same length"));
+    }
+    let mut arr_a = Array2::<f64>::zeros((n, 3));
+    let mut arr_b = Array2::<f64>::zeros((n, 3));
+    for (i, row) in a.iter().enumerate() {
+        if row.len() < 3 { return Err(pyo3::exceptions::PyValueError::new_err("each row must have 3 elements")); }
+        arr_a[[i, 0]] = row[0]; arr_a[[i, 1]] = row[1]; arr_a[[i, 2]] = row[2];
+    }
+    for (i, row) in b.iter().enumerate() {
+        if row.len() < 3 { return Err(pyo3::exceptions::PyValueError::new_err("each row must have 3 elements")); }
+        arr_b[[i, 0]] = row[0]; arr_b[[i, 1]] = row[1]; arr_b[[i, 2]] = row[2];
+    }
+    crate::protein::kabsch_rmsd(&arr_a, &arr_b)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))
+}
+
+/// Build a protein Cα backbone from phi/psi angles.
+/// `sequence` — 1-letter amino acid codes. `phi_psi_deg` — list of (phi, psi) in degrees.
+/// Returns list of dicts: {name, res_idx, x, y, z}.
+#[pyfunction]
+fn py_build_backbone(
+    py: Python<'_>,
+    sequence: &str,
+    phi_psi_deg: Vec<(f64, f64)>,
+) -> PyResult<PyObject> {
+    let atoms = crate::protein::build_backbone(sequence, &phi_psi_deg)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
+    let list = pyo3::types::PyList::empty_bound(py);
+    for a in &atoms {
+        let d = pyo3::types::PyDict::new_bound(py);
+        d.set_item("name", &a.name)?;
+        d.set_item("res_idx", a.res_idx)?;
+        d.set_item("x", a.position[0])?;
+        d.set_item("y", a.position[1])?;
+        d.set_item("z", a.position[2])?;
+        list.append(&d)?;
+    }
+    Ok(list.into())
+}
+
+/// Build backbone from a periodica protein datasheet entry name.
+#[pyfunction]
+fn py_build_backbone_from_entry(py: Python<'_>, entry_name: &str) -> PyResult<PyObject> {
+    let atoms = crate::protein::build_backbone_from_entry(entry_name)
+        .map_err(|e| pyo3::exceptions::PyKeyError::new_err(e.to_string()))?;
+    let list = pyo3::types::PyList::empty_bound(py);
+    for a in &atoms {
+        let d = pyo3::types::PyDict::new_bound(py);
+        d.set_item("name", &a.name)?;
+        d.set_item("res_idx", a.res_idx)?;
+        d.set_item("x", a.position[0])?;
+        d.set_item("y", a.position[1])?;
+        d.set_item("z", a.position[2])?;
+        list.append(&d)?;
+    }
+    Ok(list.into())
+}
+
+/// Classify (phi_deg, psi_deg) into Ramachandran region.
+/// Returns a string: "alpha_helix", "beta_sheet", "left_alpha", "polyproline_ii", or "other".
+#[pyfunction]
+fn py_ramachandran_region(phi_deg: f64, psi_deg: f64) -> &'static str {
+    use crate::protein::{PhiPsi, RamachandranRegion};
+    match crate::protein::ramachandran_region(PhiPsi { phi: phi_deg, psi: psi_deg }) {
+        RamachandranRegion::AlphaHelix    => "alpha_helix",
+        RamachandranRegion::BetaSheet     => "beta_sheet",
+        RamachandranRegion::LeftAlpha     => "left_alpha",
+        RamachandranRegion::PolyprolineII => "polyproline_ii",
+        RamachandranRegion::Other         => "other",
+    }
+}
+
+// ─── alloy functions ─────────────────────────────────────────────────────────
+
+/// Rust-accelerated `periodica.optimize.optimize_alloy`.
+///
+/// `targets` — list of dicts with keys: property (str), min_value (float|None),
+///   max_value (float|None), weight (float).
+/// Returns list of dicts: {composition, estimated_properties, score}.
+#[pyfunction]
+#[pyo3(signature = (targets, base, alloying_pool=None, n_candidates=1000, top_k=5, seed=None))]
+fn py_optimize_alloy(
+    py: Python<'_>,
+    targets: Vec<pyo3::Bound<'_, pyo3::types::PyDict>>,
+    base: &str,
+    alloying_pool: Option<Vec<String>>,
+    n_candidates: usize,
+    top_k: usize,
+    seed: Option<u64>,
+) -> PyResult<PyObject> {
+    use crate::alloy::AlloyTarget;
+
+    let rust_targets: Vec<AlloyTarget> = targets.iter().map(|d| {
+        let property: String = d.get_item("property")
+            .ok().flatten()
+            .and_then(|v| v.extract::<String>().ok())
+            .unwrap_or_default();
+        let min_value: Option<f64> = d.get_item("min_value")
+            .ok().flatten()
+            .and_then(|v| v.extract::<f64>().ok());
+        let max_value: Option<f64> = d.get_item("max_value")
+            .ok().flatten()
+            .and_then(|v| v.extract::<f64>().ok());
+        let weight: f64 = d.get_item("weight")
+            .ok().flatten()
+            .and_then(|v| v.extract::<f64>().ok())
+            .unwrap_or(1.0);
+        AlloyTarget { property, min_value, max_value, weight }
+    }).collect();
+
+    let pool = alloying_pool.unwrap_or_default();
+    let results = crate::alloy::optimize_alloy(&rust_targets, base, &pool, n_candidates, top_k, seed)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
+
+    let list = pyo3::types::PyList::empty_bound(py);
+    for c in &results {
+        let d = pyo3::types::PyDict::new_bound(py);
+        let comp = pyo3::types::PyDict::new_bound(py);
+        for (k, v) in &c.composition { comp.set_item(k, v)?; }
+        let props = pyo3::types::PyDict::new_bound(py);
+        for (k, v) in &c.estimated_properties { props.set_item(k, v)?; }
+        d.set_item("composition", &comp)?;
+        d.set_item("estimated_properties", &props)?;
+        d.set_item("score", c.score)?;
+        list.append(&d)?;
+    }
+    Ok(list.into())
+}
+
+// ─── export functions ─────────────────────────────────────────────────────────
+
+/// Write an HLSL shader file for the named material. Returns the output path.
+#[pyfunction]
+#[pyo3(signature = (name, out_path, properties=None))]
+fn py_export_hlsl(name: &str, out_path: &str, properties: Option<Vec<String>>) -> PyResult<String> {
+    let path = std::path::Path::new(out_path);
+    crate::export::export_hlsl(name, path, properties.as_deref())
+        .map(|p| p.to_string_lossy().to_string())
+        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+}
+
+/// Write a raw float32 SDF voxel volume + JSON sidecar. Returns output path.
+#[pyfunction]
+#[pyo3(signature = (name, out_path, bounds, voxel_size, scale_m=None, mode="phase"))]
+fn py_export_sdf_raw(
+    name: &str,
+    out_path: &str,
+    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    voxel_size: f64,
+    scale_m: Option<f64>,
+    mode: &str,
+) -> PyResult<String> {
+    let (lo, hi) = bounds;
+    let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
+    crate::export::export_sdf_raw(name, std::path::Path::new(out_path), b, voxel_size, scale_m, mode)
+        .map(|p| p.to_string_lossy().to_string())
+        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+}
+
+/// Write an ASCII VTK STRUCTURED_POINTS file. Returns output path.
+#[pyfunction]
+#[pyo3(signature = (name, out_path, bounds, voxel_size, properties=None, scale_m=None))]
+fn py_export_vtk_legacy(
+    name: &str,
+    out_path: &str,
+    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    voxel_size: f64,
+    properties: Option<Vec<String>>,
+    scale_m: Option<f64>,
+) -> PyResult<String> {
+    let (lo, hi) = bounds;
+    let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
+    let props = properties.unwrap_or_default();
+    crate::export::export_vtk_legacy(name, std::path::Path::new(out_path), b, voxel_size, &props, scale_m)
+        .map(|p| p.to_string_lossy().to_string())
+        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+}
+
+/// Write a binary or ASCII STL surface mesh. Returns output path.
+#[pyfunction]
+#[pyo3(signature = (name, out_path, bounds, voxel_size, scale_m=None, binary=true))]
+fn py_export_stl(
+    name: &str,
+    out_path: &str,
+    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    voxel_size: f64,
+    scale_m: Option<f64>,
+    binary: bool,
+) -> PyResult<String> {
+    let (lo, hi) = bounds;
+    let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
+    crate::export::export_stl(name, std::path::Path::new(out_path), b, voxel_size, scale_m, binary)
+        .map(|p| p.to_string_lossy().to_string())
+        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+}
+
+/// Write OBJ + MTL files. Returns (obj_path, mtl_path).
+#[pyfunction]
+#[pyo3(signature = (name, obj_path, bounds, voxel_size, scale_m=None))]
+fn py_export_obj(
+    name: &str,
+    obj_path: &str,
+    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    voxel_size: f64,
+    scale_m: Option<f64>,
+) -> PyResult<(String, String)> {
+    let (lo, hi) = bounds;
+    let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
+    crate::export::export_obj(name, std::path::Path::new(obj_path), b, voxel_size, scale_m)
+        .map(|(o, m)| (o.to_string_lossy().to_string(), m.to_string_lossy().to_string()))
+        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+}
+
+// ─── fourier bake ─────────────────────────────────────────────────────────────
+
+/// Bake a material property into a Fourier expansion.
+/// Returns a dict: {property_name, base_value, domain_size_m, coefficients, boundary_condition}
+/// where coefficients is a list of {n, m, l, amplitude, phase}.
+#[pyfunction]
+#[pyo3(signature = (entry_name, property, bounds, grid_size, truncate_threshold=0.01))]
+fn py_bake_fourier(
+    py: Python<'_>,
+    entry_name: &str,
+    property: &str,
+    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    grid_size: (usize, usize, usize),
+    truncate_threshold: f64,
+) -> PyResult<PyObject> {
+    let cfg = crate::fourier_bake::bake_fourier(entry_name, property, bounds, grid_size, truncate_threshold)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
+
+    let coeffs = pyo3::types::PyList::empty_bound(py);
+    for c in &cfg.coefficients {
+        let d = pyo3::types::PyDict::new_bound(py);
+        d.set_item("n", c.n)?; d.set_item("m", c.m)?; d.set_item("l", c.l)?;
+        d.set_item("amplitude", c.amplitude)?; d.set_item("phase", c.phase)?;
+        coeffs.append(&d)?;
+    }
+    let out = pyo3::types::PyDict::new_bound(py);
+    out.set_item("property_name", &cfg.property_name)?;
+    out.set_item("base_value", cfg.base_value)?;
+    out.set_item("domain_size_m", vec![cfg.domain_size_m.0, cfg.domain_size_m.1, cfg.domain_size_m.2])?;
+    out.set_item("coefficients", &coeffs)?;
+    out.set_item("boundary_condition", &cfg.boundary_condition)?;
+    Ok(out.into())
+}
+
+// ─── sentinels ────────────────────────────────────────────────────────────────
+
 /// Sentinel that the Python facade can probe to confirm the Rust backend
 /// loaded successfully.
 #[pyfunction]
@@ -207,6 +468,22 @@ fn _periodica_core(py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(py_data_sheet, m)?)?;
     m.add_function(wrap_pyfunction!(py_list_tiers, m)?)?;
     m.add_function(wrap_pyfunction!(py_export_glsl, m)?)?;
+    // protein
+    m.add_function(wrap_pyfunction!(py_kabsch_rmsd, m)?)?;
+    m.add_function(wrap_pyfunction!(py_build_backbone, m)?)?;
+    m.add_function(wrap_pyfunction!(py_build_backbone_from_entry, m)?)?;
+    m.add_function(wrap_pyfunction!(py_ramachandran_region, m)?)?;
+    // alloy
+    m.add_function(wrap_pyfunction!(py_optimize_alloy, m)?)?;
+    // export
+    m.add_function(wrap_pyfunction!(py_export_hlsl, m)?)?;
+    m.add_function(wrap_pyfunction!(py_export_sdf_raw, m)?)?;
+    m.add_function(wrap_pyfunction!(py_export_vtk_legacy, m)?)?;
+    m.add_function(wrap_pyfunction!(py_export_stl, m)?)?;
+    m.add_function(wrap_pyfunction!(py_export_obj, m)?)?;
+    // fourier
+    m.add_function(wrap_pyfunction!(py_bake_fourier, m)?)?;
+    // sentinels
     m.add_function(wrap_pyfunction!(is_rust_backend, m)?)?;
     m.add_function(wrap_pyfunction!(version_rust, m)?)?;
     m.add("__version__", crate::PERIODICA_CORE_VERSION)?;

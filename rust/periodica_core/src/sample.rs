@@ -256,6 +256,135 @@ fn fxhash_cell(x: i64, y: i64, z: i64) -> u64 {
     h
 }
 
+// ─── Voxel-grid functions ─────────────────────────────────────────────────
+
+/// Bounds as `((x_lo, y_lo, z_lo), (x_hi, y_hi, z_hi))` in metres.
+pub type Bounds = ([f64; 3], [f64; 3]);
+
+/// Grid of integer phase indices: -1 = unset/outside, ≥0 = phase index.
+/// Indexing: `grid[ix][iy][iz]`.
+pub struct VoxelGrid {
+    pub data: Vec<Vec<Vec<i32>>>,
+    pub phase_names: Vec<String>,
+    pub nx: usize,
+    pub ny: usize,
+    pub nz: usize,
+}
+
+/// Evaluate property at each voxel centre and return a 3-D float grid.
+/// Indexing mirrors `VoxelGrid`: `[ix][iy][iz]`.
+pub struct PropertyGrid {
+    pub data: Vec<Vec<Vec<f64>>>,
+    pub nx: usize,
+    pub ny: usize,
+    pub nz: usize,
+}
+
+/// Build a phase-index voxel grid by sampling the named entry at each voxel.
+/// Mirrors `periodica.export.voxel_phase_map`.
+pub fn voxel_phase_map(
+    name: &str,
+    bounds: Bounds,
+    voxel_size: f64,
+    scale_m: Option<f64>,
+) -> Result<VoxelGrid> {
+    assert!(!name.is_empty(), "voxel_phase_map: name must be non-empty");
+    assert!(voxel_size > 0.0, "voxel_phase_map: voxel_size must be positive");
+    ensure_default_models_registered();
+
+    let entry = lookup_entry(name)?;
+    let (lo, hi) = bounds;
+    let nx = (((hi[0] - lo[0]) / voxel_size).ceil() as usize).max(1);
+    let ny = (((hi[1] - lo[1]) / voxel_size).ceil() as usize).max(1);
+    let nz = (((hi[2] - lo[2]) / voxel_size).ceil() as usize).max(1);
+    let eff_scale = scale_m.unwrap_or(voxel_size);
+
+    // Collect phase names from entry (if any)
+    let mut phase_names: Vec<String> = {
+        if let Some(fracs) = entry.get("phase_volume_fractions").and_then(Value::as_object) {
+            let mut names: Vec<String> = fracs.keys().cloned().collect();
+            names.sort();
+            names
+        } else {
+            vec![name.to_string()]
+        }
+    };
+
+    // Build phase-name → index map
+    let phase_idx: std::collections::HashMap<String, i32> = phase_names
+        .iter()
+        .enumerate()
+        .map(|(i, n)| (n.clone(), i as i32))
+        .collect();
+
+    let model_name = pick_model(&entry, "");
+    let model = FIELD_MODELS.get(&model_name);
+
+    let mut data = vec![vec![vec![0i32; nz]; ny]; nx];
+
+    for ix in 0..nx {
+        let x = lo[0] + (ix as f64 + 0.5) * voxel_size;
+        for iy in 0..ny {
+            let y = lo[1] + (iy as f64 + 0.5) * voxel_size;
+            for iz in 0..nz {
+                let z = lo[2] + (iz as f64 + 0.5) * voxel_size;
+                let at = (x, y, z);
+
+                // Determine phase ID at this voxel
+                let phase_id: i32 = if phase_names.len() == 1 {
+                    0 // single-phase material
+                } else if let Ok(ph) = pick_phase_by_voronoi_hash(&entry, at, eff_scale) {
+                    *phase_idx.get(&ph).unwrap_or(&0)
+                } else {
+                    0
+                };
+                data[ix][iy][iz] = phase_id;
+            }
+        }
+    }
+
+    // If single-phase, ensure the phase name list contains the bulk name
+    if phase_names.is_empty() {
+        phase_names.push(name.to_string());
+    }
+
+    Ok(VoxelGrid { data, phase_names, nx, ny, nz })
+}
+
+/// Sample a scalar property at every voxel centre. Returns a 3-D float grid.
+/// Mirrors `periodica.export.voxel_sample`.
+pub fn voxel_sample(
+    name: &str,
+    property: &str,
+    bounds: Bounds,
+    voxel_size: f64,
+    scale_m: Option<f64>,
+) -> Result<PropertyGrid> {
+    assert!(!name.is_empty(), "voxel_sample: name must be non-empty");
+    assert!(!property.is_empty(), "voxel_sample: property must be non-empty");
+    assert!(voxel_size > 0.0, "voxel_sample: voxel_size must be positive");
+
+    let (lo, hi) = bounds;
+    let nx = (((hi[0] - lo[0]) / voxel_size).ceil() as usize).max(1);
+    let ny = (((hi[1] - lo[1]) / voxel_size).ceil() as usize).max(1);
+    let nz = (((hi[2] - lo[2]) / voxel_size).ceil() as usize).max(1);
+    let eff_scale = scale_m.unwrap_or(voxel_size);
+
+    let mut data = vec![vec![vec![0.0f64; nz]; ny]; nx];
+    for ix in 0..nx {
+        let x = lo[0] + (ix as f64 + 0.5) * voxel_size;
+        for iy in 0..ny {
+            let y = lo[1] + (iy as f64 + 0.5) * voxel_size;
+            for iz in 0..nz {
+                let z = lo[2] + (iz as f64 + 0.5) * voxel_size;
+                let v = sample(name, property, Some((x, y, z)), Some(eff_scale)).unwrap_or(0.0);
+                data[ix][iy][iz] = v;
+            }
+        }
+    }
+    Ok(PropertyGrid { data, nx, ny, nz })
+}
+
 /// One-time registration of the built-in Voronoi model. The library
 /// auto-registers it on the first call to `sample()` so callers don't
 /// need a separate init step.
