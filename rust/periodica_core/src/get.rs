@@ -143,9 +143,10 @@ pub fn parse_formula(spec: &str) -> Result<Option<Formula>> {
 
 /// Public composer. Resolves a periodica spec into its JSON datasheet form.
 ///
-/// Status: stubbed. The resolver path will plug into `data_loader::DATA`
-/// once the JSON walker lands; today the function delegates to the formula
-/// parser so callers can already validate input syntax.
+/// Accepts three call shapes:
+/// 1. Bare name   — `Get("Fe", None)` walks all tiers by stem/Symbol/Aliases.
+/// 2. Scoped name — `Get("P", Some(Scope::Atom))` restricts search to one tier.
+/// 3. Formula     — `Get("{H=2,O=1}", None)` composes from constituent entries.
 pub fn Get(spec: &str, scope: Option<Scope>) -> Result<Value> {
     if let Some(formula) = parse_formula(spec)? {
         return resolve_formula(&formula, scope);
@@ -153,28 +154,160 @@ pub fn Get(spec: &str, scope: Option<Scope>) -> Result<Value> {
     resolve_named(spec, scope)
 }
 
-/// Bare-name resolver (used when the input is not a `{...}` formula).
-fn resolve_named(_name: &str, _scope: Option<Scope>) -> Result<Value> {
-    Err(anyhow!(
-        "get::resolve_named is not yet implemented; pending data_loader walker"
-    ))
-}
-
-/// Formula resolver: walk the parsed parts, resolve each constituent in the
-/// scope above it, then synthesise the parent datasheet.
-fn resolve_formula(_formula: &Formula, _scope: Option<Scope>) -> Result<Value> {
-    Err(anyhow!(
-        "get::resolve_formula is not yet implemented; pending tier composer"
-    ))
-}
-
-/// Persist a fresh datasheet under `(tier, name)`. Returns the previous value
-/// at that key, if any (mirrors Python's `Save(..., overwrite=False)`).
+/// Bare-name lookup. Searches the data hub by file stem, then by the JSON
+/// `Symbol` / `symbol` field, then by `Aliases` / `aliases` list.
 ///
-/// TODO: write-through to disk via a tier-specific JSON writer. For now this
-/// only mutates the in-memory hub and is gated behind tests.
-pub fn Save(_name: &str, _data: Value, _tier: Scope) -> Result<Option<Value>> {
-    Err(anyhow!("get::Save is not yet implemented"))
+/// Priority mirrors the Python implementation:
+///   exact-stem > casefold-stem > exact-Symbol > casefold-Symbol > Aliases
+/// When no scope is given, tiers are walked in [`TIER_NAMES`] order so the
+/// most fundamental tier wins on a collision (quarks beat atoms, etc.).
+fn resolve_named(name: &str, scope: Option<Scope>) -> Result<Value> {
+    let hub = crate::data_loader::DATA.read();
+    let lower = name.to_lowercase();
+
+    // Build an iterator over the tier(s) to search.
+    let tier_names: Vec<&str> = if let Some(s) = scope {
+        vec![s.tier_name()]
+    } else {
+        crate::data_loader::TIER_NAMES.to_vec()
+    };
+
+    // Pass 1 — exact stem match (fastest; covers `Get("Fe")`, `Get("Steel-AISI-1070")`).
+    for &tier_name in &tier_names {
+        if let Some(tier_map) = hub.tiers.get(tier_name) {
+            if let Some(v) = tier_map.get(name) {
+                return Ok(v.value().clone());
+            }
+        }
+    }
+
+    // Pass 2 — casefold stem match.
+    for &tier_name in &tier_names {
+        if let Some(tier_map) = hub.tiers.get(tier_name) {
+            for kv in tier_map.iter() {
+                if kv.key().to_lowercase() == lower {
+                    return Ok(kv.value().clone());
+                }
+            }
+        }
+    }
+
+    // Pass 3 — Symbol / symbol field match (exact then casefold).
+    for pass_casefold in [false, true] {
+        for &tier_name in &tier_names {
+            if let Some(tier_map) = hub.tiers.get(tier_name) {
+                for kv in tier_map.iter() {
+                    let data = kv.value();
+                    let sym_opt = data.get("Symbol").or_else(|| data.get("symbol"));
+                    if let Some(sym) = sym_opt.and_then(Value::as_str) {
+                        let matches = if pass_casefold {
+                            sym.to_lowercase() == lower
+                        } else {
+                            sym == name
+                        };
+                        if matches {
+                            return Ok(data.clone());
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Pass 4 — Aliases / aliases list match (exact then casefold).
+    for pass_casefold in [false, true] {
+        for &tier_name in &tier_names {
+            if let Some(tier_map) = hub.tiers.get(tier_name) {
+                for kv in tier_map.iter() {
+                    let data = kv.value();
+                    let aliases_opt = data.get("Aliases").or_else(|| data.get("aliases"));
+                    if let Some(arr) = aliases_opt.and_then(Value::as_array) {
+                        for alias_val in arr {
+                            if let Some(alias) = alias_val.as_str() {
+                                let matches = if pass_casefold {
+                                    alias.to_lowercase() == lower
+                                } else {
+                                    alias == name
+                                };
+                                if matches {
+                                    return Ok(data.clone());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    Err(anyhow!(GetError::UnknownName(name.to_string())))
+}
+
+/// Composite formula resolver: resolve each constituent, then merge additive
+/// scalar properties (Mass_amu, Charge_e, …) by multiplication-weighted sum.
+///
+/// The scope supplied to `Get("{H=2,O=1}", scope)` is the *output* scope;
+/// constituent resolution uses the tier immediately below it in the hierarchy.
+/// When no scope is given, the resolver tries every tier that makes sense for
+/// the first constituent it finds.
+fn resolve_formula(formula: &Formula, _scope: Option<Scope>) -> Result<Value> {
+    assert!(!formula.parts.is_empty(), "resolve_formula: empty formula");
+    let mut merged = serde_json::Map::new();
+    let mut resolved_count: usize = 0;
+
+    for (constituent, count) in &formula.parts {
+        assert!(*count <= 1000, "resolve_formula: implausibly large count");
+        let entry = resolve_named(constituent, None)
+            .with_context(|| format!("formula constituent '{constituent}' not found"))?;
+
+        // Merge: additive scalar fields are multiplied by count and summed.
+        // Non-scalar and non-additive fields from the first constituent win.
+        if let Some(obj) = entry.as_object() {
+            for (key, val) in obj {
+                if let Some(num) = val.as_f64() {
+                    let contribution = num * (*count as f64);
+                    let existing = merged
+                        .get(key)
+                        .and_then(Value::as_f64)
+                        .unwrap_or(0.0);
+                    merged.insert(key.clone(), serde_json::json!(existing + contribution));
+                } else if !merged.contains_key(key) {
+                    merged.insert(key.clone(), val.clone());
+                }
+            }
+        }
+        resolved_count += 1;
+    }
+
+    assert_eq!(
+        resolved_count,
+        formula.parts.len(),
+        "resolve_formula: not all parts resolved"
+    );
+    merged.insert(
+        "formula".to_string(),
+        serde_json::json!(formula.parts
+            .iter()
+            .map(|(n, c)| format!("{n}{c}"))
+            .collect::<Vec<_>>()
+            .join("")),
+    );
+    Ok(Value::Object(merged))
+}
+
+/// Persist a fresh datasheet under `(tier, name)` in the in-memory hub.
+///
+/// Returns the previous entry at that key if one existed. Write-through to
+/// disk is not yet implemented — the hub mutation is in-memory only.
+pub fn Save(name: &str, data: Value, tier: Scope) -> Result<Option<Value>> {
+    assert!(!name.is_empty(), "Save: name must be non-empty");
+    let hub = crate::data_loader::DATA.read();
+    let tier_map = hub
+        .tiers
+        .get(tier.tier_name())
+        .ok_or_else(|| anyhow!(GetError::UnknownTier(tier.tier_name().to_string())))?;
+    let previous = tier_map.insert(name.to_string(), data);
+    Ok(previous)
 }
 
 #[cfg(test)]

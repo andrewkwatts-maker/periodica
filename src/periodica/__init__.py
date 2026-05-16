@@ -33,7 +33,7 @@ Core enums::
     from periodica import PTPropertyName, PTLayoutMode, BondType, CrystalStructure
 """
 
-__version__ = "1.1.0"
+__version__ = "2.0.0a0"
 
 # â”€â”€â”€ Optional Rust acceleration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # The Rust core (``periodica._periodica_core``, built from
@@ -43,14 +43,9 @@ __version__ = "1.1.0"
 # fall back to the pure-Python implementations transparently. Engine
 # consumers that vendor periodica via git submodule see this flag flip to
 # True and gain the deterministic Rust path automatically.
-_HAS_RUST = False
-try:
-    from periodica._periodica_core import (  # type: ignore[import-not-found]
-        Get as _Get_Rust,  # noqa: F401  (made available to the dispatcher below)
-    )
-    _HAS_RUST = True
-except ImportError:
-    pass
+# Rust dispatch is wired per-module via _dispatch.py + @rust_accelerated.
+# _HAS_RUST is re-exported here for external inspection.
+from periodica._dispatch import _HAS_RUST  # noqa: F401
 
 # â”€â”€ Generic composition + named registry (primary API) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 from periodica.get import (
