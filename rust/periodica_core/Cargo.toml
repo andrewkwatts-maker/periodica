@@ -14,7 +14,7 @@ crate-type = ["cdylib", "lib"]
 [features]
 default = []
 python = ["pyo3"]
-with-physica = ["physica_core"]
+with-physica = []
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
@@ -31,7 +31,6 @@ nalgebra = "0.33"
 # Seeded RNG for deterministic alloy composition search.
 rand = { version = "0.8", features = ["small_rng"] }
 pyo3 = { version = "0.22", features = ["extension-module"], optional = true }
-physica_core = { path = "../../../metaphysica/rust/physica_core", optional = true }
 
 [dev-dependencies]
 tempfile = "3.8"
