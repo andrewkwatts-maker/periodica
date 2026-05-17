@@ -14,7 +14,6 @@ crate-type = ["cdylib", "lib"]
 [features]
 default = []
 python = ["pyo3"]
-with-arithmos = ["arithmos_core"]
 with-physica = ["physica_core"]
 
 [dependencies]
@@ -32,7 +31,6 @@ nalgebra = "0.33"
 # Seeded RNG for deterministic alloy composition search.
 rand = { version = "0.8", features = ["small_rng"] }
 pyo3 = { version = "0.22", features = ["extension-module"], optional = true }
-arithmos_core = { path = "../../../Arithmos/rust/arithmos_core", optional = true }
 physica_core = { path = "../../../metaphysica/rust/physica_core", optional = true }
 
 [dev-dependencies]
