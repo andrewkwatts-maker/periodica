@@ -14,6 +14,7 @@ crate-type = ["cdylib", "lib"]
 [features]
 default = []
 python = ["pyo3"]
+with-arithmos = []
 with-physica = []
 
 [dependencies]

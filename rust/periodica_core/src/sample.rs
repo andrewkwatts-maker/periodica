@@ -318,7 +318,7 @@ pub fn voxel_phase_map(
         .collect();
 
     let model_name = pick_model(&entry, "");
-    let model = FIELD_MODELS.get(&model_name);
+    let _model = FIELD_MODELS.get(&model_name);
 
     let mut data = vec![vec![vec![0i32; nz]; ny]; nx];
 

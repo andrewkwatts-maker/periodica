@@ -199,8 +199,8 @@ fn py_build_backbone(
     let list = pyo3::types::PyList::empty_bound(py);
     for a in &atoms {
         let d = pyo3::types::PyDict::new_bound(py);
-        d.set_item("name", &a.name)?;
-        d.set_item("res_idx", a.res_idx)?;
+        d.set_item("name", &a.atom_name)?;
+        d.set_item("res_idx", a.residue_index)?;
         d.set_item("x", a.position[0])?;
         d.set_item("y", a.position[1])?;
         d.set_item("z", a.position[2])?;
@@ -217,8 +217,8 @@ fn py_build_backbone_from_entry(py: Python<'_>, entry_name: &str) -> PyResult<Py
     let list = pyo3::types::PyList::empty_bound(py);
     for a in &atoms {
         let d = pyo3::types::PyDict::new_bound(py);
-        d.set_item("name", &a.name)?;
-        d.set_item("res_idx", a.res_idx)?;
+        d.set_item("name", &a.atom_name)?;
+        d.set_item("res_idx", a.residue_index)?;
         d.set_item("x", a.position[0])?;
         d.set_item("y", a.position[1])?;
         d.set_item("z", a.position[2])?;
@@ -233,11 +233,11 @@ fn py_build_backbone_from_entry(py: Python<'_>, entry_name: &str) -> PyResult<Py
 fn py_ramachandran_region(phi_deg: f64, psi_deg: f64) -> &'static str {
     use crate::protein::{PhiPsi, RamachandranRegion};
     match crate::protein::ramachandran_region(PhiPsi { phi: phi_deg, psi: psi_deg }) {
-        RamachandranRegion::AlphaHelix    => "alpha_helix",
-        RamachandranRegion::BetaSheet     => "beta_sheet",
-        RamachandranRegion::LeftAlpha     => "left_alpha",
-        RamachandranRegion::PolyprolineII => "polyproline_ii",
-        RamachandranRegion::Other         => "other",
+        RamachandranRegion::AlphaHelix       => "alpha_helix",
+        RamachandranRegion::BetaSheet        => "beta_sheet",
+        RamachandranRegion::LeftHandedAlpha  => "left_alpha",
+        RamachandranRegion::PolyprolineII    => "polyproline_ii",
+        RamachandranRegion::Disallowed       => "other",
     }
 }
 
