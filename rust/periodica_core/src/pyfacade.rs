@@ -27,6 +27,10 @@
 // Python fallback: src/periodica/{get,sample,export}.py
 
 #![cfg(feature = "python")]
+// PyO3 0.22 macro expansion calls `unwrap_required_argument` (unsafe) without
+// an explicit unsafe block. Allow the lint for this file only so the deny in
+// lib.rs does not cascade into the generated code.
+#![allow(unsafe_op_in_unsafe_fn)]
 
 use pyo3::exceptions::{PyKeyError, PyRuntimeError, PyValueError};
 use pyo3::prelude::*;
