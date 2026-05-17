@@ -33,7 +33,7 @@ Core enums::
     from periodica import PTPropertyName, PTLayoutMode, BondType, CrystalStructure
 """
 
-__version__ = "2.0.0a0"
+__version__ = "2.0.2"
 
 # â”€â”€â”€ Optional Rust acceleration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # The Rust core (``periodica._periodica_core``, built from
