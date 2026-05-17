@@ -1,6 +1,6 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+﻿[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
 
 [project]
 name = "periodica"
@@ -89,7 +89,7 @@ test = [
 ]
 docs = ["pdoc>=14.0.0"]
 
-# â”€â”€ Optional Rust acceleration (maturin) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Ã¢â€â‚¬Ã¢â€â‚¬ Optional Rust acceleration (maturin) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 # Configuration is loaded only when maturin is the active build backend
 # (``pip install periodica[rust]`` or ``maturin develop --features python``).
 # The default setuptools build ignores this section. Mirrors metaphysica's
@@ -99,22 +99,6 @@ manifest-path = "rust/periodica_core/Cargo.toml"
 module-name = "periodica._periodica_core"
 features = ["python"]
 python-source = "src"
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[tool.setuptools.package-data]
-periodica = [
-    "data/active/**/*.json",
-    "data/defaults/**/*.json",
-    "data/config/**/*.json",
-    "data/derived/**/*.json",
-    "data/reference/**/*.json",
-    "data/reference/**/*.pdb",
-    "data/reference/README.md",
-    "scripts/inputs/*.json",
-    "py.typed",
-]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -131,3 +115,5 @@ markers = [
 log_cli = true
 log_cli_level = "INFO"
 filterwarnings = ["ignore::DeprecationWarning", "ignore::PendingDeprecationWarning"]
+
+
