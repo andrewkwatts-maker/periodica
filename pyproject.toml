@@ -45,7 +45,8 @@ Issues        = "https://github.com/andrewkwatts-maker/periodica/issues"
 Changelog     = "https://github.com/andrewkwatts-maker/periodica/blob/main/CHANGELOG.md"
 
 [project.scripts]
-periodica = "periodica.__main__:main"
+periodica     = "periodica.__main__:main"
+periodica-app = "periodica._launcher:launch"
 
 [project.optional-dependencies]
 # The slim install (`pip install periodica`) needs only numpy. Everything in
