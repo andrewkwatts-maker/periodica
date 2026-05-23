@@ -33,7 +33,10 @@ Core enums::
     from periodica import PTPropertyName, PTLayoutMode, BondType, CrystalStructure
 """
 
-__version__ = "2.0.2"
+__version__ = "2.0.3"
+
+# Companion-app launcher — `periodica.Launch()` finds/clones periodica-app and runs it.
+from periodica._launcher import launch as Launch
 
 # â”€â”€â”€ Optional Rust acceleration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # The Rust core (``periodica._periodica_core``, built from
@@ -160,4 +163,6 @@ __all__ = [
     'BiomaterialLayoutMode', 'BiomaterialType',
     # Cell component enums
     'CellComponentLayoutMode', 'OrganelleType',
+    # Companion app
+    'Launch',
 ]
