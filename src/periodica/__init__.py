@@ -33,7 +33,7 @@ Core enums::
     from periodica import PTPropertyName, PTLayoutMode, BondType, CrystalStructure
 """
 
-__version__ = "2.0.3"
+__version__ = "2.0.36"
 
 # Companion-app launcher — `periodica.Launch()` finds/clones periodica-app and runs it.
 from periodica._launcher import launch as Launch

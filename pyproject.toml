@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "periodica"
-version = "2.0.3"
+version = "2.0.36"
 description = "Data-driven scientific computation: particle/nuclear/atomic/molecular physics, materials, alloys, polymers, ceramics, composites, proteins. Generic Get()/Save()/sample() composer + 3D microstructure export (STL/OBJ/VTK/SDF/HLSL) + AlphaFold-validated protein folding."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -36,7 +36,7 @@ classifiers = [
 ]
 dependencies = [
     "numpy>=1.24.0",
-    "eml-math>=2.0.0",
+    "eml-math>=2.0.36",
 ]
 
 [project.urls]
@@ -68,12 +68,12 @@ full = [
 # instead of the bundled PDG JSON. Default source remains "experimental"
 # and never imports metaphysica.
 simulated = [
-    "metaphysica>=2.0.0",
+    "metaphysica>=2.0.36",
 ]
 # `app` extra installs the KivyMD desktop/Android GUI companion.
 # After `pip install periodica[app]` run `periodica-app` to launch.
 app = [
-    "periodica-app>=1.1.0",
+    "periodica-app>=2.0.36",
 ]
 # `rust` extra enables the maturin-built `periodica._periodica_core` extension
 # module. Without this extra, periodica is pure Python (default) and the
