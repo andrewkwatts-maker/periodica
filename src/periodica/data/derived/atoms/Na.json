@@ -42,8 +42,10 @@
     "atomic_radius": 190,
     "block": "s",
     "boiling_point": 1156,
+    "bulk_modulus_GPa": 6.3,
     "covalent_radius": 166,
     "density": 0.971,
+    "electrical_resistivity_nOhm_m": 47.7,
     "electron_affinity": 52.8,
     "electron_configuration": "1s² 2s² 2p⁶ 3s¹",
     "electronegativity": 0.93,
@@ -52,8 +54,13 @@
     "melting_point": 371,
     "period": 3,
     "primary_emission_wavelength": 589.0,
+    "shear_modulus_GPa": 3.3,
+    "specific_heat": 1228,
+    "thermal_conductivity": 142.0,
+    "thermal_expansion_um_mK": 71.0,
     "valence_electrons": 1,
-    "visible_emission_wavelength": 589.0
+    "visible_emission_wavelength": 589.0,
+    "youngs_modulus_GPa": 10.0
   },
   "Symbol": "Na",
   "_provenance": {
@@ -64,8 +71,10 @@
         "atomic_radius",
         "block",
         "boiling_point",
+        "bulk_modulus_GPa",
         "covalent_radius",
         "density",
+        "electrical_resistivity_nOhm_m",
         "electron_affinity",
         "electron_configuration",
         "electronegativity",
@@ -74,8 +83,13 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
         "valence_electrons",
-        "visible_emission_wavelength"
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
       ],
       "matched_on": "atomic_number=11",
       "tier": "elements"

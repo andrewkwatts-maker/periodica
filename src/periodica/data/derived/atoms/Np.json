@@ -44,6 +44,7 @@
     "boiling_point": 4175,
     "covalent_radius": 190,
     "density": 20.45,
+    "electrical_resistivity_nOhm_m": 1220.0,
     "electron_affinity": 45.8,
     "electron_configuration": "[Rn] 5f⁴ 6d¹ 7s²",
     "electronegativity": 1.36,
@@ -51,6 +52,8 @@
     "melting_point": 912,
     "period": 7,
     "primary_emission_wavelength": 420.0,
+    "specific_heat": 121,
+    "thermal_conductivity": 6.3,
     "valence_electrons": 7,
     "visible_emission_wavelength": 420.0
   },
@@ -65,6 +68,7 @@
         "boiling_point",
         "covalent_radius",
         "density",
+        "electrical_resistivity_nOhm_m",
         "electron_affinity",
         "electron_configuration",
         "electronegativity",
@@ -72,6 +76,8 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
         "valence_electrons",
         "visible_emission_wavelength"
       ],

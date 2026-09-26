@@ -42,8 +42,10 @@
     "atomic_radius": 156,
     "block": "p",
     "boiling_point": 2345,
+    "bulk_modulus_GPa": 41.0,
     "covalent_radius": 142,
     "density": 7.31,
+    "electrical_resistivity_nOhm_m": 83.7,
     "electron_affinity": 28.9,
     "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p¹",
     "electronegativity": 1.78,
@@ -52,8 +54,12 @@
     "melting_point": 429.75,
     "period": 5,
     "primary_emission_wavelength": 451.1,
+    "specific_heat": 233,
+    "thermal_conductivity": 81.8,
+    "thermal_expansion_um_mK": 32.1,
     "valence_electrons": 3,
-    "visible_emission_wavelength": 451.1
+    "visible_emission_wavelength": 451.1,
+    "youngs_modulus_GPa": 11.0
   },
   "Symbol": "In",
   "_provenance": {
@@ -64,8 +70,10 @@
         "atomic_radius",
         "block",
         "boiling_point",
+        "bulk_modulus_GPa",
         "covalent_radius",
         "density",
+        "electrical_resistivity_nOhm_m",
         "electron_affinity",
         "electron_configuration",
         "electronegativity",
@@ -74,8 +82,12 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
         "valence_electrons",
-        "visible_emission_wavelength"
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
       ],
       "matched_on": "atomic_number=49",
       "tier": "elements"

@@ -49,6 +49,8 @@
     "melting_point": 14.01,
     "period": 1,
     "primary_emission_wavelength": 656.3,
+    "specific_heat": 14304,
+    "thermal_conductivity": 0.1805,
     "valence_electrons": 1
   },
   "_provenance": {
@@ -69,6 +71,8 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
         "valence_electrons"
       ],
       "matched_on": "atomic_number=1",

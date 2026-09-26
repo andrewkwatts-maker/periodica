@@ -42,8 +42,10 @@
     "atomic_radius": 194,
     "block": "s",
     "boiling_point": 1757,
+    "bulk_modulus_GPa": 17.0,
     "covalent_radius": 176,
     "density": 1.54,
+    "electrical_resistivity_nOhm_m": 33.6,
     "electron_affinity": 2.37,
     "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 4s²",
     "electronegativity": 1.0,
@@ -51,9 +53,15 @@
     "ionization_energy": 6.113,
     "melting_point": 1115,
     "period": 4,
+    "poissons_ratio": 0.31,
     "primary_emission_wavelength": 422.7,
+    "shear_modulus_GPa": 7.4,
+    "specific_heat": 647,
+    "thermal_conductivity": 201.0,
+    "thermal_expansion_um_mK": 22.3,
     "valence_electrons": 2,
-    "visible_emission_wavelength": 422.7
+    "visible_emission_wavelength": 422.7,
+    "youngs_modulus_GPa": 20.0
   },
   "_provenance": {
     "Properties": {
@@ -63,8 +71,10 @@
         "atomic_radius",
         "block",
         "boiling_point",
+        "bulk_modulus_GPa",
         "covalent_radius",
         "density",
+        "electrical_resistivity_nOhm_m",
         "electron_affinity",
         "electron_configuration",
         "electronegativity",
@@ -72,9 +82,15 @@
         "ionization_energy",
         "melting_point",
         "period",
+        "poissons_ratio",
         "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
         "valence_electrons",
-        "visible_emission_wavelength"
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
       ],
       "matched_on": "atomic_number=20",
       "tier": "elements"

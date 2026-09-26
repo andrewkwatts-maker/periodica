@@ -40,5 +40,18 @@
       "is_stable": false,
       "half_life": "2.111e5 years"
     }
-  ]
+  ],
+  "thermal_conductivity": 50.6,
+  "electrical_resistivity_nOhm_m": 200.0,
+  "specific_heat": 63,
+  "_bulk_properties": {
+    "source": "CRC Handbook of Chemistry and Physics, 97th ed.; WebElements",
+    "conditions": "298 K, 1 atm, standard state",
+    "table_version": 1,
+    "fields": [
+      "electrical_resistivity_nOhm_m",
+      "specific_heat",
+      "thermal_conductivity"
+    ]
+  }
 }

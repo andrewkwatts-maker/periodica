@@ -1,0 +1,762 @@
+{
+  "_comment": [
+    "Measured bulk thermal, electrical and elastic properties per element,",
+    "in the element's standard state at 298 K / 20 C.",
+    "",
+    "Source: CRC Handbook of Chemistry and Physics (97th ed.) and WebElements.",
+    "",
+    "Key suffixes name the unit so periodica.properties reads them without",
+    "guessing. A field is OMITTED, never zero or invented, where the quantity",
+    "is not well defined for the element in its standard state (elastic moduli",
+    "of a gas, resistivity of a non-metal) or where published values disagree",
+    "too much to pick one; the channel layer then reports its documented",
+    "default and flags the low confidence, which is more use than a wrong",
+    "number that looks measured.",
+    "",
+    "Applied to data/active/elements/*.json by",
+    "periodica.scripts.apply_element_properties."
+  ],
+  "version": 1,
+  "source": "CRC Handbook of Chemistry and Physics, 97th ed.; WebElements",
+  "conditions": "298 K, 1 atm, standard state",
+  "elements": {
+    "Ac": {
+      "thermal_conductivity": 12.0,
+      "specific_heat": 120
+    },
+    "Ag": {
+      "thermal_conductivity": 429.0,
+      "electrical_resistivity_nOhm_m": 15.87,
+      "youngs_modulus_GPa": 83.0,
+      "shear_modulus_GPa": 30.0,
+      "bulk_modulus_GPa": 100.0,
+      "poissons_ratio": 0.37,
+      "specific_heat": 235,
+      "thermal_expansion_um_mK": 18.9
+    },
+    "Al": {
+      "thermal_conductivity": 237.0,
+      "electrical_resistivity_nOhm_m": 26.5,
+      "youngs_modulus_GPa": 70.0,
+      "shear_modulus_GPa": 26.0,
+      "bulk_modulus_GPa": 76.0,
+      "poissons_ratio": 0.35,
+      "specific_heat": 897,
+      "thermal_expansion_um_mK": 23.1
+    },
+    "Am": {
+      "thermal_conductivity": 10.0,
+      "electrical_resistivity_nOhm_m": 690.0,
+      "specific_heat": 110
+    },
+    "Ar": {
+      "thermal_conductivity": 0.01772,
+      "specific_heat": 520
+    },
+    "As": {
+      "thermal_conductivity": 50.0,
+      "electrical_resistivity_nOhm_m": 333.0,
+      "youngs_modulus_GPa": 8.0,
+      "bulk_modulus_GPa": 22.0,
+      "specific_heat": 329
+    },
+    "Au": {
+      "thermal_conductivity": 317.0,
+      "electrical_resistivity_nOhm_m": 22.14,
+      "youngs_modulus_GPa": 79.0,
+      "shear_modulus_GPa": 27.0,
+      "bulk_modulus_GPa": 180.0,
+      "poissons_ratio": 0.44,
+      "specific_heat": 129,
+      "thermal_expansion_um_mK": 14.2
+    },
+    "B": {
+      "thermal_conductivity": 27.0,
+      "youngs_modulus_GPa": 320.0,
+      "bulk_modulus_GPa": 320.0,
+      "specific_heat": 1026,
+      "thermal_expansion_um_mK": 6.0
+    },
+    "Ba": {
+      "thermal_conductivity": 18.4,
+      "electrical_resistivity_nOhm_m": 332.0,
+      "youngs_modulus_GPa": 13.0,
+      "shear_modulus_GPa": 4.9,
+      "bulk_modulus_GPa": 9.6,
+      "specific_heat": 204,
+      "thermal_expansion_um_mK": 20.6
+    },
+    "Be": {
+      "thermal_conductivity": 200.0,
+      "electrical_resistivity_nOhm_m": 36.0,
+      "youngs_modulus_GPa": 287.0,
+      "shear_modulus_GPa": 132.0,
+      "bulk_modulus_GPa": 130.0,
+      "poissons_ratio": 0.032,
+      "specific_heat": 1825,
+      "thermal_expansion_um_mK": 11.3
+    },
+    "Bi": {
+      "thermal_conductivity": 7.97,
+      "electrical_resistivity_nOhm_m": 1290.0,
+      "youngs_modulus_GPa": 32.0,
+      "shear_modulus_GPa": 12.0,
+      "bulk_modulus_GPa": 31.0,
+      "specific_heat": 122,
+      "thermal_expansion_um_mK": 13.4
+    },
+    "Br": {
+      "thermal_conductivity": 0.122,
+      "specific_heat": 474
+    },
+    "C": {
+      "thermal_conductivity": 140.0,
+      "specific_heat": 709,
+      "thermal_expansion_um_mK": 7.1
+    },
+    "Ca": {
+      "thermal_conductivity": 201.0,
+      "electrical_resistivity_nOhm_m": 33.6,
+      "youngs_modulus_GPa": 20.0,
+      "shear_modulus_GPa": 7.4,
+      "bulk_modulus_GPa": 17.0,
+      "poissons_ratio": 0.31,
+      "specific_heat": 647,
+      "thermal_expansion_um_mK": 22.3
+    },
+    "Cd": {
+      "thermal_conductivity": 96.6,
+      "electrical_resistivity_nOhm_m": 72.7,
+      "youngs_modulus_GPa": 50.0,
+      "shear_modulus_GPa": 19.0,
+      "bulk_modulus_GPa": 42.0,
+      "poissons_ratio": 0.3,
+      "specific_heat": 232,
+      "thermal_expansion_um_mK": 30.8
+    },
+    "Ce": {
+      "thermal_conductivity": 11.3,
+      "electrical_resistivity_nOhm_m": 828.0,
+      "youngs_modulus_GPa": 34.0,
+      "shear_modulus_GPa": 14.0,
+      "bulk_modulus_GPa": 22.0,
+      "poissons_ratio": 0.24,
+      "specific_heat": 192,
+      "thermal_expansion_um_mK": 6.3
+    },
+    "Cl": {
+      "thermal_conductivity": 0.0089,
+      "specific_heat": 479
+    },
+    "Co": {
+      "thermal_conductivity": 100.0,
+      "electrical_resistivity_nOhm_m": 62.4,
+      "youngs_modulus_GPa": 209.0,
+      "shear_modulus_GPa": 75.0,
+      "bulk_modulus_GPa": 180.0,
+      "poissons_ratio": 0.31,
+      "specific_heat": 421,
+      "thermal_expansion_um_mK": 13.0
+    },
+    "Cr": {
+      "thermal_conductivity": 93.9,
+      "electrical_resistivity_nOhm_m": 125.0,
+      "youngs_modulus_GPa": 279.0,
+      "shear_modulus_GPa": 115.0,
+      "bulk_modulus_GPa": 160.0,
+      "poissons_ratio": 0.21,
+      "specific_heat": 449,
+      "thermal_expansion_um_mK": 4.9
+    },
+    "Cs": {
+      "thermal_conductivity": 35.9,
+      "electrical_resistivity_nOhm_m": 205.0,
+      "youngs_modulus_GPa": 1.7,
+      "bulk_modulus_GPa": 1.6,
+      "specific_heat": 242,
+      "thermal_expansion_um_mK": 97.0
+    },
+    "Cu": {
+      "thermal_conductivity": 401.0,
+      "electrical_resistivity_nOhm_m": 16.78,
+      "youngs_modulus_GPa": 130.0,
+      "shear_modulus_GPa": 48.0,
+      "bulk_modulus_GPa": 140.0,
+      "poissons_ratio": 0.34,
+      "specific_heat": 385,
+      "thermal_expansion_um_mK": 16.5
+    },
+    "Dy": {
+      "thermal_conductivity": 10.7,
+      "electrical_resistivity_nOhm_m": 926.0,
+      "youngs_modulus_GPa": 61.0,
+      "shear_modulus_GPa": 25.0,
+      "bulk_modulus_GPa": 41.0,
+      "poissons_ratio": 0.25,
+      "specific_heat": 170,
+      "thermal_expansion_um_mK": 9.9
+    },
+    "Er": {
+      "thermal_conductivity": 14.5,
+      "electrical_resistivity_nOhm_m": 860.0,
+      "youngs_modulus_GPa": 70.0,
+      "shear_modulus_GPa": 28.0,
+      "bulk_modulus_GPa": 44.0,
+      "poissons_ratio": 0.24,
+      "specific_heat": 168,
+      "thermal_expansion_um_mK": 12.2
+    },
+    "Eu": {
+      "thermal_conductivity": 13.9,
+      "electrical_resistivity_nOhm_m": 900.0,
+      "youngs_modulus_GPa": 18.0,
+      "shear_modulus_GPa": 7.9,
+      "bulk_modulus_GPa": 8.3,
+      "poissons_ratio": 0.15,
+      "specific_heat": 182,
+      "thermal_expansion_um_mK": 35.0
+    },
+    "F": {
+      "thermal_conductivity": 0.0277,
+      "specific_heat": 824
+    },
+    "Fe": {
+      "thermal_conductivity": 80.4,
+      "electrical_resistivity_nOhm_m": 96.1,
+      "youngs_modulus_GPa": 211.0,
+      "shear_modulus_GPa": 82.0,
+      "bulk_modulus_GPa": 170.0,
+      "poissons_ratio": 0.29,
+      "specific_heat": 449,
+      "thermal_expansion_um_mK": 11.8
+    },
+    "Ga": {
+      "thermal_conductivity": 40.6,
+      "electrical_resistivity_nOhm_m": 270.0,
+      "specific_heat": 371,
+      "thermal_expansion_um_mK": 18.0
+    },
+    "Gd": {
+      "thermal_conductivity": 10.6,
+      "electrical_resistivity_nOhm_m": 1310.0,
+      "youngs_modulus_GPa": 55.0,
+      "shear_modulus_GPa": 22.0,
+      "bulk_modulus_GPa": 38.0,
+      "poissons_ratio": 0.26,
+      "specific_heat": 236,
+      "thermal_expansion_um_mK": 9.4
+    },
+    "Ge": {
+      "thermal_conductivity": 60.2,
+      "youngs_modulus_GPa": 103.0,
+      "shear_modulus_GPa": 41.0,
+      "bulk_modulus_GPa": 75.0,
+      "specific_heat": 320,
+      "thermal_expansion_um_mK": 6.0
+    },
+    "H": {
+      "thermal_conductivity": 0.1805,
+      "specific_heat": 14304
+    },
+    "He": {
+      "thermal_conductivity": 0.1513,
+      "specific_heat": 5193
+    },
+    "Hf": {
+      "thermal_conductivity": 23.0,
+      "electrical_resistivity_nOhm_m": 331.0,
+      "youngs_modulus_GPa": 78.0,
+      "shear_modulus_GPa": 30.0,
+      "bulk_modulus_GPa": 110.0,
+      "poissons_ratio": 0.37,
+      "specific_heat": 144,
+      "thermal_expansion_um_mK": 5.9
+    },
+    "Hg": {
+      "thermal_conductivity": 8.3,
+      "electrical_resistivity_nOhm_m": 961.0,
+      "bulk_modulus_GPa": 25.0,
+      "specific_heat": 140
+    },
+    "Ho": {
+      "thermal_conductivity": 16.2,
+      "electrical_resistivity_nOhm_m": 814.0,
+      "youngs_modulus_GPa": 65.0,
+      "shear_modulus_GPa": 26.0,
+      "bulk_modulus_GPa": 40.0,
+      "poissons_ratio": 0.23,
+      "specific_heat": 165,
+      "thermal_expansion_um_mK": 11.2
+    },
+    "I": {
+      "thermal_conductivity": 0.449,
+      "specific_heat": 214
+    },
+    "In": {
+      "thermal_conductivity": 81.8,
+      "electrical_resistivity_nOhm_m": 83.7,
+      "youngs_modulus_GPa": 11.0,
+      "bulk_modulus_GPa": 41.0,
+      "specific_heat": 233,
+      "thermal_expansion_um_mK": 32.1
+    },
+    "Ir": {
+      "thermal_conductivity": 147.0,
+      "electrical_resistivity_nOhm_m": 47.1,
+      "youngs_modulus_GPa": 528.0,
+      "shear_modulus_GPa": 210.0,
+      "bulk_modulus_GPa": 320.0,
+      "poissons_ratio": 0.26,
+      "specific_heat": 131,
+      "thermal_expansion_um_mK": 6.4
+    },
+    "K": {
+      "thermal_conductivity": 102.5,
+      "electrical_resistivity_nOhm_m": 72.0,
+      "specific_heat": 757,
+      "thermal_expansion_um_mK": 83.0
+    },
+    "Kr": {
+      "thermal_conductivity": 0.00943,
+      "specific_heat": 248
+    },
+    "La": {
+      "thermal_conductivity": 13.4,
+      "electrical_resistivity_nOhm_m": 615.0,
+      "youngs_modulus_GPa": 37.0,
+      "shear_modulus_GPa": 14.0,
+      "bulk_modulus_GPa": 28.0,
+      "poissons_ratio": 0.28,
+      "specific_heat": 195,
+      "thermal_expansion_um_mK": 12.1
+    },
+    "Li": {
+      "thermal_conductivity": 85.0,
+      "electrical_resistivity_nOhm_m": 92.8,
+      "youngs_modulus_GPa": 4.9,
+      "shear_modulus_GPa": 4.2,
+      "bulk_modulus_GPa": 11.0,
+      "specific_heat": 3570,
+      "thermal_expansion_um_mK": 46.0
+    },
+    "Lu": {
+      "thermal_conductivity": 16.4,
+      "electrical_resistivity_nOhm_m": 582.0,
+      "youngs_modulus_GPa": 69.0,
+      "shear_modulus_GPa": 27.0,
+      "bulk_modulus_GPa": 48.0,
+      "poissons_ratio": 0.26,
+      "specific_heat": 154,
+      "thermal_expansion_um_mK": 9.9
+    },
+    "Mg": {
+      "thermal_conductivity": 156.0,
+      "electrical_resistivity_nOhm_m": 43.9,
+      "youngs_modulus_GPa": 45.0,
+      "shear_modulus_GPa": 17.0,
+      "bulk_modulus_GPa": 45.0,
+      "poissons_ratio": 0.29,
+      "specific_heat": 1023,
+      "thermal_expansion_um_mK": 24.8
+    },
+    "Mn": {
+      "thermal_conductivity": 7.81,
+      "electrical_resistivity_nOhm_m": 1440.0,
+      "youngs_modulus_GPa": 198.0,
+      "bulk_modulus_GPa": 120.0,
+      "specific_heat": 479,
+      "thermal_expansion_um_mK": 21.7
+    },
+    "Mo": {
+      "thermal_conductivity": 138.0,
+      "electrical_resistivity_nOhm_m": 53.4,
+      "youngs_modulus_GPa": 329.0,
+      "shear_modulus_GPa": 126.0,
+      "bulk_modulus_GPa": 230.0,
+      "poissons_ratio": 0.31,
+      "specific_heat": 251,
+      "thermal_expansion_um_mK": 4.8
+    },
+    "N": {
+      "thermal_conductivity": 0.02583,
+      "specific_heat": 1040
+    },
+    "Na": {
+      "thermal_conductivity": 142.0,
+      "electrical_resistivity_nOhm_m": 47.7,
+      "youngs_modulus_GPa": 10.0,
+      "shear_modulus_GPa": 3.3,
+      "bulk_modulus_GPa": 6.3,
+      "specific_heat": 1228,
+      "thermal_expansion_um_mK": 71.0
+    },
+    "Nb": {
+      "thermal_conductivity": 53.7,
+      "electrical_resistivity_nOhm_m": 152.0,
+      "youngs_modulus_GPa": 105.0,
+      "shear_modulus_GPa": 38.0,
+      "bulk_modulus_GPa": 170.0,
+      "poissons_ratio": 0.4,
+      "specific_heat": 265,
+      "thermal_expansion_um_mK": 7.3
+    },
+    "Nd": {
+      "thermal_conductivity": 16.5,
+      "electrical_resistivity_nOhm_m": 643.0,
+      "youngs_modulus_GPa": 41.0,
+      "shear_modulus_GPa": 16.0,
+      "bulk_modulus_GPa": 32.0,
+      "poissons_ratio": 0.28,
+      "specific_heat": 190,
+      "thermal_expansion_um_mK": 9.6
+    },
+    "Ne": {
+      "thermal_conductivity": 0.0491,
+      "specific_heat": 1030
+    },
+    "Ni": {
+      "thermal_conductivity": 90.9,
+      "electrical_resistivity_nOhm_m": 69.3,
+      "youngs_modulus_GPa": 200.0,
+      "shear_modulus_GPa": 76.0,
+      "bulk_modulus_GPa": 180.0,
+      "poissons_ratio": 0.31,
+      "specific_heat": 445,
+      "thermal_expansion_um_mK": 13.4
+    },
+    "Np": {
+      "thermal_conductivity": 6.3,
+      "electrical_resistivity_nOhm_m": 1220.0,
+      "specific_heat": 121
+    },
+    "O": {
+      "thermal_conductivity": 0.02658,
+      "specific_heat": 919
+    },
+    "Os": {
+      "thermal_conductivity": 87.6,
+      "electrical_resistivity_nOhm_m": 81.2,
+      "shear_modulus_GPa": 222.0,
+      "bulk_modulus_GPa": 462.0,
+      "specific_heat": 130,
+      "thermal_expansion_um_mK": 5.1
+    },
+    "P": {
+      "thermal_conductivity": 0.236,
+      "specific_heat": 769
+    },
+    "Pa": {
+      "thermal_conductivity": 47.0,
+      "electrical_resistivity_nOhm_m": 177.0,
+      "specific_heat": 99
+    },
+    "Pb": {
+      "thermal_conductivity": 35.3,
+      "electrical_resistivity_nOhm_m": 208.0,
+      "youngs_modulus_GPa": 16.0,
+      "shear_modulus_GPa": 5.6,
+      "bulk_modulus_GPa": 46.0,
+      "poissons_ratio": 0.44,
+      "specific_heat": 129,
+      "thermal_expansion_um_mK": 28.9
+    },
+    "Pd": {
+      "thermal_conductivity": 71.8,
+      "electrical_resistivity_nOhm_m": 105.4,
+      "youngs_modulus_GPa": 121.0,
+      "shear_modulus_GPa": 44.0,
+      "bulk_modulus_GPa": 180.0,
+      "poissons_ratio": 0.39,
+      "specific_heat": 246,
+      "thermal_expansion_um_mK": 11.8
+    },
+    "Po": {
+      "thermal_conductivity": 20.0,
+      "electrical_resistivity_nOhm_m": 400.0,
+      "specific_heat": 125
+    },
+    "Pr": {
+      "thermal_conductivity": 12.5,
+      "electrical_resistivity_nOhm_m": 700.0,
+      "youngs_modulus_GPa": 37.0,
+      "shear_modulus_GPa": 15.0,
+      "bulk_modulus_GPa": 29.0,
+      "poissons_ratio": 0.28,
+      "specific_heat": 193,
+      "thermal_expansion_um_mK": 6.7
+    },
+    "Pt": {
+      "thermal_conductivity": 71.6,
+      "electrical_resistivity_nOhm_m": 105.0,
+      "youngs_modulus_GPa": 168.0,
+      "shear_modulus_GPa": 61.0,
+      "bulk_modulus_GPa": 230.0,
+      "poissons_ratio": 0.38,
+      "specific_heat": 133,
+      "thermal_expansion_um_mK": 8.8
+    },
+    "Pu": {
+      "thermal_conductivity": 6.74,
+      "electrical_resistivity_nOhm_m": 1460.0,
+      "youngs_modulus_GPa": 96.0,
+      "shear_modulus_GPa": 43.0,
+      "bulk_modulus_GPa": 54.0,
+      "specific_heat": 130,
+      "thermal_expansion_um_mK": 46.7
+    },
+    "Ra": {
+      "thermal_conductivity": 18.6,
+      "electrical_resistivity_nOhm_m": 1000.0,
+      "specific_heat": 92
+    },
+    "Rb": {
+      "thermal_conductivity": 58.2,
+      "electrical_resistivity_nOhm_m": 128.0,
+      "specific_heat": 363,
+      "thermal_expansion_um_mK": 90.0
+    },
+    "Re": {
+      "thermal_conductivity": 48.0,
+      "electrical_resistivity_nOhm_m": 180.0,
+      "youngs_modulus_GPa": 463.0,
+      "shear_modulus_GPa": 178.0,
+      "bulk_modulus_GPa": 370.0,
+      "poissons_ratio": 0.3,
+      "specific_heat": 137,
+      "thermal_expansion_um_mK": 6.2
+    },
+    "Rh": {
+      "thermal_conductivity": 150.0,
+      "electrical_resistivity_nOhm_m": 43.3,
+      "youngs_modulus_GPa": 275.0,
+      "shear_modulus_GPa": 150.0,
+      "bulk_modulus_GPa": 380.0,
+      "poissons_ratio": 0.26,
+      "specific_heat": 243,
+      "thermal_expansion_um_mK": 8.2
+    },
+    "Ru": {
+      "thermal_conductivity": 117.0,
+      "electrical_resistivity_nOhm_m": 71.0,
+      "youngs_modulus_GPa": 447.0,
+      "shear_modulus_GPa": 173.0,
+      "bulk_modulus_GPa": 220.0,
+      "poissons_ratio": 0.3,
+      "specific_heat": 238,
+      "thermal_expansion_um_mK": 6.4
+    },
+    "S": {
+      "thermal_conductivity": 0.205,
+      "specific_heat": 710
+    },
+    "Sb": {
+      "thermal_conductivity": 24.4,
+      "electrical_resistivity_nOhm_m": 417.0,
+      "youngs_modulus_GPa": 55.0,
+      "shear_modulus_GPa": 20.0,
+      "bulk_modulus_GPa": 42.0,
+      "specific_heat": 207,
+      "thermal_expansion_um_mK": 11.0
+    },
+    "Sc": {
+      "thermal_conductivity": 15.8,
+      "electrical_resistivity_nOhm_m": 562.0,
+      "youngs_modulus_GPa": 74.0,
+      "shear_modulus_GPa": 29.0,
+      "bulk_modulus_GPa": 57.0,
+      "poissons_ratio": 0.28,
+      "specific_heat": 567,
+      "thermal_expansion_um_mK": 10.2
+    },
+    "Se": {
+      "thermal_conductivity": 0.52,
+      "youngs_modulus_GPa": 10.0,
+      "shear_modulus_GPa": 3.7,
+      "bulk_modulus_GPa": 8.3,
+      "specific_heat": 321
+    },
+    "Si": {
+      "thermal_conductivity": 149.0,
+      "youngs_modulus_GPa": 130.0,
+      "shear_modulus_GPa": 51.0,
+      "bulk_modulus_GPa": 100.0,
+      "specific_heat": 705,
+      "thermal_expansion_um_mK": 2.6
+    },
+    "Sm": {
+      "thermal_conductivity": 13.3,
+      "electrical_resistivity_nOhm_m": 940.0,
+      "youngs_modulus_GPa": 50.0,
+      "shear_modulus_GPa": 20.0,
+      "bulk_modulus_GPa": 38.0,
+      "poissons_ratio": 0.27,
+      "specific_heat": 197,
+      "thermal_expansion_um_mK": 12.7
+    },
+    "Sn": {
+      "thermal_conductivity": 66.6,
+      "electrical_resistivity_nOhm_m": 115.0,
+      "youngs_modulus_GPa": 50.0,
+      "shear_modulus_GPa": 18.0,
+      "bulk_modulus_GPa": 58.0,
+      "poissons_ratio": 0.36,
+      "specific_heat": 228,
+      "thermal_expansion_um_mK": 22.0
+    },
+    "Sr": {
+      "thermal_conductivity": 35.4,
+      "electrical_resistivity_nOhm_m": 132.0,
+      "youngs_modulus_GPa": 15.7,
+      "shear_modulus_GPa": 6.1,
+      "bulk_modulus_GPa": 12.0,
+      "specific_heat": 301,
+      "thermal_expansion_um_mK": 22.5
+    },
+    "Ta": {
+      "thermal_conductivity": 57.5,
+      "electrical_resistivity_nOhm_m": 131.0,
+      "youngs_modulus_GPa": 186.0,
+      "shear_modulus_GPa": 69.0,
+      "bulk_modulus_GPa": 200.0,
+      "poissons_ratio": 0.34,
+      "specific_heat": 140,
+      "thermal_expansion_um_mK": 6.3
+    },
+    "Tb": {
+      "thermal_conductivity": 11.1,
+      "electrical_resistivity_nOhm_m": 1150.0,
+      "youngs_modulus_GPa": 56.0,
+      "shear_modulus_GPa": 22.0,
+      "bulk_modulus_GPa": 38.7,
+      "poissons_ratio": 0.26,
+      "specific_heat": 182,
+      "thermal_expansion_um_mK": 10.3
+    },
+    "Tc": {
+      "thermal_conductivity": 50.6,
+      "electrical_resistivity_nOhm_m": 200.0,
+      "specific_heat": 63
+    },
+    "Te": {
+      "thermal_conductivity": 2.35,
+      "youngs_modulus_GPa": 43.0,
+      "shear_modulus_GPa": 16.0,
+      "bulk_modulus_GPa": 65.0,
+      "specific_heat": 202,
+      "thermal_expansion_um_mK": 18.0
+    },
+    "Th": {
+      "thermal_conductivity": 54.0,
+      "electrical_resistivity_nOhm_m": 157.0,
+      "youngs_modulus_GPa": 79.0,
+      "shear_modulus_GPa": 31.0,
+      "bulk_modulus_GPa": 54.0,
+      "poissons_ratio": 0.27,
+      "specific_heat": 113,
+      "thermal_expansion_um_mK": 11.0
+    },
+    "Ti": {
+      "thermal_conductivity": 21.9,
+      "electrical_resistivity_nOhm_m": 420.0,
+      "youngs_modulus_GPa": 116.0,
+      "shear_modulus_GPa": 44.0,
+      "bulk_modulus_GPa": 110.0,
+      "poissons_ratio": 0.32,
+      "specific_heat": 523,
+      "thermal_expansion_um_mK": 8.6
+    },
+    "Tl": {
+      "thermal_conductivity": 46.1,
+      "electrical_resistivity_nOhm_m": 180.0,
+      "youngs_modulus_GPa": 8.0,
+      "shear_modulus_GPa": 2.8,
+      "bulk_modulus_GPa": 43.0,
+      "specific_heat": 129,
+      "thermal_expansion_um_mK": 29.9
+    },
+    "Tm": {
+      "thermal_conductivity": 16.9,
+      "electrical_resistivity_nOhm_m": 676.0,
+      "youngs_modulus_GPa": 74.0,
+      "shear_modulus_GPa": 31.0,
+      "bulk_modulus_GPa": 45.0,
+      "poissons_ratio": 0.21,
+      "specific_heat": 160,
+      "thermal_expansion_um_mK": 13.3
+    },
+    "U": {
+      "thermal_conductivity": 27.5,
+      "electrical_resistivity_nOhm_m": 280.0,
+      "youngs_modulus_GPa": 208.0,
+      "shear_modulus_GPa": 111.0,
+      "bulk_modulus_GPa": 100.0,
+      "poissons_ratio": 0.23,
+      "specific_heat": 116,
+      "thermal_expansion_um_mK": 13.9
+    },
+    "V": {
+      "thermal_conductivity": 30.7,
+      "electrical_resistivity_nOhm_m": 197.0,
+      "youngs_modulus_GPa": 128.0,
+      "shear_modulus_GPa": 47.0,
+      "bulk_modulus_GPa": 160.0,
+      "poissons_ratio": 0.37,
+      "specific_heat": 489,
+      "thermal_expansion_um_mK": 8.4
+    },
+    "W": {
+      "thermal_conductivity": 173.0,
+      "electrical_resistivity_nOhm_m": 52.8,
+      "youngs_modulus_GPa": 411.0,
+      "shear_modulus_GPa": 161.0,
+      "bulk_modulus_GPa": 310.0,
+      "poissons_ratio": 0.28,
+      "specific_heat": 132,
+      "thermal_expansion_um_mK": 4.5
+    },
+    "Xe": {
+      "thermal_conductivity": 0.00565,
+      "specific_heat": 158
+    },
+    "Y": {
+      "thermal_conductivity": 17.2,
+      "electrical_resistivity_nOhm_m": 596.0,
+      "youngs_modulus_GPa": 64.0,
+      "shear_modulus_GPa": 26.0,
+      "bulk_modulus_GPa": 41.0,
+      "poissons_ratio": 0.24,
+      "specific_heat": 298,
+      "thermal_expansion_um_mK": 10.6
+    },
+    "Yb": {
+      "thermal_conductivity": 38.5,
+      "electrical_resistivity_nOhm_m": 250.0,
+      "youngs_modulus_GPa": 24.0,
+      "shear_modulus_GPa": 9.9,
+      "bulk_modulus_GPa": 31.0,
+      "poissons_ratio": 0.21,
+      "specific_heat": 155,
+      "thermal_expansion_um_mK": 26.3
+    },
+    "Zn": {
+      "thermal_conductivity": 116.0,
+      "electrical_resistivity_nOhm_m": 59.0,
+      "youngs_modulus_GPa": 108.0,
+      "shear_modulus_GPa": 43.0,
+      "bulk_modulus_GPa": 70.0,
+      "poissons_ratio": 0.25,
+      "specific_heat": 388,
+      "thermal_expansion_um_mK": 30.2
+    },
+    "Zr": {
+      "thermal_conductivity": 22.6,
+      "electrical_resistivity_nOhm_m": 421.0,
+      "youngs_modulus_GPa": 88.0,
+      "shear_modulus_GPa": 33.0,
+      "bulk_modulus_GPa": 91.0,
+      "poissons_ratio": 0.34,
+      "specific_heat": 278,
+      "thermal_expansion_um_mK": 5.7
+    }
+  }
+}

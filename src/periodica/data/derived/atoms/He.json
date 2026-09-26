@@ -51,6 +51,8 @@
     "melting_point": 0.95,
     "period": 1,
     "primary_emission_wavelength": 587.6,
+    "specific_heat": 5193,
+    "thermal_conductivity": 0.1513,
     "valence_electrons": 2,
     "visible_emission_wavelength": 587.6
   },
@@ -72,6 +74,8 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
         "valence_electrons",
         "visible_emission_wavelength"
       ],

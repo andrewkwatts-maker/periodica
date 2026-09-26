@@ -42,8 +42,10 @@
     "atomic_radius": 253,
     "block": "s",
     "boiling_point": 2118,
+    "bulk_modulus_GPa": 9.6,
     "covalent_radius": 215,
     "density": 3.51,
+    "electrical_resistivity_nOhm_m": 332.0,
     "electron_affinity": 13.95,
     "electron_configuration": "[Xe] 6s²",
     "electronegativity": 0.89,
@@ -52,8 +54,13 @@
     "melting_point": 1000,
     "period": 6,
     "primary_emission_wavelength": 553.6,
+    "shear_modulus_GPa": 4.9,
+    "specific_heat": 204,
+    "thermal_conductivity": 18.4,
+    "thermal_expansion_um_mK": 20.6,
     "valence_electrons": 2,
-    "visible_emission_wavelength": 553.6
+    "visible_emission_wavelength": 553.6,
+    "youngs_modulus_GPa": 13.0
   },
   "Symbol": "Ba",
   "_provenance": {
@@ -64,8 +71,10 @@
         "atomic_radius",
         "block",
         "boiling_point",
+        "bulk_modulus_GPa",
         "covalent_radius",
         "density",
+        "electrical_resistivity_nOhm_m",
         "electron_affinity",
         "electron_configuration",
         "electronegativity",
@@ -74,8 +83,13 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
         "valence_electrons",
-        "visible_emission_wavelength"
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
       ],
       "matched_on": "atomic_number=56",
       "tier": "elements"

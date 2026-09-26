@@ -52,6 +52,9 @@
     "melting_point": 3823,
     "period": 2,
     "primary_emission_wavelength": 247.9,
+    "specific_heat": 709,
+    "thermal_conductivity": 140.0,
+    "thermal_expansion_um_mK": 7.1,
     "valence_electrons": 4
   },
   "Symbol": "C",
@@ -73,6 +76,9 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
         "valence_electrons"
       ],
       "matched_on": "atomic_number=6",

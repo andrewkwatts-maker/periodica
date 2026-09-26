@@ -42,8 +42,10 @@
     "atomic_radius": 133,
     "block": "p",
     "boiling_point": 1860,
+    "bulk_modulus_GPa": 42.0,
     "covalent_radius": 139,
     "density": 6.68,
+    "electrical_resistivity_nOhm_m": 417.0,
     "electron_affinity": 103.2,
     "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p³",
     "electronegativity": 2.05,
@@ -52,8 +54,13 @@
     "melting_point": 903.78,
     "period": 5,
     "primary_emission_wavelength": 259.8,
+    "shear_modulus_GPa": 20.0,
+    "specific_heat": 207,
+    "thermal_conductivity": 24.4,
+    "thermal_expansion_um_mK": 11.0,
     "valence_electrons": 5,
-    "visible_emission_wavelength": 450.0
+    "visible_emission_wavelength": 450.0,
+    "youngs_modulus_GPa": 55.0
   },
   "Symbol": "Sb",
   "_provenance": {
@@ -64,8 +71,10 @@
         "atomic_radius",
         "block",
         "boiling_point",
+        "bulk_modulus_GPa",
         "covalent_radius",
         "density",
+        "electrical_resistivity_nOhm_m",
         "electron_affinity",
         "electron_configuration",
         "electronegativity",
@@ -74,8 +83,13 @@
         "melting_point",
         "period",
         "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
         "valence_electrons",
-        "visible_emission_wavelength"
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
       ],
       "matched_on": "atomic_number=51",
       "tier": "elements"
