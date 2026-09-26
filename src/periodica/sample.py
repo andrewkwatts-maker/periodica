@@ -50,14 +50,16 @@ or large, the sampler returns the bulk Properties.
 """
 from __future__ import annotations
 
-import hashlib
 import math
 from typing import Any, Callable, Dict, Mapping, Optional, Sequence, Tuple, Union
+
+import numpy as np
 
 # Rust impl: rust/periodica_core/src/sample.rs
 from periodica.get import Get, UnknownName
 from periodica._dispatch import _HAS_RUST, _native
 from periodica.properties import DataSheet, sheet as properties_sheet
+from periodica._hash import unit_at_grains, unit_at_point
 
 
 Point = Tuple[float, float, float]
@@ -93,11 +95,16 @@ def _maybe_phase_at(point: Optional[Point], fractions: Mapping[str, float]) -> O
 
     `fractions` is {phase_name: volume_fraction} summing to <= 1; the leftover
     is treated as the dominant matrix.
+
+    The hash lives in `periodica._hash` so the vectorised sampler in
+    `periodica.engine.grid` assigns the *same* phase to the same point. It used
+    to be a SHA-1 here, which cannot be vectorised -- and a vectorised sampler
+    with its own hash would have made phase assignment depend on which
+    execution strategy the caller picked.
     """
     if point is None:
         return None
-    h = hashlib.sha1(repr(tuple(round(c, 9) for c in point)).encode()).digest()
-    u = int.from_bytes(h[:8], "big") / 2**64  # uniform in [0, 1)
+    u = unit_at_point(point)
     cum = 0.0
     for name, frac in fractions.items():
         cum += float(frac)
@@ -261,13 +268,11 @@ def _microstructure_voronoi(field: dict, prop: str, at, scale_m, entry) -> Any:
         return bulk
     # Hash 3D point + grain_density to a deterministic grain id, then a phase.
     g_density = float(field.get("grain_density", 1.0))
-    # Quantize the point by ~1/grain_density to pick a grain "cell".
+    # Quantize the point by ~1/grain_density to pick a grain "cell", then hash
+    # the cell so every point inside one grain agrees. Shared with the
+    # vectorised sampler via periodica._hash.
     grain_size = max(1e-12, 1.0 / max(1e-12, g_density)) ** (1.0 / 3.0)
-    qx = round(float(at[0]) / grain_size)
-    qy = round(float(at[1]) / grain_size)
-    qz = round(float(at[2]) / grain_size)
-    h = hashlib.sha1(repr((qx, qy, qz)).encode()).digest()
-    u = int.from_bytes(h[:8], "big") / 2**64
+    u = float(unit_at_grains(np.asarray(at, dtype=float).reshape(1, 3), grain_size)[0])
     cum = 0.0
     chosen = None
     for phase_name, phase_data in phases.items():
