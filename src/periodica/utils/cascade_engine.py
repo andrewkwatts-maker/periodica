@@ -363,15 +363,27 @@ class CascadeRegenerationEngine:
             logger.error(f"Material regeneration failed: {e}")
             return 0
 
+    #: Biological categories whose output folder is not named after them.
+    _BIOLOGICAL_DIRS = {'biomaterials': 'biological_materials'}
+
     def _regenerate_biological(self, category: str, progress_callback) -> int:
-        """Regenerate a biological category."""
+        """Regenerate a biological category into this engine's data root.
+
+        The output directory has to be passed explicitly. Omitting it made
+        BiologicalGenerator fall back to the installed package's own
+        data/active, so an engine constructed with data_root=... wrote over the
+        installation instead of the directory it was given -- and a test run
+        rewrote 53 shipped JSON files, protein backbones included.
+        """
         try:
             from periodica.utils.biological_generator import BiologicalGenerator
             gen = BiologicalGenerator()
             items = gen.generate_category(
                 category, count_limit=20, progress_callback=progress_callback
             )
-            return gen.save_items(items, category)
+            subdir = self._BIOLOGICAL_DIRS.get(category, category)
+            output_dir = str(self._data_root / subdir)
+            return gen.save_items(items, category, output_dir=output_dir)
         except Exception as e:
             logger.error(f"Biological regeneration ({category}) failed: {e}")
             return 0

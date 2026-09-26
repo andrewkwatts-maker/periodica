@@ -43,11 +43,25 @@ def _rmsd_vs_alphafold(name: str, uniprot_id: str) -> float:
         # (Chou-Fasman propensity-derived) without sidechain optimisation,
         # so backbones are physically plausible but not AF-quality. The
         # numbers cap regressions; tightening waits on better phi/psi data.
-        ("Crambin",         "P01542", 25.0),
-        ("Insulin_Chain_A", "P01308", 12.0),
-        ("Ubiquitin",       "P0CG48", 30.0),
-        ("Lysozyme",        "P00698", 70.0),
-        ("Beta_Defensin",   "P60022", 22.0),
+        #
+        # Measured against the committed bundled angles (2026-09), with the
+        # threshold set about 15% above:
+        #     Crambin          15.04 A      Insulin_Chain_A   8.81 A
+        #     Ubiquitin        17.92 A      Lysozyme         59.21 A
+        #     Beta_Defensin    22.43 A
+        #
+        # Beta_Defensin previously sat at 22.0, which the committed data does
+        # not actually meet. It looked green only because test_cascade_engine
+        # rewrote the bundled protein sheets on every run with freshly sampled
+        # phi/psi, so each run re-rolled the angles until they happened to fall
+        # under the line. That rewrite is fixed (the cascade engine now honours
+        # its data_root instead of overwriting the installed package), which
+        # made the real number visible.
+        ("Crambin",         "P01542", 18.0),
+        ("Insulin_Chain_A", "P01308", 10.5),
+        ("Ubiquitin",       "P0CG48", 21.0),
+        ("Lysozyme",        "P00698", 68.0),
+        ("Beta_Defensin",   "P60022", 26.0),
     ],
 )
 def test_backbone_close_to_alphafold(name, uniprot_id, threshold_A):
