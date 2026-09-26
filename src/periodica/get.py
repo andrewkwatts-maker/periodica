@@ -131,6 +131,12 @@ _PRIORITY_SYMBOL_DERIVED = 3
 _PRIORITY_STEM_ACTIVE = 2
 _PRIORITY_SYMBOL_ACTIVE = 1
 _PRIORITY_STEM_DERIVED = 0
+# Human-readable names ("Iron", "Stainless Steel 316L") rank below every
+# identifier form, so adding them can only resolve names that used to fail --
+# never change which entry an existing symbol or filename returns.
+_PRIORITY_NAME_ACTIVE = -1
+_PRIORITY_NAME_DERIVED = -2
+_PRIORITY_NONE = -999
 
 
 class UnknownConstituent(KeyError):
@@ -182,27 +188,53 @@ def _entry_keys(
         path.stem,
         _PRIORITY_STEM_ACTIVE if is_active else _PRIORITY_STEM_DERIVED,
     )
+    name = data.get("Name") or data.get("name")
+    if name:
+        yield (
+            str(name),
+            _PRIORITY_NAME_ACTIVE if is_active else _PRIORITY_NAME_DERIVED,
+        )
+
+
+_SLUG_STRIP = re.compile(r"[^0-9a-z]+")
+
+
+def _slug(key: str) -> str:
+    """Punctuation- and case-insensitive form of a lookup key.
+
+    ``Stainless Steel 316L``, ``stainless-steel-316l`` and
+    ``Stainless_Steel_316L`` all slug to ``stainlesssteel316l``, so a caller
+    need not know which separator a given JSON file happened to use.
+    """
+    return _SLUG_STRIP.sub("", key.casefold())
 
 
 class _TierIndex:
-    """Per-tier exact and casefold lookup tables."""
+    """Per-tier exact, casefold and slug lookup tables."""
 
-    __slots__ = ("exact", "casefold", "priority")
+    __slots__ = ("exact", "casefold", "slug", "priority")
 
     def __init__(self) -> None:
         self.exact: dict = {}
         self.casefold: dict = {}
+        self.slug: dict = {}
         self.priority: dict = {}
 
     def add(self, key: str, prio: int, data: dict) -> None:
-        if self.priority.get(key, -1) < prio:
+        if self.priority.get(key, _PRIORITY_NONE) < prio:
             self.exact[key] = data
             self.priority[key] = prio
         cf = key.casefold()
         cf_key = ("cf", cf)
-        if self.priority.get(cf_key, -1) < prio:
+        if self.priority.get(cf_key, _PRIORITY_NONE) < prio:
             self.casefold[cf] = data
             self.priority[cf_key] = prio
+        sl = _slug(key)
+        if sl:
+            sl_key = ("slug", sl)
+            if self.priority.get(sl_key, _PRIORITY_NONE) < prio:
+                self.slug[sl] = data
+                self.priority[sl_key] = prio
 
 
 class _Registry:
@@ -219,18 +251,26 @@ class _Registry:
             entry = self.merged.exact.get(sym)
             if entry is not None:
                 return entry
-            return self.merged.casefold.get(sym.casefold())
+            entry = self.merged.casefold.get(sym.casefold())
+            if entry is not None:
+                return entry
+            return self.merged.slug.get(_slug(sym))
         tiers = [from_] if isinstance(from_, str) else list(from_)
-        for t in tiers:
-            idx = self.by_tier.get(t)
-            if idx is None:
-                continue
-            entry = idx.exact.get(sym)
-            if entry is not None:
-                return entry
-            entry = idx.casefold.get(sym.casefold())
-            if entry is not None:
-                return entry
+        # Exact, then casefold, then slug -- each pass sweeps every requested
+        # tier before the next loosens, so an exact hit in a later tier still
+        # beats a fuzzy hit in an earlier one.
+        for match in (
+            lambda idx: idx.exact.get(sym),
+            lambda idx: idx.casefold.get(sym.casefold()),
+            lambda idx: idx.slug.get(_slug(sym)),
+        ):
+            for t in tiers:
+                idx = self.by_tier.get(t)
+                if idx is None:
+                    continue
+                entry = match(idx)
+                if entry is not None:
+                    return entry
         return None
 
 

@@ -25,3 +25,7 @@ Cargo.lock
 CLAUDE.md
 .claude/
 wheelhouse/
+
+# Locally built Rust extension (maturin output)
+*.so
+*.pyd
