@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 41,
+  "AtomicWeight_amu": 92.906,
   "BaryonNumber_B": 93,
+  "BindingEnergyPerNucleon_MeV": 8.688096102901747,
+  "BindingEnergy_MeV": 807.9929375698625,
   "Charge_e": 0,
   "Composition": {
     "E": 41,
@@ -23,10 +27,60 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Niobium",
+  "ElementSymbol": "Nb",
   "LeptonNumber_L": 41,
-  "Mass_MeVc2": 87347.50843855,
-  "Mass_amu": 93.77140253713267,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.8674160528453327,
+  "MassNumber_A": 93,
+  "Mass_MeVc2": 86539.51550098014,
+  "Mass_amu": 92.90398648428734,
+  "Mass_kg": 1.5427069900003752e-25,
   "Name": "Nb",
-  "Symbol": "Nb"
+  "NeutronNumber_N": 52,
+  "Properties": {
+    "atomic_mass": 92.906,
+    "atomic_radius": 198,
+    "block": "d",
+    "boiling_point": 5017,
+    "covalent_radius": 164,
+    "debye_temperature_K": 275,
+    "density": 8.57,
+    "electron_affinity": 86.1,
+    "electron_configuration": "[Kr] 4d⁴ 5s¹",
+    "electronegativity": 1.6,
+    "group": 5,
+    "ionization_energy": 6.759,
+    "melting_point": 2750,
+    "period": 5,
+    "primary_emission_wavelength": 405.9,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 405.9
+  },
+  "Symbol": "Nb",
+  "_provenance": {
+    "Properties": {
+      "entry": "Niobium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=41",
+      "tier": "elements"
+    }
+  }
 }

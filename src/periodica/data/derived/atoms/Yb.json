@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 70,
+  "AtomicWeight_amu": 173.045,
   "BaryonNumber_B": 174,
+  "BindingEnergyPerNucleon_MeV": 8.075651333392154,
+  "BindingEnergy_MeV": 1405.1633320102349,
   "Charge_e": 0,
   "Composition": {
     "E": 70,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Ytterbium",
+  "ElementSymbol": "Yb",
   "LeptonNumber_L": 70,
-  "Mass_MeVc2": 163429.61983178,
-  "Mass_amu": 175.44890451590456,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.508504807877638,
+  "MassNumber_A": 174,
+  "Mass_MeVc2": 162024.45649976976,
+  "Mass_amu": 173.94039970802692,
+  "Mass_kg": 2.8883482897519794e-25,
   "Name": "Yb",
-  "Symbol": "Yb"
+  "NeutronNumber_N": 104,
+  "Properties": {
+    "atomic_mass": 173.045,
+    "atomic_radius": 222,
+    "block": "f",
+    "boiling_point": 1469,
+    "covalent_radius": 187,
+    "density": 6.9,
+    "electron_affinity": -1.93,
+    "electron_configuration": "[Xe] 4f¹⁴ 6s²",
+    "electronegativity": 1.1,
+    "ionization_energy": 6.25416,
+    "melting_point": 1097,
+    "period": 6,
+    "primary_emission_wavelength": 398.8,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 398.8
+  },
+  "Symbol": "Yb",
+  "_provenance": {
+    "Properties": {
+      "entry": "Ytterbium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=70",
+      "tier": "elements"
+    }
+  }
 }

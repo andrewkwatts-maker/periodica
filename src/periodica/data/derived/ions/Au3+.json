@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 79,
+  "AtomicWeight_amu": 196.967,
   "BaryonNumber_B": 197,
+  "BindingEnergyPerNucleon_MeV": 7.8993760122632155,
+  "BindingEnergy_MeV": 1556.1770744158534,
   "Charge_e": 3,
   "Composition": {
     "E": 76,
@@ -23,9 +27,59 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Gold",
+  "ElementSymbol": "Au",
   "LeptonNumber_L": 76,
-  "Mass_MeVc2": 185031.0505062,
-  "Mass_amu": 198.63899301824796,
-  "Mass_kg": 0,
-  "Name": "Au3+"
+  "MassDefect_amu": 1.6706247204066473,
+  "MassNumber_A": 197,
+  "Mass_MeVc2": 183474.87343178416,
+  "Mass_amu": 196.96836829784132,
+  "Mass_kg": 3.2707367044302245e-25,
+  "Name": "Au3+",
+  "NeutronNumber_N": 118,
+  "Properties": {
+    "atomic_mass": 196.967,
+    "atomic_radius": 174,
+    "block": "d",
+    "boiling_point": 3129,
+    "covalent_radius": 136,
+    "debye_temperature_K": 165,
+    "density": 19.3,
+    "electron_affinity": 222.8,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s¹",
+    "electronegativity": 2.54,
+    "group": 11,
+    "ionization_energy": 9.22553,
+    "melting_point": 1337,
+    "period": 6,
+    "primary_emission_wavelength": 267.6,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 627.8
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Gold",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=79",
+      "tier": "elements"
+    }
+  }
 }

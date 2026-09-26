@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 22,
+  "AtomicWeight_amu": 47.867,
   "BaryonNumber_B": 48,
+  "BindingEnergyPerNucleon_MeV": 8.868875795340951,
+  "BindingEnergy_MeV": 425.70603817636567,
   "Charge_e": 0,
   "Composition": {
     "E": 22,
@@ -23,10 +27,60 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Titanium",
+  "ElementSymbol": "Ti",
   "LeptonNumber_L": 22,
-  "Mass_MeVc2": 45081.92884994,
-  "Mass_amu": 48.39743883836143,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.45701420660677433,
+  "MassNumber_A": 48,
+  "Mass_MeVc2": 44656.22281176363,
+  "Mass_amu": 47.94042463175466,
+  "Mass_kg": 7.960694797042153e-26,
   "Name": "Ti",
-  "Symbol": "Ti"
+  "NeutronNumber_N": 26,
+  "Properties": {
+    "atomic_mass": 47.867,
+    "atomic_radius": 176,
+    "block": "d",
+    "boiling_point": 3560,
+    "covalent_radius": 160,
+    "debye_temperature_K": 420,
+    "density": 4.54,
+    "electron_affinity": 7.6,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d² 4s²",
+    "electronegativity": 1.54,
+    "group": 4,
+    "ionization_energy": 6.828,
+    "melting_point": 1941,
+    "period": 4,
+    "primary_emission_wavelength": 498.2,
+    "valence_electrons": 4,
+    "visible_emission_wavelength": 498.2
+  },
+  "Symbol": "Ti",
+  "_provenance": {
+    "Properties": {
+      "entry": "Titanium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=22",
+      "tier": "elements"
+    }
+  }
 }

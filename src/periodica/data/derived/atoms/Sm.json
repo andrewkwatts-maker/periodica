@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 62,
+  "AtomicWeight_amu": 150.36,
   "BaryonNumber_B": 152,
+  "BindingEnergyPerNucleon_MeV": 8.247894270302742,
+  "BindingEnergy_MeV": 1253.679929086017,
   "Charge_e": 0,
   "Composition": {
     "E": 62,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Samarium",
+  "ElementSymbol": "Sm",
   "LeptonNumber_L": 62,
-  "Mass_MeVc2": 142765.43924762,
-  "Mass_amu": 153.26499532036402,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.345880694068793,
+  "MassNumber_A": 152,
+  "Mass_MeVc2": 141511.759318534,
+  "Mass_amu": 151.91911462629523,
+  "Mass_kg": 2.5226762480024667e-25,
   "Name": "Sm",
-  "Symbol": "Sm"
+  "NeutronNumber_N": 90,
+  "Properties": {
+    "atomic_mass": 150.36,
+    "atomic_radius": 185,
+    "block": "f",
+    "boiling_point": 2076,
+    "covalent_radius": 198,
+    "density": 7.52,
+    "electron_affinity": 15.63,
+    "electron_configuration": "[Xe] 4f⁶ 6s²",
+    "electronegativity": 1.17,
+    "ionization_energy": 5.6437,
+    "melting_point": 1345,
+    "period": 6,
+    "primary_emission_wavelength": 476.0,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 476.0
+  },
+  "Symbol": "Sm",
+  "_provenance": {
+    "Properties": {
+      "entry": "Samarium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=62",
+      "tier": "elements"
+    }
+  }
 }

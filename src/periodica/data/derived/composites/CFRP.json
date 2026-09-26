@@ -40,9 +40,9 @@
     }
   },
   "LeptonNumber_L": 5.8500000000000005,
-  "Mass_MeVc2": 10941.3604986095,
-  "Mass_amu": 11.746033034710882,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 10848.59695129883,
+  "Mass_amu": 11.646447275585118,
+  "Mass_kg": 1.9339380688206223e-26,
   "Name": "CFRP",
   "Properties": {
     "Density_kgm3": 1600,

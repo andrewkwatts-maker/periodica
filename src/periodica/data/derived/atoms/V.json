@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 23,
+  "AtomicWeight_amu": 50.942,
   "BaryonNumber_B": 51,
+  "BindingEnergyPerNucleon_MeV": 8.83937072615898,
+  "BindingEnergy_MeV": 450.80790703410804,
   "Charge_e": 0,
   "Composition": {
     "E": 23,
@@ -23,10 +27,60 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Vanadium",
+  "ElementSymbol": "V",
   "LeptonNumber_L": 23,
-  "Mass_MeVc2": 47899.84277809,
-  "Mass_amu": 51.422593716791496,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.48396216987624463,
+  "MassNumber_A": 51,
+  "Mass_MeVc2": 47449.0348710559,
+  "Mass_amu": 50.93863154691525,
+  "Mass_kg": 8.458558768279597e-26,
   "Name": "V",
-  "Symbol": "V"
+  "NeutronNumber_N": 28,
+  "Properties": {
+    "atomic_mass": 50.942,
+    "atomic_radius": 171,
+    "block": "d",
+    "boiling_point": 3680,
+    "covalent_radius": 153,
+    "debye_temperature_K": 380,
+    "density": 6.11,
+    "electron_affinity": 50.6,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d³ 4s²",
+    "electronegativity": 1.63,
+    "group": 5,
+    "ionization_energy": 6.746,
+    "melting_point": 2183,
+    "period": 4,
+    "primary_emission_wavelength": 437.9,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 437.9
+  },
+  "Symbol": "V",
+  "_provenance": {
+    "Properties": {
+      "entry": "Vanadium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=23",
+      "tier": "elements"
+    }
+  }
 }

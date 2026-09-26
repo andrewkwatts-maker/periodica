@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 81,
+  "AtomicWeight_amu": 204.38,
   "BaryonNumber_B": 205,
+  "BindingEnergyPerNucleon_MeV": 7.850175032677905,
+  "BindingEnergy_MeV": 1609.2858816989706,
   "Charge_e": 0,
   "Composition": {
     "E": 81,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Thallium",
+  "ElementSymbol": "Tl",
   "LeptonNumber_L": 81,
-  "Mass_MeVc2": 192547.54220039,
-  "Mass_amu": 206.70827834673528,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.7276393672467527,
+  "MassNumber_A": 205,
+  "Mass_MeVc2": 190938.256318691,
+  "Mass_amu": 204.98063897948853,
+  "Mass_kg": 3.4037835892207144e-25,
   "Name": "Tl",
-  "Symbol": "Tl"
+  "NeutronNumber_N": 124,
+  "Properties": {
+    "atomic_mass": 204.38,
+    "atomic_radius": 156,
+    "block": "p",
+    "boiling_point": 1746,
+    "covalent_radius": 145,
+    "density": 11.85,
+    "electron_affinity": 19.2,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹",
+    "electronegativity": 1.62,
+    "group": 13,
+    "ionization_energy": 6.10829,
+    "melting_point": 577,
+    "period": 6,
+    "primary_emission_wavelength": 377.6,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 535.0
+  },
+  "Symbol": "Tl",
+  "_provenance": {
+    "Properties": {
+      "entry": "Thallium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=81",
+      "tier": "elements"
+    }
+  }
 }

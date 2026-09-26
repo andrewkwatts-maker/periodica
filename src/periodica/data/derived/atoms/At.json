@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 85,
+  "AtomicWeight_amu": 210,
   "BaryonNumber_B": 210,
+  "BindingEnergyPerNucleon_MeV": 7.797973055539582,
+  "BindingEnergy_MeV": 1637.5743416633122,
   "Charge_e": 0,
   "Composition": {
     "E": 85,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Astatine",
+  "ElementSymbol": "At",
   "LeptonNumber_L": 85,
-  "Mass_MeVc2": 197242.23996934996,
-  "Mass_amu": 211.74824344880554,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.7580082766052219,
+  "MassNumber_A": 210,
+  "Mass_MeVc2": 195604.66562768666,
+  "Mass_amu": 209.99023517220033,
+  "Mass_kg": 3.4869698910796e-25,
   "Name": "At",
-  "Symbol": "At"
+  "NeutronNumber_N": 125,
+  "Properties": {
+    "atomic_mass": 210,
+    "atomic_radius": 127,
+    "block": "p",
+    "boiling_point": 610,
+    "covalent_radius": 150,
+    "density": 7.0,
+    "electron_affinity": 270.0,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵",
+    "electronegativity": 2.2,
+    "group": 17,
+    "ionization_energy": 9.31751,
+    "melting_point": 575,
+    "period": 6,
+    "primary_emission_wavelength": 300.0,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 420.0
+  },
+  "Symbol": "At",
+  "_provenance": {
+    "Properties": {
+      "entry": "Astatine",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=85",
+      "tier": "elements"
+    }
+  }
 }

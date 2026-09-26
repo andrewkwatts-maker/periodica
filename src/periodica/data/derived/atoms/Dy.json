@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 66,
+  "AtomicWeight_amu": 162.5,
   "BaryonNumber_B": 164,
+  "BindingEnergyPerNucleon_MeV": 8.150460943092972,
+  "BindingEnergy_MeV": 1336.6755946672474,
   "Charge_e": 0,
   "Composition": {
     "E": 66,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Dysprosium",
+  "ElementSymbol": "Dy",
   "LeptonNumber_L": 66,
-  "Mass_MeVc2": 154037.09496021998,
-  "Mass_amu": 165.36561483408428,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.434980201371748,
+  "MassNumber_A": 164,
+  "Mass_MeVc2": 152700.41936555275,
+  "Mass_amu": 163.93063463271253,
+  "Mass_kg": 2.722132230201501e-25,
   "Name": "Dy",
-  "Symbol": "Dy"
+  "NeutronNumber_N": 98,
+  "Properties": {
+    "atomic_mass": 162.5,
+    "atomic_radius": 228,
+    "block": "f",
+    "boiling_point": 2840,
+    "covalent_radius": 192,
+    "density": 8.55,
+    "electron_affinity": 33.96,
+    "electron_configuration": "[Xe] 4f¹⁰ 6s²",
+    "electronegativity": 1.22,
+    "ionization_energy": 5.9389,
+    "melting_point": 1680,
+    "period": 6,
+    "primary_emission_wavelength": 421.2,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 421.2
+  },
+  "Symbol": "Dy",
+  "_provenance": {
+    "Properties": {
+      "entry": "Dysprosium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=66",
+      "tier": "elements"
+    }
+  }
 }

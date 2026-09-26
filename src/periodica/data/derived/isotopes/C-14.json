@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 6,
+  "AtomicWeight_amu": 12.011,
   "BaryonNumber_B": 14,
+  "BindingEnergyPerNucleon_MeV": 7.604345331916508,
+  "BindingEnergy_MeV": 106.46083464683112,
   "Charge_e": 0,
   "Composition": {
     "E": 6,
@@ -23,9 +27,55 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Carbon",
+  "ElementSymbol": "C",
   "LeptonNumber_L": 6,
-  "Mass_MeVc2": 13149.22188682,
-  "Mass_amu": 14.11626960678039,
-  "Mass_kg": 0,
-  "Name": "C-14"
+  "MassDefect_amu": 0.11429040116330136,
+  "MassNumber_A": 14,
+  "Mass_MeVc2": 13042.76105217317,
+  "Mass_amu": 14.001979205617088,
+  "Mass_kg": 2.325083348064801e-26,
+  "Name": "C-14",
+  "NeutronNumber_N": 8,
+  "Properties": {
+    "atomic_mass": 12.011,
+    "atomic_radius": 67,
+    "block": "p",
+    "boiling_point": 4098,
+    "covalent_radius": 77,
+    "density": 2.267,
+    "electron_affinity": 121.9,
+    "electron_configuration": "1s² 2s² 2p²",
+    "electronegativity": 2.55,
+    "group": 14,
+    "ionization_energy": 11.26,
+    "melting_point": 3823,
+    "period": 2,
+    "primary_emission_wavelength": 247.9,
+    "valence_electrons": 4
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Carbon",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=6",
+      "tier": "elements"
+    }
+  }
 }

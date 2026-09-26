@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 11,
+  "AtomicWeight_amu": 22.99,
   "BaryonNumber_B": 23,
+  "BindingEnergyPerNucleon_MeV": 8.307560008360452,
+  "BindingEnergy_MeV": 191.0738801922904,
   "Charge_e": 1,
   "Composition": {
     "E": 10,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Sodium",
+  "ElementSymbol": "Na",
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 21600.8880055,
-  "Mass_amu": 23.18950592332165,
-  "Mass_kg": 0,
-  "Name": "Na+"
+  "MassDefect_amu": 0.2051262371880669,
+  "MassNumber_A": 23,
+  "Mass_MeVc2": 21409.814125307712,
+  "Mass_amu": 22.984379686133583,
+  "Mass_kg": 3.816646039039226e-26,
+  "Name": "Na+",
+  "NeutronNumber_N": 12,
+  "Properties": {
+    "atomic_mass": 22.99,
+    "atomic_radius": 190,
+    "block": "s",
+    "boiling_point": 1156,
+    "covalent_radius": 166,
+    "density": 0.971,
+    "electron_affinity": 52.8,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s¹",
+    "electronegativity": 0.93,
+    "group": 1,
+    "ionization_energy": 5.139,
+    "melting_point": 371,
+    "period": 3,
+    "primary_emission_wavelength": 589.0,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 589.0
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Sodium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=11",
+      "tier": "elements"
+    }
+  }
 }

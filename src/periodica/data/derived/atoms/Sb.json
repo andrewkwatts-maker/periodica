@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 51,
+  "AtomicWeight_amu": 121.76,
   "BaryonNumber_B": 121,
+  "BindingEnergyPerNucleon_MeV": 8.499873443459506,
+  "BindingEnergy_MeV": 1028.4846866586004,
   "Charge_e": 0,
   "Composition": {
     "E": 51,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Antimony",
+  "ElementSymbol": "Sb",
   "LeptonNumber_L": 51,
-  "Mass_MeVc2": 113647.51687901,
-  "Mass_amu": 122.00562148953331,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.10412366969004,
+  "MassNumber_A": 121,
+  "Mass_MeVc2": 112619.0321923514,
+  "Mass_amu": 120.90149781984327,
+  "Mass_kg": 2.0076166034030447e-25,
   "Name": "Sb",
-  "Symbol": "Sb"
+  "NeutronNumber_N": 70,
+  "Properties": {
+    "atomic_mass": 121.76,
+    "atomic_radius": 133,
+    "block": "p",
+    "boiling_point": 1860,
+    "covalent_radius": 139,
+    "density": 6.68,
+    "electron_affinity": 103.2,
+    "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p³",
+    "electronegativity": 2.05,
+    "group": 15,
+    "ionization_energy": 8.608,
+    "melting_point": 903.78,
+    "period": 5,
+    "primary_emission_wavelength": 259.8,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 450.0
+  },
+  "Symbol": "Sb",
+  "_provenance": {
+    "Properties": {
+      "entry": "Antimony",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=51",
+      "tier": "elements"
+    }
+  }
 }

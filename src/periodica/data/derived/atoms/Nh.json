@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 113,
+  "AtomicWeight_amu": 286,
   "BaryonNumber_B": 286,
+  "BindingEnergyPerNucleon_MeV": 7.19400888333366,
+  "BindingEnergy_MeV": 2057.4865406334266,
   "Charge_e": 0,
   "Composition": {
     "E": 113,
@@ -23,10 +27,52 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Nihonium",
+  "ElementSymbol": "Nh",
   "LeptonNumber_L": 113,
-  "Mass_MeVc2": 268627.30659338995,
-  "Mass_amu": 288.38326071724737,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.2088025413023273,
+  "MassNumber_A": 286,
+  "Mass_MeVc2": 266569.8200527565,
+  "Mass_amu": 286.17445817594506,
+  "Mass_kg": 4.752038676642446e-25,
   "Name": "Nh",
-  "Symbol": "Nh"
+  "NeutronNumber_N": 173,
+  "Properties": {
+    "atomic_mass": 286,
+    "atomic_radius": 136,
+    "block": "p",
+    "boiling_point": 1400,
+    "covalent_radius": 136,
+    "density": 16.0,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹",
+    "electronegativity": 1.6,
+    "group": 13,
+    "ionization_energy": 7.4,
+    "melting_point": 700,
+    "period": 7,
+    "valence_electrons": 3
+  },
+  "Symbol": "Nh",
+  "_provenance": {
+    "Properties": {
+      "entry": "Nihonium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=113",
+      "tier": "elements"
+    }
+  }
 }

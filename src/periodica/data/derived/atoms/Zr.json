@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 40,
+  "AtomicWeight_amu": 91.224,
   "BaryonNumber_B": 90,
+  "BindingEnergyPerNucleon_MeV": 8.725074814016214,
+  "BindingEnergy_MeV": 785.2567332614592,
   "Charge_e": 0,
   "Composition": {
     "E": 40,
@@ -23,10 +27,60 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Zirconium",
+  "ElementSymbol": "Zr",
   "LeptonNumber_L": 40,
-  "Mass_MeVc2": 84529.5945104,
-  "Mass_amu": 90.7462476587026,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.8430077348008758,
+  "MassNumber_A": 90,
+  "Mass_MeVc2": 83744.33777713854,
+  "Mass_amu": 89.90323992390172,
+  "Mass_kg": 1.4928784210755162e-25,
   "Name": "Zr",
-  "Symbol": "Zr"
+  "NeutronNumber_N": 50,
+  "Properties": {
+    "atomic_mass": 91.224,
+    "atomic_radius": 206,
+    "block": "d",
+    "boiling_point": 4682,
+    "covalent_radius": 175,
+    "debye_temperature_K": 291,
+    "density": 6.52,
+    "electron_affinity": 41.1,
+    "electron_configuration": "[Kr] 4d² 5s²",
+    "electronegativity": 1.33,
+    "group": 4,
+    "ionization_energy": 6.634,
+    "melting_point": 2128,
+    "period": 5,
+    "primary_emission_wavelength": 360.1,
+    "valence_electrons": 4,
+    "visible_emission_wavelength": 468.0
+  },
+  "Symbol": "Zr",
+  "_provenance": {
+    "Properties": {
+      "entry": "Zirconium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=40",
+      "tier": "elements"
+    }
+  }
 }

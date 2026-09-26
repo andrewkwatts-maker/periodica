@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 95,
+  "AtomicWeight_amu": 243,
   "BaryonNumber_B": 243,
+  "BindingEnergyPerNucleon_MeV": 7.541969074770682,
+  "BindingEnergy_MeV": 1832.6984851692757,
   "Charge_e": 0,
   "Composition": {
     "E": 95,
@@ -23,10 +27,54 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Americium",
+  "ElementSymbol": "Am",
   "LeptonNumber_L": 95,
-  "Mass_MeVc2": 228240.07551241,
-  "Mass_amu": 245.02578698095616,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.9674826500865306,
+  "MassNumber_A": 243,
+  "Mass_MeVc2": 226407.37702724073,
+  "Mass_amu": 243.05830433086962,
+  "Mass_kg": 4.0360780980296094e-25,
   "Name": "Am",
-  "Symbol": "Am"
+  "NeutronNumber_N": 148,
+  "Properties": {
+    "atomic_mass": 243,
+    "atomic_radius": 175,
+    "block": "f",
+    "boiling_point": 2880,
+    "covalent_radius": 180,
+    "density": 12.0,
+    "electron_configuration": "[Rn] 5f⁷ 7s²",
+    "electronegativity": 1.13,
+    "ionization_energy": 5.974,
+    "melting_point": 1449,
+    "period": 7,
+    "primary_emission_wavelength": 408.9,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 408.9
+  },
+  "Symbol": "Am",
+  "_provenance": {
+    "Properties": {
+      "entry": "Americium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=95",
+      "tier": "elements"
+    }
+  }
 }

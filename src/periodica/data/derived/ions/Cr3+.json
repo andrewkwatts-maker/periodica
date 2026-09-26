@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 24,
+  "AtomicWeight_amu": 51.996,
   "BaryonNumber_B": 52,
+  "BindingEnergyPerNucleon_MeV": 8.877922535794092,
+  "BindingEnergy_MeV": 461.65197186129274,
   "Charge_e": 3,
   "Composition": {
     "E": 21,
@@ -23,9 +27,59 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Chromium",
+  "ElementSymbol": "Cr",
   "LeptonNumber_L": 21,
-  "Mass_MeVc2": 48837.09286835,
-  "Mass_amu": 52.42877302359437,
-  "Mass_kg": 0,
-  "Name": "Cr3+"
+  "MassDefect_amu": 0.4956037517166579,
+  "MassNumber_A": 52,
+  "Mass_MeVc2": 48375.44089648871,
+  "Mass_amu": 51.93316927187771,
+  "Mass_kg": 8.623705642830361e-26,
+  "Name": "Cr3+",
+  "NeutronNumber_N": 28,
+  "Properties": {
+    "atomic_mass": 51.996,
+    "atomic_radius": 166,
+    "block": "d",
+    "boiling_point": 2944,
+    "covalent_radius": 139,
+    "debye_temperature_K": 630,
+    "density": 7.19,
+    "electron_affinity": 64.3,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁵ 4s¹",
+    "electronegativity": 1.66,
+    "group": 6,
+    "ionization_energy": 6.767,
+    "melting_point": 2180,
+    "period": 4,
+    "primary_emission_wavelength": 425.4,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 425.4
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Chromium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=24",
+      "tier": "elements"
+    }
+  }
 }

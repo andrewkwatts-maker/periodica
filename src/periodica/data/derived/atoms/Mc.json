@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 115,
+  "AtomicWeight_amu": 290,
   "BaryonNumber_B": 290,
+  "BindingEnergyPerNucleon_MeV": 7.155523908277164,
+  "BindingEnergy_MeV": 2075.1019334003777,
   "Charge_e": 0,
   "Composition": {
     "E": 115,
@@ -23,10 +27,52 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Moscovium",
+  "ElementSymbol": "Mc",
   "LeptonNumber_L": 115,
-  "Mass_MeVc2": 272384.00360865,
-  "Mass_amu": 292.4162406422075,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.22771344231736,
+  "MassNumber_A": 290,
+  "Mass_MeVc2": 270308.9016752496,
+  "Mass_amu": 290.1885271998902,
+  "Mass_kg": 4.818693860945343e-25,
   "Name": "Mc",
-  "Symbol": "Mc"
+  "NeutronNumber_N": 175,
+  "Properties": {
+    "atomic_mass": 290,
+    "atomic_radius": 162,
+    "block": "p",
+    "boiling_point": 1400,
+    "covalent_radius": 162,
+    "density": 13.5,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³",
+    "electronegativity": 1.9,
+    "group": 15,
+    "ionization_energy": 7.0,
+    "melting_point": 670,
+    "period": 7,
+    "valence_electrons": 5
+  },
+  "Symbol": "Mc",
+  "_provenance": {
+    "Properties": {
+      "entry": "Moscovium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=115",
+      "tier": "elements"
+    }
+  }
 }

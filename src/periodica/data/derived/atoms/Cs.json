@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 55,
+  "AtomicWeight_amu": 132.905,
   "BaryonNumber_B": 133,
+  "BindingEnergyPerNucleon_MeV": 8.394605263068637,
+  "BindingEnergy_MeV": 1116.482499988129,
   "Charge_e": 0,
   "Composition": {
     "E": 55,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Cesium",
+  "ElementSymbol": "Cs",
   "LeptonNumber_L": 55,
-  "Mass_MeVc2": 124919.17259160998,
-  "Mass_amu": 134.1062410032536,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.19859320320712,
+  "MassNumber_A": 133,
+  "Mass_MeVc2": 123802.69009162186,
+  "Mass_amu": 132.90764780004648,
+  "Mass_kg": 2.2069834142189074e-25,
   "Name": "Cs",
-  "Symbol": "Cs"
+  "NeutronNumber_N": 78,
+  "Properties": {
+    "atomic_mass": 132.905,
+    "atomic_radius": 298,
+    "block": "s",
+    "boiling_point": 944,
+    "covalent_radius": 244,
+    "density": 1.93,
+    "electron_affinity": 45.5,
+    "electron_configuration": "[Xe] 6s¹",
+    "electronegativity": 0.79,
+    "group": 1,
+    "ionization_energy": 3.894,
+    "melting_point": 301.59,
+    "period": 6,
+    "primary_emission_wavelength": 852.1,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 455.5
+  },
+  "Symbol": "Cs",
+  "_provenance": {
+    "Properties": {
+      "entry": "Cesium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=55",
+      "tier": "elements"
+    }
+  }
 }

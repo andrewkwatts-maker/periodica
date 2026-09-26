@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 5,
+  "AtomicWeight_amu": 10.81,
   "BaryonNumber_B": 11,
+  "BindingEnergyPerNucleon_MeV": 7.249457237322522,
+  "BindingEnergy_MeV": 79.74402961054774,
   "Charge_e": 0,
   "Composition": {
     "E": 5,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Boron",
+  "ElementSymbol": "B",
   "LeptonNumber_L": 5,
-  "Mass_MeVc2": 10331.30795867,
-  "Mass_amu": 11.091114728350325,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.08560873268373316,
+  "MassNumber_A": 11,
+  "Mass_MeVc2": 10251.563929059454,
+  "Mass_amu": 11.005505995666592,
+  "Mass_kg": 1.8275072653504905e-26,
   "Name": "B",
-  "Symbol": "B"
+  "NeutronNumber_N": 6,
+  "Properties": {
+    "atomic_mass": 10.81,
+    "atomic_radius": 87,
+    "block": "p",
+    "boiling_point": 4273,
+    "covalent_radius": 84,
+    "density": 2.34,
+    "electron_affinity": 26.7,
+    "electron_configuration": "1s² 2s² 2p¹",
+    "electronegativity": 2.04,
+    "group": 13,
+    "ionization_energy": 8.298,
+    "melting_point": 2349,
+    "period": 2,
+    "primary_emission_wavelength": 518.0,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 518.0
+  },
+  "Symbol": "B",
+  "_provenance": {
+    "Properties": {
+      "entry": "Boron",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=5",
+      "tier": "elements"
+    }
+  }
 }

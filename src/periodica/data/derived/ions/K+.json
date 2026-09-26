@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 19,
+  "AtomicWeight_amu": 39.098,
   "BaryonNumber_B": 39,
+  "BindingEnergyPerNucleon_MeV": 8.75784088644918,
+  "BindingEnergy_MeV": 341.55579457151805,
   "Charge_e": 1,
   "Composition": {
     "E": 18,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Potassium",
+  "ElementSymbol": "K",
   "LeptonNumber_L": 18,
-  "Mass_MeVc2": 36627.67606654,
-  "Mass_amu": 39.32142562316217,
-  "Mass_kg": 0,
-  "Name": "K+"
+  "MassDefect_amu": 0.3666752088758952,
+  "MassNumber_A": 39,
+  "Mass_MeVc2": 36286.12027196848,
+  "Mass_amu": 38.95475041428627,
+  "Mass_kg": 6.468588489257489e-26,
+  "Name": "K+",
+  "NeutronNumber_N": 20,
+  "Properties": {
+    "atomic_mass": 39.098,
+    "atomic_radius": 243,
+    "block": "s",
+    "boiling_point": 1032,
+    "covalent_radius": 203,
+    "density": 0.862,
+    "electron_affinity": 48.4,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹",
+    "electronegativity": 0.82,
+    "group": 1,
+    "ionization_energy": 4.341,
+    "melting_point": 336,
+    "period": 4,
+    "primary_emission_wavelength": 766.5,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 766.5
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Potassium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=19",
+      "tier": "elements"
+    }
+  }
 }

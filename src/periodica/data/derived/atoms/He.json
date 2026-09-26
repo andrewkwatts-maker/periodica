@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 2,
+  "AtomicWeight_amu": 4.0026,
   "BaryonNumber_B": 4,
+  "BindingEnergyPerNucleon_MeV": 7.3054624249736495,
+  "BindingEnergy_MeV": 29.221849699894598,
   "Charge_e": 0,
   "Composition": {
     "E": 2,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Helium",
+  "ElementSymbol": "He",
   "LeptonNumber_L": 2,
-  "Mass_MeVc2": 3756.6970152599997,
-  "Mass_amu": 4.03297992496013,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.03137094440423929,
+  "MassNumber_A": 4,
+  "Mass_MeVc2": 3727.4751655601053,
+  "Mass_amu": 4.001608980555891,
+  "Mass_kg": 6.644828041470457e-27,
   "Name": "He",
-  "Symbol": "He"
+  "NeutronNumber_N": 2,
+  "Properties": {
+    "atomic_mass": 4.0026,
+    "atomic_radius": 31,
+    "block": "s",
+    "boiling_point": 4.2,
+    "covalent_radius": 28,
+    "density": 0.00018,
+    "electron_affinity": 0,
+    "electron_configuration": "1s²",
+    "group": 18,
+    "ionization_energy": 24.587,
+    "melting_point": 0.95,
+    "period": 1,
+    "primary_emission_wavelength": 587.6,
+    "valence_electrons": 2,
+    "visible_emission_wavelength": 587.6
+  },
+  "Symbol": "He",
+  "_provenance": {
+    "Properties": {
+      "entry": "Helium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=2",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 77,
+  "AtomicWeight_amu": 192.217,
   "BaryonNumber_B": 193,
+  "BindingEnergyPerNucleon_MeV": 7.925296523779292,
+  "BindingEnergy_MeV": 1529.5822290894034,
   "Charge_e": 0,
   "Composition": {
     "E": 77,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Iridium",
+  "ElementSymbol": "Ir",
   "LeptonNumber_L": 77,
-  "Mass_MeVc2": 181275.88648779,
-  "Mass_amu": 194.607658833015,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.6420739810542917,
+  "MassNumber_A": 193,
+  "Mass_MeVc2": 179746.3042587006,
+  "Mass_amu": 192.9655848519607,
+  "Mass_kg": 3.2042689215599793e-25,
   "Name": "Ir",
-  "Symbol": "Ir"
+  "NeutronNumber_N": 116,
+  "Properties": {
+    "atomic_mass": 192.217,
+    "atomic_radius": 180,
+    "block": "d",
+    "boiling_point": 4701,
+    "covalent_radius": 141,
+    "density": 22.56,
+    "electron_affinity": 150.9,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d⁷ 6s²",
+    "electronegativity": 2.2,
+    "group": 9,
+    "ionization_energy": 8.96702,
+    "melting_point": 2719,
+    "period": 6,
+    "primary_emission_wavelength": 322.1,
+    "valence_electrons": 9,
+    "visible_emission_wavelength": 380.0
+  },
+  "Symbol": "Ir",
+  "_provenance": {
+    "Properties": {
+      "entry": "Iridium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=77",
+      "tier": "elements"
+    }
+  }
 }

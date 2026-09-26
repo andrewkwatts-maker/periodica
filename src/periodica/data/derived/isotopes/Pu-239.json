@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 94,
+  "AtomicWeight_amu": 244,
   "BaryonNumber_B": 239,
+  "BindingEnergyPerNucleon_MeV": 7.570676157391528,
+  "BindingEnergy_MeV": 1809.3916016165751,
   "Charge_e": 0,
   "Composition": {
     "E": 94,
@@ -23,9 +27,53 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Plutonium",
+  "ElementSymbol": "Pu",
   "LeptonNumber_L": 94,
-  "Mass_MeVc2": 224482.59616373997,
-  "Mass_amu": 240.99196718657612,
-  "Mass_kg": 0,
-  "Name": "Pu-239"
+  "MassDefect_amu": 1.9424616827050412,
+  "MassNumber_A": 239,
+  "Mass_MeVc2": 222673.2045621234,
+  "Mass_amu": 239.04950550387107,
+  "Mass_kg": 3.9695104274058965e-25,
+  "Name": "Pu-239",
+  "NeutronNumber_N": 145,
+  "Properties": {
+    "atomic_mass": 244,
+    "atomic_radius": 175,
+    "block": "f",
+    "boiling_point": 3505,
+    "covalent_radius": 187,
+    "density": 19.85,
+    "electron_configuration": "[Rn] 5f⁶ 7s²",
+    "electronegativity": 1.28,
+    "ionization_energy": 6.026,
+    "melting_point": 913,
+    "period": 7,
+    "primary_emission_wavelength": 421.0,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 421.0
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Plutonium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=94",
+      "tier": "elements"
+    }
+  }
 }

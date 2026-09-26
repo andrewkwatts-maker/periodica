@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 7,
+  "AtomicWeight_amu": 14.007,
   "BaryonNumber_B": 15,
+  "BindingEnergyPerNucleon_MeV": 7.894446969069872,
+  "BindingEnergy_MeV": 118.41670453604807,
   "Charge_e": 0,
   "Composition": {
     "E": 7,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Nitrogen",
+  "ElementSymbol": "N",
   "LeptonNumber_L": 7,
-  "Mass_MeVc2": 14088.00497393,
-  "Mass_amu": 15.124094653310454,
-  "Mass_kg": 0,
-  "Name": "N-15"
+  "MassDefect_amu": 0.12712555477099022,
+  "MassNumber_A": 15,
+  "Mass_MeVc2": 13969.588269393951,
+  "Mass_amu": 14.996969098539465,
+  "Mass_kg": 2.4903053068717766e-26,
+  "Name": "N-15",
+  "NeutronNumber_N": 8,
+  "Properties": {
+    "atomic_mass": 14.007,
+    "atomic_radius": 56,
+    "block": "p",
+    "boiling_point": 77,
+    "covalent_radius": 71,
+    "density": 0.00125,
+    "electron_affinity": -7,
+    "electron_configuration": "1s² 2s² 2p³",
+    "electronegativity": 3.04,
+    "group": 15,
+    "ionization_energy": 14.534,
+    "melting_point": 63,
+    "period": 2,
+    "primary_emission_wavelength": 500.5,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 500.5
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Nitrogen",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=7",
+      "tier": "elements"
+    }
+  }
 }

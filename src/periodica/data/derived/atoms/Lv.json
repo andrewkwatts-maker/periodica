@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 116,
+  "AtomicWeight_amu": 293,
   "BaryonNumber_B": 293,
+  "BindingEnergyPerNucleon_MeV": 7.136869463537526,
+  "BindingEnergy_MeV": 2091.102752816495,
   "Charge_e": 0,
   "Composition": {
     "E": 116,
@@ -23,10 +27,52 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Livermorium",
+  "ElementSymbol": "Lv",
   "LeptonNumber_L": 116,
-  "Mass_MeVc2": 275201.91753679997,
-  "Mass_amu": 295.44139552063757,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.2448910276338396,
+  "MassNumber_A": 293,
+  "Mass_MeVc2": 273110.81478398346,
+  "Mass_amu": 293.1965044930037,
+  "Mass_kg": 4.868642499011951e-25,
   "Name": "Lv",
-  "Symbol": "Lv"
+  "NeutronNumber_N": 177,
+  "Properties": {
+    "atomic_mass": 293,
+    "atomic_radius": 175,
+    "block": "p",
+    "boiling_point": 1100,
+    "covalent_radius": 175,
+    "density": 12.9,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴",
+    "electronegativity": 2.0,
+    "group": 16,
+    "ionization_energy": 5.3,
+    "melting_point": 700,
+    "period": 7,
+    "valence_electrons": 6
+  },
+  "Symbol": "Lv",
+  "_provenance": {
+    "Properties": {
+      "entry": "Livermorium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=116",
+      "tier": "elements"
+    }
+  }
 }

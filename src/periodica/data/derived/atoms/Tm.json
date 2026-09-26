@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 69,
+  "AtomicWeight_amu": 168.934,
   "BaryonNumber_B": 169,
+  "BindingEnergyPerNucleon_MeV": 8.112416090349697,
+  "BindingEnergy_MeV": 1370.9983192690988,
   "Charge_e": 0,
   "Composition": {
     "E": 69,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Thulium",
+  "ElementSymbol": "Tm",
   "LeptonNumber_L": 69,
-  "Mass_MeVc2": 158732.57506259,
-  "Mass_amu": 170.40641980557447,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.4718271599436616,
+  "MassNumber_A": 169,
+  "Mass_MeVc2": 157361.5767433209,
+  "Mass_amu": 168.9345926456308,
+  "Mass_kg": 2.8052249078822697e-25,
   "Name": "Tm",
-  "Symbol": "Tm"
+  "NeutronNumber_N": 100,
+  "Properties": {
+    "atomic_mass": 168.934,
+    "atomic_radius": 222,
+    "block": "f",
+    "boiling_point": 2223,
+    "covalent_radius": 190,
+    "density": 9.32,
+    "electron_affinity": 99.0,
+    "electron_configuration": "[Xe] 4f¹³ 6s²",
+    "electronegativity": 1.25,
+    "ionization_energy": 6.18431,
+    "melting_point": 1818,
+    "period": 6,
+    "primary_emission_wavelength": 371.8,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 465.0
+  },
+  "Symbol": "Tm",
+  "_provenance": {
+    "Properties": {
+      "entry": "Thulium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=69",
+      "tier": "elements"
+    }
+  }
 }

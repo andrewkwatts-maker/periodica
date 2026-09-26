@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 88,
+  "AtomicWeight_amu": 226,
   "BaryonNumber_B": 226,
+  "BindingEnergyPerNucleon_MeV": 7.673352097656,
+  "BindingEnergy_MeV": 1734.177574070256,
   "Charge_e": 0,
   "Composition": {
     "E": 88,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Radium",
+  "ElementSymbol": "Ra",
   "LeptonNumber_L": 88,
-  "Mass_MeVc2": 212272.93969744,
-  "Mass_amu": 227.88436249574573,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.8617161070208637,
+  "MassNumber_A": 226,
+  "Mass_MeVc2": 210538.76212336973,
+  "Mass_amu": 226.02264638872487,
+  "Mass_kg": 3.7531943426479504e-25,
   "Name": "Ra",
-  "Symbol": "Ra"
+  "NeutronNumber_N": 138,
+  "Properties": {
+    "atomic_mass": 226,
+    "atomic_radius": 283,
+    "block": "s",
+    "boiling_point": 2010,
+    "covalent_radius": 221,
+    "density": 5.5,
+    "electron_affinity": 9.6,
+    "electron_configuration": "[Rn] 7s²",
+    "electronegativity": 0.9,
+    "group": 2,
+    "ionization_energy": 5.27892,
+    "melting_point": 973,
+    "period": 7,
+    "primary_emission_wavelength": 550.0,
+    "valence_electrons": 2,
+    "visible_emission_wavelength": 482.6
+  },
+  "Symbol": "Ra",
+  "_provenance": {
+    "Properties": {
+      "entry": "Radium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=88",
+      "tier": "elements"
+    }
+  }
 }

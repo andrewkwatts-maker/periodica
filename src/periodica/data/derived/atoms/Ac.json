@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 89,
+  "AtomicWeight_amu": 227,
   "BaryonNumber_B": 227,
+  "BindingEnergyPerNucleon_MeV": 7.6630535576384435,
+  "BindingEnergy_MeV": 1739.5131575839266,
   "Charge_e": 0,
   "Composition": {
     "E": 89,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Actinium",
+  "ElementSymbol": "Ac",
   "LeptonNumber_L": 89,
-  "Mass_MeVc2": 213211.72278455002,
-  "Mass_amu": 228.8921875422758,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.867444091234407,
+  "MassNumber_A": 227,
+  "Mass_MeVc2": 211472.2096269661,
+  "Mass_amu": 227.0247434510414,
+  "Mass_kg": 3.7698345558529673e-25,
   "Name": "Ac",
-  "Symbol": "Ac"
+  "NeutronNumber_N": 138,
+  "Properties": {
+    "atomic_mass": 227,
+    "atomic_radius": 195,
+    "block": "f",
+    "boiling_point": 3473,
+    "covalent_radius": 215,
+    "density": 10.07,
+    "electron_affinity": 33.8,
+    "electron_configuration": "[Rn] 6d¹ 7s²",
+    "electronegativity": 1.1,
+    "ionization_energy": 5.380226,
+    "melting_point": 1323,
+    "period": 7,
+    "primary_emission_wavelength": 400.0,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 400.0
+  },
+  "Symbol": "Ac",
+  "_provenance": {
+    "Properties": {
+      "entry": "Actinium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=89",
+      "tier": "elements"
+    }
+  }
 }

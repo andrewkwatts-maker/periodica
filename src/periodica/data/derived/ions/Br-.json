@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 35,
+  "AtomicWeight_amu": 79.904,
   "BaryonNumber_B": 80,
+  "BindingEnergyPerNucleon_MeV": 8.722119661278311,
+  "BindingEnergy_MeV": 697.7695729022649,
   "Charge_e": -1,
   "Composition": {
     "E": 36,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Bromine",
+  "ElementSymbol": "Br",
   "LeptonNumber_L": 36,
-  "Mass_MeVc2": 75138.3629712,
-  "Mass_amu": 80.66434642621134,
-  "Mass_kg": 0,
-  "Name": "Br-"
+  "MassDefect_amu": 0.749086409768431,
+  "MassNumber_A": 80,
+  "Mass_MeVc2": 74440.59339829773,
+  "Mass_amu": 79.9152600164429,
+  "Mass_kg": 1.3270241127480039e-25,
+  "Name": "Br-",
+  "NeutronNumber_N": 45,
+  "Properties": {
+    "atomic_mass": 79.904,
+    "atomic_radius": 94,
+    "block": "p",
+    "boiling_point": 332,
+    "covalent_radius": 120,
+    "density": 3.12,
+    "electron_affinity": 324.6,
+    "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p⁵",
+    "electronegativity": 2.96,
+    "group": 17,
+    "ionization_energy": 11.814,
+    "melting_point": 265.8,
+    "period": 4,
+    "primary_emission_wavelength": 827.2,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 478.0
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Bromine",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=35",
+      "tier": "elements"
+    }
+  }
 }

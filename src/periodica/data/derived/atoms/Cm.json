@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 96,
+  "AtomicWeight_amu": 247,
   "BaryonNumber_B": 247,
+  "BindingEnergyPerNucleon_MeV": 7.5129324638698245,
+  "BindingEnergy_MeV": 1855.6943185758466,
   "Charge_e": 0,
   "Composition": {
     "E": 96,
@@ -23,10 +27,54 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Curium",
+  "ElementSymbol": "Cm",
   "LeptonNumber_L": 96,
-  "Mass_MeVc2": 231997.55486108,
-  "Mass_amu": 249.05960677533625,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.9921696914181164,
+  "MassNumber_A": 247,
+  "Mass_MeVc2": 230141.86054250415,
+  "Mass_amu": 247.06743708391812,
+  "Mass_kg": 4.1026513136258364e-25,
   "Name": "Cm",
-  "Symbol": "Cm"
+  "NeutronNumber_N": 151,
+  "Properties": {
+    "atomic_mass": 247,
+    "atomic_radius": 176,
+    "block": "f",
+    "boiling_point": 3383,
+    "covalent_radius": 169,
+    "density": 13.51,
+    "electron_configuration": "[Rn] 5f⁷ 6d¹ 7s²",
+    "electronegativity": 1.28,
+    "ionization_energy": 5.992,
+    "melting_point": 1613,
+    "period": 7,
+    "primary_emission_wavelength": 410.0,
+    "valence_electrons": 8,
+    "visible_emission_wavelength": 410.0
+  },
+  "Symbol": "Cm",
+  "_provenance": {
+    "Properties": {
+      "entry": "Curium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=96",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 102,
+  "AtomicWeight_amu": 259,
   "BaryonNumber_B": 259,
+  "BindingEnergyPerNucleon_MeV": 7.414295139437438,
+  "BindingEnergy_MeV": 1920.3024411142962,
   "Charge_e": 0,
   "Composition": {
     "E": 102,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Nobelium",
+  "ElementSymbol": "No",
   "LeptonNumber_L": 102,
-  "Mass_MeVc2": 243267.64590685998,
-  "Mass_amu": 261.1585465502166,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.0615293603313165,
+  "MassNumber_A": 259,
+  "Mass_MeVc2": 241347.34346574568,
+  "Mass_amu": 259.0970171898853,
+  "Mass_kg": 4.302407190833363e-25,
   "Name": "No",
-  "Symbol": "No"
+  "NeutronNumber_N": 157,
+  "Properties": {
+    "atomic_mass": 259,
+    "atomic_radius": 200,
+    "block": "f",
+    "covalent_radius": 176,
+    "electron_configuration": "[Rn] 5f¹⁴ 7s²",
+    "electronegativity": 1.3,
+    "ionization_energy": 6.65,
+    "melting_point": 1100,
+    "period": 7,
+    "primary_emission_wavelength": 425.0,
+    "valence_electrons": 14,
+    "visible_emission_wavelength": 425.0
+  },
+  "Symbol": "No",
+  "_provenance": {
+    "Properties": {
+      "entry": "Nobelium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=102",
+      "tier": "elements"
+    }
+  }
 }

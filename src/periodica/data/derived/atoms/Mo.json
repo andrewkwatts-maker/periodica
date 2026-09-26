@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 42,
+  "AtomicWeight_amu": 95.95,
   "BaryonNumber_B": 98,
+  "BindingEnergyPerNucleon_MeV": 8.649984079011135,
+  "BindingEnergy_MeV": 847.6984397430913,
   "Charge_e": 0,
   "Composition": {
     "E": 42,
@@ -23,10 +27,60 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Molybdenum",
+  "ElementSymbol": "Mo",
   "LeptonNumber_L": 42,
-  "Mass_MeVc2": 92044.55320774,
-  "Mass_amu": 98.81388724746273,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.9100416605331053,
+  "MassNumber_A": 98,
+  "Mass_MeVc2": 91196.8547679969,
+  "Mass_amu": 97.90384558692962,
+  "Mass_kg": 1.6257316036747063e-25,
   "Name": "Mo",
-  "Symbol": "Mo"
+  "NeutronNumber_N": 56,
+  "Properties": {
+    "atomic_mass": 95.95,
+    "atomic_radius": 190,
+    "block": "d",
+    "boiling_point": 4912,
+    "covalent_radius": 154,
+    "debye_temperature_K": 450,
+    "density": 10.28,
+    "electron_affinity": 71.9,
+    "electron_configuration": "[Kr] 4d⁵ 5s¹",
+    "electronegativity": 2.16,
+    "group": 6,
+    "ionization_energy": 7.092,
+    "melting_point": 2896,
+    "period": 5,
+    "primary_emission_wavelength": 386.4,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 386.4
+  },
+  "Symbol": "Mo",
+  "_provenance": {
+    "Properties": {
+      "entry": "Molybdenum",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=42",
+      "tier": "elements"
+    }
+  }
 }

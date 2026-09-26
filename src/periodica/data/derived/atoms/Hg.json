@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 80,
+  "AtomicWeight_amu": 200.592,
   "BaryonNumber_B": 202,
+  "BindingEnergyPerNucleon_MeV": 7.8699449947736095,
+  "BindingEnergy_MeV": 1589.728888944269,
   "Charge_e": 0,
   "Composition": {
     "E": 80,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Mercury",
+  "ElementSymbol": "Hg",
   "LeptonNumber_L": 80,
-  "Mass_MeVc2": 189729.62827224,
-  "Mass_amu": 203.6831234683052,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.706644073015804,
+  "MassNumber_A": 202,
+  "Mass_MeVc2": 188139.89938329573,
+  "Mass_amu": 201.9764793952894,
+  "Mass_kg": 3.3538983457020797e-25,
   "Name": "Hg",
-  "Symbol": "Hg"
+  "NeutronNumber_N": 122,
+  "Properties": {
+    "atomic_mass": 200.592,
+    "atomic_radius": 171,
+    "block": "d",
+    "boiling_point": 630,
+    "covalent_radius": 132,
+    "density": 13.53,
+    "electron_affinity": 0,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s²",
+    "electronegativity": 2.0,
+    "group": 12,
+    "ionization_energy": 10.4375,
+    "melting_point": 234,
+    "period": 6,
+    "primary_emission_wavelength": 253.7,
+    "valence_electrons": 2,
+    "visible_emission_wavelength": 546.1
+  },
+  "Symbol": "Hg",
+  "_provenance": {
+    "Properties": {
+      "entry": "Mercury",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=80",
+      "tier": "elements"
+    }
+  }
 }

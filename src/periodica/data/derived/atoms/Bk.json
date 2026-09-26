@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 97,
+  "AtomicWeight_amu": 247,
   "BaryonNumber_B": 247,
+  "BindingEnergyPerNucleon_MeV": 7.509632090423331,
+  "BindingEnergy_MeV": 1854.8791263345627,
   "Charge_e": 0,
   "Composition": {
     "E": 97,
@@ -23,10 +27,54 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Berkelium",
+  "ElementSymbol": "Bk",
   "LeptonNumber_L": 97,
-  "Mass_MeVc2": 231996.77252767,
-  "Mass_amu": 249.05876690591631,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.9912945465952279,
+  "MassNumber_A": 247,
+  "Mass_MeVc2": 230141.89340133543,
+  "Mass_amu": 247.06747235932107,
+  "Mass_kg": 4.102651899387683e-25,
   "Name": "Bk",
-  "Symbol": "Bk"
+  "NeutronNumber_N": 150,
+  "Properties": {
+    "atomic_mass": 247,
+    "atomic_radius": 170,
+    "block": "f",
+    "boiling_point": 2900,
+    "covalent_radius": 168,
+    "density": 14.78,
+    "electron_configuration": "[Rn] 5f⁹ 7s²",
+    "electronegativity": 1.3,
+    "ionization_energy": 6.198,
+    "melting_point": 1323,
+    "period": 7,
+    "primary_emission_wavelength": 412.0,
+    "valence_electrons": 9,
+    "visible_emission_wavelength": 412.0
+  },
+  "Symbol": "Bk",
+  "_provenance": {
+    "Properties": {
+      "entry": "Berkelium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=97",
+      "tier": "elements"
+    }
+  }
 }

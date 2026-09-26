@@ -21,9 +21,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 48,
-  "Mass_MeVc2": 93918.99004832,
-  "Mass_amu": 100.82617786284312,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 93105.73632031276,
+  "Mass_amu": 99.95311411945019,
+  "Mass_kg": 1.659760508236751e-25,
   "Name": "PTFE",
   "Properties": {
     "Density_kgm3": 2200,

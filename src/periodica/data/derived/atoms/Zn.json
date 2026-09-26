@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 30,
+  "AtomicWeight_amu": 65.38,
   "BaryonNumber_B": 64,
+  "BindingEnergyPerNucleon_MeV": 8.807348414796348,
+  "BindingEnergy_MeV": 563.6702985469663,
   "Charge_e": 0,
   "Composition": {
     "E": 30,
@@ -23,10 +27,60 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Zinc",
+  "ElementSymbol": "Zn",
   "LeptonNumber_L": 30,
-  "Mass_MeVc2": 60108.71691098,
-  "Mass_amu": 64.52935853820195,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.6051249246587433,
+  "MassNumber_A": 64,
+  "Mass_MeVc2": 59545.046612433034,
+  "Mass_amu": 63.9242336135432,
+  "Mass_kg": 1.0614868721775337e-25,
   "Name": "Zn",
-  "Symbol": "Zn"
+  "NeutronNumber_N": 34,
+  "Properties": {
+    "atomic_mass": 65.38,
+    "atomic_radius": 142,
+    "block": "d",
+    "boiling_point": 1180,
+    "covalent_radius": 122,
+    "debye_temperature_K": 327,
+    "density": 7.14,
+    "electron_affinity": 0,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s²",
+    "electronegativity": 1.65,
+    "group": 12,
+    "ionization_energy": 9.394,
+    "melting_point": 693,
+    "period": 4,
+    "primary_emission_wavelength": 213.9,
+    "valence_electrons": 12,
+    "visible_emission_wavelength": 468.0
+  },
+  "Symbol": "Zn",
+  "_provenance": {
+    "Properties": {
+      "entry": "Zinc",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=30",
+      "tier": "elements"
+    }
+  }
 }

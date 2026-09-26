@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 117,
+  "AtomicWeight_amu": 294,
   "BaryonNumber_B": 294,
+  "BindingEnergyPerNucleon_MeV": 7.116062620041096,
+  "BindingEnergy_MeV": 2092.1224102920823,
   "Charge_e": 0,
   "Composition": {
     "E": 117,
@@ -23,10 +27,52 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Tennessine",
+  "ElementSymbol": "Ts",
   "LeptonNumber_L": 117,
-  "Mass_MeVc2": 276140.70062391,
-  "Mass_amu": 296.44922056716763,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.245985674903144,
+  "MassNumber_A": 294,
+  "Mass_MeVc2": 274048.5782136179,
+  "Mass_amu": 294.2032348922645,
+  "Mass_kg": 4.885359650587014e-25,
   "Name": "Ts",
-  "Symbol": "Ts"
+  "NeutronNumber_N": 177,
+  "Properties": {
+    "atomic_mass": 294,
+    "atomic_radius": 165,
+    "block": "p",
+    "boiling_point": 883,
+    "covalent_radius": 165,
+    "density": 7.2,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵",
+    "electronegativity": 2.2,
+    "group": 17,
+    "ionization_energy": 7.1,
+    "melting_point": 723,
+    "period": 7,
+    "valence_electrons": 7
+  },
+  "Symbol": "Ts",
+  "_provenance": {
+    "Properties": {
+      "entry": "Tennessine",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=117",
+      "tier": "elements"
+    }
+  }
 }

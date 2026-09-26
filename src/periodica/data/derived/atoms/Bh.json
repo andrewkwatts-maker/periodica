@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 107,
+  "AtomicWeight_amu": 270,
   "BaryonNumber_B": 270,
+  "BindingEnergyPerNucleon_MeV": 7.317201202927032,
+  "BindingEnergy_MeV": 1975.6443247902987,
   "Charge_e": 0,
   "Composition": {
     "E": 107,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Bohrium",
+  "ElementSymbol": "Bh",
   "LeptonNumber_L": 107,
-  "Mass_MeVc2": 253598.95386553,
-  "Mass_amu": 272.249661278567,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.1209413131630366,
+  "MassNumber_A": 270,
+  "Mass_MeVc2": 251623.3095407397,
+  "Mass_amu": 270.12871996540395,
+  "Mass_kg": 4.485592925132047e-25,
   "Name": "Bh",
-  "Symbol": "Bh"
+  "NeutronNumber_N": 163,
+  "Properties": {
+    "atomic_mass": 270,
+    "atomic_radius": 141,
+    "block": "d",
+    "covalent_radius": 141,
+    "density": 37.1,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d⁵ 7s²",
+    "electronegativity": 1.9,
+    "group": 7,
+    "ionization_energy": 7.7,
+    "melting_point": 2900,
+    "period": 7,
+    "valence_electrons": 7
+  },
+  "Symbol": "Bh",
+  "_provenance": {
+    "Properties": {
+      "entry": "Bohrium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=107",
+      "tier": "elements"
+    }
+  }
 }

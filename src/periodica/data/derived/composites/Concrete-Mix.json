@@ -42,9 +42,9 @@
     }
   },
   "LeptonNumber_L": 66,
-  "Mass_MeVc2": 123971.00150357999,
-  "Mass_amu": 133.0883375236843,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 122854.17575096621,
+  "Mass_amu": 131.88937582364528,
+  "Mass_kg": 2.190074610246525e-25,
   "Name": "Concrete-Mix",
   "Properties": {
     "CompressiveStrength_MPa": 35,

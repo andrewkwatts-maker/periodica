@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 108,
+  "AtomicWeight_amu": 269,
   "BaryonNumber_B": 269,
+  "BindingEnergyPerNucleon_MeV": 7.306611816649855,
+  "BindingEnergy_MeV": 1965.478578678811,
   "Charge_e": 0,
   "Composition": {
     "E": 108,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Hassium",
+  "ElementSymbol": "Hs",
   "LeptonNumber_L": 108,
-  "Mass_MeVc2": 252658.6061116,
-  "Mass_amu": 271.24015649319705,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.1100279363793537,
+  "MassNumber_A": 269,
+  "Mass_MeVc2": 250693.1275329212,
+  "Mass_amu": 269.1301285568177,
+  "Mass_kg": 4.46901092467676e-25,
   "Name": "Hs",
-  "Symbol": "Hs"
+  "NeutronNumber_N": 161,
+  "Properties": {
+    "atomic_mass": 269,
+    "atomic_radius": 134,
+    "block": "d",
+    "covalent_radius": 134,
+    "density": 40.7,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d⁶ 7s²",
+    "electronegativity": 2.0,
+    "group": 8,
+    "ionization_energy": 7.6,
+    "melting_point": 2700,
+    "period": 7,
+    "valence_electrons": 8
+  },
+  "Symbol": "Hs",
+  "_provenance": {
+    "Properties": {
+      "entry": "Hassium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=108",
+      "tier": "elements"
+    }
+  }
 }

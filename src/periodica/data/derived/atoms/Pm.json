@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 61,
+  "AtomicWeight_amu": 145,
   "BaryonNumber_B": 145,
+  "BindingEnergyPerNucleon_MeV": 8.310957803709146,
+  "BindingEnergy_MeV": 1205.0888815378262,
   "Charge_e": 0,
   "Composition": {
     "E": 61,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Promethium",
+  "ElementSymbol": "Pm",
   "LeptonNumber_L": 61,
-  "Mass_MeVc2": 136189.26363739,
-  "Mass_amu": 146.20518077813395,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.2937160615478223,
+  "MassNumber_A": 145,
+  "Mass_MeVc2": 134984.17475585217,
+  "Mass_amu": 144.91146471658612,
+  "Mass_kg": 2.4063114836011873e-25,
   "Name": "Pm",
-  "Symbol": "Pm"
+  "NeutronNumber_N": 84,
+  "Properties": {
+    "atomic_mass": 145,
+    "atomic_radius": 205,
+    "block": "f",
+    "boiling_point": 3273,
+    "covalent_radius": 199,
+    "density": 7.26,
+    "electron_affinity": 12.45,
+    "electron_configuration": "[Xe] 4f⁵ 6s²",
+    "electronegativity": 1.13,
+    "ionization_energy": 5.582,
+    "melting_point": 1315,
+    "period": 6,
+    "primary_emission_wavelength": 390.0,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 390.0
+  },
+  "Symbol": "Pm",
+  "_provenance": {
+    "Properties": {
+      "entry": "Promethium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=61",
+      "tier": "elements"
+    }
+  }
 }

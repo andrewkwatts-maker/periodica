@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 15,
+  "AtomicWeight_amu": 30.974,
   "BaryonNumber_B": 31,
+  "BindingEnergyPerNucleon_MeV": 8.545615826937093,
+  "BindingEnergy_MeV": 264.9140906350499,
   "Charge_e": 0,
   "Composition": {
     "E": 15,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Phosphorus",
+  "ElementSymbol": "P",
   "LeptonNumber_L": 15,
-  "Mass_MeVc2": 29114.79303497,
-  "Mass_amu": 31.256014353150974,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.28439695962304995,
+  "MassNumber_A": 31,
+  "Mass_MeVc2": 28849.87894433495,
+  "Mass_amu": 30.971617393527925,
+  "Mass_kg": 5.1429580637741184e-26,
   "Name": "P",
-  "Symbol": "P"
+  "NeutronNumber_N": 16,
+  "Properties": {
+    "atomic_mass": 30.974,
+    "atomic_radius": 98,
+    "block": "p",
+    "boiling_point": 550,
+    "covalent_radius": 107,
+    "density": 1.82,
+    "electron_affinity": 72.0,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p³",
+    "electronegativity": 2.19,
+    "group": 15,
+    "ionization_energy": 10.487,
+    "melting_point": 317,
+    "period": 3,
+    "primary_emission_wavelength": 253.6,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 450.0
+  },
+  "Symbol": "P",
+  "_provenance": {
+    "Properties": {
+      "entry": "Phosphorus",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=15",
+      "tier": "elements"
+    }
+  }
 }

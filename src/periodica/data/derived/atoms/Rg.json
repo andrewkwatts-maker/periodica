@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 111,
+  "AtomicWeight_amu": 282,
   "BaryonNumber_B": 282,
+  "BindingEnergyPerNucleon_MeV": 7.231437848553133,
+  "BindingEnergy_MeV": 2039.2654732919837,
   "Charge_e": 0,
   "Composition": {
     "E": 111,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Roentgenium",
+  "ElementSymbol": "Rg",
   "LeptonNumber_L": 111,
-  "Mass_MeVc2": 264870.60957813,
-  "Mass_amu": 284.3502807922872,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.1892414219199234,
+  "MassNumber_A": 282,
+  "Mass_MeVc2": 262831.34410483803,
+  "Mass_amu": 282.1610393703673,
+  "Mass_kg": 4.685394289469556e-25,
   "Name": "Rg",
-  "Symbol": "Rg"
+  "NeutronNumber_N": 171,
+  "Properties": {
+    "atomic_mass": 282,
+    "atomic_radius": 121,
+    "block": "d",
+    "covalent_radius": 121,
+    "density": 28.7,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d⁹ 7s²",
+    "electronegativity": 2.4,
+    "group": 11,
+    "ionization_energy": 9.0,
+    "melting_point": 2100,
+    "period": 7,
+    "valence_electrons": 11
+  },
+  "Symbol": "Rg",
+  "_provenance": {
+    "Properties": {
+      "entry": "Roentgenium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=111",
+      "tier": "elements"
+    }
+  }
 }

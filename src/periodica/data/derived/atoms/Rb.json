@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 37,
+  "AtomicWeight_amu": 85.468,
   "BaryonNumber_B": 85,
+  "BindingEnergyPerNucleon_MeV": 8.732186025114707,
+  "BindingEnergy_MeV": 742.2358121347501,
   "Charge_e": 0,
   "Composition": {
     "E": 37,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Rubidium",
+  "ElementSymbol": "Rb",
   "LeptonNumber_L": 37,
-  "Mass_MeVc2": 79834.11440803,
-  "Mass_amu": 85.70544268721241,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.7968228786488704,
+  "MassNumber_A": 85,
+  "Mass_MeVc2": 79091.87859589525,
+  "Mass_amu": 84.90861980856354,
+  "Mass_kg": 1.4099408028320638e-25,
   "Name": "Rb",
-  "Symbol": "Rb"
+  "NeutronNumber_N": 48,
+  "Properties": {
+    "atomic_mass": 85.468,
+    "atomic_radius": 265,
+    "block": "s",
+    "boiling_point": 961,
+    "covalent_radius": 220,
+    "density": 1.53,
+    "electron_affinity": 46.9,
+    "electron_configuration": "[Kr] 5s¹",
+    "electronegativity": 0.82,
+    "group": 1,
+    "ionization_energy": 4.177,
+    "melting_point": 312.45,
+    "period": 5,
+    "primary_emission_wavelength": 780.0,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 780.0
+  },
+  "Symbol": "Rb",
+  "_provenance": {
+    "Properties": {
+      "entry": "Rubidium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=37",
+      "tier": "elements"
+    }
+  }
 }

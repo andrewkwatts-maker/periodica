@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 98,
+  "AtomicWeight_amu": 251,
   "BaryonNumber_B": 251,
+  "BindingEnergyPerNucleon_MeV": 7.48159899177221,
+  "BindingEnergy_MeV": 1877.8813469348247,
   "Charge_e": 0,
   "Composition": {
     "E": 98,
@@ -23,10 +27,54 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Californium",
+  "ElementSymbol": "Cf",
   "LeptonNumber_L": 98,
-  "Mass_MeVc2": 235754.25187634001,
-  "Mass_amu": 253.09258670029635,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.0159884448609313,
+  "MassNumber_A": 251,
+  "Mass_MeVc2": 233876.3705294052,
+  "Mass_amu": 251.0765982554354,
+  "Mass_kg": 4.169225001121839e-25,
   "Name": "Cf",
-  "Symbol": "Cf"
+  "NeutronNumber_N": 153,
+  "Properties": {
+    "atomic_mass": 251,
+    "atomic_radius": 186,
+    "block": "f",
+    "boiling_point": 1743,
+    "covalent_radius": 168,
+    "density": 15.1,
+    "electron_configuration": "[Rn] 5f¹⁰ 7s²",
+    "electronegativity": 1.3,
+    "ionization_energy": 6.282,
+    "melting_point": 1173,
+    "period": 7,
+    "primary_emission_wavelength": 415.0,
+    "valence_electrons": 10,
+    "visible_emission_wavelength": 415.0
+  },
+  "Symbol": "Cf",
+  "_provenance": {
+    "Properties": {
+      "entry": "Californium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=98",
+      "tier": "elements"
+    }
+  }
 }

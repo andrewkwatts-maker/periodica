@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 83,
+  "AtomicWeight_amu": 208.98,
   "BaryonNumber_B": 209,
+  "BindingEnergyPerNucleon_MeV": 7.823298058923621,
+  "BindingEnergy_MeV": 1635.0692943150368,
   "Charge_e": 0,
   "Composition": {
     "E": 83,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Bismuth",
+  "ElementSymbol": "Bi",
   "LeptonNumber_L": 83,
-  "Mass_MeVc2": 196304.23921564998,
-  "Mass_amu": 210.7412582716954,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.7553189977984454,
+  "MassNumber_A": 209,
+  "Mass_MeVc2": 194669.16992133495,
+  "Mass_amu": 208.98593927389695,
+  "Mass_kg": 3.470293165344011e-25,
   "Name": "Bi",
-  "Symbol": "Bi"
+  "NeutronNumber_N": 126,
+  "Properties": {
+    "atomic_mass": 208.98,
+    "atomic_radius": 143,
+    "block": "p",
+    "boiling_point": 1837,
+    "covalent_radius": 148,
+    "density": 9.78,
+    "electron_affinity": 91.2,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³",
+    "electronegativity": 2.02,
+    "group": 15,
+    "ionization_energy": 7.28556,
+    "melting_point": 545,
+    "period": 6,
+    "primary_emission_wavelength": 306.8,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 472.3
+  },
+  "Symbol": "Bi",
+  "_provenance": {
+    "Properties": {
+      "entry": "Bismuth",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=83",
+      "tier": "elements"
+    }
+  }
 }

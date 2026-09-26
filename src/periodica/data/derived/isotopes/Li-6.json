@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 3,
+  "AtomicWeight_amu": 6.94,
   "BaryonNumber_B": 6,
+  "BindingEnergyPerNucleon_MeV": 5.758287181720718,
+  "BindingEnergy_MeV": 34.549723090324306,
   "Charge_e": 0,
   "Composition": {
     "E": 3,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Lithium",
+  "ElementSymbol": "Li",
   "LeptonNumber_L": 3,
-  "Mass_MeVc2": 5635.04552289,
-  "Mass_amu": 6.049469887440195,
-  "Mass_kg": 0,
-  "Name": "Li-6"
+  "MassDefect_amu": 0.03709065146044933,
+  "MassNumber_A": 6,
+  "Mass_MeVc2": 5600.495799799675,
+  "Mass_amu": 6.012379235979746,
+  "Mass_kg": 9.983790604559029e-27,
+  "Name": "Li-6",
+  "NeutronNumber_N": 3,
+  "Properties": {
+    "atomic_mass": 6.94,
+    "atomic_radius": 167,
+    "block": "s",
+    "boiling_point": 1615,
+    "covalent_radius": 128,
+    "density": 0.534,
+    "electron_affinity": 59.6,
+    "electron_configuration": "1s² 2s¹",
+    "electronegativity": 0.98,
+    "group": 1,
+    "ionization_energy": 5.392,
+    "melting_point": 453,
+    "period": 2,
+    "primary_emission_wavelength": 670.8,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 670.8
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Lithium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=3",
+      "tier": "elements"
+    }
+  }
 }

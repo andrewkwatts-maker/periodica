@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 53,
+  "AtomicWeight_amu": 126.904,
   "BaryonNumber_B": 127,
+  "BindingEnergyPerNucleon_MeV": 8.444086895401902,
+  "BindingEnergy_MeV": 1072.3990357160417,
   "Charge_e": -1,
   "Composition": {
     "E": 54,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Iodine",
+  "ElementSymbol": "I",
   "LeptonNumber_L": 54,
-  "Mass_MeVc2": 119283.85573425998,
-  "Mass_amu": 128.0564798263025,
-  "Mass_kg": 0,
-  "Name": "I-"
+  "MassDefect_amu": 1.1512676601279321,
+  "MassNumber_A": 127,
+  "Mass_MeVc2": 118211.45669854395,
+  "Mass_amu": 126.90521216617458,
+  "Mass_kg": 2.107310625570945e-25,
+  "Name": "I-",
+  "NeutronNumber_N": 74,
+  "Properties": {
+    "atomic_mass": 126.904,
+    "atomic_radius": 115,
+    "block": "p",
+    "boiling_point": 457.4,
+    "covalent_radius": 139,
+    "density": 4.93,
+    "electron_affinity": 295.2,
+    "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p⁵",
+    "electronegativity": 2.66,
+    "group": 17,
+    "ionization_energy": 10.451,
+    "melting_point": 386.85,
+    "period": 5,
+    "primary_emission_wavelength": 546.5,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 546.5
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Iodine",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=53",
+      "tier": "elements"
+    }
+  }
 }

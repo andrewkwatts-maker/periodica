@@ -414,11 +414,18 @@ def _compose(
         else:
             cleaned[prop] = total
 
-    return {
+    composed = {
         "Composition": dict(spec_map),
         "Constituents": constituents,
         **cleaned,
     }
+    # Additive summation is not physics: binding energy is missing, and units
+    # the constituents never carried come out as zero. The refinements
+    # declared in composition_rules.json correct that. They are named
+    # functions in periodica.refine, so this module stays content-agnostic;
+    # an empty "refinements" list restores raw additive composition.
+    from periodica.refine import apply_refinements  # local: avoids a cycle
+    return apply_refinements(composed, _config())
 
 
 def _coerce_scope(value) -> Optional[Union[str, List[str]]]:

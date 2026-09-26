@@ -39,8 +39,8 @@
       "helix_score": 0.88,
       "sheet_score": 0.844,
       "turn_score": 1.266,
-      "phi": -46.8,
-      "psi": -50.4
+      "phi": -72.5,
+      "psi": -64.0
     },
     {
       "residue": "D",
@@ -49,8 +49,8 @@
       "helix_score": 0.862,
       "sheet_score": 0.828,
       "turn_score": 1.293,
-      "phi": -79.3,
-      "psi": -62.7
+      "phi": -77.0,
+      "psi": -30.9
     },
     {
       "residue": "P",
@@ -59,8 +59,8 @@
       "helix_score": 0.839,
       "sheet_score": 0.88,
       "turn_score": 1.279,
-      "phi": -50.6,
-      "psi": 17.7
+      "phi": -52.9,
+      "psi": -69.4
     },
     {
       "residue": "N",
@@ -69,8 +69,8 @@
       "helix_score": 0.911,
       "sheet_score": 0.874,
       "turn_score": 1.201,
-      "phi": -75.0,
-      "psi": -32.3
+      "phi": -94.9,
+      "psi": -17.6
     },
     {
       "residue": "C",
@@ -79,8 +79,8 @@
       "helix_score": 0.968,
       "sheet_score": 0.869,
       "turn_score": 1.141,
-      "phi": -92.3,
-      "psi": 18.2
+      "phi": -101.9,
+      "psi": -33.3
     },
     {
       "residue": "S",
@@ -89,8 +89,8 @@
       "helix_score": 0.87,
       "sheet_score": 0.836,
       "turn_score": 1.248,
-      "phi": -61.4,
-      "psi": 35.6
+      "phi": -24.2,
+      "psi": -71.9
     },
     {
       "residue": "C",
@@ -99,8 +99,8 @@
       "helix_score": 0.87,
       "sheet_score": 0.836,
       "turn_score": 1.248,
-      "phi": -56.9,
-      "psi": -61.2
+      "phi": -71.3,
+      "psi": -57.2
     },
     {
       "residue": "A",
@@ -109,8 +109,8 @@
       "helix_score": 0.892,
       "sheet_score": 0.858,
       "turn_score": 1.238,
-      "phi": -60.0,
-      "psi": -30.6
+      "phi": -13.7,
+      "psi": -30.2
     },
     {
       "residue": "A",
@@ -119,8 +119,8 @@
       "helix_score": 0.896,
       "sheet_score": 0.891,
       "turn_score": 1.197,
-      "phi": -48.0,
-      "psi": -23.8
+      "phi": -42.4,
+      "psi": -18.1
     },
     {
       "residue": "G",
@@ -129,8 +129,8 @@
       "helix_score": 0.91,
       "sheet_score": 0.891,
       "turn_score": 1.171,
-      "phi": -23.8,
-      "psi": 52.8
+      "phi": -88.9,
+      "psi": -61.0
     },
     {
       "residue": "D",
@@ -139,8 +139,8 @@
       "helix_score": 0.902,
       "sheet_score": 1.081,
       "turn_score": 1.144,
-      "phi": -8.3,
-      "psi": -8.7
+      "phi": -68.6,
+      "psi": -73.6
     },
     {
       "residue": "S",
@@ -149,8 +149,8 @@
       "helix_score": 0.982,
       "sheet_score": 1.035,
       "turn_score": 1.086,
-      "phi": -25.2,
-      "psi": -132.6
+      "phi": -96.9,
+      "psi": 62.0
     },
     {
       "residue": "C",
@@ -159,8 +159,8 @@
       "helix_score": 0.888,
       "sheet_score": 1.025,
       "turn_score": 1.186,
-      "phi": -4.2,
-      "psi": -70.8
+      "phi": -46.5,
+      "psi": -4.8
     },
     {
       "residue": "T",
@@ -169,8 +169,8 @@
       "helix_score": 0.816,
       "sheet_score": 1.015,
       "turn_score": 1.271,
-      "phi": -69.8,
-      "psi": -40.2
+      "phi": -13.9,
+      "psi": -22.5
     },
     {
       "residue": "C",
@@ -179,8 +179,8 @@
       "helix_score": 0.83,
       "sheet_score": 1.071,
       "turn_score": 1.23,
-      "phi": -66.6,
-      "psi": -27.8
+      "phi": -58.4,
+      "psi": -40.6
     },
     {
       "residue": "A",
@@ -189,8 +189,8 @@
       "helix_score": 0.847,
       "sheet_score": 1.096,
       "turn_score": 1.18,
-      "phi": -43.0,
-      "psi": -30.1
+      "phi": -90.1,
+      "psi": -78.7
     },
     {
       "residue": "G",
@@ -199,8 +199,8 @@
       "helix_score": 0.839,
       "sheet_score": 1.153,
       "turn_score": 1.153,
-      "phi": -43.6,
-      "psi": 37.5
+      "phi": -46.0,
+      "psi": 8.5
     },
     {
       "residue": "S",
@@ -209,8 +209,8 @@
       "helix_score": 0.89,
       "sheet_score": 0.952,
       "turn_score": 1.133,
-      "phi": -51.4,
-      "psi": -17.4
+      "phi": -10.3,
+      "psi": -32.0
     },
     {
       "residue": "C",
@@ -219,8 +219,8 @@
       "helix_score": 0.966,
       "sheet_score": 0.861,
       "turn_score": 1.109,
-      "phi": -66.4,
-      "psi": -58.0
+      "phi": -46.8,
+      "psi": -39.6
     },
     {
       "residue": "K",
@@ -229,8 +229,8 @@
       "helix_score": 1.11,
       "sheet_score": 0.861,
       "turn_score": 1.109,
-      "phi": -63.9,
-      "psi": -21.1
+      "phi": -66.4,
+      "psi": -42.3
     },
     {
       "residue": "C",
@@ -239,8 +239,8 @@
       "helix_score": 1.077,
       "sheet_score": 0.851,
       "turn_score": 1.148,
-      "phi": -64.0,
-      "psi": -20.5
+      "phi": -59.4,
+      "psi": -44.0
     },
     {
       "residue": "K",
@@ -249,8 +249,8 @@
       "helix_score": 1.094,
       "sheet_score": 0.9,
       "turn_score": 1.107,
-      "phi": -103.6,
-      "psi": 9.2
+      "phi": -21.3,
+      "psi": -6.3
     },
     {
       "residue": "E",
@@ -259,8 +259,8 @@
       "helix_score": 1.101,
       "sheet_score": 1.091,
       "turn_score": 1.054,
-      "phi": -60.0,
-      "psi": -54.7
+      "phi": -69.2,
+      "psi": -41.1
     },
     {
       "residue": "C",
@@ -269,8 +269,8 @@
       "helix_score": 1.11,
       "sheet_score": 1.035,
       "turn_score": 1.081,
-      "phi": -56.4,
-      "psi": -43.7
+      "phi": -53.0,
+      "psi": -25.3
     },
     {
       "residue": "K",
@@ -279,8 +279,8 @@
       "helix_score": 1.052,
       "sheet_score": 1.092,
       "turn_score": 1.101,
-      "phi": -68.5,
-      "psi": -8.6
+      "phi": -82.4,
+      "psi": -133.5
     },
     {
       "residue": "C",
@@ -289,8 +289,8 @@
       "helix_score": 0.966,
       "sheet_score": 1.035,
       "turn_score": 1.081,
-      "phi": -19.8,
-      "psi": -9.3
+      "phi": -55.6,
+      "psi": -74.3
     },
     {
       "residue": "T",
@@ -299,8 +299,8 @@
       "helix_score": 0.966,
       "sheet_score": 1.035,
       "turn_score": 1.081,
-      "phi": -65.6,
-      "psi": -19.9
+      "phi": -48.1,
+      "psi": 10.6
     },
     {
       "residue": "S",
@@ -309,8 +309,8 @@
       "helix_score": 0.883,
       "sheet_score": 1.084,
       "turn_score": 1.158,
-      "phi": -94.4,
-      "psi": -18.7
+      "phi": -41.1,
+      "psi": -78.3
     },
     {
       "residue": "C",
@@ -319,8 +319,8 @@
       "helix_score": 0.883,
       "sheet_score": 1.084,
       "turn_score": 1.158,
-      "phi": -53.0,
-      "psi": -74.4
+      "phi": -19.0,
+      "psi": -31.1
     },
     {
       "residue": "K",
@@ -329,8 +329,8 @@
       "helix_score": 0.832,
       "sheet_score": 1.141,
       "turn_score": 1.178,
-      "phi": -102.0,
-      "psi": -32.5
+      "phi": -55.9,
+      "psi": -17.3
     },
     {
       "residue": "K",
@@ -339,8 +339,8 @@
       "helix_score": 0.84,
       "sheet_score": 0.943,
       "turn_score": 1.204,
-      "phi": -59.9,
-      "psi": 53.3
+      "phi": -80.0,
+      "psi": -43.0
     },
     {
       "residue": "S",
@@ -349,8 +349,8 @@
       "helix_score": 0.826,
       "sheet_score": 1.085,
       "turn_score": 1.23,
-      "phi": -21.5,
-      "psi": -28.3
+      "phi": -26.9,
+      "psi": -10.0
     },
     {
       "residue": "C",
@@ -359,8 +359,8 @@
       "helix_score": 0.803,
       "sheet_score": 1.059,
       "turn_score": 1.24,
-      "phi": -22.2,
-      "psi": -1.1
+      "phi": -38.5,
+      "psi": -121.2
     },
     {
       "residue": "C",
@@ -369,8 +369,8 @@
       "helix_score": 0.843,
       "sheet_score": 1.124,
       "turn_score": 1.163,
-      "phi": -68.3,
-      "psi": -54.1
+      "phi": -72.0,
+      "psi": 13.4
     },
     {
       "residue": "S",
@@ -379,8 +379,8 @@
       "helix_score": 0.778,
       "sheet_score": 1.126,
       "turn_score": 1.224,
-      "phi": -36.3,
-      "psi": -107.4
+      "phi": -100.2,
+      "psi": -42.2
     },
     {
       "residue": "C",
@@ -389,8 +389,8 @@
       "helix_score": 0.727,
       "sheet_score": 1.183,
       "turn_score": 1.244,
-      "phi": -10.6,
-      "psi": -37.3
+      "phi": -11.8,
+      "psi": -7.3
     },
     {
       "residue": "P",
@@ -399,8 +399,8 @@
       "helix_score": 0.799,
       "sheet_score": 1.193,
       "turn_score": 1.159,
-      "phi": -28.4,
-      "psi": -62.5
+      "phi": -88.0,
+      "psi": -6.0
     },
     {
       "residue": "V",
@@ -409,8 +409,8 @@
       "helix_score": 0.85,
       "sheet_score": 1.136,
       "turn_score": 1.139,
-      "phi": -67.4,
-      "psi": -34.2
+      "phi": -57.4,
+      "psi": -25.0
     },
     {
       "residue": "G",
@@ -419,8 +419,8 @@
       "helix_score": 0.85,
       "sheet_score": 1.136,
       "turn_score": 1.139,
-      "phi": -41.1,
-      "psi": -25.8
+      "phi": -77.2,
+      "psi": -21.5
     },
     {
       "residue": "C",
@@ -429,8 +429,8 @@
       "helix_score": 1.061,
       "sheet_score": 1.146,
       "turn_score": 1.053,
-      "phi": -111.3,
-      "psi": 126.1
+      "phi": -127.5,
+      "psi": 120.5
     },
     {
       "residue": "A",
@@ -439,8 +439,8 @@
       "helix_score": 1.113,
       "sheet_score": 0.987,
       "turn_score": 1.03,
-      "phi": -53.6,
-      "psi": -43.2
+      "phi": -55.9,
+      "psi": -40.9
     },
     {
       "residue": "K",
@@ -449,8 +449,8 @@
       "helix_score": 1.113,
       "sheet_score": 1.009,
       "turn_score": 1.034,
-      "phi": -48.4,
-      "psi": -40.5
+      "phi": -53.5,
+      "psi": -47.8
     },
     {
       "residue": "C",
@@ -459,8 +459,8 @@
       "helix_score": 1.067,
       "sheet_score": 1.095,
       "turn_score": 1.111,
-      "phi": -80.6,
-      "psi": -25.3
+      "phi": -53.5,
+      "psi": 38.8
     },
     {
       "residue": "A",
@@ -469,8 +469,8 @@
       "helix_score": 1.132,
       "sheet_score": 1.204,
       "turn_score": 0.99,
-      "phi": -138.4,
-      "psi": 115.2
+      "phi": -127.0,
+      "psi": 125.8
     },
     {
       "residue": "Q",
@@ -479,8 +479,8 @@
       "helix_score": 1.132,
       "sheet_score": 1.204,
       "turn_score": 0.99,
-      "phi": -123.8,
-      "psi": 118.0
+      "phi": -131.3,
+      "psi": 118.9
     },
     {
       "residue": "G",
@@ -489,8 +489,8 @@
       "helix_score": 1.099,
       "sheet_score": 1.192,
       "turn_score": 1.029,
-      "phi": -97.1,
-      "psi": -27.6
+      "phi": -63.6,
+      "psi": 11.6
     },
     {
       "residue": "C",
@@ -499,8 +499,8 @@
       "helix_score": 0.89,
       "sheet_score": 1.193,
       "turn_score": 1.09,
-      "phi": -131.7,
-      "psi": 142.7
+      "phi": -129.3,
+      "psi": 125.7
     },
     {
       "residue": "I",
@@ -509,8 +509,8 @@
       "helix_score": 0.97,
       "sheet_score": 1.147,
       "turn_score": 1.031,
-      "phi": -139.9,
-      "psi": 113.6
+      "phi": -138.0,
+      "psi": 123.3
     },
     {
       "residue": "C",
@@ -519,8 +519,8 @@
       "helix_score": 0.898,
       "sheet_score": 1.137,
       "turn_score": 1.117,
-      "phi": -97.3,
-      "psi": 127.8
+      "phi": -142.9,
+      "psi": 105.3
     },
     {
       "residue": "K",
@@ -529,8 +529,8 @@
       "helix_score": 1.02,
       "sheet_score": 1.066,
       "turn_score": 1.17,
-      "phi": -98.2,
-      "psi": -63.9
+      "phi": -22.4,
+      "psi": 12.2
     },
     {
       "residue": "G",
@@ -539,8 +539,8 @@
       "helix_score": 1.095,
       "sheet_score": 1.064,
       "turn_score": 1.109,
-      "phi": -67.6,
-      "psi": -18.2
+      "phi": -77.4,
+      "psi": -65.8
     },
     {
       "residue": "A",
@@ -549,8 +549,8 @@
       "helix_score": 1.095,
       "sheet_score": 0.926,
       "turn_score": 1.109,
-      "phi": -75.7,
-      "psi": -114.6
+      "phi": -46.6,
+      "psi": 2.3
     },
     {
       "residue": "S",
@@ -559,8 +559,8 @@
       "helix_score": 1.055,
       "sheet_score": 0.831,
       "turn_score": 1.216,
-      "phi": -116.7,
-      "psi": -89.8
+      "phi": -19.8,
+      "psi": -15.6
     },
     {
       "residue": "D",
@@ -569,8 +569,8 @@
       "helix_score": 1.055,
       "sheet_score": 0.831,
       "turn_score": 1.216,
-      "phi": -19.0,
-      "psi": -77.6
+      "phi": -18.7,
+      "psi": -58.5
     },
     {
       "residue": "K",
@@ -579,8 +579,8 @@
       "helix_score": 0.997,
       "sheet_score": 1.013,
       "turn_score": 1.236,
-      "phi": -51.0,
-      "psi": -20.9
+      "phi": -32.0,
+      "psi": -77.1
     },
     {
       "residue": "C",
@@ -589,8 +589,8 @@
       "helix_score": 0.961,
       "sheet_score": 1.023,
       "turn_score": 1.136,
-      "phi": -87.3,
-      "psi": 23.2
+      "phi": -76.2,
+      "psi": 22.3
     },
     {
       "residue": "S",
@@ -599,8 +599,8 @@
       "helix_score": 0.904,
       "sheet_score": 1.032,
       "turn_score": 1.195,
-      "phi": -77.0,
-      "psi": -11.2
+      "phi": -34.6,
+      "psi": -68.1
     },
     {
       "residue": "C",
@@ -609,8 +609,8 @@
       "helix_score": 0.923,
       "sheet_score": 1.056,
       "turn_score": 1.161,
-      "phi": -90.9,
-      "psi": -2.0
+      "phi": -43.6,
+      "psi": 48.4
     },
     {
       "residue": "C",
@@ -619,8 +619,8 @@
       "helix_score": 0.908,
       "sheet_score": 1.129,
       "turn_score": 1.112,
-      "phi": -123.8,
-      "psi": 142.2
+      "phi": -135.4,
+      "psi": 103.3
     },
     {
       "residue": "A",
@@ -629,8 +629,8 @@
       "helix_score": 0.858,
       "sheet_score": 1.184,
       "turn_score": 1.132,
-      "phi": -135.1,
-      "psi": 114.7
+      "phi": -87.9,
+      "psi": 111.3
     }
   ],
   "disulfide_bonds": [
@@ -685,7 +685,7 @@
       "protein_predictor"
     ],
     "confidence": 0.8,
-    "timestamp": "2026-08-23T01:10:38.389218+00:00",
+    "timestamp": "2026-09-26T21:27:28.502929+00:00",
     "model_version": "1.0.0"
   }
 }

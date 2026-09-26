@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 110,
+  "AtomicWeight_amu": 281,
   "BaryonNumber_B": 281,
+  "BindingEnergyPerNucleon_MeV": 7.24884796374509,
+  "BindingEnergy_MeV": 2036.9262778123705,
   "Charge_e": 0,
   "Composition": {
     "E": 110,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Darmstadtium",
+  "ElementSymbol": "Ds",
   "LeptonNumber_L": 110,
-  "Mass_MeVc2": 263931.82649102004,
-  "Mass_amu": 283.34245574575715,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.1867301924086084,
+  "MassNumber_A": 281,
+  "Mass_MeVc2": 261894.90021320767,
+  "Mass_amu": 281.15572555334853,
+  "Mass_kg": 4.668700660796032e-25,
   "Name": "Ds",
-  "Symbol": "Ds"
+  "NeutronNumber_N": 171,
+  "Properties": {
+    "atomic_mass": 281,
+    "atomic_radius": 128,
+    "block": "d",
+    "covalent_radius": 128,
+    "density": 34.8,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d⁸ 7s²",
+    "electronegativity": 2.3,
+    "group": 10,
+    "ionization_energy": 8.3,
+    "melting_point": 2300,
+    "period": 7,
+    "valence_electrons": 10
+  },
+  "Symbol": "Ds",
+  "_provenance": {
+    "Properties": {
+      "entry": "Darmstadtium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=110",
+      "tier": "elements"
+    }
+  }
 }

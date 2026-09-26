@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 10,
+  "AtomicWeight_amu": 20.18,
   "BaryonNumber_B": 20,
+  "BindingEnergyPerNucleon_MeV": 8.369223015071412,
+  "BindingEnergy_MeV": 167.38446030142825,
   "Charge_e": 0,
   "Composition": {
     "E": 10,
@@ -23,9 +27,55 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Neon",
+  "ElementSymbol": "Ne",
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 18783.4850763,
-  "Mass_amu": 20.164899624800647,
-  "Mass_kg": 0,
-  "Name": "Ne-20"
+  "MassDefect_amu": 0.17969460017682057,
+  "MassNumber_A": 20,
+  "Mass_MeVc2": 18616.10061599857,
+  "Mass_amu": 19.985205024623827,
+  "Mass_kg": 3.3186213697398476e-26,
+  "Name": "Ne-20",
+  "NeutronNumber_N": 10,
+  "Properties": {
+    "atomic_mass": 20.18,
+    "atomic_radius": 38,
+    "block": "p",
+    "boiling_point": 27,
+    "covalent_radius": 58,
+    "density": 0.0009,
+    "electron_affinity": 0,
+    "electron_configuration": "1s² 2s² 2p⁶",
+    "group": 18,
+    "ionization_energy": 21.565,
+    "melting_point": 24,
+    "period": 2,
+    "primary_emission_wavelength": 640.2,
+    "valence_electrons": 8,
+    "visible_emission_wavelength": 640.2
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Neon",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=10",
+      "tier": "elements"
+    }
+  }
 }

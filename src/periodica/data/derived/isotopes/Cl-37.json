@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 17,
+  "AtomicWeight_amu": 35.45,
   "BaryonNumber_B": 37,
+  "BindingEnergyPerNucleon_MeV": 8.727125373003485,
+  "BindingEnergy_MeV": 322.903638801129,
   "Charge_e": 0,
   "Composition": {
     "E": 17,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Chlorine",
+  "ElementSymbol": "Cl",
   "LeptonNumber_L": 17,
-  "Mass_MeVc2": 34750.62089127,
-  "Mass_amu": 37.306324110011104,
-  "Mass_kg": 0,
-  "Name": "Cl-37"
+  "MassDefect_amu": 0.3466512970530171,
+  "MassNumber_A": 37,
+  "Mass_MeVc2": 34427.71725246887,
+  "Mass_amu": 36.95967281295809,
+  "Mass_kg": 6.137298059467083e-26,
+  "Name": "Cl-37",
+  "NeutronNumber_N": 20,
+  "Properties": {
+    "atomic_mass": 35.45,
+    "atomic_radius": 79,
+    "block": "p",
+    "boiling_point": 239,
+    "covalent_radius": 102,
+    "density": 0.0032,
+    "electron_affinity": 349.0,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁵",
+    "electronegativity": 3.16,
+    "group": 17,
+    "ionization_energy": 12.968,
+    "melting_point": 171,
+    "period": 3,
+    "primary_emission_wavelength": 479.5,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 479.5
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Chlorine",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=17",
+      "tier": "elements"
+    }
+  }
 }

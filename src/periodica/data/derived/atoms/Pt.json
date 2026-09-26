@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 78,
+  "AtomicWeight_amu": 195.084,
   "BaryonNumber_B": 195,
+  "BindingEnergyPerNucleon_MeV": 7.9122038004222395,
+  "BindingEnergy_MeV": 1542.8797410823367,
   "Charge_e": 0,
   "Composition": {
     "E": 78,
@@ -23,10 +27,60 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Platinum",
+  "ElementSymbol": "Pt",
   "LeptonNumber_L": 78,
-  "Mass_MeVc2": 183154.23499542,
-  "Mass_amu": 196.62414879549505,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.656349446629851,
+  "MassNumber_A": 195,
+  "Mass_MeVc2": 181611.35525433766,
+  "Mass_amu": 194.96779934886519,
+  "Mass_kg": 3.2375164754782067e-25,
   "Name": "Pt",
-  "Symbol": "Pt"
+  "NeutronNumber_N": 117,
+  "Properties": {
+    "atomic_mass": 195.084,
+    "atomic_radius": 177,
+    "block": "d",
+    "boiling_point": 4098,
+    "covalent_radius": 136,
+    "debye_temperature_K": 240,
+    "density": 21.45,
+    "electron_affinity": 205.3,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d⁹ 6s¹",
+    "electronegativity": 2.28,
+    "group": 10,
+    "ionization_energy": 8.95883,
+    "melting_point": 2041,
+    "period": 6,
+    "primary_emission_wavelength": 265.9,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 406.0
+  },
+  "Symbol": "Pt",
+  "_provenance": {
+    "Properties": {
+      "entry": "Platinum",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=78",
+      "tier": "elements"
+    }
+  }
 }

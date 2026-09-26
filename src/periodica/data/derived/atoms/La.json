@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 57,
+  "AtomicWeight_amu": 138.905,
   "BaryonNumber_B": 139,
+  "BindingEnergyPerNucleon_MeV": 8.356920228843316,
+  "BindingEnergy_MeV": 1161.611911809221,
   "Charge_e": 0,
   "Composition": {
     "E": 57,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Lanthanum",
+  "ElementSymbol": "La",
   "LeptonNumber_L": 57,
-  "Mass_MeVc2": 130555.00044791,
-  "Mass_amu": 140.1565507601137,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.2470416171088796,
+  "MassNumber_A": 139,
+  "Mass_MeVc2": 129393.38853610079,
+  "Mass_amu": 138.9095091430048,
+  "Mass_kg": 2.3066466665418938e-25,
   "Name": "La",
-  "Symbol": "La"
+  "NeutronNumber_N": 82,
+  "Properties": {
+    "atomic_mass": 138.905,
+    "atomic_radius": 195,
+    "block": "f",
+    "boiling_point": 3737,
+    "covalent_radius": 207,
+    "density": 6.16,
+    "electron_affinity": 48.0,
+    "electron_configuration": "[Xe] 5d¹ 6s²",
+    "electronegativity": 1.1,
+    "group": 3,
+    "ionization_energy": 5.577,
+    "melting_point": 1193,
+    "period": 6,
+    "primary_emission_wavelength": 550.1,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 550.1
+  },
+  "Symbol": "La",
+  "_provenance": {
+    "Properties": {
+      "entry": "Lanthanum",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=57",
+      "tier": "elements"
+    }
+  }
 }

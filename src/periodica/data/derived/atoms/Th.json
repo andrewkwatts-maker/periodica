@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 90,
+  "AtomicWeight_amu": 232.038,
   "BaryonNumber_B": 232,
+  "BindingEnergyPerNucleon_MeV": 7.62741171592002,
+  "BindingEnergy_MeV": 1769.5595180934445,
   "Charge_e": 0,
   "Composition": {
     "E": 90,
@@ -23,10 +27,56 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Thorium",
+  "ElementSymbol": "Th",
   "LeptonNumber_L": 90,
-  "Mass_MeVc2": 217908.76755373998,
-  "Mass_amu": 233.93467225260588,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.8997001843556176,
+  "MassNumber_A": 232,
+  "Mass_MeVc2": 216139.20803564653,
+  "Mass_amu": 232.03497206825026,
+  "Mass_kg": 3.853031359367693e-25,
   "Name": "Th",
-  "Symbol": "Th"
+  "NeutronNumber_N": 142,
+  "Properties": {
+    "atomic_mass": 232.038,
+    "atomic_radius": 180,
+    "block": "f",
+    "boiling_point": 5061,
+    "covalent_radius": 206,
+    "density": 11.72,
+    "electron_affinity": 112.7,
+    "electron_configuration": "[Rn] 6d² 7s²",
+    "electronegativity": 1.3,
+    "ionization_energy": 6.3067,
+    "melting_point": 2023,
+    "period": 7,
+    "primary_emission_wavelength": 401.9,
+    "valence_electrons": 4,
+    "visible_emission_wavelength": 401.9
+  },
+  "Symbol": "Th",
+  "_provenance": {
+    "Properties": {
+      "entry": "Thorium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=90",
+      "tier": "elements"
+    }
+  }
 }

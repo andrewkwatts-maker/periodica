@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 92,
+  "AtomicWeight_amu": 238.029,
   "BaryonNumber_B": 238,
+  "BindingEnergyPerNucleon_MeV": 7.5823049792139505,
+  "BindingEnergy_MeV": 1804.5885850529203,
   "Charge_e": 0,
   "Composition": {
     "E": 92,
@@ -23,9 +27,55 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Uranium",
+  "ElementSymbol": "U",
   "LeptonNumber_L": 92,
-  "Mass_MeVc2": 223544.59541004,
-  "Mass_amu": 239.984982009466,
-  "Mass_kg": 0,
-  "Name": "U-238"
+  "MassDefect_amu": 1.9373054325997783,
+  "MassNumber_A": 238,
+  "Mass_MeVc2": 221740.00682498707,
+  "Mass_amu": 238.04767657686622,
+  "Mass_kg": 3.952874666692481e-25,
+  "Name": "U-238",
+  "NeutronNumber_N": 146,
+  "Properties": {
+    "atomic_mass": 238.029,
+    "atomic_radius": 175,
+    "block": "f",
+    "boiling_point": 4404,
+    "covalent_radius": 196,
+    "density": 19.1,
+    "electron_affinity": 50.9,
+    "electron_configuration": "[Rn] 5f³ 6d¹ 7s²",
+    "electronegativity": 1.38,
+    "ionization_energy": 6.194,
+    "melting_point": 1405,
+    "period": 7,
+    "primary_emission_wavelength": 591.5,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 591.5
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Uranium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=92",
+      "tier": "elements"
+    }
+  }
 }

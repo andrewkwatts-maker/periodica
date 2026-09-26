@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 8,
+  "AtomicWeight_amu": 15.999,
   "BaryonNumber_B": 16,
+  "BindingEnergyPerNucleon_MeV": 8.267532040672226,
+  "BindingEnergy_MeV": 132.2805126507556,
   "Charge_e": -2,
   "Composition": {
     "E": 10,
@@ -23,9 +27,57 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Oxygen",
+  "ElementSymbol": "O",
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 15027.81005894,
-  "Mass_amu": 16.13301685965865,
-  "Mass_kg": 0,
-  "Name": "O2-"
+  "MassDefect_amu": 0.1420089642082477,
+  "MassNumber_A": 16,
+  "Mass_MeVc2": 14895.529546289245,
+  "Mass_amu": 15.991007895450402,
+  "Mass_kg": 2.655369332470444e-26,
+  "Name": "O2-",
+  "NeutronNumber_N": 8,
+  "Properties": {
+    "atomic_mass": 15.999,
+    "atomic_radius": 48,
+    "block": "p",
+    "boiling_point": 90,
+    "covalent_radius": 66,
+    "density": 0.00143,
+    "electron_affinity": 141.0,
+    "electron_configuration": "1s² 2s² 2p⁴",
+    "electronegativity": 3.44,
+    "group": 16,
+    "ionization_energy": 13.618,
+    "melting_point": 54,
+    "period": 2,
+    "primary_emission_wavelength": 777.4,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 777.4
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Oxygen",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=8",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 87,
+  "AtomicWeight_amu": 223,
   "BaryonNumber_B": 223,
+  "BindingEnergyPerNucleon_MeV": 7.693466076575643,
+  "BindingEnergy_MeV": 1715.6429350763683,
   "Charge_e": 0,
   "Composition": {
     "E": 87,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Francium",
+  "ElementSymbol": "Fr",
   "LeptonNumber_L": 87,
-  "Mass_MeVc2": 209455.02576929,
-  "Mass_amu": 224.85920761731566,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.8418183546403224,
+  "MassNumber_A": 223,
+  "Mass_MeVc2": 207739.3828342136,
+  "Mass_amu": 223.01738926267535,
+  "Mass_kg": 3.703290874018118e-25,
   "Name": "Fr",
-  "Symbol": "Fr"
+  "NeutronNumber_N": 136,
+  "Properties": {
+    "atomic_mass": 223,
+    "atomic_radius": 348,
+    "block": "s",
+    "boiling_point": 950,
+    "covalent_radius": 260,
+    "density": 1.87,
+    "electron_affinity": 47.0,
+    "electron_configuration": "[Rn] 7s¹",
+    "electronegativity": 0.7,
+    "group": 1,
+    "ionization_energy": 3.89939,
+    "melting_point": 300,
+    "period": 7,
+    "primary_emission_wavelength": 718.0,
+    "valence_electrons": 1,
+    "visible_emission_wavelength": 700.0
+  },
+  "Symbol": "Fr",
+  "_provenance": {
+    "Properties": {
+      "entry": "Francium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=87",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 109,
+  "AtomicWeight_amu": 278,
   "BaryonNumber_B": 278,
+  "BindingEnergyPerNucleon_MeV": 7.26773693431288,
+  "BindingEnergy_MeV": 2020.4308677389806,
   "Charge_e": 0,
   "Composition": {
     "E": 109,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Meitnerium",
+  "ElementSymbol": "Mt",
   "LeptonNumber_L": 109,
-  "Mass_MeVc2": 261113.91256286998,
-  "Mass_amu": 280.3173008673271,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.1690216422089503,
+  "MassNumber_A": 278,
+  "Mass_MeVc2": 259093.481695131,
+  "Mass_amu": 278.14827922511813,
+  "Mass_kg": 4.618760839608738e-25,
   "Name": "Mt",
-  "Symbol": "Mt"
+  "NeutronNumber_N": 169,
+  "Properties": {
+    "atomic_mass": 278,
+    "atomic_radius": 129,
+    "block": "d",
+    "covalent_radius": 129,
+    "density": 37.4,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d⁷ 7s²",
+    "electronegativity": 2.2,
+    "group": 9,
+    "ionization_energy": 8.0,
+    "melting_point": 2500,
+    "period": 7,
+    "valence_electrons": 9
+  },
+  "Symbol": "Mt",
+  "_provenance": {
+    "Properties": {
+      "entry": "Meitnerium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=109",
+      "tier": "elements"
+    }
+  }
 }

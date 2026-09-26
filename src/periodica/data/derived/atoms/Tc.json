@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 43,
+  "AtomicWeight_amu": 98,
   "BaryonNumber_B": 97,
+  "BindingEnergyPerNucleon_MeV": 8.646660416181529,
+  "BindingEnergy_MeV": 838.7260603696083,
   "Charge_e": 0,
   "Composition": {
     "E": 43,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Technetium",
+  "ElementSymbol": "Tc",
   "LeptonNumber_L": 43,
-  "Mass_MeVc2": 91104.20545380999,
-  "Mass_amu": 97.8043824620928,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.900409415572914,
+  "MassNumber_A": 97,
+  "Mass_MeVc2": 90265.47939344039,
+  "Mass_amu": 96.9039730465199,
+  "Mass_kg": 1.609128329524997e-25,
   "Name": "Tc",
-  "Symbol": "Tc"
+  "NeutronNumber_N": 54,
+  "Properties": {
+    "atomic_mass": 98,
+    "atomic_radius": 183,
+    "block": "d",
+    "boiling_point": 4538,
+    "covalent_radius": 147,
+    "density": 11.5,
+    "electron_affinity": 53,
+    "electron_configuration": "[Kr] 4d⁵ 5s²",
+    "electronegativity": 1.9,
+    "group": 7,
+    "ionization_energy": 7.119,
+    "melting_point": 2430,
+    "period": 5,
+    "primary_emission_wavelength": 403.2,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 403.2
+  },
+  "Symbol": "Tc",
+  "_provenance": {
+    "Properties": {
+      "entry": "Technetium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=43",
+      "tier": "elements"
+    }
+  }
 }

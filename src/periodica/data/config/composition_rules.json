@@ -31,5 +31,48 @@
     "LeptonNumber_L"
   ],
 
-  "placeholder_prefixes": ["demo_", "example_"]
+  "placeholder_prefixes": ["demo_", "example_"],
+
+  "_refinements_comment": [
+    "Applied in order by periodica.refine after every composition, so that",
+    "Get() on a spec and the saved JSON built from that spec always agree.",
+    "Each refiner is a no-op for specs it does not apply to, so the list is",
+    "unconditional. Emptying this list restores raw additive composition."
+  ],
+  "refinements": [
+    {
+      "refiner": "nuclear_binding",
+      "_why": "Summed free-nucleon mass is ~1% too high for every nucleus; the semi-empirical mass formula supplies the missing mass defect.",
+      "params": {
+        "proton_symbols": ["P", "Proton"],
+        "neutron_symbols": ["N", "Neutron"],
+        "mev_per_amu": 931.49410242
+      }
+    },
+    {
+      "refiner": "mass_units",
+      "_why": "Constituent JSON has no Mass_kg, so additive composition reported Mass_kg: 0 -- a zero that reads as a measurement.",
+      "params": {
+        "kg_per_amu": 1.66053906660e-27,
+        "mev_per_amu": 931.49410242
+      }
+    },
+    {
+      "refiner": "cross_reference",
+      "_why": "A composed atom otherwise carries no measurable property at all. Join it to the curated elements tier on atomic number.",
+      "params": {
+        "tier": "elements",
+        "match_field": "AtomicNumber_Z",
+        "match_key": "atomic_number",
+        "merge_into": "Properties",
+        "skip_fields": ["symbol", "name", "isotopes", "atomic_number",
+                        "miedema_phi_star", "miedema_nws_13", "miedema_V_23"],
+        "also_copy": {
+          "ElementName": "name",
+          "ElementSymbol": "symbol",
+          "AtomicWeight_amu": "atomic_mass"
+        }
+      }
+    }
+  ]
 }

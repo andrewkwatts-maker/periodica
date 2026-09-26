@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 48,
+  "AtomicWeight_amu": 112.414,
   "BaryonNumber_B": 114,
+  "BindingEnergyPerNucleon_MeV": 8.553353347312852,
+  "BindingEnergy_MeV": 975.0822815936651,
   "Charge_e": 0,
   "Composition": {
     "E": 48,
@@ -23,10 +27,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Cadmium",
+  "ElementSymbol": "Cd",
   "LeptonNumber_L": 48,
-  "Mass_MeVc2": 107072.9059356,
-  "Mass_amu": 114.94748668614312,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.0467938326828092,
+  "MassNumber_A": 114,
+  "Mass_MeVc2": 106097.82365400634,
+  "Mass_amu": 113.90069285346031,
+  "Mass_kg": 1.8913655019597827e-25,
   "Name": "Cd",
-  "Symbol": "Cd"
+  "NeutronNumber_N": 66,
+  "Properties": {
+    "atomic_mass": 112.414,
+    "atomic_radius": 161,
+    "block": "d",
+    "boiling_point": 1040,
+    "covalent_radius": 144,
+    "density": 8.65,
+    "electron_affinity": 0,
+    "electron_configuration": "[Kr] 4d¹⁰ 5s²",
+    "electronegativity": 1.69,
+    "group": 12,
+    "ionization_energy": 8.994,
+    "melting_point": 594.22,
+    "period": 5,
+    "primary_emission_wavelength": 228.8,
+    "valence_electrons": 2,
+    "visible_emission_wavelength": 480.0
+  },
+  "Symbol": "Cd",
+  "_provenance": {
+    "Properties": {
+      "entry": "Cadmium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=48",
+      "tier": "elements"
+    }
+  }
 }

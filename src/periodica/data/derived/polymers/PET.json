@@ -27,9 +27,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 100,
-  "Mass_MeVc2": 180318.32739884,
-  "Mass_amu": 193.57967692040648,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 178831.9884407022,
+  "Mass_amu": 191.98402649784737,
+  "Mass_kg": 3.1879697616284512e-25,
   "Name": "PET",
   "Properties": {
     "Density_kgm3": 1380,
