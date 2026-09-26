@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 33,
+  "AtomicWeight_amu": 74.922,
   "BaryonNumber_B": 75,
+  "BindingEnergyPerNucleon_MeV": 8.75860562380582,
+  "BindingEnergy_MeV": 656.8954217854365,
   "Charge_e": 0,
   "Composition": {
     "E": 33,
@@ -23,10 +27,68 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Arsenic",
+  "ElementSymbol": "As",
   "LeptonNumber_L": 33,
-  "Mass_MeVc2": 70441.58953647,
-  "Mass_amu": 75.62215300539214,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.7052062058995731,
+  "MassNumber_A": 75,
+  "Mass_MeVc2": 69784.69411468456,
+  "Mass_amu": 74.91694679949256,
+  "Mass_kg": 1.2440251691095124e-25,
   "Name": "As",
-  "Symbol": "As"
+  "NeutronNumber_N": 42,
+  "Properties": {
+    "atomic_mass": 74.922,
+    "atomic_radius": 114,
+    "block": "p",
+    "boiling_point": 887,
+    "bulk_modulus_GPa": 22.0,
+    "covalent_radius": 119,
+    "density": 5.73,
+    "electrical_resistivity_nOhm_m": 333.0,
+    "electron_affinity": 78.0,
+    "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p³",
+    "electronegativity": 2.18,
+    "group": 15,
+    "ionization_energy": 9.789,
+    "melting_point": 1090,
+    "period": 4,
+    "primary_emission_wavelength": 234.0,
+    "specific_heat": 329,
+    "thermal_conductivity": 50.0,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 450.0,
+    "youngs_modulus_GPa": 8.0
+  },
+  "Symbol": "As",
+  "_provenance": {
+    "Properties": {
+      "entry": "Arsenic",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=33",
+      "tier": "elements"
+    }
+  }
 }

@@ -60,7 +60,11 @@ class TestDataSheetVsReference:
         ],
     )
     def test_generated_matches_reference(self, tier_dir, name, props_to_check):
-        sheet = data_sheet(name)
+        # Tier-explicit on purpose: this checks one tier's *generator* against
+        # that tier's reference file. A bare Get(name) can legitimately land on
+        # a curated sheet in another tier (e.g. active/materials/HDPE.json, an
+        # ASTM D1248 sheet, outranks derived/polymers/HDPE.json by name).
+        sheet = data_sheet(Get(name, from_=tier_dir))
         ref = _ref(tier_dir, name)
         for prop in props_to_check:
             assert sheet.get(prop) == ref[prop], (

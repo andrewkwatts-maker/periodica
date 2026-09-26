@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 76,
+  "AtomicWeight_amu": 190.23,
   "BaryonNumber_B": 192,
+  "BindingEnergyPerNucleon_MeV": 7.933177889568053,
+  "BindingEnergy_MeV": 1523.170154797066,
   "Charge_e": 0,
   "Composition": {
     "E": 76,
@@ -23,10 +27,70 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Osmium",
+  "ElementSymbol": "Os",
   "LeptonNumber_L": 76,
-  "Mass_MeVc2": 180337.10340068003,
-  "Mass_amu": 193.59983378648494,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.6351903365141072,
+  "MassNumber_A": 192,
+  "Mass_MeVc2": 178813.93324588297,
+  "Mass_amu": 191.96464344997082,
+  "Mass_kg": 3.1876478985461636e-25,
   "Name": "Os",
-  "Symbol": "Os"
+  "NeutronNumber_N": 116,
+  "Properties": {
+    "atomic_mass": 190.23,
+    "atomic_radius": 185,
+    "block": "d",
+    "boiling_point": 5285,
+    "bulk_modulus_GPa": 462.0,
+    "covalent_radius": 144,
+    "density": 22.59,
+    "electrical_resistivity_nOhm_m": 81.2,
+    "electron_affinity": 106.0,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d⁶ 6s²",
+    "electronegativity": 2.2,
+    "group": 8,
+    "ionization_energy": 8.43823,
+    "melting_point": 3306,
+    "period": 6,
+    "primary_emission_wavelength": 330.2,
+    "shear_modulus_GPa": 222.0,
+    "specific_heat": 130,
+    "thermal_conductivity": 87.6,
+    "thermal_expansion_um_mK": 5.1,
+    "valence_electrons": 8,
+    "visible_emission_wavelength": 442.0
+  },
+  "Symbol": "Os",
+  "_provenance": {
+    "Properties": {
+      "entry": "Osmium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=76",
+      "tier": "elements"
+    }
+  }
 }

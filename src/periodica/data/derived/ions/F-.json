@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 9,
+  "AtomicWeight_amu": 18.998,
   "BaryonNumber_B": 19,
+  "BindingEnergyPerNucleon_MeV": 8.181715085530087,
+  "BindingEnergy_MeV": 155.45258662507166,
   "Charge_e": -1,
   "Composition": {
     "E": 10,
@@ -23,9 +27,61 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Fluorine",
+  "ElementSymbol": "F",
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 17845.212988140003,
-  "Mass_amu": 19.15762315817965,
-  "Mass_kg": 0,
-  "Name": "F-"
+  "MassDefect_amu": 0.166885207561926,
+  "MassNumber_A": 19,
+  "Mass_MeVc2": 17689.76040151493,
+  "Mass_amu": 18.990737950617724,
+  "Mass_kg": 3.153486227056395e-26,
+  "Name": "F-",
+  "NeutronNumber_N": 10,
+  "Properties": {
+    "atomic_mass": 18.998,
+    "atomic_radius": 42,
+    "block": "p",
+    "boiling_point": 85,
+    "covalent_radius": 64,
+    "density": 0.0017,
+    "electron_affinity": 328.0,
+    "electron_configuration": "1s² 2s² 2p⁵",
+    "electronegativity": 3.98,
+    "group": 17,
+    "ionization_energy": 17.423,
+    "melting_point": 53,
+    "period": 2,
+    "primary_emission_wavelength": 685.6,
+    "specific_heat": 824,
+    "thermal_conductivity": 0.0277,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 685.6
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Fluorine",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=9",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 26,
+  "AtomicWeight_amu": 55.845,
   "BaryonNumber_B": 56,
+  "BindingEnergyPerNucleon_MeV": 8.871660514361926,
+  "BindingEnergy_MeV": 496.81298880426783,
   "Charge_e": 0,
   "Composition": {
     "E": 26,
@@ -23,10 +27,74 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Iron",
+  "ElementSymbol": "Fe",
   "LeptonNumber_L": 26,
-  "Mass_MeVc2": 52595.32288046,
-  "Mass_amu": 56.463398688281686,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.5333506540874057,
+  "MassNumber_A": 56,
+  "Mass_MeVc2": 52098.50989165573,
+  "Mass_amu": 55.93004803419428,
+  "Mass_kg": 9.287402975759413e-26,
   "Name": "Fe",
-  "Symbol": "Fe"
+  "NeutronNumber_N": 30,
+  "Properties": {
+    "atomic_mass": 55.845,
+    "atomic_radius": 126,
+    "block": "d",
+    "boiling_point": 3134,
+    "bulk_modulus_GPa": 170.0,
+    "covalent_radius": 132,
+    "debye_temperature_K": 470,
+    "density": 7.874,
+    "electrical_resistivity_nOhm_m": 96.1,
+    "electron_affinity": 15.7,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s²",
+    "electronegativity": 1.83,
+    "group": 8,
+    "ionization_energy": 7.902,
+    "melting_point": 1811,
+    "period": 4,
+    "poissons_ratio": 0.29,
+    "primary_emission_wavelength": 372.0,
+    "shear_modulus_GPa": 82.0,
+    "specific_heat": 449,
+    "thermal_conductivity": 80.4,
+    "thermal_expansion_um_mK": 11.8,
+    "valence_electrons": 2,
+    "youngs_modulus_GPa": 211.0
+  },
+  "Symbol": "Fe",
+  "_provenance": {
+    "Properties": {
+      "entry": "Iron",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "debye_temperature_K",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "poissons_ratio",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=26",
+      "tier": "elements"
+    }
+  }
 }

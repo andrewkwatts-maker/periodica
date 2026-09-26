@@ -26,5 +26,16 @@
       "is_stable": false,
       "half_life": "21.77 years"
     }
-  ]
+  ],
+  "thermal_conductivity": 12.0,
+  "specific_heat": 120,
+  "_bulk_properties": {
+    "source": "CRC Handbook of Chemistry and Physics, 97th ed.; WebElements",
+    "conditions": "298 K, 1 atm, standard state",
+    "table_version": 1,
+    "fields": [
+      "specific_heat",
+      "thermal_conductivity"
+    ]
+  }
 }

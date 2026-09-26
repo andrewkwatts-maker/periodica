@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 52,
+  "AtomicWeight_amu": 127.6,
   "BaryonNumber_B": 130,
+  "BindingEnergyPerNucleon_MeV": 8.389706770404297,
+  "BindingEnergy_MeV": 1090.6618801525585,
   "Charge_e": 0,
   "Composition": {
     "E": 52,
@@ -23,10 +27,70 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Tellurium",
+  "ElementSymbol": "Te",
   "LeptonNumber_L": 52,
-  "Mass_MeVc2": 122102.82333027999,
-  "Mass_amu": 131.08276586366338,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.1708736290643649,
+  "MassNumber_A": 130,
+  "Mass_MeVc2": 121012.16145012743,
+  "Mass_amu": 129.911892234599,
+  "Mass_kg": 2.1572377227148084e-25,
   "Name": "Te",
-  "Symbol": "Te"
+  "NeutronNumber_N": 78,
+  "Properties": {
+    "atomic_mass": 127.6,
+    "atomic_radius": 123,
+    "block": "p",
+    "boiling_point": 1261,
+    "bulk_modulus_GPa": 65.0,
+    "covalent_radius": 138,
+    "density": 6.24,
+    "electron_affinity": 190.2,
+    "electron_configuration": "[Kr] 4d¹⁰ 5s² 5p⁴",
+    "electronegativity": 2.1,
+    "group": 16,
+    "ionization_energy": 9.01,
+    "melting_point": 722.66,
+    "period": 5,
+    "primary_emission_wavelength": 214.3,
+    "shear_modulus_GPa": 16.0,
+    "specific_heat": 202,
+    "thermal_conductivity": 2.35,
+    "thermal_expansion_um_mK": 18.0,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 470.0,
+    "youngs_modulus_GPa": 43.0
+  },
+  "Symbol": "Te",
+  "_provenance": {
+    "Properties": {
+      "entry": "Tellurium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=52",
+      "tier": "elements"
+    }
+  }
 }

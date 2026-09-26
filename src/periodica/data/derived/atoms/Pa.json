@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 91,
+  "AtomicWeight_amu": 231.036,
   "BaryonNumber_B": 231,
+  "BindingEnergyPerNucleon_MeV": 7.631816107817598,
+  "BindingEnergy_MeV": 1762.9495209058653,
   "Charge_e": 0,
   "Composition": {
     "E": 91,
@@ -23,10 +27,62 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Protactinium",
+  "ElementSymbol": "Pa",
   "LeptonNumber_L": 91,
-  "Mass_MeVc2": 216968.41979980998,
-  "Mass_amu": 232.92516746723592,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.892604060858532,
+  "MassNumber_A": 231,
+  "Mass_MeVc2": 215205.47027890413,
+  "Mass_amu": 231.0325634063774,
+  "Mass_kg": 3.836385971930312e-25,
   "Name": "Pa",
-  "Symbol": "Pa"
+  "NeutronNumber_N": 140,
+  "Properties": {
+    "atomic_mass": 231.036,
+    "atomic_radius": 180,
+    "block": "f",
+    "boiling_point": 4300,
+    "covalent_radius": 200,
+    "density": 15.37,
+    "electrical_resistivity_nOhm_m": 177.0,
+    "electron_affinity": 53.0,
+    "electron_configuration": "[Rn] 5f² 6d¹ 7s²",
+    "electronegativity": 1.5,
+    "ionization_energy": 5.89,
+    "melting_point": 1841,
+    "period": 7,
+    "primary_emission_wavelength": 417.5,
+    "specific_heat": 99,
+    "thermal_conductivity": 47.0,
+    "valence_electrons": 5,
+    "visible_emission_wavelength": 417.5
+  },
+  "Symbol": "Pa",
+  "_provenance": {
+    "Properties": {
+      "entry": "Protactinium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=91",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 71,
+  "AtomicWeight_amu": 174.967,
   "BaryonNumber_B": 175,
+  "BindingEnergyPerNucleon_MeV": 8.06512673322864,
+  "BindingEnergy_MeV": 1411.3971783150118,
   "Charge_e": 0,
   "Composition": {
     "E": 71,
@@ -23,10 +27,72 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Lutetium",
+  "ElementSymbol": "Lu",
   "LeptonNumber_L": 71,
-  "Mass_MeVc2": 164368.40291888997,
-  "Mass_amu": 176.45672956243462,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.5151971168129081,
+  "MassNumber_A": 175,
+  "Mass_MeVc2": 162957.00574057497,
+  "Mass_amu": 174.9415324456217,
+  "Mass_kg": 2.904972489968263e-25,
   "Name": "Lu",
-  "Symbol": "Lu"
+  "NeutronNumber_N": 104,
+  "Properties": {
+    "atomic_mass": 174.967,
+    "atomic_radius": 217,
+    "block": "f",
+    "boiling_point": 3675,
+    "bulk_modulus_GPa": 48.0,
+    "covalent_radius": 187,
+    "density": 9.84,
+    "electrical_resistivity_nOhm_m": 582.0,
+    "electron_affinity": 33.4,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d¹ 6s²",
+    "electronegativity": 1.27,
+    "ionization_energy": 5.4259,
+    "melting_point": 1925,
+    "period": 6,
+    "poissons_ratio": 0.26,
+    "primary_emission_wavelength": 451.9,
+    "shear_modulus_GPa": 27.0,
+    "specific_heat": 154,
+    "thermal_conductivity": 16.4,
+    "thermal_expansion_um_mK": 9.9,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 451.9,
+    "youngs_modulus_GPa": 69.0
+  },
+  "Symbol": "Lu",
+  "_provenance": {
+    "Properties": {
+      "entry": "Lutetium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "poissons_ratio",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=71",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,4 +1,6 @@
 {
+  "AtomicNumber_Z": 1,
+  "AtomicWeight_amu": 1.008,
   "BaryonNumber_B": 3,
   "Charge_e": 0,
   "Composition": {
@@ -23,9 +25,58 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Hydrogen",
+  "ElementSymbol": "H",
   "LeptonNumber_L": 1,
+  "MassNumber_A": 3,
   "Mass_MeVc2": 2817.91392815,
   "Mass_amu": 3.0251548784300653,
-  "Mass_kg": 0,
-  "Name": "H-3"
+  "Mass_kg": 5.023387858148697e-27,
+  "Name": "H-3",
+  "NeutronNumber_N": 2,
+  "Properties": {
+    "atomic_mass": 1.008,
+    "atomic_radius": 53,
+    "block": "s",
+    "boiling_point": 20.28,
+    "covalent_radius": 31,
+    "density": 8.988e-05,
+    "electron_affinity": 72.8,
+    "electron_configuration": "1s¹",
+    "electronegativity": 2.2,
+    "group": 1,
+    "ionization_energy": 13.598,
+    "melting_point": 14.01,
+    "period": 1,
+    "primary_emission_wavelength": 656.3,
+    "specific_heat": 14304,
+    "thermal_conductivity": 0.1805,
+    "valence_electrons": 1
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Hydrogen",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=1",
+      "tier": "elements"
+    }
+  }
 }

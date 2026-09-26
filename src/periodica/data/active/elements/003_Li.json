@@ -33,5 +33,26 @@
       "is_stable": true,
       "half_life": null
     }
-  ]
+  ],
+  "thermal_conductivity": 85.0,
+  "electrical_resistivity_nOhm_m": 92.8,
+  "youngs_modulus_GPa": 4.9,
+  "shear_modulus_GPa": 4.2,
+  "bulk_modulus_GPa": 11.0,
+  "specific_heat": 3570,
+  "thermal_expansion_um_mK": 46.0,
+  "_bulk_properties": {
+    "source": "CRC Handbook of Chemistry and Physics, 97th ed.; WebElements",
+    "conditions": "298 K, 1 atm, standard state",
+    "table_version": 1,
+    "fields": [
+      "bulk_modulus_GPa",
+      "electrical_resistivity_nOhm_m",
+      "shear_modulus_GPa",
+      "specific_heat",
+      "thermal_conductivity",
+      "thermal_expansion_um_mK",
+      "youngs_modulus_GPa"
+    ]
+  }
 }

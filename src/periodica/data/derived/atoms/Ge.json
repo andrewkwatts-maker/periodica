@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 32,
+  "AtomicWeight_amu": 72.63,
   "BaryonNumber_B": 74,
+  "BindingEnergyPerNucleon_MeV": 8.769316698518974,
+  "BindingEnergy_MeV": 648.9294356904041,
   "Charge_e": 0,
   "Composition": {
     "E": 32,
@@ -23,10 +27,70 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Germanium",
+  "ElementSymbol": "Ge",
   "LeptonNumber_L": 32,
-  "Mass_MeVc2": 69502.80644936,
-  "Mass_amu": 74.61432795886208,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.6966543685080782,
+  "MassNumber_A": 74,
+  "Mass_MeVc2": 68853.8770136696,
+  "Mass_amu": 73.917673590354,
+  "Mass_kg": 1.227431847089699e-25,
   "Name": "Ge",
-  "Symbol": "Ge"
+  "NeutronNumber_N": 42,
+  "Properties": {
+    "atomic_mass": 72.63,
+    "atomic_radius": 125,
+    "block": "p",
+    "boiling_point": 3106,
+    "bulk_modulus_GPa": 75.0,
+    "covalent_radius": 120,
+    "density": 5.32,
+    "electron_affinity": 119.0,
+    "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p²",
+    "electronegativity": 2.01,
+    "group": 14,
+    "ionization_energy": 7.899,
+    "melting_point": 1211.4,
+    "period": 4,
+    "primary_emission_wavelength": 303.9,
+    "shear_modulus_GPa": 41.0,
+    "specific_heat": 320,
+    "thermal_conductivity": 60.2,
+    "thermal_expansion_um_mK": 6.0,
+    "valence_electrons": 4,
+    "visible_emission_wavelength": 468.0,
+    "youngs_modulus_GPa": 103.0
+  },
+  "Symbol": "Ge",
+  "_provenance": {
+    "Properties": {
+      "entry": "Germanium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=32",
+      "tier": "elements"
+    }
+  }
 }

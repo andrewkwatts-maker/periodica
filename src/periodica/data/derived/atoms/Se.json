@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 34,
+  "AtomicWeight_amu": 78.971,
   "BaryonNumber_B": 80,
+  "BindingEnergyPerNucleon_MeV": 8.729882192834904,
+  "BindingEnergy_MeV": 698.3905754267922,
   "Charge_e": 0,
   "Composition": {
     "E": 34,
@@ -23,10 +27,68 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Selenium",
+  "ElementSymbol": "Se",
   "LeptonNumber_L": 34,
-  "Mass_MeVc2": 75138.63430566,
-  "Mass_amu": 80.66463771572221,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.7497530833661639,
+  "MassNumber_A": 80,
+  "Mass_MeVc2": 74440.24373023321,
+  "Mass_amu": 79.91488463235605,
+  "Mass_kg": 1.327017879348592e-25,
   "Name": "Se",
-  "Symbol": "Se"
+  "NeutronNumber_N": 46,
+  "Properties": {
+    "atomic_mass": 78.971,
+    "atomic_radius": 103,
+    "block": "p",
+    "boiling_point": 958,
+    "bulk_modulus_GPa": 8.3,
+    "covalent_radius": 120,
+    "density": 4.81,
+    "electron_affinity": 195.0,
+    "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p⁴",
+    "electronegativity": 2.55,
+    "group": 16,
+    "ionization_energy": 9.752,
+    "melting_point": 494,
+    "period": 4,
+    "primary_emission_wavelength": 196.0,
+    "shear_modulus_GPa": 3.7,
+    "specific_heat": 321,
+    "thermal_conductivity": 0.52,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 473.0,
+    "youngs_modulus_GPa": 10.0
+  },
+  "Symbol": "Se",
+  "_provenance": {
+    "Properties": {
+      "entry": "Selenium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=34",
+      "tier": "elements"
+    }
+  }
 }

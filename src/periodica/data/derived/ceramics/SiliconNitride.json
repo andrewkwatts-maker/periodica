@@ -21,9 +21,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 70,
-  "Mass_MeVc2": 131484.3955341,
-  "Mass_amu": 141.15429737360455,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 130340.79458714204,
+  "Mass_amu": 139.92659132158886,
+  "Mass_kg": 2.3235357134567083e-25,
   "Name": "SiliconNitride",
   "Properties": {
     "CompressiveStrength_MPa": 3500,

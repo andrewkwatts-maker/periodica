@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 58,
+  "AtomicWeight_amu": 140.116,
   "BaryonNumber_B": 140,
+  "BindingEnergyPerNucleon_MeV": 8.362486957418461,
+  "BindingEnergy_MeV": 1170.7481740385847,
   "Charge_e": 0,
   "Composition": {
     "E": 58,
@@ -23,10 +27,72 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Cerium",
+  "ElementSymbol": "Ce",
   "LeptonNumber_L": 58,
-  "Mass_MeVc2": 131493.78353502,
-  "Mass_amu": 141.16437580664376,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.256849797542473,
+  "MassNumber_A": 140,
+  "Mass_MeVc2": 130323.0353609814,
+  "Mass_amu": 139.90752600910128,
+  "Mass_kg": 2.3232191264946823e-25,
   "Name": "Ce",
-  "Symbol": "Ce"
+  "NeutronNumber_N": 82,
+  "Properties": {
+    "atomic_mass": 140.116,
+    "atomic_radius": 185,
+    "block": "f",
+    "boiling_point": 3716,
+    "bulk_modulus_GPa": 22.0,
+    "covalent_radius": 204,
+    "density": 6.77,
+    "electrical_resistivity_nOhm_m": 828.0,
+    "electron_affinity": 50.0,
+    "electron_configuration": "[Xe] 4f¹ 5d¹ 6s²",
+    "electronegativity": 1.12,
+    "ionization_energy": 5.539,
+    "melting_point": 1071,
+    "period": 6,
+    "poissons_ratio": 0.24,
+    "primary_emission_wavelength": 413.8,
+    "shear_modulus_GPa": 14.0,
+    "specific_heat": 192,
+    "thermal_conductivity": 11.3,
+    "thermal_expansion_um_mK": 6.3,
+    "valence_electrons": 4,
+    "visible_emission_wavelength": 413.8,
+    "youngs_modulus_GPa": 34.0
+  },
+  "Symbol": "Ce",
+  "_provenance": {
+    "Properties": {
+      "entry": "Cerium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "poissons_ratio",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=58",
+      "tier": "elements"
+    }
+  }
 }

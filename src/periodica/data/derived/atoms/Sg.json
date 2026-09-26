@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 106,
+  "AtomicWeight_amu": 269,
   "BaryonNumber_B": 269,
+  "BindingEnergyPerNucleon_MeV": 7.335092888383792,
+  "BindingEnergy_MeV": 1973.13998697524,
   "Charge_e": 0,
   "Composition": {
     "E": 106,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Seaborgium",
+  "ElementSymbol": "Sg",
   "LeptonNumber_L": 106,
-  "Mass_MeVc2": 252660.17077842,
-  "Mass_amu": 271.24183623203686,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.11825279607146,
+  "MassNumber_A": 269,
+  "Mass_MeVc2": 250687.03079144476,
+  "Mass_amu": 269.1235834359654,
+  "Mass_kg": 4.468902240388052e-25,
   "Name": "Sg",
-  "Symbol": "Sg"
+  "NeutronNumber_N": 163,
+  "Properties": {
+    "atomic_mass": 269,
+    "atomic_radius": 143,
+    "block": "d",
+    "covalent_radius": 143,
+    "density": 35.0,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d⁴ 7s²",
+    "electronegativity": 1.8,
+    "group": 6,
+    "ionization_energy": 7.8,
+    "melting_point": 3000,
+    "period": 7,
+    "valence_electrons": 6
+  },
+  "Symbol": "Sg",
+  "_provenance": {
+    "Properties": {
+      "entry": "Seaborgium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=106",
+      "tier": "elements"
+    }
+  }
 }

@@ -27,9 +27,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 30.72,
-  "Mass_MeVc2": 63490.589144796795,
-  "Mass_amu": 68.15994752963961,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 62897.532041211336,
+  "Mass_amu": 67.52327457374572,
+  "Mass_kg": 1.1212503533446323e-25,
   "Name": "Bronze-C90300",
   "Properties": {
     "Density_kgm3": 8800,

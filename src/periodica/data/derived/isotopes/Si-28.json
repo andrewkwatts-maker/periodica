@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 14,
+  "AtomicWeight_amu": 28.085,
   "BaryonNumber_B": 28,
+  "BindingEnergyPerNucleon_MeV": 8.48852071452603,
+  "BindingEnergy_MeV": 237.67858000672888,
   "Charge_e": 0,
   "Composition": {
     "E": 14,
@@ -23,9 +27,69 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Silicon",
+  "ElementSymbol": "Si",
   "LeptonNumber_L": 14,
-  "Mass_MeVc2": 26296.87910682,
-  "Mass_amu": 28.23085947472091,
-  "Mass_kg": 0,
-  "Name": "Si-28"
+  "MassDefect_amu": 0.2551584378143087,
+  "MassNumber_A": 28,
+  "Mass_MeVc2": 26059.20052681327,
+  "Mass_amu": 27.9757010369066,
+  "Mass_kg": 4.6454744487305537e-26,
+  "Name": "Si-28",
+  "NeutronNumber_N": 14,
+  "Properties": {
+    "atomic_mass": 28.085,
+    "atomic_radius": 111,
+    "block": "p",
+    "boiling_point": 3538,
+    "bulk_modulus_GPa": 100.0,
+    "covalent_radius": 111,
+    "density": 2.33,
+    "electron_affinity": 133.6,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p²",
+    "electronegativity": 1.9,
+    "group": 14,
+    "ionization_energy": 8.152,
+    "melting_point": 1687,
+    "period": 3,
+    "primary_emission_wavelength": 390.6,
+    "shear_modulus_GPa": 51.0,
+    "specific_heat": 705,
+    "thermal_conductivity": 149.0,
+    "thermal_expansion_um_mK": 2.6,
+    "valence_electrons": 4,
+    "visible_emission_wavelength": 390.6,
+    "youngs_modulus_GPa": 130.0
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Silicon",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=14",
+      "tier": "elements"
+    }
+  }
 }

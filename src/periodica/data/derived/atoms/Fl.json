@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 114,
+  "AtomicWeight_amu": 289,
   "BaryonNumber_B": 289,
+  "BindingEnergyPerNucleon_MeV": 7.175262287219331,
+  "BindingEnergy_MeV": 2073.6508010063867,
   "Charge_e": 0,
   "Composition": {
     "E": 114,
@@ -23,10 +27,52 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Flerovium",
+  "ElementSymbol": "Fl",
   "LeptonNumber_L": 114,
-  "Mass_MeVc2": 271445.22052154,
-  "Mass_amu": 291.4084155956774,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.2261555876941035,
+  "MassNumber_A": 289,
+  "Mass_MeVc2": 269371.56972053356,
+  "Mass_amu": 289.1822600079833,
+  "Mass_kg": 4.801984401109351e-25,
   "Name": "Fl",
-  "Symbol": "Fl"
+  "NeutronNumber_N": 175,
+  "Properties": {
+    "atomic_mass": 289,
+    "atomic_radius": 143,
+    "block": "p",
+    "boiling_point": 420,
+    "covalent_radius": 143,
+    "density": 14.0,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²",
+    "electronegativity": 1.8,
+    "group": 14,
+    "ionization_energy": 8.5,
+    "melting_point": 340,
+    "period": 7,
+    "valence_electrons": 4
+  },
+  "Symbol": "Fl",
+  "_provenance": {
+    "Properties": {
+      "entry": "Flerovium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=114",
+      "tier": "elements"
+    }
+  }
 }

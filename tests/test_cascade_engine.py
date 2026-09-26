@@ -4,16 +4,33 @@ Verifies dependency ordering, selective regeneration,
 and chain integrity checking.
 """
 
+import shutil
+from pathlib import Path
+
 import pytest
 from periodica.utils.cascade_engine import (
     CascadeRegenerationEngine,
     DERIVATION_ORDER,
 )
 
+_PACKAGE_DATA = Path(__file__).resolve().parents[1] / "src" / "periodica" / "data" / "active"
+
 
 @pytest.fixture
-def engine():
-    return CascadeRegenerationEngine()
+def engine(tmp_path):
+    """A cascade engine rooted at a throwaway copy of the package data.
+
+    The default root is the installed package's own data/active, so every
+    regenerate_* test here used to rewrite the shipped JSON in place. Protein
+    regeneration draws phi/psi from a distribution, so those rewrites changed
+    the bundled backbones on every run -- which then made
+    test_alphafold_validation pass or fail depending on test ORDER, not on the
+    code. A copy per test keeps the suite deterministic and the working tree
+    clean.
+    """
+    root = tmp_path / "active"
+    shutil.copytree(_PACKAGE_DATA, root)
+    return CascadeRegenerationEngine(data_root=str(root))
 
 
 class TestDerivationOrder:

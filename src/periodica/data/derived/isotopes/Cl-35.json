@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 17,
+  "AtomicWeight_amu": 35.45,
   "BaryonNumber_B": 35,
+  "BindingEnergyPerNucleon_MeV": 8.672838028626083,
+  "BindingEnergy_MeV": 303.5493310019129,
   "Charge_e": 0,
   "Composition": {
     "E": 17,
@@ -23,9 +27,61 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Chlorine",
+  "ElementSymbol": "Cl",
   "LeptonNumber_L": 17,
-  "Mass_MeVc2": 32871.49005023,
-  "Mass_amu": 35.288994278111105,
-  "Mass_kg": 0,
-  "Name": "Cl-35"
+  "MassDefect_amu": 0.3258735940606589,
+  "MassNumber_A": 35,
+  "Mass_MeVc2": 32567.94071922809,
+  "Mass_amu": 34.963120684050445,
+  "Mass_kg": 5.805762778611628e-26,
+  "Name": "Cl-35",
+  "NeutronNumber_N": 18,
+  "Properties": {
+    "atomic_mass": 35.45,
+    "atomic_radius": 79,
+    "block": "p",
+    "boiling_point": 239,
+    "covalent_radius": 102,
+    "density": 0.0032,
+    "electron_affinity": 349.0,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁵",
+    "electronegativity": 3.16,
+    "group": 17,
+    "ionization_energy": 12.968,
+    "melting_point": 171,
+    "period": 3,
+    "primary_emission_wavelength": 479.5,
+    "specific_heat": 479,
+    "thermal_conductivity": 0.0089,
+    "valence_electrons": 7,
+    "visible_emission_wavelength": 479.5
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Chlorine",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=17",
+      "tier": "elements"
+    }
+  }
 }

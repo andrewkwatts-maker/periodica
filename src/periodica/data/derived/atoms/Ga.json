@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 31,
+  "AtomicWeight_amu": 69.723,
   "BaryonNumber_B": 69,
+  "BindingEnergyPerNucleon_MeV": 8.79277165292527,
+  "BindingEnergy_MeV": 606.7012440518436,
   "Charge_e": 0,
   "Composition": {
     "E": 31,
@@ -23,10 +27,66 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Gallium",
+  "ElementSymbol": "Ga",
   "LeptonNumber_L": 31,
-  "Mass_MeVc2": 64805.76168017,
-  "Mass_amu": 69.57184324853202,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.6513205424228107,
+  "MassNumber_A": 69,
+  "Mass_MeVc2": 64199.060436118154,
+  "Mass_amu": 68.92052270610921,
+  "Mass_kg": 1.144452204439867e-25,
   "Name": "Ga",
-  "Symbol": "Ga"
+  "NeutronNumber_N": 38,
+  "Properties": {
+    "atomic_mass": 69.723,
+    "atomic_radius": 136,
+    "block": "p",
+    "boiling_point": 2477,
+    "covalent_radius": 122,
+    "density": 5.91,
+    "electrical_resistivity_nOhm_m": 270.0,
+    "electron_affinity": 28.9,
+    "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p¹",
+    "electronegativity": 1.81,
+    "group": 13,
+    "ionization_energy": 5.999,
+    "melting_point": 302.91,
+    "period": 4,
+    "primary_emission_wavelength": 417.2,
+    "specific_heat": 371,
+    "thermal_conductivity": 40.6,
+    "thermal_expansion_um_mK": 18.0,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 417.2
+  },
+  "Symbol": "Ga",
+  "_provenance": {
+    "Properties": {
+      "entry": "Gallium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=31",
+      "tier": "elements"
+    }
+  }
 }

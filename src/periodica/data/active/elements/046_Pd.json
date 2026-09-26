@@ -65,5 +65,28 @@
   "miedema_phi_star": 5.45,
   "miedema_nws_13": 1.67,
   "miedema_V_23": 6.64,
-  "debye_temperature_K": 274
+  "debye_temperature_K": 274,
+  "thermal_conductivity": 71.8,
+  "electrical_resistivity_nOhm_m": 105.4,
+  "youngs_modulus_GPa": 121.0,
+  "shear_modulus_GPa": 44.0,
+  "bulk_modulus_GPa": 180.0,
+  "poissons_ratio": 0.39,
+  "specific_heat": 246,
+  "thermal_expansion_um_mK": 11.8,
+  "_bulk_properties": {
+    "source": "CRC Handbook of Chemistry and Physics, 97th ed.; WebElements",
+    "conditions": "298 K, 1 atm, standard state",
+    "table_version": 1,
+    "fields": [
+      "bulk_modulus_GPa",
+      "electrical_resistivity_nOhm_m",
+      "poissons_ratio",
+      "shear_modulus_GPa",
+      "specific_heat",
+      "thermal_conductivity",
+      "thermal_expansion_um_mK",
+      "youngs_modulus_GPa"
+    ]
+  }
 }

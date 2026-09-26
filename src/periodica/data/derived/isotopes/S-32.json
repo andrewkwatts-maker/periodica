@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 16,
+  "AtomicWeight_amu": 32.06,
   "BaryonNumber_B": 32,
+  "BindingEnergyPerNucleon_MeV": 8.58991361780015,
+  "BindingEnergy_MeV": 274.8772357696048,
   "Charge_e": 0,
   "Composition": {
     "E": 16,
@@ -23,9 +27,61 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Sulfur",
+  "ElementSymbol": "S",
   "LeptonNumber_L": 16,
-  "Mass_MeVc2": 30053.576122079998,
-  "Mass_amu": 32.26383939968104,
-  "Mass_kg": 0,
-  "Name": "S-32"
+  "MassDefect_amu": 0.2950928353228218,
+  "MassNumber_A": 32,
+  "Mass_MeVc2": 29778.698886310394,
+  "Mass_amu": 31.968746564358216,
+  "Mass_kg": 5.308535258035135e-26,
+  "Name": "S-32",
+  "NeutronNumber_N": 16,
+  "Properties": {
+    "atomic_mass": 32.06,
+    "atomic_radius": 88,
+    "block": "p",
+    "boiling_point": 718,
+    "covalent_radius": 105,
+    "density": 2.07,
+    "electron_affinity": 200.4,
+    "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁴",
+    "electronegativity": 2.58,
+    "group": 16,
+    "ionization_energy": 10.36,
+    "melting_point": 388,
+    "period": 3,
+    "primary_emission_wavelength": 545.4,
+    "specific_heat": 710,
+    "thermal_conductivity": 0.205,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 545.4
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Sulfur",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=16",
+      "tier": "elements"
+    }
+  }
 }

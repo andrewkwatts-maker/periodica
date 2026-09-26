@@ -21,9 +21,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 29.299999999999997,
-  "Mass_MeVc2": 59451.568750002996,
-  "Mass_amu": 63.82388100563091,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 58893.64410657331,
+  "Mass_amu": 63.2249242951373,
+  "Mass_kg": 1.0498745677490296e-25,
   "Name": "Brass-C26000",
   "Properties": {
     "Density_kgm3": 8530,

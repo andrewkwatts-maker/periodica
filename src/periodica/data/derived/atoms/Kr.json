@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 36,
+  "AtomicWeight_amu": 83.798,
   "BaryonNumber_B": 84,
+  "BindingEnergyPerNucleon_MeV": 8.739406581728087,
+  "BindingEnergy_MeV": 734.1101528651593,
   "Charge_e": 0,
   "Composition": {
     "E": 36,
@@ -23,10 +27,62 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Krypton",
+  "ElementSymbol": "Kr",
   "LeptonNumber_L": 36,
-  "Mass_MeVc2": 78895.33132092,
-  "Mass_amu": 84.69761764068235,
-  "Mass_kg": 0,
+  "MassDefect_amu": 0.7880996250625294,
+  "MassNumber_A": 84,
+  "Mass_MeVc2": 78161.22116805484,
+  "Mass_amu": 83.90951801561982,
+  "Mass_kg": 1.3933503272451321e-25,
   "Name": "Kr",
-  "Symbol": "Kr"
+  "NeutronNumber_N": 48,
+  "Properties": {
+    "atomic_mass": 83.798,
+    "atomic_radius": 88,
+    "block": "p",
+    "boiling_point": 119.93,
+    "covalent_radius": 116,
+    "density": 0.00375,
+    "electron_affinity": 0,
+    "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p⁶",
+    "electronegativity": 3.0,
+    "group": 18,
+    "ionization_energy": 14.0,
+    "melting_point": 115.78,
+    "period": 4,
+    "primary_emission_wavelength": 587.1,
+    "specific_heat": 248,
+    "thermal_conductivity": 0.00943,
+    "valence_electrons": 8,
+    "visible_emission_wavelength": 587.1
+  },
+  "Symbol": "Kr",
+  "_provenance": {
+    "Properties": {
+      "entry": "Krypton",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=36",
+      "tier": "elements"
+    }
+  }
 }

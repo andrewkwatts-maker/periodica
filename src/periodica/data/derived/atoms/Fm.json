@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 100,
+  "AtomicWeight_amu": 257,
   "BaryonNumber_B": 257,
+  "BindingEnergyPerNucleon_MeV": 7.437469502704642,
+  "BindingEnergy_MeV": 1911.429662195093,
   "Charge_e": 0,
   "Composition": {
     "E": 100,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Fermium",
+  "ElementSymbol": "Fm",
   "LeptonNumber_L": 100,
-  "Mass_MeVc2": 241390.07973263998,
-  "Mass_amu": 259.1428964571565,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.0520040408514055,
+  "MassNumber_A": 257,
+  "Mass_MeVc2": 239478.65007044488,
+  "Mass_amu": 257.0908924163051,
+  "Mass_kg": 4.269094705243323e-25,
   "Name": "Fm",
-  "Symbol": "Fm"
+  "NeutronNumber_N": 157,
+  "Properties": {
+    "atomic_mass": 257,
+    "atomic_radius": 200,
+    "block": "f",
+    "covalent_radius": 167,
+    "electron_configuration": "[Rn] 5f¹² 7s²",
+    "electronegativity": 1.3,
+    "ionization_energy": 6.5,
+    "melting_point": 1800,
+    "period": 7,
+    "primary_emission_wavelength": 420.0,
+    "valence_electrons": 12,
+    "visible_emission_wavelength": 420.0
+  },
+  "Symbol": "Fm",
+  "_provenance": {
+    "Properties": {
+      "entry": "Fermium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=100",
+      "tier": "elements"
+    }
+  }
 }

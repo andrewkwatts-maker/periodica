@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 6,
+  "AtomicWeight_amu": 12.011,
   "BaryonNumber_B": 13,
+  "BindingEnergyPerNucleon_MeV": 7.626604976566801,
+  "BindingEnergy_MeV": 99.14586469536842,
   "Charge_e": 0,
   "Composition": {
     "E": 6,
@@ -23,9 +27,61 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Carbon",
+  "ElementSymbol": "C",
   "LeptonNumber_L": 6,
-  "Mass_MeVc2": 12209.6564663,
-  "Mass_amu": 13.10760469083039,
-  "Mass_kg": 0,
-  "Name": "C-13"
+  "MassDefect_amu": 0.10643745831325155,
+  "MassNumber_A": 13,
+  "Mass_MeVc2": 12110.510601604632,
+  "Mass_amu": 13.001167232517139,
+  "Mass_kg": 2.1588946100994515e-26,
+  "Name": "C-13",
+  "NeutronNumber_N": 7,
+  "Properties": {
+    "atomic_mass": 12.011,
+    "atomic_radius": 67,
+    "block": "p",
+    "boiling_point": 4098,
+    "covalent_radius": 77,
+    "density": 2.267,
+    "electron_affinity": 121.9,
+    "electron_configuration": "1s² 2s² 2p²",
+    "electronegativity": 2.55,
+    "group": 14,
+    "ionization_energy": 11.26,
+    "melting_point": 3823,
+    "period": 2,
+    "primary_emission_wavelength": 247.9,
+    "specific_heat": 709,
+    "thermal_conductivity": 140.0,
+    "thermal_expansion_um_mK": 7.1,
+    "valence_electrons": 4
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Carbon",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=6",
+      "tier": "elements"
+    }
+  }
 }

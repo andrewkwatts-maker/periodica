@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 84,
+  "AtomicWeight_amu": 209,
   "BaryonNumber_B": 209,
+  "BindingEnergyPerNucleon_MeV": 7.817264908768468,
+  "BindingEnergy_MeV": 1633.8083659326098,
   "Charge_e": 0,
   "Composition": {
     "E": 84,
@@ -23,10 +27,64 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Polonium",
+  "ElementSymbol": "Po",
   "LeptonNumber_L": 84,
-  "Mass_MeVc2": 196303.45688224,
-  "Mass_amu": 210.74041840227545,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.7539653355700415,
+  "MassNumber_A": 209,
+  "Mass_MeVc2": 194669.64851630738,
+  "Mass_amu": 208.98645306670542,
+  "Mass_kg": 3.4703016970743173e-25,
   "Name": "Po",
-  "Symbol": "Po"
+  "NeutronNumber_N": 125,
+  "Properties": {
+    "atomic_mass": 209,
+    "atomic_radius": 135,
+    "block": "p",
+    "boiling_point": 1235,
+    "covalent_radius": 140,
+    "density": 9.2,
+    "electrical_resistivity_nOhm_m": 400.0,
+    "electron_affinity": 183.3,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁴",
+    "electronegativity": 2.0,
+    "group": 16,
+    "ionization_energy": 8.41671,
+    "melting_point": 527,
+    "period": 6,
+    "primary_emission_wavelength": 300.0,
+    "specific_heat": 125,
+    "thermal_conductivity": 20.0,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 420.0
+  },
+  "Symbol": "Po",
+  "_provenance": {
+    "Properties": {
+      "entry": "Polonium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=84",
+      "tier": "elements"
+    }
+  }
 }

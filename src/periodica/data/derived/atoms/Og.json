@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 118,
+  "AtomicWeight_amu": 294,
   "BaryonNumber_B": 294,
+  "BindingEnergyPerNucleon_MeV": 7.101343074806395,
+  "BindingEnergy_MeV": 2087.79486399308,
   "Charge_e": 0,
   "Composition": {
     "E": 118,
@@ -23,10 +27,52 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Oganesson",
+  "ElementSymbol": "Og",
   "LeptonNumber_L": 118,
-  "Mass_MeVc2": 276139.9182905,
-  "Mass_amu": 296.44838069774767,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.2413398630963286,
+  "MassNumber_A": 294,
+  "Mass_MeVc2": 274052.12342650694,
+  "Mass_amu": 294.20704083465137,
+  "Mass_kg": 4.885422849747201e-25,
   "Name": "Og",
-  "Symbol": "Og"
+  "NeutronNumber_N": 176,
+  "Properties": {
+    "atomic_mass": 294,
+    "atomic_radius": 157,
+    "block": "p",
+    "boiling_point": 450,
+    "covalent_radius": 157,
+    "density": 5.0,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶",
+    "electronegativity": 2.4,
+    "group": 18,
+    "ionization_energy": 8.9,
+    "melting_point": 350,
+    "period": 7,
+    "valence_electrons": 8
+  },
+  "Symbol": "Og",
+  "_provenance": {
+    "Properties": {
+      "entry": "Oganesson",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=118",
+      "tier": "elements"
+    }
+  }
 }

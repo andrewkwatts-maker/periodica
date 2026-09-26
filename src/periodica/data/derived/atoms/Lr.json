@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 103,
+  "AtomicWeight_amu": 266,
   "BaryonNumber_B": 266,
+  "BindingEnergyPerNucleon_MeV": 7.3690343185132425,
+  "BindingEnergy_MeV": 1960.1631287245225,
   "Charge_e": 0,
   "Composition": {
     "E": 103,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Lawrencium",
+  "ElementSymbol": "Lr",
   "LeptonNumber_L": 103,
-  "Mass_MeVc2": 249843.82151709,
-  "Mass_amu": 268.21836109244674,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.1043215664297437,
+  "MassNumber_A": 266,
+  "Mass_MeVc2": 247883.65838836547,
+  "Mass_amu": 266.114039526017,
+  "Mass_kg": 4.418927588036878e-25,
   "Name": "Lr",
-  "Symbol": "Lr"
+  "NeutronNumber_N": 163,
+  "Properties": {
+    "atomic_mass": 266,
+    "atomic_radius": 200,
+    "block": "f",
+    "covalent_radius": 161,
+    "electron_configuration": "[Rn] 5f¹⁴ 7s² 7p¹",
+    "electronegativity": 1.3,
+    "ionization_energy": 4.96,
+    "melting_point": 1900,
+    "period": 7,
+    "primary_emission_wavelength": 428.0,
+    "valence_electrons": 3,
+    "visible_emission_wavelength": 428.0
+  },
+  "Symbol": "Lr",
+  "_provenance": {
+    "Properties": {
+      "entry": "Lawrencium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=103",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 77,
+  "AtomicWeight_amu": 192.217,
   "BaryonNumber_B": 193,
+  "BindingEnergyPerNucleon_MeV": 7.925296523779292,
+  "BindingEnergy_MeV": 1529.5822290894034,
   "Charge_e": 0,
   "Composition": {
     "E": 77,
@@ -23,10 +27,74 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Iridium",
+  "ElementSymbol": "Ir",
   "LeptonNumber_L": 77,
-  "Mass_MeVc2": 181275.88648779,
-  "Mass_amu": 194.607658833015,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.6420739810542917,
+  "MassNumber_A": 193,
+  "Mass_MeVc2": 179746.3042587006,
+  "Mass_amu": 192.9655848519607,
+  "Mass_kg": 3.2042689215599793e-25,
   "Name": "Ir",
-  "Symbol": "Ir"
+  "NeutronNumber_N": 116,
+  "Properties": {
+    "atomic_mass": 192.217,
+    "atomic_radius": 180,
+    "block": "d",
+    "boiling_point": 4701,
+    "bulk_modulus_GPa": 320.0,
+    "covalent_radius": 141,
+    "density": 22.56,
+    "electrical_resistivity_nOhm_m": 47.1,
+    "electron_affinity": 150.9,
+    "electron_configuration": "[Xe] 4f¹⁴ 5d⁷ 6s²",
+    "electronegativity": 2.2,
+    "group": 9,
+    "ionization_energy": 8.96702,
+    "melting_point": 2719,
+    "period": 6,
+    "poissons_ratio": 0.26,
+    "primary_emission_wavelength": 322.1,
+    "shear_modulus_GPa": 210.0,
+    "specific_heat": 131,
+    "thermal_conductivity": 147.0,
+    "thermal_expansion_um_mK": 6.4,
+    "valence_electrons": 9,
+    "visible_emission_wavelength": 380.0,
+    "youngs_modulus_GPa": 528.0
+  },
+  "Symbol": "Ir",
+  "_provenance": {
+    "Properties": {
+      "entry": "Iridium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "poissons_ratio",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=77",
+      "tier": "elements"
+    }
+  }
 }

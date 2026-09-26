@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 105,
+  "AtomicWeight_amu": 268,
   "BaryonNumber_B": 268,
+  "BindingEnergyPerNucleon_MeV": 7.346088374844039,
+  "BindingEnergy_MeV": 1968.7516844582026,
   "Charge_e": 0,
   "Composition": {
     "E": 105,
@@ -23,10 +27,50 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Dubnium",
+  "ElementSymbol": "Db",
   "LeptonNumber_L": 105,
-  "Mass_MeVc2": 251721.38769131,
-  "Mass_amu": 270.23401118550686,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.113541759785093,
+  "MassNumber_A": 268,
+  "Mass_MeVc2": 249752.6360068518,
+  "Mass_amu": 268.12046942572175,
+  "Mass_kg": 4.452245140365418e-25,
   "Name": "Db",
-  "Symbol": "Db"
+  "NeutronNumber_N": 163,
+  "Properties": {
+    "atomic_mass": 268,
+    "atomic_radius": 149,
+    "block": "d",
+    "covalent_radius": 149,
+    "density": 29.3,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d³ 7s²",
+    "electronegativity": 1.5,
+    "group": 5,
+    "ionization_energy": 6.8,
+    "melting_point": 2900,
+    "period": 7,
+    "valence_electrons": 5
+  },
+  "Symbol": "Db",
+  "_provenance": {
+    "Properties": {
+      "entry": "Dubnium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=105",
+      "tier": "elements"
+    }
+  }
 }

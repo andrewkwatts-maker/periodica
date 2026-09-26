@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 60,
+  "AtomicWeight_amu": 144.242,
   "BaryonNumber_B": 142,
+  "BindingEnergyPerNucleon_MeV": 8.345555968651304,
+  "BindingEnergy_MeV": 1185.068947548485,
   "Charge_e": 0,
   "Composition": {
     "E": 60,
@@ -23,10 +27,72 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Neodymium",
+  "ElementSymbol": "Nd",
   "LeptonNumber_L": 60,
-  "Mass_MeVc2": 133371.34970924,
-  "Mass_amu": 143.18002589970388,
-  "Mass_kg": 0,
+  "MassDefect_amu": 1.2722237794847049,
+  "MassNumber_A": 142,
+  "Mass_MeVc2": 132186.2807616915,
+  "Mass_amu": 141.90780212021917,
+  "Mass_kg": 2.3564344927596623e-25,
   "Name": "Nd",
-  "Symbol": "Nd"
+  "NeutronNumber_N": 82,
+  "Properties": {
+    "atomic_mass": 144.242,
+    "atomic_radius": 206,
+    "block": "f",
+    "boiling_point": 3347,
+    "bulk_modulus_GPa": 32.0,
+    "covalent_radius": 201,
+    "density": 7.01,
+    "electrical_resistivity_nOhm_m": 643.0,
+    "electron_affinity": 50.0,
+    "electron_configuration": "[Xe] 4f⁴ 6s²",
+    "electronegativity": 1.14,
+    "ionization_energy": 5.525,
+    "melting_point": 1297,
+    "period": 6,
+    "poissons_ratio": 0.28,
+    "primary_emission_wavelength": 463.4,
+    "shear_modulus_GPa": 16.0,
+    "specific_heat": 190,
+    "thermal_conductivity": 16.5,
+    "thermal_expansion_um_mK": 9.6,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 463.4,
+    "youngs_modulus_GPa": 41.0
+  },
+  "Symbol": "Nd",
+  "_provenance": {
+    "Properties": {
+      "entry": "Neodymium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "bulk_modulus_GPa",
+        "covalent_radius",
+        "density",
+        "electrical_resistivity_nOhm_m",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "poissons_ratio",
+        "primary_emission_wavelength",
+        "shear_modulus_GPa",
+        "specific_heat",
+        "thermal_conductivity",
+        "thermal_expansion_um_mK",
+        "valence_electrons",
+        "visible_emission_wavelength",
+        "youngs_modulus_GPa"
+      ],
+      "matched_on": "atomic_number=60",
+      "tier": "elements"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 112,
+  "AtomicWeight_amu": 285,
   "BaryonNumber_B": 285,
+  "BindingEnergyPerNucleon_MeV": 7.212613259626646,
+  "BindingEnergy_MeV": 2055.594778993594,
   "Charge_e": 0,
   "Composition": {
     "E": 112,
@@ -23,10 +27,52 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Copernicium",
+  "ElementSymbol": "Cn",
   "LeptonNumber_L": 112,
-  "Mass_MeVc2": 267688.52350628,
-  "Mass_amu": 287.3754356707173,
-  "Mass_kg": 0,
+  "MassDefect_amu": 2.2067716517508877,
+  "MassNumber_A": 285,
+  "Mass_MeVc2": 265632.9287272864,
+  "Mass_amu": 285.1686640189664,
+  "Mass_kg": 4.735337071736235e-25,
   "Name": "Cn",
-  "Symbol": "Cn"
+  "NeutronNumber_N": 173,
+  "Properties": {
+    "atomic_mass": 285,
+    "atomic_radius": 122,
+    "block": "d",
+    "boiling_point": 340,
+    "covalent_radius": 122,
+    "density": 23.7,
+    "electron_configuration": "[Rn] 5f¹⁴ 6d¹⁰ 7s²",
+    "electronegativity": 2.5,
+    "group": 12,
+    "ionization_energy": 11.3,
+    "melting_point": 283,
+    "period": 7,
+    "valence_electrons": 2
+  },
+  "Symbol": "Cn",
+  "_provenance": {
+    "Properties": {
+      "entry": "Copernicium",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "valence_electrons"
+      ],
+      "matched_on": "atomic_number=112",
+      "tier": "elements"
+    }
+  }
 }

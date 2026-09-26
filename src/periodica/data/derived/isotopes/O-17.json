@@ -1,5 +1,9 @@
 {
+  "AtomicNumber_Z": 8,
+  "AtomicWeight_amu": 15.999,
   "BaryonNumber_B": 17,
+  "BindingEnergyPerNucleon_MeV": 8.071895778257115,
+  "BindingEnergy_MeV": 137.22222823037097,
   "Charge_e": 0,
   "Composition": {
     "E": 8,
@@ -23,9 +27,61 @@
       "Symbol": "E"
     }
   ],
+  "ElementName": "Oxygen",
+  "ElementSymbol": "O",
   "LeptonNumber_L": 8,
-  "Mass_MeVc2": 15966.353481559998,
-  "Mass_amu": 17.14058461579052,
-  "Mass_kg": 0,
-  "Name": "O-17"
+  "MassDefect_amu": 0.14731411382409274,
+  "MassNumber_A": 17,
+  "Mass_MeVc2": 15829.131253329628,
+  "Mass_amu": 16.99327050196643,
+  "Mass_kg": 2.821798953781665e-26,
+  "Name": "O-17",
+  "NeutronNumber_N": 9,
+  "Properties": {
+    "atomic_mass": 15.999,
+    "atomic_radius": 48,
+    "block": "p",
+    "boiling_point": 90,
+    "covalent_radius": 66,
+    "density": 0.00143,
+    "electron_affinity": 141.0,
+    "electron_configuration": "1s² 2s² 2p⁴",
+    "electronegativity": 3.44,
+    "group": 16,
+    "ionization_energy": 13.618,
+    "melting_point": 54,
+    "period": 2,
+    "primary_emission_wavelength": 777.4,
+    "specific_heat": 919,
+    "thermal_conductivity": 0.02658,
+    "valence_electrons": 6,
+    "visible_emission_wavelength": 777.4
+  },
+  "_provenance": {
+    "Properties": {
+      "entry": "Oxygen",
+      "fields": [
+        "atomic_mass",
+        "atomic_radius",
+        "block",
+        "boiling_point",
+        "covalent_radius",
+        "density",
+        "electron_affinity",
+        "electron_configuration",
+        "electronegativity",
+        "group",
+        "ionization_energy",
+        "melting_point",
+        "period",
+        "primary_emission_wavelength",
+        "specific_heat",
+        "thermal_conductivity",
+        "valence_electrons",
+        "visible_emission_wavelength"
+      ],
+      "matched_on": "atomic_number=8",
+      "tier": "elements"
+    }
+  }
 }

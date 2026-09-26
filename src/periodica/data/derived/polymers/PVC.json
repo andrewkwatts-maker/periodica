@@ -27,9 +27,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 32,
-  "Mass_MeVc2": 58228.02140312,
-  "Mass_amu": 62.51034896746208,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 57733.02869061113,
+  "Mass_amu": 61.978952460256195,
+  "Mass_kg": 1.029184718671996e-25,
   "Name": "PVC",
   "Properties": {
     "Density_kgm3": 1380,

@@ -177,9 +177,16 @@ class TestSchemaCompatibility:
 
         generated = engine.predict_to_element_json(1)
 
-        # All reference keys (except isotopes) should be in generated
+        # The engine derives element data from first principles, so it is only
+        # accountable for fields that are derivable. Measured bulk properties
+        # copied in from the CRC reference table are not: the sheet itself
+        # lists them under _bulk_properties.fields, so read the exclusion from
+        # the data rather than restating it here.
+        measured = set(reference.get('_bulk_properties', {}).get('fields', ()))
+        not_derivable = measured | {'isotopes', '_bulk_properties'}
+
         for key in reference:
-            if key in ('isotopes',):  # isotopes not yet regenerated
+            if key in not_derivable:
                 continue
             assert key in generated, f"Missing key in generated: {key}"
 
