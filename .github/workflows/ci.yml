@@ -1,4 +1,4 @@
-﻿name: CI
+name: CI
 
 on:
   push:
@@ -7,9 +7,50 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  # The Rust workspace was never built or tested in CI before: `cargo test` did
+  # not run at all, so the 93 tests in periodica_core and everything in
+  # periodica-mat were unverified on every push.
+  rust:
+    name: Rust (cargo test + clippy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Format check
+        run: cargo fmt --all --check
+
+      # periodica_core carries pre-existing lint debt (unused-range-loop,
+      # write-with-newline). Deny warnings on the new crates, and merely report
+      # them for the rest until that debt is paid down.
+      - name: Clippy (new crates, warnings denied)
+        run: |
+          cargo clippy -p periodica-mat --all-targets -- -D warnings
+          cargo clippy -p periodica-runtime --all-targets -- -D warnings
+
+      - name: Clippy (workspace, advisory)
+        run: cargo clippy --workspace --all-targets
+
+      # `cargo test` builds default features only, so a feature-gated module
+      # (notably `pyfacade.rs`, behind `python`) can break without any test
+      # failing. `check` compiles every feature without needing to link
+      # against libpython, which `extension-module` cannot do standalone.
+      - name: Check all features compile
+        run: cargo check --workspace --all-features
+
+      - name: Test
+        run: cargo test --workspace --verbose
+
+  python:
+    name: Python ${{ matrix.python-version }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python-version: ['3.11', '3.12', '3.13']
 
@@ -22,11 +63,34 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
 
-      - name: Install build tools
-        run: pip install --upgrade pip maturin
+      - uses: Swatinem/rust-cache@v2
 
-      - name: Install library with test deps
-        run: pip install .[test]
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      # Previously the extension was never built here, so `_HAS_RUST` was False
+      # for the whole run and every test in test_rust_python_parity.py was
+      # skipped -- the suite passed while asserting nothing about the Rust path.
+      #
+      # An editable install builds the extension through maturin (features come
+      # from [tool.maturin] in pyproject.toml) and places it in src/periodica,
+      # which is where tests/conftest.py imports from. `maturin develop` is not
+      # used because it refuses to run outside a virtualenv.
+      - name: Install library (with the Rust extension) and test deps
+        run: python -m pip install -e ".[test]"
+
+      - name: Assert the Rust backend is live
+        run: |
+          python - <<'PY'
+          import sys
+          import periodica
+          ok = getattr(periodica, "_HAS_RUST", False)
+          print("_HAS_RUST =", ok)
+          if not ok:
+              print("extension built but periodica._HAS_RUST is False -- "
+                    "parity tests would silently skip", file=sys.stderr)
+              sys.exit(1)
+          PY
 
       - name: Run tests
         run: pytest tests/ -v --tb=short -m "not slow and not gemini"

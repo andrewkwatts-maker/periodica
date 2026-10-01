@@ -111,7 +111,9 @@ pub fn bake_fourier(
         return Err(anyhow!("grid_size must be non-zero in all dimensions"));
     }
     if !truncate_threshold.is_finite() || truncate_threshold < 0.0 {
-        return Err(anyhow!("truncate_threshold must be a non-negative finite value"));
+        return Err(anyhow!(
+            "truncate_threshold must be a non-negative finite value"
+        ));
     }
 
     let (lo, hi) = bounds;
@@ -135,8 +137,9 @@ pub fn bake_fourier(
             let y = lo.1 + (iy as f64 + 0.5) * voxel_y;
             for iz in 0..nz {
                 let z = lo.2 + (iz as f64 + 0.5) * voxel_z;
-                let v = crate::sample::sample(entry_name, property, Some((x, y, z)), Some(voxel_size))
-                    .unwrap_or(0.0);
+                let v =
+                    crate::sample::sample(entry_name, property, Some((x, y, z)), Some(voxel_size))
+                        .unwrap_or(0.0);
                 grid[ix][iy][iz] = v;
                 grid_sum += v;
             }
@@ -147,9 +150,13 @@ pub fn bake_fourier(
     let base_value = grid_sum / n_total as f64;
 
     // Subtract mean so the zero-frequency DFT term is zero (saves a DFT call).
-    for ix in 0..nx { for iy in 0..ny { for iz in 0..nz {
-        grid[ix][iy][iz] -= base_value;
-    }}}
+    for ix in 0..nx {
+        for iy in 0..ny {
+            for iz in 0..nz {
+                grid[ix][iy][iz] -= base_value;
+            }
+        }
+    }
 
     // ── Step 3: 3D DFT — positive half-space only ──
     // For a real-valued grid f, F[-kn,-km,-kl] = conj(F[kn,km,kl]).
@@ -177,19 +184,29 @@ pub fn bake_fourier(
                 // At Nyquist (kn==nx/2 for even nx), the conjugate is itself → factor is 1 not 2.
                 // For simplicity use factor 2 everywhere (slight overcount at exact Nyquist).
                 let amplitude = 2.0 * (re * re + im * im).sqrt() / n_total_f;
-                if amplitude > max_amp { max_amp = amplitude; }
+                if amplitude > max_amp {
+                    max_amp = amplitude;
+                }
                 let phase = im.atan2(re);
-                raw.push(FourierCoefficient { n: kn, m: km, l: kl, amplitude, phase });
+                raw.push(FourierCoefficient {
+                    n: kn,
+                    m: km,
+                    l: kl,
+                    amplitude,
+                    phase,
+                });
             }
         }
     }
 
     // ── Step 4: threshold ──
-    let thresh = if max_amp > 0.0 { truncate_threshold * max_amp } else { 0.0 };
-    let coefficients: Vec<FourierCoefficient> = raw
-        .into_iter()
-        .filter(|c| c.amplitude >= thresh)
-        .collect();
+    let thresh = if max_amp > 0.0 {
+        truncate_threshold * max_amp
+    } else {
+        0.0
+    };
+    let coefficients: Vec<FourierCoefficient> =
+        raw.into_iter().filter(|c| c.amplitude >= thresh).collect();
 
     Ok(FourierFieldConfig {
         property_name: property.to_string(),
@@ -204,17 +221,24 @@ pub fn bake_fourier(
 
 /// Direct 3D DFT at a single signed frequency triple (kn, km, kl).
 /// Returns (Re, Im) of the unnormalised DFT coefficient.
-fn dft3(grid: &[Vec<Vec<f64>>], nx: usize, ny: usize, nz: usize, kn: i32, km: i32, kl: i32) -> (f64, f64) {
+fn dft3(
+    grid: &[Vec<Vec<f64>>],
+    nx: usize,
+    ny: usize,
+    nz: usize,
+    kn: i32,
+    km: i32,
+    kl: i32,
+) -> (f64, f64) {
     let mut re = 0.0f64;
     let mut im = 0.0f64;
     for ix in 0..nx {
         for iy in 0..ny {
             for iz in 0..nz {
-                let angle = -TAU * (
-                    kn as f64 * ix as f64 / nx as f64
-                    + km as f64 * iy as f64 / ny as f64
-                    + kl as f64 * iz as f64 / nz as f64
-                );
+                let angle = -TAU
+                    * (kn as f64 * ix as f64 / nx as f64
+                        + km as f64 * iy as f64 / ny as f64
+                        + kl as f64 * iz as f64 / nz as f64);
                 let v = grid[ix][iy][iz];
                 re += v * angle.cos();
                 im += v * angle.sin();
@@ -232,19 +256,37 @@ mod tests {
 
     #[test]
     fn empty_name_rejected() {
-        let r = bake_fourier("", "density", ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)), (8, 8, 8), 0.001);
+        let r = bake_fourier(
+            "",
+            "density",
+            ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)),
+            (8, 8, 8),
+            0.001,
+        );
         assert!(r.is_err());
     }
 
     #[test]
     fn zero_grid_rejected() {
-        let r = bake_fourier("Fe", "density", ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)), (0, 8, 8), 0.001);
+        let r = bake_fourier(
+            "Fe",
+            "density",
+            ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)),
+            (0, 8, 8),
+            0.001,
+        );
         assert!(r.is_err());
     }
 
     #[test]
     fn negative_threshold_rejected() {
-        let r = bake_fourier("Fe", "density", ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)), (8, 8, 8), -0.1);
+        let r = bake_fourier(
+            "Fe",
+            "density",
+            ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)),
+            (8, 8, 8),
+            -0.1,
+        );
         assert!(r.is_err());
     }
 
@@ -253,13 +295,23 @@ mod tests {
         // DataHub is empty in tests; sample() returns 0.0 for all points.
         // Constant-zero field → base_value=0, all AC coefficients amplitude=0
         // → after threshold, zero coefficients.
-        let cfg = bake_fourier("Fe", "density", ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)), (8, 8, 8), 0.001)
-            .unwrap();
+        let cfg = bake_fourier(
+            "Fe",
+            "density",
+            ((0.0, 0.0, 0.0), (1.0, 1.0, 1.0)),
+            (8, 8, 8),
+            0.001,
+        )
+        .unwrap();
         assert_eq!(cfg.property_name, "density");
         assert_eq!(cfg.domain_size_m, (1.0, 1.0, 1.0));
         // Constant-zero field → no AC coefficients survive threshold
         for c in &cfg.coefficients {
-            assert!(c.amplitude < 1e-10, "expected ~0 amplitude, got {}", c.amplitude);
+            assert!(
+                c.amplitude < 1e-10,
+                "expected ~0 amplitude, got {}",
+                c.amplitude
+            );
         }
     }
 
@@ -284,7 +336,13 @@ mod tests {
             property_name: "test".into(),
             base_value: 1.0,
             domain_size_m: (1.0, 1.0, 1.0),
-            coefficients: vec![FourierCoefficient { n: 1, m: 0, l: 0, amplitude: 0.5, phase: 0.0 }],
+            coefficients: vec![FourierCoefficient {
+                n: 1,
+                m: 0,
+                l: 0,
+                amplitude: 0.5,
+                phase: 0.0,
+            }],
             boundary_condition: "periodic".into(),
         };
         // At x=0: cos(0) = 1 → 1.0 + 0.5 = 1.5
@@ -317,10 +375,13 @@ mod tests {
     #[test]
     fn bake_preserves_domain_size() {
         let cfg = bake_fourier(
-            "Fe", "density",
+            "Fe",
+            "density",
             ((0.0, 0.0, 0.0), (2.0, 3.0, 4.0)),
-            (4, 6, 8), 0.0,
-        ).unwrap();
+            (4, 6, 8),
+            0.0,
+        )
+        .unwrap();
         assert!((cfg.domain_size_m.0 - 2.0).abs() < 1e-10);
         assert!((cfg.domain_size_m.1 - 3.0).abs() < 1e-10);
         assert!((cfg.domain_size_m.2 - 4.0).abs() < 1e-10);

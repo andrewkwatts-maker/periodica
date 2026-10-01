@@ -1,0 +1,117 @@
+#====== periodica/Cargo.toml ======#
+# copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+#
+# This is the intellectual property of Andrew Keith Watts. Unauthorized
+# reproduction, distribution, or modification of this code, in whole or in part,
+# without the express written permission of Andrew Keith Watts is strictly prohibited.
+#
+# For inquiries, please contact AndrewKWatts@Gmail.com
+
+# Workspace root for the periodica Rust stack.
+#
+# Crate layout and dependency direction (a strict DAG, no cycles):
+#
+#   periodica-mat       canonical typed material model + JSON ingest
+#         |
+#         v
+#   periodica-runtime   spatial engine: SDF, fields, point/sphere queries,
+#         |             fracture, flow, bake. No pyo3, no filesystem walking.
+#         v
+#   periodica-fmt       .pmat container read/write
+#         |
+#         v
+#   periodica_core      pyo3 facade + registry/Get/alloy/protein/export
+#
+# Game engines depend on `periodica-runtime` (+ `periodica-fmt` to load assets)
+# and nothing else -- no Python, no pyo3, no data-directory scanning.
+#
+# The Python wheel is unchanged: maturin still builds `periodica_core` alone
+# (see [tool.maturin] in pyproject.toml), which pulls the rest in as libs.
+
+[workspace]
+resolver = "2"
+members = [
+    "rust/periodica-mat",
+    "rust/periodica-runtime",
+    "rust/periodica_core",
+]
+# `build/` and `dist/` hold stale packaging artifacts (including a v1.1.0
+# source copy). Never let a glob pick them up.
+exclude = ["build", "dist"]
+
+# Applies to the three NEW crates only. `periodica_core` keeps its own explicit
+# 2.3.0 because that version is bound by the 4-location sync rule in CLAUDE.md
+# (pyproject.toml / Cargo.toml / __init__.py / git tag) and must not drift as a
+# side effect of introducing this workspace.
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Andrew Keith Watts <AndrewKWatts@gmail.com>"]
+repository = "https://github.com/andrewkwatts-maker/periodica"
+rust-version = "1.82"
+
+[workspace.dependencies]
+# --- shared across crates -------------------------------------------------
+anyhow = "1.0"
+thiserror = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+# `preserve_order` is REQUIRED for Python parity, not a preference: the
+# microstructure_voronoi field model walks the `phases` map in order and
+# takes the first phase whose cumulative fraction exceeds a hash draw.
+# Python dicts preserve file order; serde_json defaults to sorted (BTreeMap),
+# which silently selects a different phase for the same point.
+serde_json = { version = "1.0", features = ["preserve_order"] }
+# glam is the single source of truth for vector/matrix math. It replaces the
+# two duplicate hand-rolled Vec3 implementations in the Python tree
+# (utils/crystalline_math.py and utils/pure_array.py) and is SIMD-accelerated.
+glam = { version = "0.29", features = ["serde", "bytemuck"] }
+# Zero-copy reinterpretation of baked volume blobs.
+bytemuck = { version = "1.18", features = ["derive"] }
+rayon = "1.10"
+once_cell = "1.19"
+parking_lot = "0.12"
+dashmap = "6.1"
+half = { version = "2.4", features = ["bytemuck"] }
+memmap2 = "0.9"
+rand = { version = "0.8", features = ["small_rng"] }
+# Matches Python's hashlib.sha1 in the voronoi phase picker, byte for byte.
+sha1 = "0.10"
+nalgebra = "0.33"
+ndarray = "0.16"
+pyo3 = { version = "0.22", features = ["extension-module"] }
+numpy = "0.22"
+
+# --- internal -------------------------------------------------------------
+periodica-mat = { path = "rust/periodica-mat", version = "0.1.0" }
+periodica-runtime = { path = "rust/periodica-runtime", version = "0.1.0" }
+periodica-fmt = { path = "rust/periodica-fmt", version = "0.1.0" }
+
+# --- dev ------------------------------------------------------------------
+criterion = { version = "0.5", features = ["html_reports"] }
+tempfile = "3.8"
+approx = "0.5"
+
+# Cargo only honours profile tables at the workspace root; member-level
+# [profile.*] sections are ignored with a warning. These were previously in
+# rust/periodica_core/Cargo.toml and are hoisted here unchanged.
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+
+# Benchmarks and the hot-path latency targets in the plan are meaningless
+# without optimisation, but a full LTO rebuild per `cargo bench` is slow.
+# `bench` inherits release without the cross-crate LTO cost.
+[profile.bench]
+inherits = "release"
+lto = "thin"
+
+# Tests that walk all 963 datasheets are unusably slow in a debug build.
+# Optimise dependencies (including our own crates) while keeping debug info
+# and overflow checks in the crate under test.
+[profile.test]
+opt-level = 1
+
+[profile.test.package."*"]
+opt-level = 3

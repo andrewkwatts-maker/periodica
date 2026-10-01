@@ -7,7 +7,7 @@ bonding rules, valence constraints, and VSEPR geometry prediction.
 
 import json
 from pathlib import Path
-from typing import Callable, Dict, List, Optional, Set, Tuple
+from typing import Callable, Dict, List, Optional, Set, Tuple, Union
 
 from periodica.utils.bonding_rules import BondingRulesEngine
 from periodica.utils.derivation_metadata import DerivationSource, DerivationTracker
@@ -507,11 +507,15 @@ class MoleculeGenerator:
     def save_molecules(
         self,
         molecules: List[Dict],
-        output_dir: Optional[Path] = None,
+        output_dir: Optional[Union[str, Path]] = None,
     ) -> int:
         """Save generated molecules to JSON files."""
         if output_dir is None:
             output_dir = Path(__file__).parent.parent / "data" / "active" / "molecules"
+        # Accept a str like the sibling save_alloys / save_materials / save_items
+        # do. The cascade engine passed one, and `str.mkdir` raised an
+        # AttributeError that its broad except turned into "0 regenerated".
+        output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
 
         saved = 0

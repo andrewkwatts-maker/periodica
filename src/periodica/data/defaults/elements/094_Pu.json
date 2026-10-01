@@ -13,6 +13,9 @@
   "melting_point": 913,
   "boiling_point": 3505,
   "density": 19.85,
+  "LatticeProperties": {
+    "PrimaryStructure": "Monoclinic"
+  },
   "electron_affinity": null,
   "valence_electrons": 6,
   "electron_configuration": "[Rn] 5f⁶ 7s²",

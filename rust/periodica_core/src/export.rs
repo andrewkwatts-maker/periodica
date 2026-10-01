@@ -50,12 +50,42 @@ pub fn export_glsl(
     let entry = lookup_entry(name)?;
     let props = collect_numeric_props(&entry);
 
-    let density = if include_density { props.get("Density_kg_m3").or(props.get("density_kg_m3")).copied().unwrap_or(1000.0) } else { 1000.0 };
-    let ior = if include_ior { props.get("IOR").or(props.get("RefractiveIndex")).or(props.get("refractive_index")).copied().unwrap_or(1.0) } else { 1.0 };
+    let density = if include_density {
+        props
+            .get("Density_kg_m3")
+            .or(props.get("density_kg_m3"))
+            .copied()
+            .unwrap_or(1000.0)
+    } else {
+        1000.0
+    };
+    let ior = if include_ior {
+        props
+            .get("IOR")
+            .or(props.get("RefractiveIndex"))
+            .or(props.get("refractive_index"))
+            .copied()
+            .unwrap_or(1.0)
+    } else {
+        1.0
+    };
     let (sss_r, sss_g) = if include_sss {
-        (props.get("SSS_r").copied().unwrap_or(0.0), props.get("SSS_g").copied().unwrap_or(0.0))
-    } else { (0.0, 0.0) };
-    let caustic = if include_caustic { props.get("CausticScale").or(props.get("caustic_scale")).copied().unwrap_or(0.0) } else { 0.0 };
+        (
+            props.get("SSS_r").copied().unwrap_or(0.0),
+            props.get("SSS_g").copied().unwrap_or(0.0),
+        )
+    } else {
+        (0.0, 0.0)
+    };
+    let caustic = if include_caustic {
+        props
+            .get("CausticScale")
+            .or(props.get("caustic_scale"))
+            .copied()
+            .unwrap_or(0.0)
+    } else {
+        0.0
+    };
     let _ = caustic; // emitted via comment for now; SSS/caustic baking handled by fourier_bake
 
     Ok(format!(
@@ -70,11 +100,7 @@ pub fn export_glsl(
 
 /// Emit a DirectX HLSL source string matching Python's `export_hlsl`.
 /// Mirrors the GLSL output but uses HLSL 5.0 syntax.
-pub fn export_hlsl(
-    name: &str,
-    out_path: &Path,
-    properties: Option<&[String]>,
-) -> Result<PathBuf> {
+pub fn export_hlsl(name: &str, out_path: &Path, properties: Option<&[String]>) -> Result<PathBuf> {
     if name.is_empty() {
         return Err(anyhow!("export_hlsl: material name must not be empty"));
     }
@@ -101,14 +127,18 @@ pub fn export_hlsl(
     let _ = writeln!(src, "\tint PhaseId;\n}};");
 
     // Hash function (deterministic, shader-friendly)
-    let _ = write!(src,
+    let _ = write!(
+        src,
         "\nfloat {safe}_Hash(float3 q) {{\n\
          \treturn frac(sin(dot(q, float3(12.9898, 78.233, 37.7191))) * 43758.5453);\n\
          }}\n"
     );
 
     // Sampling function
-    let _ = write!(src, "\nSample{safe} Sample{safe}(float3 pos, float scaleM) {{\n\tSample{safe} s;\n");
+    let _ = write!(
+        src,
+        "\nSample{safe} Sample{safe}(float3 pos, float scaleM) {{\n\tSample{safe} s;\n"
+    );
     for p in &prop_list {
         let v = all_props.get(p).copied().unwrap_or(0.0);
         let _ = writeln!(src, "\ts.{p} = {v:.6}f;");
@@ -129,8 +159,12 @@ pub fn export_sdf_raw(
     scale_m: Option<f64>,
     mode: &str,
 ) -> Result<PathBuf> {
-    if name.is_empty() { return Err(anyhow!("export_sdf_raw: name required")); }
-    if voxel_size <= 0.0 { return Err(anyhow!("export_sdf_raw: voxel_size must be positive")); }
+    if name.is_empty() {
+        return Err(anyhow!("export_sdf_raw: name required"));
+    }
+    if voxel_size <= 0.0 {
+        return Err(anyhow!("export_sdf_raw: voxel_size must be positive"));
+    }
 
     let grid = voxel_phase_map(name, bounds, voxel_size, scale_m)?;
     let (nx, ny, nz) = (grid.nx, grid.ny, grid.nz);
@@ -142,7 +176,13 @@ pub fn export_sdf_raw(
             for ix in 0..nx {
                 let pid = grid.data[ix][iy][iz];
                 let v: f32 = match mode {
-                    "occupancy" => if pid >= 0 { 1.0 } else { 0.0 },
+                    "occupancy" => {
+                        if pid >= 0 {
+                            1.0
+                        } else {
+                            0.0
+                        }
+                    }
                     _ => pid as f32, // "phase"
                 };
                 flat.push(v);
@@ -182,8 +222,12 @@ pub fn export_vtk_legacy(
     properties: &[String],
     scale_m: Option<f64>,
 ) -> Result<PathBuf> {
-    if name.is_empty() { return Err(anyhow!("export_vtk_legacy: name required")); }
-    if voxel_size <= 0.0 { return Err(anyhow!("export_vtk_legacy: voxel_size must be positive")); }
+    if name.is_empty() {
+        return Err(anyhow!("export_vtk_legacy: name required"));
+    }
+    if voxel_size <= 0.0 {
+        return Err(anyhow!("export_vtk_legacy: voxel_size must be positive"));
+    }
 
     let phase_grid = voxel_phase_map(name, bounds, voxel_size, scale_m)?;
     let (nx, ny, nz) = (phase_grid.nx, phase_grid.ny, phase_grid.nz);
@@ -197,7 +241,10 @@ pub fn export_vtk_legacy(
          ORIGIN {ox} {oy} {oz}\n\
          SPACING {vs} {vs} {vs}\n\
          POINT_DATA {n_pts}\n",
-        ox = lo[0], oy = lo[1], oz = lo[2], vs = voxel_size,
+        ox = lo[0],
+        oy = lo[1],
+        oz = lo[2],
+        vs = voxel_size,
     );
 
     // Phase ID scalar (x-fastest to match VTK convention)
@@ -212,8 +259,14 @@ pub fn export_vtk_legacy(
 
     // Per-property scalar arrays
     for prop in properties {
-        let pg = voxel_sample(name, prop, bounds, voxel_size, scale_m)
-            .unwrap_or_else(|_| crate::sample::PropertyGrid { data: vec![vec![vec![0.0; nz]; ny]; nx], nx, ny, nz });
+        let pg = voxel_sample(name, prop, bounds, voxel_size, scale_m).unwrap_or_else(|_| {
+            crate::sample::PropertyGrid {
+                data: vec![vec![vec![0.0; nz]; ny]; nx],
+                nx,
+                ny,
+                nz,
+            }
+        });
         let _ = write!(out, "SCALARS {prop} float 1\nLOOKUP_TABLE default\n");
         for iz in 0..nz {
             for iy in 0..ny {
@@ -238,8 +291,12 @@ pub fn export_stl(
     scale_m: Option<f64>,
     binary: bool,
 ) -> Result<PathBuf> {
-    if name.is_empty() { return Err(anyhow!("export_stl: name required")); }
-    if voxel_size <= 0.0 { return Err(anyhow!("export_stl: voxel_size must be positive")); }
+    if name.is_empty() {
+        return Err(anyhow!("export_stl: name required"));
+    }
+    if voxel_size <= 0.0 {
+        return Err(anyhow!("export_stl: voxel_size must be positive"));
+    }
 
     let grid = voxel_phase_map(name, bounds, voxel_size, scale_m)?;
     let (lo, _) = bounds;
@@ -255,7 +312,9 @@ pub fn export_stl(
         // Triangle count (u32 LE)
         buf.extend_from_slice(&(triangles.len() as u32).to_le_bytes());
         for (n, v0, v1, v2) in &triangles {
-            for &f in &[n[0], n[1], n[2], v0[0], v0[1], v0[2], v1[0], v1[1], v1[2], v2[0], v2[1], v2[2]] {
+            for &f in &[
+                n[0], n[1], n[2], v0[0], v0[1], v0[2], v1[0], v1[1], v1[2], v2[0], v2[1], v2[2],
+            ] {
                 buf.extend_from_slice(&(f as f32).to_le_bytes());
             }
             buf.extend_from_slice(&0u16.to_le_bytes()); // attribute
@@ -264,7 +323,8 @@ pub fn export_stl(
     } else {
         let mut src = format!("solid {name}\n");
         for (n, v0, v1, v2) in &triangles {
-            let _ = write!(src,
+            let _ = write!(
+                src,
                 "  facet normal {:.6} {:.6} {:.6}\n    outer loop\n\
                  \t  vertex {:.6} {:.6} {:.6}\n\
                  \t  vertex {:.6} {:.6} {:.6}\n\
@@ -286,14 +346,21 @@ pub fn export_obj(
     voxel_size: f64,
     scale_m: Option<f64>,
 ) -> Result<(PathBuf, PathBuf)> {
-    if name.is_empty() { return Err(anyhow!("export_obj: name required")); }
-    if voxel_size <= 0.0 { return Err(anyhow!("export_obj: voxel_size must be positive")); }
+    if name.is_empty() {
+        return Err(anyhow!("export_obj: name required"));
+    }
+    if voxel_size <= 0.0 {
+        return Err(anyhow!("export_obj: voxel_size must be positive"));
+    }
 
     let grid = voxel_phase_map(name, bounds, voxel_size, scale_m)?;
     let (lo, _) = bounds;
 
     let mtl_path = obj_path.with_extension("mtl");
-    let mtl_stem = mtl_path.file_name().and_then(|f| f.to_str()).unwrap_or("material.mtl");
+    let mtl_stem = mtl_path
+        .file_name()
+        .and_then(|f| f.to_str())
+        .unwrap_or("material.mtl");
 
     // MTL file
     let mut mtl = String::new();
@@ -318,7 +385,11 @@ pub fn export_obj(
     for (quad, _normal, phase_id) in &quad_list {
         let mut face_vi = [0usize; 4];
         for (fi, corner) in quad.iter().enumerate() {
-            let key = [corner[0].to_bits(), corner[1].to_bits(), corner[2].to_bits()];
+            let key = [
+                corner[0].to_bits(),
+                corner[1].to_bits(),
+                corner[2].to_bits(),
+            ];
             let vi = *vert_idx.entry(key).or_insert_with(|| {
                 vertices.push(*corner);
                 vertices.len() - 1
@@ -336,12 +407,14 @@ pub fn export_obj(
 
     // Write per-phase face groups
     for (pi, faces) in phase_faces.iter().enumerate() {
-        if faces.is_empty() { continue; }
+        if faces.is_empty() {
+            continue;
+        }
         let phase_name = &grid.phase_names[pi];
         let _ = writeln!(obj, "o {name}_{phase_name}\nusemtl {phase_name}");
         for f in faces {
             // OBJ is 1-indexed; quads written as two triangles
-            let _ = writeln!(obj, "f {} {} {} {}", f[0]+1, f[1]+1, f[2]+1, f[3]+1);
+            let _ = writeln!(obj, "f {} {} {} {}", f[0] + 1, f[1] + 1, f[2] + 1, f[3] + 1);
         }
     }
 
@@ -358,7 +431,9 @@ fn lookup_entry(name: &str) -> Result<Value> {
             return Ok(v.value().clone());
         }
     }
-    Err(anyhow!("export: entry '{name}' not found in periodica registry"))
+    Err(anyhow!(
+        "export: entry '{name}' not found in periodica registry"
+    ))
 }
 
 fn collect_numeric_props(entry: &Value) -> std::collections::HashMap<String, f64> {
@@ -366,13 +441,17 @@ fn collect_numeric_props(entry: &Value) -> std::collections::HashMap<String, f64
     // Top-level scalars
     if let Some(obj) = entry.as_object() {
         for (k, v) in obj {
-            if let Some(f) = v.as_f64() { map.insert(k.clone(), f); }
+            if let Some(f) = v.as_f64() {
+                map.insert(k.clone(), f);
+            }
         }
     }
     // "Properties" sub-object
     if let Some(props) = entry.get("Properties").and_then(Value::as_object) {
         for (k, v) in props {
-            if let Some(f) = v.as_f64() { map.insert(k.clone(), f); }
+            if let Some(f) = v.as_f64() {
+                map.insert(k.clone(), f);
+            }
         }
     }
     map
@@ -380,8 +459,13 @@ fn collect_numeric_props(entry: &Value) -> std::collections::HashMap<String, f64
 
 /// GLSL / HLSL-safe identifier: non-alphanumeric → `_`, prepend `_` if leading digit.
 fn glsl_safe_ident(name: &str) -> String {
-    let mut s: String = name.chars().map(|c| if c.is_ascii_alphanumeric() { c } else { '_' }).collect();
-    if s.starts_with(|c: char| c.is_ascii_digit()) { s.insert(0, '_'); }
+    let mut s: String = name
+        .chars()
+        .map(|c| if c.is_ascii_alphanumeric() { c } else { '_' })
+        .collect();
+    if s.starts_with(|c: char| c.is_ascii_digit()) {
+        s.insert(0, '_');
+    }
     s
 }
 
@@ -394,7 +478,11 @@ fn phase_hash_color(name: &str) -> (u8, u8, u8) {
         h ^= b as u64;
         h = h.wrapping_mul(1099511628211u64);
     }
-    ((h >> 48) as u8, ((h >> 32) & 0xFF) as u8, ((h >> 16) & 0xFF) as u8)
+    (
+        (h >> 48) as u8,
+        ((h >> 32) & 0xFF) as u8,
+        ((h >> 16) & 0xFF) as u8,
+    )
 }
 
 /// Emit all voxel boundary quads as triangles. Returns `(normal, v0, v1, v2)`.
@@ -423,7 +511,11 @@ fn boundary_quads(
 
     // Helper: world coordinate of voxel corner (ix, iy, iz) at axis-min face
     let corner = |ix: usize, iy: usize, iz: usize| -> [f64; 3] {
-        [lo[0] + ix as f64 * vs, lo[1] + iy as f64 * vs, lo[2] + iz as f64 * vs]
+        [
+            lo[0] + ix as f64 * vs,
+            lo[1] + iy as f64 * vs,
+            lo[2] + iz as f64 * vs,
+        ]
     };
 
     let pid = |ix: usize, iy: usize, iz: usize| -> i32 { grid.data[ix][iy][iz] };
@@ -433,12 +525,25 @@ fn boundary_quads(
     for ix in 0..=nx {
         for iy in 0..ny {
             for iz in 0..nz {
-                let left  = if ix == 0  { outside } else { pid(ix-1, iy, iz) };
-                let right = if ix == nx { outside } else { pid(ix,   iy, iz) };
+                let left = if ix == 0 {
+                    outside
+                } else {
+                    pid(ix - 1, iy, iz)
+                };
+                let right = if ix == nx { outside } else { pid(ix, iy, iz) };
                 if left != right {
                     let c = corner(ix, iy, iz);
-                    let q = [c, corner(ix, iy+1, iz), corner(ix, iy+1, iz+1), corner(ix, iy, iz+1)];
-                    let normal = if right >= 0 { [-1.0, 0.0, 0.0] } else { [1.0, 0.0, 0.0] };
+                    let q = [
+                        c,
+                        corner(ix, iy + 1, iz),
+                        corner(ix, iy + 1, iz + 1),
+                        corner(ix, iy, iz + 1),
+                    ];
+                    let normal = if right >= 0 {
+                        [-1.0, 0.0, 0.0]
+                    } else {
+                        [1.0, 0.0, 0.0]
+                    };
                     quads.push((q, normal, if right >= 0 { right } else { left }));
                 }
             }
@@ -448,12 +553,25 @@ fn boundary_quads(
     for ix in 0..nx {
         for iy in 0..=ny {
             for iz in 0..nz {
-                let bot = if iy == 0  { outside } else { pid(ix, iy-1, iz) };
-                let top = if iy == ny { outside } else { pid(ix, iy,   iz) };
+                let bot = if iy == 0 {
+                    outside
+                } else {
+                    pid(ix, iy - 1, iz)
+                };
+                let top = if iy == ny { outside } else { pid(ix, iy, iz) };
                 if bot != top {
                     let c = corner(ix, iy, iz);
-                    let q = [c, corner(ix+1, iy, iz), corner(ix+1, iy, iz+1), corner(ix, iy, iz+1)];
-                    let normal = if top >= 0 { [0.0, -1.0, 0.0] } else { [0.0, 1.0, 0.0] };
+                    let q = [
+                        c,
+                        corner(ix + 1, iy, iz),
+                        corner(ix + 1, iy, iz + 1),
+                        corner(ix, iy, iz + 1),
+                    ];
+                    let normal = if top >= 0 {
+                        [0.0, -1.0, 0.0]
+                    } else {
+                        [0.0, 1.0, 0.0]
+                    };
                     quads.push((q, normal, if top >= 0 { top } else { bot }));
                 }
             }
@@ -463,12 +581,25 @@ fn boundary_quads(
     for ix in 0..nx {
         for iy in 0..ny {
             for iz in 0..=nz {
-                let bk = if iz == 0  { outside } else { pid(ix, iy, iz-1) };
-                let fr = if iz == nz { outside } else { pid(ix, iy, iz  ) };
+                let bk = if iz == 0 {
+                    outside
+                } else {
+                    pid(ix, iy, iz - 1)
+                };
+                let fr = if iz == nz { outside } else { pid(ix, iy, iz) };
                 if bk != fr {
                     let c = corner(ix, iy, iz);
-                    let q = [c, corner(ix+1, iy, iz), corner(ix+1, iy+1, iz), corner(ix, iy+1, iz)];
-                    let normal = if fr >= 0 { [0.0, 0.0, -1.0] } else { [0.0, 0.0, 1.0] };
+                    let q = [
+                        c,
+                        corner(ix + 1, iy, iz),
+                        corner(ix + 1, iy + 1, iz),
+                        corner(ix, iy + 1, iz),
+                    ];
+                    let normal = if fr >= 0 {
+                        [0.0, 0.0, -1.0]
+                    } else {
+                        [0.0, 0.0, 1.0]
+                    };
                     quads.push((q, normal, if fr >= 0 { fr } else { bk }));
                 }
             }
@@ -501,7 +632,8 @@ mod tests {
     fn export_glsl_emits_function_signature() {
         // No registry loaded — fallback to default values still produces valid GLSL
         let src = export_glsl("Iron", true, true, true, true).unwrap_or_else(|_| {
-            "vec4 SampleMaterial_Iron(vec3 worldPos, float scaleM) { return vec4(0.0); }".to_string()
+            "vec4 SampleMaterial_Iron(vec3 worldPos, float scaleM) { return vec4(0.0); }"
+                .to_string()
         });
         assert!(src.contains("SampleMaterial_Iron"));
         assert!(src.contains("vec3 worldPos"));

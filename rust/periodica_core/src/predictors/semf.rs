@@ -1,4 +1,4 @@
-﻿//====== periodica/rust/periodica_core/src/predictors/semf.rs ======//
+//====== periodica/rust/periodica_core/src/predictors/semf.rs ======//
 //!copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 //!
 //!This is the intellectual property of Andrew Keith Watts. Unauthorized
@@ -123,10 +123,7 @@ mod tests {
         // 1.2 Â· 56^(1/3) â‰ˆ 4.59 fm. Tolerance is generous because we only want
         // to confirm we're in the right ballpark before JSON coefficients land.
         let r = nuclear_radius(56).unwrap();
-        assert!(
-            (r - 4.59).abs() < 0.05,
-            "iron-56 radius out of range: {r}"
-        );
+        assert!((r - 4.59).abs() < 0.05, "iron-56 radius out of range: {r}");
     }
 
     #[test]

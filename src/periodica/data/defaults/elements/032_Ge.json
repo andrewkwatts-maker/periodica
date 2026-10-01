@@ -13,6 +13,9 @@
   "melting_point": 1211.4,
   "boiling_point": 3106,
   "density": 5.32,
+  "LatticeProperties": {
+    "PrimaryStructure": "Diamond"
+  },
   "electron_affinity": 119.0,
   "valence_electrons": 4,
   "electron_configuration": "[Ar] 3d¹⁰ 4s² 4p²",

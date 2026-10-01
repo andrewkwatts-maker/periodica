@@ -46,9 +46,23 @@ from periodica._launcher import launch as Launch
 # fall back to the pure-Python implementations transparently. Engine
 # consumers that vendor periodica via git submodule see this flag flip to
 # True and gain the deterministic Rust path automatically.
-# Rust dispatch is wired per-module via _dispatch.py + @rust_accelerated.
-# _HAS_RUST is re-exported here for external inspection.
-from periodica._dispatch import _HAS_RUST  # noqa: F401
+# Rust dispatch is wired per-module via _dispatch.py.
+#
+# `_HAS_RUST` says only that the extension imported -- it says nothing about
+# whether the Rust code paths actually ran. Historically they did not: the
+# sampler read a schema no datasheet uses and every failure was swallowed by a
+# bare `except Exception: pass`, so `_HAS_RUST` was True while Python did all
+# the work. Use `assert_rust_backend()` when you need the Rust path guaranteed,
+# and `backend_report()` to see what is really live.
+from periodica._dispatch import (  # noqa: F401
+    _HAS_RUST,
+    BackendMode,
+    RustBackendUnavailable,
+    assert_rust_backend,
+    backend_mode,
+    backend_report,
+    fallback_count,
+)
 
 # â”€â”€ Generic composition + named registry (primary API) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 from periodica.get import (
@@ -125,6 +139,9 @@ __all__ = [
     'reload_registry', 'list_tiers',
     # Sampling / data sheets
     'sample', 'data_sheet', 'register_field_model',
+    # Backend control: assert / inspect the Rust acceleration
+    'assert_rust_backend', 'backend_report', 'backend_mode',
+    'fallback_count', 'BackendMode', 'RustBackendUnavailable',
     # Folding (3D backbone, Kabsch, AlphaFold reference)
     'build_backbone', 'build_backbone_from_entry', 'extract_phi_psi',
     'kabsch_rmsd', 'parse_pdb_backbone', 'backbone_array_from_pdb',
