@@ -1,12 +1,11 @@
-"""SOLID-compliant predictor framework for Periodics."""
+"""Semi-empirical predictor framework (Python, pending the native port).
 
-from .protocols import (
-    PredictorProtocol,
-    NuclearPredictorProtocol,
-    AtomicPredictorProtocol,
-    HadronPredictorProtocol,
-    PredictionConfidence,
-)
+The surviving models -- SEMF, Slater, constituent quark, VSEPR, Hückel,
+Miedema/rule of mixtures, protein / amino-acid / nucleic-acid -- are the M6
+port targets in the migration census. Importing this package registers the
+nuclear, atomic and hadron predictors with ``PredictorRegistry``.
+"""
+
 from .registry import PredictorRegistry, register_predictor
 from .base import (
     BasePredictor,
@@ -20,22 +19,16 @@ from .base import (
     HadronInput,
     HadronResult,
 )
-from .chain import DerivationChain, ChainResult
 
 # Import predictors to trigger registration
 from .nuclear import SEMFNuclearPredictor
 from .atomic import SlaterAtomicPredictor
 from .hadron import ConstituentQuarkPredictor
 
-# Legacy compatibility
-from .compat import PredictionEngine, NuclearDerivation, AtomicDerivation
-
 __all__ = [
-    'PredictorProtocol', 'PredictionConfidence',
     'PredictorRegistry', 'register_predictor',
     'BasePredictor', 'BaseNuclearPredictor', 'BaseAtomicPredictor', 'BaseHadronPredictor',
-    'DerivationChain', 'ChainResult',
     'NuclearInput', 'NuclearResult', 'AtomicInput', 'AtomicResult',
+    'HadronInput', 'HadronResult',
     'SEMFNuclearPredictor', 'SlaterAtomicPredictor', 'ConstituentQuarkPredictor',
-    'PredictionEngine', 'NuclearDerivation', 'AtomicDerivation',
 ]

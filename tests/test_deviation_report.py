@@ -30,12 +30,6 @@ import pytest
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from periodica.utils.physics_calculator_v2 import (
-    SubatomicCalculatorV2,
-    AtomCalculatorV2,
-    MoleculeCalculatorV2,
-    PhysicsConstantsV2
-)
 from periodica.utils.predictors.biological.protein_predictor import ProteinPredictor
 from periodica.utils.predictors.biological.amino_acid_predictor import AminoAcidPredictor
 
@@ -303,50 +297,6 @@ PDG_QUARK_DATA = {
         'mass_uncertainty': 300,
         'charge_e': 2/3,
         'source': 'PDG 2024'
-    },
-}
-
-# NIST atomic data
-NIST_ATOM_DATA = {
-    'Hydrogen': {
-        'atomic_mass_amu': 1.00794,
-        'mass_uncertainty': 0.00001,
-        'ionization_energy_ev': 13.59844,
-        'ionization_uncertainty': 0.00001,
-        'electronegativity_pauling': 2.20,
-        'source': 'NIST/CODATA 2018'
-    },
-    'Carbon': {
-        'atomic_mass_amu': 12.0107,
-        'mass_uncertainty': 0.0008,
-        'ionization_energy_ev': 11.2603,
-        'ionization_uncertainty': 0.0001,
-        'electronegativity_pauling': 2.55,
-        'source': 'NIST/CODATA 2018'
-    },
-    'Oxygen': {
-        'atomic_mass_amu': 15.9994,
-        'mass_uncertainty': 0.0003,
-        'ionization_energy_ev': 13.6181,
-        'ionization_uncertainty': 0.0001,
-        'electronegativity_pauling': 3.44,
-        'source': 'NIST/CODATA 2018'
-    },
-    'Iron': {
-        'atomic_mass_amu': 55.845,
-        'mass_uncertainty': 0.002,
-        'ionization_energy_ev': 7.9024,
-        'ionization_uncertainty': 0.0001,
-        'electronegativity_pauling': 1.83,
-        'source': 'NIST/CODATA 2018'
-    },
-    'Nitrogen': {
-        'atomic_mass_amu': 14.0067,
-        'mass_uncertainty': 0.0002,
-        'ionization_energy_ev': 14.5341,
-        'ionization_uncertainty': 0.0001,
-        'electronegativity_pauling': 3.04,
-        'source': 'NIST/CODATA 2018'
     },
 }
 
@@ -662,101 +612,12 @@ class TestDeviationReport:
                   f"calc={r.calculated:>12.4f} | ref={r.reference:>12.4f} | "
                   f"err={r.percent_error:>6.2f}% | {r.sigma:.1f}s")
 
-    def test_atom_deviations(self, deviation_report):
-        """Test atom property deviations from NIST reference data."""
-        print("\n" + "=" * 80)
-        print("ATOM DEVIATION ANALYSIS (vs NIST/CODATA)")
-        print("=" * 80)
-
-        # Load proton, neutron, electron data for atom creation
-        proton = load_particle_data("Proton")
-        neutron = load_particle_data("Neutron")
-        electron = load_particle_data("Electron")
-
-        if not all([proton, neutron, electron]):
-            print("  Warning: Missing particle data for atom creation")
-            return
-
-        atom_configs = {
-            'Hydrogen': {'Z': 1, 'N': 0},
-            'Carbon': {'Z': 6, 'N': 6},
-            'Oxygen': {'Z': 8, 'N': 8},
-            'Iron': {'Z': 26, 'N': 30},
-            'Nitrogen': {'Z': 7, 'N': 7},
-        }
-
-        for atom_name, config in atom_configs.items():
-            if atom_name not in NIST_ATOM_DATA:
-                continue
-
-            ref_data = NIST_ATOM_DATA[atom_name]
-
-            # Create atom
-            try:
-                atom = AtomCalculatorV2.create_atom_from_particles(
-                    proton_data=proton,
-                    neutron_data=neutron,
-                    electron_data=electron,
-                    proton_count=config['Z'],
-                    neutron_count=config['N'],
-                    electron_count=config['Z'],
-                    element_name=atom_name,
-                    element_symbol=atom_name[0]
-                )
-
-                # Atomic mass
-                deviation_report.add(DeviationResult(
-                    category="Atom",
-                    entity_name=atom_name,
-                    property_name="atomic_mass",
-                    calculated=atom['atomic_mass'],
-                    reference=ref_data['atomic_mass_amu'],
-                    reference_source=ref_data['source'],
-                    units="amu",
-                    uncertainty=ref_data['mass_uncertainty']
-                ))
-
-                # Ionization energy
-                deviation_report.add(DeviationResult(
-                    category="Atom",
-                    entity_name=atom_name,
-                    property_name="ionization_energy",
-                    calculated=atom['ionization_energy'],
-                    reference=ref_data['ionization_energy_ev'],
-                    reference_source=ref_data['source'],
-                    units="eV",
-                    uncertainty=ref_data['ionization_uncertainty']
-                ))
-
-                # Electronegativity
-                deviation_report.add(DeviationResult(
-                    category="Atom",
-                    entity_name=atom_name,
-                    property_name="electronegativity",
-                    calculated=atom['electronegativity'],
-                    reference=ref_data['electronegativity_pauling'],
-                    reference_source=ref_data['source'],
-                    units="Pauling",
-                    uncertainty=0.05
-                ))
-
-            except Exception as e:
-                print(f"  Warning: Could not create {atom_name}: {e}")
-
-        # Print results
-        atom_results = deviation_report.get_by_category("Atom")
-        for r in sorted(atom_results, key=lambda x: x.sigma, reverse=True):
-            print(f"  {r.entity_name:10s} | {r.property_name:20s} | "
-                  f"calc={r.calculated:>10.4f} | ref={r.reference:>10.4f} | "
-                  f"err={r.percent_error:>6.2f}% | {r.sigma:.1f}s")
-
     def test_generate_full_report(self, deviation_report, protein_predictor, amino_acid_predictor):
         """Generate complete deviation report across all categories."""
         # Run all deviation tests
         self.test_protein_deviations(deviation_report, protein_predictor)
         self.test_amino_acid_deviations(deviation_report, amino_acid_predictor)
         self.test_hadron_deviations(deviation_report)
-        self.test_atom_deviations(deviation_report)
 
         # Generate and print full report
         print("\n")

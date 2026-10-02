@@ -109,7 +109,7 @@ from periodica.export import (
 )
 
 # â”€â”€ Constants & data manager (no hardcoded chemistry) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-from periodica.utils.physics_calculator import PhysicsConstants
+from periodica.physical_constants import PhysicsConstants
 from periodica.data.data_manager import DataManager, DataCategory
 
 # â”€â”€ Core enums (descriptive metadata, no behaviour) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€

@@ -43,11 +43,8 @@ class TestImportPurity:
     def test_core_enums(self):
         _assert_import_pure("from periodica.core import pt_enums, molecule_enums, quark_enums")
 
-    def test_constants(self):
-        _assert_import_pure("from periodica.constants import PropertyType")
-
-    def test_utils_physics(self):
-        _assert_import_pure("from periodica.utils.physics_calculator import PhysicsConstants, AtomCalculator")
+    def test_physical_constants(self):
+        _assert_import_pure("from periodica.physical_constants import PhysicsConstants")
 
     def test_utils_pure_math(self):
         _assert_import_pure("from periodica.utils.pure_math import factorial")
@@ -60,6 +57,3 @@ class TestImportPurity:
 
     def test_layout_math(self):
         _assert_import_pure("from periodica.layout_math.element_table import TablePositioner")
-
-    def test_simulation_schema(self):
-        _assert_import_pure("from periodica.utils.simulation_schema import QuarkSimulationData")

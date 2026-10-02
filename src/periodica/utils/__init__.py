@@ -1,30 +1,5 @@
 """Utility functions for calculations and helpers."""
 
-from periodica.utils.physics_calculator import (
-    PhysicsConstants,
-    AtomCalculator,
-    SubatomicCalculator,
-    MoleculeCalculator
-)
-
-# Simulation schema for data-driven physics
-from periodica.utils.simulation_schema import (
-    # Enums
-    ParticleType, SpinType, LatticeType,
-    # Constants
-    SimulationConstants,
-    # Base dataclasses
-    Position3D, Momentum3D, QuantumState, FormFactors,
-    # Particle dataclasses
-    QuarkSimulationData, HadronSimulationData, AtomSimulationData,
-    MoleculeSimulationData, AlloySimulationData,
-    # Propagation functions
-    propagate_quark_to_hadron, propagate_hadrons_to_atom,
-    propagate_atoms_to_molecule, propagate_elements_to_alloy,
-    # Utility converters
-    dict_to_quark, dict_to_atom,
-)
-
 # Pure Python math utilities (no external dependencies)
 from periodica.utils.pure_math import (
     factorial,
@@ -76,10 +51,6 @@ from periodica.utils.backend_manager import (
 )
 
 __all__ = [
-    'PhysicsConstants',
-    'AtomCalculator',
-    'SubatomicCalculator',
-    'MoleculeCalculator',
     # pure_math exports
     'factorial', 'double_factorial', 'genlaguerre', 'lpmv', 'GeneralizedLaguerre',
     'spherical_harmonic', 'spherical_harmonic_real', 'spherical_harmonic_prefactor',
@@ -99,13 +70,4 @@ __all__ = [
     # Backend manager
     'BackendManager', 'use_pure_python', 'use_libraries',
     'get_backend_status', 'validate_backends',
-    # Simulation schema exports
-    'ParticleType', 'SpinType', 'LatticeType',
-    'SimulationConstants',
-    'Position3D', 'Momentum3D', 'QuantumState', 'FormFactors',
-    'QuarkSimulationData', 'HadronSimulationData', 'AtomSimulationData',
-    'MoleculeSimulationData', 'AlloySimulationData',
-    'propagate_quark_to_hadron', 'propagate_hadrons_to_atom',
-    'propagate_atoms_to_molecule', 'propagate_elements_to_alloy',
-    'dict_to_quark', 'dict_to_atom',
 ]
