@@ -18,7 +18,14 @@ crate-type = ["cdylib", "lib"]
 
 [features]
 default = []
-python = ["dep:pyo3"]
+# The PyO3 bindings (`src/pyfacade/`). Links libpython, so
+# `cargo test -p periodica_core --features python` builds a test binary that
+# can initialise an interpreter and run the binding tests.
+python = ["dep:pyo3", "dep:numpy"]
+# What the wheel is built with ([tool.maturin] in pyproject.toml): the bindings
+# plus `pyo3/extension-module`, which leaves libpython to the host interpreter.
+# Never use it for `cargo test` -- the test binary cannot link on Linux/macOS.
+extension-module = ["python", "pyo3/extension-module"]
 
 [dependencies]
 periodica-mat.workspace = true
@@ -37,6 +44,8 @@ nalgebra.workspace = true
 rand.workspace = true
 sha1.workspace = true
 pyo3 = { workspace = true, optional = true }
+# Zero-copy ndarray <-> numpy at the binding boundary.
+numpy = { workspace = true, optional = true }
 
 [dev-dependencies]
 tempfile.workspace = true

@@ -79,7 +79,10 @@ rand = { version = "0.8", features = ["small_rng"] }
 sha1 = "0.10"
 nalgebra = "0.33"
 ndarray = "0.16"
-pyo3 = { version = "0.22", features = ["extension-module"] }
+# No `extension-module` here: that feature stops pyo3 linking libpython, which
+# is right for the wheel and wrong for a test binary. `periodica_core` turns it
+# on through its own `extension-module` feature, which maturin enables.
+pyo3 = "0.22"
 numpy = "0.22"
 
 # --- internal -------------------------------------------------------------

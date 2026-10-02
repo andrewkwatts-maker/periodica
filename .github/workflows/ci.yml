@@ -20,6 +20,12 @@ jobs:
         with:
           components: clippy, rustfmt
 
+      # pyo3's build script needs an interpreter for every build that enables
+      # the `python` feature, and the binding tests link its libpython.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - uses: Swatinem/rust-cache@v2
 
       - name: Format check
@@ -37,14 +43,24 @@ jobs:
         run: cargo clippy --workspace --all-targets
 
       # `cargo test` builds default features only, so a feature-gated module
-      # (notably `pyfacade.rs`, behind `python`) can break without any test
-      # failing. `check` compiles every feature without needing to link
-      # against libpython, which `extension-module` cannot do standalone.
+      # (notably `pyfacade/`, behind `python`) can break without any test
+      # failing. `check` compiles every feature, including `extension-module`,
+      # without linking -- a test binary built with `extension-module` cannot
+      # link libpython at all.
       - name: Check all features compile
         run: cargo check --workspace --all-features
 
       - name: Test
         run: cargo test --workspace --verbose
+
+      # The `python` feature (bindings without `extension-module`) links
+      # libpython, so the `#[cfg(test)]` tests inside `pyfacade/` can build an
+      # interpreter and run. setup-python's interpreter is a shared build; point
+      # the loader at its lib directory explicitly.
+      - name: Test the PyO3 bindings
+        env:
+          LD_LIBRARY_PATH: ${{ env.pythonLocation }}/lib
+        run: cargo test -p periodica_core --features python --verbose
 
   python:
     name: Python ${{ matrix.python-version }}

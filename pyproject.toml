@@ -91,15 +91,17 @@ test = [
 ]
 docs = ["pdoc>=14.0.0"]
 
-# Ã¢â€â‚¬Ã¢â€â‚¬ Optional Rust acceleration (maturin) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
-# Configuration is loaded only when maturin is the active build backend
-# (``pip install periodica[rust]`` or ``maturin develop --features python``).
-# The default setuptools build ignores this section. Mirrors metaphysica's
-# pattern for a unified ``rust = ["maturin"]`` opt-in across our PyPI libs.
+# -- Rust extension (maturin) ------------------------------------------------
+# maturin is the build backend, so every install -- wheel, sdist or
+# `pip install -e .` -- compiles `periodica._periodica_core` with the features
+# below. `extension-module` is the wheel feature set: the PyO3 bindings plus
+# `pyo3/extension-module`, which leaves libpython to the host interpreter.
+# `cargo test -p periodica_core --features python` uses the bindings without
+# it so the test binary can link libpython (see rust/periodica_core/Cargo.toml).
 [tool.maturin]
 manifest-path = "rust/periodica_core/Cargo.toml"
 module-name = "periodica._periodica_core"
-features = ["python"]
+features = ["extension-module"]
 python-source = "src"
 
 [tool.pytest.ini_options]

@@ -7,7 +7,7 @@
 #!
 #!For inquiries, please contact AndrewKWatts@Gmail.com
 
-# Rust impl: rust/periodica_core/src/pyfacade.rs
+# Rust impl: rust/periodica_core/src/pyfacade/
 """Route public API functions to the Rust backend, and prove that it happened.
 
 Why this module was rewritten
@@ -135,7 +135,7 @@ def _check_version_handshake() -> Optional[str]:
         return (
             f"extension version {rust_version!r} does not match the Python "
             f"package version {py_version!r}; rebuild with "
-            f"`maturin develop --features python`"
+            f"`maturin develop` (features from pyproject.toml)"
         )
     return None
 
@@ -145,7 +145,7 @@ if _MODE == BackendMode.RUST and not _HAS_RUST:
     raise RustBackendUnavailable(
         "PERIODICA_BACKEND=rust but the compiled extension "
         "`periodica._periodica_core` could not be imported "
-        f"({_IMPORT_ERROR}). Build it with `maturin develop --features python`, "
+        f"({_IMPORT_ERROR}). Build it with `maturin develop` (features from pyproject.toml), "
         "or install with `pip install periodica[rust]`."
     )
 
@@ -203,7 +203,7 @@ def assert_rust_backend() -> None:
     if not _HAS_RUST or _native is None:
         raise RustBackendUnavailable(
             "the compiled extension `periodica._periodica_core` is not available "
-            f"({_IMPORT_ERROR}). Build it with `maturin develop --features python`, "
+            f"({_IMPORT_ERROR}). Build it with `maturin develop` (features from pyproject.toml), "
             "or install with `pip install periodica[rust]`."
         )
     mismatch = _check_version_handshake()

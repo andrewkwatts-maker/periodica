@@ -40,13 +40,50 @@ build_rust() {
     cargo clippy --workspace --all-targets
 
     # cargo test builds default features only, so feature-gated modules such
-    # as pyfacade.rs (behind `python`) can break unnoticed. `check` compiles
-    # them all without needing to link libpython.
+    # as pyfacade/ (behind `python`) can break unnoticed. `check` compiles
+    # them all, including `extension-module`, without linking.
     say "Rust: all features compile"
     cargo check --workspace --all-features
 
     say "Rust: tests"
     cargo test --workspace
+
+    say "Rust: PyO3 binding tests (python feature, links libpython)"
+    # Subshell: the loader variables must not leak into the Python steps.
+    ( pyo3_test_env && cargo test -p periodica_core --features python )
+}
+
+# The binding tests embed an interpreter, so the test binary must find
+# libpython at run time. On Linux/macOS the shared library sits in
+# `<base_prefix>/lib`. Under Git Bash on Windows it is python3X.dll in the base
+# prefix; a Microsoft Store Python keeps that under C:\Program Files\WindowsApps,
+# from which an unpackaged exe may not load a DLL (STATUS_ACCESS_DENIED,
+# 0xc0000022), so the DLLs are copied to target/pydll and PYTHONHOME points the
+# embedded interpreter back at the stdlib.
+pyo3_test_env() {
+    local base
+    base="$(python -c 'import sys; print(sys.base_prefix)')"
+    case "$(uname -s)" in
+        MINGW*|MSYS*|CYGWIN*)
+            local dlldir
+            dlldir="$(cygpath -u "$base")"
+            case "$base" in
+                *WindowsApps*)
+                    mkdir -p target/pydll
+                    cp "$dlldir"/python3*.dll target/pydll/
+                    dlldir="$PWD/target/pydll"
+                    export PYTHONHOME="$base"
+                    ;;
+            esac
+            export PATH="$dlldir:$PATH"
+            ;;
+        Darwin)
+            export DYLD_LIBRARY_PATH="$base/lib${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
+            ;;
+        *)
+            export LD_LIBRARY_PATH="$base/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+            ;;
+    esac
 }
 
 build_py() {
@@ -88,7 +125,7 @@ case "$MODE" in
     release)
         say "Release wheel"
         cargo test --workspace --release
-        python -m maturin build --release --features python --out dist
+        python -m maturin build --release --out dist  # features: [tool.maturin]
         echo "[build] wheel written to dist/"
         ;;
     all)
