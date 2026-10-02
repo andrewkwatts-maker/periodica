@@ -5,12 +5,11 @@ Uses Hume-Rothery rules to predict solid solubility and
 eutectic behavior for binary alloy systems.
 """
 
+import logging
 import math
 from typing import Dict, Optional, Tuple
 
-from periodica.utils.logger import get_logger
-
-logger = get_logger('phase_diagram')
+logger = logging.getLogger(__name__)
 
 # Atomic radii (pm) for Hume-Rothery size factor check
 _ATOMIC_RADII = {

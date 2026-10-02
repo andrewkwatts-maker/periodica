@@ -77,26 +77,3 @@ class TestPositionCalculator:
         assert hasattr(calc, 'get_circular_position')
         assert hasattr(calc, 'get_spiral_position')
         assert hasattr(calc, 'get_serpentine_position')
-
-
-# ==================== Logger Tests ====================
-
-class TestLogger:
-    """Test the centralized logger utility."""
-
-    def test_get_logger(self):
-        from periodica.utils.logger import get_logger
-        log = get_logger('test')
-        assert log is not None
-        assert log.name == 'periodica.test'
-
-    def test_logger_has_handlers(self):
-        from periodica.utils.logger import get_logger
-        log = get_logger('test.handlers')
-        assert len(log.handlers) > 0
-
-    def test_logger_same_instance(self):
-        from periodica.utils.logger import get_logger
-        log1 = get_logger('test.same')
-        log2 = get_logger('test.same')
-        assert log1 is log2

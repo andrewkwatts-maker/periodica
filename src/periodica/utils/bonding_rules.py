@@ -5,11 +5,10 @@ Encodes valence/octet rules, electronegativity-based bond classification,
 and common bonding patterns for combinatorial molecule generation.
 """
 
+import logging
 from typing import Dict, List, Optional, Tuple
 
-from periodica.utils.logger import get_logger
-
-logger = get_logger('bonding_rules')
+logger = logging.getLogger(__name__)
 
 
 # Standard valence electrons by group for main-group elements
