@@ -13,6 +13,9 @@
   "melting_point": 1768,
   "boiling_point": 3200,
   "density": 8.9,
+  "LatticeProperties": {
+    "PrimaryStructure": "HCP"
+  },
   "electron_affinity": 63.7,
   "valence_electrons": 9,
   "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁷ 4s²",

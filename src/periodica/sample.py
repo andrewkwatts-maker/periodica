@@ -44,7 +44,12 @@ from typing import Any, Callable, Dict, Mapping, Optional, Sequence, Tuple, Unio
 
 # Rust impl: rust/periodica_core/src/sample.rs
 from periodica.get import Get, UnknownName
-from periodica._dispatch import _HAS_RUST, _native
+from periodica._dispatch import call_rust, declare_accelerated
+
+# Declared at import so `periodica.backend_report()` is accurate before any
+# call happens, rather than filling in lazily as functions are first used.
+declare_accelerated("sample", "py_sample")
+declare_accelerated("data_sheet", "py_data_sheet")
 
 
 Point = Tuple[float, float, float]
@@ -183,7 +188,6 @@ def _backbone_path(field: dict, prop: str, at, scale_m, entry) -> Any:
         cached = entry.get("_BackboneCache")
         if cached is None:
             try:
-                from periodica.folding import build_backbone_from_entry
                 # Use the entry dict already in hand.
                 from periodica.folding import build_backbone, extract_phi_psi
                 seq = entry.get("sequence") or "".join(
@@ -283,21 +287,27 @@ def data_sheet(name_or_entry: Union[str, dict]) -> dict:
     Accepts either a name (resolved via Get) or a pre-fetched entry dict.
     Raises UnknownName when the name doesn't resolve.
     """
-    if isinstance(name_or_entry, str) and _HAS_RUST and _native is not None:
-        fn = getattr(_native, "py_data_sheet", None)
-        if fn is not None:
-            try:
-                return fn(name_or_entry)
-            except Exception:
-                pass  # Fall through to Python path below.
     if isinstance(name_or_entry, str):
-        entry = Get(name_or_entry)
-    elif isinstance(name_or_entry, dict):
-        entry = name_or_entry
-    else:
-        raise TypeError(
-            f"data_sheet: expected str or dict, got {type(name_or_entry).__name__}"
+        # Only the by-name form has a Rust path; a pre-fetched dict does not.
+        # A KeyError means the Rust registry does not know this name, which is
+        # a legitimate decline -- any other exception is a bug and propagates
+        # rather than being silently absorbed.
+        return call_rust(
+            "py_data_sheet",
+            name_or_entry,
+            py_name="data_sheet",
+            declines=(KeyError,),
+            fallback=lambda: _data_sheet_python(Get(name_or_entry)),
         )
+    if isinstance(name_or_entry, dict):
+        return _data_sheet_python(name_or_entry)
+    raise TypeError(
+        f"data_sheet: expected str or dict, got {type(name_or_entry).__name__}"
+    )
+
+
+def _data_sheet_python(entry: dict) -> dict:
+    """Pure-Python data_sheet body, shared by the fallback and the dict form."""
     return dict(_props_of(entry))
 
 
@@ -318,24 +328,43 @@ def sample(
     For homogeneous materials with no `scale_dependent` block, `at` and
     `scale_m` are ignored - the bulk value is returned.
     """
-    # Rust fast path for string-name + scalar properties.
-    if isinstance(name_or_entry, str) and _HAS_RUST and _native is not None:
-        fn = getattr(_native, "py_sample", None)
-        if fn is not None:
-            at_tuple = tuple(float(c) for c in at) if at is not None else None
-            try:
-                return fn(name_or_entry, prop, at_tuple, scale_m)
-            except Exception:
-                pass  # Fall through to Python path below.
+    # Rust fast path for the string-name form. A pre-fetched dict has no Rust
+    # path. `py_sample` returns None for a missing property (as Python does),
+    # and declines with KeyError (name unknown to the Rust registry, e.g. one
+    # Saved from Python) or NotImplementedError (a non-numeric value,
+    # backbone_path at a 3D point, a field model registered from Python).
+    # Anything else it raises is a Rust bug and must not be hidden.
     if isinstance(name_or_entry, str):
-        entry = Get(name_or_entry)
-    elif isinstance(name_or_entry, dict):
-        entry = name_or_entry
-    else:
-        raise TypeError(
-            f"sample: expected str or dict, got {type(name_or_entry).__name__}"
+        at_tuple = tuple(float(c) for c in at) if at is not None else None
+        return call_rust(
+            "py_sample",
+            name_or_entry,
+            prop,
+            at_tuple,
+            scale_m,
+            py_name="sample",
+            declines=(KeyError, NotImplementedError),
+            fallback=lambda: _sample_python(Get(name_or_entry), prop, at, scale_m),
         )
+    if isinstance(name_or_entry, dict):
+        return _sample_python(name_or_entry, prop, at, scale_m)
+    raise TypeError(
+        f"sample: expected str or dict, got {type(name_or_entry).__name__}"
+    )
 
+
+def _sample_python(
+    entry: dict,
+    prop: str,
+    at: Optional[Sequence[float]] = None,
+    scale_m: Optional[float] = None,
+) -> Any:
+    """Pure-Python sample body.
+
+    Kept as a named function so the Rust dispatch above has something explicit
+    to fall back to, and so the parity suite can call the two implementations
+    side by side.
+    """
     field = entry.get("Field")
     if not isinstance(field, dict):
         field = {"model": "homogeneous"}

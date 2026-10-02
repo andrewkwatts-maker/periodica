@@ -13,7 +13,21 @@ from periodica.utils.cascade_engine import (
 
 @pytest.fixture
 def engine():
+    """Engine over the shipped data tree. Read-only use only."""
     return CascadeRegenerationEngine()
+
+
+@pytest.fixture
+def scratch_engine(tmp_path):
+    """Engine whose output goes to a temporary data root.
+
+    Every regeneration test must use this one. Regenerating against the
+    default root rewrites the shipped datasheets under data/active -- fresh
+    timestamps on every alloy and amino acid, re-randomised phi/psi on every
+    protein -- so each test run dirtied the git tree, and two concurrent runs
+    interleaved their writes and left invalid JSON behind.
+    """
+    return CascadeRegenerationEngine(data_root=str(tmp_path))
 
 
 class TestDerivationOrder:
@@ -134,25 +148,34 @@ class TestRegenerateFrom:
         with pytest.raises(ValueError):
             engine.regenerate_from('nonexistent')
 
-    def test_regenerate_from_returns_dict(self, engine):
-        # Regenerate just amino acids (lightweight)
-        results = engine.regenerate_from('amino_acids')
+    def test_regenerate_from_returns_dict(self, scratch_engine, tmp_path):
+        # Regenerate from amino acids (lightweight) and everything downstream.
+        results = scratch_engine.regenerate_from('amino_acids')
         assert isinstance(results, dict)
         assert 'amino_acids' in results
+        # Output lands under the engine's data root, not the shipped tree.
+        assert results['amino_acids'] > 0
+        assert list((tmp_path / 'amino_acids').glob('*.json'))
+        assert list((tmp_path / 'proteins').glob('*.json'))
 
-    def test_regenerate_from_molecules(self, engine):
+    def test_regenerate_from_molecules(self, scratch_engine, tmp_path):
         # Test that regenerating from molecules includes downstream
-        results = engine.regenerate_from('molecules')
+        results = scratch_engine.regenerate_from('molecules')
         assert 'molecules' in results
+        assert 'alloys' in results
+        # Molecule regeneration used to fail on every call (a str passed where
+        # a Path was required) and report 0, hidden by a broad except.
+        assert results['molecules'] > 0
+        assert list((tmp_path / 'molecules').glob('*.json'))
 
 
 class TestProgressCallback:
-    def test_callback_called(self, engine):
+    def test_callback_called(self, scratch_engine):
         calls = []
         def cb(pct, msg):
             calls.append((pct, msg))
         # Just regenerate amino acids to keep it fast
-        engine.regenerate_all(
+        scratch_engine.regenerate_all(
             categories=['amino_acids'],
             progress_callback=cb,
         )

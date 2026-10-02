@@ -74,7 +74,10 @@ pub enum RamachandranRegion {
 /// Reads `"residues"` array from the entry (loaded via `data_loader::DATA`),
 /// extracts per-residue phi/psi in degrees, then calls `build_backbone`.
 pub fn build_backbone_from_entry(entry_name: &str) -> Result<Vec<BackboneAtom>> {
-    assert!(!entry_name.is_empty(), "build_backbone_from_entry: name must be non-empty");
+    assert!(
+        !entry_name.is_empty(),
+        "build_backbone_from_entry: name must be non-empty"
+    );
     let hub = crate::data_loader::DATA.read();
     let entry = {
         let mut found = None;
@@ -91,7 +94,9 @@ pub fn build_backbone_from_entry(entry_name: &str) -> Result<Vec<BackboneAtom>> 
         .get("residues")
         .or_else(|| entry.get("Residues"))
         .and_then(|v| v.as_array())
-        .ok_or_else(|| anyhow!("build_backbone_from_entry: entry '{entry_name}' has no 'residues' array"))?;
+        .ok_or_else(|| {
+            anyhow!("build_backbone_from_entry: entry '{entry_name}' has no 'residues' array")
+        })?;
 
     if residues.is_empty() {
         return Ok(Vec::new());
@@ -99,7 +104,14 @@ pub fn build_backbone_from_entry(entry_name: &str) -> Result<Vec<BackboneAtom>> 
 
     let sequence: String = residues
         .iter()
-        .map(|r| r.get("residue").and_then(|v| v.as_str()).unwrap_or("X").chars().next().unwrap_or('X'))
+        .map(|r| {
+            r.get("residue")
+                .and_then(|v| v.as_str())
+                .unwrap_or("X")
+                .chars()
+                .next()
+                .unwrap_or('X')
+        })
         .collect();
 
     let phi_psi: Vec<(f64, f64)> = residues
@@ -119,7 +131,10 @@ pub fn build_backbone_from_entry(entry_name: &str) -> Result<Vec<BackboneAtom>> 
 ///
 /// `phi_psi` is in **degrees** (matches folding_rules.json convention).
 pub fn build_backbone(sequence: &str, phi_psi: &[(f64, f64)]) -> Result<Vec<BackboneAtom>> {
-    assert!(!sequence.is_empty(), "build_backbone: sequence must be non-empty");
+    assert!(
+        !sequence.is_empty(),
+        "build_backbone: sequence must be non-empty"
+    );
     let n = sequence.len().min(phi_psi.len());
     if n == 0 {
         return Ok(Vec::new());
@@ -183,9 +198,24 @@ pub fn build_backbone(sequence: &str, phi_psi: &[(f64, f64)]) -> Result<Vec<Back
     let mut atoms = Vec::with_capacity(n * 3);
     for i in 0..n {
         let res = chars[i].to_string();
-        atoms.push(BackboneAtom { residue_index: i as u32, residue_name: res.clone(), atom_name: "N".into(),  position: n_coords[i]  });
-        atoms.push(BackboneAtom { residue_index: i as u32, residue_name: res.clone(), atom_name: "CA".into(), position: ca_coords[i] });
-        atoms.push(BackboneAtom { residue_index: i as u32, residue_name: res.clone(), atom_name: "C".into(),  position: c_coords[i]  });
+        atoms.push(BackboneAtom {
+            residue_index: i as u32,
+            residue_name: res.clone(),
+            atom_name: "N".into(),
+            position: n_coords[i],
+        });
+        atoms.push(BackboneAtom {
+            residue_index: i as u32,
+            residue_name: res.clone(),
+            atom_name: "CA".into(),
+            position: ca_coords[i],
+        });
+        atoms.push(BackboneAtom {
+            residue_index: i as u32,
+            residue_name: res.clone(),
+            atom_name: "C".into(),
+            position: c_coords[i],
+        });
     }
     Ok(atoms)
 }
@@ -194,14 +224,29 @@ pub fn build_backbone(sequence: &str, phi_psi: &[(f64, f64)]) -> Result<Vec<Back
 /// `pair.phi` and `pair.psi` are in **degrees**.
 pub fn ramachandran_region(pair: PhiPsi) -> RamachandranRegion {
     let regions: &[(&str, (f64, f64, f64, f64), RamachandranRegion)] = &[
-        ("alpha_helix",     REGION_ALPHA_HELIX,     RamachandranRegion::AlphaHelix),
-        ("beta_sheet",      REGION_BETA_SHEET,      RamachandranRegion::BetaSheet),
-        ("left_alpha",      REGION_LEFT_ALPHA,      RamachandranRegion::LeftHandedAlpha),
-        ("polyproline_ii",  REGION_POLYPROLINE_II,  RamachandranRegion::PolyprolineII),
+        (
+            "alpha_helix",
+            REGION_ALPHA_HELIX,
+            RamachandranRegion::AlphaHelix,
+        ),
+        (
+            "beta_sheet",
+            REGION_BETA_SHEET,
+            RamachandranRegion::BetaSheet,
+        ),
+        (
+            "left_alpha",
+            REGION_LEFT_ALPHA,
+            RamachandranRegion::LeftHandedAlpha,
+        ),
+        (
+            "polyproline_ii",
+            REGION_POLYPROLINE_II,
+            RamachandranRegion::PolyprolineII,
+        ),
     ];
     for (_, (phi_lo, phi_hi, psi_lo, psi_hi), region) in regions {
-        if pair.phi >= *phi_lo && pair.phi <= *phi_hi
-            && pair.psi >= *psi_lo && pair.psi <= *psi_hi
+        if pair.phi >= *phi_lo && pair.phi <= *phi_hi && pair.psi >= *psi_lo && pair.psi <= *psi_hi
         {
             return *region;
         }
@@ -222,7 +267,11 @@ pub fn kabsch_rmsd(a: &Array2<f64>, b: &Array2<f64>) -> Result<f64> {
     assert!(a.ncols() == 3, "kabsch_rmsd: a must be (N, 3)");
     assert!(b.ncols() == 3, "kabsch_rmsd: b must be (N, 3)");
     if a.shape() != b.shape() {
-        return Err(anyhow!("kabsch_rmsd: shape mismatch ({:?} vs {:?})", a.shape(), b.shape()));
+        return Err(anyhow!(
+            "kabsch_rmsd: shape mismatch ({:?} vs {:?})",
+            a.shape(),
+            b.shape()
+        ));
     }
     let n = a.nrows();
     if n == 0 {
@@ -242,8 +291,12 @@ pub fn kabsch_rmsd(a: &Array2<f64>, b: &Array2<f64>) -> Result<f64> {
 
     // SVD via nalgebra
     let svd = h.svd(true, true);
-    let u = svd.u.ok_or_else(|| anyhow!("kabsch_rmsd: SVD did not produce U"))?;
-    let vt = svd.v_t.ok_or_else(|| anyhow!("kabsch_rmsd: SVD did not produce V^T"))?;
+    let u = svd
+        .u
+        .ok_or_else(|| anyhow!("kabsch_rmsd: SVD did not produce U"))?;
+    let vt = svd
+        .v_t
+        .ok_or_else(|| anyhow!("kabsch_rmsd: SVD did not produce V^T"))?;
 
     // Determinant correction to prevent improper rotation (reflection)
     let det = (vt.transpose() * u.transpose()).determinant();
@@ -270,7 +323,9 @@ pub fn translation_only_rmsd(a: &Array2<f64>, b: &Array2<f64>) -> Result<f64> {
     assert!(a.ncols() == 3, "translation_only_rmsd: a must be (N, 3)");
     if a.shape() != b.shape() {
         return Err(anyhow!(
-            "protein::translation_only_rmsd: shape mismatch ({:?} vs {:?})", a.shape(), b.shape()
+            "protein::translation_only_rmsd: shape mismatch ({:?} vs {:?})",
+            a.shape(),
+            b.shape()
         ));
     }
     if a.nrows() == 0 {
@@ -300,10 +355,17 @@ pub fn nerf_place(
     bond_angle_rad: f64,
     dihedral_rad: f64,
 ) -> [f64; 3] {
-    assert!(bond_length_a > 0.0, "nerf_place: bond_length must be positive");
+    assert!(
+        bond_length_a > 0.0,
+        "nerf_place: bond_length must be positive"
+    );
     let (sa, ca) = bond_angle_rad.sin_cos();
     let (sd, cd) = dihedral_rad.sin_cos();
-    let d2 = [bond_length_a * ca, bond_length_a * sa * cd, bond_length_a * sa * sd];
+    let d2 = [
+        bond_length_a * ca,
+        bond_length_a * sa * cd,
+        bond_length_a * sa * sd,
+    ];
     let bc = sub3(c, b);
     let ab = sub3(b, a);
     let bc_n = normalize3(bc);
@@ -332,7 +394,15 @@ fn centroid_row(m: &Array2<f64>) -> [f64; 3] {
 }
 
 fn center_rows(m: &Array2<f64>, centroid: &[f64; 3]) -> Vec<[f64; 3]> {
-    (0..m.nrows()).map(|r| [m[[r, 0]] - centroid[0], m[[r, 1]] - centroid[1], m[[r, 2]] - centroid[2]]).collect()
+    (0..m.nrows())
+        .map(|r| {
+            [
+                m[[r, 0]] - centroid[0],
+                m[[r, 1]] - centroid[1],
+                m[[r, 2]] - centroid[2],
+            ]
+        })
+        .collect()
 }
 
 fn covariance_3x3(a_c: &[[f64; 3]], b_c: &[[f64; 3]]) -> Matrix3<f64> {
@@ -345,27 +415,41 @@ fn covariance_3x3(a_c: &[[f64; 3]], b_c: &[[f64; 3]]) -> Matrix3<f64> {
             }
         }
     }
-    Matrix3::new(h[0][0], h[0][1], h[0][2], h[1][0], h[1][1], h[1][2], h[2][0], h[2][1], h[2][2])
+    Matrix3::new(
+        h[0][0], h[0][1], h[0][2], h[1][0], h[1][1], h[1][2], h[2][0], h[2][1], h[2][2],
+    )
 }
 
 fn mean_row(m: &Array2<f64>) -> Array1<f64> {
     let n = m.nrows() as f64;
     let mut s = Array1::<f64>::zeros(3);
     for r in 0..m.nrows() {
-        for c in 0..3 { s[c] += m[[r, c]]; }
+        for c in 0..3 {
+            s[c] += m[[r, c]];
+        }
     }
     s / n
 }
 
-fn sub3(a: [f64; 3], b: [f64; 3]) -> [f64; 3] { [a[0]-b[0], a[1]-b[1], a[2]-b[2]] }
+fn sub3(a: [f64; 3], b: [f64; 3]) -> [f64; 3] {
+    [a[0] - b[0], a[1] - b[1], a[2] - b[2]]
+}
 
 fn cross3(a: [f64; 3], b: [f64; 3]) -> [f64; 3] {
-    [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]
+    [
+        a[1] * b[2] - a[2] * b[1],
+        a[2] * b[0] - a[0] * b[2],
+        a[0] * b[1] - a[1] * b[0],
+    ]
 }
 
 fn normalize3(v: [f64; 3]) -> [f64; 3] {
-    let n = (v[0]*v[0]+v[1]*v[1]+v[2]*v[2]).sqrt();
-    if n == 0.0 { [0.0,0.0,0.0] } else { [v[0]/n, v[1]/n, v[2]/n] }
+    let n = (v[0] * v[0] + v[1] * v[1] + v[2] * v[2]).sqrt();
+    if n == 0.0 {
+        [0.0, 0.0, 0.0]
+    } else {
+        [v[0] / n, v[1] / n, v[2] / n]
+    }
 }
 
 // ─── Tests ─────────────────────────────────────────────────────────────────
@@ -381,31 +465,45 @@ mod tests {
         let b = [1.0, 0.0, 0.0];
         let c = [1.5, 1.0, 0.0];
         let placed = nerf_place(a, b, c, 1.5, std::f64::consts::FRAC_PI_2, 0.0);
-        let dx = placed[0]-c[0]; let dy = placed[1]-c[1]; let dz = placed[2]-c[2];
-        assert!((( dx*dx+dy*dy+dz*dz).sqrt()-1.5).abs()<1e-9);
+        let dx = placed[0] - c[0];
+        let dy = placed[1] - c[1];
+        let dz = placed[2] - c[2];
+        assert!(((dx * dx + dy * dy + dz * dz).sqrt() - 1.5).abs() < 1e-9);
     }
 
     #[test]
     fn ramachandran_alpha_helix() {
-        let r = ramachandran_region(PhiPsi { phi: -60.0, psi: -40.0 });
+        let r = ramachandran_region(PhiPsi {
+            phi: -60.0,
+            psi: -40.0,
+        });
         assert_eq!(r, RamachandranRegion::AlphaHelix);
     }
 
     #[test]
     fn ramachandran_beta_sheet() {
-        let r = ramachandran_region(PhiPsi { phi: -120.0, psi: 130.0 });
+        let r = ramachandran_region(PhiPsi {
+            phi: -120.0,
+            psi: 130.0,
+        });
         assert_eq!(r, RamachandranRegion::BetaSheet);
     }
 
     #[test]
     fn ramachandran_left_alpha() {
-        let r = ramachandran_region(PhiPsi { phi: 60.0, psi: 45.0 });
+        let r = ramachandran_region(PhiPsi {
+            phi: 60.0,
+            psi: 45.0,
+        });
         assert_eq!(r, RamachandranRegion::LeftHandedAlpha);
     }
 
     #[test]
     fn ramachandran_polyproline_ii() {
-        let r = ramachandran_region(PhiPsi { phi: -60.0, psi: 140.0 });
+        let r = ramachandran_region(PhiPsi {
+            phi: -60.0,
+            psi: 140.0,
+        });
         assert_eq!(r, RamachandranRegion::PolyprolineII);
     }
 
@@ -417,29 +515,32 @@ mod tests {
 
     #[test]
     fn ramachandran_in_allowed_alpha() {
-        assert!(ramachandran_in_allowed(PhiPsi { phi: -60.0, psi: -40.0 }));
+        assert!(ramachandran_in_allowed(PhiPsi {
+            phi: -60.0,
+            psi: -40.0
+        }));
         assert!(!ramachandran_in_allowed(PhiPsi { phi: 0.0, psi: 0.0 }));
     }
 
     #[test]
     fn kabsch_rmsd_identity_is_zero() {
-        let a = array![[0.0,0.0,0.0],[1.0,0.0,0.0],[0.0,1.0,0.0]];
+        let a = array![[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0]];
         let r = kabsch_rmsd(&a, &a.clone()).unwrap();
         assert!(r < 1e-10, "got {r}");
     }
 
     #[test]
     fn kabsch_rmsd_translation_invariant() {
-        let a = array![[0.0,0.0,0.0],[1.0,0.0,0.0],[0.0,1.0,0.0]];
-        let b = array![[5.0,5.0,5.0],[6.0,5.0,5.0],[5.0,6.0,5.0]];
+        let a = array![[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0]];
+        let b = array![[5.0, 5.0, 5.0], [6.0, 5.0, 5.0], [5.0, 6.0, 5.0]];
         let r = kabsch_rmsd(&a, &b).unwrap();
         assert!(r < 1e-10, "got {r}");
     }
 
     #[test]
     fn kabsch_rmsd_shape_mismatch_errors() {
-        let a = array![[0.0,0.0,0.0]];
-        let b = array![[0.0,0.0,0.0],[1.0,0.0,0.0]];
+        let a = array![[0.0, 0.0, 0.0]];
+        let b = array![[0.0, 0.0, 0.0], [1.0, 0.0, 0.0]];
         assert!(kabsch_rmsd(&a, &b).is_err());
     }
 
@@ -453,18 +554,24 @@ mod tests {
     fn build_backbone_five_residues() {
         let seq = "ACDEF";
         let phi_psi: Vec<(f64, f64)> = vec![
-            (-60.0, -40.0), (-120.0, 130.0), (-60.0, -40.0), (-60.0, -40.0), (-60.0, -40.0)
+            (-60.0, -40.0),
+            (-120.0, 130.0),
+            (-60.0, -40.0),
+            (-60.0, -40.0),
+            (-60.0, -40.0),
         ];
         let atoms = build_backbone(seq, &phi_psi).unwrap();
         // 5 residues × 3 atoms = 15
         assert_eq!(atoms.len(), 15);
         // All positions finite
-        for a in &atoms { assert!(a.position.iter().all(|x| x.is_finite())); }
+        for a in &atoms {
+            assert!(a.position.iter().all(|x| x.is_finite()));
+        }
     }
 
     #[test]
     fn translation_only_rmsd_zero_for_identity() {
-        let a = array![[0.0,0.0,0.0],[1.0,0.0,0.0],[0.0,1.0,0.0]];
+        let a = array![[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0]];
         let r = translation_only_rmsd(&a, &a.clone()).unwrap();
         assert!(r < 1e-12);
     }

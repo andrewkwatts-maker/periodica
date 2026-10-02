@@ -32,30 +32,47 @@
 // lib.rs does not cascade into the generated code.
 #![allow(unsafe_op_in_unsafe_fn)]
 
-use pyo3::exceptions::{PyKeyError, PyRuntimeError, PyValueError};
+use pyo3::exceptions::{PyKeyError, PyNotImplementedError, PyRuntimeError, PyValueError};
 use pyo3::prelude::*;
 use std::path::Path;
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
-/// Convert a scope string (e.g. `"atom"`, `"Atom"`) to a [`crate::get::Scope`].
-/// Returns `None` for unrecognised strings (caller falls back to no-scope search).
+/// Convert a scope string (e.g. `"atom"`, `"atoms"`, `"Atom"`) to a
+/// [`crate::get::Scope`]. Returns `None` for unrecognised strings, and the
+/// caller falls back to an unscoped search.
+///
+/// Accepts both singular and plural spellings because the Python `Scope` enum
+/// exposes both (`Scope.Atom` and `Scope.Atoms` alike resolve to `"atoms"`),
+/// and because the tier keys themselves are plural.
+///
+/// The `cell` / `cell_component` / `nucleic_acid` / `biomaterial` arms were
+/// removed with the corresponding `Scope` variants: those tiers are not in the
+/// registry that `composition_rules.json` declares, so they could never
+/// resolve. `None` is the honest answer for them.
 fn str_to_scope(s: &str) -> Option<crate::get::Scope> {
     use crate::get::Scope;
-    match s.to_lowercase().trim_end_matches('s') {
-        "subatomic" | "subatom" => Some(Scope::SubAtomic),
-        "atom"                  => Some(Scope::Atom),
-        "molecule"              => Some(Scope::Molecule),
-        "alloy"                 => Some(Scope::Alloy),
-        "ceramic"               => Some(Scope::Ceramic),
-        "composite"             => Some(Scope::Composite),
-        "amino_acid"            => Some(Scope::AminoAcid),
-        "protein"               => Some(Scope::Protein),
-        "cell"                  => Some(Scope::Cell),
-        "cell_component"        => Some(Scope::CellComponent),
-        "nucleic_acid"          => Some(Scope::NucleicAcid),
-        "biomaterial"           => Some(Scope::BiomaterialType),
-        _                       => None,
+    let lowered = s.to_lowercase();
+    // Normalise a trailing plural, but keep `subatomic` intact.
+    let key = match lowered.as_str() {
+        "subatomic" | "subatom" => "subatomic",
+        other => other.trim_end_matches('s'),
+    };
+    match key {
+        "subatomic" => Some(Scope::SubAtomic),
+        "fundamental" => Some(Scope::Fundamental),
+        "atom" => Some(Scope::Atom),
+        "molecule" => Some(Scope::Molecule),
+        "hadrons_gen" | "hadron_gen" | "hadrons_gen_" => Some(Scope::HadronsGen),
+        "isotope" => Some(Scope::Isotope),
+        "ion" => Some(Scope::Ion),
+        "alloy" => Some(Scope::Alloy),
+        "polymer" => Some(Scope::Polymer),
+        "ceramic" => Some(Scope::Ceramic),
+        "composite" => Some(Scope::Composite),
+        "amino_acid" => Some(Scope::AminoAcid),
+        "protein" => Some(Scope::Protein),
+        _ => None,
     }
 }
 
@@ -79,8 +96,7 @@ fn value_to_py(py: Python<'_>, val: &serde_json::Value) -> PyResult<PyObject> {
 fn py_get(py: Python<'_>, spec: &str, scope_str: Option<&str>) -> PyResult<PyObject> {
     assert!(!spec.is_empty(), "py_get: spec must be non-empty");
     let scope = scope_str.and_then(str_to_scope);
-    let val = crate::get::Get(spec, scope)
-        .map_err(|e| PyKeyError::new_err(e.to_string()))?;
+    let val = crate::get::Get(spec, scope).map_err(|e| PyKeyError::new_err(e.to_string()))?;
     value_to_py(py, &val)
 }
 
@@ -90,20 +106,15 @@ fn py_get(py: Python<'_>, spec: &str, scope_str: Option<&str>) -> PyResult<PyObj
 /// `tier_str` is the tier name (e.g. `"alloy"`).
 /// Returns the previous entry dict if one was displaced, else `None`.
 #[pyfunction]
-fn py_save(
-    py: Python<'_>,
-    name: &str,
-    data_json: &str,
-    tier_str: &str,
-) -> PyResult<PyObject> {
+fn py_save(py: Python<'_>, name: &str, data_json: &str, tier_str: &str) -> PyResult<PyObject> {
     assert!(!name.is_empty(), "py_save: name must be non-empty");
     assert!(!tier_str.is_empty(), "py_save: tier_str must be non-empty");
     let data: serde_json::Value = serde_json::from_str(data_json)
         .map_err(|e| PyValueError::new_err(format!("data_json is not valid JSON: {e}")))?;
     let scope = str_to_scope(tier_str)
         .ok_or_else(|| PyValueError::new_err(format!("unknown tier: {tier_str}")))?;
-    let prev = crate::get::Save(name, data, scope)
-        .map_err(|e| PyRuntimeError::new_err(e.to_string()))?;
+    let prev =
+        crate::get::Save(name, data, scope).map_err(|e| PyRuntimeError::new_err(e.to_string()))?;
     match prev {
         Some(v) => value_to_py(py, &v),
         None => Ok(py.None()),
@@ -116,15 +127,55 @@ fn py_save(
 #[pyfunction]
 #[pyo3(signature = (name, property, at=None, scale_m=None))]
 fn py_sample(
+    py: Python<'_>,
     name: &str,
     property: &str,
     at: Option<(f64, f64, f64)>,
     scale_m: Option<f64>,
-) -> PyResult<f64> {
+) -> PyResult<PyObject> {
     assert!(!name.is_empty(), "py_sample: name must be non-empty");
-    assert!(!property.is_empty(), "py_sample: property must be non-empty");
-    crate::sample::sample(name, property, at, scale_m)
-        .map_err(|e| PyKeyError::new_err(e.to_string()))
+    assert!(
+        !property.is_empty(),
+        "py_sample: property must be non-empty"
+    );
+    use crate::sample::SampleError;
+    // Each sampler outcome maps to what Python's `sample()` would do, so the
+    // dispatcher can tell a decline from a bug (see `SampleError`):
+    //   MissingProperty -> None, exactly as Python returns;
+    //   UnknownName     -> KeyError, a decline (e.g. an entry Saved from Python);
+    //   Unsupported     -> NotImplementedError, a decline;
+    //   anything else   -> RuntimeError, a Rust bug, which must propagate.
+    let value = match crate::sample::sample(name, property, at, scale_m) {
+        Ok(v) => v,
+        Err(e) => {
+            return match e.downcast_ref::<SampleError>() {
+                Some(SampleError::MissingProperty(_)) => Ok(py.None()),
+                Some(SampleError::UnknownName { .. }) => Err(PyKeyError::new_err(e.to_string())),
+                Some(SampleError::Unsupported(_)) => {
+                    Err(PyNotImplementedError::new_err(e.to_string()))
+                }
+                None => Err(PyRuntimeError::new_err(format!("{e:#}"))),
+            };
+        }
+    };
+
+    // Return a Python `int` for integral results.
+    //
+    // The Python implementation hands back the raw JSON value, so
+    // `sample("Steel-1018", "Density_kgm3")` is the *int* 7870 there while the
+    // Rust core computes in f64 and would give 7870.0. That difference is
+    // visible in the CLI's output and in any caller that formats the result,
+    // so the boundary restores the integer form.
+    //
+    // Tradeoff: a datasheet that stores `200.0` yields a Python float from the
+    // Python path and an int from this one. Both compare equal, and the
+    // alternative -- threading JSON number types through the whole evaluator
+    // just to preserve a literal's spelling -- is not worth it.
+    if value.fract() == 0.0 && value.abs() < 9.007_199_254_740_992e15 {
+        Ok((value as i64).to_object(py))
+    } else {
+        Ok(value.to_object(py))
+    }
 }
 
 /// Rust-accelerated twin of `periodica.sample.data_sheet`.
@@ -133,8 +184,7 @@ fn py_sample(
 #[pyfunction]
 fn py_data_sheet(py: Python<'_>, name: &str) -> PyResult<PyObject> {
     assert!(!name.is_empty(), "py_data_sheet: name must be non-empty");
-    let val = crate::sample::data_sheet(name)
-        .map_err(|e| PyKeyError::new_err(e.to_string()))?;
+    let val = crate::sample::data_sheet(name).map_err(|e| PyKeyError::new_err(e.to_string()))?;
     value_to_py(py, &val)
 }
 
@@ -157,8 +207,14 @@ fn py_export_glsl(
     include_caustic: bool,
 ) -> PyResult<String> {
     assert!(!name.is_empty(), "py_export_glsl: name must be non-empty");
-    crate::export::export_glsl(name, include_density, include_ior, include_sss, include_caustic)
-        .map_err(|e| PyValueError::new_err(e.to_string()))
+    crate::export::export_glsl(
+        name,
+        include_density,
+        include_ior,
+        include_sss,
+        include_caustic,
+    )
+    .map_err(|e| PyValueError::new_err(e.to_string()))
 }
 
 // ─── protein functions ────────────────────────────────────────────────────────
@@ -173,17 +229,31 @@ fn py_kabsch_rmsd(a: Vec<Vec<f64>>, b: Vec<Vec<f64>>) -> PyResult<f64> {
     }
     let n = a.len();
     if n != b.len() {
-        return Err(pyo3::exceptions::PyValueError::new_err("a and b must have same length"));
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "a and b must have same length",
+        ));
     }
     let mut arr_a = Array2::<f64>::zeros((n, 3));
     let mut arr_b = Array2::<f64>::zeros((n, 3));
     for (i, row) in a.iter().enumerate() {
-        if row.len() < 3 { return Err(pyo3::exceptions::PyValueError::new_err("each row must have 3 elements")); }
-        arr_a[[i, 0]] = row[0]; arr_a[[i, 1]] = row[1]; arr_a[[i, 2]] = row[2];
+        if row.len() < 3 {
+            return Err(pyo3::exceptions::PyValueError::new_err(
+                "each row must have 3 elements",
+            ));
+        }
+        arr_a[[i, 0]] = row[0];
+        arr_a[[i, 1]] = row[1];
+        arr_a[[i, 2]] = row[2];
     }
     for (i, row) in b.iter().enumerate() {
-        if row.len() < 3 { return Err(pyo3::exceptions::PyValueError::new_err("each row must have 3 elements")); }
-        arr_b[[i, 0]] = row[0]; arr_b[[i, 1]] = row[1]; arr_b[[i, 2]] = row[2];
+        if row.len() < 3 {
+            return Err(pyo3::exceptions::PyValueError::new_err(
+                "each row must have 3 elements",
+            ));
+        }
+        arr_b[[i, 0]] = row[0];
+        arr_b[[i, 1]] = row[1];
+        arr_b[[i, 2]] = row[2];
     }
     crate::protein::kabsch_rmsd(&arr_a, &arr_b)
         .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))
@@ -236,12 +306,15 @@ fn py_build_backbone_from_entry(py: Python<'_>, entry_name: &str) -> PyResult<Py
 #[pyfunction]
 fn py_ramachandran_region(phi_deg: f64, psi_deg: f64) -> &'static str {
     use crate::protein::{PhiPsi, RamachandranRegion};
-    match crate::protein::ramachandran_region(PhiPsi { phi: phi_deg, psi: psi_deg }) {
-        RamachandranRegion::AlphaHelix       => "alpha_helix",
-        RamachandranRegion::BetaSheet        => "beta_sheet",
-        RamachandranRegion::LeftHandedAlpha  => "left_alpha",
-        RamachandranRegion::PolyprolineII    => "polyproline_ii",
-        RamachandranRegion::Disallowed       => "other",
+    match crate::protein::ramachandran_region(PhiPsi {
+        phi: phi_deg,
+        psi: psi_deg,
+    }) {
+        RamachandranRegion::AlphaHelix => "alpha_helix",
+        RamachandranRegion::BetaSheet => "beta_sheet",
+        RamachandranRegion::LeftHandedAlpha => "left_alpha",
+        RamachandranRegion::PolyprolineII => "polyproline_ii",
+        RamachandranRegion::Disallowed => "other",
     }
 }
 
@@ -265,35 +338,56 @@ fn py_optimize_alloy(
 ) -> PyResult<PyObject> {
     use crate::alloy::AlloyTarget;
 
-    let rust_targets: Vec<AlloyTarget> = targets.iter().map(|d| {
-        let property: String = d.get_item("property")
-            .ok().flatten()
-            .and_then(|v| v.extract::<String>().ok())
-            .unwrap_or_default();
-        let min_value: Option<f64> = d.get_item("min_value")
-            .ok().flatten()
-            .and_then(|v| v.extract::<f64>().ok());
-        let max_value: Option<f64> = d.get_item("max_value")
-            .ok().flatten()
-            .and_then(|v| v.extract::<f64>().ok());
-        let weight: f64 = d.get_item("weight")
-            .ok().flatten()
-            .and_then(|v| v.extract::<f64>().ok())
-            .unwrap_or(1.0);
-        AlloyTarget { property, min_value, max_value, weight }
-    }).collect();
+    let rust_targets: Vec<AlloyTarget> = targets
+        .iter()
+        .map(|d| {
+            let property: String = d
+                .get_item("property")
+                .ok()
+                .flatten()
+                .and_then(|v| v.extract::<String>().ok())
+                .unwrap_or_default();
+            let min_value: Option<f64> = d
+                .get_item("min_value")
+                .ok()
+                .flatten()
+                .and_then(|v| v.extract::<f64>().ok());
+            let max_value: Option<f64> = d
+                .get_item("max_value")
+                .ok()
+                .flatten()
+                .and_then(|v| v.extract::<f64>().ok());
+            let weight: f64 = d
+                .get_item("weight")
+                .ok()
+                .flatten()
+                .and_then(|v| v.extract::<f64>().ok())
+                .unwrap_or(1.0);
+            AlloyTarget {
+                property,
+                min_value,
+                max_value,
+                weight,
+            }
+        })
+        .collect();
 
     let pool = alloying_pool.unwrap_or_default();
-    let results = crate::alloy::optimize_alloy(&rust_targets, base, &pool, n_candidates, top_k, seed)
-        .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
+    let results =
+        crate::alloy::optimize_alloy(&rust_targets, base, &pool, n_candidates, top_k, seed)
+            .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
 
     let list = pyo3::types::PyList::empty_bound(py);
     for c in &results {
         let d = pyo3::types::PyDict::new_bound(py);
         let comp = pyo3::types::PyDict::new_bound(py);
-        for (k, v) in &c.composition { comp.set_item(k, v)?; }
+        for (k, v) in &c.composition {
+            comp.set_item(k, v)?;
+        }
         let props = pyo3::types::PyDict::new_bound(py);
-        for (k, v) in &c.estimated_properties { props.set_item(k, v)?; }
+        for (k, v) in &c.estimated_properties {
+            props.set_item(k, v)?;
+        }
         d.set_item("composition", &comp)?;
         d.set_item("estimated_properties", &props)?;
         d.set_item("score", c.score)?;
@@ -320,16 +414,23 @@ fn py_export_hlsl(name: &str, out_path: &str, properties: Option<Vec<String>>) -
 fn py_export_sdf_raw(
     name: &str,
     out_path: &str,
-    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    bounds: ((f64, f64, f64), (f64, f64, f64)),
     voxel_size: f64,
     scale_m: Option<f64>,
     mode: &str,
 ) -> PyResult<String> {
     let (lo, hi) = bounds;
     let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
-    crate::export::export_sdf_raw(name, std::path::Path::new(out_path), b, voxel_size, scale_m, mode)
-        .map(|p| p.to_string_lossy().to_string())
-        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+    crate::export::export_sdf_raw(
+        name,
+        std::path::Path::new(out_path),
+        b,
+        voxel_size,
+        scale_m,
+        mode,
+    )
+    .map(|p| p.to_string_lossy().to_string())
+    .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
 }
 
 /// Write an ASCII VTK STRUCTURED_POINTS file. Returns output path.
@@ -338,7 +439,7 @@ fn py_export_sdf_raw(
 fn py_export_vtk_legacy(
     name: &str,
     out_path: &str,
-    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    bounds: ((f64, f64, f64), (f64, f64, f64)),
     voxel_size: f64,
     properties: Option<Vec<String>>,
     scale_m: Option<f64>,
@@ -346,9 +447,16 @@ fn py_export_vtk_legacy(
     let (lo, hi) = bounds;
     let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
     let props = properties.unwrap_or_default();
-    crate::export::export_vtk_legacy(name, std::path::Path::new(out_path), b, voxel_size, &props, scale_m)
-        .map(|p| p.to_string_lossy().to_string())
-        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+    crate::export::export_vtk_legacy(
+        name,
+        std::path::Path::new(out_path),
+        b,
+        voxel_size,
+        &props,
+        scale_m,
+    )
+    .map(|p| p.to_string_lossy().to_string())
+    .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
 }
 
 /// Write a binary or ASCII STL surface mesh. Returns output path.
@@ -357,16 +465,23 @@ fn py_export_vtk_legacy(
 fn py_export_stl(
     name: &str,
     out_path: &str,
-    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    bounds: ((f64, f64, f64), (f64, f64, f64)),
     voxel_size: f64,
     scale_m: Option<f64>,
     binary: bool,
 ) -> PyResult<String> {
     let (lo, hi) = bounds;
     let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
-    crate::export::export_stl(name, std::path::Path::new(out_path), b, voxel_size, scale_m, binary)
-        .map(|p| p.to_string_lossy().to_string())
-        .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
+    crate::export::export_stl(
+        name,
+        std::path::Path::new(out_path),
+        b,
+        voxel_size,
+        scale_m,
+        binary,
+    )
+    .map(|p| p.to_string_lossy().to_string())
+    .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
 }
 
 /// Write OBJ + MTL files. Returns (obj_path, mtl_path).
@@ -375,14 +490,19 @@ fn py_export_stl(
 fn py_export_obj(
     name: &str,
     obj_path: &str,
-    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    bounds: ((f64, f64, f64), (f64, f64, f64)),
     voxel_size: f64,
     scale_m: Option<f64>,
 ) -> PyResult<(String, String)> {
     let (lo, hi) = bounds;
     let b: crate::sample::Bounds = ([lo.0, lo.1, lo.2], [hi.0, hi.1, hi.2]);
     crate::export::export_obj(name, std::path::Path::new(obj_path), b, voxel_size, scale_m)
-        .map(|(o, m)| (o.to_string_lossy().to_string(), m.to_string_lossy().to_string()))
+        .map(|(o, m)| {
+            (
+                o.to_string_lossy().to_string(),
+                m.to_string_lossy().to_string(),
+            )
+        })
         .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))
 }
 
@@ -397,24 +517,40 @@ fn py_bake_fourier(
     py: Python<'_>,
     entry_name: &str,
     property: &str,
-    bounds: ((f64,f64,f64),(f64,f64,f64)),
+    bounds: ((f64, f64, f64), (f64, f64, f64)),
     grid_size: (usize, usize, usize),
     truncate_threshold: f64,
 ) -> PyResult<PyObject> {
-    let cfg = crate::fourier_bake::bake_fourier(entry_name, property, bounds, grid_size, truncate_threshold)
-        .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
+    let cfg = crate::fourier_bake::bake_fourier(
+        entry_name,
+        property,
+        bounds,
+        grid_size,
+        truncate_threshold,
+    )
+    .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
 
     let coeffs = pyo3::types::PyList::empty_bound(py);
     for c in &cfg.coefficients {
         let d = pyo3::types::PyDict::new_bound(py);
-        d.set_item("n", c.n)?; d.set_item("m", c.m)?; d.set_item("l", c.l)?;
-        d.set_item("amplitude", c.amplitude)?; d.set_item("phase", c.phase)?;
+        d.set_item("n", c.n)?;
+        d.set_item("m", c.m)?;
+        d.set_item("l", c.l)?;
+        d.set_item("amplitude", c.amplitude)?;
+        d.set_item("phase", c.phase)?;
         coeffs.append(&d)?;
     }
     let out = pyo3::types::PyDict::new_bound(py);
     out.set_item("property_name", &cfg.property_name)?;
     out.set_item("base_value", cfg.base_value)?;
-    out.set_item("domain_size_m", vec![cfg.domain_size_m.0, cfg.domain_size_m.1, cfg.domain_size_m.2])?;
+    out.set_item(
+        "domain_size_m",
+        vec![
+            cfg.domain_size_m.0,
+            cfg.domain_size_m.1,
+            cfg.domain_size_m.2,
+        ],
+    )?;
     out.set_item("coefficients", &coeffs)?;
     out.set_item("boundary_condition", &cfg.boundary_condition)?;
     Ok(out.into())

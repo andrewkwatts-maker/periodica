@@ -1,0 +1,21 @@
+[package]
+name = "periodica-mat"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Canonical typed material model for periodica: SI-normalised property tables and JSON datasheet ingest."
+
+[lib]
+name = "periodica_mat"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+glam.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+approx.workspace = true

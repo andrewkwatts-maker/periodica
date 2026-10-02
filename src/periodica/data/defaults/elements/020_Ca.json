@@ -13,6 +13,9 @@
   "melting_point": 1115,
   "boiling_point": 1757,
   "density": 1.54,
+  "LatticeProperties": {
+    "PrimaryStructure": "FCC"
+  },
   "electron_affinity": 2.37,
   "valence_electrons": 2,
   "electron_configuration": "1s² 2s² 2p⁶ 3s² 3p⁶ 4s²",

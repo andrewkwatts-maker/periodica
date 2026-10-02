@@ -7,7 +7,7 @@ biomaterials, respecting dependency order and preserving manual edits.
 
 import json
 from pathlib import Path
-from typing import Callable, Dict, List, Optional, Set
+from typing import Callable, Dict, List, Optional
 
 from periodica.utils.derivation_metadata import DerivationSource, DerivationTracker
 from periodica.utils.logger import get_logger
@@ -78,6 +78,10 @@ class CascadeRegenerationEngine:
     def get_categories(self) -> List[str]:
         """Return all categories in derivation order."""
         return list(DERIVATION_ORDER)
+
+    def _category_dir(self, category: str) -> Path:
+        """Directory under this engine's data root that holds `category`."""
+        return self._data_root / _CATEGORY_DIRS.get(category, category)
 
     def get_dependencies(self, category: str) -> List[str]:
         """Return what a category depends on."""
@@ -328,8 +332,7 @@ class CascadeRegenerationEngine:
             from periodica.utils.molecule_generator import MoleculeGenerator
             gen = MoleculeGenerator()
             molecules = gen.generate_all(count_limit=200, progress_callback=progress_callback)
-            output_dir = str(self._data_root / 'molecules')
-            return gen.save_molecules(molecules, output_dir)
+            return gen.save_molecules(molecules, self._category_dir('molecules'))
         except Exception as e:
             logger.error(f"Molecule regeneration failed: {e}")
             return 0
@@ -371,7 +374,12 @@ class CascadeRegenerationEngine:
             items = gen.generate_category(
                 category, count_limit=20, progress_callback=progress_callback
             )
-            return gen.save_items(items, category)
+            # Pass the directory explicitly: without it save_items writes to
+            # the installed package's data/active tree whatever data_root
+            # this engine was constructed with.
+            return gen.save_items(
+                items, category, output_dir=str(self._category_dir(category))
+            )
         except Exception as e:
             logger.error(f"Biological regeneration ({category}) failed: {e}")
             return 0

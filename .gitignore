@@ -25,3 +25,8 @@ Cargo.lock
 CLAUDE.md
 .claude/
 wheelhouse/
+
+# Compiled Rust extension dropped into the source tree by `maturin develop`
+# (or by extracting a built wheel). Never commit a build artifact.
+src/periodica/_periodica_core*.pyd
+src/periodica/_periodica_core*.so

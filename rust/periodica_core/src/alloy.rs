@@ -21,8 +21,8 @@
 use std::collections::HashMap;
 
 use anyhow::{anyhow, Result};
-use rand::{Rng, SeedableRng};
 use rand::rngs::SmallRng;
+use rand::{Rng, SeedableRng};
 
 /// Scalar target constraint for alloy optimisation.
 #[derive(Debug, Clone)]
@@ -69,7 +69,9 @@ pub fn optimize_alloy(
     seed: Option<u64>,
 ) -> Result<Vec<AlloyCandidate>> {
     if targets.is_empty() {
-        return Err(anyhow!("alloy::optimize_alloy: at least one target is required"));
+        return Err(anyhow!(
+            "alloy::optimize_alloy: at least one target is required"
+        ));
     }
     if base.is_empty() {
         return Err(anyhow!("alloy::optimize_alloy: base element name required"));
@@ -95,12 +97,20 @@ pub fn optimize_alloy(
         let comp = random_composition(&mut rng, base, &pool);
         let props = estimate_properties(&comp);
         if let Some(sc) = score_candidate(&props, targets) {
-            results.push(AlloyCandidate { composition: comp, estimated_properties: props, score: sc });
+            results.push(AlloyCandidate {
+                composition: comp,
+                estimated_properties: props,
+                score: sc,
+            });
         }
     }
 
     // Sort by score descending (higher is better)
-    results.sort_by(|a, b| b.score.partial_cmp(&a.score).unwrap_or(std::cmp::Ordering::Equal));
+    results.sort_by(|a, b| {
+        b.score
+            .partial_cmp(&a.score)
+            .unwrap_or(std::cmp::Ordering::Equal)
+    });
     let k = top_k.min(results.len());
     results.truncate(k);
     Ok(results)
@@ -115,19 +125,26 @@ fn random_composition(rng: &mut SmallRng, base: &str, pool: &[&str]) -> HashMap<
     let mut chosen: Vec<&str> = Vec::with_capacity(n_elements);
     let mut remaining: Vec<&str> = pool.to_vec();
     for _ in 0..n_elements {
-        if remaining.is_empty() { break; }
+        if remaining.is_empty() {
+            break;
+        }
         let idx = rng.gen_range(0..remaining.len());
         chosen.push(remaining.remove(idx));
     }
 
     // Assign random fractions in [0.0005, MAX_FRAC]
-    let mut fracs: Vec<f64> = chosen.iter().map(|_| rng.gen_range(0.0005_f64..MAX_FRAC)).collect();
+    let mut fracs: Vec<f64> = chosen
+        .iter()
+        .map(|_| rng.gen_range(0.0005_f64..MAX_FRAC))
+        .collect();
 
     // Clamp total alloying fraction to MAX_TOTAL_FRAC
     let total: f64 = fracs.iter().sum();
     if total > MAX_TOTAL_FRAC {
         let scale = MAX_TOTAL_FRAC / total;
-        for f in fracs.iter_mut() { *f *= scale; }
+        for f in fracs.iter_mut() {
+            *f *= scale;
+        }
     }
 
     let alloying_total: f64 = fracs.iter().sum();
@@ -157,7 +174,10 @@ fn estimate_properties(composition: &HashMap<String, f64>) -> HashMap<String, f6
             }
             found
         };
-        let entry = match entry { Some(e) => e, None => continue };
+        let entry = match entry {
+            Some(e) => e,
+            None => continue,
+        };
 
         // Walk top-level numeric values and "Properties" sub-object
         for (prop_map, w) in [
@@ -188,11 +208,15 @@ fn score_candidate(props: &HashMap<String, f64>, targets: &[AlloyTarget]) -> Opt
     for t in targets {
         let v = *props.get(&t.property)?; // None → missing property → reject
         if let Some(min) = t.min_value {
-            if v < min { return None; }
+            if v < min {
+                return None;
+            }
             score += (v - min) * t.weight;
         }
         if let Some(max) = t.max_value {
-            if v > max { return None; }
+            if v > max {
+                return None;
+            }
             score += (max - v) * t.weight;
         }
     }
@@ -206,7 +230,12 @@ mod tests {
     use super::*;
 
     fn density_target() -> AlloyTarget {
-        AlloyTarget { property: "Density_g_cm3".into(), min_value: Some(7.0), max_value: Some(9.0), weight: 1.0 }
+        AlloyTarget {
+            property: "Density_g_cm3".into(),
+            min_value: Some(7.0),
+            max_value: Some(9.0),
+            weight: 1.0,
+        }
     }
 
     #[test]
@@ -255,7 +284,10 @@ mod tests {
         let res = optimize_alloy(&[density_target()], "Fe", &pool, 30, 5, Some(7)).unwrap();
         for c in &res {
             for key in c.composition.keys() {
-                assert!(key == "Fe" || key == "Au" || key == "Pt", "unexpected element {key}");
+                assert!(
+                    key == "Fe" || key == "Au" || key == "Pt",
+                    "unexpected element {key}"
+                );
             }
         }
     }
