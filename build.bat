@@ -48,6 +48,8 @@ REM periodica_core carries pre-existing lint debt, so warnings are not yet
 REM denied workspace-wide. The new crates must stay clean.
 cargo clippy -p periodica-mat --all-targets -- -D warnings
 if errorlevel 1 exit /b 1
+cargo clippy -p periodica-runtime --all-targets -- -D warnings
+if errorlevel 1 exit /b 1
 cargo clippy --workspace --all-targets
 if errorlevel 1 exit /b 1
 

@@ -1,0 +1,33 @@
+#====== periodica/rust/periodica-runtime/Cargo.toml ======#
+# copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+#
+# This is the intellectual property of Andrew Keith Watts. Unauthorized
+# reproduction, distribution, or modification of this code, in whole or in part,
+# without the express written permission of Andrew Keith Watts is strictly prohibited.
+#
+# For inquiries, please contact AndrewKWatts@Gmail.com
+
+[package]
+name = "periodica-runtime"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Spatial runtime for periodica: crystal SDFs, mass/inertia integration and weakpoint fracture. No pyo3, no filesystem access."
+
+[lib]
+name = "periodica_runtime"
+
+# Deliberately small: no pyo3, no filesystem walking, no registry. Game engines
+# link this crate directly (see the DAG in the workspace Cargo.toml).
+[dependencies]
+periodica-mat.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+nalgebra.workspace = true
+
+[dev-dependencies]
+approx.workspace = true
+serde_json.workspace = true

@@ -36,6 +36,7 @@ build_rust() {
     # periodica_core carries pre-existing lint debt, so warnings are not yet
     # denied workspace-wide. The new crates must stay clean.
     cargo clippy -p periodica-mat --all-targets -- -D warnings
+    cargo clippy -p periodica-runtime --all-targets -- -D warnings
     cargo clippy --workspace --all-targets
 
     # cargo test builds default features only, so feature-gated modules such

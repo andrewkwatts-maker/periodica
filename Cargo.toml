@@ -32,6 +32,7 @@
 resolver = "2"
 members = [
     "rust/periodica-mat",
+    "rust/periodica-runtime",
     "rust/periodica_core",
 ]
 # `build/` and `dist/` hold stale packaging artifacts (including a v1.1.0

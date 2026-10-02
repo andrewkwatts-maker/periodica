@@ -31,6 +31,7 @@ jobs:
       - name: Clippy (new crates, warnings denied)
         run: |
           cargo clippy -p periodica-mat --all-targets -- -D warnings
+          cargo clippy -p periodica-runtime --all-targets -- -D warnings
 
       - name: Clippy (workspace, advisory)
         run: cargo clippy --workspace --all-targets
