@@ -1,0 +1,117 @@
+{
+  "_provenance": {
+    "source": [
+      "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for CO2; point group D∞h)"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py: Cartesians constructed from the source internal coordinates (Z-matrix / symmetry construction), centroid at origin; every source value re-measured (<= 1e-4 A, <= 0.01 deg).",
+    "units": {
+      "coordinates": "angstrom",
+      "angles": "degree"
+    },
+    "uncertainty": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation."
+  },
+  "name": "CarbonDioxide",
+  "formula": "CO2",
+  "kind": "unspecified",
+  "kind_note": "CCCBDB quotes these values from Herzberg (1966) without stating the structure type (r_e or r_0); the compilation mixes both. Treat as 'unspecified' until checked against the book.",
+  "atoms": [
+    {
+      "element": "C",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    {
+      "element": "O",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.162
+    },
+    {
+      "element": "O",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -1.162
+    }
+  ],
+  "bonds": [
+    {
+      "i": 0,
+      "j": 1,
+      "order": 2
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "order": 2
+    }
+  ],
+  "internal": {
+    "source_values": [
+      {
+        "label": "rCO",
+        "type": "distance",
+        "atoms": [
+          0,
+          1
+        ],
+        "value": 1.162
+      },
+      {
+        "label": "aOCO",
+        "type": "angle",
+        "atoms": [
+          1,
+          0,
+          2
+        ],
+        "value": 180.0
+      }
+    ],
+    "bond_lengths_A": [
+      {
+        "atoms": [
+          0,
+          1
+        ],
+        "value_A": 1.162
+      },
+      {
+        "atoms": [
+          0,
+          2
+        ],
+        "value_A": 1.162
+      }
+    ]
+  },
+  "uncertainty_A": 0.0005,
+  "uncertainty_note": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation.",
+  "source": "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for CO2; point group D∞h)",
+  "citation": "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+  "notes": [
+    "Herzberg (1966) value; the equilibrium r_e(CO) is about 1.160 A (not transcribed)."
+  ],
+  "verification": {
+    "max_abs_dev_distance_A": 0.0,
+    "max_abs_dev_angle_deg": 0.0,
+    "checks": [
+      {
+        "label": "rCO",
+        "source": 1.162,
+        "measured": 1.162,
+        "gated": true
+      },
+      {
+        "label": "aOCO",
+        "source": 180.0,
+        "measured": 180.0,
+        "gated": true
+      }
+    ],
+    "rmsd_vs_cccbdb_cartesians_A": 0.0001
+  }
+}

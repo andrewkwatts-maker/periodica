@@ -185,3 +185,75 @@ transcription/implementation gate; (2) for Z ≥ 55, or to gate against the true
 ⟨r^k⟩ once with a fully numerical atomic HF code (e.g. HelFEM, S. Lehtola, *Int. J. Quantum Chem.* **119**,
 e25945 (2019)) and commit the outputs as a fixture; or (3) hand-transcribe a subset of Saito's tables from an
 institutional copy, citing the table and page. Numbers were **not** invented for any of these.
+
+---
+
+## Q3 (start) — Curated experimental molecular geometries
+
+Two files per molecule, keyed by the same stem as `src/periodica/data/active/molecules/<name>.json`:
+
+* `src/periodica/data/reference/molecules/geometry/<name>.json` — the **independent transcription**: internal
+  coordinates exactly as the source states them (value, printed form where not decimal, structure type, primary
+  citation, `gate` flag), 0-based atom indices in the molecule's atom order.
+* `src/periodica/data/active/geometry/<name>.json` — `{name, formula, kind, atoms[{element,x,y,z}] (Å, centroid
+  at origin), bonds[{i,j,order}], internal, uncertainty_A, source, citation, notes, verification}`. Cartesians are
+  **constructed from the source internal coordinates** (Z-matrix / symmetry construction in
+  `tools/refdata/build_geometries.py`, helpers in `_geometry.py`), never copied.
+
+Verification: every gated source coordinate is re-measured from the Cartesians — all 16 molecules pass with
+worst deviation ≤ 0.48 × tolerance (≤ 1e-4 Å, ≤ 0.01°); `python tools/refdata/check_geometries.py` repeats the
+gate from the committed JSON alone (what the test suite should do). CCCBDB's own Cartesians are used only as an
+independent cross-check (RMSD after superposition, stored in `verification`).
+
+| Molecule | kind | Source values | uncertainty_A | RMSD vs CCCBDB (Å) | Primary source |
+|---|---|---|---|---|---|
+| H2 | r_e | r 0.74144 | 1e-5 | 0.0000 | Huber & Herzberg 1979 |
+| N2 | r_e | r 1.09768(5) | 1e-5 | 0.0000 | Huber & Herzberg 1979 |
+| O2 | r_e | r 1.20752 | 1e-5 | 0.0000 | Huber & Herzberg 1979 |
+| CO | r_e | r 1.128323 | 1e-6 | 0.0001 | Huber & Herzberg 1979 |
+| HCl | r_e | r 1.27455(2) | 1e-5 | 0.0000 | Huber & Herzberg 1979 |
+| NaCl | r_e | r 2.36079(5) (gas-phase monomer) | 1e-5 | 0.0000 | Huber & Herzberg 1979 (Rice & Klemperer 1957) |
+| H2O | r_e | r 0.958, ∠ 104.4776° | 5e-4 | 0.0002 | Hoy & Bunker, *J. Mol. Spectrosc.* 74, 1 (1979) |
+| CH4 | r_e | r 1.087, T_d | 5e-4 | 0.0000 | Hirota, *J. Mol. Spectrosc.* 77, 213 (1979) |
+| NH3 | unspecified | r 1.012, ∠HNH 106.67° | 5e-4 | 0.0003 | Herzberg 1966 |
+| O3 | unspecified | r 1.278, ∠ 116.8° | 5e-4 | 0.0000 | Herzberg 1966 |
+| CO2 | unspecified | r 1.162, linear | 5e-4 | 0.0001 | Herzberg 1966 |
+| C6H6 | unspecified | r(CC) 1.397, r(CH) 1.084, D6h | 5e-4 | 0.0000 | Herzberg 1966 |
+| C2H4 | unspecified | r(CC) 1.339, r(CH) 1.086, ∠HCH 117.6°, ∠HCC 121.2° | 5e-4 | 0.0000 | Herzberg 1966 |
+| C2H6 | unspecified | r(CC) 1.536, r(CH) 1.091, ∠HCH 108.0°, staggered D3d | 5e-4 | 0.0000 | Herzberg 1966 |
+| HNO3 | r_s | O–H 0.964, (H)O–N 1.406, N–O cis 1.211 / trans 1.199, ∠HON 102°9′, ∠ONO cis 115°53′ / trans 113°51′ | 5e-4 | 0.0059 | Cox & Riveros, *J. Chem. Phys.* 42, 3106 (1965) |
+| H2SO4 | r_0 (inferred) | O–H 0.97(1), S–O 1.574(10), S=O 1.422(10), ∠SOH 108.5(15)°, ∠HO–S–OH 101.3(10)°, ∠O=S=O 123.3(10)°, τ −90.9(10)°, SO2 planes 88.4° | 0.01 | 0.60 (see notes) | Kuczkowski, Suenram & Lovas, *J. Am. Chem. Soc.* 103, 2561 (1981) |
+
+**Sources and terms.**
+* Diatomics: NIST Chemistry WebBook (SRD 69) "Constants of diatomic molecules" (Huber & Herzberg compilation),
+  read for the X state with full precision (CCCBDB quotes only three decimals); H&H subscript (uncertain) digits are
+  kept in the value and set `uncertainty_A` (one unit in the last certain digit — precision, not σ).
+* Polyatomics: NIST CCCBDB (SRD 101, Release 22, doi:10.18434/T47C7Z) experimental-geometry pages, recording the
+  primary reference CCCBDB cites per value. Both databases are © U.S. Secretary of Commerce under the Standard
+  Reference Data Act; only individual factual values are reproduced, each attributed to its primary publication,
+  with the database cited as the locator. `uncertainty_A` for CCCBDB values is the rounding of the quoted precision
+  (CCCBDB gives no σ).
+* HNO3 and H2SO4 were taken from the **published abstracts of the primary papers** (via Crossref/OpenAlex metadata),
+  which include the parameters (and, for H2SO4, their uncertainties). This exposed two CCCBDB errors:
+  HNO3 cis-ONO is listed as 115.0883° (a transposed-digit transcription of 115°53′ = 115.8833°; CCCBDB's own 130.267°
+  confirms the primary value) and the H2SO4 torsion is assigned to an S=O oxygen, so CCCBDB's H2SO4 Cartesians place
+  both H atoms differently (hence the 0.60 Å RMSD). The H2SO4 plane-angle handedness relative to the torsion is not
+  fixed by the abstract; the alternative reading is 0.032 Å RMSD away (documented in the file).
+* "kind": `r_e` where CCCBDB/H&H state equilibrium values; `r_s`/`r_0` from the primary abstracts; **`unspecified`**
+  for the Herzberg (1966) values, which CCCBDB quotes without a structure type — check against the book (or replace
+  with modern equilibrium structures, e.g. O3 Tanaka & Morino 1970, CO2 r_e ≈ 1.160 Å) before using them as
+  r_e gates.
+
+**Errors in `active/molecules` this fixes:** NH3 ∠HNH 106.67° (was 88° in Atoms3D), O3 coordinates now consistent
+with 116.8°, HNO3 bond pattern/geometry from the microwave structure, NaCl gas-phase r_e = 2.3608 Å (was the 2.82 Å
+crystal distance).
+
+**Not curated (with recommendation):**
+
+| Molecule | Finding | Recommendation |
+|---|---|---|
+| Acetic acid | CCCBDB (Landolt–Börnstein II/7, 1976) gives only the heavy-atom skeleton + one C–H; no H positions, no Cartesians. Partial transcription kept in `reference/molecules/geometry/AceticAcid.json` (`has_active_geometry: false`). | Transcribe a complete gas-phase structure from the primary ED/MW literature, or PubChem3D CID 176 (public domain) refined by own HF/6-31G (B5). |
+| Ethanol | CCCBDB entry (Coussan *et al.* 1998, a matrix-isolation IR paper) lacks the H–C–H/H–C–C angles, and its Cartesians contradict its own internal list (methyl C–H 1.088/1.098 on swapped atoms). Partial transcription kept. | Primary trans-ethanol microwave structure, or PubChem3D CID 702 + HF/6-31G. |
+| Glucose | No experimental gas-phase geometry (CCCBDB has only inositol for C6H12O6; glucose has several tautomers). | PubChem3D α-D-glucopyranose CID 79025 (public domain), labelled "computed conformer (MMFF94s)". |
+| Aspirin | Not in CCCBDB experimental geometries. | PubChem3D CID 2244 (MMFF94s), labelled; or CSD crystal structure, labelled. |
+| Caffeine | Not in CCCBDB experimental geometries. | PubChem3D CID 2519 (MMFF94s), labelled. |

@@ -1,0 +1,117 @@
+{
+  "_provenance": {
+    "source": [
+      "AR Hoy, PR Bunker, \"A precise Solution of the Rotation Beninding Schrodinger Equation for a Triatomic Molecule with Application to the Water Molecule\" J. Molecular Spectroscopy 74, 1-8, 1979, doi:10.1016/0022-2852(79)90019-5",
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for H2O; point group C2v)"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py: Cartesians constructed from the source internal coordinates (Z-matrix / symmetry construction), centroid at origin; every source value re-measured (<= 1e-4 A, <= 0.01 deg).",
+    "units": {
+      "coordinates": "angstrom",
+      "angles": "degree"
+    },
+    "uncertainty": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation."
+  },
+  "name": "Water",
+  "formula": "H2O",
+  "kind": "r_e",
+  "kind_note": "CCCBDB marks both values as equilibrium (r_e) from Hoy & Bunker (1979).",
+  "atoms": [
+    {
+      "element": "O",
+      "x": -0.309193,
+      "y": 0.0,
+      "z": -0.2395
+    },
+    {
+      "element": "H",
+      "x": -0.309193,
+      "y": 0.0,
+      "z": 0.7185
+    },
+    {
+      "element": "H",
+      "x": 0.618386,
+      "y": 0.0,
+      "z": -0.479001
+    }
+  ],
+  "bonds": [
+    {
+      "i": 0,
+      "j": 1,
+      "order": 1
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "order": 1
+    }
+  ],
+  "internal": {
+    "source_values": [
+      {
+        "label": "rOH",
+        "type": "distance",
+        "atoms": [
+          0,
+          1
+        ],
+        "value": 0.958
+      },
+      {
+        "label": "aHOH",
+        "type": "angle",
+        "atoms": [
+          1,
+          0,
+          2
+        ],
+        "value": 104.4776
+      }
+    ],
+    "bond_lengths_A": [
+      {
+        "atoms": [
+          0,
+          1
+        ],
+        "value_A": 0.958
+      },
+      {
+        "atoms": [
+          0,
+          2
+        ],
+        "value_A": 0.958
+      }
+    ]
+  },
+  "uncertainty_A": 0.0005,
+  "uncertainty_note": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation.",
+  "source": "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for H2O; point group C2v)",
+  "citation": "AR Hoy, PR Bunker, \"A precise Solution of the Rotation Beninding Schrodinger Equation for a Triatomic Molecule with Application to the Water Molecule\" J. Molecular Spectroscopy 74, 1-8, 1979, doi:10.1016/0022-2852(79)90019-5",
+  "notes": [
+    "CCCBDB quotes r_e(OH) to three decimals (0.958); its own Cartesians use 0.9578."
+  ],
+  "verification": {
+    "max_abs_dev_distance_A": 0.0,
+    "max_abs_dev_angle_deg": 2.23e-05,
+    "checks": [
+      {
+        "label": "rOH",
+        "source": 0.958,
+        "measured": 0.958,
+        "gated": true
+      },
+      {
+        "label": "aHOH",
+        "source": 104.4776,
+        "measured": 104.477578,
+        "gated": true
+      }
+    ],
+    "rmsd_vs_cccbdb_cartesians_A": 0.0002
+  }
+}

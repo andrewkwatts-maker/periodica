@@ -1,0 +1,58 @@
+{
+  "_provenance": {
+    "source": [
+      "AR Hoy, PR Bunker, \"A precise Solution of the Rotation Beninding Schrodinger Equation for a Triatomic Molecule with Application to the Water Molecule\" J. Molecular Spectroscopy 74, 1-8, 1979, doi:10.1016/0022-2852(79)90019-5",
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for H2O; point group C2v)"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py (values as stated by the source; no derivation)",
+    "units": {
+      "distance": "angstrom",
+      "angle": "degree",
+      "dihedral": "degree",
+      "plane_angle": "degree"
+    },
+    "uncertainty": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation."
+  },
+  "name": "Water",
+  "formula": "H2O",
+  "atom_order": [
+    "O1",
+    "H2",
+    "H3"
+  ],
+  "atom_index_base": 0,
+  "coordinates": [
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        1
+      ],
+      "value": 0.958,
+      "unit": "angstrom",
+      "label": "rOH",
+      "structure_type": "r_e",
+      "reference": "AR Hoy, PR Bunker, \"A precise Solution of the Rotation Beninding Schrodinger Equation for a Triatomic Molecule with Application to the Water Molecule\" J. Molecular Spectroscopy 74, 1-8, 1979, doi:10.1016/0022-2852(79)90019-5",
+      "note": "re",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        1,
+        0,
+        2
+      ],
+      "value": 104.4776,
+      "unit": "degree",
+      "label": "aHOH",
+      "structure_type": "r_e",
+      "reference": "AR Hoy, PR Bunker, \"A precise Solution of the Rotation Beninding Schrodinger Equation for a Triatomic Molecule with Application to the Water Molecule\" J. Molecular Spectroscopy 74, 1-8, 1979, doi:10.1016/0022-2852(79)90019-5",
+      "note": "equilibrium",
+      "gate": true
+    }
+  ],
+  "has_active_geometry": true
+}

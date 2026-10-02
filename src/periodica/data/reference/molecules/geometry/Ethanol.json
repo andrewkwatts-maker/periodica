@@ -1,0 +1,125 @@
+{
+  "_provenance": {
+    "source": [
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for C2H6O, Ethanol)",
+      "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py (CCCBDB internal-coordinate table parsed verbatim)",
+    "units": {
+      "distance": "angstrom",
+      "angle": "degree"
+    },
+    "uncertainty": "Not given by the source."
+  },
+  "name": "Ethanol",
+  "formula": "C2H6O",
+  "atom_index_base": 0,
+  "atom_numbering": "CCCBDB numbering minus one",
+  "coordinates": [
+    {
+      "type": "distance",
+      "atoms": [
+        2,
+        3
+      ],
+      "value": 0.971,
+      "unit": "angstrom",
+      "label": "rOH",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        1,
+        2
+      ],
+      "value": 1.431,
+      "unit": "angstrom",
+      "label": "rCO",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        1
+      ],
+      "value": 1.512,
+      "unit": "angstrom",
+      "label": "rCC",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        4
+      ],
+      "value": 1.088,
+      "unit": "angstrom",
+      "label": "rCH",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "note": "methyl",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        5
+      ],
+      "value": 1.098,
+      "unit": "angstrom",
+      "label": "rCH",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "note": "methyl",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        1,
+        7
+      ],
+      "value": 1.086,
+      "unit": "angstrom",
+      "label": "rCH",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "note": "methylene",
+      "gate": false
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        0,
+        1,
+        2
+      ],
+      "value": 107.8,
+      "unit": "degree",
+      "label": "aCCO",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "gate": false
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        1,
+        2,
+        3
+      ],
+      "value": 105.4,
+      "unit": "degree",
+      "label": "aHOC",
+      "reference": "Coussan, Bouteiller, Perchard, Zheng, Rotational Isomerism of Ethanol and Matrix Isolation Infrared Spectroscopy, J. Phys. Chem. A, Vol. 102, #29, pgs. 5789-5793, doi:10.1021/jp9805961",
+      "gate": false
+    }
+  ],
+  "has_active_geometry": false,
+  "why_not_curated": "CCCBDB's entry (citing Coussan et al. 1998, a matrix-isolation IR paper) is incomplete (no H-C-H / H-C-C angles) and its Cartesians contradict its own internal list (methyl C-H 1.088/1.098 assigned to swapped atoms). Recommend: the trans-ethanol microwave structure from the primary literature, or PubChem3D (CID 702) + HF/6-31G refinement."
+}

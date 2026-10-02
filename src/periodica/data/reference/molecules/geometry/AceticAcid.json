@@ -1,0 +1,111 @@
+{
+  "_provenance": {
+    "source": [
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for C2H4O2, Acetic acid)",
+      "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976."
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py (CCCBDB internal-coordinate table parsed verbatim)",
+    "units": {
+      "distance": "angstrom",
+      "angle": "degree"
+    },
+    "uncertainty": "Not given by the source."
+  },
+  "name": "AceticAcid",
+  "formula": "CH3COOH",
+  "atom_index_base": 0,
+  "atom_numbering": "CCCBDB numbering minus one",
+  "coordinates": [
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        1
+      ],
+      "value": 1.517,
+      "unit": "angstrom",
+      "label": "rCC",
+      "reference": "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976.",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        1,
+        2
+      ],
+      "value": 1.212,
+      "unit": "angstrom",
+      "label": "rCO",
+      "reference": "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976.",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        1,
+        6
+      ],
+      "value": 1.361,
+      "unit": "angstrom",
+      "label": "rCO",
+      "reference": "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976.",
+      "gate": false
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        3
+      ],
+      "value": 1.1,
+      "unit": "angstrom",
+      "label": "rCH",
+      "reference": "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976.",
+      "gate": false
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        0,
+        1,
+        2
+      ],
+      "value": 126.6,
+      "unit": "degree",
+      "label": "aCCO",
+      "reference": "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976.",
+      "gate": false
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        0,
+        1,
+        6
+      ],
+      "value": 110.6,
+      "unit": "degree",
+      "label": "aCCO",
+      "reference": "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976.",
+      "gate": false
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        2,
+        1,
+        6
+      ],
+      "value": 123.0,
+      "unit": "degree",
+      "label": "aOCO",
+      "reference": "Hellwege, KH and AM Hellwege (ed.). Landolt-Bornstein: Group II: Atomic and Molecular Physics Volume 7: Structure Data of Free Polyatomic Molecules. Springer-Verlag. Berlin. 1976.",
+      "gate": false
+    }
+  ],
+  "has_active_geometry": false,
+  "why_not_curated": "CCCBDB (Landolt-Bornstein II/7, 1976) gives only the heavy-atom skeleton and one C-H distance, no hydrogen positions and no Cartesians. Recommend: transcribe a complete gas-phase structure from the primary electron-diffraction / microwave literature, or use the PubChem3D conformer (CID 176, public domain) refined by own HF/6-31G (B5)."
+}

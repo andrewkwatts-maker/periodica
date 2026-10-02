@@ -1,0 +1,43 @@
+{
+  "_provenance": {
+    "source": [
+      "K. P. Huber and G. Herzberg, Molecular Spectra and Molecular Structure IV. Constants of Diatomic Molecules (Van Nostrand Reinhold, New York, 1979), doi:10.1007/978-1-4757-0961-2 (measurements: Crawford, Welsh, et al., 1949; Bosomworth and Gush, 1965; Reddy and Cho, 1965; Shapiro and Gush, 1966; de Remigis, Welsh, et al., 1971; Sheng and Ewing, 1971; Buontempo, Cunsolo, et al., 1975)",
+      "P.J. Linstrom and W.G. Mallard (eds.), NIST Chemistry WebBook, NIST Standard Reference Database Number 69, National Institute of Standards and Technology, Gaithersburg MD, doi:10.18434/T4D303; 'Constants of diatomic molecules' compiled by K. P. Huber and G. H. Herzberg; https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=1000"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "NIST Chemistry WebBook is NIST SRD 69, copyright U.S. Secretary of Commerce (Standard Reference Data Act). Only the single factual r_e value per molecule is reproduced, attributed to Huber & Herzberg 1979 and the original measurements the WebBook lists.",
+    "transform": "tools/refdata/build_geometries.py (values as stated by the source; no derivation)",
+    "units": {
+      "distance": "angstrom",
+      "angle": "degree",
+      "dihedral": "degree",
+      "plane_angle": "degree"
+    },
+    "uncertainty": "Huber & Herzberg print uncertain last digits as subscripts (kept in the value); uncertainty_A = one unit in the last digit they regard as certain - an indication of the quoted precision, not a standard deviation."
+  },
+  "name": "Nitrogen",
+  "formula": "N2",
+  "atom_order": [
+    "N1",
+    "N2"
+  ],
+  "atom_index_base": 0,
+  "coordinates": [
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        1
+      ],
+      "value": 1.097685,
+      "unit": "angstrom",
+      "label": "rNN",
+      "printed": "1.097685",
+      "structure_type": "r_e",
+      "reference": "K. P. Huber and G. Herzberg, Molecular Spectra and Molecular Structure IV. Constants of Diatomic Molecules (Van Nostrand Reinhold, New York, 1979), doi:10.1007/978-1-4757-0961-2 (measurements: Crawford, Welsh, et al., 1949; Bosomworth and Gush, 1965; Reddy and Cho, 1965; Shapiro and Gush, 1966; de Remigis, Welsh, et al., 1971; Sheng and Ewing, 1971; Buontempo, Cunsolo, et al., 1975)",
+      "note": "last digit printed as a subscript (uncertain)",
+      "gate": true
+    }
+  ],
+  "has_active_geometry": true
+}

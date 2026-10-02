@@ -1,0 +1,202 @@
+{
+  "_provenance": {
+    "source": [
+      "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for C2H4; point group D2h)"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py: Cartesians constructed from the source internal coordinates (Z-matrix / symmetry construction), centroid at origin; every source value re-measured (<= 1e-4 A, <= 0.01 deg).",
+    "units": {
+      "coordinates": "angstrom",
+      "angles": "degree"
+    },
+    "uncertainty": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation."
+  },
+  "name": "Ethylene",
+  "formula": "C2H4",
+  "kind": "unspecified",
+  "kind_note": "CCCBDB quotes these values from Herzberg (1966) without stating the structure type (r_e or r_0); the compilation mixes both. Treat as 'unspecified' until checked against the book.",
+  "atoms": [
+    {
+      "element": "C",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.6695
+    },
+    {
+      "element": "C",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -0.6695
+    },
+    {
+      "element": "H",
+      "x": 0.0,
+      "y": 0.928926,
+      "z": 1.232077
+    },
+    {
+      "element": "H",
+      "x": 0.0,
+      "y": -0.928926,
+      "z": 1.232077
+    },
+    {
+      "element": "H",
+      "x": 0.0,
+      "y": 0.928926,
+      "z": -1.232077
+    },
+    {
+      "element": "H",
+      "x": 0.0,
+      "y": -0.928926,
+      "z": -1.232077
+    }
+  ],
+  "bonds": [
+    {
+      "i": 0,
+      "j": 1,
+      "order": 2
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "order": 1
+    },
+    {
+      "i": 0,
+      "j": 3,
+      "order": 1
+    },
+    {
+      "i": 1,
+      "j": 4,
+      "order": 1
+    },
+    {
+      "i": 1,
+      "j": 5,
+      "order": 1
+    }
+  ],
+  "internal": {
+    "source_values": [
+      {
+        "label": "rCC",
+        "type": "distance",
+        "atoms": [
+          0,
+          1
+        ],
+        "value": 1.339
+      },
+      {
+        "label": "rCH",
+        "type": "distance",
+        "atoms": [
+          0,
+          2
+        ],
+        "value": 1.086
+      },
+      {
+        "label": "aHCH",
+        "type": "angle",
+        "atoms": [
+          2,
+          0,
+          3
+        ],
+        "value": 117.6
+      },
+      {
+        "label": "aHCC",
+        "type": "angle",
+        "atoms": [
+          0,
+          1,
+          4
+        ],
+        "value": 121.2
+      }
+    ],
+    "bond_lengths_A": [
+      {
+        "atoms": [
+          0,
+          1
+        ],
+        "value_A": 1.339
+      },
+      {
+        "atoms": [
+          0,
+          2
+        ],
+        "value_A": 1.086
+      },
+      {
+        "atoms": [
+          0,
+          3
+        ],
+        "value_A": 1.086
+      },
+      {
+        "atoms": [
+          1,
+          4
+        ],
+        "value_A": 1.086
+      },
+      {
+        "atoms": [
+          1,
+          5
+        ],
+        "value_A": 1.086
+      }
+    ]
+  },
+  "uncertainty_A": 0.0005,
+  "uncertainty_note": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation.",
+  "source": "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for C2H4; point group D2h)",
+  "citation": "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+  "notes": [
+    "D2h planar; H-C-H = 360 - 2 x H-C-C holds exactly for the quoted values."
+  ],
+  "verification": {
+    "max_abs_dev_distance_A": 1.82e-07,
+    "max_abs_dev_angle_deg": 5.26e-05,
+    "checks": [
+      {
+        "label": "rCC",
+        "source": 1.339,
+        "measured": 1.339,
+        "gated": true
+      },
+      {
+        "label": "rCH",
+        "source": 1.086,
+        "measured": 1.086,
+        "gated": true
+      },
+      {
+        "label": "aHCH",
+        "source": 117.6,
+        "measured": 117.600053,
+        "gated": true
+      },
+      {
+        "label": "aHCC",
+        "source": 121.2,
+        "measured": 121.199974,
+        "gated": true
+      }
+    ],
+    "rmsd_vs_cccbdb_cartesians_A": 0.0
+  }
+}
