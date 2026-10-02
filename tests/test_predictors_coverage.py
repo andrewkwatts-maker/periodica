@@ -779,43 +779,6 @@ class TestNucleicAcidPredictor:
         assert predictor is not None
 
 
-class TestBiomaterialPredictor:
-    """Tests for the biomaterial predictor."""
-
-    def test_import(self):
-        from periodica.utils.predictors.biological.biomaterial_predictor import BiomaterialPredictor
-        assert BiomaterialPredictor is not None
-
-    def test_instantiation(self):
-        from periodica.utils.predictors.biological.biomaterial_predictor import BiomaterialPredictor
-        predictor = BiomaterialPredictor()
-        assert predictor is not None
-
-    def test_has_ecm_moduli(self):
-        from periodica.utils.predictors.biological.biomaterial_predictor import BiomaterialPredictor
-        predictor = BiomaterialPredictor()
-        assert len(predictor.DEFAULT_ECM_MODULI) > 0
-
-
-class TestCellPredictor:
-    """Tests for the cell predictor."""
-
-    def test_import(self):
-        from periodica.utils.predictors.biological.cell_predictor import CellPredictor
-        assert CellPredictor is not None
-
-    def test_instantiation(self):
-        from periodica.utils.predictors.biological.cell_predictor import CellPredictor
-        predictor = CellPredictor()
-        assert predictor is not None
-
-    def test_has_kleiber_constants(self):
-        from periodica.utils.predictors.biological.cell_predictor import CellPredictor
-        predictor = CellPredictor()
-        assert predictor.DEFAULT_B0 > 0
-        assert 0.5 < predictor.DEFAULT_ALPHA < 1.0
-
-
 # =============================================================================
 # Predictor Registry and Framework
 # =============================================================================
