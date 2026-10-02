@@ -132,3 +132,56 @@ All three files live in `src/periodica/data/reference/elements/`, list every ele
 * **Jmol colours** — Jmol is LGPL-2.1+; colours are a **convention**, not physical data. Z = 110–118 have no Jmol
   colour (`hex: null`); `_provenance.default_hex` = `#FF1493` is Jmol's colour for unknown elements. Cross-checked
   exactly against mendeleev's `jmol_color` and within 1/255 against ASE's `jmol_colors`.
+
+---
+
+## Q6 — Atomic Roothaan–Hartree–Fock STO tables
+
+| File | Source | Atoms | Validation (`tools/refdata/check_sto_tables.py`) |
+|---|---|---|---|
+| `rust/periodica-qm/data/sto/bunge1993.json` | Bunge, Barrientos & Bunge, *At. Data Nucl. Data Tables* **53**, 113 (1993), doi:10.1006/adnd.1993.1003 | He–Xe (Z 2–54, 53 atoms) | \|⟨R\|R⟩−1\| ≤ 3.0e-6; same-l overlap ≤ 1.8e-6; tabulated ⟨r⟩, ⟨r²⟩, ⟨1/r⟩ reproduced to 3e-6 rel. beyond print precision, ⟨1/r²⟩, ⟨1/r³⟩ to 5.4e-5; printed RHOat0 and Kato cusp reproduced to ≤ 2.2e-6 |
+| `rust/periodica-qm/data/sto/koga2000.json` | Koga, Kanayama, Watanabe, Imai & Thakkar, *Theor. Chem. Acc.* **104**, 411 (2000), doi:10.1007/s002140000150 | Cs–Lr (Z 55–103, 49 atoms) | \|⟨R\|R⟩−1\| ≤ 4.5e-7; same-l overlap ≤ 2.7e-7; Σ occupations = Z; virial ratio as printed |
+
+**Layout.** `atoms["<Z>"]` → `symbol`, `name`, `configuration`, `term`, `total_energy`, `kinetic_energy`,
+`potential_energy`, `virial_ratio`, and `shells.{s,p,d,f}` = `basis` [(n, ζ)] + `orbitals` [`label`, `l`,
+`occupation`, `energy`, `coefficients` (one per basis function), and for Bunge the printed `expectation`
+values `r`, `r2`, `r_inv`, `r_inv2`, `r_inv3`]. `by_symbol` maps symbols to Z. Units: atomic units.
+**STO convention:** χ = N r^(n−1) e^(−ζr) Y_lm with N = (2ζ)^(n+½)/√((2n)!); coefficients multiply
+normalised STOs — confirmed numerically for every orbital of every atom (He, Be and Ne printed in detail by
+`python tools/refdata/check_sto_tables.py He Be Ne`).
+
+**Bunge 1993.**
+* Machine-readable file `RHF.TABLES` released by C. F. Bunge for free anonymous-FTP distribution (announcement
+  to the CCL list, 13 Sep 1993), mirrored at <https://server.ccl.net/cca/data/atomic-RHF-wavefunctions/tables>
+  (SHA-256 recorded). **No licence terms stated**; reproduced as published scientific data with citation.
+* Source quirks handled and recorded: the Xe 1s orbital energy overflows its fixed-width field and loses its
+  minus sign (restored, and confirmed against Koga 1999); Mn has no printed term symbol (`term: null` +
+  `term_note`); `source_RHOat0` = Σ over s orbitals of R_ns(0)² with every orbital counted once (equal to
+  4πρ(0)/2 only for closed shells — verified for all 53 atoms); `source_kato_cusp` = −ρ′(0)/(Zρ(0)), exact = 2.
+* **Independent cross-check:** against the Koga *et al.* 1999 cusp-constrained He–Xe wave functions
+  (*Int. J. Quantum Chem.* **71**, 491; independent basis optimisation) — total energies agree to 1.1e-8 rel.,
+  every orbital ⟨r⟩ to ≤ 2.2e-4 rel. (worst In 5p). This doubles as the ⟨r^k⟩ validation the plan wanted
+  from Saito 2009 (see below).
+
+**Koga 2000.**
+* The paper states the functions are "available upon request from the authors or from the Web page
+  <http://www.unb.ca/chem/ajit/download.htm>" (file `stf/k99heavy.zip`; the page is archived at the Wayback
+  Machine (2003) but the zip is not, and the UNB page is gone). The identical-format per-atom files were
+  obtained from the **AtomDB** redistribution, `theochem/AtomDB` commit `9562659`,
+  `atomdb/data/slater_atom.tar.xz` (`neutral/*.slater`, Z ≥ 55; SHA-256 recorded).
+* **Terms — owner decision recommended:** the authors set no licence; AtomDB's repository is **GPL-3.0**. Only
+  the numerical wave-function data (facts from a published paper, authored by Koga *et al.*, not AtomDB) is used
+  and no AtomDB code. If a cleaner chain is wanted, request the files from A. J. Thakkar / T. Koga directly and
+  diff against `koga2000.json`.
+* Configurations/terms are Koga's choices (e.g. Ce [Xe]4f¹5d¹6s² ¹G, U [Rn]5f³6d¹7s² ⁵L; Yb lists 5d(0), so no 5d
+  orbital is present).
+* No ⟨r^k⟩ are printed in these files, so validation is normalisation, orthogonality and electron count.
+
+**Saito 2009 ⟨r^k⟩ — not obtained.** S. L. Saito, *At. Data Nucl. Data Tables* **95**, 836 (2009),
+doi:10.1016/j.adt.2009.06.001 is paywalled (Elsevier) and no machine-readable or redistributable copy was found
+(no supplementary data, not in any open repository located). **Fallback:** (1) for Z ≤ 54 use the Bunge-vs-Koga
+1999 agreement above (⟨r⟩ ≤ 2.2e-4) as the independent model check, and the Bunge-printed ⟨r^k⟩ as the
+transcription/implementation gate; (2) for Z ≥ 55, or to gate against the true HF limit, compute HF-limit
+⟨r^k⟩ once with a fully numerical atomic HF code (e.g. HelFEM, S. Lehtola, *Int. J. Quantum Chem.* **119**,
+e25945 (2019)) and commit the outputs as a fixture; or (3) hand-transcribe a subset of Saito's tables from an
+institutional copy, citing the table and page. Numbers were **not** invented for any of these.
