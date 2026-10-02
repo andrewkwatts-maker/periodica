@@ -1,22 +1,14 @@
 """
-Periodics Data Module
-=====================
+Periodica data package
+======================
 
-Public API for loading and accessing scientific data across all domains:
-elements, molecules, quarks, subatomic particles, alloys, and more.
+Bundled data sheets (``active/``, ``defaults/``, ``derived/``,
+``reference/``, ``config/``) plus the Python helpers that still read them
+directly. Registry lookups belong to ``periodica.Get`` / ``periodica.data_sheet``;
+this package keeps the user-data manager and the quark-source switch.
 
-Quick start
------------
-
-Get a single element by symbol::
-
-    from periodica.data import get_element
-    hydrogen = get_element("H")
-
-Load all molecules::
-
-    from periodica.data import get_all_molecules
-    molecules = get_all_molecules()
+Names are exported lazily (PEP 562): ``import periodica.data`` loads no
+submodule until one of these names is first used.
 
 Use the unified DataManager for any category::
 
@@ -24,120 +16,43 @@ Use the unified DataManager for any category::
     mgr = DataManager()
     items = mgr.get_all_items(DataCategory.AMINO_ACIDS)
 
-Validate raw JSON before ingestion::
+Switch the quark data source (experimental <-> simulated)::
 
-    from periodica.data import validate_json_data
-    ok = validate_json_data(record, "elements", "001_H.json")
+    from periodica.data import set_quark_source, SIMULATED
 """
 
-# ---------------------------------------------------------------------------
-# Element loader
-# ---------------------------------------------------------------------------
-from periodica.data.element_loader import (
-    ElementDataLoader,
-    get_loader as get_element_loader,
-    get_element,
-    get_element_by_z,
-    get_all_elements,
-    create_fallback_element_data,
-)
+import importlib
 
-# ---------------------------------------------------------------------------
-# Molecule loader
-# ---------------------------------------------------------------------------
-from periodica.data.molecule_loader import (
-    MoleculeDataLoader,
-    get_molecule_loader,
-    get_all_molecules,
-)
+# public name -> submodule that defines it
+_LAZY_EXPORTS = {
+    # Data manager & categories
+    "DataManager": "data_manager",
+    "DataCategory": "data_manager",
+    "get_data_manager": "data_manager",
+    # Quark loader (used by the app's quark screen)
+    "QuarkDataLoader": "quark_loader",
+    "get_quark_loader": "quark_loader",
+    # Quark data source switch (experimental <-> simulated/metaphysica)
+    "EXPERIMENTAL": "quark_source",
+    "SIMULATED": "quark_source",
+    "get_quark_source": "quark_source",
+    "set_quark_source": "quark_source",
+    "load_quark": "quark_source",
+    "list_quark_names": "quark_source",
+    "iter_quarks": "quark_source",
+}
 
-# ---------------------------------------------------------------------------
-# Quark / particle loader
-# ---------------------------------------------------------------------------
-from periodica.data.quark_loader import (
-    QuarkDataLoader,
-    get_quark_loader,
-)
-from periodica.data.quark_source import (
-    EXPERIMENTAL,
-    SIMULATED,
-    get_quark_source,
-    set_quark_source,
-    load_quark,
-    list_quark_names,
-    iter_quarks,
-)
+__all__ = list(_LAZY_EXPORTS)
 
-# ---------------------------------------------------------------------------
-# Subatomic (composite) particle loader
-# ---------------------------------------------------------------------------
-from periodica.data.subatomic_loader import (
-    SubatomicDataLoader,
-    get_subatomic_loader,
-    load_subatomic_data,
-)
 
-# ---------------------------------------------------------------------------
-# Alloy loader
-# ---------------------------------------------------------------------------
-from periodica.data.alloy_loader import (
-    AlloyDataLoader,
-    get_alloy_loader,
-    get_all_alloys,
-)
+def __getattr__(name):
+    submodule = _LAZY_EXPORTS.get(name)
+    if submodule is None:
+        raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+    value = getattr(importlib.import_module(f"{__name__}.{submodule}"), name)
+    globals()[name] = value  # cache: later lookups skip __getattr__
+    return value
 
-# ---------------------------------------------------------------------------
-# Data manager & categories
-# ---------------------------------------------------------------------------
-from periodica.data.data_manager import (
-    DataManager,
-    DataCategory,
-    get_data_manager,
-)
 
-# ---------------------------------------------------------------------------
-# Validation
-# ---------------------------------------------------------------------------
-from periodica.data.validation import validate_json_data
-
-# ---------------------------------------------------------------------------
-# Public surface
-# ---------------------------------------------------------------------------
-__all__ = [
-    # Element loader
-    "ElementDataLoader",
-    "get_element_loader",
-    "get_element",
-    "get_element_by_z",
-    "get_all_elements",
-    "create_fallback_element_data",
-    # Molecule loader
-    "MoleculeDataLoader",
-    "get_molecule_loader",
-    "get_all_molecules",
-    # Quark loader (legacy + classic)
-    "QuarkDataLoader",
-    "get_quark_loader",
-    # Quark data source switch (experimental ↔ simulated/metaphysica)
-    "EXPERIMENTAL",
-    "SIMULATED",
-    "get_quark_source",
-    "set_quark_source",
-    "load_quark",
-    "list_quark_names",
-    "iter_quarks",
-    # Subatomic loader
-    "SubatomicDataLoader",
-    "get_subatomic_loader",
-    "load_subatomic_data",
-    # Alloy loader
-    "AlloyDataLoader",
-    "get_alloy_loader",
-    "get_all_alloys",
-    # Data manager
-    "DataManager",
-    "DataCategory",
-    "get_data_manager",
-    # Validation
-    "validate_json_data",
-]
+def __dir__():
+    return sorted(set(globals()) | set(__all__))

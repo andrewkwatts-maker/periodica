@@ -16,17 +16,9 @@ Generic composition (data-driven, no hardcoded chemistry)::
     Get(Scope.SubAtomic, "P")              # disambiguate to Proton
     Get(Scope.Atom, "P")                   # disambiguate to Phosphorus
 
-Lower-level physics (semi-empirical formulas, layout math, etc.)::
+Constants and user-data management::
 
-    from periodica import PhysicsConstants
-    from periodica.utils.physics_calculator import (
-        AtomCalculator, SubatomicCalculator, MoleculeCalculator,
-    )
-    from periodica.data.element_loader import ElementDataLoader
-    from periodica.data.molecule_loader import MoleculeDataLoader
-    from periodica.data.quark_loader import QuarkDataLoader
-    from periodica.data.subatomic_loader import SubatomicDataLoader
-    from periodica.data.alloy_loader import AlloyDataLoader
+    from periodica import PhysicsConstants, DataManager, DataCategory
 
 Core enums::
 
