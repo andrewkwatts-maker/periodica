@@ -1,0 +1,83 @@
+{
+  "_provenance": {
+    "source": "A. Szabo and N. S. Ostlund, Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory (Dover, Mineola NY, 1996; unabridged republication of the 1989 first revised edition, McGraw-Hill), ISBN 0-486-69186-1, section 3.5 'Model calculations on H2 and HeH+' (STO-3G H2 at R = 1.4 bohr; total energy quoted as p. 167 by the secondary citation Psi4 forum thread https://forum.psicode.org/t/ground-state-energy-of-hydrogen-molecule-which-number-should-it-be/610). Integral values corroborated by the McCullagh-lab notebook https://mccullaghlab.github.io/computational_chemistry/quantum_mechanics/HF_for_H2.html.",
+    "retrieved": "2026-10-02",
+    "license_or_terms": "Textbook numerical results (facts) reproduced with attribution; no text or figures copied. The page/equation numbers above are from secondary citations and should be checked against the book.",
+    "transform": "hand transcription (published); tools/refdata/crosscheck_h2_sto3g.py (crosscheck)",
+    "units": "hartree (energies, integrals); bohr (R)",
+    "uncertainty": "Published values are rounded to the printed digits: +/-5e-5 for integrals, +/-5e-4 for energies. The crosscheck values are exact to ~1e-12 for the stated basis parameters.",
+    "conventions": "Basis functions 1 and 2 are the STO-3G 1s functions on nucleus 1 at z = 0 and nucleus 2 at z = R. V1_ij is the attraction to nucleus 1 only (Szabo-Ostlund V^1). Two-electron integrals are in chemists' notation (ij|kl). Contracted functions are renormalised (the S&O 6-digit coefficients give <1|1> = 1.0000013 before renormalisation, which shifts E_tot by ~1e-6)."
+  },
+  "system": {
+    "molecule": "H2",
+    "basis": "STO-3G (zeta = 1.24)",
+    "method": "RHF",
+    "R_bohr": 1.4
+  },
+  "published": {
+    "S12": 0.6593,
+    "T11": 0.76,
+    "T12": 0.2365,
+    "V1_11": -1.2266,
+    "V1_12": -0.5974,
+    "V1_22": -0.6538,
+    "eri_11_11": 0.7746,
+    "eri_11_22": 0.5697,
+    "eri_21_11": 0.4441,
+    "eri_21_21": 0.297,
+    "orbital_energy_1": -0.578,
+    "orbital_energy_2": 0.67,
+    "electronic_energy": -1.831,
+    "total_energy": -1.117
+  },
+  "crosscheck": {
+    "note": "Derived by this script, not literature values.",
+    "szabo_ostlund_basis": {
+      "exponents": [
+        3.42525,
+        0.623913,
+        0.168856
+      ],
+      "coefficients": [
+        0.154329,
+        0.535328,
+        0.444635
+      ],
+      "values": {
+        "S12": 0.659318273921789,
+        "T11": 0.7600313338236185,
+        "T12": 0.23645495169513772,
+        "V1_11": -1.226613296392219,
+        "V1_12": -0.5974174467176058,
+        "V1_22": -0.6538272099693707,
+        "eri_11_11": 0.774605830509519,
+        "eri_11_22": 0.5696759725467166,
+        "eri_21_11": 0.44410776854202805,
+        "eri_21_21": 0.2970287003156474,
+        "orbital_energy_1": -0.5782029400852443,
+        "orbital_energy_2": 0.6702667660830326,
+        "electronic_energy": -1.8310000357050251,
+        "total_energy": -1.1167143214193107
+      }
+    },
+    "bse_sto3g_basis": {
+      "source": "rust/periodica-qm/data/basis/sto-3g.json (Z = 1)",
+      "values": {
+        "S12": 0.6593182058047429,
+        "T11": 0.7600318799223884,
+        "T12": 0.23645465827424295,
+        "V1_11": -1.2266137303008744,
+        "V1_12": -0.5974173109849709,
+        "V1_22": -0.6538271600902897,
+        "eri_11_11": 0.7746059442114875,
+        "eri_11_22": 0.5696759264718781,
+        "eri_21_11": 0.44410765889118464,
+        "eri_21_21": 0.29702854118104927,
+        "orbital_energy_1": -0.5782029768532936,
+        "orbital_energy_2": 0.6702677605933016,
+        "electronic_energy": -1.8310000394614843,
+        "total_energy": -1.1167143251757699
+      }
+    }
+  }
+}

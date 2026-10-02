@@ -50,3 +50,53 @@ standard library, so every file can be regenerated with
   d shells — the 6-31G* convention — and `gto_spherical` marks pure f shells (Sc–Zn in 6-31G*). Using spherical
   d for 6-31G* will not reproduce published energies.
 * **Uncertainty:** not applicable (defined parameters).
+
+---
+
+## Q1-alt — Hartree–Fock regression fixtures
+
+PySCF does not install on the development machine, so the RHF fixtures come from published, independently
+computed test cases.
+
+| Directory (`rust/periodica-qm/tests/fixtures/`) | Contents | Reference energy |
+|---|---|---|
+| `h2o_sto3g/` | `geometry.json`, `basis.json`, `one_electron.json` (S, T, V, dipole; 7×7), `eri.json` (228 unique), `reference.json` | E_SCF = −74.942079928192 Eh; E_MP2(corr) = −0.049149636120 |
+| `ch4_sto3g/` | same layout (9×9, 912 unique ERIs) | E_SCF = −39.726850324347 Eh; E_MP2(corr) = −0.056046676165 |
+| `h2_sto3g/` | `reference.json` (published values + labelled cross-check) | E_tot(R = 1.4 bohr) = −1.117 (S&O, printed); −1.1167143252 recomputed with BSE STO-3G |
+
+**H2O / CH4 (Crawford group).**
+* **Source:** T. D. Crawford group, *Programming Projects* #3 (SCF) and #4 (MP2),
+  <https://github.com/CrawfordGroup/ProgrammingProjects>, commit `297fda1`; integrals computed with Psi3.
+  The project credits Y. Yamaguchi (University of Georgia). Download SHA-256s are recorded per file.
+* **Terms:** the repository declares **no licence** (no LICENSE file; GitHub API `license: null`, checked
+  2026-10-02), so default copyright covers its prose and code. Only machine-computed numbers (integrals,
+  energies — facts) are reproduced, with attribution, for regression testing. If a formally licensed fixture is
+  ever needed, regenerate with PySCF (Apache-2.0) elsewhere and diff.
+* **Geometry:** H2O is the Crawford **test geometry** R(OH) = 1.1 Å, ∠HOH = 104.0° — *not* the experimental
+  equilibrium; CH4 is r(CH) = 1.085 Å, T_d. Coordinates in bohr, as used for the integrals.
+* **Basis (exactness matters):** `basis.json` holds the exact STO-3G parameters Psi3 used — H2O from Psi3
+  `lib/pbasis.dat` (psi4/psi3 commit `b74be46`, GPL-2.0; numbers only), CH4 from the explicit basis block in the
+  Crawford input (differs from pbasis.dat in the 8th digit). With these parameters an independent closed-form
+  evaluation (`tools/refdata/_gto_s.py`) reproduces every s-type S/T/V/ERI to ≤ 1.3e-12 Eh. With **BSE STO-3G**
+  the same integrals differ by up to 4.3e-6 Eh (recorded in `one_electron.json → crosscheck`), so 1e-10 integral
+  gates must load `basis.json`; a BSE-basis run needs a ~1e-5 tolerance.
+* **Conventions (documented in every file's `_provenance.conventions`):** 0-based AO indices (source is 1-based);
+  AO order `[X 1s, X 2s, X 2px, X 2py, X 2pz, H1 1s, …]`, verified from overlap signs against the geometry;
+  contractions normalised (S_ii = 1); one-electron matrices stored full and symmetric; ERIs in chemists'
+  notation (ij|kl), unique set with i ≥ j, k ≥ l, ij ≥ kl (ij = i(i+1)/2 + j), missing entries are zero;
+  dipole integrals already carry the electron charge (μ = 2 Σ D_ij μ_ij + Σ Z_A R_A, checked against the
+  reported dipole 0.603521296525 au); MP2 correlates all occupied MOs (no frozen core).
+* **Transform:** `tools/refdata/convert_crawford_fixtures.py`.
+
+**H2 (Szabo & Ostlund).**
+* **Source:** A. Szabo & N. S. Ostlund, *Modern Quantum Chemistry* (Dover 1996 republication of the 1989 revised
+  edition), ISBN 0-486-69186-1, §3.5 (minimal-basis STO-3G H2, ζ = 1.24, R = 1.4 bohr): S12 = 0.6593,
+  T11 = 0.7600, T12 = 0.2365, V¹11 = −1.2266, V¹12 = −0.5974, V¹22 = −0.6538, (11|11) = 0.7746,
+  (11|22) = 0.5697, (21|11) = 0.4441, (21|21) = 0.2970, ε1 = −0.578, ε2 = 0.670, E0 = −1.831, E_tot = −1.117.
+  The page number (p. 167) comes from a secondary citation (Psi4 forum) and should be checked in the book; the
+  integral values are corroborated by the McCullagh-lab notebook.
+* **Cross-check (derived, labelled as such):** `tools/refdata/crosscheck_h2_sto3g.py` evaluates the same
+  quantities in closed form (minimal-basis H2 is symmetry-determined): E_tot = −1.1167143214 (S&O 6-digit basis)
+  and **−1.1167143252 Eh (BSE STO-3G)**, consistent with Psi4's non-DF −1.116714. Every published value is
+  reproduced within its printed precision. **Note:** the master plan's "≈ −1.11676 Eh" is the value near
+  R = 0.74 Å (1.398 bohr), not at R = 1.4 bohr.
