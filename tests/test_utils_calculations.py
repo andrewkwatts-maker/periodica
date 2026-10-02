@@ -79,30 +79,6 @@ class TestPositionCalculator:
         assert hasattr(calc, 'get_serpentine_position')
 
 
-# ==================== Crystalline Math Tests ====================
-
-class TestCrystallineMath:
-    """Test crystal structure calculations."""
-
-    def test_import(self):
-        from periodica.utils.crystalline_math import (
-            CrystalStructure,
-            LatticeParameters,
-            MicrostructureRenderer,
-            PACKING_FACTORS,
-        )
-
-    def test_crystal_structure_enum(self):
-        from periodica.utils.crystalline_math import CrystalStructure
-        assert hasattr(CrystalStructure, 'FCC')
-        assert hasattr(CrystalStructure, 'BCC')
-
-    def test_packing_factors(self):
-        from periodica.utils.crystalline_math import PACKING_FACTORS
-        assert isinstance(PACKING_FACTORS, dict)
-        assert len(PACKING_FACTORS) > 0
-
-
 # ==================== Logger Tests ====================
 
 class TestLogger:

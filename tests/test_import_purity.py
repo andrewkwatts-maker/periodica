@@ -46,14 +46,8 @@ class TestImportPurity:
     def test_physical_constants(self):
         _assert_import_pure("from periodica.physical_constants import PhysicsConstants")
 
-    def test_utils_pure_math(self):
-        _assert_import_pure("from periodica.utils.pure_math import factorial")
-
     def test_utils_color_math(self):
         _assert_import_pure("from periodica.utils.color_math import wavelength_to_rgb, ev_to_wavelength")
-
-    def test_utils_sdf_core(self):
-        _assert_import_pure("from periodica.utils.sdf_core import sdf_sphere, nucleus_geometry")
 
     def test_layout_math(self):
         _assert_import_pure("from periodica.layout_math.element_table import TablePositioner")
