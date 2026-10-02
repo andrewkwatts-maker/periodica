@@ -5,8 +5,8 @@
   "Classification": ["Fermion", "Quark", "Fundamental Particle"],
   "Charge_e": -0.3333333333, // -1/3 e
   "Mass_MeVc2": 4180.0, // Current quark mass, approximate
-  "Mass_kg": 7.449767e-27,
-  "Mass_amu": 4.484,
+  "Mass_kg": 7.45152683238e-27,
+  "Mass_amu": 4.4874143477,
   "Spin_hbar": 0.5,
   "ConstituentMass_MeV": 4730.0,
   "MagneticDipoleMoment_J_T": null,

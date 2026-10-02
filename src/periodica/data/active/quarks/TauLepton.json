@@ -5,8 +5,8 @@
   "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
   "Charge_e": -1,
   "Mass_MeVc2": 1776.86,
-  "Mass_kg": 3.16781e-27,
-  "Mass_amu": 1.90792,
+  "Mass_kg": 3.16754066205e-27,
+  "Mass_amu": 1.90753757365,
   "Spin_hbar": 0.5,
   "MagneticDipoleMoment_J_T": null, // Expected to be similar to electron/muon, but short-lived. Experimental value is challenging.
   "LeptonNumber_L": 1, // Specifically tau lepton number

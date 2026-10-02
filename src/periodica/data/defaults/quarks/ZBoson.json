@@ -5,8 +5,8 @@
   "Classification": ["Boson", "Gauge Boson", "Force Carrier", "Fundamental Particle"],
   "Charge_e": 0,
   "Mass_MeVc2": 91187.6, // ~91.1876 GeV/c²
-  "Mass_kg": 1.625345e-25,
-  "Mass_amu": 97.901,
+  "Mass_kg": 1.62556662244e-25,
+  "Mass_amu": 97.8939101848,
   "Spin_hbar": 1.0,
   "MagneticDipoleMoment_J_T": 0.0, // Does not have a magnetic moment (neutral gauge boson)
   "LeptonNumber_L": 0,

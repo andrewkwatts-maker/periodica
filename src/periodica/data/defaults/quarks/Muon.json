@@ -5,8 +5,8 @@
   "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
   "Charge_e": -1,
   "Mass_MeVc2": 105.6583755,
-  "Mass_kg": 1.883531594e-28,
-  "Mass_amu": 0.1134289267,
+  "Mass_kg": 1.88353162704e-28,
+  "Mass_amu": 0.113428925879,
   "Spin_hbar": 0.5,
   "MagneticDipoleMoment_J_T": 4.841297e-25, // Muon magnetic dipole moment
   "LeptonNumber_L": 1, // Specifically for muon family
