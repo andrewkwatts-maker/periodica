@@ -121,7 +121,7 @@ All three files live in `src/periodica/data/reference/elements/`, list every ele
   (1964, doi:10.1021/j100785a001) and Batsanov (2001, doi:10.1023/A:1011625728803) columns of the same table. The
   free-text "Observations" column is not reproduced. Cross-checks: identical to ASE's `vdw_alvarez.py`; mendeleev
   differs only for Ar, Kr, Xe, Rn because it substitutes the later noble-gas values of Vogt & Alvarez,
-  *Inorg. Chem.* **53**, 9260 (2014) (correction doi:10.1021/ic502140y) — **recommended follow-up:** curate those
+  *Inorg. Chem.* **53**, 9260 (2014), doi:10.1021/ic501364h (correction doi:10.1021/ic502140y) — **recommended follow-up:** curate those
   four values from the primary paper if noble-gas rendering matters.
 * **Cordero 2008** — the article is closed access; the numbers (facts) are transcribed from Wikipedia's
   reproduction of Table 2 ("Covalent radius", revision 1341480590, pinned) and cross-checked against two
