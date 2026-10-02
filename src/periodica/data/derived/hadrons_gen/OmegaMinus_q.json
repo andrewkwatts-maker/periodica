@@ -12,8 +12,8 @@
     }
   ],
   "LeptonNumber_L": 0,
-  "Mass_MeVc2": 285,
-  "Mass_amu": 0.30594,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 285.0,
+  "Mass_amu": 0.305960069163,
+  "Mass_kg": 5.08058647662e-28,
   "Name": "OmegaMinus_q"
 }

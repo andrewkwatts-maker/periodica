@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 82,
-  "Mass_MeVc2": 195365.45612853998,
-  "Mass_amu": 209.73343322516533,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of Pb",
+  "Mass_MeVc2": 193005.57802142398,
+  "Mass_amu": 207.2,
+  "Mass_kg": 3.4406369459951995e-25,
   "Name": "Pb",
   "Symbol": "Pb"
 }

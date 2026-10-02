@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 22,
-  "Mass_MeVc2": 45081.92884994,
-  "Mass_amu": 48.39743883836143,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ti",
+  "Mass_MeVc2": 44587.82820053814,
+  "Mass_amu": 47.867,
+  "Mass_kg": 7.948502350094219e-26,
   "Name": "Ti",
   "Symbol": "Ti"
 }

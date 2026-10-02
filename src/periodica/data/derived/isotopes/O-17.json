@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 8,
-  "Mass_MeVc2": 15966.353481559998,
-  "Mass_amu": 17.14058461579052,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of O-17",
+  "Mass_MeVc2": 15834.590976927962,
+  "Mass_amu": 16.99913175595,
+  "Mass_kg": 2.822772237903563e-26,
   "Name": "O-17"
 }

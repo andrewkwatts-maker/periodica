@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 93,
-  "Mass_MeVc2": 222604.24765610998,
-  "Mass_amu": 238.97547722409604,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Np-237; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 220808.9738721039,
+  "Mass_amu": 237.04817164,
+  "Mass_kg": 3.936277496743222e-25,
   "Name": "Np",
   "Symbol": "Np"
 }

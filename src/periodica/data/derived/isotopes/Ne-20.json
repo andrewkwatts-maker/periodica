@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 18783.4850763,
-  "Mass_amu": 20.164899624800647,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Ne-20",
+  "Mass_MeVc2": 18622.840116230047,
+  "Mass_amu": 19.99244017525,
+  "Mass_kg": 3.3198227947665974e-26,
   "Name": "Ne-20"
 }

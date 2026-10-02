@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 62,
-  "Mass_MeVc2": 142765.43924762,
-  "Mass_amu": 153.26499532036402,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Sm",
+  "Mass_MeVc2": 140059.45323987122,
+  "Mass_amu": 150.36,
+  "Mass_kg": 2.49678654053976e-25,
   "Name": "Sm",
   "Symbol": "Sm"
 }

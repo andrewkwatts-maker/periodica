@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 38,
-  "Mass_MeVc2": 82652.02833618001,
-  "Mass_amu": 88.73059756564247,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Sr",
+  "Mass_MeVc2": 81617.5132540404,
+  "Mass_amu": 87.62,
+  "Mass_kg": 1.4549643301549201e-25,
   "Name": "Sr",
   "Symbol": "Sr"
 }

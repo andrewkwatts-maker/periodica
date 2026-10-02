@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 39,
-  "Mass_MeVc2": 83590.81142329,
-  "Mass_amu": 89.73842261217254,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Y",
+  "Mass_MeVc2": 82815.26376770793,
+  "Mass_amu": 88.905838,
+  "Mass_kg": 1.4763161724781082e-25,
   "Name": "Y",
   "Symbol": "Y"
 }

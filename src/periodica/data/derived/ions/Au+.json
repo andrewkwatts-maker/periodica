@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 78,
-  "Mass_MeVc2": 185032.07250409998,
-  "Mass_amu": 198.6400901780661,
-  "Mass_kg": 0,
-  "Name": "Au+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Au, minus 1 electron mass",
+  "Mass_MeVc2": 183472.6873299461,
+  "Mass_amu": 196.96602142009093,
+  "Mass_kg": 3.270697733608334e-25,
+  "Name": "Au+",
+  "Symbol": "Au+"
 }

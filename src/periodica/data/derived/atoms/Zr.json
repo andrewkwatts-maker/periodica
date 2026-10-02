@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 40,
-  "Mass_MeVc2": 84529.5945104,
-  "Mass_amu": 90.7462476587026,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Zr",
+  "Mass_MeVc2": 84974.61799916209,
+  "Mass_amu": 91.224,
+  "Mass_kg": 1.514810158115184e-25,
   "Name": "Zr",
   "Symbol": "Zr"
 }

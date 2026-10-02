@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 90,
-  "Mass_MeVc2": 217908.76755373998,
-  "Mass_amu": 233.93467225260588,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Th",
+  "Mass_MeVc2": 216141.74908910124,
+  "Mass_amu": 232.0377,
+  "Mass_kg": 3.853076657740108e-25,
   "Name": "Th",
   "Symbol": "Th"
 }

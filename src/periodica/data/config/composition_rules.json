@@ -1,6 +1,6 @@
 {
-  "_comment": "Rules consumed by periodica.get — all data-driven, no hardcoded chemistry. Edit this file to extend the system to new tiers or property arithmetic without touching code.",
-  "version": 1,
+  "_comment": "Rules consumed by periodica.get (Rust core: rust/periodica_core/src/rules.rs) - all data-driven, no hardcoded chemistry. Edit this file to extend the system to new tiers or property arithmetic without touching code.",
+  "version": 2,
 
   "tier_definitions": [
     { "name": "fundamentals", "source": "active/quarks",      "is_active": true },
@@ -19,6 +19,34 @@
     "BaryonNumber_B",
     "LeptonNumber_L"
   ],
+
+  "_integral_properties_comment": "Additive properties that are integral quantum numbers. A composed total within 1e-9 of an integer is snapped to it (quark charges are stored as 0.6666666667). No other property is ever snapped: masses keep their exact sum.",
+  "integral_properties": [
+    "Charge_e",
+    "BaryonNumber_B",
+    "LeptonNumber_L"
+  ],
+
+  "_resolution_levels_comment": "How an unscoped brace spec picks its constituents. Each level is a group of tiers; the first level in which every constituent symbol matches exactly (case-sensitive) resolves the whole spec, so {N=1,H=3} is ammonia from atoms while {P=1,N=0,E=1} is hydrogen from particles. If no level covers the spec, each symbol must resolve unambiguously on its own; a symbol naming different entries in different tiers raises AmbiguousConstituent. Scoped specs (from_=...) ignore this list.",
+  "resolution_levels": [
+    ["atoms"],
+    ["subatomic", "fundamentals"],
+    ["molecules"],
+    ["ions"],
+    ["isotopes"],
+    ["amino_acids"]
+  ],
+
+  "_mass_sources_comment": "Curated masses for generated tiers (build time only: scripts/build_*.py compose an entry, then take Mass_amu from the declared reference and derive Mass_MeVc2 and Mass_kg with the CODATA 2018 factors below; the registry serves the generated files). element = CIAAW 2021 standard atomic weight of element Z (abridged value for interval elements; AME2020 nuclide mass when CIAAW gives none). nuclide = AME2020 atomic mass of nuclide (Z, A). Both are neutral-atom masses; entries whose electron count differs from Z are corrected by that many electron masses.",
+  "mass_sources": {
+    "MeV_per_u": 931.49410242,
+    "kg_per_u": 1.66053906660e-27,
+    "electron_mass_u": 0.000548579909065,
+    "composition_keys": { "protons": "P", "neutrons": "N", "electrons": "E" },
+    "element_weights": { "path": "reference/masses/ciaaw2021_standard_atomic_weights.json", "label": "CIAAW 2021" },
+    "nuclide_masses":  { "path": "reference/masses/ame2020_atomic_masses.json",            "label": "AME2020" },
+    "tiers": { "atoms": "element", "ions": "element", "isotopes": "nuclide" }
+  },
 
   "placeholder_prefixes": ["demo_", "example_"]
 }

@@ -9,24 +9,14 @@
 
 //! # registry
 //!
-//! Name resolution, ported faithfully from `periodica/get.py`.
+//! Name resolution for `Get`. Originally a faithful port of the index in the
+//! pure-Python `periodica/get.py` (frozen as `tests/oracles/get_oracle.py`);
+//! it is now the only implementation.
 //!
-//! ## Why this exists
+//! ## The priority table
 //!
-//! `get.rs::resolve_named` used to resolve names with a sequence of passes --
-//! exact stem, casefold stem, `Symbol`, then `Aliases`. Python does something
-//! structurally different: it builds a **priority-resolved index** at load
-//! time, where every entry contributes several keys at different priorities,
-//! and the highest-priority claimant of a key wins.
-//!
-//! The two orderings are close to opposite. Python ranks aliases highest and
-//! derived stems lowest; the Rust passes tried stems first and aliases last.
-//! They therefore disagreed on ambiguous short names -- `Get("E")` resolved to
-//! glutamic acid in Rust (stem match in `amino_acids`) and to the electron in
-//! Python (`Symbol` match). Any name that is a stem in one tier and a symbol
-//! or alias in another was at risk.
-//!
-//! ## Python's priority table (`get.py`)
+//! Every datasheet contributes several keys at different priorities, and the
+//! highest-priority claimant of a key wins:
 //!
 //! | Key source | active tier | derived tier |
 //! |---|---:|---:|
@@ -35,19 +25,41 @@
 //! | file stem | 2 | 0 |
 //!
 //! Note the inversion: a *derived* symbol (3) outranks an *active* stem (2),
-//! which outranks an *active* symbol (1). That is not an obvious ordering, and
-//! it is exactly the sort of thing a re-implementation gets wrong -- hence a
-//! direct port rather than a reconstruction from principles.
+//! which outranks an *active* symbol (1). That is what lets the generated
+//! hydrogen atom (`Symbol: "H"`) shadow the Higgs boson's `H`, and the
+//! generated potassium ion (`Symbol: "K+"`) shadow the kaon's.
 //!
-//! Ties are resolved **first-writer-wins**: Python compares with `<`, not
-//! `<=`, so an equal-priority later claimant does not displace an earlier one.
-//! Insertion order is tier order, then the sorted file listing.
+//! Ties are resolved **first-writer-wins** (`<`, not `<=`). Insertion order is
+//! tier order (the rules' `tier_definitions`, then the `derived/`
+//! subdirectories by name), then the file listing sorted by file name --
+//! byte order, so the result no longer depends on the platform. Python sorted
+//! `Path` objects, which compare case-insensitively on Windows only, so the
+//! same tree resolved differently on Windows and Linux (D6).
+//!
+//! ## Collisions
+//!
+//! Two files *in the same tier* claiming the same key is a data error, not a
+//! priority contest. The first file (in sorted order) keeps the key -- the
+//! rule Python applied silently -- but the key is recorded as contested, and
+//! any lookup that lands on it raises [`GetError::RegistryCollision`] naming
+//! every claimant. The rest of the tier stays usable: one bad datasheet does
+//! not take the registry down.
+//!
+//! ## Sharing
+//!
+//! Each datasheet is parsed once and held as an `Arc<Value>`; every key it
+//! claims points at the same allocation. Callers that need an owned value
+//! (the Python boundary, `Get`) clone it, so nothing a caller does to a result
+//! can reach back into the registry (D5).
 
 use std::collections::HashMap;
+use std::sync::Arc;
 
 use serde_json::Value;
 
-/// Key priorities, mirroring the `_PRIORITY_*` constants in `get.py`.
+use crate::get::GetError;
+
+/// Key priorities. See the module docs for the table.
 pub const PRIORITY_ALIAS_ACTIVE: i32 = 5;
 pub const PRIORITY_ALIAS_DERIVED: i32 = 4;
 pub const PRIORITY_SYMBOL_DERIVED: i32 = 3;
@@ -55,13 +67,50 @@ pub const PRIORITY_STEM_ACTIVE: i32 = 2;
 pub const PRIORITY_SYMBOL_ACTIVE: i32 = 1;
 pub const PRIORITY_STEM_DERIVED: i32 = 0;
 
-/// Exact and casefold lookup tables for one tier. Mirrors `_TierIndex`.
+/// One registered datasheet.
+#[derive(Debug)]
+pub struct Record {
+    /// The tier the datasheet belongs to.
+    pub tier: String,
+    /// Its file stem, which identifies it within the tier.
+    pub stem: String,
+    /// The parsed datasheet, shared by every key it claims.
+    pub data: Arc<Value>,
+}
+
+impl Record {
+    /// `tier:stem`, for error messages.
+    pub fn label(&self) -> String {
+        format!("{}:{}", self.tier, self.stem)
+    }
+
+    /// Display name: `Name`, else `name`, else the stem.
+    pub fn display_name(&self) -> String {
+        self.data
+            .get("Name")
+            .or_else(|| self.data.get("name"))
+            .and_then(Value::as_str)
+            .map(str::to_string)
+            .unwrap_or_else(|| self.stem.clone())
+    }
+}
+
+/// A shared handle to a registered datasheet.
+pub type Entry = Arc<Record>;
+
+#[derive(Debug, Clone)]
+struct Claim {
+    priority: i32,
+    /// The exact key this claim was made under (relevant for casefold claims).
+    key: String,
+    entry: Entry,
+}
+
+/// Exact and casefold lookup tables for one tier (or the merged index).
 #[derive(Debug, Default, Clone)]
 pub struct TierIndex {
-    exact: HashMap<String, Value>,
-    casefold: HashMap<String, Value>,
-    priority_exact: HashMap<String, i32>,
-    priority_casefold: HashMap<String, i32>,
+    exact: HashMap<String, Claim>,
+    casefold: HashMap<String, Claim>,
 }
 
 impl TierIndex {
@@ -69,29 +118,41 @@ impl TierIndex {
         Self::default()
     }
 
-    /// Claim `key` for `data` at priority `prio`.
-    ///
-    /// Uses `<` so the first writer wins a tie, matching Python.
-    pub fn add(&mut self, key: &str, prio: i32, data: &Value) {
-        if *self.priority_exact.get(key).unwrap_or(&-1) < prio {
-            self.exact.insert(key.to_string(), data.clone());
-            self.priority_exact.insert(key.to_string(), prio);
+    /// Claim `key` for `entry` at priority `prio`. First writer wins a tie.
+    fn claim(&mut self, key: &str, prio: i32, entry: &Entry) {
+        let claim = || Claim {
+            priority: prio,
+            key: key.to_string(),
+            entry: Arc::clone(entry),
+        };
+        if self.exact.get(key).map_or(true, |c| c.priority < prio) {
+            self.exact.insert(key.to_string(), claim());
         }
-        let cf = key.to_lowercase();
-        if *self.priority_casefold.get(&cf).unwrap_or(&-1) < prio {
-            self.casefold.insert(cf.clone(), data.clone());
-            self.priority_casefold.insert(cf, prio);
+        let cf = casefold(key);
+        if self.casefold.get(&cf).map_or(true, |c| c.priority < prio) {
+            self.casefold.insert(cf, claim());
         }
     }
 
-    /// Exact match, then casefold. Mirrors `_Registry.lookup`.
+    fn exact_claim(&self, name: &str) -> Option<&Claim> {
+        self.exact.get(name)
+    }
+
+    fn casefold_claim(&self, name: &str) -> Option<&Claim> {
+        self.casefold.get(&casefold(name))
+    }
+
+    /// Exact match, then casefold.
+    fn claim_for(&self, name: &str) -> Option<&Claim> {
+        self.exact_claim(name).or_else(|| self.casefold_claim(name))
+    }
+
+    /// Exact match, then casefold, ignoring collisions. Diagnostics only.
     pub fn get(&self, name: &str) -> Option<&Value> {
-        self.exact
-            .get(name)
-            .or_else(|| self.casefold.get(&name.to_lowercase()))
+        self.claim_for(name).map(|c| c.entry.data.as_ref())
     }
 
-    /// Every exactly-registered key, sorted. Used by diagnostics and tests.
+    /// Every exactly-registered key, sorted.
     pub fn keys(&self) -> Vec<String> {
         let mut k: Vec<String> = self.exact.keys().cloned().collect();
         k.sort();
@@ -107,14 +168,24 @@ impl TierIndex {
     }
 }
 
-/// Per-tier indices plus a merged cross-tier index. Mirrors `_Registry`.
+/// Keys claimed by more than one file within a tier.
+#[derive(Debug, Default, Clone)]
+struct TierState {
+    index: TierIndex,
+    /// Key -> stem of the file that holds it, for duplicate detection.
+    seen: HashMap<String, String>,
+    /// Key -> every stem claiming it, in sorted file order.
+    contested: HashMap<String, Vec<String>>,
+}
+
+/// Per-tier indices plus the merged cross-tier index.
 #[derive(Debug, Default, Clone)]
 pub struct Registry {
-    pub by_tier: HashMap<String, TierIndex>,
-    /// Used for unscoped lookups. Note this is a *priority* contest across the
-    /// whole corpus, not a tier-order walk -- another place the previous Rust
-    /// implementation diverged.
-    pub merged: TierIndex,
+    tiers: HashMap<String, TierState>,
+    /// Tier names in insertion (= resolution) order.
+    order: Vec<String>,
+    /// Used for unscoped name lookups: a priority contest across every tier.
+    merged: TierIndex,
 }
 
 impl Registry {
@@ -122,45 +193,198 @@ impl Registry {
         Self::default()
     }
 
-    /// Register one datasheet under `tier`.
-    ///
-    /// `stem` is the file stem, `is_active` marks tiers declared with
-    /// `is_active: true` in `composition_rules.json`.
-    pub fn add_entry(&mut self, tier: &str, stem: &str, data: &Value, is_active: bool) {
-        let index = self.by_tier.entry(tier.to_string()).or_default();
-        for (key, prio) in entry_keys(stem, data, is_active) {
-            index.add(&key, prio, data);
-            self.merged.add(&key, prio, data);
+    /// Declare a tier, so it exists (and is listed) even with no entries.
+    pub fn add_tier(&mut self, tier: &str) {
+        if !self.tiers.contains_key(tier) {
+            self.tiers.insert(tier.to_string(), TierState::default());
+            self.order.push(tier.to_string());
         }
     }
 
-    /// Resolve a name, optionally restricted to specific tiers.
-    pub fn lookup(&self, name: &str, from: Option<&[&str]>) -> Option<Value> {
-        match from {
-            None => self.merged.get(name).cloned(),
+    /// Register one datasheet under `tier`. Returns the shared handle.
+    ///
+    /// Must be called in sorted file order within a tier: a key already held
+    /// by an earlier file of the same tier is not re-claimed, and is recorded
+    /// as contested instead.
+    pub fn add_entry(&mut self, tier: &str, stem: &str, data: Arc<Value>, is_active: bool) -> Entry {
+        self.add_tier(tier);
+        let entry = Arc::new(Record {
+            tier: tier.to_string(),
+            stem: stem.to_string(),
+            data,
+        });
+        let state = self.tiers.get_mut(tier).expect("tier was just added");
+        for (key, prio) in entry_keys(stem, &entry.data, is_active) {
+            match state.seen.get(&key) {
+                Some(holder) if holder != stem => {
+                    let claimants = state
+                        .contested
+                        .entry(key.clone())
+                        .or_insert_with(|| vec![holder.clone()]);
+                    if !claimants.iter().any(|s| s == stem) {
+                        claimants.push(stem.to_string());
+                    }
+                    continue;
+                }
+                _ => {
+                    state.seen.insert(key.clone(), stem.to_string());
+                }
+            }
+            state.index.claim(&key, prio, &entry);
+            self.merged.claim(&key, prio, &entry);
+        }
+        entry
+    }
+
+    /// Whether `tier` is registered.
+    pub fn has_tier(&self, tier: &str) -> bool {
+        self.tiers.contains_key(tier)
+    }
+
+    /// Registered tier names, in resolution order.
+    pub fn tier_order(&self) -> &[String] {
+        &self.order
+    }
+
+    /// Registered tier names, sorted (what `list_tiers()` reports).
+    pub fn tier_names(&self) -> Vec<String> {
+        let mut names = self.order.clone();
+        names.sort();
+        names
+    }
+
+    /// The index of one tier.
+    pub fn tier_index(&self, tier: &str) -> Option<&TierIndex> {
+        self.tiers.get(tier).map(|s| &s.index)
+    }
+
+    /// Every in-tier collision: `(tier, key, claimants)`, sorted.
+    pub fn collisions(&self) -> Vec<(String, String, Vec<String>)> {
+        let mut out: Vec<_> = self
+            .tiers
+            .iter()
+            .flat_map(|(t, s)| {
+                s.contested
+                    .iter()
+                    .map(move |(k, v)| (t.clone(), k.clone(), v.clone()))
+            })
+            .collect();
+        out.sort();
+        out
+    }
+
+    /// Fail if `claim` landed on a key that several files of its tier claim.
+    fn checked(&self, claim: &Claim) -> Result<Entry, GetError> {
+        let tier = &claim.entry.tier;
+        if let Some(files) = self.tiers.get(tier).and_then(|s| s.contested.get(&claim.key)) {
+            return Err(GetError::RegistryCollision {
+                key: claim.key.clone(),
+                tier: tier.clone(),
+                files: files.clone(),
+            });
+        }
+        Ok(Arc::clone(&claim.entry))
+    }
+
+    /// Resolve a name: unscoped through the merged priority index, or scoped
+    /// by trying each named tier in order (exact, then casefold, per tier).
+    ///
+    /// Unknown tiers in `scope` are the caller's to reject (see
+    /// [`Self::validate_scope`]); here they simply match nothing.
+    pub fn lookup(&self, name: &str, scope: Option<&[&str]>) -> Result<Option<Entry>, GetError> {
+        match scope {
+            None => self.merged.claim_for(name).map(|c| self.checked(c)).transpose(),
             Some(tiers) => {
                 for tier in tiers {
-                    if let Some(found) = self.by_tier.get(*tier).and_then(|i| i.get(name)) {
-                        return Some(found.clone());
+                    if let Some(claim) = self.tiers.get(*tier).and_then(|s| s.index.claim_for(name)) {
+                        return self.checked(claim).map(Some);
                     }
                 }
-                None
+                Ok(None)
             }
         }
     }
 
+    /// Exact-case match in the first of `tiers` that has one.
+    pub fn lookup_exact(&self, name: &str, tiers: &[&str]) -> Result<Option<Entry>, GetError> {
+        for tier in tiers {
+            if let Some(claim) = self.tiers.get(*tier).and_then(|s| s.index.exact_claim(name)) {
+                return self.checked(claim).map(Some);
+            }
+        }
+        Ok(None)
+    }
+
+    /// Every tier's resolution of `name`, in tier order: exact matches if any
+    /// tier has one, otherwise casefold matches. Used to detect a constituent
+    /// symbol that means different things in different tiers.
+    pub fn candidates(&self, name: &str) -> Result<Vec<Entry>, GetError> {
+        let collect = |pick: &dyn Fn(&TierIndex) -> Option<&Claim>| -> Result<Vec<Entry>, GetError> {
+            let mut out: Vec<Entry> = Vec::new();
+            for tier in &self.order {
+                if let Some(claim) = self.tiers.get(tier).and_then(|s| pick(&s.index)) {
+                    let entry = self.checked(claim)?;
+                    if !out.iter().any(|e| Arc::ptr_eq(e, &entry)) {
+                        out.push(entry);
+                    }
+                }
+            }
+            Ok(out)
+        };
+        let exact = collect(&|idx| idx.exact_claim(name))?;
+        if !exact.is_empty() {
+            return Ok(exact);
+        }
+        collect(&|idx| idx.casefold_claim(name))
+    }
+
+    /// Reject a scope naming a tier that is not registered (D8: these used to
+    /// be ignored, so a typo silently searched nothing or everything).
+    pub fn validate_scope(&self, scope: &[&str]) -> Result<(), GetError> {
+        if scope.is_empty() {
+            return Err(GetError::InvalidSpec(
+                "scope is an empty list of tiers".to_string(),
+            ));
+        }
+        for tier in scope {
+            if !self.has_tier(tier) {
+                return Err(GetError::UnknownTier {
+                    tier: (*tier).to_string(),
+                    known: self.tier_names(),
+                });
+            }
+        }
+        Ok(())
+    }
+
+    /// Number of distinct keys across the corpus.
     pub fn total_keys(&self) -> usize {
         self.merged.len()
     }
+
+    /// The merged index (diagnostics).
+    pub fn merged(&self) -> &TierIndex {
+        &self.merged
+    }
 }
 
-/// The `(key, priority)` pairs one entry contributes. Mirrors `_entry_keys`.
+/// Case-insensitive key. Lower-casing, as Python's `str.casefold` does for
+/// every symbol in the corpus.
+fn casefold(key: &str) -> String {
+    key.to_lowercase()
+}
+
+/// The `(key, priority)` pairs one entry contributes.
 ///
 /// Both PascalCase and snake_case field names are accepted, because the amino
-/// acid datasheets use lowercase `symbol` / `aliases` while everything else
-/// uses `Symbol` / `Aliases`.
+/// acid datasheets use lowercase `symbol` / `aliases`. Duplicate keys within
+/// one entry (an alias equal to the stem) keep their highest priority.
 pub fn entry_keys(stem: &str, data: &Value, is_active: bool) -> Vec<(String, i32)> {
-    let mut out = Vec::new();
+    let mut out: Vec<(String, i32)> = Vec::new();
+    let mut push = |key: &str, prio: i32| match out.iter_mut().find(|(k, _)| k == key) {
+        Some(existing) => existing.1 = existing.1.max(prio),
+        None => out.push((key.to_string(), prio)),
+    };
 
     if let Some(sym) = data
         .get("Symbol")
@@ -168,14 +392,14 @@ pub fn entry_keys(stem: &str, data: &Value, is_active: bool) -> Vec<(String, i32
         .and_then(Value::as_str)
         .filter(|s| !s.is_empty())
     {
-        out.push((
-            sym.to_string(),
+        push(
+            sym,
             if is_active {
                 PRIORITY_SYMBOL_ACTIVE
             } else {
                 PRIORITY_SYMBOL_DERIVED
             },
-        ));
+        );
     }
 
     if let Some(aliases) = data
@@ -190,26 +414,25 @@ pub fn entry_keys(stem: &str, data: &Value, is_active: bool) -> Vec<(String, i32
         };
         for a in aliases {
             if let Some(s) = a.as_str().filter(|s| !s.is_empty()) {
-                out.push((s.to_string(), prio));
+                push(s, prio);
             }
         }
     }
 
-    out.push((
-        stem.to_string(),
+    push(
+        stem,
         if is_active {
             PRIORITY_STEM_ACTIVE
         } else {
             PRIORITY_STEM_DERIVED
         },
-    ));
+    );
     out
 }
 
 /// Whether a file stem is a placeholder that the registry skips.
 ///
-/// `composition_rules.json` declares `placeholder_prefixes` (`demo_`,
-/// `example_`); Python drops those files before indexing.
+/// `prefixes` are the rules' `placeholder_prefixes`, already lower-cased.
 pub fn is_placeholder(stem: &str, prefixes: &[String]) -> bool {
     let lower = stem.to_lowercase();
     prefixes.iter().any(|p| lower.starts_with(p.as_str()))
@@ -220,19 +443,24 @@ mod tests {
     use super::*;
     use serde_json::json;
 
+    fn add(reg: &mut Registry, tier: &str, stem: &str, data: Value, active: bool) -> Entry {
+        reg.add_entry(tier, stem, Arc::new(data), active)
+    }
+
+    fn name_of(e: &Entry) -> String {
+        e.display_name()
+    }
+
     #[test]
-    fn priority_table_matches_python() {
-        // Pinned against get.py's _PRIORITY_* constants. The inversion --
-        // derived symbol (3) above active stem (2) above active symbol (1) --
-        // is deliberate and easy to get wrong.
+    fn priority_table_is_pinned() {
+        // The inversion -- derived symbol (3) above active stem (2) above
+        // active symbol (1) -- is deliberate and easy to get wrong.
         assert_eq!(PRIORITY_ALIAS_ACTIVE, 5);
         assert_eq!(PRIORITY_ALIAS_DERIVED, 4);
         assert_eq!(PRIORITY_SYMBOL_DERIVED, 3);
         assert_eq!(PRIORITY_STEM_ACTIVE, 2);
         assert_eq!(PRIORITY_SYMBOL_ACTIVE, 1);
         assert_eq!(PRIORITY_STEM_DERIVED, 0);
-        assert!(PRIORITY_SYMBOL_DERIVED > PRIORITY_STEM_ACTIVE);
-        assert!(PRIORITY_STEM_ACTIVE > PRIORITY_SYMBOL_ACTIVE);
     }
 
     #[test]
@@ -247,8 +475,18 @@ mod tests {
     }
 
     #[test]
+    fn a_key_repeated_within_one_entry_is_not_a_collision() {
+        // The generated atom "H" claims "H" as its stem and as its Symbol.
+        let mut reg = Registry::new();
+        add(&mut reg, "atoms", "H", json!({"Symbol": "H"}), false);
+        assert!(reg.collisions().is_empty());
+        assert!(reg.lookup("H", None).unwrap().is_some());
+        let keys = entry_keys("H", &json!({"Symbol": "H"}), false);
+        assert_eq!(keys, vec![("H".to_string(), PRIORITY_SYMBOL_DERIVED)]);
+    }
+
+    #[test]
     fn snake_case_fields_are_accepted() {
-        // Amino acid datasheets use lowercase `symbol` / `aliases`.
         let data = json!({"symbol": "E", "aliases": ["Glu"]});
         let keys = entry_keys("GlutamicAcid", &data, true);
         let map: HashMap<&str, i32> = keys.iter().map(|(k, p)| (k.as_str(), *p)).collect();
@@ -257,90 +495,126 @@ mod tests {
     }
 
     #[test]
-    fn higher_priority_claims_a_contested_key() {
-        let mut idx = TierIndex::new();
-        let stem_entry = json!({"which": "stem"});
-        let alias_entry = json!({"which": "alias"});
-        idx.add("X", PRIORITY_STEM_DERIVED, &stem_entry);
-        idx.add("X", PRIORITY_ALIAS_ACTIVE, &alias_entry);
-        assert_eq!(idx.get("X").unwrap()["which"], "alias");
+    fn higher_priority_claims_a_contested_key_across_tiers() {
+        let mut reg = Registry::new();
+        add(&mut reg, "a", "X", json!({"Name": "stem"}), false);
+        add(&mut reg, "b", "Other", json!({"Name": "alias", "Aliases": ["X"]}), true);
+        let got = reg.lookup("X", None).unwrap().unwrap();
+        assert_eq!(name_of(&got), "alias");
     }
 
     #[test]
-    fn lower_priority_cannot_displace() {
-        let mut idx = TierIndex::new();
-        let alias_entry = json!({"which": "alias"});
-        let stem_entry = json!({"which": "stem"});
-        idx.add("X", PRIORITY_ALIAS_ACTIVE, &alias_entry);
-        idx.add("X", PRIORITY_STEM_DERIVED, &stem_entry);
-        assert_eq!(idx.get("X").unwrap()["which"], "alias");
-    }
-
-    #[test]
-    fn equal_priority_is_first_writer_wins() {
-        // Python compares with `<`, not `<=`.
-        let mut idx = TierIndex::new();
-        let first = json!({"n": 1});
-        let second = json!({"n": 2});
-        idx.add("X", PRIORITY_STEM_ACTIVE, &first);
-        idx.add("X", PRIORITY_STEM_ACTIVE, &second);
-        assert_eq!(idx.get("X").unwrap()["n"], 1);
+    fn equal_priority_across_tiers_is_first_writer_wins() {
+        let mut reg = Registry::new();
+        add(&mut reg, "a", "One", json!({"Name": "first", "Symbol": "X"}), true);
+        add(&mut reg, "b", "Two", json!({"Name": "second", "Symbol": "X"}), true);
+        assert_eq!(name_of(&reg.lookup("X", None).unwrap().unwrap()), "first");
     }
 
     #[test]
     fn casefold_lookup_falls_back_after_exact() {
-        let mut idx = TierIndex::new();
-        let data = json!({"n": 1});
-        idx.add("Fe", PRIORITY_STEM_ACTIVE, &data);
-        assert!(idx.get("Fe").is_some());
-        assert!(idx.get("fe").is_some());
-        assert!(idx.get("FE").is_some());
-        assert!(idx.get("Zz").is_none());
+        let mut reg = Registry::new();
+        add(&mut reg, "atoms", "Fe", json!({"n": 1}), false);
+        for q in ["Fe", "fe", "FE"] {
+            assert!(reg.lookup(q, None).unwrap().is_some(), "{q}");
+        }
+        assert!(reg.lookup("Zz", None).unwrap().is_none());
     }
 
     #[test]
-    fn the_e_collision_resolves_the_way_python_does() {
-        // The collision that motivated this module. Two real entries claim "E":
-        //
-        //   defaults/quarks/Electron.json        Symbol "E"  (fundamentals, active)
-        //   active/amino_acids/GlutamicAcid.json symbol "E"  (amino_acids,  active)
-        //
-        // Neither claims it as a *stem* -- the amino acid's stem is
-        // "GlutamicAcid" -- so both sit at PRIORITY_SYMBOL_ACTIVE. The winner
-        // is decided purely by insertion order, and `fundamentals` is the
-        // first entry in `composition_rules.json`'s tier list.
-        //
-        // Verified against CPython: `Get("E")` returns the Electron.
+    fn the_e_collision_resolves_to_the_electron() {
+        // Electron (Symbol "e-", alias "E", fundamentals) against glutamic
+        // acid (symbol "E", amino_acids): the active alias outranks the
+        // active symbol, and fundamentals is registered first anyway.
         let mut reg = Registry::new();
-        let electron = json!({"Symbol": "E", "Name": "Electron", "Charge_e": -1});
-        let glutamic = json!({"symbol": "E", "Name": "Glutamic acid"});
-        reg.add_entry("fundamentals", "Electron", &electron, true);
-        reg.add_entry("amino_acids", "GlutamicAcid", &glutamic, true);
-
-        let got = reg.lookup("E", None).expect("E resolves");
-        assert_eq!(
-            got["Name"], "Electron",
-            "unscoped `E` must resolve to the electron, as CPython does"
-        );
-
-        // Scoped lookup still reaches the amino acid.
-        let scoped = reg.lookup("E", Some(&["amino_acids"])).expect("scoped E");
-        assert_eq!(scoped["Name"], "Glutamic acid");
-
-        // ...and the old pass-based resolver would have gone the other way: it
-        // tried stems before symbols, so "GlutamicAcid" losing its stem claim
-        // is precisely what makes the priority model necessary.
-        assert!(reg.lookup("GlutamicAcid", None).is_some());
+        add(&mut reg, "fundamentals", "Electron", json!({"Name": "Electron", "Aliases": ["E"]}), true);
+        add(&mut reg, "amino_acids", "GlutamicAcid", json!({"name": "Glutamic acid", "symbol": "E"}), true);
+        assert_eq!(name_of(&reg.lookup("E", None).unwrap().unwrap()), "Electron");
+        let scoped = reg.lookup("E", Some(&["amino_acids"])).unwrap().unwrap();
+        assert_eq!(name_of(&scoped), "Glutamic acid");
     }
 
     #[test]
     fn scoped_lookup_only_searches_named_tiers() {
         let mut reg = Registry::new();
-        let fe = json!({"Symbol": "Fe", "Name": "Iron"});
-        reg.add_entry("atoms", "Fe", &fe, false);
-        assert!(reg.lookup("Fe", Some(&["atoms"])).is_some());
-        assert!(reg.lookup("Fe", Some(&["proteins"])).is_none());
-        assert!(reg.lookup("Fe", None).is_some());
+        add(&mut reg, "atoms", "Fe", json!({"Symbol": "Fe"}), false);
+        reg.add_tier("proteins");
+        assert!(reg.lookup("Fe", Some(&["atoms"])).unwrap().is_some());
+        assert!(reg.lookup("Fe", Some(&["proteins"])).unwrap().is_none());
+    }
+
+    #[test]
+    fn in_tier_duplicates_are_reported_on_lookup_not_silently_resolved() {
+        // D6: AsparticAcid.json and Aspartic_Acid.json both claimed "D".
+        let mut reg = Registry::new();
+        add(&mut reg, "amino_acids", "AsparticAcid", json!({"symbol": "D", "n": 1}), true);
+        add(&mut reg, "amino_acids", "Aspartic_Acid", json!({"symbol": "D", "n": 2}), true);
+        add(&mut reg, "amino_acids", "Glycine", json!({"symbol": "G"}), true);
+
+        let collisions = reg.collisions();
+        assert_eq!(
+            collisions,
+            vec![(
+                "amino_acids".to_string(),
+                "D".to_string(),
+                vec!["AsparticAcid".to_string(), "Aspartic_Acid".to_string()]
+            )]
+        );
+        for scope in [None, Some(&["amino_acids"][..])] {
+            match reg.lookup("D", scope) {
+                Err(GetError::RegistryCollision { key, tier, files }) => {
+                    assert_eq!(key, "D");
+                    assert_eq!(tier, "amino_acids");
+                    assert_eq!(files.len(), 2);
+                }
+                other => panic!("expected a collision, got {other:?}"),
+            }
+        }
+        // The rest of the tier, and each file's own stem, still resolve.
+        assert!(reg.lookup("G", None).unwrap().is_some());
+        assert!(reg.lookup("Aspartic_Acid", None).unwrap().is_some());
+    }
+
+    #[test]
+    fn the_same_key_in_two_tiers_is_a_priority_contest_not_a_collision() {
+        let mut reg = Registry::new();
+        add(&mut reg, "atoms", "P", json!({"Symbol": "P"}), false);
+        add(&mut reg, "subatomic", "Proton", json!({"Aliases": ["P"]}), true);
+        assert!(reg.collisions().is_empty());
+        assert_eq!(reg.candidates("P").unwrap().len(), 2);
+    }
+
+    #[test]
+    fn candidates_prefer_exact_matches_over_casefold() {
+        let mut reg = Registry::new();
+        add(&mut reg, "atoms", "U", json!({"Symbol": "U"}), false);
+        add(&mut reg, "fundamentals", "UpQuark", json!({"Symbol": "u"}), true);
+        let c = reg.candidates("u").unwrap();
+        assert_eq!(c.len(), 1);
+        assert_eq!(c[0].stem, "UpQuark");
+        let c = reg.candidates("Ux").unwrap();
+        assert!(c.is_empty());
+    }
+
+    #[test]
+    fn unknown_and_empty_scopes_are_rejected() {
+        let mut reg = Registry::new();
+        reg.add_tier("atoms");
+        assert!(reg.validate_scope(&["atoms"]).is_ok());
+        assert!(matches!(
+            reg.validate_scope(&["atom"]),
+            Err(GetError::UnknownTier { .. })
+        ));
+        assert!(matches!(reg.validate_scope(&[]), Err(GetError::InvalidSpec(_))));
+    }
+
+    #[test]
+    fn every_key_of_an_entry_shares_one_allocation() {
+        let mut reg = Registry::new();
+        let e = add(&mut reg, "atoms", "Fe", json!({"Symbol": "Fe", "Aliases": ["Iron"]}), false);
+        let a = reg.lookup("Iron", None).unwrap().unwrap();
+        let b = reg.lookup("Fe", None).unwrap().unwrap();
+        assert!(Arc::ptr_eq(&a, &b) && Arc::ptr_eq(&a, &e));
     }
 
     #[test]

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 102,
-  "Mass_MeVc2": 243267.64590685998,
-  "Mass_amu": 261.1585465502166,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of No-259; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 241351.05190720008,
+  "Mass_amu": 259.100998364,
+  "Mass_kg": 4.302473299784847e-25,
   "Name": "No",
   "Symbol": "No"
 }

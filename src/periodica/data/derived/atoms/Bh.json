@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 107,
-  "Mass_MeVc2": 253598.95386553,
-  "Mass_amu": 272.249661278567,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Bh-270 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 251627.63729586336,
+  "Mass_amu": 270.133366,
+  "Mass_kg": 4.485670074351562e-25,
   "Name": "Bh",
   "Symbol": "Bh"
 }

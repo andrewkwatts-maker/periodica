@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 75,
-  "Mass_MeVc2": 175640.05863148998,
-  "Mass_amu": 188.55734907615488,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Re",
+  "Mass_MeVc2": 173450.72232932094,
+  "Mass_amu": 186.207,
+  "Mass_kg": 3.0920399797438617e-25,
   "Name": "Re",
   "Symbol": "Re"
 }

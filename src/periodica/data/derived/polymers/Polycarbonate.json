@@ -27,9 +27,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 134,
-  "Mass_MeVc2": 238544.78413513998,
-  "Mass_amu": 256.0883461490287,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 236864.9778338697,
+  "Mass_amu": 254.28499999999997,
+  "Mass_kg": 4.22250176550381e-25,
   "Name": "Polycarbonate",
   "Properties": {
     "Density_kgm3": 1200,

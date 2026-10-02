@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 27,
-  "Mass_MeVc2": 55413.236808609996,
-  "Mass_amu": 59.48855356671176,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Co",
+  "Mass_MeVc2": 54895.92264777373,
+  "Mass_amu": 58.933194,
+  "Mass_kg": 9.786087095651672e-26,
   "Name": "Co",
   "Symbol": "Co"
 }

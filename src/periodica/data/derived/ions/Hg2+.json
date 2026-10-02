@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 78,
-  "Mass_MeVc2": 188789.04085382,
-  "Mass_amu": 202.67336139253706,
-  "Mass_kg": 0,
-  "Name": "Hg2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Hg, minus 2 electron masses",
+  "Mass_MeVc2": 186849.24299473266,
+  "Mass_amu": 200.59090284018188,
+  "Mass_kg": 3.330890305706869e-25,
+  "Name": "Hg2+",
+  "Symbol": "Hg2+"
 }

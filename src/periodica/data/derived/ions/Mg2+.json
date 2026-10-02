@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 22539.16009366,
-  "Mass_amu": 24.19678238994265,
-  "Mass_kg": 0,
-  "Name": "Mg2+"
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of Mg, minus 2 electron masses",
+  "Mass_MeVc2": 22638.9421614181,
+  "Mass_amu": 24.30390284018187,
+  "Mass_kg": 4.035758013697269e-26,
+  "Name": "Mg2+",
+  "Symbol": "Mg2+"
 }

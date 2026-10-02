@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 105,
-  "Mass_MeVc2": 251721.38769131,
-  "Mass_amu": 270.23401118550686,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Db-268 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 249757.47938091704,
+  "Mass_amu": 268.125669,
+  "Mass_kg": 4.452331481327606e-25,
   "Name": "Db",
   "Symbol": "Db"
 }

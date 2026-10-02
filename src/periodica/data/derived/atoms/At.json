@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 85,
-  "Mass_MeVc2": 197242.23996934996,
-  "Mass_amu": 211.74824344880554,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of At-210; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 195601.78940852362,
+  "Mass_amu": 209.987147423,
+  "Mass_kg": 3.4869186177978503e-25,
   "Name": "At",
   "Symbol": "At"
 }

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 108,
-  "Mass_MeVc2": 252658.6061116,
-  "Mass_amu": 271.24015649319705,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Hs-269 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 250696.40680627432,
+  "Mass_amu": 269.133649,
+  "Mass_kg": 4.46906938301112e-25,
   "Name": "Hs",
   "Symbol": "Hs"
 }

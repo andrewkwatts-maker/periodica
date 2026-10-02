@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 41,
-  "Mass_MeVc2": 87347.50843855,
-  "Mass_amu": 93.77140253713267,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Nb",
+  "Mass_MeVc2": 86541.73573225041,
+  "Mass_amu": 92.90637,
+  "Mass_kg": 1.5427465692099423e-25,
   "Name": "Nb",
   "Symbol": "Nb"
 }

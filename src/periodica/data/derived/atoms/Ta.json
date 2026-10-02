@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 73,
-  "Mass_MeVc2": 170004.23077519,
-  "Mass_amu": 182.50703931929476,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ta",
+  "Mass_MeVc2": 168551.88306540187,
+  "Mass_amu": 180.94788,
+  "Mass_kg": 3.004710237584488e-25,
   "Name": "Ta",
   "Symbol": "Ta"
 }

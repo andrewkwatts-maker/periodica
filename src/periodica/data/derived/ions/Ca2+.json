@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 18,
-  "Mass_MeVc2": 37565.948154699996,
-  "Mass_amu": 40.328702089783164,
-  "Mass_kg": 0,
-  "Name": "Ca2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Ca, minus 2 electron masses",
+  "Mass_MeVc2": 37331.398638888764,
+  "Mass_amu": 40.07690284018187,
+  "Mass_kg": 6.654926283445449e-26,
+  "Name": "Ca2+",
+  "Symbol": "Ca2+"
 }

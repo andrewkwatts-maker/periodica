@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 71,
-  "Mass_MeVc2": 164368.40291888997,
-  "Mass_amu": 176.45672956243462,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Lu",
+  "Mass_MeVc2": 162980.54231929965,
+  "Mass_amu": 174.9668,
+  "Mass_kg": 2.9053920675798888e-25,
   "Name": "Lu",
   "Symbol": "Lu"
 }

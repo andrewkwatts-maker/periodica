@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 21600.8880055,
-  "Mass_amu": 23.18950592332165,
-  "Mass_kg": 0,
-  "Name": "Na+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Na, minus 1 electron mass",
+  "Mass_MeVc2": 21414.32350136649,
+  "Mass_amu": 22.989220700090936,
+  "Mass_kg": 3.81744990831904e-26,
+  "Name": "Na+",
+  "Symbol": "Na+"
 }

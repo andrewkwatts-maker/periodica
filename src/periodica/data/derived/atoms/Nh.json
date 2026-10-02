@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 113,
-  "Mass_MeVc2": 268627.30659338995,
-  "Mass_amu": 288.38326071724737,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Nh-286 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 266577.26998007117,
+  "Mass_amu": 286.182456,
+  "Mass_kg": 4.7521714836353555e-25,
   "Name": "Nh",
   "Symbol": "Nh"
 }

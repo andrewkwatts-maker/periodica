@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 64,
-  "Mass_MeVc2": 148401.26710392,
-  "Mass_amu": 159.31530507722414,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Gd",
+  "Mass_MeVc2": 146477.447605545,
+  "Mass_amu": 157.25,
+  "Mass_kg": 2.6111976822285e-25,
   "Name": "Gd",
   "Symbol": "Gd"
 }

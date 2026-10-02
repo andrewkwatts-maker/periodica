@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 3,
-  "Mass_MeVc2": 5635.04552289,
-  "Mass_amu": 6.049469887440195,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Li-6",
+  "Mass_MeVc2": 5603.051494963292,
+  "Mass_amu": 6.01512288742,
+  "Mass_kg": 9.988346544960702e-27,
   "Name": "Li-6"
 }

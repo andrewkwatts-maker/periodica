@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 2,
-  "Mass_MeVc2": 2817.13159474,
-  "Mass_amu": 3.02431500901013,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of He-3",
+  "Mass_MeVc2": 2809.4135261408464,
+  "Mass_amu": 3.01602932197,
+  "Mass_kg": 5.008234515142294e-27,
   "Name": "He-3"
 }

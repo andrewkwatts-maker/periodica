@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 17,
-  "Mass_MeVc2": 34750.62089127,
-  "Mass_amu": 37.306324110011104,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Cl-37",
+  "Mass_MeVc2": 34433.5202373818,
+  "Mass_amu": 36.965902573,
+  "Mass_kg": 6.138332535459596e-26,
   "Name": "Cl-37"
 }

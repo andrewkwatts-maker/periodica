@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 46,
-  "Mass_MeVc2": 99557.94723826,
-  "Mass_amu": 106.87984709738299,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Pd",
+  "Mass_MeVc2": 99129.6023795364,
+  "Mass_amu": 106.42,
+  "Mass_kg": 1.76714567467572e-25,
   "Name": "Pd",
   "Symbol": "Pd"
 }

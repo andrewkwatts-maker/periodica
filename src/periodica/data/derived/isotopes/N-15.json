@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 7,
-  "Mass_MeVc2": 14088.00497393,
-  "Mass_amu": 15.124094653310454,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of N-15",
+  "Mass_MeVc2": 13972.512974396268,
+  "Mass_amu": 15.00010889827,
+  "Mass_kg": 2.4908266828831618e-26,
   "Name": "N-15"
 }

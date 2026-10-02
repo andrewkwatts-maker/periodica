@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 86,
-  "Mass_MeVc2": 208516.24268218002,
-  "Mass_amu": 223.85138257078557,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Rn-222; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 206808.06269341955,
+  "Mass_amu": 222.017576017,
+  "Mass_kg": 3.6866885844806373e-25,
   "Name": "Rn",
   "Symbol": "Rn"
 }

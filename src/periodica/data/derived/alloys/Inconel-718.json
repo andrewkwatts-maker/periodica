@@ -51,9 +51,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 27.393000000000004,
-  "Mass_MeVc2": 54752.414860954304,
-  "Mass_amu": 58.77913206211687,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 54557.55386794012,
+  "Mass_amu": 58.569940192000004,
+  "Mass_kg": 9.725767381724152e-26,
   "Name": "Inconel-718",
   "Properties": {
     "Density_kgm3": 8190,

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 106,
-  "Mass_MeVc2": 252660.17077842,
-  "Mass_amu": 271.24183623203686,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Sg-269 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 250691.60588567043,
+  "Mass_amu": 269.128495,
+  "Mass_kg": 4.4689837988276275e-25,
   "Name": "Sg",
   "Symbol": "Sg"
 }

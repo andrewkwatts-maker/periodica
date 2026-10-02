@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 1,
-  "Mass_MeVc2": 938.78308711,
-  "Mass_amu": 1.0078250465300649,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of H",
+  "Mass_MeVc2": 938.94605523936,
+  "Mass_amu": 1.008,
+  "Mass_kg": 1.6738233791328e-27,
   "Name": "H",
   "Symbol": "H"
 }

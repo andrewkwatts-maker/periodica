@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 53,
-  "Mass_MeVc2": 123041.60641739,
-  "Mass_amu": 132.09059091019344,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of I-131",
+  "Mass_MeVc2": 121938.28468895973,
+  "Mass_amu": 130.906126375,
+  "Mass_kg": 2.1737473690296414e-25,
   "Name": "I-131"
 }

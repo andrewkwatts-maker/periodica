@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 2,
-  "Mass_MeVc2": 3756.6970152599997,
-  "Mass_amu": 4.03297992496013,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of He",
+  "Mass_MeVc2": 3728.400157334497,
+  "Mass_amu": 4.002602,
+  "Mass_kg": 6.646476989051294e-27,
   "Name": "He",
   "Symbol": "He"
 }

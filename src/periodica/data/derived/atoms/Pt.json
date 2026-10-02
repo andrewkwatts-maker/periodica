@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 78,
-  "Mass_MeVc2": 183154.23499542,
-  "Mass_amu": 196.62414879549505,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Pt",
+  "Mass_MeVc2": 181719.59547650328,
+  "Mass_amu": 195.084,
+  "Mass_kg": 3.239446032685944e-25,
   "Name": "Pt",
   "Symbol": "Pt"
 }

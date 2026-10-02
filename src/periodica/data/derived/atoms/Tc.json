@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 43,
-  "Mass_MeVc2": 91104.20545380999,
-  "Mass_amu": 97.8043824620928,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Tc-97; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 90267.70349766513,
+  "Mass_amu": 96.90636072,
+  "Mass_kg": 1.609167977775917e-25,
   "Name": "Tc",
   "Symbol": "Tc"
 }

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 97,
-  "Mass_MeVc2": 231996.77252767,
-  "Mass_amu": 249.05876690591631,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Bk-247; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 230144.5328187089,
+  "Mass_amu": 247.070305889,
+  "Mass_kg": 4.1026989512549654e-25,
   "Name": "Bk",
   "Symbol": "Bk"
 }

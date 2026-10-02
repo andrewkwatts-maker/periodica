@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 44,
-  "Mass_MeVc2": 95801.250223,
-  "Mass_amu": 102.84686717242286,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ru",
+  "Mass_MeVc2": 94146.10893158939,
+  "Mass_amu": 101.07,
+  "Mass_kg": 1.67830683461262e-25,
   "Name": "Ru",
   "Symbol": "Ru"
 }

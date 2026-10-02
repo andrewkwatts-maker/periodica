@@ -30,8 +30,8 @@
     }
   ],
   "LeptonNumber_L": 42,
-  "Mass_MeVc2": 78890.63732046,
-  "Mass_amu": 84.69257842416272,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 78250.87865357522,
+  "Mass_amu": 84.00576928,
+  "Mass_kg": 1.3949486170922615e-25,
   "Name": "NaHCO3"
 }

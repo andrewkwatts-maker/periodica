@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 103,
-  "Mass_MeVc2": 249843.82151709,
-  "Mass_amu": 268.21836109244674,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Lr-266 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 247889.09316775348,
+  "Mass_amu": 266.119874,
+  "Mass_kg": 4.4190244717566955e-25,
   "Name": "Lr",
   "Symbol": "Lr"
 }

@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 19,
-  "Mass_MeVc2": 37567.75248601,
-  "Mass_amu": 40.33063911902123,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of K-40",
+  "Mass_MeVc2": 37226.2285998212,
+  "Mass_amu": 39.963998165,
+  "Mass_kg": 6.636178021051322e-26,
   "Name": "K-40"
 }

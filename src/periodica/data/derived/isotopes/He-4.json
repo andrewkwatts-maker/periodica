@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 2,
-  "Mass_MeVc2": 3756.6970152599997,
-  "Mass_amu": 4.03297992496013,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of He-4",
+  "Mass_MeVc2": 3728.401325549196,
+  "Mass_amu": 4.00260325413,
+  "Mass_kg": 6.646479071583153e-27,
   "Name": "He-4"
 }

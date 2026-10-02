@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 45,
-  "Mass_MeVc2": 96740.03331011,
-  "Mass_amu": 103.85469221895292,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Rh",
+  "Mass_MeVc2": 95855.85704164028,
+  "Mass_amu": 102.90549,
+  "Mass_kg": 1.7087858631261563e-25,
   "Name": "Rh",
   "Symbol": "Rh"
 }

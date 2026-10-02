@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 27,
-  "Mass_MeVc2": 60108.47724649,
-  "Mass_amu": 64.52910124780375,
-  "Mass_kg": 0,
-  "Name": "Cu2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Cu, minus 2 electron masses",
+  "Mass_MeVc2": 59191.702234481316,
+  "Mass_amu": 63.54490284018187,
+  "Mass_kg": 1.0551879364942328e-25,
+  "Name": "Cu2+",
+  "Symbol": "Cu2+"
 }

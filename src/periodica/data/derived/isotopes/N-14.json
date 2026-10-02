@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 7,
-  "Mass_MeVc2": 13148.43955341,
-  "Mass_amu": 14.115429737360454,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of N-14",
+  "Mass_MeVc2": 13043.780850709689,
+  "Mass_amu": 14.00307400425,
+  "Mass_kg": 2.3252651436548017e-26,
   "Name": "N-14"
 }

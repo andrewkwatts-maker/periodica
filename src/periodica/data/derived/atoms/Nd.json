@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 60,
-  "Mass_MeVc2": 133371.34970924,
-  "Mass_amu": 143.18002589970388,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Nd",
+  "Mass_MeVc2": 134360.57232126562,
+  "Mass_amu": 144.242,
+  "Mass_kg": 2.395194760445172e-25,
   "Name": "Nd",
   "Symbol": "Nd"
 }

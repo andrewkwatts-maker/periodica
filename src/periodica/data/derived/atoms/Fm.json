@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 100,
-  "Mass_MeVc2": 241390.07973263998,
-  "Mass_amu": 259.1428964571565,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Fm-257; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 239482.57445884668,
+  "Mass_amu": 257.095105419,
+  "Mass_kg": 4.269164663798949e-25,
   "Name": "Fm",
   "Symbol": "Fm"
 }

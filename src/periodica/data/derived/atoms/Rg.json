@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 111,
-  "Mass_MeVc2": 264870.60957813,
-  "Mass_amu": 284.3502807922872,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Rg-282 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 262839.0788882261,
+  "Mass_amu": 282.169343,
+  "Mass_kg": 4.685532174483553e-25,
   "Name": "Rg",
   "Symbol": "Rg"
 }

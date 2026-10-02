@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 15027.81005894,
-  "Mass_amu": 16.13301685965865,
-  "Mass_kg": 0,
-  "Name": "O2-"
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of O, plus 2 electron masses",
+  "Mass_MeVc2": 14903.996142517582,
+  "Mass_amu": 16.000097159818132,
+  "Mass_kg": 2.656878640327371e-26,
+  "Name": "O2-",
+  "Symbol": "O2-"
 }

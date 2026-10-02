@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 92,
-  "Mass_MeVc2": 220725.89914848,
-  "Mass_amu": 236.958987261616,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of U-235",
+  "Mass_MeVc2": 218942.0328506159,
+  "Mass_amu": 235.043928117,
+  "Mass_kg": 3.9029962500540066e-25,
   "Name": "U-235"
 }

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 26,
-  "Mass_MeVc2": 52595.32288046,
-  "Mass_amu": 56.463398688281686,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Fe",
+  "Mass_MeVc2": 52019.2881496449,
+  "Mass_amu": 55.845,
+  "Mass_kg": 9.2732804174277e-26,
   "Name": "Fe",
   "Symbol": "Fe"
 }

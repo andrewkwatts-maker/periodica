@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 34,
-  "Mass_MeVc2": 75138.63430566,
-  "Mass_amu": 80.66463771572221,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Se",
+  "Mass_MeVc2": 73561.02076220982,
+  "Mass_amu": 78.971,
+  "Mass_kg": 1.311344306284686e-25,
   "Name": "Se",
   "Symbol": "Se"
 }

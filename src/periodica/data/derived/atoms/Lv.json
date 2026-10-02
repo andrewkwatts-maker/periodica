@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 116,
-  "Mass_MeVc2": 275201.91753679997,
-  "Mass_amu": 295.44139552063757,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Lv-293 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 273118.3398670154,
+  "Mass_amu": 293.204583,
+  "Mass_kg": 4.868776645776622e-25,
   "Name": "Lv",
   "Symbol": "Lv"
 }

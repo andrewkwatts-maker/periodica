@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 101,
-  "Mass_MeVc2": 242328.86281975,
-  "Mass_amu": 260.1507215036866,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Md-258; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 240417.16877391076,
+  "Mass_amu": 258.098433634,
+  "Mass_kg": 4.285825320775244e-25,
   "Name": "Md",
   "Symbol": "Md"
 }

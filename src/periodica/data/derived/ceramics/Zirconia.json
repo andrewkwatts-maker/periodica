@@ -21,9 +21,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 56,
-  "Mass_MeVc2": 114583.17063248,
-  "Mass_amu": 123.01008705838365,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 114780.56628839725,
+  "Mass_amu": 123.22200000000001,
+  "Mass_kg": 2.046149448645852e-25,
   "Name": "Zirconia",
   "Properties": {
     "CompressiveStrength_MPa": 2200,

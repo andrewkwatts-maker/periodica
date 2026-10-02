@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 4,
-  "Mass_MeVc2": 8452.95945104,
-  "Mass_amu": 9.07462476587026,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Be-9",
+  "Mass_MeVc2": 8394.795372182418,
+  "Mass_amu": 9.012183062,
+  "Mass_kg": 1.496508204980181e-26,
   "Name": "Be-9"
 }

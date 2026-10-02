@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 69,
-  "Mass_MeVc2": 158732.57506259,
-  "Mass_amu": 170.40641980557447,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Tm",
+  "Mass_MeVc2": 157361.22869542873,
+  "Mass_amu": 168.934219,
+  "Mass_kg": 2.8052187033506e-25,
   "Name": "Tm",
   "Symbol": "Tm"
 }

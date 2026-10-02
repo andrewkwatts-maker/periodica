@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 67,
-  "Mass_MeVc2": 154975.87804733,
-  "Mass_amu": 166.37343988061437,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ho",
+  "Mass_MeVc2": 153631.6287736903,
+  "Mass_amu": 164.930329,
+  "Mass_kg": 2.7387325457169092e-25,
   "Name": "Ho",
   "Symbol": "Ho"
 }

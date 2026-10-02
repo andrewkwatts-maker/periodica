@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 118,
-  "Mass_MeVc2": 276139.9182905,
-  "Mass_amu": 296.44838069774767,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Og-294 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 274058.5862880217,
+  "Mass_amu": 294.213979,
+  "Mass_kg": 4.88553806069332e-25,
   "Name": "Og",
   "Symbol": "Og"
 }

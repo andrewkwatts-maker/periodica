@@ -46,9 +46,9 @@
     }
   },
   "LeptonNumber_L": 124,
-  "Mass_MeVc2": 223519.56074092002,
-  "Mass_amu": 239.95810618802807,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 221924.74392515532,
+  "Mass_amu": 238.246,
+  "Mass_kg": 3.956167904611836e-25,
   "Name": "AramidFRP",
   "Properties": {
     "Density_kgm3": 1380

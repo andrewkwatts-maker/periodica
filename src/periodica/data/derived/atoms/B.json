@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 5,
-  "Mass_MeVc2": 10331.30795867,
-  "Mass_amu": 11.091114728350325,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of B",
+  "Mass_MeVc2": 10069.451247160201,
+  "Mass_amu": 10.81,
+  "Mass_kg": 1.7950427309946002e-26,
   "Name": "B",
   "Symbol": "B"
 }

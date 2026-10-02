@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 5,
-  "Mass_MeVc2": 9391.74253815,
-  "Mass_amu": 10.082449812400323,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of B-10",
+  "Mass_MeVc2": 9326.991634856822,
+  "Mass_amu": 10.012936862,
+  "Mass_kg": 1.6626872830750214e-26,
   "Name": "B-10"
 }

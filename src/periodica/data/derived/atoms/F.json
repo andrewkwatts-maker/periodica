@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 9,
-  "Mass_MeVc2": 17844.70198919,
-  "Mass_amu": 19.157074578270585,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of F",
+  "Mass_MeVc2": 17696.90050080048,
+  "Mass_amu": 18.998403162,
+  "Mass_kg": 3.1547590653517964e-26,
   "Name": "F",
   "Symbol": "F"
 }
