@@ -1,0 +1,5917 @@
+{
+ "meta": {
+  "date": "2026-10-02",
+  "repo": "H:\\Github\\MathsPhysicsEcosystem\\periodica",
+  "commit": "0ffd2c1",
+  "app_commit": "b76b118",
+  "modules": 147,
+  "loc": 52117,
+  "coverage_run": "pytest tests -q -m 'not slow and not gemini' on a scratch copy: 1419 passed, 1 skipped, 11 deselected, 1 xfailed (28 s)",
+  "classes_by_module": {
+   "WRAPPER": 32,
+   "DELETE": 58,
+   "MOVE-TO-APP": 38,
+   "ALREADY-NATIVE": 5,
+   "PORT": 14
+  },
+  "loc_by_primary_class": {
+   "WRAPPER": 9034,
+   "DELETE": 29326,
+   "MOVE-TO-APP": 5813,
+   "ALREADY-NATIVE": 2116,
+   "PORT": 5828
+  },
+  "loc_by_split_class": {
+   "WRAPPER": 7013,
+   "DELETE": 31834,
+   "MOVE-TO-APP": 5558,
+   "ALREADY-NATIVE": 1884,
+   "PORT": 5828
+  }
+ },
+ "modules": [
+  {
+   "module": "periodica",
+   "path": "src/periodica/__init__.py",
+   "loc": 185,
+   "sloc": 129,
+   "reachable_from": [
+    "public",
+    "cli",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M8",
+   "notes": "Public surface. At 3.0: `_HAS_RUST` deprecated True; stop importing utils.physics_calculator (re-export PhysicsConstants from the native constants wrapper). Importing it today loads 38 periodica modules (279 ms measured incl. extension).",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 185,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica._dispatch"
+   ],
+   "imports": [
+    "periodica._dispatch",
+    "periodica._launcher",
+    "periodica.core.alloy_enums",
+    "periodica.core.amino_acid_enums",
+    "periodica.core.biomaterial_enums",
+    "periodica.core.cell_component_enums",
+    "periodica.core.cell_enums",
+    "periodica.core.material_enums",
+    "periodica.core.molecule_enums",
+    "periodica.core.nucleic_acid_enums",
+    "periodica.core.protein_enums",
+    "periodica.core.pt_enums",
+    "periodica.core.quark_enums",
+    "periodica.core.subatomic_enums",
+    "periodica.data.data_manager",
+    "periodica.export",
+    "periodica.folding",
+    "periodica.get",
+    "periodica.optimize",
+    "periodica.sample",
+    "periodica.utils.physics_calculator"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_alloy_microstructure.py",
+    "tests\\test_alphafold_validation.py",
+    "tests\\test_cli.py",
+    "tests\\test_export.py",
+    "tests\\test_folding.py",
+    "tests\\test_get.py",
+    "tests\\test_materials.py",
+    "tests\\test_optimize.py",
+    "tests\\test_proteins_tier.py",
+    "tests\\test_rust_python_parity.py",
+    "tests\\test_utils_calculations.py"
+   ]
+  },
+  {
+   "module": "periodica.__main__",
+   "path": "src/periodica/__main__.py",
+   "loc": 604,
+   "sloc": 535,
+   "reachable_from": [
+    "cli",
+    "tests"
+   ],
+   "primary_reach": "cli",
+   "loaded_on_import": false,
+   "coverage_pct": 58.5,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "CLI (argparse) over Get/sample/export/folding/optimize/_runner; stays Python, every subcommand becomes a call into native.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 604,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.export",
+    "periodica.folding",
+    "periodica.get",
+    "periodica.optimize",
+    "periodica.sample",
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_alloy_microstructure.py",
+    "tests\\test_cli.py",
+    "tests\\test_export.py",
+    "tests\\test_materials.py"
+   ]
+  },
+  {
+   "module": "periodica._dispatch",
+   "path": "src/periodica/_dispatch.py",
+   "loc": 332,
+   "sloc": 246,
+   "reachable_from": [
+    "public",
+    "cli",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 72.5,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "P1/M8",
+   "notes": "Becomes `_native.py` (@native decorator + conformance registry). ~60% (fallback counting, BackendMode.PYTHON, FallbackRequired, call_rust fallbacks) deleted at 3.0.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 332,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.sample"
+   ],
+   "imports": [
+    "periodica"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_rust_python_parity.py"
+   ]
+  },
+  {
+   "module": "periodica._launcher",
+   "path": "src/periodica/_launcher.py",
+   "loc": 52,
+   "sloc": 41,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 33.3,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Companion-app launcher (I/O, subprocess). Allow-listed.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 52,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.constants",
+   "path": "src/periodica/constants.py",
+   "loc": 216,
+   "sloc": 160,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Qt-era UI/visual constants (LayoutMode, GlowType, ColorConstants, UIConstants) + a PhysicalConstants copy (r0 = 1.2 fm). No library or app consumer; only tests/test_config.py.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 216,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_config.py"
+   ]
+  },
+  {
+   "module": "periodica.core",
+   "path": "src/periodica/core/__init__.py",
+   "loc": 215,
+   "sloc": 174,
+   "reachable_from": [
+    "documented"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enum re-export package (documented in README).",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 215,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.core.alloy_enums",
+    "periodica.core.amino_acid_enums",
+    "periodica.core.biomaterial_enums",
+    "periodica.core.cell_component_enums",
+    "periodica.core.cell_enums",
+    "periodica.core.material_enums",
+    "periodica.core.molecule_enums",
+    "periodica.core.nucleic_acid_enums",
+    "periodica.core.protein_enums",
+    "periodica.core.pt_enums",
+    "periodica.core.quark_enums",
+    "periodica.core.subatomic_enums"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.core.alloy_enums",
+   "path": "src/periodica/core/alloy_enums.py",
+   "loc": 479,
+   "sloc": 418,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 94.4,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). colour helpers get_element_color/get_ipf_color -> MOVE-TO-APP",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 479,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.amino_acid_enums",
+   "path": "src/periodica/core/amino_acid_enums.py",
+   "loc": 455,
+   "sloc": 397,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 95.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). get_amino_acid_property_metadata is display metadata",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 455,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.biomaterial_enums",
+   "path": "src/periodica/core/biomaterial_enums.py",
+   "loc": 267,
+   "sloc": 221,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 98.1,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__).",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 267,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.cell_component_enums",
+   "path": "src/periodica/core/cell_component_enums.py",
+   "loc": 237,
+   "sloc": 211,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__).",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 237,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.cell_enums",
+   "path": "src/periodica/core/cell_enums.py",
+   "loc": 367,
+   "sloc": 303,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 98.7,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__).",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 367,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.material_enums",
+   "path": "src/periodica/core/material_enums.py",
+   "loc": 188,
+   "sloc": 168,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 92.5,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). get_material_color -> MOVE-TO-APP",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 188,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.molecule_enums",
+   "path": "src/periodica/core/molecule_enums.py",
+   "loc": 407,
+   "sloc": 348,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 94.8,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). get_element_color -> MOVE-TO-APP (third element-colour table)",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 407,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.nucleic_acid_enums",
+   "path": "src/periodica/core/nucleic_acid_enums.py",
+   "loc": 305,
+   "sloc": 258,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 98.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). translate_sequence/transcribe_dna/reverse_complement: string utilities, keep",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 305,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.protein_enums",
+   "path": "src/periodica/core/protein_enums.py",
+   "loc": 276,
+   "sloc": 234,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 99.2,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). calculate_protein_mass/calculate_isoelectric_point (+ WATER_MASS 18.015) duplicate protein_predictor -> DELETE, use the native protein port",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 276,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.pt_enums",
+   "path": "src/periodica/core/pt_enums.py",
+   "loc": 433,
+   "sloc": 363,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 98.5,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__).",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 433,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.core.quark_enums",
+   "path": "src/periodica/core/quark_enums.py",
+   "loc": 358,
+   "sloc": 317,
+   "reachable_from": [
+    "public",
+    "app",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 99.4,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). used by the app via layout_math.quark_*",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 358,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core",
+    "periodica.data.quark_loader"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_loaders.py",
+    "tests\\test_enums.py",
+    "tests\\test_quark_source_diff.py"
+   ]
+  },
+  {
+   "module": "periodica.core.subatomic_enums",
+   "path": "src/periodica/core/subatomic_enums.py",
+   "loc": 440,
+   "sloc": 392,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 91.1,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Enums (descriptive, allow-listed). *LayoutMode enum is presentation -> MOVE-TO-APP at 3.0 (breaking: in __all__). get_particle_family_color -> MOVE-TO-APP",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 440,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enums.py"
+   ]
+  },
+  {
+   "module": "periodica.data",
+   "path": "src/periodica/data/__init__.py",
+   "loc": 143,
+   "sloc": 93,
+   "reachable_from": [
+    "documented"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1/M8",
+   "notes": "Package init eagerly imports every loader (loaded by `import periodica`). Shrinks to DataManager + quark_source re-exports once loaders are removed.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 143,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.data.alloy_loader",
+    "periodica.data.data_manager",
+    "periodica.data.element_loader",
+    "periodica.data.molecule_loader",
+    "periodica.data.quark_loader",
+    "periodica.data.quark_source",
+    "periodica.data.subatomic_loader",
+    "periodica.data.validation"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.data.alloy_loader",
+   "path": "src/periodica/data/alloy_loader.py",
+   "loc": 237,
+   "sloc": 171,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 85.1,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1->M8",
+   "notes": "Superseded by Get over alloys tier. Second, divergent JSON read path; keep a 2.5 DeprecationWarning shim forwarding to Get, delete at 3.0.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 237,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_loaders.py"
+   ]
+  },
+  {
+   "module": "periodica.data.data_manager",
+   "path": "src/periodica/data/data_manager.py",
+   "loc": 373,
+   "sloc": 282,
+   "reachable_from": [
+    "public",
+    "app",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 80.1,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1",
+   "notes": "CRUD over active/ + defaults/ JSON (add/edit/remove/reset) - user-data file I/O, used by the app (get_all_items/remove_item/reset_category). Read path should delegate to the native registry; writes must trigger reload_registry.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 373,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.data"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\screens\\base_screen.py",
+    "src\\periodica_app\\screens\\quarks_screen.py"
+   ],
+   "test_importers": [
+    "tests\\test_data_loaders.py"
+   ]
+  },
+  {
+   "module": "periodica.data.element_data",
+   "path": "src/periodica/data/element_data.py",
+   "loc": 641,
+   "sloc": 575,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 19.2,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "A4",
+   "notes": "Electron-config/shell helpers; A4 makes element JSON `electron_configuration` the only source. Consumers (orbital_clouds, position_calculator) are themselves DELETE/MOVE.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 641,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.orbital_clouds (lazy)",
+    "periodica.utils.position_calculator"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.data.element_loader",
+   "path": "src/periodica/data/element_loader.py",
+   "loc": 421,
+   "sloc": 311,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 71.2,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1->M8",
+   "notes": "get_element/get_element_by_z (README). Superseded by Get/data_sheet over the atoms tier. Second, divergent JSON read path; keep a 2.5 DeprecationWarning shim forwarding to Get, delete at 3.0.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 421,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_loaders.py"
+   ]
+  },
+  {
+   "module": "periodica.data.layout_config_loader",
+   "path": "src/periodica/data/layout_config_loader.py",
+   "loc": 202,
+   "sloc": 149,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "",
+   "notes": "Dead (no importer anywhere, 0 % coverage).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 202,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.data.material_data",
+   "path": "src/periodica/data/material_data.py",
+   "loc": 155,
+   "sloc": 133,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 88.9,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1->M8",
+   "notes": "Superseded by Get / periodica-mat MaterialRecord. Second, divergent JSON read path; keep a 2.5 DeprecationWarning shim forwarding to Get, delete at 3.0.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 155,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.data.validation (lazy)",
+    "periodica.utils.logger"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_loaders.py",
+    "tests\\test_e2e_derivation_chain.py"
+   ]
+  },
+  {
+   "module": "periodica.data.molecule_loader",
+   "path": "src/periodica/data/molecule_loader.py",
+   "loc": 189,
+   "sloc": 140,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 81.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1->M8",
+   "notes": "Superseded by Get over molecules (and active/molecules must become a tier - M1). Second, divergent JSON read path; keep a 2.5 DeprecationWarning shim forwarding to Get, delete at 3.0.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 189,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_loaders.py"
+   ]
+  },
+  {
+   "module": "periodica.data.quark_loader",
+   "path": "src/periodica/data/quark_loader.py",
+   "loc": 375,
+   "sloc": 290,
+   "reachable_from": [
+    "app",
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": true,
+   "coverage_pct": 86.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "The app's only data source for the quark screen. JSON loading -> Get/list over the quarks tier (native); sm_row/sm_col Standard-Model grid enrichment (l.240-300) is presentation -> app.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 120,
+     "part": "sm_row/sm_col + display enrichment"
+    },
+    {
+     "cls": "DELETE",
+     "loc": 255,
+     "part": "JSON loading (superseded by native registry)"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data"
+   ],
+   "imports": [
+    "periodica.core.quark_enums",
+    "periodica.data.quark_source (lazy)"
+   ],
+   "app_importers": [
+    "src\\periodica_app\\screens\\quarks_screen.py"
+   ],
+   "test_importers": [
+    "tests\\test_data_loaders.py"
+   ]
+  },
+  {
+   "module": "periodica.data.quark_source",
+   "path": "src/periodica/data/quark_source.py",
+   "loc": 258,
+   "sloc": 195,
+   "reachable_from": [
+    "app",
+    "tests"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": true,
+   "coverage_pct": 81.2,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1",
+   "notes": "experimental/simulated source switch (optional metaphysica import = I/O policy). SURPRISE: it only affects quark_loader/load_quark - `Get('u')` never consults it, so `simulated` is invisible to the registry. Make it a registry overlay in M1 or move it with quark_loader.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 258,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data",
+    "periodica.data.quark_loader (lazy)"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_quark_source_diff.py"
+   ]
+  },
+  {
+   "module": "periodica.data.subatomic_loader",
+   "path": "src/periodica/data/subatomic_loader.py",
+   "loc": 338,
+   "sloc": 252,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 80.6,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1->M8",
+   "notes": "Superseded by Get over subatomic tier. Second, divergent JSON read path; keep a 2.5 DeprecationWarning shim forwarding to Get, delete at 3.0.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 338,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_loaders.py"
+   ]
+  },
+  {
+   "module": "periodica.data.validation",
+   "path": "src/periodica/data/validation.py",
+   "loc": 106,
+   "sloc": 87,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M1",
+   "notes": "Datasheet field validation; moves into native ingest (D7 typed errors, periodica-mat ingest).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 106,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data",
+    "periodica.data.material_data (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.logger"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_validation.py"
+   ]
+  },
+  {
+   "module": "periodica.export",
+   "path": "src/periodica/export.py",
+   "loc": 535,
+   "sloc": 436,
+   "reachable_from": [
+    "public",
+    "cli",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 95.5,
+   "cls": "ALREADY-NATIVE",
+   "target_crate": "periodica-core export (export.rs; voxel_* in sample.rs)",
+   "effort": "M",
+   "milestone": "M3",
+   "notes": "Byte-identical goldens are the M3 gate; A9 (sdf_raw writes occupancy, hash spec, Fourier half-voxel).",
+   "split": [
+    {
+     "cls": "ALREADY-NATIVE",
+     "loc": 535,
+     "part": "whole module"
+    }
+   ],
+   "native": {
+    "rust": "py_export_stl/obj/vtk_legacy/sdf_raw/hlsl (+ Rust-only py_export_glsl, py_bake_fourier)",
+    "called": "NO - Python export.py never dispatches.",
+    "agrees": "MIXED: VTK numerically identical (formatting '0' vs '0.0'); sdf_raw occupancy byte-identical but default mode differs (Python 'occupancy', Rust 'phase'); STL 348 vs 270 triangles; OBJ structure differs (per-phase objects vs flat); HLSL entirely different (44 vs 18 lines); API differs (OBJ `properties`, VTK `properties` required vs optional). voxel_sample/voxel_phase_map exist in sample.rs but are not exposed."
+   },
+   "fan_in": [
+    "periodica",
+    "periodica.__main__"
+   ],
+   "imports": [
+    "periodica.get",
+    "periodica.sample"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_export.py"
+   ]
+  },
+  {
+   "module": "periodica.folding",
+   "path": "src/periodica/folding.py",
+   "loc": 354,
+   "sloc": 263,
+   "reachable_from": [
+    "public",
+    "cli",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 77.0,
+   "cls": "ALREADY-NATIVE",
+   "target_crate": "periodica-core protein (protein.rs)",
+   "effort": "M",
+   "milestone": "M4",
+   "notes": "fetch_alphafold / load_alphafold_reference stay Python I/O; parse_pdb_backbone can stay Python (text I/O) or move with A8 chain-key fix.",
+   "split": [
+    {
+     "cls": "ALREADY-NATIVE",
+     "loc": 250,
+     "part": "backbone NeRF, Kabsch, phi/psi, Ramachandran, rules"
+    },
+    {
+     "cls": "WRAPPER",
+     "loc": 104,
+     "part": "fetch_alphafold, load_alphafold_reference, parse_pdb_backbone (I/O)"
+    }
+   ],
+   "native": {
+    "rust": "py_kabsch_rmsd / py_build_backbone / py_build_backbone_from_entry / py_ramachandran_region",
+    "called": "NO.",
+    "agrees": "NO: py_kabsch_rmsd is WRONG (0.94-3.12 A over 8 random cases where the true RMSD is 0.145-0.190 A; Python matches an independent SVD reference to 1e-6); py_build_backbone collapses every atom after residue 1 (bond lengths 0), max deviation 9.4 A (10-mer), 45.6 A Crambin, 66.4 A Ubiquitin; returns list-of-dicts vs (n,3,3) array; ramachandran: 55/625 grid points differ, all case-only ('polyproline_ii' vs 'polyproline_II'), plus Python None vs Rust 'other'."
+   },
+   "fan_in": [
+    "periodica",
+    "periodica.__main__",
+    "periodica.optimize",
+    "periodica.sample (lazy)"
+   ],
+   "imports": [
+    "periodica.get"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_alphafold_validation.py",
+    "tests\\test_folding.py",
+    "tests\\test_optimize.py"
+   ]
+  },
+  {
+   "module": "periodica.get",
+   "path": "src/periodica/get.py",
+   "loc": 530,
+   "sloc": 421,
+   "reachable_from": [
+    "public",
+    "cli",
+    "scripts",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 93.6,
+   "cls": "ALREADY-NATIVE",
+   "target_crate": "periodica-core registry (registry.rs, get.rs, data_loader.rs)",
+   "effort": "L",
+   "milestone": "M1 (+D1-D9)",
+   "notes": "No periodica imports at all: the served numbers never touch utils/* predictors.",
+   "split": [
+    {
+     "cls": "ALREADY-NATIVE",
+     "loc": 530,
+     "part": "whole module"
+    }
+   ],
+   "native": {
+    "rust": "py_get / py_save / py_list_tiers (registry.rs, get.rs, data_loader.rs; reload not exported)",
+    "called": "NO for Get/Save/list_tiers (pure Python). The Rust registry is used only inside py_sample/py_data_sheet.",
+    "agrees": "PARTIAL: name resolution + list_tiers agree (parity tests; spot-check Fe, Steel-1018, H2O identical). Brace specs: numeric totals agree but Rust copies `Name` from the first constituent ('{u=2,d=1}' -> 'Up Quark') and returns Charge_e 1.0000000001 vs 1. Both share D1/D3/D4 ('{N=1,H=3}' = 4.032 u, '{H=2,O=1}' = 18.148 u). 'Water'/'Oxygen' fail in both."
+   },
+   "fan_in": [
+    "periodica",
+    "periodica.__main__",
+    "periodica.export",
+    "periodica.folding",
+    "periodica.optimize",
+    "periodica.sample",
+    "periodica.scripts._runner"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_alloy_microstructure.py",
+    "tests\\test_alphafold_validation.py",
+    "tests\\test_cli.py",
+    "tests\\test_export.py",
+    "tests\\test_folding.py",
+    "tests\\test_get.py",
+    "tests\\test_materials.py",
+    "tests\\test_optimize.py",
+    "tests\\test_proteins_tier.py",
+    "tests\\test_rust_python_parity.py"
+   ]
+  },
+  {
+   "module": "periodica.layout_math",
+   "path": "src/periodica/layout_math/__init__.py",
+   "loc": 115,
+   "sloc": 97,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Package init eagerly imports all 35 layouts; the app imports `from periodica.layout_math import quark_*`.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 115,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.layout_math.alloy_category",
+    "periodica.layout_math.alloy_composition",
+    "periodica.layout_math.alloy_lattice",
+    "periodica.layout_math.alloy_property",
+    "periodica.layout_math.base",
+    "periodica.layout_math.element_circular",
+    "periodica.layout_math.element_linear",
+    "periodica.layout_math.element_spiral",
+    "periodica.layout_math.element_table",
+    "periodica.layout_math.molecule_bond",
+    "periodica.layout_math.molecule_bond_complexity",
+    "periodica.layout_math.molecule_density",
+    "periodica.layout_math.molecule_dipole",
+    "periodica.layout_math.molecule_geometry",
+    "periodica.layout_math.molecule_grid",
+    "periodica.layout_math.molecule_mass",
+    "periodica.layout_math.molecule_phase_diagram",
+    "periodica.layout_math.molecule_polarity",
+    "periodica.layout_math.quark_alternative",
+    "periodica.layout_math.quark_charge_mass",
+    "periodica.layout_math.quark_circular",
+    "periodica.layout_math.quark_fermion_boson",
+    "periodica.layout_math.quark_force_network",
+    "periodica.layout_math.quark_linear",
+    "periodica.layout_math.quark_mass_spiral",
+    "periodica.layout_math.quark_standard",
+    "periodica.layout_math.subatomic_baryon_meson",
+    "periodica.layout_math.subatomic_charge",
+    "periodica.layout_math.subatomic_decay",
+    "periodica.layout_math.subatomic_discovery",
+    "periodica.layout_math.subatomic_eightfold",
+    "periodica.layout_math.subatomic_lifetime",
+    "periodica.layout_math.subatomic_mass",
+    "periodica.layout_math.subatomic_quark_tree"
+   ],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.alloy_category",
+   "path": "src/periodica/layout_math/alloy_category.py",
+   "loc": 115,
+   "sloc": 92,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 12.8,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 115,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.alloy_composition",
+   "path": "src/periodica/layout_math/alloy_composition.py",
+   "loc": 122,
+   "sloc": 99,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 13.2,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 122,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.alloy_lattice",
+   "path": "src/periodica/layout_math/alloy_lattice.py",
+   "loc": 124,
+   "sloc": 99,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 13.0,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 124,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.alloy_property",
+   "path": "src/periodica/layout_math/alloy_property.py",
+   "loc": 119,
+   "sloc": 99,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 11.4,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 119,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.base",
+   "path": "src/periodica/layout_math/base.py",
+   "loc": 89,
+   "sloc": 72,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 44.4,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 89,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math",
+    "periodica.layout_math.element_circular",
+    "periodica.layout_math.element_linear",
+    "periodica.layout_math.element_spiral",
+    "periodica.layout_math.element_table"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.element_circular",
+   "path": "src/periodica/layout_math/element_circular.py",
+   "loc": 141,
+   "sloc": 114,
+   "reachable_from": [
+    "documented"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 13.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0. README-documented.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 141,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [
+    "periodica.layout_math.base"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.element_linear",
+   "path": "src/periodica/layout_math/element_linear.py",
+   "loc": 353,
+   "sloc": 273,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 28.9,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 353,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [
+    "periodica.layout_math.base"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.element_spiral",
+   "path": "src/periodica/layout_math/element_spiral.py",
+   "loc": 173,
+   "sloc": 138,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 10.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 173,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [
+    "periodica.layout_math.base"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.element_table",
+   "path": "src/periodica/layout_math/element_table.py",
+   "loc": 177,
+   "sloc": 128,
+   "reachable_from": [
+    "documented"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 18.0,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0. README-documented.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 177,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [
+    "periodica.layout_math.base"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_bond",
+   "path": "src/periodica/layout_math/molecule_bond.py",
+   "loc": 110,
+   "sloc": 88,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 11.6,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 110,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_bond_complexity",
+   "path": "src/periodica/layout_math/molecule_bond_complexity.py",
+   "loc": 177,
+   "sloc": 134,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 12.9,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 177,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_density",
+   "path": "src/periodica/layout_math/molecule_density.py",
+   "loc": 113,
+   "sloc": 89,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 8.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 113,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_dipole",
+   "path": "src/periodica/layout_math/molecule_dipole.py",
+   "loc": 127,
+   "sloc": 98,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 7.7,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 127,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_geometry",
+   "path": "src/periodica/layout_math/molecule_geometry.py",
+   "loc": 120,
+   "sloc": 97,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 9.5,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 120,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_grid",
+   "path": "src/periodica/layout_math/molecule_grid.py",
+   "loc": 66,
+   "sloc": 55,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 17.6,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 66,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_mass",
+   "path": "src/periodica/layout_math/molecule_mass.py",
+   "loc": 102,
+   "sloc": 82,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 7.9,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 102,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_phase_diagram",
+   "path": "src/periodica/layout_math/molecule_phase_diagram.py",
+   "loc": 115,
+   "sloc": 92,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 7.7,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 115,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.molecule_polarity",
+   "path": "src/periodica/layout_math/molecule_polarity.py",
+   "loc": 104,
+   "sloc": 82,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 12.5,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 104,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_alternative",
+   "path": "src/periodica/layout_math/quark_alternative.py",
+   "loc": 129,
+   "sloc": 107,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 9.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 129,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_charge_mass",
+   "path": "src/periodica/layout_math/quark_charge_mass.py",
+   "loc": 120,
+   "sloc": 97,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 10.0,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 120,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_circular",
+   "path": "src/periodica/layout_math/quark_circular.py",
+   "loc": 128,
+   "sloc": 105,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 9.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 128,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_fermion_boson",
+   "path": "src/periodica/layout_math/quark_fermion_boson.py",
+   "loc": 125,
+   "sloc": 103,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 12.5,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 125,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_force_network",
+   "path": "src/periodica/layout_math/quark_force_network.py",
+   "loc": 139,
+   "sloc": 117,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 11.5,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 139,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_linear",
+   "path": "src/periodica/layout_math/quark_linear.py",
+   "loc": 112,
+   "sloc": 93,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 12.2,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 112,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_mass_spiral",
+   "path": "src/periodica/layout_math/quark_mass_spiral.py",
+   "loc": 137,
+   "sloc": 107,
+   "reachable_from": [
+    "app"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 12.2,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 137,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.quark_standard",
+   "path": "src/periodica/layout_math/quark_standard.py",
+   "loc": 146,
+   "sloc": 122,
+   "reachable_from": [
+    "app",
+    "documented"
+   ],
+   "primary_reach": "app",
+   "loaded_on_import": false,
+   "coverage_pct": 10.4,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Used by periodica-app quark screen. README-documented.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 146,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [
+    "src\\periodica_app\\renderers\\quark_renderers.py"
+   ],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_baryon_meson",
+   "path": "src/periodica/layout_math/subatomic_baryon_meson.py",
+   "loc": 115,
+   "sloc": 99,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 13.2,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 115,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_charge",
+   "path": "src/periodica/layout_math/subatomic_charge.py",
+   "loc": 108,
+   "sloc": 87,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 12.8,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 108,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_decay",
+   "path": "src/periodica/layout_math/subatomic_decay.py",
+   "loc": 147,
+   "sloc": 118,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 10.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 147,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_discovery",
+   "path": "src/periodica/layout_math/subatomic_discovery.py",
+   "loc": 212,
+   "sloc": 179,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 7.4,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 212,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_eightfold",
+   "path": "src/periodica/layout_math/subatomic_eightfold.py",
+   "loc": 135,
+   "sloc": 110,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 6.2,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 135,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_lifetime",
+   "path": "src/periodica/layout_math/subatomic_lifetime.py",
+   "loc": 187,
+   "sloc": 160,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 8.3,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 187,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_mass",
+   "path": "src/periodica/layout_math/subatomic_mass.py",
+   "loc": 97,
+   "sloc": 80,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 15.6,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 97,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.layout_math.subatomic_quark_tree",
+   "path": "src/periodica/layout_math/subatomic_quark_tree.py",
+   "loc": 158,
+   "sloc": 129,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 7.7,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Presentation; NO consumer in the app today (only the quark screen exists). Move with the screen that needs it, otherwise delete at 3.0.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 158,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.layout_math"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.optimize",
+   "path": "src/periodica/optimize.py",
+   "loc": 319,
+   "sloc": 255,
+   "reachable_from": [
+    "public",
+    "cli",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 89.9,
+   "cls": "ALREADY-NATIVE",
+   "target_crate": "periodica-core protein (SA) + alloy.rs -> periodica-mat estimates",
+   "effort": "M",
+   "milestone": "M4",
+   "notes": "Alloy property estimation is the 5th rule-of-mixtures copy - consolidate in periodica-mat.",
+   "split": [
+    {
+     "cls": "ALREADY-NATIVE",
+     "loc": 319,
+     "part": "whole module"
+    }
+   ],
+   "native": {
+    "rust": "py_optimize_alloy (alloy.rs); none for optimize_protein_folding",
+    "called": "NO.",
+    "agrees": "NO: py_optimize_alloy returns [] for every input tried (correct target schema, with and without a pool) where Python returns results; different signature (list of {property,min_value,max_value,weight} vs mapping 'X_min'). Python itself returns 3 identical {'Fe': 1.0} rows for top_k=3 (no dedupe; D9 missing-data-as-0)."
+   },
+   "fan_in": [
+    "periodica",
+    "periodica.__main__"
+   ],
+   "imports": [
+    "periodica.folding",
+    "periodica.get",
+    "periodica.scripts._runner (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_folding.py",
+    "tests\\test_optimize.py"
+   ]
+  },
+  {
+   "module": "periodica.sample",
+   "path": "src/periodica/sample.py",
+   "loc": 378,
+   "sloc": 300,
+   "reachable_from": [
+    "public",
+    "cli",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 47.1,
+   "cls": "ALREADY-NATIVE",
+   "target_crate": "periodica-core sample (sample.rs, sample_models.rs)",
+   "effort": "S",
+   "milestone": "M2",
+   "notes": "Remaining: Arc<Value>, batch py_sample_many, compiled-sampler cache; register_field_model must be consulted FIRST (today a Python-registered model only runs after Rust declines, and re-registering a built-in name is ignored by Rust). Python field-model bodies (~250 LOC) delete at 3.0; the hook stays.",
+   "split": [
+    {
+     "cls": "ALREADY-NATIVE",
+     "loc": 250,
+     "part": "built-in field models + _sample_python"
+    },
+    {
+     "cls": "WRAPPER",
+     "loc": 128,
+     "part": "register_field_model hook, call_rust shell"
+    }
+   ],
+   "native": {
+    "rust": "py_sample / py_data_sheet",
+    "called": "YES (call_rust for str names; dict form is Python).",
+    "agrees": "YES - parity tests green across tiers/properties."
+   },
+   "fan_in": [
+    "periodica",
+    "periodica.__main__",
+    "periodica.export"
+   ],
+   "imports": [
+    "periodica._dispatch",
+    "periodica.folding (lazy)",
+    "periodica.get"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_alloy_microstructure.py",
+    "tests\\test_materials.py",
+    "tests\\test_proteins_tier.py",
+    "tests\\test_rust_python_parity.py"
+   ]
+  },
+  {
+   "module": "periodica.scripts",
+   "path": "src/periodica/scripts/__init__.py",
+   "loc": 10,
+   "sloc": 8,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "Package docstring documents run order.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 10,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts._runner",
+   "path": "src/periodica/scripts/_runner.py",
+   "loc": 233,
+   "sloc": 195,
+   "reachable_from": [
+    "public",
+    "cli",
+    "scripts",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 70.0,
+   "cls": "WRAPPER",
+   "target_crate": "periodica-core registry (native compose)",
+   "effort": "S",
+   "milestone": "M7",
+   "notes": "Generic {name, spec} -> Get -> Save loop; becomes a thin CLI over native compose. Also read by optimize.py for _INPUTS_DIR (alloy pool).",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 233,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.__main__",
+    "periodica.optimize (lazy)",
+    "periodica.scripts.build_alloys",
+    "periodica.scripts.build_ceramics",
+    "periodica.scripts.build_composites",
+    "periodica.scripts.build_hadrons",
+    "periodica.scripts.build_ions",
+    "periodica.scripts.build_isotopes",
+    "periodica.scripts.build_molecules",
+    "periodica.scripts.build_periodic_table",
+    "periodica.scripts.build_polymers"
+   ],
+   "imports": [
+    "periodica.get"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_cli.py"
+   ]
+  },
+  {
+   "module": "periodica.scripts.build_alloys",
+   "path": "src/periodica/scripts/build_alloys.py",
+   "loc": 14,
+   "sloc": 9,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 14,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_ceramics",
+   "path": "src/periodica/scripts/build_ceramics.py",
+   "loc": 10,
+   "sloc": 6,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 10,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_composites",
+   "path": "src/periodica/scripts/build_composites.py",
+   "loc": 14,
+   "sloc": 9,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 14,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_hadrons",
+   "path": "src/periodica/scripts/build_hadrons.py",
+   "loc": 14,
+   "sloc": 9,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 14,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_ions",
+   "path": "src/periodica/scripts/build_ions.py",
+   "loc": 15,
+   "sloc": 10,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 15,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_isotopes",
+   "path": "src/periodica/scripts/build_isotopes.py",
+   "loc": 14,
+   "sloc": 9,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 14,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_molecules",
+   "path": "src/periodica/scripts/build_molecules.py",
+   "loc": 14,
+   "sloc": 9,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 14,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_periodic_table",
+   "path": "src/periodica/scripts/build_periodic_table.py",
+   "loc": 14,
+   "sloc": 9,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 14,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.scripts.build_polymers",
+   "path": "src/periodica/scripts/build_polymers.py",
+   "loc": 10,
+   "sloc": 6,
+   "reachable_from": [
+    "scripts"
+   ],
+   "primary_reach": "scripts",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "WRAPPER",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M7",
+   "notes": "10-15-line entry point naming an inputs JSON.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 10,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.scripts._runner"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils",
+   "path": "src/periodica/utils/__init__.py",
+   "loc": 111,
+   "sloc": 82,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M8",
+   "notes": "Eager re-exports: `import periodica` (via utils.physics_calculator) also executes simulation_schema, pure_math, pure_array, backend_manager (4,146 LOC) that nothing public uses.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 111,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.backend_manager",
+    "periodica.utils.physics_calculator",
+    "periodica.utils.pure_array",
+    "periodica.utils.pure_math",
+    "periodica.utils.simulation_schema"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.alloy_calculator",
+   "path": "src/periodica/utils/alloy_calculator.py",
+   "loc": 1375,
+   "sloc": 1116,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 91.4,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Category-heuristic strength model + Vegard/RoM; duplicates rule_of_mixtures, periodica-mat derive.rs and alloy.rs estimate. Only consumer alloy_generator (DELETE).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 1375,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.alloy_generator (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.predictive_physics (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_json_validation.py",
+    "tests\\test_physics_calculations.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.alloy_generator",
+   "path": "src/periodica/utils/alloy_generator.py",
+   "loc": 674,
+   "sloc": 557,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 92.8,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Generator superseded by scripts/_runner + inputs/alloys.json; Hume-Rothery sampling duplicates optimize_alloy.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 674,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.cascade_engine (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.alloy_calculator (lazy)",
+    "periodica.utils.derivation_metadata",
+    "periodica.utils.logger",
+    "periodica.utils.phase_diagram"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_alloy_generator.py",
+    "tests\\test_material_generator.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.atomic_derivation",
+   "path": "src/periodica/utils/atomic_derivation.py",
+   "loc": 396,
+   "sloc": 317,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 91.1,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Old pipeline; duplicates slater_predictor (constants copy l.42).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 396,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.prediction_engine",
+    "periodica.utils.regeneration_engine"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_derivation_chain.py",
+    "tests\\test_relativistic_atomic.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.backend_manager",
+   "path": "src/periodica/utils/backend_manager.py",
+   "loc": 467,
+   "sloc": 370,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": true,
+   "coverage_pct": 13.2,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Dead (only re-exported by utils/__init__); scipy-vs-pure switch superseded by _dispatch/native.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 467,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils"
+   ],
+   "imports": [
+    "periodica.utils.pure_math (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.biological_component_factory",
+   "path": "src/periodica/utils/biological_component_factory.py",
+   "loc": 538,
+   "sloc": 429,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 59.2,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Factory superseded by registry + scripts.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 538,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.biological_derivation_chain",
+    "periodica.utils.predictors.biological.biomaterial_predictor (lazy)",
+    "periodica.utils.predictors.biological.cell_predictor (lazy)",
+    "periodica.utils.predictors.biological.nucleic_acid_predictor (lazy)",
+    "periodica.utils.predictors.biological.protein_predictor (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_derivation.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.biological_derivation_chain",
+   "path": "src/periodica/utils/biological_derivation_chain.py",
+   "loc": 628,
+   "sloc": 497,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 85.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Superseded by Get composition.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 628,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.biological_component_factory"
+   ],
+   "imports": [
+    "periodica.utils.predictors.biological.biomaterial_predictor (lazy)",
+    "periodica.utils.predictors.biological.cell_predictor (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_derivation.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.biological_generator",
+   "path": "src/periodica/utils/biological_generator.py",
+   "loc": 683,
+   "sloc": 600,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 84.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Generator facade superseded by registry + scripts.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 683,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.cascade_engine (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.derivation_metadata",
+    "periodica.utils.logger",
+    "periodica.utils.predictors.biological.amino_acid_predictor (lazy)",
+    "periodica.utils.predictors.biological.biomaterial_predictor (lazy)",
+    "periodica.utils.predictors.biological.cell_predictor (lazy)",
+    "periodica.utils.predictors.biological.nucleic_acid_predictor (lazy)",
+    "periodica.utils.predictors.biological.protein_predictor (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_generator.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.bonding_rules",
+   "path": "src/periodica/utils/bonding_rules.py",
+   "loc": 175,
+   "sloc": 132,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 96.2,
+   "cls": "PORT",
+   "target_crate": "periodica-chem",
+   "effort": "S",
+   "milestone": "M6 (low)",
+   "notes": "Electronegativity bond classification + valence/octet checks; useful for formula validation (M5) and bond perception. Consumers today: molecule_generator (DELETE), phase_diagram (lazy).",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 175,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.molecule_generator",
+    "periodica.utils.phase_diagram (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.logger"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_bonding_rules.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.cascade_engine",
+   "path": "src/periodica/utils/cascade_engine.py",
+   "loc": 396,
+   "sloc": 334,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 68.6,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Plan list - verified: no importer; drives the DELETE generators.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 396,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.alloy_generator (lazy)",
+    "periodica.utils.biological_generator (lazy)",
+    "periodica.utils.derivation_metadata",
+    "periodica.utils.logger",
+    "periodica.utils.material_generator (lazy)",
+    "periodica.utils.molecule_generator (lazy)",
+    "periodica.utils.regeneration_engine (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_cascade_engine.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.color_math",
+   "path": "src/periodica/utils/color_math.py",
+   "loc": 472,
+   "sloc": 357,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 30.7,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Colour maps for the periodic table (Qt-free); the app already has periodica_app/utils/color_utils. calculate_emission_spectrum is a crude Rydberg-like estimate - rebuild in periodica-qm if needed.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 472,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_utils_calculations.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.crystalline_math",
+   "path": "src/periodica/utils/crystalline_math.py",
+   "loc": 1698,
+   "sloc": 1297,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 17.7,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Plan list - verified: no importer; tests/test_utils_calculations.py only. Lattices/Voronoi/noise superseded by periodica-runtime crystal + export.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 1698,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_utils_calculations.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.derivation_metadata",
+   "path": "src/periodica/utils/derivation_metadata.py",
+   "loc": 150,
+   "sloc": 129,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 97.1,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Provenance moves to native (periodica-mat Source, D3 MassSource).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 150,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.alloy_generator",
+    "periodica.utils.biological_generator",
+    "periodica.utils.cascade_engine",
+    "periodica.utils.material_generator",
+    "periodica.utils.molecule_generator",
+    "periodica.utils.regeneration_engine"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_derivation_metadata.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.logger",
+   "path": "src/periodica/utils/logger.py",
+   "loc": 24,
+   "sloc": 20,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "24-line logging helper; every consumer is DELETE. Use logging.getLogger.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 24,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.data.material_data",
+    "periodica.data.validation",
+    "periodica.utils.alloy_generator",
+    "periodica.utils.biological_generator",
+    "periodica.utils.bonding_rules",
+    "periodica.utils.cascade_engine",
+    "periodica.utils.material_generator",
+    "periodica.utils.molecule_generator",
+    "periodica.utils.phase_diagram",
+    "periodica.utils.quark_constants",
+    "periodica.utils.regeneration_engine",
+    "periodica.utils.validation_report"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_utils_calculations.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.material_generator",
+   "path": "src/periodica/utils/material_generator.py",
+   "loc": 344,
+   "sloc": 279,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 93.3,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Generator superseded by scripts/_runner.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 344,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.cascade_engine (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.derivation_metadata",
+    "periodica.utils.logger"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_material_generator.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.molecular_geometry",
+   "path": "src/periodica/utils/molecular_geometry.py",
+   "loc": 992,
+   "sloc": 758,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 11.4,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "Q3",
+   "notes": "Plan list - verified: no importer; 2 test files. Wrong coordinates (A6) -> curated Geometry3D (Q3/B2).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 992,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_molecular_geometry_accuracy.py",
+    "tests\\test_molecules_complete.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.molecule_generator",
+   "path": "src/periodica/utils/molecule_generator.py",
+   "loc": 531,
+   "sloc": 404,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 92.7,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Generator superseded by scripts/_runner + inputs/molecules.json and M5 formula engine.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 531,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.cascade_engine (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.bonding_rules",
+    "periodica.utils.derivation_metadata",
+    "periodica.utils.logger"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_molecule_generator.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.nuclear_derivation",
+   "path": "src/periodica/utils/nuclear_derivation.py",
+   "loc": 347,
+   "sloc": 249,
+   "reachable_from": [
+    "public",
+    "tests"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 89.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Old pipeline; SEMF set A + r0 = 1.25. Public only through AtomCalculator.calculate_binding_energy (which uses set A while AtomCalculator.calculate_atomic_mass uses set B).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 347,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.physics_calculator (lazy)",
+    "periodica.utils.prediction_engine"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_derivation_chain.py",
+    "tests\\test_nuclear_shell.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.orbital_clouds",
+   "path": "src/periodica/utils/orbital_clouds.py",
+   "loc": 691,
+   "sloc": 471,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 53.1,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "A15",
+   "notes": "A1 normaliser bug ((n+l)!**3). Replace with a deprecated shim over periodica-qm hydrogenic (A15), delete at 3.0.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 691,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.sdf_core (lazy)"
+   ],
+   "imports": [
+    "periodica.data.element_data (lazy)",
+    "periodica.utils.pure_math"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enhanced_orbital_accuracy.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.phase_diagram",
+   "path": "src/periodica/utils/phase_diagram.py",
+   "loc": 290,
+   "sloc": 216,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 95.8,
+   "cls": "PORT",
+   "target_crate": "periodica-mat",
+   "effort": "S",
+   "milestone": "M6",
+   "notes": "Regular-solution model (omega, T_c, miscibility gap), Lindemann melting, Hume-Rothery solubility. Depends on rule_of_mixtures (lazy) and bonding_rules.",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 290,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.alloy_generator"
+   ],
+   "imports": [
+    "periodica.utils.bonding_rules (lazy)",
+    "periodica.utils.logger",
+    "periodica.utils.predictors.alloy.rule_of_mixtures (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_phase_diagram.py",
+    "tests\\test_regular_solution.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.physics_calculator",
+   "path": "src/periodica/utils/physics_calculator.py",
+   "loc": 2298,
+   "sloc": 1695,
+   "reachable_from": [
+    "public",
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "public",
+   "loaded_on_import": true,
+   "coverage_pct": 50.6,
+   "cls": "WRAPPER",
+   "target_crate": "constants (A5) -> Rust const",
+   "effort": "S",
+   "milestone": "A5/M8",
+   "notes": "Public only for PhysicsConstants (l.15-57) -> facade over the single constants JSON / Rust const. AtomCalculator / SubatomicCalculator / MoleculeCalculator (README-documented, but README's `from periodica import AtomCalculator` raises ImportError) predict melting point/density/radius from Z and duplicate SEMF/hyperfine/VSEPR -> DELETE (2.5 deprecation). Unused NUCLEAR_RADIUS_CONST = 1.25.",
+   "split": [
+    {
+     "cls": "WRAPPER",
+     "loc": 45,
+     "part": "PhysicsConstants"
+    },
+    {
+     "cls": "DELETE",
+     "loc": 2253,
+     "part": "AtomCalculator, SubatomicCalculator, MoleculeCalculator"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica",
+    "periodica.utils"
+   ],
+   "imports": [
+    "periodica.utils.nuclear_derivation (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_atom_calculator_accuracy.py",
+    "tests\\test_atom_comprehensive.py",
+    "tests\\test_json_validation.py",
+    "tests\\test_molecule_calculator.py",
+    "tests\\test_molecule_comprehensive.py",
+    "tests\\test_physics_calculations.py",
+    "tests\\test_subatomic_calculator.py",
+    "tests\\test_subatomic_comprehensive.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.physics_calculator_v2",
+   "path": "src/periodica/utils/physics_calculator_v2.py",
+   "loc": 4865,
+   "sloc": 3723,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 66.8,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Plan list - verified: no library/app importer; 6 test files only (test_data_driven_calculators, test_derivation_chain, test_deviation_report, test_json_validation, test_physics_calculations, test_prediction_chain). Own constants copy, r0 = 1.2, SEMF set B.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 4865,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.predictive_physics (lazy)"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_data_driven_calculators.py",
+    "tests\\test_derivation_chain.py",
+    "tests\\test_deviation_report.py",
+    "tests\\test_json_validation.py",
+    "tests\\test_physics_calculations.py",
+    "tests\\test_prediction_chain.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.position_calculator",
+   "path": "src/periodica/utils/position_calculator.py",
+   "loc": 209,
+   "sloc": 140,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 18.2,
+   "cls": "MOVE-TO-APP",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M9",
+   "notes": "Element positions for a layout (presentation). No app consumer today -> move with a screen or delete.",
+   "split": [
+    {
+     "cls": "MOVE-TO-APP",
+     "loc": 209,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.data.element_data"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_utils_calculations.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.prediction_engine",
+   "path": "src/periodica/utils/prediction_engine.py",
+   "loc": 235,
+   "sloc": 180,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 81.5,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Old derivation pipeline (truncated m_p/m_n/m_e); superseded by predictors and now by Get composition.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 235,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.regeneration_engine"
+   ],
+   "imports": [
+    "periodica.utils.atomic_derivation",
+    "periodica.utils.nuclear_derivation"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_derivation_chain.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictive_physics",
+   "path": "src/periodica/utils/predictive_physics.py",
+   "loc": 1020,
+   "sloc": 779,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 40.5,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Property extrapolation engine; consumers alloy_calculator/v2 are DELETE. Constants copy l.30-36, r0 = 1.25.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 1020,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.alloy_calculator (lazy)",
+    "periodica.utils.physics_calculator_v2 (lazy)"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors",
+   "path": "src/periodica/utils/predictors/__init__.py",
+   "loc": 41,
+   "sloc": 35,
+   "reachable_from": [
+    "documented"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 41,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.predictors.atomic",
+    "periodica.utils.predictors.atomic.slater_predictor",
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.chain",
+    "periodica.utils.predictors.compat",
+    "periodica.utils.predictors.hadron",
+    "periodica.utils.predictors.hadron.constituent_predictor",
+    "periodica.utils.predictors.nuclear",
+    "periodica.utils.predictors.nuclear.semf_predictor",
+    "periodica.utils.predictors.protocols",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.alloy",
+   "path": "src/periodica/utils/predictors/alloy/__init__.py",
+   "loc": 14,
+   "sloc": 10,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 14,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.predictors.alloy.rule_of_mixtures"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.alloy.rule_of_mixtures",
+   "path": "src/periodica/utils/predictors/alloy/rule_of_mixtures.py",
+   "loc": 474,
+   "sloc": 353,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 33.8,
+   "cls": "PORT",
+   "target_crate": "periodica-mat (Rust miedema stub lives in periodica_core)",
+   "effort": "M",
+   "milestone": "M6",
+   "notes": "Miedema dH_f + Vegard + RoM density/melting (README-documented). Becomes the ONE rule-of-mixtures implementation (sample `mixture`, optimize_alloy, alloy.rs estimate, biomaterial/alloy_calculator copies).",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 474,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.phase_diagram (lazy)",
+    "periodica.utils.predictors.alloy"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_miedema.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.atomic",
+   "path": "src/periodica/utils/predictors/atomic/__init__.py",
+   "loc": 13,
+   "sloc": 9,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 13,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors"
+   ],
+   "imports": [
+    "periodica.utils.predictors.atomic.slater_predictor"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.atomic.slater_predictor",
+   "path": "src/periodica/utils/predictors/atomic/slater_predictor.py",
+   "loc": 496,
+   "sloc": 379,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 88.1,
+   "cls": "PORT",
+   "target_crate": "periodica-qm",
+   "effort": "M",
+   "milestone": "M6",
+   "notes": "Slater rules + relativistic corrections + Aufbau anomalies; per owner decision a teaching toggle beside RHF-STO. Must read configs from element JSON (A4). Rust predictors::slater is a stub. Constants copy l.34.",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 496,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors",
+    "periodica.utils.predictors.atomic"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.base",
+   "path": "src/periodica/utils/predictors/base.py",
+   "loc": 433,
+   "sloc": 321,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 71.7,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Input/Result dataclasses + ABCs; replaced by the Rust Predictor trait + typed structs (.pyi).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 433,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors",
+    "periodica.utils.predictors.alloy.rule_of_mixtures",
+    "periodica.utils.predictors.atomic.slater_predictor",
+    "periodica.utils.predictors.biological.amino_acid_predictor",
+    "periodica.utils.predictors.chain",
+    "periodica.utils.predictors.compat",
+    "periodica.utils.predictors.hadron.constituent_predictor",
+    "periodica.utils.predictors.material.material_predictor",
+    "periodica.utils.predictors.molecule.vsepr_predictor",
+    "periodica.utils.predictors.nuclear.semf_predictor"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_hybridization.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.biological",
+   "path": "src/periodica/utils/predictors/biological/__init__.py",
+   "loc": 11,
+   "sloc": 8,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 11,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.predictors.biological.amino_acid_predictor"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.biological.amino_acid_predictor",
+   "path": "src/periodica/utils/predictors/biological/amino_acid_predictor.py",
+   "loc": 408,
+   "sloc": 290,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 86.8,
+   "cls": "PORT",
+   "target_crate": "periodica-core protein",
+   "effort": "S",
+   "milestone": "M6",
+   "notes": "Per-residue pKa/propensity lookups from amino-acid JSON; merge into the protein port.",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 408,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.biological_generator (lazy)",
+    "periodica.utils.predictors.biological"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_predictors.py",
+    "tests\\test_deviation_report.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.biological.biomaterial_predictor",
+   "path": "src/periodica/utils/predictors/biological/biomaterial_predictor.py",
+   "loc": 483,
+   "sloc": 373,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 71.2,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Rule-of-mixtures composite estimate (another RoM copy); no consumer outside DELETE generators.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 483,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.biological_component_factory (lazy)",
+    "periodica.utils.biological_derivation_chain (lazy)",
+    "periodica.utils.biological_generator (lazy)"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_predictors.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.biological.cell_predictor",
+   "path": "src/periodica/utils/predictors/biological/cell_predictor.py",
+   "loc": 419,
+   "sloc": 316,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 66.4,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Kleiber scaling 'predictions' - not a 99.9 % model, no consumer outside DELETE generators. Owner call: keep only as a labelled toy model.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 419,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.biological_component_factory (lazy)",
+    "periodica.utils.biological_derivation_chain (lazy)",
+    "periodica.utils.biological_generator (lazy)"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_predictors.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.biological.nucleic_acid_predictor",
+   "path": "src/periodica/utils/predictors/biological/nucleic_acid_predictor.py",
+   "loc": 593,
+   "sloc": 450,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 76.0,
+   "cls": "PORT",
+   "target_crate": "periodica-core protein (biopolymer)",
+   "effort": "M",
+   "milestone": "M6 (low)",
+   "notes": "Nearest-neighbour Tm/dG from config/{dna,rna}_thermodynamics.json. Owner call (no consumer today).",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 593,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.biological_component_factory (lazy)",
+    "periodica.utils.biological_generator (lazy)"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_predictors.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.biological.protein_predictor",
+   "path": "src/periodica/utils/predictors/biological/protein_predictor.py",
+   "loc": 720,
+   "sloc": 541,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 87.4,
+   "cls": "PORT",
+   "target_crate": "periodica-core protein",
+   "effort": "M",
+   "milestone": "M6",
+   "notes": "MW, pI (Henderson-Hasselbalch), GRAVY, instability index (config/protein_instability.json), Chou-Fasman (Rust predictors::chou_fasman is a stub; optimize._aa_propensity is a 2nd copy). README-documented.",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 720,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.biological_component_factory (lazy)",
+    "periodica.utils.biological_generator (lazy)"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_biological_predictors.py",
+    "tests\\test_deviation_report.py",
+    "tests\\test_predictors_coverage.py",
+    "tests\\test_secondary_structure.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.chain",
+   "path": "src/periodica/utils/predictors/chain.py",
+   "loc": 1196,
+   "sloc": 957,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 42.3,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "DerivationChain quark->material (5th SEMF copy, set B, r0 = 1.25, truncated masses). Superseded by Get composition + composition_rules.json.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 1196,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors",
+    "periodica.utils.predictors.compat"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.material.material_predictor",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_e2e_derivation_chain.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.compat",
+   "path": "src/periodica/utils/predictors/compat.py",
+   "loc": 37,
+   "sloc": 28,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 58.3,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Legacy aliases PredictionEngine/NuclearDerivation/AtomicDerivation.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 37,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.chain",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.hadron",
+   "path": "src/periodica/utils/predictors/hadron/__init__.py",
+   "loc": 15,
+   "sloc": 11,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 15,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors"
+   ],
+   "imports": [
+    "periodica.utils.predictors.hadron.constituent_predictor"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.hadron.constituent_predictor",
+   "path": "src/periodica/utils/predictors/hadron/constituent_predictor.py",
+   "loc": 402,
+   "sloc": 295,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 77.1,
+   "cls": "PORT",
+   "target_crate": "periodica-core predictors::constituent (stub)",
+   "effort": "S",
+   "milestone": "M6",
+   "notes": "Constituent-quark model on top of hyperfine; merge into one native `constituent` model.",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 402,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors",
+    "periodica.utils.predictors.hadron"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.hadron.hyperfine",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.hadron.hyperfine",
+   "path": "src/periodica/utils/predictors/hadron/hyperfine.py",
+   "loc": 184,
+   "sloc": 131,
+   "reachable_from": [
+    "tests",
+    "documented"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 77.6,
+   "cls": "PORT",
+   "target_crate": "periodica-core predictors::constituent (stub)",
+   "effort": "S",
+   "milestone": "M6",
+   "notes": "Canonical De Rujula-Georgi-Glashow formula (README-documented).",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 184,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors.hadron.constituent_predictor"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_hadron_hyperfine.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.material",
+   "path": "src/periodica/utils/predictors/material/__init__.py",
+   "loc": 3,
+   "sloc": 2,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 3,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.predictors.material.material_predictor"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.material.material_predictor",
+   "path": "src/periodica/utils/predictors/material/material_predictor.py",
+   "loc": 393,
+   "sloc": 289,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 83.6,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Heuristics (UTS = 1.2 sigma_y, fatigue = 0.4 UTS, Tabor 3.0 vs 3.3 in periodica-mat); exact relations already native in periodica-mat derive.rs.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 393,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors.chain",
+    "periodica.utils.predictors.material"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.molecule",
+   "path": "src/periodica/utils/predictors/molecule/__init__.py",
+   "loc": 10,
+   "sloc": 7,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 10,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.predictors.molecule.vsepr_predictor"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.molecule.huckel",
+   "path": "src/periodica/utils/predictors/molecule/huckel.py",
+   "loc": 113,
+   "sloc": 81,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 90.0,
+   "cls": "PORT",
+   "target_crate": "periodica-qm",
+   "effort": "S",
+   "milestone": "M6",
+   "notes": "Hueckel pi-MO energies/aromaticity (plan names it); needs a symmetric eigen-solver (nalgebra).",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 113,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_hybridization.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.molecule.vsepr_predictor",
+   "path": "src/periodica/utils/predictors/molecule/vsepr_predictor.py",
+   "loc": 454,
+   "sloc": 326,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 86.1,
+   "cls": "PORT",
+   "target_crate": "periodica-chem",
+   "effort": "S",
+   "milestone": "M6",
+   "notes": "VSEPR class + ideal angles as a labelled model; coordinates come from curated Geometry3D, never from here. Rust predictors::vsepr is a stub.",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 454,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors.molecule"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_hybridization.py",
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.nuclear",
+   "path": "src/periodica/utils/predictors/nuclear/__init__.py",
+   "loc": 24,
+   "sloc": 18,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the Python predictor framework. Survivors get a new thin wrapper (e.g. `periodica.models`) over pyfacade/predictors.rs; old path keeps a 2.5 deprecation shim.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 24,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors"
+   ],
+   "imports": [
+    "periodica.utils.predictors.nuclear.semf_predictor"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.nuclear.semf_predictor",
+   "path": "src/periodica/utils/predictors/nuclear/semf_predictor.py",
+   "loc": 345,
+   "sloc": 248,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 91.5,
+   "cls": "PORT",
+   "target_crate": "periodica-core predictors::semf (stub)",
+   "effort": "S",
+   "milestone": "M6",
+   "notes": "Canonical SEMF survivor (Z(Z-1) Coulomb, shell + Wigner terms). Rust semf.rs is a stub with a THIRD coefficient set (Krane 15.5/16.8/0.72/23.0/34.0) and r0 = 1.2; this file uses 15.56/17.23/0.7/23.285/12.0 and r0 = 1.25. Label as model; isotopes served from AME2020 (D3).",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 345,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors",
+    "periodica.utils.predictors.nuclear"
+   ],
+   "imports": [
+    "periodica.utils.predictors.base",
+    "periodica.utils.predictors.registry"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.predictors.protocols",
+   "path": "src/periodica/utils/predictors/protocols.py",
+   "loc": 388,
+   "sloc": 307,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 80.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Dead (only re-exported by predictors/__init__).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 388,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.predictors.registry",
+   "path": "src/periodica/utils/predictors/registry.py",
+   "loc": 178,
+   "sloc": 137,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 67.3,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Singleton predictor registry; replaced by Rust registered_predictor_names().",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 178,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.predictors",
+    "periodica.utils.predictors.alloy.rule_of_mixtures",
+    "periodica.utils.predictors.atomic.slater_predictor",
+    "periodica.utils.predictors.chain",
+    "periodica.utils.predictors.compat",
+    "periodica.utils.predictors.hadron.constituent_predictor",
+    "periodica.utils.predictors.material.material_predictor",
+    "periodica.utils.predictors.molecule.vsepr_predictor",
+    "periodica.utils.predictors.nuclear.semf_predictor"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_predictors_coverage.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.pure_array",
+   "path": "src/periodica/utils/pure_array.py",
+   "loc": 885,
+   "sloc": 623,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": true,
+   "coverage_pct": 23.9,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Dead except via sdf_core (DELETE); numpy replacement.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 885,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils",
+    "periodica.utils.sdf_core"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.pure_math",
+   "path": "src/periodica/utils/pure_math.py",
+   "loc": 1647,
+   "sloc": 1158,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 39.6,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "A1/A15",
+   "notes": "scipy.special replacement (Laguerre/Legendre/Y_lm) + ImprovedOrbitalCalculator (CLEMENTI_ZEFF, A3). Superseded by periodica-qm special functions (A1). Constants copy l.828.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 1647,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils",
+    "periodica.utils.backend_manager (lazy)",
+    "periodica.utils.orbital_clouds"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_enhanced_orbital_accuracy.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.quark_constants",
+   "path": "src/periodica/utils/quark_constants.py",
+   "loc": 176,
+   "sloc": 138,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 94.3,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Plan list - verified: no importer; tests/test_quark_constants.py only. Quark masses come from datasheets.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 176,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.logger"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_quark_constants.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.regeneration_engine",
+   "path": "src/periodica/utils/regeneration_engine.py",
+   "loc": 304,
+   "sloc": 248,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 89.8,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Orchestrates the old pipeline; no consumer except cascade_engine.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 304,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.cascade_engine (lazy)"
+   ],
+   "imports": [
+    "periodica.utils.atomic_derivation",
+    "periodica.utils.derivation_metadata",
+    "periodica.utils.logger",
+    "periodica.utils.prediction_engine"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_regeneration_engine.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.report_logger",
+   "path": "src/periodica/utils/report_logger.py",
+   "loc": 190,
+   "sloc": 145,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 0.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Plan list - verified: dead, 0 % coverage.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 190,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.sdf_core",
+   "path": "src/periodica/utils/sdf_core.py",
+   "loc": 555,
+   "sloc": 372,
+   "reachable_from": [
+    "dead"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 14.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Plan list - verified: dead (no importer at all). Nucleus/orbital SDFs superseded by periodica-render/qm. r0 = 1.25 default.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 555,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.orbital_clouds (lazy)",
+    "periodica.utils.pure_array"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.simulation_schema",
+   "path": "src/periodica/utils/simulation_schema.py",
+   "loc": 1147,
+   "sloc": 853,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": true,
+   "coverage_pct": 82.7,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Dataclasses + propagate_* chain (4th SEMF copy, r0 = 1.2, constants copy). Loaded on every `import periodica` via utils/__init__.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 1147,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_all_118_elements.py",
+    "tests\\test_e2e_derivation_chain.py",
+    "tests\\test_molecules_complete.py",
+    "tests\\test_prediction_chain.py",
+    "tests\\test_quark_to_hadron_complete.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.transforms",
+   "path": "src/periodica/utils/transforms/__init__.py",
+   "loc": 39,
+   "sloc": 34,
+   "reachable_from": [
+    "documented"
+   ],
+   "primary_reach": "dead",
+   "loaded_on_import": false,
+   "coverage_pct": 100.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Package init of the transforms stack.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 39,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.transforms.fourier_field",
+    "periodica.utils.transforms.material_sampler",
+    "periodica.utils.transforms.stochastic_field",
+    "periodica.utils.transforms.thermo_pressure",
+    "periodica.utils.transforms.wavelet_field"
+   ],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.transforms.fourier_field",
+   "path": "src/periodica/utils/transforms/fourier_field.py",
+   "loc": 353,
+   "sloc": 284,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 64.9,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Evaluator only; baking is native (fourier_bake.rs). If the 2 sheets' Fourier blocks must be served, add a field model in periodica-runtime instead.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 353,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.transforms",
+    "periodica.utils.transforms.material_sampler"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_material_sampler.py",
+    "tests\\test_material_validation.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.transforms.material_sampler",
+   "path": "src/periodica/utils/transforms/material_sampler.py",
+   "loc": 459,
+   "sloc": 345,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 83.6,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Duplicates sample() on a different schema; consumes Fourier/Wavelet/Stochastic/TemperatureDependencies blocks present in only 2 datasheets (Granite_Westerly, Steel_8620_CaseHardened).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 459,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.transforms"
+   ],
+   "imports": [
+    "periodica.utils.transforms.fourier_field",
+    "periodica.utils.transforms.optical_properties",
+    "periodica.utils.transforms.stochastic_field",
+    "periodica.utils.transforms.thermo_pressure",
+    "periodica.utils.transforms.wavelet_field"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_material_sampler.py",
+    "tests\\test_material_validation.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.transforms.optical_properties",
+   "path": "src/periodica/utils/transforms/optical_properties.py",
+   "loc": 645,
+   "sloc": 489,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 51.8,
+   "cls": "PORT",
+   "target_crate": "periodica-mat",
+   "effort": "M",
+   "milestone": "M6 (low)",
+   "notes": "Drude/Lorentz/Sellmeier/Cauchy dispersion (1 sheet uses drude). Relevant to IOR baking for the renderer; port only with a consumer, else DELETE. Constants copy (h, hbar truncated).",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 645,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.transforms.material_sampler"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_material_sampler.py",
+    "tests\\test_material_validation.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.transforms.stochastic_field",
+   "path": "src/periodica/utils/transforms/stochastic_field.py",
+   "loc": 427,
+   "sloc": 323,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 78.3,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Karhunen-Loeve heterogeneity; same disposition as fourier_field.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 427,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.transforms",
+    "periodica.utils.transforms.material_sampler"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_material_sampler.py",
+    "tests\\test_material_validation.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.transforms.thermo_pressure",
+   "path": "src/periodica/utils/transforms/thermo_pressure.py",
+   "loc": 529,
+   "sloc": 422,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 80.5,
+   "cls": "PORT",
+   "target_crate": "periodica-mat",
+   "effort": "M",
+   "milestone": "M6 (low)",
+   "notes": "Temperature dependence (tabulated/polynomial, data present in 2 sheets) + Birch-Murnaghan EOS. Port only if T-dependent properties become served data; else DELETE.",
+   "split": [
+    {
+     "cls": "PORT",
+     "loc": 529,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.transforms",
+    "periodica.utils.transforms.material_sampler"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_material_sampler.py",
+    "tests\\test_material_validation.py"
+   ]
+  },
+  {
+   "module": "periodica.utils.transforms.wavelet_field",
+   "path": "src/periodica/utils/transforms/wavelet_field.py",
+   "loc": 508,
+   "sloc": 396,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 26.0,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "M6",
+   "notes": "Same as fourier_field; 26 % coverage, no test imports it directly.",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 508,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [
+    "periodica.utils.transforms",
+    "periodica.utils.transforms.material_sampler"
+   ],
+   "imports": [],
+   "app_importers": [],
+   "test_importers": []
+  },
+  {
+   "module": "periodica.utils.validation_report",
+   "path": "src/periodica/utils/validation_report.py",
+   "loc": 308,
+   "sloc": 258,
+   "reachable_from": [
+    "tests"
+   ],
+   "primary_reach": "tests",
+   "loaded_on_import": false,
+   "coverage_pct": 92.8,
+   "cls": "DELETE",
+   "target_crate": "",
+   "effort": "",
+   "milestone": "POL",
+   "notes": "Plan list - verified: no importer; replaced by generated docs/accuracy.html (ACC).",
+   "split": [
+    {
+     "cls": "DELETE",
+     "loc": 308,
+     "part": "whole module"
+    }
+   ],
+   "native": null,
+   "fan_in": [],
+   "imports": [
+    "periodica.utils.logger"
+   ],
+   "app_importers": [],
+   "test_importers": [
+    "tests\\test_validation_report.py"
+   ]
+  }
+ ],
+ "public_api": [
+  {
+   "name": "__version__",
+   "module": "periodica",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list"
+  },
+  {
+   "name": "Get",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "py_get",
+   "should_be": "@native"
+  },
+  {
+   "name": "Save",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "py_save",
+   "should_be": "@native"
+  },
+  {
+   "name": "Scope",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum/exception; raised from native via pyo3 create_exception)"
+  },
+  {
+   "name": "UnknownName",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum/exception; raised from native via pyo3 create_exception)"
+  },
+  {
+   "name": "UnknownConstituent",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum/exception; raised from native via pyo3 create_exception)"
+  },
+  {
+   "name": "UnknownTier",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum/exception; raised from native via pyo3 create_exception)"
+  },
+  {
+   "name": "RegistryCollision",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum/exception; raised from native via pyo3 create_exception)"
+  },
+  {
+   "name": "reload_registry",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "(data_loader::reload_registry, not exported)",
+   "should_be": "@native"
+  },
+  {
+   "name": "list_tiers",
+   "module": "periodica.get",
+   "native_today": false,
+   "rust_symbol": "py_list_tiers",
+   "should_be": "@native"
+  },
+  {
+   "name": "sample",
+   "module": "periodica.sample",
+   "native_today": true,
+   "rust_symbol": "py_sample",
+   "should_be": "@native"
+  },
+  {
+   "name": "data_sheet",
+   "module": "periodica.sample",
+   "native_today": true,
+   "rust_symbol": "py_data_sheet",
+   "should_be": "@native"
+  },
+  {
+   "name": "register_field_model",
+   "module": "periodica.sample",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (user hook, consulted before native)"
+  },
+  {
+   "name": "assert_rust_backend",
+   "module": "periodica._dispatch",
+   "native_today": false,
+   "rust_symbol": "is_rust_backend / version_rust (handshake)",
+   "should_be": "allow-list (diagnostics); backend_mode/fallback_count/BackendMode deprecated at 3.0"
+  },
+  {
+   "name": "backend_report",
+   "module": "periodica._dispatch",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (diagnostics); backend_mode/fallback_count/BackendMode deprecated at 3.0"
+  },
+  {
+   "name": "backend_mode",
+   "module": "periodica._dispatch",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (diagnostics); backend_mode/fallback_count/BackendMode deprecated at 3.0"
+  },
+  {
+   "name": "fallback_count",
+   "module": "periodica._dispatch",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (diagnostics); backend_mode/fallback_count/BackendMode deprecated at 3.0"
+  },
+  {
+   "name": "BackendMode",
+   "module": "periodica._dispatch",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (diagnostics); backend_mode/fallback_count/BackendMode deprecated at 3.0"
+  },
+  {
+   "name": "RustBackendUnavailable",
+   "module": "periodica._dispatch",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (diagnostics); backend_mode/fallback_count/BackendMode deprecated at 3.0"
+  },
+  {
+   "name": "build_backbone",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "py_build_backbone (BROKEN)",
+   "should_be": "@native"
+  },
+  {
+   "name": "build_backbone_from_entry",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "py_build_backbone_from_entry (BROKEN)",
+   "should_be": "@native"
+  },
+  {
+   "name": "extract_phi_psi",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "@native"
+  },
+  {
+   "name": "kabsch_rmsd",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "py_kabsch_rmsd (WRONG)",
+   "should_be": "@native"
+  },
+  {
+   "name": "parse_pdb_backbone",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (I/O)"
+  },
+  {
+   "name": "backbone_array_from_pdb",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "@native"
+  },
+  {
+   "name": "fetch_alphafold",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (I/O)"
+  },
+  {
+   "name": "load_alphafold_reference",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (I/O)"
+  },
+  {
+   "name": "ramachandran_region",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "py_ramachandran_region (label case differs)",
+   "should_be": "@native"
+  },
+  {
+   "name": "ramachandran_in_allowed",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "@native"
+  },
+  {
+   "name": "folding_rules",
+   "module": "periodica.folding",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "@native"
+  },
+  {
+   "name": "optimize_protein_folding",
+   "module": "periodica.optimize",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "@native"
+  },
+  {
+   "name": "optimize_alloy",
+   "module": "periodica.optimize",
+   "native_today": false,
+   "rust_symbol": "py_optimize_alloy (returns [])",
+   "should_be": "@native"
+  },
+  {
+   "name": "voxel_sample",
+   "module": "periodica.export",
+   "native_today": false,
+   "rust_symbol": "(sample::voxel_sample, not exported)",
+   "should_be": "@native"
+  },
+  {
+   "name": "voxel_phase_map",
+   "module": "periodica.export",
+   "native_today": false,
+   "rust_symbol": "(sample::voxel_phase_map, not exported)",
+   "should_be": "@native"
+  },
+  {
+   "name": "export_stl",
+   "module": "periodica.export",
+   "native_today": false,
+   "rust_symbol": "py_export_stl (differs)",
+   "should_be": "@native"
+  },
+  {
+   "name": "export_obj",
+   "module": "periodica.export",
+   "native_today": false,
+   "rust_symbol": "py_export_obj (differs)",
+   "should_be": "@native"
+  },
+  {
+   "name": "export_vtk_legacy",
+   "module": "periodica.export",
+   "native_today": false,
+   "rust_symbol": "py_export_vtk_legacy (numerically equal)",
+   "should_be": "@native"
+  },
+  {
+   "name": "export_sdf_raw",
+   "module": "periodica.export",
+   "native_today": false,
+   "rust_symbol": "py_export_sdf_raw (default mode differs)",
+   "should_be": "@native"
+  },
+  {
+   "name": "export_hlsl",
+   "module": "periodica.export",
+   "native_today": false,
+   "rust_symbol": "py_export_hlsl (differs)",
+   "should_be": "@native"
+  },
+  {
+   "name": "PhysicsConstants",
+   "module": "periodica.utils.physics_calculator",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (constants facade generated from the native constants table, A5)"
+  },
+  {
+   "name": "DataManager",
+   "module": "periodica.data.data_manager",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (file I/O)"
+  },
+  {
+   "name": "DataCategory",
+   "module": "periodica.data.data_manager",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "PTPropertyName",
+   "module": "periodica.core.pt_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "PTLayoutMode",
+   "module": "periodica.core.pt_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "MoleculeLayoutMode",
+   "module": "periodica.core.molecule_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "BondType",
+   "module": "periodica.core.molecule_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "MoleculeCategory",
+   "module": "periodica.core.molecule_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "MolecularGeometry",
+   "module": "periodica.core.molecule_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "MoleculePolarity",
+   "module": "periodica.core.molecule_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "QuarkLayoutMode",
+   "module": "periodica.core.quark_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "ParticleType",
+   "module": "periodica.core.quark_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "InteractionForce",
+   "module": "periodica.core.quark_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "SubatomicLayoutMode",
+   "module": "periodica.core.subatomic_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "ParticleCategory",
+   "module": "periodica.core.subatomic_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "AlloyLayoutMode",
+   "module": "periodica.core.alloy_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "AlloyCategory",
+   "module": "periodica.core.alloy_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "CrystalStructure",
+   "module": "periodica.core.alloy_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "AminoAcidLayoutMode",
+   "module": "periodica.core.amino_acid_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "AminoAcidCategory",
+   "module": "periodica.core.amino_acid_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "MaterialLayoutMode",
+   "module": "periodica.core.material_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "MaterialCategory",
+   "module": "periodica.core.material_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "ProteinLayoutMode",
+   "module": "periodica.core.protein_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "SecondaryStructureType",
+   "module": "periodica.core.protein_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "CellLayoutMode",
+   "module": "periodica.core.cell_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "CellType",
+   "module": "periodica.core.cell_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "NucleicAcidLayoutMode",
+   "module": "periodica.core.nucleic_acid_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "NucleicAcidType",
+   "module": "periodica.core.nucleic_acid_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "BiomaterialLayoutMode",
+   "module": "periodica.core.biomaterial_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "BiomaterialType",
+   "module": "periodica.core.biomaterial_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "CellComponentLayoutMode",
+   "module": "periodica.core.cell_component_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum); presentation -> app at 3.0"
+  },
+  {
+   "name": "OrganelleType",
+   "module": "periodica.core.cell_component_enums",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (enum)"
+  },
+  {
+   "name": "Launch",
+   "module": "periodica._launcher",
+   "native_today": false,
+   "rust_symbol": "",
+   "should_be": "allow-list (process launcher)"
+  }
+ ],
+ "codata_copies": [
+  {
+   "site": "src/periodica/utils/physics_calculator.py:15-57",
+   "kind": "PhysicsConstants (PUBLIC)",
+   "values": "m_p/m_n/m_e (u, MeV; CODATA 2018), quark masses, Ry 13.605693122994, a0 52.9177210903 pm, alpha 0.0072973525693, N_A, r0 1.25 (unused), SEMF set B; plus inline 931.494 at l.126, l.1569"
+  },
+  {
+   "site": "src/periodica/utils/pure_math.py:828-829",
+   "kind": "module globals",
+   "values": "alpha = 1/137.035999084, Ry"
+  },
+  {
+   "site": "src/periodica/utils/atomic_derivation.py:42-45 (+l.116)",
+   "kind": "class attrs",
+   "values": "m_e MeV, m_e u truncated 0.000548579909, Ry, a0 pm; 931.494"
+  },
+  {
+   "site": "src/periodica/utils/predictors/atomic/slater_predictor.py:34-37",
+   "kind": "class attrs",
+   "values": "m_e MeV, m_e u (truncated), Ry, a0 pm"
+  },
+  {
+   "site": "src/periodica/utils/predictive_physics.py:30-36 (+l.997)",
+   "kind": "PredictiveConstants",
+   "values": "Ry, alpha, a0 pm; r0 1.25"
+  },
+  {
+   "site": "src/periodica/utils/physics_calculator_v2.py:28-61 (+l.1227, 2054, 2198, 3531, 3567)",
+   "kind": "PhysicsConstantsV2",
+   "values": "MEV_TO_AMU 931.494, AMU_TO_KG 1.66054e-27 (6 s.f.), MEV_TO_JOULE 1.60218e-13, N_A, k_B, h, c, e, Ry, a0, alpha, SEMF set B; m_p 938.272; r0 1.2 (x3)"
+  },
+  {
+   "site": "src/periodica/utils/simulation_schema.py:56-70 (+l.970, 985, 1006)",
+   "kind": "SimulationConstants",
+   "values": "hbar, c, e, m_p/m_n/m_e kg (8-9 s.f.), a0 m, alpha, Ry, AMU_TO_KG 1.66054e-27, MEV_TO_KG; r0 1.2; SEMF set B; 931.494"
+  },
+  {
+   "site": "rust/periodica-mat/src/canon.rs:114-118",
+   "kind": "Rust const",
+   "values": "AMU_TO_KG 1.66053906660e-27 (CODATA 2018), EV_TO_J, N_A (in KJ_MOL_TO_J)"
+  },
+  {
+   "site": "src/periodica/constants.py:100-110",
+   "kind": "PhysicalConstants",
+   "values": "c, h (eV s, J s), e, R_inf 10973731.6 (truncated), r0 1.2"
+  },
+  {
+   "site": "src/periodica/utils/nuclear_derivation.py:46-55",
+   "kind": "class attrs",
+   "values": "SEMF set A, r0 1.25, m_p 938.272, m_n 939.565 (truncated)"
+  },
+  {
+   "site": "src/periodica/utils/predictors/nuclear/semf_predictor.py:48-57",
+   "kind": "class attrs",
+   "values": "SEMF set A, r0 1.25, m_p/m_n truncated"
+  },
+  {
+   "site": "src/periodica/utils/predictors/chain.py:251-252, 484-488, 508, 606",
+   "kind": "inline",
+   "values": "m_p/m_n truncated; SEMF set B; r0 1.25; 931.494"
+  },
+  {
+   "site": "src/periodica/utils/prediction_engine.py:62-64",
+   "kind": "class attrs",
+   "values": "m_p 938.272, m_n 939.565, m_e 0.511"
+  },
+  {
+   "site": "src/periodica/utils/transforms/optical_properties.py:36-38",
+   "kind": "module globals",
+   "values": "c, h 6.62607e-34, hbar 1.054571e-34 (truncated)"
+  },
+  {
+   "site": "src/periodica/utils/transforms/thermo_pressure.py:29",
+   "kind": "module global",
+   "values": "k_B"
+  },
+  {
+   "site": "src/periodica/utils/color_math.py:23",
+   "kind": "module global",
+   "values": "e (J/eV)"
+  },
+  {
+   "site": "src/periodica/utils/predictors/biological/cell_predictor.py:44",
+   "kind": "class attr",
+   "values": "k_B = 8.617e-5 eV/K (4 s.f.)"
+  },
+  {
+   "site": "rust/periodica_core/src/predictors/semf.rs:36-45",
+   "kind": "Rust Default",
+   "values": "SEMF set C (Krane 15.5/16.8/0.72/23.0/34.0), r0 1.2"
+  },
+  {
+   "site": "src/periodica/core/protein_enums.py:216",
+   "kind": "module global",
+   "values": "WATER_MASS 18.015 (derived, not CODATA)"
+  }
+ ],
+ "r0_sites": {
+  "1.25 fm": [
+   "utils/physics_calculator.py:50 (NUCLEAR_RADIUS_CONST, declared but unused)",
+   "utils/nuclear_derivation.py:53 (R0, used l.200)",
+   "utils/predictors/nuclear/semf_predictor.py:55 (R0, used l.191)",
+   "utils/predictors/chain.py:508",
+   "utils/predictive_physics.py:997",
+   "utils/sdf_core.py:164 (default arg r0_fm)"
+  ],
+  "1.2 fm": [
+   "constants.py:108 (NUCLEAR_RADIUS_CONSTANT)",
+   "utils/physics_calculator_v2.py:2054, 3531, 3567",
+   "utils/simulation_schema.py:970",
+   "rust/periodica_core/src/predictors/semf.rs:44 (radius_prefactor_fm)"
+  ]
+ },
+ "semf_coefficient_sets": {
+  "A 15.56/17.23/0.70/23.285/12.0, Coulomb Z(Z-1)": [
+   "utils/nuclear_derivation.py:46-50",
+   "utils/predictors/nuclear/semf_predictor.py:48-52"
+  ],
+  "B 15.75/17.8/0.711/23.7/11.2": [
+   "utils/physics_calculator.py:51-55 (Coulomb Z^2, l.103)",
+   "utils/physics_calculator_v2.py:52-56 (Z^2)",
+   "utils/predictors/chain.py:484-488 (Z(Z-1))",
+   "utils/simulation_schema.py:985 (Z(Z-1))"
+  ],
+  "C 15.5/16.8/0.72/23.0/34.0 (Krane)": [
+   "rust/periodica_core/src/predictors/semf.rs:36-45 (stub)"
+  ]
+ },
+ "tests_only_on_delete": [
+  "tests/test_all_118_elements.py",
+  "tests/test_alloy_generator.py",
+  "tests/test_biological_derivation.py",
+  "tests/test_biological_generator.py",
+  "tests/test_cascade_engine.py",
+  "tests/test_config.py",
+  "tests/test_data_driven_calculators.py",
+  "tests/test_data_validation.py",
+  "tests/test_derivation_chain.py",
+  "tests/test_derivation_metadata.py",
+  "tests/test_e2e_derivation_chain.py",
+  "tests/test_enhanced_orbital_accuracy.py",
+  "tests/test_material_generator.py",
+  "tests/test_molecular_geometry_accuracy.py",
+  "tests/test_molecule_generator.py",
+  "tests/test_molecules_complete.py",
+  "tests/test_nuclear_shell.py",
+  "tests/test_prediction_chain.py",
+  "tests/test_quark_constants.py",
+  "tests/test_quark_to_hadron_complete.py",
+  "tests/test_regeneration_engine.py",
+  "tests/test_relativistic_atomic.py",
+  "tests/test_validation_report.py"
+ ],
+ "tests_partly_on_delete": [
+  "tests/test_biological_predictors.py",
+  "tests/test_data_loaders.py",
+  "tests/test_deviation_report.py",
+  "tests/test_hybridization.py",
+  "tests/test_json_validation.py",
+  "tests/test_material_sampler.py",
+  "tests/test_material_validation.py",
+  "tests/test_physics_calculations.py",
+  "tests/test_predictors_coverage.py",
+  "tests/test_utils_calculations.py"
+ ]
+}
