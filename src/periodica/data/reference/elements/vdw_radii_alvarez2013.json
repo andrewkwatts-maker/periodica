@@ -1,0 +1,1226 @@
+{
+  "_provenance": {
+    "source": "S. Alvarez, 'A cartography of the van der Waals territories', Dalton Trans. 42, 8617-8636 (2013), doi:10.1039/C3DT50599E, Table 1 (open-access copy: Diposit Digital UB, https://hdl.handle.net/2445/48823).",
+    "retrieved": "2026-10-02",
+    "license_or_terms": "Article is open access under CC BY-NC 3.0 (RSC; repository copy cc by-nc 3.0 es). Only factual numerical values are extracted, with attribution; no prose, figures or layout are reproduced. Bondi and Batsanov columns are as reprinted in the same table (A. Bondi, J. Phys. Chem. 68, 441 (1964), doi:10.1021/j100785a001; S. S. Batsanov, Inorg. Mater. 37, 871 (2001), doi:10.1023/A:1011625728803).",
+    "transform": "tools/refdata/build_element_rendering.py (PDF Table 1 parsed by column position with PyMuPDF)",
+    "units": {
+      "radius_A": "angstrom",
+      "bondi_A": "angstrom",
+      "batsanov_A": "angstrom",
+      "vdw_peak_percent": "%"
+    },
+    "uncertainty": "The paper gives no per-value standard deviation. Its stated guidance: 'differences of 0.1 A or less should not be considered to be significant'. 'larger_uncertainty' = value printed in italics; 'rough_estimate' = value printed in square brackets (very small structural datasets).",
+    "download_sha256": "ee4c77891e90004839ddb1d59e455c8deb287c87ba29e85ca7ea7cbff551a810",
+    "crosschecks": {
+      "ase": {
+        "source": "https://gitlab.com/ase/ase/-/raw/0a7257774301fed11a5b4e5d9394c28c1401f275/ase/data/vdw_alvarez.py",
+        "agrees_except": {}
+      },
+      "mendeleev": {
+        "source": "https://github.com/lmmentel/mendeleev/raw/4e02078d08988fad881bb7d99f2d50bf94e22823/mendeleev/elements.db",
+        "agrees_except": {
+          "Ar": {
+            "ours": 1.83,
+            "other": 1.94,
+            "reason": "mendeleev replaces the noble gases with Vogt & Alvarez 2014 values"
+          },
+          "Kr": {
+            "ours": 2.25,
+            "other": 2.07,
+            "reason": "mendeleev replaces the noble gases with Vogt & Alvarez 2014 values"
+          },
+          "Xe": {
+            "ours": 2.06,
+            "other": 2.28,
+            "reason": "mendeleev replaces the noble gases with Vogt & Alvarez 2014 values"
+          },
+          "Rn": {
+            "ours": null,
+            "other": 2.4,
+            "reason": "mendeleev replaces the noble gases with Vogt & Alvarez 2014 values"
+          }
+        }
+      }
+    },
+    "related": "Noble-gas radii were revised by A. Vogt and S. Alvarez, Inorg. Chem. 53, 9260 (2014) (correction doi:10.1021/ic502140y); not stored here (primary text not accessed).",
+    "n_elements_with_radius": 93
+  },
+  "elements": {
+    "1": {
+      "symbol": "H",
+      "radius_A": 1.2,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 66,
+      "n_distances": 9888,
+      "bondi_A": 1.2,
+      "batsanov_A": null
+    },
+    "2": {
+      "symbol": "He",
+      "radius_A": 1.43,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": null,
+      "n_distances": 12,
+      "bondi_A": 1.4,
+      "batsanov_A": null
+    },
+    "3": {
+      "symbol": "Li",
+      "radius_A": 2.12,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 76,
+      "n_distances": 11067,
+      "bondi_A": 1.81,
+      "batsanov_A": 2.2
+    },
+    "4": {
+      "symbol": "Be",
+      "radius_A": 1.98,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 90,
+      "n_distances": 3515,
+      "bondi_A": null,
+      "batsanov_A": 1.9
+    },
+    "5": {
+      "symbol": "B",
+      "radius_A": 1.91,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 70,
+      "n_distances": 152194,
+      "bondi_A": null,
+      "batsanov_A": 1.8
+    },
+    "6": {
+      "symbol": "C",
+      "radius_A": 1.77,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 82,
+      "n_distances": 385475,
+      "bondi_A": 1.7,
+      "batsanov_A": 1.7
+    },
+    "7": {
+      "symbol": "N",
+      "radius_A": 1.66,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 52,
+      "n_distances": 187967,
+      "bondi_A": 1.55,
+      "batsanov_A": 1.6
+    },
+    "8": {
+      "symbol": "O",
+      "radius_A": 1.5,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 73,
+      "n_distances": 420207,
+      "bondi_A": 1.52,
+      "batsanov_A": 1.55
+    },
+    "9": {
+      "symbol": "F",
+      "radius_A": 1.46,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 66,
+      "n_distances": 497497,
+      "bondi_A": 1.47,
+      "batsanov_A": 1.5
+    },
+    "10": {
+      "symbol": "Ne",
+      "radius_A": 1.58,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": null,
+      "n_distances": 12,
+      "bondi_A": 1.54,
+      "batsanov_A": null
+    },
+    "11": {
+      "symbol": "Na",
+      "radius_A": 2.5,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 51,
+      "n_distances": 16016,
+      "bondi_A": 2.27,
+      "batsanov_A": 2.4
+    },
+    "12": {
+      "symbol": "Mg",
+      "radius_A": 2.51,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 92,
+      "n_distances": 11581,
+      "bondi_A": 1.73,
+      "batsanov_A": 2.2
+    },
+    "13": {
+      "symbol": "Al",
+      "radius_A": 2.25,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 75,
+      "n_distances": 9877,
+      "bondi_A": null,
+      "batsanov_A": 2.1
+    },
+    "14": {
+      "symbol": "Si",
+      "radius_A": 2.19,
+      "larger_uncertainty": true,
+      "rough_estimate": false,
+      "vdw_peak_percent": 55,
+      "n_distances": 15077,
+      "bondi_A": 2.22,
+      "batsanov_A": 2.1
+    },
+    "15": {
+      "symbol": "P",
+      "radius_A": 1.9,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 67,
+      "n_distances": 178077,
+      "bondi_A": 1.8,
+      "batsanov_A": 1.95
+    },
+    "16": {
+      "symbol": "S",
+      "radius_A": 1.89,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 58,
+      "n_distances": 741158,
+      "bondi_A": 1.8,
+      "batsanov_A": 1.8
+    },
+    "17": {
+      "symbol": "Cl",
+      "radius_A": 1.82,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 69,
+      "n_distances": 641448,
+      "bondi_A": 1.75,
+      "batsanov_A": 1.8
+    },
+    "18": {
+      "symbol": "Ar",
+      "radius_A": 1.83,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 93,
+      "n_distances": 527,
+      "bondi_A": 1.76,
+      "batsanov_A": null
+    },
+    "19": {
+      "symbol": "K",
+      "radius_A": 2.73,
+      "larger_uncertainty": true,
+      "rough_estimate": false,
+      "vdw_peak_percent": 28,
+      "n_distances": 76013,
+      "bondi_A": 2.75,
+      "batsanov_A": 2.8
+    },
+    "20": {
+      "symbol": "Ca",
+      "radius_A": 2.62,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 78,
+      "n_distances": 5420,
+      "bondi_A": null,
+      "batsanov_A": 2.4
+    },
+    "21": {
+      "symbol": "Sc",
+      "radius_A": 2.58,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 93,
+      "n_distances": 1287,
+      "bondi_A": null,
+      "batsanov_A": 2.3
+    },
+    "22": {
+      "symbol": "Ti",
+      "radius_A": 2.46,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 36,
+      "n_distances": 6685,
+      "bondi_A": null,
+      "batsanov_A": 2.15
+    },
+    "23": {
+      "symbol": "V",
+      "radius_A": 2.42,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 37,
+      "n_distances": 17485,
+      "bondi_A": null,
+      "batsanov_A": 2.05
+    },
+    "24": {
+      "symbol": "Cr",
+      "radius_A": 2.45,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 71,
+      "n_distances": 60314,
+      "bondi_A": null,
+      "batsanov_A": 2.05
+    },
+    "25": {
+      "symbol": "Mn",
+      "radius_A": 2.45,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 79,
+      "n_distances": 81976,
+      "bondi_A": null,
+      "batsanov_A": 2.05
+    },
+    "26": {
+      "symbol": "Fe",
+      "radius_A": 2.44,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 67,
+      "n_distances": 207868,
+      "bondi_A": null,
+      "batsanov_A": 2.05
+    },
+    "27": {
+      "symbol": "Co",
+      "radius_A": 2.4,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 81,
+      "n_distances": 186046,
+      "bondi_A": null,
+      "batsanov_A": 2.0
+    },
+    "28": {
+      "symbol": "Ni",
+      "radius_A": 2.4,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 76,
+      "n_distances": 115164,
+      "bondi_A": 1.63,
+      "batsanov_A": 2.0
+    },
+    "29": {
+      "symbol": "Cu",
+      "radius_A": 2.38,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 75,
+      "n_distances": 42451,
+      "bondi_A": 1.4,
+      "batsanov_A": 2.0
+    },
+    "30": {
+      "symbol": "Zn",
+      "radius_A": 2.39,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 74,
+      "n_distances": 68186,
+      "bondi_A": 1.39,
+      "batsanov_A": 2.1
+    },
+    "31": {
+      "symbol": "Ga",
+      "radius_A": 2.32,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 80,
+      "n_distances": 6066,
+      "bondi_A": 1.87,
+      "batsanov_A": 2.1
+    },
+    "32": {
+      "symbol": "Ge",
+      "radius_A": 2.29,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 50,
+      "n_distances": 13207,
+      "bondi_A": null,
+      "batsanov_A": 2.1
+    },
+    "33": {
+      "symbol": "As",
+      "radius_A": 1.88,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 54,
+      "n_distances": 22962,
+      "bondi_A": 1.85,
+      "batsanov_A": 2.05
+    },
+    "34": {
+      "symbol": "Se",
+      "radius_A": 1.82,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 46,
+      "n_distances": 36624,
+      "bondi_A": 1.9,
+      "batsanov_A": 1.9
+    },
+    "35": {
+      "symbol": "Br",
+      "radius_A": 1.86,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 68,
+      "n_distances": 172324,
+      "bondi_A": 1.83,
+      "batsanov_A": 1.9
+    },
+    "36": {
+      "symbol": "Kr",
+      "radius_A": 2.25,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 98,
+      "n_distances": 131,
+      "bondi_A": 2.02,
+      "batsanov_A": null
+    },
+    "37": {
+      "symbol": "Rb",
+      "radius_A": 3.21,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 33,
+      "n_distances": 1960,
+      "bondi_A": null,
+      "batsanov_A": 2.9
+    },
+    "38": {
+      "symbol": "Sr",
+      "radius_A": 2.84,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 84,
+      "n_distances": 2094,
+      "bondi_A": null,
+      "batsanov_A": 2.55
+    },
+    "39": {
+      "symbol": "Y",
+      "radius_A": 2.75,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 89,
+      "n_distances": 3487,
+      "bondi_A": null,
+      "batsanov_A": 2.4
+    },
+    "40": {
+      "symbol": "Zr",
+      "radius_A": 2.52,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 64,
+      "n_distances": 5523,
+      "bondi_A": null,
+      "batsanov_A": 2.3
+    },
+    "41": {
+      "symbol": "Nb",
+      "radius_A": 2.56,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 50,
+      "n_distances": 3647,
+      "bondi_A": null,
+      "batsanov_A": 2.15
+    },
+    "42": {
+      "symbol": "Mo",
+      "radius_A": 2.45,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 63,
+      "n_distances": 138249,
+      "bondi_A": null,
+      "batsanov_A": 2.1
+    },
+    "43": {
+      "symbol": "Tc",
+      "radius_A": 2.44,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 79,
+      "n_distances": 2880,
+      "bondi_A": null,
+      "batsanov_A": 2.05
+    },
+    "44": {
+      "symbol": "Ru",
+      "radius_A": 2.46,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 73,
+      "n_distances": 165471,
+      "bondi_A": null,
+      "batsanov_A": 2.05
+    },
+    "45": {
+      "symbol": "Rh",
+      "radius_A": 2.44,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 54,
+      "n_distances": 34854,
+      "bondi_A": null,
+      "batsanov_A": 2.0
+    },
+    "46": {
+      "symbol": "Pd",
+      "radius_A": 2.15,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 49,
+      "n_distances": 35830,
+      "bondi_A": 1.63,
+      "batsanov_A": 2.05
+    },
+    "47": {
+      "symbol": "Ag",
+      "radius_A": 2.53,
+      "larger_uncertainty": true,
+      "rough_estimate": false,
+      "vdw_peak_percent": 50,
+      "n_distances": 27221,
+      "bondi_A": 1.72,
+      "batsanov_A": 2.1
+    },
+    "48": {
+      "symbol": "Cd",
+      "radius_A": 2.49,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 74,
+      "n_distances": 21952,
+      "bondi_A": 1.62,
+      "batsanov_A": 2.2
+    },
+    "49": {
+      "symbol": "In",
+      "radius_A": 2.43,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 80,
+      "n_distances": 5230,
+      "bondi_A": 1.93,
+      "batsanov_A": 2.2
+    },
+    "50": {
+      "symbol": "Sn",
+      "radius_A": 2.42,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 44,
+      "n_distances": 30075,
+      "bondi_A": 2.17,
+      "batsanov_A": 2.25
+    },
+    "51": {
+      "symbol": "Sb",
+      "radius_A": 2.47,
+      "larger_uncertainty": true,
+      "rough_estimate": false,
+      "vdw_peak_percent": 26,
+      "n_distances": 15850,
+      "bondi_A": null,
+      "batsanov_A": 2.2
+    },
+    "52": {
+      "symbol": "Te",
+      "radius_A": 1.99,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 67,
+      "n_distances": 13772,
+      "bondi_A": 2.0,
+      "batsanov_A": 2.1
+    },
+    "53": {
+      "symbol": "I",
+      "radius_A": 2.04,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 53,
+      "n_distances": 56317,
+      "bondi_A": 1.98,
+      "batsanov_A": 2.1
+    },
+    "54": {
+      "symbol": "Xe",
+      "radius_A": 2.06,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 86,
+      "n_distances": 2264,
+      "bondi_A": 2.16,
+      "batsanov_A": null
+    },
+    "55": {
+      "symbol": "Cs",
+      "radius_A": 3.48,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 46,
+      "n_distances": 775,
+      "bondi_A": null,
+      "batsanov_A": 3.0
+    },
+    "56": {
+      "symbol": "Ba",
+      "radius_A": 3.03,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 58,
+      "n_distances": 2402,
+      "bondi_A": null,
+      "batsanov_A": 2.7
+    },
+    "57": {
+      "symbol": "La",
+      "radius_A": 2.98,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 80,
+      "n_distances": 6471,
+      "bondi_A": null,
+      "batsanov_A": 2.5
+    },
+    "58": {
+      "symbol": "Ce",
+      "radius_A": 2.88,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 81,
+      "n_distances": 3681,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "59": {
+      "symbol": "Pr",
+      "radius_A": 2.92,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 78,
+      "n_distances": 3360,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "60": {
+      "symbol": "Nd",
+      "radius_A": 2.95,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 81,
+      "n_distances": 6346,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "61": {
+      "symbol": "Pm",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "62": {
+      "symbol": "Sm",
+      "radius_A": 2.9,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 84,
+      "n_distances": 4162,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "63": {
+      "symbol": "Eu",
+      "radius_A": 2.87,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 80,
+      "n_distances": 7042,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "64": {
+      "symbol": "Gd",
+      "radius_A": 2.83,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 84,
+      "n_distances": 6682,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "65": {
+      "symbol": "Tb",
+      "radius_A": 2.79,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 81,
+      "n_distances": 5538,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "66": {
+      "symbol": "Dy",
+      "radius_A": 2.87,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 83,
+      "n_distances": 3615,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "67": {
+      "symbol": "Ho",
+      "radius_A": 2.81,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 82,
+      "n_distances": 2493,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "68": {
+      "symbol": "Er",
+      "radius_A": 2.83,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 86,
+      "n_distances": 4246,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "69": {
+      "symbol": "Tm",
+      "radius_A": 2.79,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 84,
+      "n_distances": 1141,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "70": {
+      "symbol": "Yb",
+      "radius_A": 2.8,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 83,
+      "n_distances": 4664,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "71": {
+      "symbol": "Lu",
+      "radius_A": 2.74,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 86,
+      "n_distances": 2018,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "72": {
+      "symbol": "Hf",
+      "radius_A": 2.63,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 86,
+      "n_distances": 936,
+      "bondi_A": null,
+      "batsanov_A": 2.25
+    },
+    "73": {
+      "symbol": "Ta",
+      "radius_A": 2.53,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 80,
+      "n_distances": 2793,
+      "bondi_A": null,
+      "batsanov_A": 2.2
+    },
+    "74": {
+      "symbol": "W",
+      "radius_A": 2.57,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 62,
+      "n_distances": 47936,
+      "bondi_A": null,
+      "batsanov_A": 2.1
+    },
+    "75": {
+      "symbol": "Re",
+      "radius_A": 2.49,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 75,
+      "n_distances": 61593,
+      "bondi_A": null,
+      "batsanov_A": 2.05
+    },
+    "76": {
+      "symbol": "Os",
+      "radius_A": 2.48,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 90,
+      "n_distances": 129040,
+      "bondi_A": null,
+      "batsanov_A": 2.0
+    },
+    "77": {
+      "symbol": "Ir",
+      "radius_A": 2.41,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 73,
+      "n_distances": 18335,
+      "bondi_A": null,
+      "batsanov_A": 2.0
+    },
+    "78": {
+      "symbol": "Pt",
+      "radius_A": 2.29,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 67,
+      "n_distances": 55873,
+      "bondi_A": 1.72,
+      "batsanov_A": 2.05
+    },
+    "79": {
+      "symbol": "Au",
+      "radius_A": 2.32,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 49,
+      "n_distances": 5132,
+      "bondi_A": 1.66,
+      "batsanov_A": 2.1
+    },
+    "80": {
+      "symbol": "Hg",
+      "radius_A": 2.45,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 81,
+      "n_distances": 30628,
+      "bondi_A": 1.7,
+      "batsanov_A": 2.05
+    },
+    "81": {
+      "symbol": "Tl",
+      "radius_A": 2.47,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 71,
+      "n_distances": 3486,
+      "bondi_A": 1.96,
+      "batsanov_A": 2.2
+    },
+    "82": {
+      "symbol": "Pb",
+      "radius_A": 2.6,
+      "larger_uncertainty": true,
+      "rough_estimate": false,
+      "vdw_peak_percent": 49,
+      "n_distances": 36781,
+      "bondi_A": 2.02,
+      "batsanov_A": 2.3
+    },
+    "83": {
+      "symbol": "Bi",
+      "radius_A": 2.54,
+      "larger_uncertainty": true,
+      "rough_estimate": false,
+      "vdw_peak_percent": 43,
+      "n_distances": 14030,
+      "bondi_A": null,
+      "batsanov_A": 2.3
+    },
+    "84": {
+      "symbol": "Po",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "85": {
+      "symbol": "At",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "86": {
+      "symbol": "Rn",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "87": {
+      "symbol": "Fr",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "88": {
+      "symbol": "Ra",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "89": {
+      "symbol": "Ac",
+      "radius_A": 2.8,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": null,
+      "n_distances": 33,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "90": {
+      "symbol": "Th",
+      "radius_A": 2.93,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 83,
+      "n_distances": 964,
+      "bondi_A": null,
+      "batsanov_A": 2.4
+    },
+    "91": {
+      "symbol": "Pa",
+      "radius_A": 2.88,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": 94,
+      "n_distances": 48,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "92": {
+      "symbol": "U",
+      "radius_A": 2.71,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 74,
+      "n_distances": 35070,
+      "bondi_A": 1.86,
+      "batsanov_A": 2.3
+    },
+    "93": {
+      "symbol": "Np",
+      "radius_A": 2.82,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 55,
+      "n_distances": 830,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "94": {
+      "symbol": "Pu",
+      "radius_A": 2.81,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 77,
+      "n_distances": 1299,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "95": {
+      "symbol": "Am",
+      "radius_A": 2.83,
+      "larger_uncertainty": false,
+      "rough_estimate": false,
+      "vdw_peak_percent": 94,
+      "n_distances": 128,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "96": {
+      "symbol": "Cm",
+      "radius_A": 3.05,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": 99,
+      "n_distances": 90,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "97": {
+      "symbol": "Bk",
+      "radius_A": 3.4,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": null,
+      "n_distances": 3,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "98": {
+      "symbol": "Cf",
+      "radius_A": 3.05,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": 100,
+      "n_distances": 14,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "99": {
+      "symbol": "Es",
+      "radius_A": 2.7,
+      "larger_uncertainty": true,
+      "rough_estimate": true,
+      "vdw_peak_percent": null,
+      "n_distances": 2,
+      "bondi_A": null,
+      "batsanov_A": null
+    },
+    "100": {
+      "symbol": "Fm",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "101": {
+      "symbol": "Md",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "102": {
+      "symbol": "No",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "103": {
+      "symbol": "Lr",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "104": {
+      "symbol": "Rf",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "105": {
+      "symbol": "Db",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "106": {
+      "symbol": "Sg",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "107": {
+      "symbol": "Bh",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "108": {
+      "symbol": "Hs",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "109": {
+      "symbol": "Mt",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "110": {
+      "symbol": "Ds",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "111": {
+      "symbol": "Rg",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "112": {
+      "symbol": "Cn",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "113": {
+      "symbol": "Nh",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "114": {
+      "symbol": "Fl",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "115": {
+      "symbol": "Mc",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "116": {
+      "symbol": "Lv",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "117": {
+      "symbol": "Ts",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    },
+    "118": {
+      "symbol": "Og",
+      "radius_A": null,
+      "note": "Not given in Alvarez 2013 Table 1."
+    }
+  },
+  "by_symbol": {
+    "H": 1,
+    "He": 2,
+    "Li": 3,
+    "Be": 4,
+    "B": 5,
+    "C": 6,
+    "N": 7,
+    "O": 8,
+    "F": 9,
+    "Ne": 10,
+    "Na": 11,
+    "Mg": 12,
+    "Al": 13,
+    "Si": 14,
+    "P": 15,
+    "S": 16,
+    "Cl": 17,
+    "Ar": 18,
+    "K": 19,
+    "Ca": 20,
+    "Sc": 21,
+    "Ti": 22,
+    "V": 23,
+    "Cr": 24,
+    "Mn": 25,
+    "Fe": 26,
+    "Co": 27,
+    "Ni": 28,
+    "Cu": 29,
+    "Zn": 30,
+    "Ga": 31,
+    "Ge": 32,
+    "As": 33,
+    "Se": 34,
+    "Br": 35,
+    "Kr": 36,
+    "Rb": 37,
+    "Sr": 38,
+    "Y": 39,
+    "Zr": 40,
+    "Nb": 41,
+    "Mo": 42,
+    "Tc": 43,
+    "Ru": 44,
+    "Rh": 45,
+    "Pd": 46,
+    "Ag": 47,
+    "Cd": 48,
+    "In": 49,
+    "Sn": 50,
+    "Sb": 51,
+    "Te": 52,
+    "I": 53,
+    "Xe": 54,
+    "Cs": 55,
+    "Ba": 56,
+    "La": 57,
+    "Ce": 58,
+    "Pr": 59,
+    "Nd": 60,
+    "Pm": 61,
+    "Sm": 62,
+    "Eu": 63,
+    "Gd": 64,
+    "Tb": 65,
+    "Dy": 66,
+    "Ho": 67,
+    "Er": 68,
+    "Tm": 69,
+    "Yb": 70,
+    "Lu": 71,
+    "Hf": 72,
+    "Ta": 73,
+    "W": 74,
+    "Re": 75,
+    "Os": 76,
+    "Ir": 77,
+    "Pt": 78,
+    "Au": 79,
+    "Hg": 80,
+    "Tl": 81,
+    "Pb": 82,
+    "Bi": 83,
+    "Po": 84,
+    "At": 85,
+    "Rn": 86,
+    "Fr": 87,
+    "Ra": 88,
+    "Ac": 89,
+    "Th": 90,
+    "Pa": 91,
+    "U": 92,
+    "Np": 93,
+    "Pu": 94,
+    "Am": 95,
+    "Cm": 96,
+    "Bk": 97,
+    "Cf": 98,
+    "Es": 99,
+    "Fm": 100,
+    "Md": 101,
+    "No": 102,
+    "Lr": 103,
+    "Rf": 104,
+    "Db": 105,
+    "Sg": 106,
+    "Bh": 107,
+    "Hs": 108,
+    "Mt": 109,
+    "Ds": 110,
+    "Rg": 111,
+    "Cn": 112,
+    "Nh": 113,
+    "Fl": 114,
+    "Mc": 115,
+    "Lv": 116,
+    "Ts": 117,
+    "Og": 118
+  }
+}

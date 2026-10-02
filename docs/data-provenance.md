@@ -100,3 +100,35 @@ computed test cases.
   and **−1.1167143252 Eh (BSE STO-3G)**, consistent with Psi4's non-DF −1.116714. Every published value is
   reproduced within its printed precision. **Note:** the master plan's "≈ −1.11676 Eh" is the value near
   R = 0.74 Å (1.398 bohr), not at R = 1.4 bohr.
+
+---
+
+## Q5 — Element rendering data
+
+All three files live in `src/periodica/data/reference/elements/`, list every element Z = 1–118 under
+`elements["<Z>"]` (with `symbol`) and provide `by_symbol` → Z. Elements without data carry `null` values and a
+`note`. Generator: `tools/refdata/build_element_rendering.py` (needs PyMuPDF for the Alvarez PDF).
+
+| File | Primary source | Coverage | Uncertainty |
+|---|---|---|---|
+| `vdw_radii_alvarez2013.json` | S. Alvarez, *Dalton Trans.* **42**, 8617 (2013), doi:10.1039/C3DT50599E, Table 1 | 93 elements (Z 1–60, 62–83, 89–99) | No σ in source; "differences of 0.1 Å or less should not be considered significant"; flags `larger_uncertainty` (italic: He, Ne, Si, K, Ag, Sb, Pb, Bi, Ac, Pa, Cm–Es) and `rough_estimate` (bracketed: He, Ne, Ac, Pa, Cm, Bk, Cf, Es) |
+| `covalent_radii_cordero2008.json` | B. Cordero *et al.*, *Dalton Trans.* 2008, 2832, doi:10.1039/B801115J, Table 2 | 96 elements (Z 1–96) | `esd_A` = printed standard deviation (null for He, Ne, Pm, At, Rn, Fr, Ac, Pa) |
+| `jmol_colors.json` | Jmol `org.jmol.c.PAL.argbsCpk` (Jmol-SwingJS commit `31d2245`) | 109 elements (Z 1–109) | n/a — a display convention |
+
+* **Alvarez 2013** — the article is open access (CC BY-NC 3.0); the table is parsed directly from the PDF
+  (University of Barcelona repository copy, hdl:2445/48823, SHA-256 recorded) by column position, reading the
+  italic/bracket markers from the font data. Also stored: number of contact distances, % vdW peak, and the Bondi
+  (1964, doi:10.1021/j100785a001) and Batsanov (2001, doi:10.1023/A:1011625728803) columns of the same table. The
+  free-text "Observations" column is not reproduced. Cross-checks: identical to ASE's `vdw_alvarez.py`; mendeleev
+  differs only for Ar, Kr, Xe, Rn because it substitutes the later noble-gas values of Vogt & Alvarez,
+  *Inorg. Chem.* **53**, 9260 (2014) (correction doi:10.1021/ic502140y) — **recommended follow-up:** curate those
+  four values from the primary paper if noble-gas rendering matters.
+* **Cordero 2008** — the article is closed access; the numbers (facts) are transcribed from Wikipedia's
+  reproduction of Table 2 ("Covalent radius", revision 1341480590, pinned) and cross-checked against two
+  independent transcriptions: identical to ASE's `covalent_radii` (Z 1–96); mendeleev differs only for C, Mn, Fe, Co,
+  where it stores the mean of the variants. `radius_A` is the default variant — **sp³ for C** (sp² 0.73, sp 0.69
+  under `variants`) and **low spin for Mn, Fe, Co** (high spin under `variants`). The number of distances N from
+  Table 2 is not stored (not in the transcription).
+* **Jmol colours** — Jmol is LGPL-2.1+; colours are a **convention**, not physical data. Z = 110–118 have no Jmol
+  colour (`hex: null`); `_provenance.default_hex` = `#FF1493` is Jmol's colour for unknown elements. Cross-checked
+  exactly against mendeleev's `jmol_color` and within 1/255 against ASE's `jmol_colors`.

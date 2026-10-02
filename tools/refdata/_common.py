@@ -91,3 +91,31 @@ def write_json(path: Path, payload: Any, *, indent: int | None = 2) -> None:
 def rel(path: Path) -> str:
     """Repository-relative POSIX path, for messages and provenance fields."""
     return path.resolve().relative_to(REPO_ROOT).as_posix()
+
+
+# IUPAC element symbols, index = atomic number (index 0 unused).
+SYMBOLS: tuple[str, ...] = (
+    "",
+    "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne",
+    "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca",
+    "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn",
+    "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr",
+    "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
+    "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd",
+    "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb",
+    "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg",
+    "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th",
+    "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm",
+    "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds",
+    "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og",
+)  # fmt: skip
+
+
+def element_table(values: dict[int, dict[str, Any]]) -> dict[str, Any]:
+    """Standard per-element layout: ``elements`` keyed by Z (string) and ``by_symbol`` -> Z.
+
+    Every Z = 1..118 is present; elements without data carry only their symbol
+    plus whatever ``values`` supplies (typically ``null`` fields and a note).
+    """
+    elements = {str(z): {"symbol": SYMBOLS[z], **values.get(z, {})} for z in range(1, 119)}
+    return {"elements": elements, "by_symbol": {SYMBOLS[z]: z for z in range(1, 119)}}

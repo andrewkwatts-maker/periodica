@@ -1,0 +1,837 @@
+{
+  "_provenance": {
+    "source": "B. Cordero, V. Gomez, A. E. Platero-Prats, M. Reves, J. Echeverria, E. Cremades, F. Barragan and S. Alvarez, 'Covalent radii revisited', Dalton Trans. 2008, 2832-2838, doi:10.1039/B801115J, Table 2.",
+    "retrieved": "2026-10-02",
+    "license_or_terms": "Article is not open access; the numerical radii are facts reproduced with attribution. Transcribed from the reproduction of Table 2 in Wikipedia 'Covalent radius' (revision 1341480590, text CC BY-SA 4.0; numbers only used), and cross-checked against two independent transcriptions (ASE, LGPL-2.1+; mendeleev, MIT).",
+    "transform": "tools/refdata/build_element_rendering.py (wikitext table parsed; pm -> angstrom)",
+    "units": {
+      "radius_A": "angstrom",
+      "esd_A": "angstrom (standard deviation of the CSD distance sample)"
+    },
+    "uncertainty": "esd_A = the standard deviation printed in parentheses in the source; null where none is given.",
+    "conventions": "radius_A is the default variant: sp3 for carbon (sp2 0.73, sp 0.69 in 'variants') and low spin for Mn, Fe, Co (high spin in 'variants'), matching the common ASE/Open Babel convention.",
+    "download_sha256": "5057b173c548b47619d2506e9ad020683f80d9c32a0244ec599c23dd46890557",
+    "crosschecks": {
+      "ase": {
+        "source": "https://gitlab.com/ase/ase/-/raw/0a7257774301fed11a5b4e5d9394c28c1401f275/ase/data/__init__.py",
+        "agrees_except": {}
+      },
+      "mendeleev": {
+        "source": "https://github.com/lmmentel/mendeleev/raw/4e02078d08988fad881bb7d99f2d50bf94e22823/mendeleev/elements.db",
+        "agrees_except": {
+          "C": {
+            "ours": 0.76,
+            "other": 0.73,
+            "reason": "mendeleev stores the average of the hybridisation / spin variants"
+          },
+          "Mn": {
+            "ours": 1.39,
+            "other": 1.5,
+            "reason": "mendeleev stores the average of the hybridisation / spin variants"
+          },
+          "Fe": {
+            "ours": 1.32,
+            "other": 1.42,
+            "reason": "mendeleev stores the average of the hybridisation / spin variants"
+          },
+          "Co": {
+            "ours": 1.26,
+            "other": 1.38,
+            "reason": "mendeleev stores the average of the hybridisation / spin variants"
+          }
+        }
+      }
+    },
+    "n_elements_with_radius": 96
+  },
+  "elements": {
+    "1": {
+      "symbol": "H",
+      "radius_A": 0.31,
+      "esd_A": 0.05
+    },
+    "2": {
+      "symbol": "He",
+      "radius_A": 0.28,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "3": {
+      "symbol": "Li",
+      "radius_A": 1.28,
+      "esd_A": 0.07
+    },
+    "4": {
+      "symbol": "Be",
+      "radius_A": 0.96,
+      "esd_A": 0.03
+    },
+    "5": {
+      "symbol": "B",
+      "radius_A": 0.84,
+      "esd_A": 0.03
+    },
+    "6": {
+      "symbol": "C",
+      "radius_A": 0.76,
+      "esd_A": 0.01,
+      "default_variant": "sp3",
+      "variants": {
+        "sp3": {
+          "radius_A": 0.76,
+          "esd_A": 0.01
+        },
+        "sp2": {
+          "radius_A": 0.73,
+          "esd_A": 0.02
+        },
+        "sp": {
+          "radius_A": 0.69,
+          "esd_A": 0.01
+        }
+      }
+    },
+    "7": {
+      "symbol": "N",
+      "radius_A": 0.71,
+      "esd_A": 0.01
+    },
+    "8": {
+      "symbol": "O",
+      "radius_A": 0.66,
+      "esd_A": 0.02
+    },
+    "9": {
+      "symbol": "F",
+      "radius_A": 0.57,
+      "esd_A": 0.03
+    },
+    "10": {
+      "symbol": "Ne",
+      "radius_A": 0.58,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "11": {
+      "symbol": "Na",
+      "radius_A": 1.66,
+      "esd_A": 0.09
+    },
+    "12": {
+      "symbol": "Mg",
+      "radius_A": 1.41,
+      "esd_A": 0.07
+    },
+    "13": {
+      "symbol": "Al",
+      "radius_A": 1.21,
+      "esd_A": 0.04
+    },
+    "14": {
+      "symbol": "Si",
+      "radius_A": 1.11,
+      "esd_A": 0.02
+    },
+    "15": {
+      "symbol": "P",
+      "radius_A": 1.07,
+      "esd_A": 0.03
+    },
+    "16": {
+      "symbol": "S",
+      "radius_A": 1.05,
+      "esd_A": 0.03
+    },
+    "17": {
+      "symbol": "Cl",
+      "radius_A": 1.02,
+      "esd_A": 0.04
+    },
+    "18": {
+      "symbol": "Ar",
+      "radius_A": 1.06,
+      "esd_A": 0.1
+    },
+    "19": {
+      "symbol": "K",
+      "radius_A": 2.03,
+      "esd_A": 0.12
+    },
+    "20": {
+      "symbol": "Ca",
+      "radius_A": 1.76,
+      "esd_A": 0.1
+    },
+    "21": {
+      "symbol": "Sc",
+      "radius_A": 1.7,
+      "esd_A": 0.07
+    },
+    "22": {
+      "symbol": "Ti",
+      "radius_A": 1.6,
+      "esd_A": 0.08
+    },
+    "23": {
+      "symbol": "V",
+      "radius_A": 1.53,
+      "esd_A": 0.08
+    },
+    "24": {
+      "symbol": "Cr",
+      "radius_A": 1.39,
+      "esd_A": 0.05
+    },
+    "25": {
+      "symbol": "Mn",
+      "radius_A": 1.39,
+      "esd_A": 0.05,
+      "default_variant": "low_spin",
+      "variants": {
+        "low_spin": {
+          "radius_A": 1.39,
+          "esd_A": 0.05
+        },
+        "high_spin": {
+          "radius_A": 1.61,
+          "esd_A": 0.08
+        }
+      }
+    },
+    "26": {
+      "symbol": "Fe",
+      "radius_A": 1.32,
+      "esd_A": 0.03,
+      "default_variant": "low_spin",
+      "variants": {
+        "low_spin": {
+          "radius_A": 1.32,
+          "esd_A": 0.03
+        },
+        "high_spin": {
+          "radius_A": 1.52,
+          "esd_A": 0.06
+        }
+      }
+    },
+    "27": {
+      "symbol": "Co",
+      "radius_A": 1.26,
+      "esd_A": 0.03,
+      "default_variant": "low_spin",
+      "variants": {
+        "low_spin": {
+          "radius_A": 1.26,
+          "esd_A": 0.03
+        },
+        "high_spin": {
+          "radius_A": 1.5,
+          "esd_A": 0.07
+        }
+      }
+    },
+    "28": {
+      "symbol": "Ni",
+      "radius_A": 1.24,
+      "esd_A": 0.04
+    },
+    "29": {
+      "symbol": "Cu",
+      "radius_A": 1.32,
+      "esd_A": 0.04
+    },
+    "30": {
+      "symbol": "Zn",
+      "radius_A": 1.22,
+      "esd_A": 0.04
+    },
+    "31": {
+      "symbol": "Ga",
+      "radius_A": 1.22,
+      "esd_A": 0.03
+    },
+    "32": {
+      "symbol": "Ge",
+      "radius_A": 1.2,
+      "esd_A": 0.04
+    },
+    "33": {
+      "symbol": "As",
+      "radius_A": 1.19,
+      "esd_A": 0.04
+    },
+    "34": {
+      "symbol": "Se",
+      "radius_A": 1.2,
+      "esd_A": 0.04
+    },
+    "35": {
+      "symbol": "Br",
+      "radius_A": 1.2,
+      "esd_A": 0.03
+    },
+    "36": {
+      "symbol": "Kr",
+      "radius_A": 1.16,
+      "esd_A": 0.04
+    },
+    "37": {
+      "symbol": "Rb",
+      "radius_A": 2.2,
+      "esd_A": 0.09
+    },
+    "38": {
+      "symbol": "Sr",
+      "radius_A": 1.95,
+      "esd_A": 0.1
+    },
+    "39": {
+      "symbol": "Y",
+      "radius_A": 1.9,
+      "esd_A": 0.07
+    },
+    "40": {
+      "symbol": "Zr",
+      "radius_A": 1.75,
+      "esd_A": 0.07
+    },
+    "41": {
+      "symbol": "Nb",
+      "radius_A": 1.64,
+      "esd_A": 0.06
+    },
+    "42": {
+      "symbol": "Mo",
+      "radius_A": 1.54,
+      "esd_A": 0.05
+    },
+    "43": {
+      "symbol": "Tc",
+      "radius_A": 1.47,
+      "esd_A": 0.07
+    },
+    "44": {
+      "symbol": "Ru",
+      "radius_A": 1.46,
+      "esd_A": 0.07
+    },
+    "45": {
+      "symbol": "Rh",
+      "radius_A": 1.42,
+      "esd_A": 0.07
+    },
+    "46": {
+      "symbol": "Pd",
+      "radius_A": 1.39,
+      "esd_A": 0.06
+    },
+    "47": {
+      "symbol": "Ag",
+      "radius_A": 1.45,
+      "esd_A": 0.05
+    },
+    "48": {
+      "symbol": "Cd",
+      "radius_A": 1.44,
+      "esd_A": 0.09
+    },
+    "49": {
+      "symbol": "In",
+      "radius_A": 1.42,
+      "esd_A": 0.05
+    },
+    "50": {
+      "symbol": "Sn",
+      "radius_A": 1.39,
+      "esd_A": 0.04
+    },
+    "51": {
+      "symbol": "Sb",
+      "radius_A": 1.39,
+      "esd_A": 0.05
+    },
+    "52": {
+      "symbol": "Te",
+      "radius_A": 1.38,
+      "esd_A": 0.04
+    },
+    "53": {
+      "symbol": "I",
+      "radius_A": 1.39,
+      "esd_A": 0.03
+    },
+    "54": {
+      "symbol": "Xe",
+      "radius_A": 1.4,
+      "esd_A": 0.09
+    },
+    "55": {
+      "symbol": "Cs",
+      "radius_A": 2.44,
+      "esd_A": 0.11
+    },
+    "56": {
+      "symbol": "Ba",
+      "radius_A": 2.15,
+      "esd_A": 0.11
+    },
+    "57": {
+      "symbol": "La",
+      "radius_A": 2.07,
+      "esd_A": 0.08
+    },
+    "58": {
+      "symbol": "Ce",
+      "radius_A": 2.04,
+      "esd_A": 0.09
+    },
+    "59": {
+      "symbol": "Pr",
+      "radius_A": 2.03,
+      "esd_A": 0.07
+    },
+    "60": {
+      "symbol": "Nd",
+      "radius_A": 2.01,
+      "esd_A": 0.06
+    },
+    "61": {
+      "symbol": "Pm",
+      "radius_A": 1.99,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "62": {
+      "symbol": "Sm",
+      "radius_A": 1.98,
+      "esd_A": 0.08
+    },
+    "63": {
+      "symbol": "Eu",
+      "radius_A": 1.98,
+      "esd_A": 0.06
+    },
+    "64": {
+      "symbol": "Gd",
+      "radius_A": 1.96,
+      "esd_A": 0.06
+    },
+    "65": {
+      "symbol": "Tb",
+      "radius_A": 1.94,
+      "esd_A": 0.05
+    },
+    "66": {
+      "symbol": "Dy",
+      "radius_A": 1.92,
+      "esd_A": 0.07
+    },
+    "67": {
+      "symbol": "Ho",
+      "radius_A": 1.92,
+      "esd_A": 0.07
+    },
+    "68": {
+      "symbol": "Er",
+      "radius_A": 1.89,
+      "esd_A": 0.06
+    },
+    "69": {
+      "symbol": "Tm",
+      "radius_A": 1.9,
+      "esd_A": 0.1
+    },
+    "70": {
+      "symbol": "Yb",
+      "radius_A": 1.87,
+      "esd_A": 0.08
+    },
+    "71": {
+      "symbol": "Lu",
+      "radius_A": 1.87,
+      "esd_A": 0.08
+    },
+    "72": {
+      "symbol": "Hf",
+      "radius_A": 1.75,
+      "esd_A": 0.1
+    },
+    "73": {
+      "symbol": "Ta",
+      "radius_A": 1.7,
+      "esd_A": 0.08
+    },
+    "74": {
+      "symbol": "W",
+      "radius_A": 1.62,
+      "esd_A": 0.07
+    },
+    "75": {
+      "symbol": "Re",
+      "radius_A": 1.51,
+      "esd_A": 0.07
+    },
+    "76": {
+      "symbol": "Os",
+      "radius_A": 1.44,
+      "esd_A": 0.04
+    },
+    "77": {
+      "symbol": "Ir",
+      "radius_A": 1.41,
+      "esd_A": 0.06
+    },
+    "78": {
+      "symbol": "Pt",
+      "radius_A": 1.36,
+      "esd_A": 0.05
+    },
+    "79": {
+      "symbol": "Au",
+      "radius_A": 1.36,
+      "esd_A": 0.06
+    },
+    "80": {
+      "symbol": "Hg",
+      "radius_A": 1.32,
+      "esd_A": 0.05
+    },
+    "81": {
+      "symbol": "Tl",
+      "radius_A": 1.45,
+      "esd_A": 0.07
+    },
+    "82": {
+      "symbol": "Pb",
+      "radius_A": 1.46,
+      "esd_A": 0.05
+    },
+    "83": {
+      "symbol": "Bi",
+      "radius_A": 1.48,
+      "esd_A": 0.04
+    },
+    "84": {
+      "symbol": "Po",
+      "radius_A": 1.4,
+      "esd_A": 0.04
+    },
+    "85": {
+      "symbol": "At",
+      "radius_A": 1.5,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "86": {
+      "symbol": "Rn",
+      "radius_A": 1.5,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "87": {
+      "symbol": "Fr",
+      "radius_A": 2.6,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "88": {
+      "symbol": "Ra",
+      "radius_A": 2.21,
+      "esd_A": 0.02
+    },
+    "89": {
+      "symbol": "Ac",
+      "radius_A": 2.15,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "90": {
+      "symbol": "Th",
+      "radius_A": 2.06,
+      "esd_A": 0.06
+    },
+    "91": {
+      "symbol": "Pa",
+      "radius_A": 2.0,
+      "esd_A": null,
+      "note": "No standard deviation given in the source (estimate / very few data)."
+    },
+    "92": {
+      "symbol": "U",
+      "radius_A": 1.96,
+      "esd_A": 0.07
+    },
+    "93": {
+      "symbol": "Np",
+      "radius_A": 1.9,
+      "esd_A": 0.01
+    },
+    "94": {
+      "symbol": "Pu",
+      "radius_A": 1.87,
+      "esd_A": 0.01
+    },
+    "95": {
+      "symbol": "Am",
+      "radius_A": 1.8,
+      "esd_A": 0.06
+    },
+    "96": {
+      "symbol": "Cm",
+      "radius_A": 1.69,
+      "esd_A": 0.03
+    },
+    "97": {
+      "symbol": "Bk",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "98": {
+      "symbol": "Cf",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "99": {
+      "symbol": "Es",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "100": {
+      "symbol": "Fm",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "101": {
+      "symbol": "Md",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "102": {
+      "symbol": "No",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "103": {
+      "symbol": "Lr",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "104": {
+      "symbol": "Rf",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "105": {
+      "symbol": "Db",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "106": {
+      "symbol": "Sg",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "107": {
+      "symbol": "Bh",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "108": {
+      "symbol": "Hs",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "109": {
+      "symbol": "Mt",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "110": {
+      "symbol": "Ds",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "111": {
+      "symbol": "Rg",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "112": {
+      "symbol": "Cn",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "113": {
+      "symbol": "Nh",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "114": {
+      "symbol": "Fl",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "115": {
+      "symbol": "Mc",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "116": {
+      "symbol": "Lv",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "117": {
+      "symbol": "Ts",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    },
+    "118": {
+      "symbol": "Og",
+      "radius_A": null,
+      "esd_A": null,
+      "note": "Not covered by Cordero 2008 (Z > 96)."
+    }
+  },
+  "by_symbol": {
+    "H": 1,
+    "He": 2,
+    "Li": 3,
+    "Be": 4,
+    "B": 5,
+    "C": 6,
+    "N": 7,
+    "O": 8,
+    "F": 9,
+    "Ne": 10,
+    "Na": 11,
+    "Mg": 12,
+    "Al": 13,
+    "Si": 14,
+    "P": 15,
+    "S": 16,
+    "Cl": 17,
+    "Ar": 18,
+    "K": 19,
+    "Ca": 20,
+    "Sc": 21,
+    "Ti": 22,
+    "V": 23,
+    "Cr": 24,
+    "Mn": 25,
+    "Fe": 26,
+    "Co": 27,
+    "Ni": 28,
+    "Cu": 29,
+    "Zn": 30,
+    "Ga": 31,
+    "Ge": 32,
+    "As": 33,
+    "Se": 34,
+    "Br": 35,
+    "Kr": 36,
+    "Rb": 37,
+    "Sr": 38,
+    "Y": 39,
+    "Zr": 40,
+    "Nb": 41,
+    "Mo": 42,
+    "Tc": 43,
+    "Ru": 44,
+    "Rh": 45,
+    "Pd": 46,
+    "Ag": 47,
+    "Cd": 48,
+    "In": 49,
+    "Sn": 50,
+    "Sb": 51,
+    "Te": 52,
+    "I": 53,
+    "Xe": 54,
+    "Cs": 55,
+    "Ba": 56,
+    "La": 57,
+    "Ce": 58,
+    "Pr": 59,
+    "Nd": 60,
+    "Pm": 61,
+    "Sm": 62,
+    "Eu": 63,
+    "Gd": 64,
+    "Tb": 65,
+    "Dy": 66,
+    "Ho": 67,
+    "Er": 68,
+    "Tm": 69,
+    "Yb": 70,
+    "Lu": 71,
+    "Hf": 72,
+    "Ta": 73,
+    "W": 74,
+    "Re": 75,
+    "Os": 76,
+    "Ir": 77,
+    "Pt": 78,
+    "Au": 79,
+    "Hg": 80,
+    "Tl": 81,
+    "Pb": 82,
+    "Bi": 83,
+    "Po": 84,
+    "At": 85,
+    "Rn": 86,
+    "Fr": 87,
+    "Ra": 88,
+    "Ac": 89,
+    "Th": 90,
+    "Pa": 91,
+    "U": 92,
+    "Np": 93,
+    "Pu": 94,
+    "Am": 95,
+    "Cm": 96,
+    "Bk": 97,
+    "Cf": 98,
+    "Es": 99,
+    "Fm": 100,
+    "Md": 101,
+    "No": 102,
+    "Lr": 103,
+    "Rf": 104,
+    "Db": 105,
+    "Sg": 106,
+    "Bh": 107,
+    "Hs": 108,
+    "Mt": 109,
+    "Ds": 110,
+    "Rg": 111,
+    "Cn": 112,
+    "Nh": 113,
+    "Fl": 114,
+    "Mc": 115,
+    "Lv": 116,
+    "Ts": 117,
+    "Og": 118
+  }
+}
