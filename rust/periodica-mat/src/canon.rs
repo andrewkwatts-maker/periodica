@@ -47,6 +47,7 @@
 //! reported by [`crate::ingest`] rather than silently dropped, so new data
 //! cannot quietly lose properties.
 
+use crate::constants;
 use crate::property::PropertyId;
 
 /// Canonicalise a datasheet key: strip everything that is not `[a-z0-9]`,
@@ -110,12 +111,12 @@ const MM: f64 = 1.0e-3;
 const MM2_S: f64 = 1.0e-6;
 const KV_MM_TO_V_M: f64 = 1.0e6;
 const PCT_TO_FRAC: f64 = 1.0e-2;
-/// 1 u in kg (CODATA 2018).
-const AMU_TO_KG: f64 = 1.660_539_066_60e-27;
-/// 1 eV in J.
-const EV_TO_J: f64 = 1.602_176_634e-19;
+/// 1 u in kg (CODATA 2022, from the single constants source).
+const AMU_TO_KG: f64 = constants::KG_PER_U;
+/// 1 eV in J (exact).
+const EV_TO_J: f64 = constants::ELECTRON_VOLT;
 /// 1 kJ/mol expressed as J per particle.
-const KJ_MOL_TO_J: f64 = 1.0e3 / 6.022_140_76e23;
+const KJ_MOL_TO_J: f64 = 1.0e3 / constants::AVOGADRO;
 /// 100 % IACS is defined as 5.8e7 S/m, so one percentage point is 5.8e5 S/m.
 const IACS_PCT_TO_S_M: f64 = 5.8e5;
 

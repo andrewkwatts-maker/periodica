@@ -32,6 +32,8 @@
 //!
 //! - [`property`] -- [`PropertyId`], the closed property set and its SI units.
 //! - [`canon`] -- key canonicalisation and the datasheet-spelling alias table.
+//! - [`constants`] -- CODATA 2022 physical constants, the single source for
+//!   the whole stack (mirrored in `data/constants/codata2022.json`).
 //! - [`table`] -- [`PropertyTable`], a dense array with per-entry provenance.
 //! - [`record`] -- [`MaterialRecord`] and the structured blocks (lattice,
 //!   phases, microstructure, texture).
@@ -61,6 +63,7 @@
 #![deny(missing_debug_implementations)]
 
 pub mod canon;
+pub mod constants;
 pub mod derive;
 pub mod ingest;
 pub mod jsonc;
