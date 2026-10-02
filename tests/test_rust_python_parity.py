@@ -204,7 +204,7 @@ def test_ci_builds_the_extension():
     """
     assert _HAS_RUST, (
         "CI ran without building the Rust extension, so every parity test "
-        "below was skipped. Add `maturin develop --features python` to the job."
+        "below was skipped. Add `maturin develop` (features from pyproject.toml) to the job."
     )
 
 

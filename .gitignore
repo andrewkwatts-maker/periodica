@@ -30,3 +30,5 @@ wheelhouse/
 # (or by extracting a built wheel). Never commit a build artifact.
 src/periodica/_periodica_core*.pyd
 src/periodica/_periodica_core*.so
+# Windows debug symbols `maturin develop` writes beside the .pyd.
+src/periodica/*.pdb

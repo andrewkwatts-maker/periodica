@@ -56,8 +56,8 @@ if errorlevel 1 exit /b 1
 echo.
 echo [build] === Rust: all features compile ===
 REM cargo test builds default features only, so feature-gated modules such as
-REM pyfacade.rs (behind `python`) can break unnoticed. `check` compiles them
-REM all without needing to link libpython.
+REM pyfacade\ (behind `python`) can break unnoticed. `check` compiles them all,
+REM including `extension-module`, without linking.
 cargo check --workspace --all-features
 if errorlevel 1 exit /b 1
 
@@ -65,6 +65,19 @@ echo.
 echo [build] === Rust: tests ===
 cargo test --workspace
 if errorlevel 1 exit /b 1
+
+echo.
+echo [build] === Rust: PyO3 binding tests (python feature, links libpython) ===
+REM setlocal scopes PATH / PYTHONHOME to this step so the Python steps below
+REM run against the untouched environment.
+setlocal
+call :pyo3_test_env
+cargo test -p periodica_core --features python
+if errorlevel 1 (
+    endlocal
+    exit /b 1
+)
+endlocal
 
 if "%MODE%"=="rust" goto :done
 
@@ -106,10 +119,30 @@ echo.
 echo [build] === Release wheel ===
 cargo test --workspace --release
 if errorlevel 1 exit /b 1
-python -m maturin build --release --features python --out dist
+REM Features come from [tool.maturin] in pyproject.toml (extension-module).
+python -m maturin build --release --out dist
 if errorlevel 1 exit /b 1
 echo [build] wheel written to dist\
 goto :done
+
+:pyo3_test_env
+REM The binding tests embed an interpreter, so the test exe must load
+REM python3X.dll from the interpreter's base prefix at run time. A Microsoft
+REM Store Python keeps it under C:\Program Files\WindowsApps, from which an
+REM unpackaged exe may not load a DLL (STATUS_ACCESS_DENIED, 0xc0000022), so
+REM the DLLs are copied to target\pydll and PYTHONHOME points the embedded
+REM interpreter back at the stdlib.
+for /f "delims=" %%P in ('python -c "import sys; print(sys.base_prefix)"') do set "PYBASE=%%P"
+set "PYDLL=%PYBASE%"
+echo "%PYBASE%" | findstr /i /c:"WindowsApps" >nul
+if errorlevel 1 goto :pyo3_test_env_path
+if not exist "target\pydll" mkdir "target\pydll"
+copy /y "%PYBASE%\python3*.dll" "target\pydll\" >nul
+set "PYDLL=%CD%\target\pydll"
+set "PYTHONHOME=%PYBASE%"
+:pyo3_test_env_path
+set "PATH=%PYDLL%;%PATH%"
+goto :eof
 
 :done
 echo.
