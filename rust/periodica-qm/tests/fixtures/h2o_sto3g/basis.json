@@ -1,0 +1,97 @@
+{
+  "_provenance": {
+    "source": "Psi3 basis library lib/pbasis.dat, https://raw.githubusercontent.com/psi4/psi3/b74be464b48d475694638e30b1327101c2a37994/lib/pbasis.dat",
+    "retrieved": "2026-10-02",
+    "license_or_terms": "psi4/psi3 repository, GPL-2.0. Only the numerical STO-3G exponents/contraction coefficients for the elements present (published basis-set data, Hehre, Stewart & Pople 1969, doi:10.1063/1.1672392) are reproduced; no Psi3 code is copied.",
+    "transform": "tools/refdata/convert_crawford_fixtures.py (Psi3 basis syntax -> BSE-style shells; numbers kept as strings)",
+    "units": {
+      "exponents": "bohr^-2",
+      "coefficients": "dimensionless (normalised primitives)"
+    },
+    "uncertainty": "Not applicable (defined parameters).",
+    "note": "The exact STO-3G parameters used to compute these fixtures. Normalise each primitive, then renormalise each contraction: this reproduces S_ii = 1 and the s-type integrals to ~1e-12."
+  },
+  "name": "STO-3G (Psi3)",
+  "elements": {
+    "1": {
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "3.4252509100",
+            "0.6239137300",
+            "0.1688554000"
+          ],
+          "coefficients": [
+            [
+              "0.1543289700",
+              "0.5353281400",
+              "0.4446345400"
+            ]
+          ]
+        }
+      ]
+    },
+    "8": {
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "130.7093200000",
+            "23.8088610000",
+            "6.4436083000"
+          ],
+          "coefficients": [
+            [
+              "0.1543289700",
+              "0.5353281400",
+              "0.4446345400"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "5.0331513000",
+            "1.1695961000",
+            "0.3803890000"
+          ],
+          "coefficients": [
+            [
+              "-0.0999672300",
+              "0.3995128300",
+              "0.7001154700"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "5.0331513000",
+            "1.1695961000",
+            "0.3803890000"
+          ],
+          "coefficients": [
+            [
+              "0.1559162700",
+              "0.6076837200",
+              "0.3919573900"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

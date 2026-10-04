@@ -1,0 +1,237 @@
+{
+  "_provenance": {
+    "source": [
+      "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "Values transcribed from the published abstract of Cox & Riveros (1965) (via Crossref/OpenAlex metadata); cross-checked against NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "Numerical values from the abstract of a published paper (facts), cited; CCCBDB used only as a cross-check.",
+    "transform": "tools/refdata/build_geometries.py: Cartesians constructed from the source internal coordinates (Z-matrix / symmetry construction), centroid at origin; every source value re-measured (<= 1e-4 A, <= 0.01 deg).",
+    "units": {
+      "coordinates": "angstrom",
+      "angles": "degree"
+    },
+    "uncertainty": "No standard deviations in the abstract; uncertainty_A is the rounding of the quoted precision (0.001 A); angles are quoted to 1 arc-minute."
+  },
+  "name": "NitricAcid",
+  "formula": "HNO3",
+  "kind": "r_s",
+  "kind_note": "Substitution structure (Kraitchman / double-substitution from ground-state moments of six isotopologues), per the abstract.",
+  "atoms": [
+    {
+      "element": "N",
+      "x": -0.187062,
+      "y": 0.0,
+      "z": -0.400287
+    },
+    {
+      "element": "O",
+      "x": -0.187062,
+      "y": 0.0,
+      "z": 1.005713
+    },
+    {
+      "element": "O",
+      "x": 0.902456,
+      "y": 0.0,
+      "z": -0.928937
+    },
+    {
+      "element": "O",
+      "x": -1.283676,
+      "y": 0.0,
+      "z": -0.885095
+    },
+    {
+      "element": "H",
+      "x": 0.755344,
+      "y": 0.0,
+      "z": 1.208607
+    }
+  ],
+  "bonds": [
+    {
+      "i": 0,
+      "j": 1,
+      "order": 1
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "order": 1.5
+    },
+    {
+      "i": 0,
+      "j": 3,
+      "order": 1.5
+    },
+    {
+      "i": 1,
+      "j": 4,
+      "order": 1
+    }
+  ],
+  "internal": {
+    "source_values": [
+      {
+        "label": "rOH",
+        "type": "distance",
+        "atoms": [
+          1,
+          4
+        ],
+        "value": 0.964
+      },
+      {
+        "label": "rNO(H)",
+        "type": "distance",
+        "atoms": [
+          0,
+          1
+        ],
+        "value": 1.406
+      },
+      {
+        "label": "rNO_cis",
+        "type": "distance",
+        "atoms": [
+          0,
+          2
+        ],
+        "value": 1.211
+      },
+      {
+        "label": "rNO_trans",
+        "type": "distance",
+        "atoms": [
+          0,
+          3
+        ],
+        "value": 1.199
+      },
+      {
+        "label": "aHON",
+        "type": "angle",
+        "atoms": [
+          0,
+          1,
+          4
+        ],
+        "value": 102.15
+      },
+      {
+        "label": "aONO_cis",
+        "type": "angle",
+        "atoms": [
+          1,
+          0,
+          2
+        ],
+        "value": 115.88333333333334
+      },
+      {
+        "label": "aONO_trans",
+        "type": "angle",
+        "atoms": [
+          1,
+          0,
+          3
+        ],
+        "value": 113.85
+      }
+    ],
+    "bond_lengths_A": [
+      {
+        "atoms": [
+          0,
+          1
+        ],
+        "value_A": 1.406
+      },
+      {
+        "atoms": [
+          0,
+          2
+        ],
+        "value_A": 1.211
+      },
+      {
+        "atoms": [
+          0,
+          3
+        ],
+        "value_A": 1.199
+      },
+      {
+        "atoms": [
+          1,
+          4
+        ],
+        "value_A": 0.964
+      }
+    ]
+  },
+  "uncertainty_A": 0.0005,
+  "uncertainty_note": "No standard deviations in the abstract; uncertainty_A is the rounding of the quoted precision (0.001 A); angles are quoted to 1 arc-minute.",
+  "source": "Values transcribed from the published abstract of Cox & Riveros (1965) (via Crossref/OpenAlex metadata); cross-checked against NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z",
+  "citation": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+  "notes": [
+    "Planar (C_s): O3 is cis to the hydroxyl H, O4 trans.",
+    "CCCBDB lists the cis O-N-O angle as 115.0883 deg: a transposed-digit transcription of 115 deg 53' = 115.8833 deg (its 130.267 deg for O3-N-O4 equals 360 - 115.8833 - 113.85, confirming the primary value)."
+  ],
+  "verification": {
+    "max_abs_dev_distance_A": 4.96e-07,
+    "max_abs_dev_angle_deg": 4.09e-05,
+    "checks": [
+      {
+        "label": "rOH",
+        "source": 0.964,
+        "measured": 0.964,
+        "gated": true
+      },
+      {
+        "label": "rNO(H)",
+        "source": 1.406,
+        "measured": 1.406,
+        "gated": true
+      },
+      {
+        "label": "rNO_cis",
+        "source": 1.211,
+        "measured": 1.211,
+        "gated": true
+      },
+      {
+        "label": "rNO_trans",
+        "source": 1.199,
+        "measured": 1.199,
+        "gated": true
+      },
+      {
+        "label": "aHON",
+        "source": 102.15,
+        "measured": 102.149959,
+        "gated": true
+      },
+      {
+        "label": "aONO_cis",
+        "source": 115.88333333333334,
+        "measured": 115.883337,
+        "gated": true
+      },
+      {
+        "label": "aONO_trans",
+        "source": 113.85,
+        "measured": 113.850001,
+        "gated": true
+      },
+      {
+        "label": "rO..O(NO2)",
+        "source": 2.184,
+        "measured": 2.186572,
+        "gated": false
+      }
+    ],
+    "rmsd_vs_cccbdb_cartesians_A": 0.0059
+  }
+}

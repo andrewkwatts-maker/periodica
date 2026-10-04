@@ -1,0 +1,85 @@
+{
+  "_provenance": {
+    "source": [
+      "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for C2H6; point group D3h)"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py (values as stated by the source; no derivation)",
+    "units": {
+      "distance": "angstrom",
+      "angle": "degree",
+      "dihedral": "degree",
+      "plane_angle": "degree"
+    },
+    "uncertainty": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation."
+  },
+  "name": "Ethane",
+  "formula": "C2H6",
+  "atom_order": [
+    "C1",
+    "C2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "H7",
+    "H8"
+  ],
+  "atom_index_base": 0,
+  "coordinates": [
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        1
+      ],
+      "value": 1.536,
+      "unit": "angstrom",
+      "label": "rCC",
+      "reference": "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+      "gate": true
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        2
+      ],
+      "value": 1.091,
+      "unit": "angstrom",
+      "label": "rCH",
+      "reference": "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        2,
+        0,
+        3
+      ],
+      "value": 108.0,
+      "unit": "degree",
+      "label": "aHCH",
+      "reference": "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        0,
+        1,
+        5
+      ],
+      "value": 110.91,
+      "unit": "degree",
+      "label": "aHCC",
+      "reference": "Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966",
+      "note": "derived by symmetry in the source; checked, not used to build",
+      "gate": true
+    }
+  ],
+  "has_active_geometry": true
+}

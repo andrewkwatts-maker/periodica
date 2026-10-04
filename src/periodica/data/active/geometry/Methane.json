@@ -1,0 +1,143 @@
+{
+  "_provenance": {
+    "source": [
+      "L.M. Sverdlov, M. A. Kovner, E. P. Krainov, \"Vibrational Spectra of Polyatomic Molecules\" Wiley, New York 1974; E Hirota \"Anharmonic Potential Function and Equilibrium Structure of Methane\" J. Mol. Spect. 77, 213-221 (1979), doi:10.1016/0022-2852(79)90103-6",
+      "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for CH4; point group Td)"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "CCCBDB is NIST SRD 101, (c) U.S. Secretary of Commerce, all rights reserved (Standard Reference Data Act). Only individual factual values (bond lengths, angles) are reproduced, each attributed to the primary publication CCCBDB cites; the database itself is cited as the locator.",
+    "transform": "tools/refdata/build_geometries.py: Cartesians constructed from the source internal coordinates (Z-matrix / symmetry construction), centroid at origin; every source value re-measured (<= 1e-4 A, <= 0.01 deg).",
+    "units": {
+      "coordinates": "angstrom",
+      "angles": "degree"
+    },
+    "uncertainty": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation."
+  },
+  "name": "Methane",
+  "formula": "CH4",
+  "kind": "r_e",
+  "kind_note": "CCCBDB marks r(CH) as r_e (Hirota 1979); the angle is the tetrahedral angle (T_d).",
+  "atoms": [
+    {
+      "element": "C",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    {
+      "element": "H",
+      "x": 0.62758,
+      "y": 0.62758,
+      "z": 0.62758
+    },
+    {
+      "element": "H",
+      "x": 0.62758,
+      "y": -0.62758,
+      "z": -0.62758
+    },
+    {
+      "element": "H",
+      "x": -0.62758,
+      "y": 0.62758,
+      "z": -0.62758
+    },
+    {
+      "element": "H",
+      "x": -0.62758,
+      "y": -0.62758,
+      "z": 0.62758
+    }
+  ],
+  "bonds": [
+    {
+      "i": 0,
+      "j": 1,
+      "order": 1
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "order": 1
+    },
+    {
+      "i": 0,
+      "j": 3,
+      "order": 1
+    },
+    {
+      "i": 0,
+      "j": 4,
+      "order": 1
+    }
+  ],
+  "internal": {
+    "source_values": [
+      {
+        "label": "rCH",
+        "type": "distance",
+        "atoms": [
+          0,
+          1
+        ],
+        "value": 1.087
+      }
+    ],
+    "bond_lengths_A": [
+      {
+        "atoms": [
+          0,
+          1
+        ],
+        "value_A": 1.087
+      },
+      {
+        "atoms": [
+          0,
+          2
+        ],
+        "value_A": 1.087
+      },
+      {
+        "atoms": [
+          0,
+          3
+        ],
+        "value_A": 1.087
+      },
+      {
+        "atoms": [
+          0,
+          4
+        ],
+        "value_A": 1.087
+      }
+    ]
+  },
+  "uncertainty_A": 0.0005,
+  "uncertainty_note": "Experimental uncertainty not given by the source as quoted; uncertainty_A is the rounding of the quoted precision (half a unit in the last decimal of the bond lengths), not a standard deviation.",
+  "source": "NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z (experimental geometry page for CH4; point group Td)",
+  "citation": "L.M. Sverdlov, M. A. Kovner, E. P. Krainov, \"Vibrational Spectra of Polyatomic Molecules\" Wiley, New York 1974; E Hirota \"Anharmonic Potential Function and Equilibrium Structure of Methane\" J. Mol. Spect. 77, 213-221 (1979), doi:10.1016/0022-2852(79)90103-6",
+  "notes": [
+    "Exact T_d symmetry imposed (109.4712206 deg); the source quotes 109.471."
+  ],
+  "verification": {
+    "max_abs_dev_distance_A": 4.46e-07,
+    "max_abs_dev_angle_deg": 0.000221,
+    "checks": [
+      {
+        "label": "rCH",
+        "source": 1.087,
+        "measured": 1.087,
+        "gated": true
+      },
+      {
+        "label": "aHCH",
+        "source": 109.471,
+        "measured": 109.471221,
+        "gated": true
+      }
+    ],
+    "rmsd_vs_cccbdb_cartesians_A": 0.0
+  }
+}

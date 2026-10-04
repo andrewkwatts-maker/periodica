@@ -1,0 +1,62 @@
+{
+  "_provenance": {
+    "source": "T. D. Crawford group, 'Programming Projects' (Virginia Tech), Project #3 'The Hartree-Fock SCF procedure' and Project #4 'MP2 energy', https://github.com/CrawfordGroup/ProgrammingProjects (commit 297fda143186f08a3a9481b0fb762f87bbbba524); input integrals computed with Psi3 (STO-3G, RHF, c1 symmetry). Original project by Y. Yamaguchi (University of Georgia), per the Project #3 README.",
+    "retrieved": "2026-10-02",
+    "license_or_terms": "No licence declared: the repository has no LICENSE file and the GitHub API reports license = null (checked 2026-10-02), so default copyright applies to its text and code. The values used here are machine-computed numerical results (AO integrals and energies), i.e. facts rather than creative expression, reproduced with attribution for regression testing only; no prose or code is copied. If a formally licensed fixture is required, regenerate the same quantities with PySCF (Apache-2.0) on a platform where it installs and diff against these files.",
+    "transform": "tools/refdata/convert_crawford_fixtures.py",
+    "units": {
+      "energies": "hartree",
+      "dipole": "atomic units (e*bohr)",
+      "charges": "e"
+    },
+    "download_sha256": {
+      "geom": "26331c67446460b782e541990e8dd8c85c51949c7fb4340c93aa14d527ace007",
+      "enuc": "891870563c5c8f82dcf8a282ed057a8cd35f215079c207c10c8faf340ca5fec5",
+      "s": "d43a8c3deefe7ae4e047b8242d4758f351485e6aeb476d8c90425a3a933fd228",
+      "t": "f5936376f55cf977f7947d607e622362e57c9be5553f3482d75d938aaefedd99",
+      "v": "9afd2d728f48664351bca6902315c29132631dba513304f0760a48204bdbb6a9",
+      "mux": "7221ab6815a7300b00441b7ed7cd4824b08ef217fb656daaa3f0eeffa2cfc4d4",
+      "muy": "c4919b2be23a3e7af60181c2a34b932832da81ec60b57f30d1661c3a2c5139ca",
+      "muz": "5c1b8336be2bef7e6651c602ceb9cf2feab5d47e0b59d619b225f5dfa12acb14",
+      "eri": "19ff2b755f79cc231cbd0190b10f424b8e38f1611aa0b6d10cec28e8cec27bf1",
+      "input": "844f2ea4050f3330be03c860e6024ae9bc9826833b7175bbaa936b5428a86bc9",
+      "output03": "917865d871338795ea15c9be0373d86f38af59da0984253917c538ea16a06e89",
+      "output04": "3656959a98334d069226547580d4bb813eabcc9c817dd97ebf5f87e3325b2cb9"
+    },
+    "conventions": {
+      "index_base": "0 (the source files are 1-based; converted here).",
+      "ao_basis": "Real Cartesian STO-3G contracted Gaussians, each contraction normalised to 1 (S_ii = 1); AO order and labels in 'ao_labels' (p order px, py, pz), verified from overlap signs vs. geometry.",
+      "basis_parameters": "The exact STO-3G parameters Psi3 used are in basis.json (H2O: Psi3 lib/pbasis.dat; CH4: the explicit basis block of the Crawford input, which differs from pbasis.dat in the 8th digit). With these parameters the s-type integrals are reproduced to ~1e-12 (see 'crosscheck' in one_electron.json); with the BSE STO-3G set they differ by up to ~4e-6 hartree, so a test that uses BSE STO-3G must use a correspondingly loose tolerance, or load basis.json for a 1e-10 comparison.",
+      "one_electron": "Full symmetric n x n matrices (row-major lists) rebuilt from the permutationally unique lower triangle in s.dat/t.dat/v.dat. V includes attraction to all nuclei.",
+      "dipole_integrals": "mux/muy/muz.dat as distributed by Crawford; the sign convention is recorded in 'dipole_sign_convention' (checked against the reported dipole).",
+      "eri": "Chemists'/Mulliken notation (ij|kl) = int phi_i(1) phi_j(1) r12^-1 phi_k(2) phi_l(2). Only the permutationally unique integrals with i >= j, k >= l, ij >= kl (compound index ij = i(i+1)/2 + j, 0-based) are listed. Integrals absent from the list are zero (by symmetry or below Psi3's print threshold).",
+      "geometry": "Bohr. Nuclear charges Z; the electronic-structure frame used for the integrals."
+    },
+    "uncertainty": "SCF converged to Delta(E) ~1e-12 and RMS(D) ~1e-11 per the reference output; values printed to 12 decimals."
+  },
+  "system": {
+    "molecule": "H2O",
+    "basis": "STO-3G (Psi3)",
+    "method": "RHF",
+    "n_ao": 7,
+    "n_electrons": 10
+  },
+  "scf_total_energy": -74.942079928192,
+  "scf_electronic_energy": -82.944446990003,
+  "nuclear_repulsion": 8.00236706181045,
+  "scf_iterations_reference": 34,
+  "mp2_correlation_energy": -0.04914963612,
+  "mp2_total_energy": -74.991229564312,
+  "dipole_moment_au": [
+    0.0,
+    0.603521296525,
+    -0.0
+  ],
+  "dipole_total_au": 0.603521296525,
+  "mulliken_charges": [
+    -0.253146052405,
+    0.126573026202,
+    0.126573026202
+  ],
+  "notes": "MP2 correlates all occupied MOs (no frozen core; the Project #4 formula sums over every occupied orbital). Only converged quantities are fixtures; the iteration count depends on the core-Hamiltonian guess without DIIS used by Project #3."
+}
