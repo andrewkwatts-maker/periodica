@@ -1,0 +1,29 @@
+#====== periodica/rust/periodica-render/Cargo.toml ======#
+# copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+#
+# This is the intellectual property of Andrew Keith Watts. Unauthorized
+# reproduction, distribution, or modification of this code, in whole or in part,
+# without the express written permission of Andrew Keith Watts is strictly prohibited.
+#
+# For inquiries, please contact AndrewKWatts@Gmail.com
+
+[package]
+name = "periodica-render"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Renderer for periodica: scenes, cameras, the FieldProgram IR with its GLSL ES 1.00 lowering, and a CPU reference renderer. No pyo3, no GPU API."
+
+[lib]
+name = "periodica_render"
+
+# The top of the physics stack in the DAG (see the workspace Cargo.toml):
+# periodica_core binds it for Python. No pyo3, no GPU API.
+[dependencies]
+periodica-chem.workspace = true
+# TODO(P1/C1): add `periodica-qm.workspace = true` once the qm lane's crate is
+# merged -- render consumes its orbital and density fields. Left out so this
+# branch builds on its own.

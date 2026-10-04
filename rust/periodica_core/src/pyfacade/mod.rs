@@ -67,6 +67,7 @@ use std::path::Path;
 mod alloy;
 mod convert;
 mod export;
+mod numpy_probe;
 mod protein;
 mod registry;
 mod sample;
@@ -132,6 +133,7 @@ fn add_surface(m: &Bound<'_, PyModule>) -> PyResult<()> {
     export::register(m)?;
     protein::register(m)?;
     alloy::register(m)?;
+    numpy_probe::register(m)?;
     register(m)
 }
 

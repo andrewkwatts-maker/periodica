@@ -1,0 +1,26 @@
+#====== periodica/rust/periodica-chem/Cargo.toml ======#
+# copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+#
+# This is the intellectual property of Andrew Keith Watts. Unauthorized
+# reproduction, distribution, or modification of this code, in whole or in part,
+# without the express written permission of Andrew Keith Watts is strictly prohibited.
+#
+# For inquiries, please contact AndrewKWatts@Gmail.com
+
+[package]
+name = "periodica-chem"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Chemistry model for periodica: chemical formula parsing and curated 3D molecular geometry. No pyo3, no filesystem access."
+
+[lib]
+name = "periodica_chem"
+
+# Sits directly above periodica-mat in the DAG (see the workspace Cargo.toml);
+# periodica-qm and periodica-render build on it. No pyo3.
+[dependencies]
+periodica-mat.workspace = true
