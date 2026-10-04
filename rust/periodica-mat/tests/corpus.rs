@@ -359,6 +359,12 @@ fn known_materials_ingest_with_expected_values() {
         ("Steel-1018", PropertyId::Density, 7870.0, 1e-6),
         ("Steel-1018", PropertyId::YoungsModulus, 2.0e11, 1e-6),
         ("Aluminum_6061_T6", PropertyId::Density, 2700.0, 1e-3),
+        // Element sheets carry the measured bulk table (CRC 97th ed.) at the
+        // root; iron's values, in SI.
+        ("026_Fe", PropertyId::YoungsModulus, 2.11e11, 1e-9),
+        ("026_Fe", PropertyId::ThermalConductivity, 80.4, 1e-9),
+        ("026_Fe", PropertyId::ElectricalResistivity, 9.61e-8, 1e-9),
+        ("026_Fe", PropertyId::ThermalExpansion, 1.18e-5, 1e-9),
     ];
 
     let files = corpus();
@@ -384,6 +390,30 @@ fn known_materials_ingest_with_expected_values() {
             "{stem} {prop:?}: got {got}, want {want} {}",
             prop.si_unit()
         );
+    }
+}
+
+#[test]
+fn iron_sheet_density_and_bulk_values_are_datasheet_sourced() {
+    // Oracle: density 7.874 g/cm3 is 7874 kg/m3, and the CRC bulk values
+    // merged from the element table keep Source::Datasheet.
+    let path = data_dir().join("active/elements/026_Fe.json");
+    let text = std::fs::read_to_string(&path).unwrap();
+    let value: serde_json::Value = jsonc::from_str(&text).unwrap();
+    let r = ingest(&value, "026_Fe").unwrap();
+    let cases = [
+        (PropertyId::Density, 7874.0),
+        (PropertyId::YoungsModulus, 2.11e11),
+    ];
+    for (prop, want) in cases {
+        let (got, src) = r
+            .bulk
+            .iter()
+            .find(|(p, _, _)| *p == prop)
+            .map(|(_, v, s)| (v, s))
+            .unwrap_or_else(|| panic!("{prop:?} missing"));
+        assert!((got / want - 1.0).abs() < 1e-9, "{prop:?}: got {got}");
+        assert_eq!(src, Source::Datasheet, "{prop:?}");
     }
 }
 
