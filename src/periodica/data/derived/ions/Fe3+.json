@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 23,
-  "Mass_MeVc2": 52593.78988361,
-  "Mass_amu": 56.46175294855449,
-  "Mass_kg": 0,
-  "Name": "Fe3+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Fe, minus 3 electron masses",
+  "Mass_MeVc2": 52017.755152794896,
+  "Mass_amu": 55.843354260272804,
+  "Mass_kg": 9.273007135916654e-26,
+  "Name": "Fe3+",
+  "Symbol": "Fe3+"
 }

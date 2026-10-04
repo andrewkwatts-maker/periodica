@@ -33,6 +33,9 @@
 //! - [`data_loader`] -- `DataHub` registry of 12 tier-keyed datasheet maps.
 //! - [`get`] -- `Get(spec, scope)` formula composer (`{u=2,d=1}`,
 //!   `{H=2,O=1}`, bare names).
+//! - [`registry`] -- priority-resolved name index; [`rules`] -- the parsed
+//!   `composition_rules.json`; [`mass_source`] -- curated CIAAW/AME2020 masses
+//!   for generated tiers.
 //! - [`sample`] -- Sub-µs `sample(name, prop, at, scale_m)` Voronoi/Worley
 //!   phase dispatch.
 //! - [`predictors`] -- Semi-empirical models (SEMF, Slater, VSEPR, Miedema,
@@ -54,10 +57,12 @@ pub mod data_loader;
 pub mod export;
 pub mod fourier_bake;
 pub mod get;
+pub mod mass_source;
 pub mod predictors;
 pub mod protein;
 pub mod record;
 pub mod registry;
+pub mod rules;
 pub mod sample;
 pub mod sample_models;
 

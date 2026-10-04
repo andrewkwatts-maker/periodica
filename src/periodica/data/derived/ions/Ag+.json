@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 46,
-  "Mass_MeVc2": 101435.78474694,
-  "Mass_amu": 108.89578847995399,
-  "Mass_kg": 0,
-  "Name": "Ag+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Ag, minus 1 electron mass",
+  "Mass_MeVc2": 100478.08113971104,
+  "Mass_amu": 107.86765142009094,
+  "Mass_kg": 1.7911844920545197e-25,
+  "Name": "Ag+",
+  "Symbol": "Ag+"
 }

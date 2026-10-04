@@ -122,6 +122,10 @@ def _additive_props() -> Tuple[str, ...]:
     return tuple(_config().get("additive_properties", ()))
 
 
+def _integral_props() -> Tuple[str, ...]:
+    return tuple(_config().get("integral_properties", ()))
+
+
 def _placeholder_prefixes() -> Tuple[str, ...]:
     return tuple(_config().get("placeholder_prefixes", ()))
 
@@ -367,9 +371,13 @@ def _compose(
             except (TypeError, ValueError):
                 pass
 
+    # Only integral quantum numbers (charge, baryon and lepton number) are
+    # snapped; snapping every total zeroed Mass_kg (~1e-26) in every composed
+    # entry (D1). Same rule as the Rust composer, rust/periodica_core/src/get.rs.
+    integral = set(_integral_props())
     cleaned: dict = {}
     for prop, total in totals.items():
-        if abs(total - round(total)) < 1e-9:
+        if prop in integral and abs(total - round(total)) < 1e-9:
             cleaned[prop] = int(round(total))
         else:
             cleaned[prop] = total

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 33,
-  "Mass_MeVc2": 70441.58953647,
-  "Mass_amu": 75.62215300539214,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of As",
+  "Mass_MeVc2": 69789.02388639975,
+  "Mass_amu": 74.921595,
+  "Mass_kg": 1.2441023542948323e-25,
   "Name": "As",
   "Symbol": "As"
 }

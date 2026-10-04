@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 59,
-  "Mass_MeVc2": 132432.56662213,
-  "Mass_amu": 142.17220085317382,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Pr",
+  "Mass_MeVc2": 131254.65427580252,
+  "Mass_amu": 140.90766,
+  "Mass_kg": 2.3398267421319013e-25,
   "Name": "Pr",
   "Symbol": "Pr"
 }

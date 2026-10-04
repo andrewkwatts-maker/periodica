@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 115,
-  "Mass_MeVc2": 272384.00360865,
-  "Mass_amu": 292.4162406422075,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Mc-290 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 270316.0814469884,
+  "Mass_amu": 290.196235,
+  "Mass_kg": 4.818821851977343e-25,
   "Name": "Mc",
   "Symbol": "Mc"
 }

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 63,
-  "Mass_MeVc2": 143704.22233472997,
-  "Mass_amu": 154.27282036689408,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Eu",
+  "Mass_MeVc2": 141553.56978015287,
+  "Mass_amu": 151.964,
+  "Mass_kg": 2.523421587168024e-25,
   "Name": "Eu",
   "Symbol": "Eu"
 }

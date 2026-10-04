@@ -53,9 +53,9 @@
     }
   },
   "LeptonNumber_L": 25.526000000000003,
-  "Mass_MeVc2": 51535.86391214978,
-  "Mass_amu": 55.326022761195134,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 51060.30738884151,
+  "Mass_amu": 54.81549186,
+  "Mass_kg": 9.10232656884243e-26,
   "Name": "Stainless-304",
   "Properties": {
     "Density_kgm3": 8000,

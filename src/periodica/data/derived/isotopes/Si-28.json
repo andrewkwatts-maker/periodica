@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 14,
-  "Mass_MeVc2": 26296.87910682,
-  "Mass_amu": 28.23085947472091,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Si-28",
+  "Mass_MeVc2": 26060.342070649836,
+  "Mass_amu": 27.97692653442,
+  "Mass_kg": 4.6456779473802555e-26,
   "Name": "Si-28"
 }

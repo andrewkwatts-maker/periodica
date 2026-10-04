@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 23,
-  "Mass_MeVc2": 47899.84277809,
-  "Mass_amu": 51.422593716791496,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of V",
+  "Mass_MeVc2": 47451.70681842843,
+  "Mass_amu": 50.9415,
+  "Mass_kg": 8.459035086120389e-26,
   "Name": "V",
   "Symbol": "V"
 }

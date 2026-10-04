@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 52,
-  "Mass_MeVc2": 122102.82333027999,
-  "Mass_amu": 131.08276586366338,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Te",
+  "Mass_MeVc2": 118858.647468792,
+  "Mass_amu": 127.6,
+  "Mass_kg": 2.1188478489816e-25,
   "Name": "Te",
   "Symbol": "Te"
 }

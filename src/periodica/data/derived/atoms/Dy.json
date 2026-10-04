@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 66,
-  "Mass_MeVc2": 154037.09496021998,
-  "Mass_amu": 165.36561483408428,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Dy",
+  "Mass_MeVc2": 151367.79164325,
+  "Mass_amu": 162.5,
+  "Mass_kg": 2.698375983225e-25,
   "Name": "Dy",
   "Symbol": "Dy"
 }

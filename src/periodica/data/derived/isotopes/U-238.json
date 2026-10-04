@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 92,
-  "Mass_MeVc2": 223544.59541004,
-  "Mass_amu": 239.984982009466,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of U-238",
+  "Mass_MeVc2": 221742.904107324,
+  "Mass_amu": 238.050786936,
+  "Mass_kg": 3.952926315421009e-25,
   "Name": "U-238"
 }

@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 98,
-  "Mass_MeVc2": 235754.25187634001,
-  "Mass_amu": 253.09258670029635,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Cf-251; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 233879.1546878348,
+  "Mass_amu": 251.079587171,
+  "Mass_kg": 4.169274633232456e-25,
   "Name": "Cf",
   "Symbol": "Cf"
 }

@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 6,
-  "Mass_MeVc2": 11270.09104578,
-  "Mass_amu": 12.09893977488039,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of C-12",
+  "Mass_MeVc2": 11177.92922904,
+  "Mass_amu": 12.0,
+  "Mass_kg": 1.9926468799199998e-26,
   "Name": "C-12"
 }

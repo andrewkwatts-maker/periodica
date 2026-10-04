@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 92,
-  "Mass_MeVc2": 223544.59541004,
-  "Mass_amu": 239.984982009466,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of U",
+  "Mass_MeVc2": 221722.52587046096,
+  "Mass_amu": 238.02891,
+  "Mass_kg": 3.952563040352154e-25,
   "Name": "U",
   "Symbol": "U"
 }

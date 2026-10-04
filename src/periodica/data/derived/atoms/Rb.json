@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 37,
-  "Mass_MeVc2": 79834.11440803,
-  "Mass_amu": 85.70544268721241,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Rb",
+  "Mass_MeVc2": 79612.75164681207,
+  "Mass_amu": 85.4678,
+  "Mass_kg": 1.4192262083635547e-25,
   "Name": "Rb",
   "Symbol": "Rb"
 }

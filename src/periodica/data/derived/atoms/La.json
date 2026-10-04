@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 57,
-  "Mass_MeVc2": 130555.00044791,
-  "Mass_amu": 140.1565507601137,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of La",
+  "Mass_MeVc2": 129389.62609887825,
+  "Mass_amu": 138.90547,
+  "Mass_kg": 2.306579594994343e-25,
   "Name": "La",
   "Symbol": "La"
 }

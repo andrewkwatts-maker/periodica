@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 19,
-  "Mass_MeVc2": 36628.187065490005,
-  "Mass_amu": 39.321974203071235,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of K-39",
+  "Mass_MeVc2": 36294.46279903374,
+  "Mass_amu": 38.96370648482,
+  "Mass_kg": 6.470075679757938e-26,
   "Name": "K-39"
 }

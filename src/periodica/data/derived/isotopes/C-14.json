@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 6,
-  "Mass_MeVc2": 13149.22188682,
-  "Mass_amu": 14.11626960678039,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of C-14",
+  "Mass_MeVc2": 13043.937327159641,
+  "Mass_amu": 14.00324198862,
+  "Mass_kg": 2.3252930381156982e-26,
   "Name": "C-14"
 }

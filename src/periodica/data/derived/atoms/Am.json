@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 95,
-  "Mass_MeVc2": 228240.07551241,
-  "Mass_amu": 245.02578698095616,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Am-243; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 226410.2418926707,
+  "Mass_amu": 243.061379889,
+  "Mass_kg": 4.0361291688738805e-25,
   "Name": "Am",
   "Symbol": "Am"
 }

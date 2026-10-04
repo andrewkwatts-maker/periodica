@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 56,
-  "Mass_MeVc2": 129616.21736079999,
-  "Mass_amu": 139.14872571358364,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ba",
+  "Mass_MeVc2": 127919.29060303133,
+  "Mass_amu": 137.327,
+  "Mass_kg": 2.280368483989782e-25,
   "Name": "Ba",
   "Symbol": "Ba"
 }

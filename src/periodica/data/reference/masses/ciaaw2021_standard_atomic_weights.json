@@ -1,0 +1,1837 @@
+{
+  "_provenance": {
+    "dataset": "CIAAW 2021 standard atomic weights",
+    "publisher": "IUPAC Commission on Isotopic Abundances and Atomic Weights (CIAAW)",
+    "citation": "T. Prohaska et al., Standard atomic weights of the elements 2021 (IUPAC Technical Report), Pure Appl. Chem. 94(5), 573-600 (2022), doi:10.1515/pac-2019-0603",
+    "source_urls": [
+      "https://www.ciaaw.org/atomic-weights.htm (table 'Standard Atomic Weights 2021'; web.archive.org 2023 snapshot, because the live page now shows the 2024 revision)",
+      "https://www.ciaaw.org/abridged-atomic-weights.htm (table 'Abridged Standard Atomic Weights 2021'; web.archive.org 2023 snapshot)"
+    ],
+    "retrieved": "2026-10-02",
+    "units": "unified atomic mass units (u, Da)",
+    "Mass_amu_policy": "Mass_amu is the value periodica serves as the element's atomic weight. value_kind 'standard': the CIAAW 2021 standard atomic weight. 'abridged': the standard atomic weight is an interval, so the CIAAW 2021 abridged value is used (the value printed on the IUPAC periodic table); the interval itself is kept under standard_atomic_weight. 'none': CIAAW gives no standard atomic weight (no stable isotope and no characteristic terrestrial isotopic composition); periodica then uses the AME2020 atomic mass of the nuclide named by the atom's own Composition (see ame2020_atomic_masses.json).",
+    "interval_elements_using_abridged_value": [
+      "H",
+      "Li",
+      "B",
+      "C",
+      "N",
+      "O",
+      "Mg",
+      "Si",
+      "S",
+      "Cl",
+      "Ar",
+      "Br",
+      "Tl",
+      "Pb"
+    ],
+    "elements_without_standard_atomic_weight": [
+      "Tc",
+      "Pm",
+      "Po",
+      "At",
+      "Rn",
+      "Fr",
+      "Ra",
+      "Ac",
+      "Np",
+      "Pu",
+      "Am",
+      "Cm",
+      "Bk",
+      "Cf",
+      "Es",
+      "Fm",
+      "Md",
+      "No",
+      "Lr",
+      "Rf",
+      "Db",
+      "Sg",
+      "Bh",
+      "Hs",
+      "Mt",
+      "Ds",
+      "Rg",
+      "Cn",
+      "Nh",
+      "Fl",
+      "Mc",
+      "Lv",
+      "Ts",
+      "Og"
+    ],
+    "notes_legend": {
+      "g": "geological or biological materials are known with isotopic composition outside normal limits",
+      "m": "modified isotopic compositions may be found in commercially available material",
+      "r": "range in isotopic composition of normal terrestrial material limits the precision"
+    }
+  },
+  "elements": [
+    {
+      "Z": 1,
+      "symbol": "H",
+      "name": "hydrogen",
+      "standard_atomic_weight": {
+        "interval": [
+          1.00784,
+          1.00811
+        ]
+      },
+      "notes": [
+        "m"
+      ],
+      "abridged": {
+        "value": 1.008,
+        "uncertainty": 0.0002
+      },
+      "Mass_amu": 1.008,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 2,
+      "symbol": "He",
+      "name": "helium",
+      "standard_atomic_weight": {
+        "value": 4.002602,
+        "uncertainty": 2e-06
+      },
+      "notes": [
+        "g",
+        "r"
+      ],
+      "abridged": {
+        "value": 4.0026,
+        "uncertainty": 0.0001
+      },
+      "Mass_amu": 4.002602,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 3,
+      "symbol": "Li",
+      "name": "lithium",
+      "standard_atomic_weight": {
+        "interval": [
+          6.938,
+          6.997
+        ]
+      },
+      "notes": [
+        "m"
+      ],
+      "abridged": {
+        "value": 6.94,
+        "uncertainty": 0.06
+      },
+      "Mass_amu": 6.94,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 4,
+      "symbol": "Be",
+      "name": "beryllium",
+      "standard_atomic_weight": {
+        "value": 9.0121831,
+        "uncertainty": 5e-07
+      },
+      "notes": [],
+      "abridged": {
+        "value": 9.0122,
+        "uncertainty": 0.0001
+      },
+      "Mass_amu": 9.0121831,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 5,
+      "symbol": "B",
+      "name": "boron",
+      "standard_atomic_weight": {
+        "interval": [
+          10.806,
+          10.821
+        ]
+      },
+      "notes": [
+        "m"
+      ],
+      "abridged": {
+        "value": 10.81,
+        "uncertainty": 0.02
+      },
+      "Mass_amu": 10.81,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 6,
+      "symbol": "C",
+      "name": "carbon",
+      "standard_atomic_weight": {
+        "interval": [
+          12.0096,
+          12.0116
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 12.011,
+        "uncertainty": 0.002
+      },
+      "Mass_amu": 12.011,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 7,
+      "symbol": "N",
+      "name": "nitrogen",
+      "standard_atomic_weight": {
+        "interval": [
+          14.00643,
+          14.00728
+        ]
+      },
+      "notes": [
+        "m"
+      ],
+      "abridged": {
+        "value": 14.007,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 14.007,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 8,
+      "symbol": "O",
+      "name": "oxygen",
+      "standard_atomic_weight": {
+        "interval": [
+          15.99903,
+          15.99977
+        ]
+      },
+      "notes": [
+        "m"
+      ],
+      "abridged": {
+        "value": 15.999,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 15.999,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 9,
+      "symbol": "F",
+      "name": "fluorine",
+      "standard_atomic_weight": {
+        "value": 18.998403162,
+        "uncertainty": 5e-09
+      },
+      "notes": [],
+      "abridged": {
+        "value": 18.998,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 18.998403162,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 10,
+      "symbol": "Ne",
+      "name": "neon",
+      "standard_atomic_weight": {
+        "value": 20.1797,
+        "uncertainty": 0.0006
+      },
+      "notes": [
+        "g",
+        "m"
+      ],
+      "abridged": {
+        "value": 20.18,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 20.1797,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 11,
+      "symbol": "Na",
+      "name": "sodium",
+      "standard_atomic_weight": {
+        "value": 22.98976928,
+        "uncertainty": 2e-08
+      },
+      "notes": [],
+      "abridged": {
+        "value": 22.99,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 22.98976928,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 12,
+      "symbol": "Mg",
+      "name": "magnesium",
+      "standard_atomic_weight": {
+        "interval": [
+          24.304,
+          24.307
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 24.305,
+        "uncertainty": 0.002
+      },
+      "Mass_amu": 24.305,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 13,
+      "symbol": "Al",
+      "name": "aluminium",
+      "standard_atomic_weight": {
+        "value": 26.9815384,
+        "uncertainty": 3e-07
+      },
+      "notes": [],
+      "abridged": {
+        "value": 26.982,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 26.9815384,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 14,
+      "symbol": "Si",
+      "name": "silicon",
+      "standard_atomic_weight": {
+        "interval": [
+          28.084,
+          28.086
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 28.085,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 28.085,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 15,
+      "symbol": "P",
+      "name": "phosphorus",
+      "standard_atomic_weight": {
+        "value": 30.973761998,
+        "uncertainty": 5e-09
+      },
+      "notes": [],
+      "abridged": {
+        "value": 30.974,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 30.973761998,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 16,
+      "symbol": "S",
+      "name": "sulfur",
+      "standard_atomic_weight": {
+        "interval": [
+          32.059,
+          32.076
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 32.06,
+        "uncertainty": 0.02
+      },
+      "Mass_amu": 32.06,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 17,
+      "symbol": "Cl",
+      "name": "chlorine",
+      "standard_atomic_weight": {
+        "interval": [
+          35.446,
+          35.457
+        ]
+      },
+      "notes": [
+        "m"
+      ],
+      "abridged": {
+        "value": 35.45,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 35.45,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 18,
+      "symbol": "Ar",
+      "name": "argon",
+      "standard_atomic_weight": {
+        "interval": [
+          39.792,
+          39.963
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 39.95,
+        "uncertainty": 0.16
+      },
+      "Mass_amu": 39.95,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 19,
+      "symbol": "K",
+      "name": "potassium",
+      "standard_atomic_weight": {
+        "value": 39.0983,
+        "uncertainty": 0.0001
+      },
+      "notes": [],
+      "abridged": {
+        "value": 39.098,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 39.0983,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 20,
+      "symbol": "Ca",
+      "name": "calcium",
+      "standard_atomic_weight": {
+        "value": 40.078,
+        "uncertainty": 0.004
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 40.078,
+        "uncertainty": 0.004
+      },
+      "Mass_amu": 40.078,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 21,
+      "symbol": "Sc",
+      "name": "scandium",
+      "standard_atomic_weight": {
+        "value": 44.955907,
+        "uncertainty": 4e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 44.956,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 44.955907,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 22,
+      "symbol": "Ti",
+      "name": "titanium",
+      "standard_atomic_weight": {
+        "value": 47.867,
+        "uncertainty": 0.001
+      },
+      "notes": [],
+      "abridged": {
+        "value": 47.867,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 47.867,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 23,
+      "symbol": "V",
+      "name": "vanadium",
+      "standard_atomic_weight": {
+        "value": 50.9415,
+        "uncertainty": 0.0001
+      },
+      "notes": [],
+      "abridged": {
+        "value": 50.942,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 50.9415,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 24,
+      "symbol": "Cr",
+      "name": "chromium",
+      "standard_atomic_weight": {
+        "value": 51.9961,
+        "uncertainty": 0.0006
+      },
+      "notes": [],
+      "abridged": {
+        "value": 51.996,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 51.9961,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 25,
+      "symbol": "Mn",
+      "name": "manganese",
+      "standard_atomic_weight": {
+        "value": 54.938043,
+        "uncertainty": 2e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 54.938,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 54.938043,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 26,
+      "symbol": "Fe",
+      "name": "iron",
+      "standard_atomic_weight": {
+        "value": 55.845,
+        "uncertainty": 0.002
+      },
+      "notes": [],
+      "abridged": {
+        "value": 55.845,
+        "uncertainty": 0.002
+      },
+      "Mass_amu": 55.845,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 27,
+      "symbol": "Co",
+      "name": "cobalt",
+      "standard_atomic_weight": {
+        "value": 58.933194,
+        "uncertainty": 3e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 58.933,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 58.933194,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 28,
+      "symbol": "Ni",
+      "name": "nickel",
+      "standard_atomic_weight": {
+        "value": 58.6934,
+        "uncertainty": 0.0004
+      },
+      "notes": [
+        "r"
+      ],
+      "abridged": {
+        "value": 58.693,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 58.6934,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 29,
+      "symbol": "Cu",
+      "name": "copper",
+      "standard_atomic_weight": {
+        "value": 63.546,
+        "uncertainty": 0.003
+      },
+      "notes": [
+        "r"
+      ],
+      "abridged": {
+        "value": 63.546,
+        "uncertainty": 0.003
+      },
+      "Mass_amu": 63.546,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 30,
+      "symbol": "Zn",
+      "name": "zinc",
+      "standard_atomic_weight": {
+        "value": 65.38,
+        "uncertainty": 0.02
+      },
+      "notes": [
+        "r"
+      ],
+      "abridged": {
+        "value": 65.38,
+        "uncertainty": 0.02
+      },
+      "Mass_amu": 65.38,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 31,
+      "symbol": "Ga",
+      "name": "gallium",
+      "standard_atomic_weight": {
+        "value": 69.723,
+        "uncertainty": 0.001
+      },
+      "notes": [],
+      "abridged": {
+        "value": 69.723,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 69.723,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 32,
+      "symbol": "Ge",
+      "name": "germanium",
+      "standard_atomic_weight": {
+        "value": 72.63,
+        "uncertainty": 0.008
+      },
+      "notes": [],
+      "abridged": {
+        "value": 72.63,
+        "uncertainty": 0.008
+      },
+      "Mass_amu": 72.63,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 33,
+      "symbol": "As",
+      "name": "arsenic",
+      "standard_atomic_weight": {
+        "value": 74.921595,
+        "uncertainty": 6e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 74.922,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 74.921595,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 34,
+      "symbol": "Se",
+      "name": "selenium",
+      "standard_atomic_weight": {
+        "value": 78.971,
+        "uncertainty": 0.008
+      },
+      "notes": [
+        "r"
+      ],
+      "abridged": {
+        "value": 78.971,
+        "uncertainty": 0.008
+      },
+      "Mass_amu": 78.971,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 35,
+      "symbol": "Br",
+      "name": "bromine",
+      "standard_atomic_weight": {
+        "interval": [
+          79.901,
+          79.907
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 79.904,
+        "uncertainty": 0.003
+      },
+      "Mass_amu": 79.904,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 36,
+      "symbol": "Kr",
+      "name": "krypton",
+      "standard_atomic_weight": {
+        "value": 83.798,
+        "uncertainty": 0.002
+      },
+      "notes": [
+        "g",
+        "m"
+      ],
+      "abridged": {
+        "value": 83.798,
+        "uncertainty": 0.002
+      },
+      "Mass_amu": 83.798,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 37,
+      "symbol": "Rb",
+      "name": "rubidium",
+      "standard_atomic_weight": {
+        "value": 85.4678,
+        "uncertainty": 0.0003
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 85.468,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 85.4678,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 38,
+      "symbol": "Sr",
+      "name": "strontium",
+      "standard_atomic_weight": {
+        "value": 87.62,
+        "uncertainty": 0.01
+      },
+      "notes": [
+        "g",
+        "r"
+      ],
+      "abridged": {
+        "value": 87.62,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 87.62,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 39,
+      "symbol": "Y",
+      "name": "yttrium",
+      "standard_atomic_weight": {
+        "value": 88.905838,
+        "uncertainty": 2e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 88.906,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 88.905838,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 40,
+      "symbol": "Zr",
+      "name": "zirconium",
+      "standard_atomic_weight": {
+        "value": 91.224,
+        "uncertainty": 0.002
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 91.224,
+        "uncertainty": 0.002
+      },
+      "Mass_amu": 91.224,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 41,
+      "symbol": "Nb",
+      "name": "niobium",
+      "standard_atomic_weight": {
+        "value": 92.90637,
+        "uncertainty": 1e-05
+      },
+      "notes": [],
+      "abridged": {
+        "value": 92.906,
+        "uncertainty": 0.001
+      },
+      "Mass_amu": 92.90637,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 42,
+      "symbol": "Mo",
+      "name": "molybdenum",
+      "standard_atomic_weight": {
+        "value": 95.95,
+        "uncertainty": 0.01
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 95.95,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 95.95,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 43,
+      "symbol": "Tc",
+      "name": "technetium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 44,
+      "symbol": "Ru",
+      "name": "ruthenium",
+      "standard_atomic_weight": {
+        "value": 101.07,
+        "uncertainty": 0.02
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 101.07,
+        "uncertainty": 0.02
+      },
+      "Mass_amu": 101.07,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 45,
+      "symbol": "Rh",
+      "name": "rhodium",
+      "standard_atomic_weight": {
+        "value": 102.90549,
+        "uncertainty": 2e-05
+      },
+      "notes": [],
+      "abridged": {
+        "value": 102.91,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 102.90549,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 46,
+      "symbol": "Pd",
+      "name": "palladium",
+      "standard_atomic_weight": {
+        "value": 106.42,
+        "uncertainty": 0.01
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 106.42,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 106.42,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 47,
+      "symbol": "Ag",
+      "name": "silver",
+      "standard_atomic_weight": {
+        "value": 107.8682,
+        "uncertainty": 0.0002
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 107.87,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 107.8682,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 48,
+      "symbol": "Cd",
+      "name": "cadmium",
+      "standard_atomic_weight": {
+        "value": 112.414,
+        "uncertainty": 0.004
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 112.41,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 112.414,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 49,
+      "symbol": "In",
+      "name": "indium",
+      "standard_atomic_weight": {
+        "value": 114.818,
+        "uncertainty": 0.001
+      },
+      "notes": [],
+      "abridged": {
+        "value": 114.82,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 114.818,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 50,
+      "symbol": "Sn",
+      "name": "tin",
+      "standard_atomic_weight": {
+        "value": 118.71,
+        "uncertainty": 0.007
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 118.71,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 118.71,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 51,
+      "symbol": "Sb",
+      "name": "antimony",
+      "standard_atomic_weight": {
+        "value": 121.76,
+        "uncertainty": 0.001
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 121.76,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 121.76,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 52,
+      "symbol": "Te",
+      "name": "tellurium",
+      "standard_atomic_weight": {
+        "value": 127.6,
+        "uncertainty": 0.03
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 127.6,
+        "uncertainty": 0.03
+      },
+      "Mass_amu": 127.6,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 53,
+      "symbol": "I",
+      "name": "iodine",
+      "standard_atomic_weight": {
+        "value": 126.90447,
+        "uncertainty": 3e-05
+      },
+      "notes": [],
+      "abridged": {
+        "value": 126.9,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 126.90447,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 54,
+      "symbol": "Xe",
+      "name": "xenon",
+      "standard_atomic_weight": {
+        "value": 131.293,
+        "uncertainty": 0.006
+      },
+      "notes": [
+        "g",
+        "m"
+      ],
+      "abridged": {
+        "value": 131.29,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 131.293,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 55,
+      "symbol": "Cs",
+      "name": "caesium",
+      "standard_atomic_weight": {
+        "value": 132.90545196,
+        "uncertainty": 6e-08
+      },
+      "notes": [],
+      "abridged": {
+        "value": 132.91,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 132.90545196,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 56,
+      "symbol": "Ba",
+      "name": "barium",
+      "standard_atomic_weight": {
+        "value": 137.327,
+        "uncertainty": 0.007
+      },
+      "notes": [],
+      "abridged": {
+        "value": 137.33,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 137.327,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 57,
+      "symbol": "La",
+      "name": "lanthanum",
+      "standard_atomic_weight": {
+        "value": 138.90547,
+        "uncertainty": 7e-05
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 138.91,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 138.90547,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 58,
+      "symbol": "Ce",
+      "name": "cerium",
+      "standard_atomic_weight": {
+        "value": 140.116,
+        "uncertainty": 0.001
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 140.12,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 140.116,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 59,
+      "symbol": "Pr",
+      "name": "praseodymium",
+      "standard_atomic_weight": {
+        "value": 140.90766,
+        "uncertainty": 1e-05
+      },
+      "notes": [],
+      "abridged": {
+        "value": 140.91,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 140.90766,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 60,
+      "symbol": "Nd",
+      "name": "neodymium",
+      "standard_atomic_weight": {
+        "value": 144.242,
+        "uncertainty": 0.003
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 144.24,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 144.242,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 61,
+      "symbol": "Pm",
+      "name": "promethium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 62,
+      "symbol": "Sm",
+      "name": "samarium",
+      "standard_atomic_weight": {
+        "value": 150.36,
+        "uncertainty": 0.02
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 150.36,
+        "uncertainty": 0.02
+      },
+      "Mass_amu": 150.36,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 63,
+      "symbol": "Eu",
+      "name": "europium",
+      "standard_atomic_weight": {
+        "value": 151.964,
+        "uncertainty": 0.001
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 151.96,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 151.964,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 64,
+      "symbol": "Gd",
+      "name": "gadolinium",
+      "standard_atomic_weight": {
+        "value": 157.25,
+        "uncertainty": 0.03
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 157.25,
+        "uncertainty": 0.03
+      },
+      "Mass_amu": 157.25,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 65,
+      "symbol": "Tb",
+      "name": "terbium",
+      "standard_atomic_weight": {
+        "value": 158.925354,
+        "uncertainty": 7e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 158.93,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 158.925354,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 66,
+      "symbol": "Dy",
+      "name": "dysprosium",
+      "standard_atomic_weight": {
+        "value": 162.5,
+        "uncertainty": 0.001
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 162.5,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 162.5,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 67,
+      "symbol": "Ho",
+      "name": "holmium",
+      "standard_atomic_weight": {
+        "value": 164.930329,
+        "uncertainty": 5e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 164.93,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 164.930329,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 68,
+      "symbol": "Er",
+      "name": "erbium",
+      "standard_atomic_weight": {
+        "value": 167.259,
+        "uncertainty": 0.003
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 167.26,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 167.259,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 69,
+      "symbol": "Tm",
+      "name": "thulium",
+      "standard_atomic_weight": {
+        "value": 168.934219,
+        "uncertainty": 5e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 168.93,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 168.934219,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 70,
+      "symbol": "Yb",
+      "name": "ytterbium",
+      "standard_atomic_weight": {
+        "value": 173.045,
+        "uncertainty": 0.01
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 173.05,
+        "uncertainty": 0.02
+      },
+      "Mass_amu": 173.045,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 71,
+      "symbol": "Lu",
+      "name": "lutetium",
+      "standard_atomic_weight": {
+        "value": 174.9668,
+        "uncertainty": 0.0001
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 174.97,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 174.9668,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 72,
+      "symbol": "Hf",
+      "name": "hafnium",
+      "standard_atomic_weight": {
+        "value": 178.486,
+        "uncertainty": 0.006
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 178.49,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 178.486,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 73,
+      "symbol": "Ta",
+      "name": "tantalum",
+      "standard_atomic_weight": {
+        "value": 180.94788,
+        "uncertainty": 2e-05
+      },
+      "notes": [],
+      "abridged": {
+        "value": 180.95,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 180.94788,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 74,
+      "symbol": "W",
+      "name": "tungsten",
+      "standard_atomic_weight": {
+        "value": 183.84,
+        "uncertainty": 0.01
+      },
+      "notes": [],
+      "abridged": {
+        "value": 183.84,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 183.84,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 75,
+      "symbol": "Re",
+      "name": "rhenium",
+      "standard_atomic_weight": {
+        "value": 186.207,
+        "uncertainty": 0.001
+      },
+      "notes": [],
+      "abridged": {
+        "value": 186.21,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 186.207,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 76,
+      "symbol": "Os",
+      "name": "osmium",
+      "standard_atomic_weight": {
+        "value": 190.23,
+        "uncertainty": 0.03
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 190.23,
+        "uncertainty": 0.03
+      },
+      "Mass_amu": 190.23,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 77,
+      "symbol": "Ir",
+      "name": "iridium",
+      "standard_atomic_weight": {
+        "value": 192.217,
+        "uncertainty": 0.002
+      },
+      "notes": [],
+      "abridged": {
+        "value": 192.22,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 192.217,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 78,
+      "symbol": "Pt",
+      "name": "platinum",
+      "standard_atomic_weight": {
+        "value": 195.084,
+        "uncertainty": 0.009
+      },
+      "notes": [],
+      "abridged": {
+        "value": 195.08,
+        "uncertainty": 0.02
+      },
+      "Mass_amu": 195.084,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 79,
+      "symbol": "Au",
+      "name": "gold",
+      "standard_atomic_weight": {
+        "value": 196.96657,
+        "uncertainty": 4e-06
+      },
+      "notes": [],
+      "abridged": {
+        "value": 196.97,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 196.96657,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 80,
+      "symbol": "Hg",
+      "name": "mercury",
+      "standard_atomic_weight": {
+        "value": 200.592,
+        "uncertainty": 0.003
+      },
+      "notes": [],
+      "abridged": {
+        "value": 200.59,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 200.592,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 81,
+      "symbol": "Tl",
+      "name": "thallium",
+      "standard_atomic_weight": {
+        "interval": [
+          204.382,
+          204.385
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 204.38,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 204.38,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 82,
+      "symbol": "Pb",
+      "name": "lead",
+      "standard_atomic_weight": {
+        "interval": [
+          206.14,
+          207.94
+        ]
+      },
+      "notes": [],
+      "abridged": {
+        "value": 207.2,
+        "uncertainty": 1.1
+      },
+      "Mass_amu": 207.2,
+      "value_kind": "abridged"
+    },
+    {
+      "Z": 83,
+      "symbol": "Bi",
+      "name": "bismuth",
+      "standard_atomic_weight": {
+        "value": 208.9804,
+        "uncertainty": 1e-05
+      },
+      "notes": [],
+      "abridged": {
+        "value": 208.98,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 208.9804,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 84,
+      "symbol": "Po",
+      "name": "polonium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 85,
+      "symbol": "At",
+      "name": "astatine",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 86,
+      "symbol": "Rn",
+      "name": "radon",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 87,
+      "symbol": "Fr",
+      "name": "francium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 88,
+      "symbol": "Ra",
+      "name": "radium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 89,
+      "symbol": "Ac",
+      "name": "actinium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 90,
+      "symbol": "Th",
+      "name": "thorium",
+      "standard_atomic_weight": {
+        "value": 232.0377,
+        "uncertainty": 0.0004
+      },
+      "notes": [
+        "g"
+      ],
+      "abridged": {
+        "value": 232.04,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 232.0377,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 91,
+      "symbol": "Pa",
+      "name": "protactinium",
+      "standard_atomic_weight": {
+        "value": 231.03588,
+        "uncertainty": 1e-05
+      },
+      "notes": [],
+      "abridged": {
+        "value": 231.04,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 231.03588,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 92,
+      "symbol": "U",
+      "name": "uranium",
+      "standard_atomic_weight": {
+        "value": 238.02891,
+        "uncertainty": 3e-05
+      },
+      "notes": [
+        "g",
+        "m"
+      ],
+      "abridged": {
+        "value": 238.03,
+        "uncertainty": 0.01
+      },
+      "Mass_amu": 238.02891,
+      "value_kind": "standard"
+    },
+    {
+      "Z": 93,
+      "symbol": "Np",
+      "name": "neptunium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 94,
+      "symbol": "Pu",
+      "name": "plutonium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 95,
+      "symbol": "Am",
+      "name": "americium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 96,
+      "symbol": "Cm",
+      "name": "curium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 97,
+      "symbol": "Bk",
+      "name": "berkelium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 98,
+      "symbol": "Cf",
+      "name": "californium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 99,
+      "symbol": "Es",
+      "name": "einsteinium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 100,
+      "symbol": "Fm",
+      "name": "fermium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 101,
+      "symbol": "Md",
+      "name": "mendelevium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 102,
+      "symbol": "No",
+      "name": "nobelium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 103,
+      "symbol": "Lr",
+      "name": "lawrencium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 104,
+      "symbol": "Rf",
+      "name": "rutherfordium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 105,
+      "symbol": "Db",
+      "name": "dubnium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 106,
+      "symbol": "Sg",
+      "name": "seaborgium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 107,
+      "symbol": "Bh",
+      "name": "bohrium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 108,
+      "symbol": "Hs",
+      "name": "hassium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 109,
+      "symbol": "Mt",
+      "name": "meitnerium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 110,
+      "symbol": "Ds",
+      "name": "darmstadtium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 111,
+      "symbol": "Rg",
+      "name": "roentgenium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 112,
+      "symbol": "Cn",
+      "name": "copernicium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 113,
+      "symbol": "Nh",
+      "name": "nihonium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 114,
+      "symbol": "Fl",
+      "name": "flerovium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 115,
+      "symbol": "Mc",
+      "name": "moscovium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 116,
+      "symbol": "Lv",
+      "name": "livermorium",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 117,
+      "symbol": "Ts",
+      "name": "tennessine",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    },
+    {
+      "Z": 118,
+      "symbol": "Og",
+      "name": "oganesson",
+      "standard_atomic_weight": null,
+      "notes": [],
+      "Mass_amu": null,
+      "value_kind": "none"
+    }
+  ]
+}

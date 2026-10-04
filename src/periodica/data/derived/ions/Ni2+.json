@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 26,
-  "Mass_MeVc2": 55411.4324773,
-  "Mass_amu": 59.486616537473694,
-  "Mass_kg": 0,
-  "Name": "Ni2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Ni, minus 2 electron masses",
+  "Mass_MeVc2": 54671.533953078026,
+  "Mass_amu": 58.69230284018187,
+  "Mass_kg": 9.746086177484012e-26,
+  "Name": "Ni2+",
+  "Symbol": "Ni2+"
 }

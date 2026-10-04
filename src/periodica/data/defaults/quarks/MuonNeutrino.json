@@ -5,8 +5,8 @@
   "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
   "Charge_e": 0,
   "Mass_MeVc2": 0.000000170, // Estimated upper limit (0.17 MeV/c²). Actual mass is non-zero but extremely tiny.
-  "Mass_kg": 3.030525e-34,
-  "Mass_amu": 0.0000001825,
+  "Mass_kg": 3.03052526676e-37,
+  "Mass_amu": 1.82502497395e-10,
   "Spin_hbar": 0.5,
   "MagneticDipoleMoment_J_T": null, // Extremely small, effectively zero for practical purposes
   "LeptonNumber_L": 1, // Specifically muon lepton number

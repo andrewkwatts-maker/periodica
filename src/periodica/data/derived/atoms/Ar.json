@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 18,
-  "Mass_MeVc2": 37568.53481942,
-  "Mass_amu": 40.33147898844117,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of Ar",
+  "Mass_MeVc2": 37213.189391679,
+  "Mass_amu": 39.95,
+  "Mass_kg": 6.633853571067e-26,
   "Name": "Ar",
   "Symbol": "Ar"
 }

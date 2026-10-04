@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 25,
-  "Mass_MeVc2": 51656.53979334999,
-  "Mass_amu": 55.45557364175163,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Mn",
+  "Mass_MeVc2": 51174.46305299636,
+  "Mass_amu": 54.938043,
+  "Mass_kg": 9.122676664405066e-26,
   "Name": "Mn",
   "Symbol": "Mn"
 }

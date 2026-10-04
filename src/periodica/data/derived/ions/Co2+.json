@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 25,
-  "Mass_MeVc2": 55412.21481070999,
-  "Mass_amu": 59.48745640689363,
-  "Mass_kg": 0,
-  "Name": "Co2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Co, minus 2 electron masses",
+  "Mass_MeVc2": 54894.90064987373,
+  "Mass_amu": 58.93209684018187,
+  "Mass_kg": 9.785904907977641e-26,
+  "Name": "Co2+",
+  "Symbol": "Co2+"
 }

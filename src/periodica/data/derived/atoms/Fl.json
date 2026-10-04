@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 114,
-  "Mass_MeVc2": 271445.22052154,
-  "Mass_amu": 291.4084155956774,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Fl-289 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 269379.26106129074,
+  "Mass_amu": 289.190517,
+  "Mass_kg": 4.8021215116875145e-25,
   "Name": "Fl",
   "Symbol": "Fl"
 }

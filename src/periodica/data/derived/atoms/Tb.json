@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 65,
-  "Mass_MeVc2": 149340.05019103,
-  "Mass_amu": 160.32313012375423,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Tb",
+  "Mass_MeVc2": 148038.02997601076,
+  "Mass_amu": 158.925354,
+  "Mass_kg": 2.639017589902346e-25,
   "Name": "Tb",
   "Symbol": "Tb"
 }

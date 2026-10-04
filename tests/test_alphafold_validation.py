@@ -44,7 +44,7 @@ def _rmsd_vs_alphafold(name: str, uniprot_id: str) -> float:
         # so backbones are physically plausible but not AF-quality. The
         # numbers cap regressions; tightening waits on better phi/psi data.
         ("Crambin",         "P01542", 25.0),
-        ("Insulin_Chain_A", "P01308", 12.0),
+        ("Insulin_A_Chain", "P01308", 12.0),
         ("Ubiquitin",       "P0CG48", 30.0),
         ("Lysozyme",        "P00698", 70.0),
         ("Beta_Defensin",   "P60022", 22.0),

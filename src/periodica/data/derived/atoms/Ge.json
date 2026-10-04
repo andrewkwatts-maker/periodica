@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 32,
-  "Mass_MeVc2": 69502.80644936,
-  "Mass_amu": 74.61432795886208,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ge",
+  "Mass_MeVc2": 67654.41665876459,
+  "Mass_amu": 72.63,
+  "Mass_kg": 1.20604952407158e-25,
   "Name": "Ge",
   "Symbol": "Ge"
 }

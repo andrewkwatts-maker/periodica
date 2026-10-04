@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 3,
-  "Mass_MeVc2": 6574.61094341,
-  "Mass_amu": 7.058134803390195,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Li-7",
+  "Mass_MeVc2": 6535.365821571656,
+  "Mass_amu": 7.01600343426,
+  "Mass_kg": 1.1650347793988495e-26,
   "Name": "Li-7"
 }

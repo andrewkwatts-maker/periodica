@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 61,
-  "Mass_MeVc2": 136189.26363739,
-  "Mass_amu": 146.20518077813395,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Pm-145; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 134985.37734469195,
+  "Mass_amu": 144.912755748,
+  "Mass_kg": 2.406332921682177e-25,
   "Name": "Pm",
   "Symbol": "Pm"
 }

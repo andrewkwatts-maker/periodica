@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 94,
-  "Mass_MeVc2": 229180.42326634,
-  "Mass_amu": 246.0352917663261,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Pu-244; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 227344.3670113609,
+  "Mass_amu": 244.064204401,
+  "Mass_kg": 4.052781461665082e-25,
   "Name": "Pu",
   "Symbol": "Pu"
 }

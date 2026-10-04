@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 2,
-  "Mass_MeVc2": 8451.937453139999,
-  "Mass_amu": 9.07352760605213,
-  "Mass_kg": 0,
-  "Name": "Be2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Be, minus 2 electron masses",
+  "Mass_MeVc2": 8393.773409679192,
+  "Mass_amu": 9.01108594018187,
+  "Mass_kg": 1.4963260236161986e-26,
+  "Name": "Be2+",
+  "Symbol": "Be2+"
 }
