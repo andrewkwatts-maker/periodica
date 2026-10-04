@@ -33,6 +33,7 @@ resolver = "2"
 members = [
     "rust/periodica-mat",
     "rust/periodica-runtime",
+    "rust/periodica-qm",
     "rust/periodica_core",
 ]
 # `build/` and `dist/` hold stale packaging artifacts (including a v1.1.0
@@ -78,6 +79,10 @@ rand = { version = "0.8", features = ["small_rng"] }
 # Matches Python's hashlib.sha1 in the voronoi phase picker, byte for byte.
 sha1 = "0.10"
 nalgebra = "0.33"
+# Pure-Rust port of musl libm. Every transcendental in the physics crates goes
+# through it so results are bit-identical across operating systems (std's
+# f64::exp/sin/ln call the platform C library).
+libm = "0.2"
 ndarray = "0.16"
 pyo3 = { version = "0.22", features = ["extension-module"] }
 numpy = "0.22"
@@ -85,6 +90,7 @@ numpy = "0.22"
 # --- internal -------------------------------------------------------------
 periodica-mat = { path = "rust/periodica-mat", version = "0.1.0" }
 periodica-runtime = { path = "rust/periodica-runtime", version = "0.1.0" }
+periodica-qm = { path = "rust/periodica-qm", version = "0.1.0" }
 periodica-fmt = { path = "rust/periodica-fmt", version = "0.1.0" }
 
 # --- dev ------------------------------------------------------------------
