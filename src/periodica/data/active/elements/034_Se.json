@@ -61,5 +61,22 @@
       "is_stable": true,
       "half_life": null
     }
-  ]
+  ],
+  "thermal_conductivity": 0.52,
+  "youngs_modulus_GPa": 10.0,
+  "shear_modulus_GPa": 3.7,
+  "bulk_modulus_GPa": 8.3,
+  "specific_heat": 321,
+  "_bulk_properties": {
+    "source": "CRC Handbook of Chemistry and Physics, 97th ed.; WebElements",
+    "conditions": "298 K, 1 atm, standard state",
+    "table_version": 1,
+    "fields": [
+      "bulk_modulus_GPa",
+      "shear_modulus_GPa",
+      "specific_heat",
+      "thermal_conductivity",
+      "youngs_modulus_GPa"
+    ]
+  }
 }

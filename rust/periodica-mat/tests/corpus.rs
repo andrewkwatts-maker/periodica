@@ -357,6 +357,12 @@ fn known_materials_ingest_with_expected_values() {
         ("Steel-1018", PropertyId::Density, 7870.0, 1e-6),
         ("Steel-1018", PropertyId::YoungsModulus, 2.0e11, 1e-6),
         ("Aluminum_6061_T6", PropertyId::Density, 2700.0, 1e-3),
+        // Element sheets carry the measured bulk table (CRC 97th ed.) at the
+        // root; iron's values, in SI.
+        ("026_Fe", PropertyId::YoungsModulus, 2.11e11, 1e-9),
+        ("026_Fe", PropertyId::ThermalConductivity, 80.4, 1e-9),
+        ("026_Fe", PropertyId::ElectricalResistivity, 9.61e-8, 1e-9),
+        ("026_Fe", PropertyId::ThermalExpansion, 1.18e-5, 1e-9),
     ];
 
     let files = corpus();

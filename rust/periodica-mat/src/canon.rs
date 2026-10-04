@@ -105,6 +105,8 @@ const MPA: f64 = 1.0e6;
 const KJ: f64 = 1.0e3;
 const G_CM3_TO_KG_M3: f64 = 1.0e3;
 const UM: f64 = 1.0e-6;
+/// nano-: nOhm*m resistivity in the element bulk table.
+const NANO: f64 = 1.0e-9;
 const PM: f64 = 1.0e-12;
 const MM: f64 = 1.0e-3;
 const MM2_S: f64 = 1.0e-6;
@@ -220,9 +222,14 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
         | "heatdeflectiontempk" => map!(MaxTemperature),
 
         // ── Thermal ──────────────────────────────────────────────────────
-        "thermalconductivitywmk" => map!(ThermalConductivity),
-        "specificheatjkgk" => map!(SpecificHeat),
+        // The bare `thermal_conductivity` / `specific_heat` and the
+        // `_um_mK` expansion are the element bulk table's spellings
+        // (data/reference/elements/bulk_properties.json, which states the
+        // units: W/(m K), J/(kg K), um/(m K)).
+        "thermalconductivitywmk" | "thermalconductivity" => map!(ThermalConductivity),
+        "specificheatjkgk" | "specificheat" => map!(SpecificHeat),
         "thermalexpansionperk" => map!(ThermalExpansion),
+        "thermalexpansionummk" => map!(ThermalExpansion, UM),
         "thermaldiffusivitymm2s" => map!(ThermalDiffusivity, MM2_S),
         "meltingpointk" | "meltingpoint" => map!(MeltingPoint),
         "boilingpointk" | "boilingpoint" => map!(BoilingPoint),
@@ -232,6 +239,7 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
 
         // ── Electrical ───────────────────────────────────────────────────
         "electricalresistivityohmm" => map!(ElectricalResistivity),
+        "electricalresistivitynohmm" => map!(ElectricalResistivity, NANO),
         // %IACS is defined against 5.8e7 S/m, so this is an exact conversion.
         "percentiacs" => map!(ElectricalConductivity, IACS_PCT_TO_S_M),
         "dielectricconstant" => map!(RelativePermittivity),
@@ -406,6 +414,37 @@ mod tests {
         );
         assert_eq!(canon("PoissonsRatio"), "poissonsratio");
         assert_eq!(canon("poissons_ratio"), "poissonsratio");
+    }
+
+    #[test]
+    fn element_bulk_table_spellings_reach_si() {
+        // Iron, from data/reference/elements/bulk_properties.json.
+        let cases = [
+            (
+                "thermal_conductivity",
+                80.4,
+                PropertyId::ThermalConductivity,
+                80.4,
+            ),
+            ("specific_heat", 449.0, PropertyId::SpecificHeat, 449.0),
+            (
+                "electrical_resistivity_nOhm_m",
+                96.1,
+                PropertyId::ElectricalResistivity,
+                96.1e-9,
+            ),
+            (
+                "thermal_expansion_um_mK",
+                11.8,
+                PropertyId::ThermalExpansion,
+                11.8e-6,
+            ),
+        ];
+        for (key, raw, property, si) in cases {
+            let m = lookup(&canon(key)).unwrap_or_else(|| panic!("{key} is unmapped"));
+            assert_eq!(m.property, property, "{key}");
+            assert!((m.conv.apply(raw) - si).abs() <= si * 1e-12, "{key}");
+        }
     }
 
     #[test]
