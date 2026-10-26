@@ -46,10 +46,8 @@
 //!   *equal-cost* crack positions; without it a uniform material would always
 //!   crack along its lowest face, an artefact of index order.
 
-use std::cmp::Ordering;
-use std::collections::BinaryHeap;
-
 use thiserror::Error;
+use topos_core::search::{Budget, Outcome, Search};
 
 use crate::fields::ToughnessFn;
 
@@ -415,43 +413,6 @@ fn heuristic(
     f64::from(remaining) * step_lower_bound
 }
 
-/// One A* open-set entry. `Ord` is arranged so `BinaryHeap` (a max-heap) pops
-/// the entry to expand first; see the module docs for the key.
-#[derive(Debug, Clone, Copy)]
-struct OpenEntry {
-    f: f64,
-    g: f64,
-    /// `|2 * coord_n - (len_n - 1)|`: distance from the section middle along
-    /// the plane normal, in half-cells.
-    centre_rank: u32,
-    flat: usize,
-}
-
-impl Ord for OpenEntry {
-    fn cmp(&self, other: &Self) -> Ordering {
-        other
-            .f
-            .total_cmp(&self.f) // lower f first
-            .then_with(|| self.g.total_cmp(&other.g)) // then higher g
-            .then_with(|| other.centre_rank.cmp(&self.centre_rank)) // then nearer the middle
-            .then_with(|| other.flat.cmp(&self.flat)) // then lower flat index
-    }
-}
-
-impl PartialOrd for OpenEntry {
-    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        Some(self.cmp(other))
-    }
-}
-
-impl PartialEq for OpenEntry {
-    fn eq(&self, other: &Self) -> bool {
-        self.cmp(other) == Ordering::Equal
-    }
-}
-
-impl Eq for OpenEntry {}
-
 /// The outcome of one face-to-face search.
 #[derive(Debug, Clone)]
 struct PathSearch {
@@ -465,11 +426,11 @@ struct PathSearch {
     expanded: usize,
 }
 
-const NO_PARENT: usize = usize::MAX;
-
-/// Multi-source, multi-goal A* from the Low face of `axis` to its High face.
-/// `normal_axis` only feeds the tie-break. Returns `None` if the High face is
-/// unreachable.
+/// Multi-source, multi-goal A* from the Low face of `axis` to its High face,
+/// run by `topos_core::search`. The sources are the neighbours of a virtual
+/// start node (`None`), each at the cost of entering it. `normal_axis` only
+/// feeds the tie-break (see the module docs). Returns `None` if the High
+/// face is unreachable.
 fn astar_face_to_face(
     grid: &WeakpointGrid,
     axis: usize,
@@ -477,75 +438,41 @@ fn astar_face_to_face(
     step_lower_bound: f64,
 ) -> Option<PathSearch> {
     let res = grid.resolution;
-    let total = grid.len();
     let normal_len = axis_size(res, normal_axis) as i64;
-
-    let entry_for = |cell: CellIndex, g: f64| OpenEntry {
-        f: g + heuristic(cell, res, axis, step_lower_bound),
-        g,
-        centre_rank: (2 * i64::from(cell.coord(normal_axis)) - (normal_len - 1)).unsigned_abs()
-            as u32,
-        flat: cell.flat(res),
+    let rank = |node: &Option<CellIndex>| match node {
+        // Nearer the middle along the normal first, then lowest flat index.
+        Some(cell) => (
+            (2 * i64::from(cell.coord(normal_axis)) - (normal_len - 1)).unsigned_abs(),
+            cell.flat(res),
+        ),
+        None => (0, 0),
     };
-
-    let mut g_score = vec![f64::INFINITY; total];
-    let mut came_from = vec![NO_PARENT; total];
-    let mut open = BinaryHeap::new();
-
-    // Every Low-face cell is a source, at the cost of entering it.
-    for cell in face_cells(res, axis, FaceSide::Low) {
-        let flat = cell.flat(res);
-        let g = grid.step_cost(flat);
-        g_score[flat] = g;
-        open.push(entry_for(cell, g));
-    }
-
-    // Bounded loop. With a consistent heuristic each cell is settled at most
-    // once and pushes at most 6 entries, so pops <= face + 6 * total.
-    let mut pops_remaining = total.saturating_mul(7).saturating_add(1);
-    let mut expanded = 0usize;
-    while let Some(entry) = open.pop() {
-        if pops_remaining == 0 {
-            return None;
-        }
-        pops_remaining -= 1;
-        if entry.g > g_score[entry.flat] {
-            continue; // stale: a cheaper route to this cell was found later
-        }
-        expanded += 1;
-        let cell = CellIndex::from_flat(entry.flat, res);
-        if FaceSide::High.contains(cell, res, axis) {
-            return Some(PathSearch {
-                cells: reconstruct_path(&came_from, entry.flat, res),
-                cost: entry.g,
-                expanded,
-            });
-        }
-        for neighbour in neighbours(cell, res) {
-            let n_flat = neighbour.flat(res);
-            let tentative = entry.g + grid.step_cost(n_flat);
-            if tentative < g_score[n_flat] {
-                g_score[n_flat] = tentative;
-                came_from[n_flat] = entry.flat;
-                open.push(entry_for(neighbour, tentative));
-            }
-        }
-    }
-    None
-}
-
-fn reconstruct_path(came_from: &[usize], end: usize, res: (usize, usize, usize)) -> Vec<CellIndex> {
-    let mut path = Vec::new();
-    let mut current = end;
-    // Bounded by the total cell count.
-    let mut steps_remaining = came_from.len() + 1;
-    while current != NO_PARENT && steps_remaining > 0 {
-        path.push(CellIndex::from_flat(current, res));
-        current = came_from[current];
-        steps_remaining -= 1;
-    }
-    path.reverse();
-    path
+    let edges = |node: &Option<CellIndex>| -> Vec<(Option<CellIndex>, f32)> {
+        let cells: Vec<CellIndex> = match node {
+            None => face_cells(res, axis, FaceSide::Low),
+            Some(cell) => neighbours(*cell, res).collect(),
+        };
+        let step = |c: &CellIndex| grid.step_cost(c.flat(res)) as f32;
+        cells.iter().map(|c| (Some(*c), step(c))).collect()
+    };
+    let budget = Budget::for_graph(grid.len().saturating_add(2));
+    let outcome = Search::with_budget(budget).run_ranked(
+        None,
+        |node| node.is_some_and(|c| FaceSide::High.contains(c, res, axis)),
+        |node| node.map_or(0.0, |c| heuristic(c, res, axis, step_lower_bound) as f32),
+        rank,
+        edges,
+    );
+    let Outcome::Found(path) = outcome else {
+        return None; // No path, or the budget (sized to the grid) ran out.
+    };
+    let cells: Vec<CellIndex> = path.nodes.iter().filter_map(|n| *n).collect();
+    let cost = cells.iter().map(|c| grid.step_cost(c.flat(res))).sum();
+    Some(PathSearch {
+        cells,
+        cost,
+        expanded: path.expanded.saturating_sub(1), // not the virtual start
+    })
 }
 
 /// Fit the plane to the transverse crack paths: normal along `normal_axis`,
@@ -972,25 +899,5 @@ mod tests {
             find_fracture_paths(&nan, None),
             Err(FractureError::NonFiniteToughness([0.75, 0.75, 0.75]))
         );
-    }
-
-    #[test]
-    fn open_set_order_is_total_and_as_documented() {
-        let e = |f, g, centre_rank, flat| OpenEntry {
-            f,
-            g,
-            centre_rank,
-            flat,
-        };
-        let mut heap = BinaryHeap::from(vec![
-            e(2.0, 1.0, 0, 0),
-            e(1.0, 0.5, 3, 9),
-            e(1.0, 0.9, 3, 8),
-            e(1.0, 0.9, 1, 7),
-            e(1.0, 0.9, 1, 4),
-        ]);
-        let order: Vec<usize> = std::iter::from_fn(|| heap.pop().map(|x| x.flat)).collect();
-        // Lowest f; then highest g; then nearest the middle; then lowest index.
-        assert_eq!(order, vec![4, 7, 8, 9, 0]);
     }
 }

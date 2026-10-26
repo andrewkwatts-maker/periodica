@@ -89,6 +89,8 @@ numpy = "0.22"
 periodica-mat = { path = "rust/periodica-mat", version = "0.1.0" }
 periodica-runtime = { path = "rust/periodica-runtime", version = "0.1.0" }
 periodica-fmt = { path = "rust/periodica-fmt", version = "0.1.0" }
+# Search (A*, Dijkstra, BFS, DFS) is owned by Topos; the sibling checkout is required.
+topos_core = { path = "../Topos/rust/topos_core", default-features = false }
 
 # --- dev ------------------------------------------------------------------
 criterion = { version = "0.5", features = ["html_reports"] }
