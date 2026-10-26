@@ -73,7 +73,9 @@ pub fn bounds(entries: Entries<'_>, prop: PropertyId) -> MixResult<(f64, f64)> {
 pub fn mix(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
     use PropertyId as P;
     match prop {
-        P::Density | P::Porosity | P::ThermalExpansion => volume_average(entries, prop),
+        P::Density | P::Porosity | P::ThermalExpansion | P::StrainHardeningExponent => {
+            volume_average(entries, prop)
+        }
         P::SpecificHeat => mass_weighted(entries, prop),
         P::YoungsModulus | P::ShearModulus | P::BulkModulus => hill(entries, prop),
         P::PoissonsRatio => poisson(entries),
@@ -216,6 +218,17 @@ mod tests {
         let (v, r) = bounds(&e, PropertyId::YoungsModulus).unwrap();
         let h = mix(&e, PropertyId::YoungsModulus).unwrap();
         assert!(r < h && h < v);
+    }
+
+    #[test]
+    fn strain_hardening_exponent_is_volume_weighted() {
+        use PropertyId as P;
+        let a = rec("a", &[(P::StrainHardeningExponent, 0.2)]);
+        let b = rec("b", &[(P::StrainHardeningExponent, 0.05)]);
+        let n = mix(&[(&a, 0.25), (&b, 0.75)], P::StrainHardeningExponent).unwrap();
+        assert!((n - 0.0875).abs() < 1e-12);
+        let c = rec("c", &[(P::Density, 1.0)]);
+        assert!(mix(&[(&a, 0.5), (&c, 0.5)], P::StrainHardeningExponent).is_err());
     }
 
     #[test]
