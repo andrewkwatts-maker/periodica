@@ -45,6 +45,8 @@
 //!   classification (Kabsch RMSD pending portable SVD).
 //! - [`export`] -- STL / OBJ / VTK / SDF / HLSL / GLSL emitters.
 //! - [`fourier_bake`] -- Fourier-coefficient field baker.
+//! - [`pyjson`] -- JSON text byte-identical to Python's `json.dump(...,
+//!   indent=2, sort_keys=True)`, the format of every derived datasheet.
 //! - [`record`] -- [`material_record`]: spec string to a typed, SI-normalised
 //!   [`periodica_mat::MaterialRecord`], for pure-Rust consumers (no Python).
 
@@ -60,6 +62,7 @@ pub mod get;
 pub mod mass_source;
 pub mod predictors;
 pub mod protein;
+pub mod pyjson;
 pub mod record;
 pub mod registry;
 pub mod rules;

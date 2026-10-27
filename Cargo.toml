@@ -61,7 +61,11 @@ serde = { version = "1.0", features = ["derive"] }
 # takes the first phase whose cumulative fraction exceeds a hash draw.
 # Python dicts preserve file order; serde_json defaults to sorted (BTreeMap),
 # which silently selects a different phase for the same point.
-serde_json = { version = "1.0", features = ["preserve_order"] }
+# `float_roundtrip` is required for the same reason: without it serde_json
+# parses some floats one ulp away from the value Python reads from the same
+# text (1.0552061552616359e-25 came back as 1.055206155261636e-25), so a
+# datasheet could not be re-written byte-for-byte (see periodica_core::pyjson).
+serde_json = { version = "1.0", features = ["preserve_order", "float_roundtrip"] }
 # glam is the single source of truth for vector/matrix math. It replaces the
 # two duplicate hand-rolled Vec3 implementations in the Python tree
 # (utils/crystalline_math.py and utils/pure_array.py) and is SIMD-accelerated.

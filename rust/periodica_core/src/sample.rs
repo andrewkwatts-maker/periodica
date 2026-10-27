@@ -47,7 +47,6 @@ use dashmap::DashMap;
 use once_cell::sync::Lazy;
 use serde_json::Value;
 
-use crate::data_loader::DATA;
 use crate::sample_models::{
     AnisotropicAxialModel, BackbonePathModel, HomogeneousModel, MicrostructureVoronoiModel,
     MixtureModel,
@@ -219,34 +218,29 @@ pub fn sample_entry(
 
 /// The bulk `Properties` dict for an entry.
 pub fn data_sheet(name: &str) -> Result<Value> {
-    Ok(props_of(&lookup_entry(name)?))
+    Ok(props_of(lookup_entry(name)?.as_ref()))
 }
 
-fn lookup_entry(name: &str) -> Result<Value> {
-    // Resolve through `Get` rather than a bare registry scan.
+fn lookup_entry(name: &str) -> Result<Arc<Value>> {
+    // Resolve through `Get`, the one resolution algorithm the Python API
+    // uses too, so `sample()` and `data_sheet()` see exactly the entry
+    // `Get(name)` returns.
     //
-    // `DataHub::find` walks a `DashMap`, whose iteration order is not
-    // deterministic, so a name present in more than one tier could resolve to
-    // a different entry than Python's `Get()` chose -- and then `data_sheet()`
-    // would report a different set of properties on different runs. Sharing
-    // one resolution algorithm is the only way parity can hold.
-    match crate::get::Get(name, None) {
-        Ok(v) => Ok(v),
-        // Fall back to the materials catalogue, which is deliberately outside
-        // the `Get` registry (see data_loader's module docs) but must still be
-        // samplable by the runtime and the designer app.
-        Err(e) => DATA
-            .read()
-            .materials
-            .get(name)
-            .map(|v| v.value().clone())
-            .ok_or_else(|| {
-                anyhow::Error::new(SampleError::UnknownName {
-                    name: name.to_string(),
-                    reason: e.to_string(),
-                })
-            }),
-    }
+    // No second, sampler-only fallback to the materials catalogue: an
+    // unscoped native `Get` already answers catalogue names (for
+    // `material_record`), so the sampler reaches exactly what `Get` does.
+    // Open (R2-3): Python's `Get` raises UnknownName for catalogue-only names
+    // while the native one returns the sheet, whose properties sit outside a
+    // `Properties` block and so sample as `None`. Only an unknown name maps to
+    // `SampleError::UnknownName`; every other `Get` failure (a collision, a
+    // malformed spec) propagates as itself.
+    crate::get::get_shared(crate::get::Spec::Text(name), None).map_err(|e| match e {
+        crate::get::GetError::UnknownName { .. } => anyhow::Error::new(SampleError::UnknownName {
+            name: name.to_string(),
+            reason: e.to_string(),
+        }),
+        other => anyhow::Error::new(other),
+    })
 }
 
 /// One-time registration of the built-in models.
@@ -509,6 +503,33 @@ mod tests {
     fn kind(err: anyhow::Error) -> SampleError {
         err.downcast::<SampleError>()
             .expect("sampler errors the facade maps must be typed")
+    }
+
+    #[test]
+    fn resolution_errors_keep_their_own_type() {
+        // A malformed spec used to be reported as an unknown name, because
+        // every `Get` failure fell through to the catalogue lookup and then to
+        // `SampleError::UnknownName`.
+        let data =
+            std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../src/periodica/data");
+        if !data.is_dir() {
+            return;
+        }
+        let _g = crate::data_loader::DATA_TEST_LOCK.lock();
+        crate::data_loader::load_all_tiers(&data).unwrap();
+        let err = sample("No_Such_Material_XYZ", "Density_kgm3", None, None).unwrap_err();
+        assert!(matches!(kind(err), SampleError::UnknownName { .. }));
+        assert_eq!(
+            sample("Aluminum-6061", "Density_kgm3", None, None).unwrap(),
+            2700.0
+        );
+        // Any other resolution failure is reported as itself, not as an
+        // unknown name.
+        let err = sample("{H=-2}", "Mass_amu", None, None).unwrap_err();
+        assert!(matches!(
+            err.downcast_ref::<crate::get::GetError>(),
+            Some(crate::get::GetError::InvalidSpec(_))
+        ));
     }
 
     #[test]
