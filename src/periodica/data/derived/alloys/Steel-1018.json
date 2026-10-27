@@ -48,6 +48,7 @@
     "MeltingPoint_K": 1798,
     "PoissonsRatio": 0.29,
     "ShearModulus_GPa": 79.3,
+    "StrainHardeningExponent": 0.25,
     "TensileStrength_MPa": 440,
     "ThermalConductivity_WmK": 51.9,
     "YieldStrength_MPa": 370,

@@ -21,7 +21,8 @@
         "HardnessHB": 126,
         "ThermalConductivity_WmK": 51.9,
         "MeltingPoint_K": 1798,
-        "ElectricalResistivity_ohmm": 1.43e-07
+        "ElectricalResistivity_ohmm": 1.43e-07,
+        "StrainHardeningExponent": 0.25
       },
       "field": {
         "model": "microstructure_voronoi",

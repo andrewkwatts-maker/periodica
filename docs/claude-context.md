@@ -1,6 +1,24 @@
-General engineering standards: ~/.claude/docs/standards.md.
+# periodica: working context
 
-# Periodica
+Detail behind CLAUDE.md. Read the section you need.
+
+## Layout
+
+```
+periodica/
+├── pyproject.toml
+├── rust/periodica_core/      # Rust crate (cdylib + lib)
+├── src/periodica/            # Python package
+│   ├── __init__.py           # public surface + _HAS_RUST guard
+│   ├── get.py / sample.py / export.py / folding.py / optimize.py
+│   ├── _dispatch.py          # Rust/Python dispatch helper
+│   └── _launcher.py          # periodica-app launcher
+│   └── data/active/          # material datasheets (JSON)
+└── tests/
+```
+
+Also `rust/periodica-mat` (typed SI material model, datasheet ingest) and `rust/periodica-runtime`
+(crystal SDFs, mass and inertia, weakpoint fracture; no pyo3, no filesystem).
 
 ## Versioning — 4 locations must stay in sync
 
@@ -17,17 +35,9 @@ After committing and tagging, create a **GitHub Release** from the tag to trigge
 
 > **Important:** `pyproject.toml version` is what PyPI indexes — not the git tag. Pre-release suffixes like `2.0.0a0` are **not** matched by `>=2.0.0` in pip. Always use clean `X.Y.Z` for stable releases.
 
-## Project Structure
+## Owner standards for Python repos
 
-```
-periodica/
-├── pyproject.toml
-├── rust/periodica_core/      # Rust crate (cdylib + lib)
-├── src/periodica/            # Python package
-│   ├── __init__.py           # public surface + _HAS_RUST guard
-│   ├── get.py / sample.py / export.py / folding.py / optimize.py
-│   ├── _dispatch.py          # Rust/Python dispatch helper
-│   └── _launcher.py          # periodica-app launcher
-├── data/active/              # 424 material datasheets (JSON)
-└── tests/
-```
+- A GUI uses KivyMD; the headless library (PyPI) and the GUI (periodica-app) live in separate repos.
+- `build.bat` plus a shell equivalent; lint (ruff), type-check (mypy or pyright) and test in the build;
+  at least 90% coverage before a release.
+- Up-to-date How-To docs in `docs/`.

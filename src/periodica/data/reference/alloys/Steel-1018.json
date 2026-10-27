@@ -6,5 +6,6 @@
   "TensileStrength_MPa": 440,
   "YieldStrength_MPa": 370,
   "MeltingPoint_K": 1798,
-  "source": "AISI 1018 cold-drawn, MatWeb / ASM Handbook"
+  "StrainHardeningExponent": 0.25,
+  "source": "AISI 1018 cold-drawn, MatWeb / ASM Handbook; StrainHardeningExponent 0.25 is the annealed Hollomon n (ASM Handbook Vol. 1, tensile data for low-carbon steels)"
 }
