@@ -9,17 +9,14 @@
 
 //! # fields
 //!
-//! Scalar fields over space, and where their values come from.
-//!
-//! The runtime samples geometry and material properties through plain
-//! closures ([`SdfFn`], [`DensityFn`], [`ToughnessFn`]) so it never needs an
-//! engine's SDF or expression types. [`MaterialFields`] lifts the uniform bulk
-//! values off an ingested datasheet so those closures can be fed from real
-//! data:
+//! [`MaterialFields`] lifts the uniform bulk values off an ingested datasheet:
+//! density, fracture toughness and crystal system. These are the material
+//! inputs that Dynameis (mass integration, fracture search) reads; the
+//! behaviour itself lives in Dynameis, not here.
 //!
 //! ```
 //! use periodica_mat::{ingest, CrystalSystem};
-//! use periodica_runtime::{integrate_mass, MaterialFields, WeakpointGrid};
+//! use periodica_runtime::MaterialFields;
 //! use serde_json::json;
 //!
 //! let record = ingest(
@@ -33,38 +30,13 @@
 //! .unwrap();
 //! let fields = MaterialFields::from_record(&record);
 //! assert_eq!(fields.crystal_system, CrystalSystem::Bcc);
-//!
-//! let rho = fields.density_kg_m3.unwrap();
-//! let k_ic = fields.fracture_toughness_pa_sqrt_m.unwrap(); // 50e6, SI
-//!
-//! let cube = |_p: [f64; 3]| -1.0;
-//! let bounds = ([0.0; 3], [0.1; 3]);
-//! let m = integrate_mass(&cube, &|_p| rho, bounds, 4096, 0).unwrap();
-//! assert!((m.total_mass_kg - 7.87).abs() < 1e-9);
-//! let grid = WeakpointGrid::build(bounds, (4, 4, 4), &|_p| k_ic).unwrap();
-//! assert_eq!(grid.len(), 64);
+//! assert_eq!(fields.density_kg_m3, Some(7870.0));
+//! assert_eq!(fields.fracture_toughness_pa_sqrt_m, Some(50.0e6));
 //! ```
 
 use periodica_mat::{CrystalSystem, MaterialRecord, PropertyId};
 
 use crate::crystal::LatticeKind;
-
-/// Signed-distance sampler: distance in metres at a point in metres.
-/// Negative inside, positive outside.
-pub type SdfFn<'a> = &'a dyn Fn([f64; 3]) -> f64;
-
-/// Density sampler: local density in kg/m^3 at a point in metres.
-pub type DensityFn<'a> = &'a dyn Fn([f64; 3]) -> f64;
-
-/// Fracture-toughness sampler: local mode-I fracture toughness `K_IC` in
-/// Pa*m^0.5 (SI) at a point in metres.
-///
-/// SI is a deliberate change from the engine original, which documented
-/// MPa*m^0.5: `periodica-mat` stores every property in SI, so a value read
-/// straight off a [`MaterialRecord`] is already in Pa*m^0.5. Only the
-/// *relative* toughness across a grid affects the crack path; the absolute
-/// scale only moves `FracturePlane::weakpoint_confidence`.
-pub type ToughnessFn<'a> = &'a dyn Fn([f64; 3]) -> f64;
 
 /// The uniform bulk values of a datasheet that the runtime's fields need.
 ///

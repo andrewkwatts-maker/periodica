@@ -15,7 +15,7 @@ license.workspace = true
 authors.workspace = true
 repository.workspace = true
 rust-version.workspace = true
-description = "Spatial runtime for periodica: crystal SDFs, mass/inertia integration and weakpoint fracture. No pyo3, no filesystem access."
+description = "Material runtime for periodica: crystal SDFs, sampling and datasheet-derived material fields. No pyo3, no filesystem access."
 
 [lib]
 name = "periodica_runtime"
@@ -26,7 +26,6 @@ name = "periodica_runtime"
 periodica-mat.workspace = true
 serde.workspace = true
 thiserror.workspace = true
-nalgebra.workspace = true
 
 [dev-dependencies]
 approx.workspace = true
