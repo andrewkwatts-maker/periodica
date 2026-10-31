@@ -1,0 +1,10 @@
+{
+  "G":        {"value": 6.67430e-11,       "uncertainty": 1.5e-15,    "unit": "m^3 kg^-1 s^-2", "source": "CODATA 2018"},
+  "c":        {"value": 299792458.0,       "uncertainty": 0.0,        "unit": "m s^-1",         "source": "CODATA 2018 (exact, SI definition)"},
+  "h":        {"value": 6.62607015e-34,    "uncertainty": 0.0,        "unit": "J s",            "source": "CODATA 2018 (exact, SI definition)"},
+  "k_B":      {"value": 1.380649e-23,      "uncertainty": 0.0,        "unit": "J K^-1",         "source": "CODATA 2018 (exact, SI definition)"},
+  "sigma_SB": {"value": 5.670374419e-8,    "uncertainty": 0.0,        "unit": "W m^-2 K^-4",    "source": "CODATA 2018 (derived from exact h, c, k_B)"},
+  "H0":       {"value": 70.0,              "uncertainty": 0.5,        "unit": "km s^-1 Mpc^-1", "source": "Planck 2018 central value as used by ExOudenos (rounded)"},
+  "Omega_m":  {"value": 0.3153,            "uncertainty": 0.0073,     "unit": "1",              "source": "Planck 2018 (TT,TE,EE+lowE+lensing)"},
+  "Omega_Lambda": {"value": 0.6847,        "uncertainty": 0.0073,     "unit": "1",              "source": "Planck 2018 (TT,TE,EE+lowE+lensing)"}
+}

@@ -29,6 +29,7 @@ extension-module = ["python", "pyo3/extension-module"]
 
 [dependencies]
 periodica-mat.workspace = true
+arithma_core.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 ndarray.workspace = true

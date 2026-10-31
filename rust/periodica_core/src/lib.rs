@@ -50,6 +50,7 @@
 #![deny(unsafe_op_in_unsafe_fn)]
 
 pub mod alloy;
+pub mod constants;
 pub mod data_loader;
 pub mod export;
 pub mod fourier_bake;
