@@ -65,6 +65,7 @@ pub mod derive;
 pub mod ingest;
 pub mod jsonc;
 pub mod mix;
+pub mod optics;
 pub mod property;
 pub mod record;
 pub mod table;

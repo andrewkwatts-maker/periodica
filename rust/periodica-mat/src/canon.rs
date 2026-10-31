@@ -105,6 +105,7 @@ const MPA: f64 = 1.0e6;
 const KJ: f64 = 1.0e3;
 const G_CM3_TO_KG_M3: f64 = 1.0e3;
 const UM: f64 = 1.0e-6;
+const UM2: f64 = 1.0e-12;
 const PM: f64 = 1.0e-12;
 const MM: f64 = 1.0e-3;
 const MM2_S: f64 = 1.0e-6;
@@ -243,6 +244,16 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
         "transmittancevisiblepercent" => map!(Transmittance, PCT_TO_FRAC),
         "abbenumber" => map!(AbbeNumber),
         "emissivity" => map!(Emissivity),
+        "sellmeierb1" => map!(SellmeierB1),
+        "sellmeierb2" => map!(SellmeierB2),
+        "sellmeierb3" => map!(SellmeierB3),
+        "sellmeierc1um2" => map!(SellmeierC1, UM2),
+        "sellmeierc2um2" => map!(SellmeierC2, UM2),
+        "sellmeierc3um2" => map!(SellmeierC3, UM2),
+        "drudeplasmafrequencyrads" => map!(DrudePlasmaFrequency),
+        "drudedampingrads" => map!(DrudeDamping),
+        "epsiloninfinity" => map!(EpsilonInfinity),
+        "emissiontemperaturek" => map!(EmissionTemperature),
         "surfaceroughnessum" => map!(SurfaceRoughnessRa, UM),
 
         // ── Misc physical ────────────────────────────────────────────────

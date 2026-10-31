@@ -16,6 +16,7 @@ serde.workspace = true
 serde_json.workspace = true
 glam.workspace = true
 thiserror.workspace = true
+arithma_core.workspace = true
 
 [dev-dependencies]
 approx.workspace = true

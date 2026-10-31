@@ -171,6 +171,16 @@ define_properties! {
     Absorptance              => ("1",        "Absorptance"),
     Emissivity               => ("1",        "Emissivity"),
     AbbeNumber               => ("1",        "Abbe Number"),
+    SellmeierB1              => ("1",        "Sellmeier B1"),
+    SellmeierB2              => ("1",        "Sellmeier B2"),
+    SellmeierB3              => ("1",        "Sellmeier B3"),
+    SellmeierC1              => ("m^2",      "Sellmeier C1"),
+    SellmeierC2              => ("m^2",      "Sellmeier C2"),
+    SellmeierC3              => ("m^2",      "Sellmeier C3"),
+    DrudePlasmaFrequency     => ("rad/s",    "Drude Plasma Frequency"),
+    DrudeDamping             => ("rad/s",    "Drude Damping Rate"),
+    EpsilonInfinity          => ("1",        "High-Frequency Permittivity"),
+    EmissionTemperature      => ("K",        "Emission Temperature"),
     SurfaceRoughnessRa       => ("m",        "Surface Roughness Ra"),
 
     // ── Atomic (element-tier datasheets) ─────────────────────────────────
