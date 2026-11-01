@@ -1,0 +1,683 @@
+{
+  "_provenance": {
+    "dataset": "AME2020 atomic masses (the subset periodica uses)",
+    "publisher": "Atomic Mass Data Center (AMDC), distributed by the IAEA Nuclear Data Section",
+    "citation": [
+      "W.J. Huang, M. Wang, F.G. Kondev, G. Audi, S. Naimi, The AME2020 atomic mass evaluation (I), Chinese Phys. C 45, 030002 (2021), doi:10.1088/1674-1137/abddb0",
+      "M. Wang, W.J. Huang, F.G. Kondev, G. Audi, S. Naimi, The AME2020 atomic mass evaluation (II), Chinese Phys. C 45, 030003 (2021), doi:10.1088/1674-1137/abddaf"
+    ],
+    "source_url": "https://www-nds.iaea.org/amdc/ame2020/mass_1.mas20.txt (file mass.mas20, dated 3 Mar 2021)",
+    "retrieved": "2026-10-02",
+    "units": "unified atomic mass units (u); neutral-atom masses, electrons included",
+    "extraction": "ATOMIC MASS column (integer u + micro-u) and its uncertainty, converted to u. 'estimated' marks values AME2020 flags with '#' (extrapolated from systematics, not measured).",
+    "selection": "Every nuclide in scripts/inputs/isotopes.json, plus the nuclide named by the Composition of each periodic_table.json atom whose element has no CIAAW standard atomic weight."
+  },
+  "nuclides": [
+    {
+      "nuclide": "H-1",
+      "Z": 1,
+      "A": 1,
+      "N": 0,
+      "atomic_mass_u": 1.007825031898,
+      "uncertainty_u": 1.4e-11,
+      "estimated": false
+    },
+    {
+      "nuclide": "H-2",
+      "Z": 1,
+      "A": 2,
+      "N": 1,
+      "atomic_mass_u": 2.014101777844,
+      "uncertainty_u": 1.5e-11,
+      "estimated": false
+    },
+    {
+      "nuclide": "H-3",
+      "Z": 1,
+      "A": 3,
+      "N": 2,
+      "atomic_mass_u": 3.01604928132,
+      "uncertainty_u": 8e-11,
+      "estimated": false
+    },
+    {
+      "nuclide": "He-3",
+      "Z": 2,
+      "A": 3,
+      "N": 1,
+      "atomic_mass_u": 3.01602932197,
+      "uncertainty_u": 6e-11,
+      "estimated": false
+    },
+    {
+      "nuclide": "He-4",
+      "Z": 2,
+      "A": 4,
+      "N": 2,
+      "atomic_mass_u": 4.00260325413,
+      "uncertainty_u": 1.6e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "Li-6",
+      "Z": 3,
+      "A": 6,
+      "N": 3,
+      "atomic_mass_u": 6.01512288742,
+      "uncertainty_u": 1.55e-09,
+      "estimated": false
+    },
+    {
+      "nuclide": "Li-7",
+      "Z": 3,
+      "A": 7,
+      "N": 4,
+      "atomic_mass_u": 7.01600343426,
+      "uncertainty_u": 4.5e-09,
+      "estimated": false
+    },
+    {
+      "nuclide": "Be-9",
+      "Z": 4,
+      "A": 9,
+      "N": 5,
+      "atomic_mass_u": 9.012183062,
+      "uncertainty_u": 8.2e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "B-10",
+      "Z": 5,
+      "A": 10,
+      "N": 5,
+      "atomic_mass_u": 10.012936862,
+      "uncertainty_u": 1.6e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "B-11",
+      "Z": 5,
+      "A": 11,
+      "N": 6,
+      "atomic_mass_u": 11.009305166,
+      "uncertainty_u": 1.3e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "C-12",
+      "Z": 6,
+      "A": 12,
+      "N": 6,
+      "atomic_mass_u": 12.0,
+      "uncertainty_u": 0.0,
+      "estimated": false
+    },
+    {
+      "nuclide": "C-13",
+      "Z": 6,
+      "A": 13,
+      "N": 7,
+      "atomic_mass_u": 13.00335483534,
+      "uncertainty_u": 2.5e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "C-14",
+      "Z": 6,
+      "A": 14,
+      "N": 8,
+      "atomic_mass_u": 14.00324198862,
+      "uncertainty_u": 4.03e-09,
+      "estimated": false
+    },
+    {
+      "nuclide": "N-14",
+      "Z": 7,
+      "A": 14,
+      "N": 7,
+      "atomic_mass_u": 14.00307400425,
+      "uncertainty_u": 2.4e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "N-15",
+      "Z": 7,
+      "A": 15,
+      "N": 8,
+      "atomic_mass_u": 15.00010889827,
+      "uncertainty_u": 6.2e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "O-16",
+      "Z": 8,
+      "A": 16,
+      "N": 8,
+      "atomic_mass_u": 15.99491461926,
+      "uncertainty_u": 3.2e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "O-17",
+      "Z": 8,
+      "A": 17,
+      "N": 9,
+      "atomic_mass_u": 16.99913175595,
+      "uncertainty_u": 6.9e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "O-18",
+      "Z": 8,
+      "A": 18,
+      "N": 10,
+      "atomic_mass_u": 17.99915961214,
+      "uncertainty_u": 6.9e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "F-19",
+      "Z": 9,
+      "A": 19,
+      "N": 10,
+      "atomic_mass_u": 18.99840316207,
+      "uncertainty_u": 8.8e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "Ne-20",
+      "Z": 10,
+      "A": 20,
+      "N": 10,
+      "atomic_mass_u": 19.99244017525,
+      "uncertainty_u": 1.65e-09,
+      "estimated": false
+    },
+    {
+      "nuclide": "Na-23",
+      "Z": 11,
+      "A": 23,
+      "N": 12,
+      "atomic_mass_u": 22.98976928195,
+      "uncertainty_u": 1.94e-09,
+      "estimated": false
+    },
+    {
+      "nuclide": "Mg-24",
+      "Z": 12,
+      "A": 24,
+      "N": 12,
+      "atomic_mass_u": 23.985041689,
+      "uncertainty_u": 1.3e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "Al-27",
+      "Z": 13,
+      "A": 27,
+      "N": 14,
+      "atomic_mass_u": 26.981538408,
+      "uncertainty_u": 5e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "Si-28",
+      "Z": 14,
+      "A": 28,
+      "N": 14,
+      "atomic_mass_u": 27.97692653442,
+      "uncertainty_u": 5.5e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "P-31",
+      "Z": 15,
+      "A": 31,
+      "N": 16,
+      "atomic_mass_u": 30.97376199768,
+      "uncertainty_u": 8e-10,
+      "estimated": false
+    },
+    {
+      "nuclide": "S-32",
+      "Z": 16,
+      "A": 32,
+      "N": 16,
+      "atomic_mass_u": 31.97207117354,
+      "uncertainty_u": 1.41e-09,
+      "estimated": false
+    },
+    {
+      "nuclide": "Cl-35",
+      "Z": 17,
+      "A": 35,
+      "N": 18,
+      "atomic_mass_u": 34.968852694,
+      "uncertainty_u": 3.8e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "Cl-37",
+      "Z": 17,
+      "A": 37,
+      "N": 20,
+      "atomic_mass_u": 36.965902573,
+      "uncertainty_u": 5.5e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "K-39",
+      "Z": 19,
+      "A": 39,
+      "N": 20,
+      "atomic_mass_u": 38.96370648482,
+      "uncertainty_u": 4.89e-09,
+      "estimated": false
+    },
+    {
+      "nuclide": "K-40",
+      "Z": 19,
+      "A": 40,
+      "N": 21,
+      "atomic_mass_u": 39.963998165,
+      "uncertainty_u": 6e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "Ca-40",
+      "Z": 20,
+      "A": 40,
+      "N": 20,
+      "atomic_mass_u": 39.96259085,
+      "uncertainty_u": 2.2e-08,
+      "estimated": false
+    },
+    {
+      "nuclide": "Fe-56",
+      "Z": 26,
+      "A": 56,
+      "N": 30,
+      "atomic_mass_u": 55.934935537,
+      "uncertainty_u": 2.87e-07,
+      "estimated": false
+    },
+    {
+      "nuclide": "Fe-57",
+      "Z": 26,
+      "A": 57,
+      "N": 31,
+      "atomic_mass_u": 56.93539195,
+      "uncertainty_u": 2.87e-07,
+      "estimated": false
+    },
+    {
+      "nuclide": "Co-60",
+      "Z": 27,
+      "A": 60,
+      "N": 33,
+      "atomic_mass_u": 59.933815536,
+      "uncertainty_u": 4.33e-07,
+      "estimated": false
+    },
+    {
+      "nuclide": "Cu-63",
+      "Z": 29,
+      "A": 63,
+      "N": 34,
+      "atomic_mass_u": 62.929597119,
+      "uncertainty_u": 4.57e-07,
+      "estimated": false
+    },
+    {
+      "nuclide": "Tc-97",
+      "Z": 43,
+      "A": 97,
+      "N": 54,
+      "atomic_mass_u": 96.90636072,
+      "uncertainty_u": 4.42e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "I-131",
+      "Z": 53,
+      "A": 131,
+      "N": 78,
+      "atomic_mass_u": 130.906126375,
+      "uncertainty_u": 6.49e-07,
+      "estimated": false
+    },
+    {
+      "nuclide": "Cs-137",
+      "Z": 55,
+      "A": 137,
+      "N": 82,
+      "atomic_mass_u": 136.907089296,
+      "uncertainty_u": 3.24e-07,
+      "estimated": false
+    },
+    {
+      "nuclide": "Pm-145",
+      "Z": 61,
+      "A": 145,
+      "N": 84,
+      "atomic_mass_u": 144.912755748,
+      "uncertainty_u": 3.01e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Po-209",
+      "Z": 84,
+      "A": 209,
+      "N": 125,
+      "atomic_mass_u": 208.982430361,
+      "uncertainty_u": 1.91e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "At-210",
+      "Z": 85,
+      "A": 210,
+      "N": 125,
+      "atomic_mass_u": 209.987147423,
+      "uncertainty_u": 8.26e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Rn-222",
+      "Z": 86,
+      "A": 222,
+      "N": 136,
+      "atomic_mass_u": 222.017576017,
+      "uncertainty_u": 2.09e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Fr-223",
+      "Z": 87,
+      "A": 223,
+      "N": 136,
+      "atomic_mass_u": 223.019734241,
+      "uncertainty_u": 2.07e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Ra-226",
+      "Z": 88,
+      "A": 226,
+      "N": 138,
+      "atomic_mass_u": 226.025408186,
+      "uncertainty_u": 2.07e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Ac-227",
+      "Z": 89,
+      "A": 227,
+      "N": 138,
+      "atomic_mass_u": 227.027750594,
+      "uncertainty_u": 2.07e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "U-235",
+      "Z": 92,
+      "A": 235,
+      "N": 143,
+      "atomic_mass_u": 235.043928117,
+      "uncertainty_u": 1.2e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "U-238",
+      "Z": 92,
+      "A": 238,
+      "N": 146,
+      "atomic_mass_u": 238.050786936,
+      "uncertainty_u": 1.6e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Np-237",
+      "Z": 93,
+      "A": 237,
+      "N": 144,
+      "atomic_mass_u": 237.04817164,
+      "uncertainty_u": 1.2e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Pu-239",
+      "Z": 94,
+      "A": 239,
+      "N": 145,
+      "atomic_mass_u": 239.052161596,
+      "uncertainty_u": 1.19e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Pu-244",
+      "Z": 94,
+      "A": 244,
+      "N": 150,
+      "atomic_mass_u": 244.064204401,
+      "uncertainty_u": 2.52e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Am-243",
+      "Z": 95,
+      "A": 243,
+      "N": 148,
+      "atomic_mass_u": 243.061379889,
+      "uncertainty_u": 1.49e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Cm-247",
+      "Z": 96,
+      "A": 247,
+      "N": 151,
+      "atomic_mass_u": 247.070352678,
+      "uncertainty_u": 4.08e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Bk-247",
+      "Z": 97,
+      "A": 247,
+      "N": 150,
+      "atomic_mass_u": 247.070305889,
+      "uncertainty_u": 5.57e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Cf-251",
+      "Z": 98,
+      "A": 251,
+      "N": 153,
+      "atomic_mass_u": 251.079587171,
+      "uncertainty_u": 4.19e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Es-252",
+      "Z": 99,
+      "A": 252,
+      "N": 153,
+      "atomic_mass_u": 252.082979173,
+      "uncertainty_u": 5.37e-05,
+      "estimated": false
+    },
+    {
+      "nuclide": "Fm-257",
+      "Z": 100,
+      "A": 257,
+      "N": 157,
+      "atomic_mass_u": 257.095105419,
+      "uncertainty_u": 4.67e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Md-258",
+      "Z": 101,
+      "A": 258,
+      "N": 157,
+      "atomic_mass_u": 258.098433634,
+      "uncertainty_u": 3.73e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "No-259",
+      "Z": 102,
+      "A": 259,
+      "N": 157,
+      "atomic_mass_u": 259.100998364,
+      "uncertainty_u": 6.83e-06,
+      "estimated": false
+    },
+    {
+      "nuclide": "Lr-266",
+      "Z": 103,
+      "A": 266,
+      "N": 163,
+      "atomic_mass_u": 266.119874,
+      "uncertainty_u": 0.000579,
+      "estimated": true
+    },
+    {
+      "nuclide": "Rf-267",
+      "Z": 104,
+      "A": 267,
+      "N": 163,
+      "atomic_mass_u": 267.121787,
+      "uncertainty_u": 0.000617,
+      "estimated": true
+    },
+    {
+      "nuclide": "Db-268",
+      "Z": 105,
+      "A": 268,
+      "N": 163,
+      "atomic_mass_u": 268.125669,
+      "uncertainty_u": 0.000568,
+      "estimated": true
+    },
+    {
+      "nuclide": "Sg-269",
+      "Z": 106,
+      "A": 269,
+      "N": 163,
+      "atomic_mass_u": 269.128495,
+      "uncertainty_u": 0.000395,
+      "estimated": true
+    },
+    {
+      "nuclide": "Bh-270",
+      "Z": 107,
+      "A": 270,
+      "N": 163,
+      "atomic_mass_u": 270.133366,
+      "uncertainty_u": 0.00032,
+      "estimated": true
+    },
+    {
+      "nuclide": "Hs-269",
+      "Z": 108,
+      "A": 269,
+      "N": 161,
+      "atomic_mass_u": 269.133649,
+      "uncertainty_u": 0.000141,
+      "estimated": true
+    },
+    {
+      "nuclide": "Mt-278",
+      "Z": 109,
+      "A": 278,
+      "N": 169,
+      "atomic_mass_u": 278.156487,
+      "uncertainty_u": 0.000621,
+      "estimated": true
+    },
+    {
+      "nuclide": "Ds-281",
+      "Z": 110,
+      "A": 281,
+      "N": 171,
+      "atomic_mass_u": 281.164545,
+      "uncertainty_u": 0.000529,
+      "estimated": true
+    },
+    {
+      "nuclide": "Rg-282",
+      "Z": 111,
+      "A": 282,
+      "N": 171,
+      "atomic_mass_u": 282.169343,
+      "uncertainty_u": 0.000631,
+      "estimated": true
+    },
+    {
+      "nuclide": "Cn-285",
+      "Z": 112,
+      "A": 285,
+      "N": 173,
+      "atomic_mass_u": 285.177227,
+      "uncertainty_u": 0.000544,
+      "estimated": true
+    },
+    {
+      "nuclide": "Nh-286",
+      "Z": 113,
+      "A": 286,
+      "N": 173,
+      "atomic_mass_u": 286.182456,
+      "uncertainty_u": 0.000634,
+      "estimated": true
+    },
+    {
+      "nuclide": "Fl-289",
+      "Z": 114,
+      "A": 289,
+      "N": 175,
+      "atomic_mass_u": 289.190517,
+      "uncertainty_u": 0.000548,
+      "estimated": true
+    },
+    {
+      "nuclide": "Mc-290",
+      "Z": 115,
+      "A": 290,
+      "N": 175,
+      "atomic_mass_u": 290.196235,
+      "uncertainty_u": 0.000635,
+      "estimated": true
+    },
+    {
+      "nuclide": "Lv-293",
+      "Z": 116,
+      "A": 293,
+      "N": 177,
+      "atomic_mass_u": 293.204583,
+      "uncertainty_u": 0.000553,
+      "estimated": true
+    },
+    {
+      "nuclide": "Ts-294",
+      "Z": 117,
+      "A": 294,
+      "N": 177,
+      "atomic_mass_u": 294.21084,
+      "uncertainty_u": 0.000637,
+      "estimated": true
+    },
+    {
+      "nuclide": "Og-294",
+      "Z": 118,
+      "A": 294,
+      "N": 176,
+      "atomic_mass_u": 294.213979,
+      "uncertainty_u": 0.000594,
+      "estimated": true
+    }
+  ]
+}

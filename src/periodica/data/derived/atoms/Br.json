@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 35,
-  "Mass_MeVc2": 74198.28655173,
-  "Mass_amu": 79.65513293035227,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of Br",
+  "Mass_MeVc2": 74430.10475976768,
+  "Mass_amu": 79.904,
+  "Mass_kg": 1.326837135776064e-25,
   "Name": "Br",
   "Symbol": "Br"
 }

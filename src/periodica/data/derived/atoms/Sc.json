@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 21,
-  "Mass_MeVc2": 42264.014921789996,
-  "Mass_amu": 45.372283959931366,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Sc",
+  "Mass_MeVc2": 41876.162239442,
+  "Mass_amu": 44.955907,
+  "Mass_kg": 7.465103984793642e-26,
   "Name": "Sc",
   "Symbol": "Sc"
 }

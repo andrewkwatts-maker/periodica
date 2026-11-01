@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 15,
-  "Mass_MeVc2": 29114.79303497,
-  "Mass_amu": 31.256014353150974,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of P-31",
+  "Mass_MeVc2": 28851.87663059964,
+  "Mass_amu": 30.97376199768,
+  "Mass_kg": 5.14331418367181e-26,
   "Name": "P-31"
 }

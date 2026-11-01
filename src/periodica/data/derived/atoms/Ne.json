@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 18783.4850763,
-  "Mass_amu": 20.164899624800647,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ne",
+  "Mass_MeVc2": 18797.271538604873,
+  "Mass_amu": 20.1797,
+  "Mass_kg": 3.350918020226802e-26,
   "Name": "Ne",
   "Symbol": "Ne"
 }

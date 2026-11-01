@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 87,
-  "Mass_MeVc2": 209455.02576929,
-  "Mass_amu": 224.85920761731566,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Fr-223; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 207741.56716876724,
+  "Mass_amu": 223.019734241,
+  "Mass_kg": 3.703329813299302e-25,
   "Name": "Fr",
   "Symbol": "Fr"
 }

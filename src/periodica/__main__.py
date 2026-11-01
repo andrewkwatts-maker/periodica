@@ -253,7 +253,7 @@ def cmd_fold(args: argparse.Namespace) -> int:
             # Try common name -> UniProt mapping for the bundled set.
             uid = {
                 "Crambin":         "P01542",
-                "Insulin_Chain_A": "P01308",
+                "Insulin_A_Chain": "P01308",
                 "Insulin":         "P01308",
                 "Ubiquitin":       "P0CG48",
                 "Lysozyme":        "P00698",

@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 54,
-  "Mass_MeVc2": 119283.85573425998,
-  "Mass_amu": 128.0564798263025,
-  "Mass_kg": 0,
-  "Name": "I-"
+  "MassSource": "CIAAW 2021 standard atomic weight of I, plus 1 electron mass",
+  "Mass_MeVc2": 118211.27637468583,
+  "Mass_amu": 126.90501857990907,
+  "Mass_kg": 2.1073074109953787e-25,
+  "Name": "I-",
+  "Symbol": "I-"
 }

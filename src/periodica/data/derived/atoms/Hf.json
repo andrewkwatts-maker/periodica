@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 72,
-  "Mass_MeVc2": 169065.44768808,
-  "Mass_amu": 181.49921427276468,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Hf",
+  "Mass_MeVc2": 166258.65636453612,
+  "Mass_amu": 178.486,
+  "Mass_kg": 2.963829758411676e-25,
   "Name": "Hf",
   "Symbol": "Hf"
 }

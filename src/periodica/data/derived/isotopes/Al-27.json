@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 13,
-  "Mass_MeVc2": 25358.09601971,
-  "Mass_amu": 27.223034428190843,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Al-27",
+  "Mass_MeVc2": 25133.143901270716,
+  "Mass_amu": 26.981538408,
+  "Mass_kg": 4.4803898603452365e-26,
   "Name": "Al-27"
 }

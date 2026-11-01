@@ -27,9 +27,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 21.500000000000004,
-  "Mass_MeVc2": 44011.2154372522,
-  "Mass_amu": 47.2479807688884,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 43535.10228685059,
+  "Mass_amu": 46.736852304,
+  "Mass_kg": 7.760836910070622e-26,
   "Name": "Titanium-Ti6Al4V",
   "Properties": {
     "Density_kgm3": 4430,

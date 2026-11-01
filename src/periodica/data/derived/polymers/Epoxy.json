@@ -27,9 +27,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 182,
-  "Mass_MeVc2": 319309.85829618,
-  "Mass_amu": 342.7932151885719,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 317098.290851714,
+  "Mass_amu": 340.419,
+  "Mass_kg": 5.652790485129054e-25,
   "Name": "Epoxy",
   "Properties": {
     "Density_kgm3": 1200,

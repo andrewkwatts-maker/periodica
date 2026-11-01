@@ -6,8 +6,8 @@
   "Classification": ["Boson", "Scalar Boson", "Fundamental Particle"],
   "Charge_e": 0,
   "Mass_MeVc2": 125100.0, // ~125.1 GeV/c²
-  "Mass_kg": 2.230713e-25,
-  "Mass_amu": 134.186,
+  "Mass_kg": 2.23011006395e-25,
+  "Mass_amu": 134.3003672,
   "Spin_hbar": 0.0, // A scalar boson
   "MagneticDipoleMoment_J_T": 0.0,
   "LeptonNumber_L": 0,

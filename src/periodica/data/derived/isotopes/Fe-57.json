@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 26,
-  "Mass_MeVc2": 53534.888300980005,
-  "Mass_amu": 57.47206360423169,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Fe-57",
+  "Mass_MeVc2": 53034.98182039615,
+  "Mass_amu": 56.93539195,
+  "Mass_kg": 9.454344260515815e-26,
   "Name": "Fe-57"
 }

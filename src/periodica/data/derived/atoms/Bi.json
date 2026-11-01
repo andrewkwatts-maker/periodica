@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 83,
-  "Mass_MeVc2": 196304.23921564998,
-  "Mass_amu": 210.7412582716954,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Bi",
+  "Mass_MeVc2": 194664.01012137256,
+  "Mass_amu": 208.9804,
+  "Mass_kg": 3.4702011835369462e-25,
   "Name": "Bi",
   "Symbol": "Bi"
 }

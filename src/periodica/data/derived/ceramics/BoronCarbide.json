@@ -21,9 +21,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 26,
-  "Mass_MeVc2": 52595.32288046,
-  "Mass_amu": 56.46339868828169,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 51465.980652807426,
+  "Mass_amu": 55.251000000000005,
+  "Mass_kg": 9.17464439687166e-26,
   "Name": "BoronCarbide",
   "Properties": {
     "CompressiveStrength_MPa": 4500,

@@ -21,9 +21,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 24,
-  "Mass_MeVc2": 39442.97166,
-  "Mass_amu": 42.343769603821556,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 39198.20332393602,
+  "Mass_amu": 42.081,
+  "Mass_kg": 6.98771444615946e-26,
   "Name": "Polypropylene",
   "Properties": {
     "Density_kgm3": 905,

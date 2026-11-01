@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 84,
-  "Mass_MeVc2": 196303.45688224,
-  "Mass_amu": 210.74041840227545,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Po-209; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 194665.90139066987,
+  "Mass_amu": 208.982430361,
+  "Mass_kg": 3.4702348984745446e-25,
   "Name": "Po",
   "Symbol": "Po"
 }

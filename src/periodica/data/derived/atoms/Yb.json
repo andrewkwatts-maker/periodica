@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 70,
-  "Mass_MeVc2": 163429.61983178,
-  "Mass_amu": 175.44890451590456,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Yb",
+  "Mass_MeVc2": 161190.39695326888,
+  "Mass_amu": 173.045,
+  "Mass_kg": 2.8734798277979696e-25,
   "Name": "Yb",
   "Symbol": "Yb"
 }

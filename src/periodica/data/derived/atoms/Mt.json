@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 109,
-  "Mass_MeVc2": 261113.91256286998,
-  "Mass_amu": 280.3173008673271,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Mt-278 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 259101.12719036543,
+  "Mass_amu": 278.156487,
+  "Mass_kg": 4.618897132917151e-25,
   "Name": "Mt",
   "Symbol": "Mt"
 }

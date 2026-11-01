@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 110,
-  "Mass_MeVc2": 263931.82649102004,
-  "Mass_amu": 283.34245574575715,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Ds-281 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 261903.11547710266,
+  "Mass_amu": 281.164545,
+  "Mass_kg": 4.668847111153136e-25,
   "Name": "Ds",
   "Symbol": "Ds"
 }

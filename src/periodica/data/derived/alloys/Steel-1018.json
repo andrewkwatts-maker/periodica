@@ -37,9 +37,9 @@
     }
   },
   "LeptonNumber_L": 25.799999999999997,
-  "Mass_MeVc2": 52182.0705621132,
-  "Mass_amu": 56.01975409914767,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 51610.97702479012,
+  "Mass_amu": 55.406659999999995,
+  "Mass_kg": 9.200492347982355e-26,
   "Name": "Steel-1018",
   "Properties": {
     "Density_kgm3": 7870,

@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 1,
-  "Mass_MeVc2": 1878.3485076299999,
-  "Mass_amu": 2.016489962480065,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of H-2",
+  "Mass_MeVc2": 1876.123927735323,
+  "Mass_amu": 2.014101777844,
+  "Mass_kg": 3.3444946862184765e-27,
   "Name": "H-2"
 }

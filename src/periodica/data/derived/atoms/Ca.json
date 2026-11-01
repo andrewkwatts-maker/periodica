@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 20,
-  "Mass_MeVc2": 37566.9701526,
-  "Mass_amu": 40.329799249601294,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ca",
+  "Mass_MeVc2": 37332.42063678876,
+  "Mass_amu": 40.078,
+  "Mass_kg": 6.655108471119481e-26,
   "Name": "Ca",
   "Symbol": "Ca"
 }

@@ -29,11 +29,13 @@
 //!
 //! ## What it does now
 //!
-//! The tier list is read from `data/config/composition_rules.json` -- the same
-//! file `periodica.get._tier_sources` reads -- rather than being hardcoded a
-//! second time. Tiers are the four `tier_definitions` entries plus every
-//! subdirectory of `derived_root`, which reproduces Python's `list_tiers()`
-//! exactly.
+//! The tier list is read from `data/config/composition_rules.json` (parsed once
+//! per load into [`CompositionRules`], kept on the hub for the composer) rather
+//! than being hardcoded. Tiers are the `tier_definitions` entries whose
+//! directory exists plus every subdirectory of `derived_root`.
+//!
+//! Files are read in file-name (byte) order, so collision and tie resolution
+//! no longer depends on the platform's path sort (D6).
 //!
 //! ## The materials catalogue
 //!
@@ -48,6 +50,7 @@
 //! unchanged; the rich data stops being unreachable.
 
 use std::path::{Path, PathBuf};
+use std::sync::Arc;
 
 use anyhow::{anyhow, Context, Result};
 use dashmap::DashMap;
@@ -55,6 +58,9 @@ use once_cell::sync::Lazy;
 use parking_lot::RwLock;
 use periodica_mat::jsonc;
 use serde_json::Value;
+
+use crate::rules::CompositionRules;
+pub use crate::rules::TierSource;
 
 /// Data roots scanned for the materials catalogue, in precedence order.
 /// Earlier roots win when the same stem appears twice.
@@ -89,9 +95,11 @@ pub struct DataHub {
     /// `tier_definitions` followed by the `derived/` subdirectories, matching
     /// Python's `_tier_sources()`.
     pub order: Vec<String>,
-    /// Priority-resolved name index, mirroring Python's `_Registry`.
-    /// This is what `Get()` resolves through -- see [`crate::registry`].
+    /// Priority-resolved name index. This is what `Get()` resolves through --
+    /// see [`crate::registry`].
     pub registry: crate::registry::Registry,
+    /// The composition rules the registry was built with, parsed once.
+    pub rules: Arc<CompositionRules>,
     /// The `data/` directory used at last load.
     pub root: Option<PathBuf>,
 }
@@ -163,69 +171,13 @@ pub static DATA: Lazy<RwLock<DataHub>> = Lazy::new(|| RwLock::new(DataHub::empty
 #[cfg(test)]
 pub(crate) static DATA_TEST_LOCK: parking_lot::Mutex<()> = parking_lot::Mutex::new(());
 
-/// One tier as declared in `composition_rules.json`.
-#[derive(Debug, Clone)]
-pub struct TierSource {
-    pub name: String,
-    /// Path relative to the `data/` directory, e.g. `active/quarks`.
-    pub source: String,
-    /// `is_active` from `composition_rules.json`. Feeds the name-resolution
-    /// priority table (see [`crate::registry`]) -- an active tier's stem
-    /// outranks a derived tier's stem, and so on.
-    pub is_active: bool,
-}
-
-/// Read the tier list from `data/config/composition_rules.json`.
+/// Every tier `data_root` declares or contains, in resolution order.
 ///
-/// This is the same file the Python registry reads. Keeping one source of
-/// truth is what guarantees `list_tiers()` agrees across the two backends.
+/// Reads `data/config/composition_rules.json` -- the single source of truth
+/// for the tier list.
 pub fn tier_sources(data_root: &Path) -> Result<Vec<TierSource>> {
-    let cfg_path = data_root.join("config").join("composition_rules.json");
-    let cfg = jsonc::from_path(&cfg_path)
-        .with_context(|| format!("data_loader: reading {}", cfg_path.display()))?;
-
-    let mut out = Vec::new();
-    if let Some(defs) = cfg.get("tier_definitions").and_then(Value::as_array) {
-        for e in defs {
-            let (Some(name), Some(source)) = (
-                e.get("name").and_then(Value::as_str),
-                e.get("source").and_then(Value::as_str),
-            ) else {
-                continue;
-            };
-            out.push(TierSource {
-                name: name.to_string(),
-                source: source.to_string(),
-                is_active: e.get("is_active").and_then(Value::as_bool).unwrap_or(false),
-            });
-        }
-    }
-
-    // Every subdirectory of `derived_root` is a tier, discovered rather than
-    // hardcoded so regenerated data cannot silently fall out of the registry.
-    let derived = cfg
-        .get("derived_root")
-        .and_then(Value::as_str)
-        .unwrap_or("derived");
-    let derived_dir = data_root.join(derived);
-    if let Ok(entries) = std::fs::read_dir(&derived_dir) {
-        let mut names: Vec<String> = entries
-            .flatten()
-            .filter(|e| e.path().is_dir())
-            .filter_map(|e| e.file_name().to_str().map(str::to_string))
-            .collect();
-        names.sort();
-        for n in names {
-            out.push(TierSource {
-                source: format!("{derived}/{n}"),
-                name: n,
-                // Everything discovered under `derived_root` is, by
-                // definition, not an active tier.
-                is_active: false,
-            });
-        }
-    }
-
+    let rules = CompositionRules::load(data_root).context("data_loader: tier sources")?;
+    let out = rules.tier_sources(data_root);
     if out.is_empty() {
         return Err(anyhow!(
             "data_loader: no tiers discovered under {}",
@@ -235,22 +187,12 @@ pub fn tier_sources(data_root: &Path) -> Result<Vec<TierSource>> {
     Ok(out)
 }
 
-/// `placeholder_prefixes` from `composition_rules.json` (`demo_`, `example_`).
-/// Files whose stem starts with one of these are excluded from the registry,
-/// matching `get.py::_index_files`.
+/// `placeholder_prefixes` from `composition_rules.json` (`demo_`, `example_`),
+/// lower-cased. Files whose stem starts with one of these are excluded from
+/// the registry.
 pub fn placeholder_prefixes(data_root: &Path) -> Vec<String> {
-    let cfg_path = data_root.join("config").join("composition_rules.json");
-    jsonc::from_path(&cfg_path)
-        .ok()
-        .and_then(|cfg| {
-            cfg.get("placeholder_prefixes")
-                .and_then(Value::as_array)
-                .map(|a| {
-                    a.iter()
-                        .filter_map(|v| v.as_str().map(|s| s.to_lowercase()))
-                        .collect()
-                })
-        })
+    CompositionRules::load(data_root)
+        .map(|r| r.placeholder_prefixes)
         .unwrap_or_default()
 }
 
@@ -294,18 +236,23 @@ pub fn load_all_tiers(data_root: impl AsRef<Path>) -> Result<usize> {
         given.to_path_buf()
     };
 
-    let sources = tier_sources(&root)?;
+    let rules = CompositionRules::load(&root).context("data_loader::load_all_tiers")?;
+    let sources = rules.tier_sources(&root);
+    if sources.is_empty() {
+        return Err(anyhow!(
+            "data_loader: no tiers discovered under {}",
+            root.display()
+        ));
+    }
 
     use rayon::prelude::*;
     // Tiers are independent, so load them in parallel and merge afterwards.
     // Building per-tier maps first (rather than inserting into the shared hub
-    // inside the loop) keeps the write lock uncontended.
-    let loaded: Vec<(String, Vec<(String, Value)>)> = sources
+    // inside the loop) keeps the write lock uncontended. A declared tier whose
+    // directory does not exist is not a tier, matching Python's `list_tiers()`.
+    let loaded: Vec<(TierSource, Vec<(String, Value)>)> = sources
         .par_iter()
-        .map(|ts| {
-            let dir = root.join(&ts.source);
-            (ts.name.clone(), read_dir_entries(&dir))
-        })
+        .filter_map(|ts| read_dir_entries(&root.join(&ts.source)).map(|e| (ts.clone(), e)))
         .collect();
 
     // Borrow rather than move: `root` is still needed after the parallel scan.
@@ -315,7 +262,7 @@ pub fn load_all_tiers(data_root: impl AsRef<Path>) -> Result<usize> {
         .flat_map(|r| {
             MATERIAL_DIRS
                 .par_iter()
-                .map(move |d| read_dir_entries(&root_ref.join(r).join(d)))
+                .map(move |d| read_dir_entries(&root_ref.join(r).join(d)).unwrap_or_default())
         })
         .flatten()
         .collect();
@@ -325,10 +272,19 @@ pub fn load_all_tiers(data_root: impl AsRef<Path>) -> Result<usize> {
         let mut hub = DATA.write();
         hub.tiers.clear();
         hub.materials.clear();
-        for (tier, entries) in loaded {
-            let map = hub.tiers.entry(tier).or_default();
-            for (name, value) in entries {
-                map.insert(name, value);
+
+        // Build the name-resolution index in tier order, then file-name
+        // order. Both matter: ties are first-writer-wins, so insertion order
+        // decides contests like "E" (electron vs glutamic acid).
+        let mut registry = crate::registry::Registry::new();
+        for (ts, entries) in loaded {
+            registry.add_tier(&ts.name);
+            let map = hub.tiers.entry(ts.name.clone()).or_default();
+            for (stem, value) in entries {
+                if !rules.is_placeholder(&stem) {
+                    registry.add_entry(&ts.name, &stem, Arc::new(value.clone()), ts.is_active);
+                }
+                map.insert(stem, value);
                 count += 1;
             }
         }
@@ -337,28 +293,9 @@ pub fn load_all_tiers(data_root: impl AsRef<Path>) -> Result<usize> {
         for (name, value) in materials {
             hub.materials.entry(name).or_insert(value);
         }
-        hub.order = sources.iter().map(|t| t.name.clone()).collect();
-
-        // Build the name-resolution index in tier order, then sorted file
-        // order. Both matter: ties are first-writer-wins, so insertion order
-        // decides collisions like "E" (electron vs glutamic acid).
-        let prefixes = placeholder_prefixes(&root);
-        let mut registry = crate::registry::Registry::new();
-        for ts in &sources {
-            if let Some(map) = hub.tiers.get(&ts.name) {
-                let mut stems: Vec<String> = map.iter().map(|kv| kv.key().clone()).collect();
-                stems.sort();
-                for stem in stems {
-                    if crate::registry::is_placeholder(&stem, &prefixes) {
-                        continue;
-                    }
-                    if let Some(v) = map.get(&stem) {
-                        registry.add_entry(&ts.name, &stem, v.value(), ts.is_active);
-                    }
-                }
-            }
-        }
+        hub.order = registry.tier_order().to_vec();
         hub.registry = registry;
+        hub.rules = Arc::new(rules);
         hub.root = Some(root.clone());
     }
     Ok(count)
@@ -378,20 +315,22 @@ pub fn tier_order() -> Vec<String> {
     names
 }
 
-/// Read every `*.json` in `dir` as JSONC, keyed by file stem.
+/// Read every `*.json` in `dir` as JSONC, keyed by file stem, sorted by file
+/// name (byte order). `None` when `dir` is not a directory.
 ///
 /// Unreadable or malformed files are skipped rather than failing the whole
 /// load: one bad datasheet must not take down the registry.
-fn read_dir_entries(dir: &Path) -> Vec<(String, Value)> {
-    let Ok(entries) = std::fs::read_dir(dir) else {
-        return Vec::new();
-    };
-    let mut out = Vec::new();
-    for entry in entries.flatten() {
-        let path = entry.path();
-        if path.extension().and_then(|x| x.to_str()) != Some("json") {
-            continue;
-        }
+fn read_dir_entries(dir: &Path) -> Option<Vec<(String, Value)>> {
+    let entries = std::fs::read_dir(dir).ok()?;
+    let mut paths: Vec<(String, PathBuf)> = entries
+        .flatten()
+        .map(|e| e.path())
+        .filter(|p| p.extension().and_then(|x| x.to_str()) == Some("json"))
+        .filter_map(|p| Some((p.file_name()?.to_str()?.to_string(), p)))
+        .collect();
+    paths.sort();
+    let mut out = Vec::with_capacity(paths.len());
+    for (_, path) in paths {
         let Some(stem) = path.file_stem().and_then(|s| s.to_str()) else {
             continue;
         };
@@ -400,7 +339,7 @@ fn read_dir_entries(dir: &Path) -> Vec<(String, Value)> {
             out.push((stem.to_string(), value));
         }
     }
-    out
+    Some(out)
 }
 
 /// Environment variable naming the `data/` directory [`ensure_loaded`] loads
@@ -460,16 +399,24 @@ pub fn reload_registry(data_root: impl AsRef<Path>) -> Result<usize> {
     load_all_tiers(data_root).context("reload_registry: load_all_tiers failed")
 }
 
+/// Re-walk the data root loaded last (or [`default_data_root`] if none),
+/// picking up files written since -- Python's `reload_registry()`.
+pub fn reload() -> Result<usize> {
+    let root = DATA.read().root.clone().unwrap_or_else(default_data_root);
+    reload_registry(root)
+}
+
 /// Snapshot of every tier name currently registered, sorted.
 ///
-/// Matches Python's `periodica.list_tiers()`.
+/// This is `periodica.list_tiers()`. Fixture hubs populated directly through
+/// [`DataHub::insert`] (no registry) report their raw tier maps instead.
 pub fn list_tiers() -> Vec<String> {
-    let mut names: Vec<String> = DATA
-        .read()
-        .tiers
-        .iter()
-        .map(|kv| kv.key().clone())
-        .collect();
+    let hub = DATA.read();
+    let names = hub.registry.tier_names();
+    if !names.is_empty() {
+        return names;
+    }
+    let mut names: Vec<String> = hub.tiers.iter().map(|kv| kv.key().clone()).collect();
     names.sort();
     names
 }

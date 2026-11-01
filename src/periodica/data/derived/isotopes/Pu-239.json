@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 94,
-  "Mass_MeVc2": 224482.59616373997,
-  "Mass_amu": 240.99196718657612,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Pu-239",
+  "Mass_MeVc2": 222675.6786974268,
+  "Mass_amu": 239.052161596,
+  "Mass_kg": 3.9695545328533417e-25,
   "Name": "Pu-239"
 }

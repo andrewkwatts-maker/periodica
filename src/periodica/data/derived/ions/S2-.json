@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 18,
-  "Mass_MeVc2": 30054.598119979997,
-  "Mass_amu": 32.26493655949917,
-  "Mass_kg": 0,
-  "Name": "S2-"
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of S, plus 2 electron masses",
+  "Mass_MeVc2": 29864.7229214852,
+  "Mass_amu": 32.06109715981813,
+  "Mass_kg": 5.323870435193632e-26,
+  "Name": "S2-",
+  "Symbol": "S2-"
 }

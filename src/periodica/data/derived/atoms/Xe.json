@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 54,
-  "Mass_MeVc2": 123980.3895045,
-  "Mass_amu": 133.0984159567235,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Xe",
+  "Mass_MeVc2": 122298.65518902906,
+  "Mass_amu": 131.293,
+  "Mass_kg": 2.180171556711138e-25,
   "Name": "Xe",
   "Symbol": "Xe"
 }

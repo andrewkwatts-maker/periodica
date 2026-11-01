@@ -50,7 +50,7 @@ QUARK_FILES = [
     "ZBoson.json",
     "Higgs Boson.json",
     "ElectronNeutrino.json",
-    "MuonNuetrino.json",  # Note: typo in filename
+    "MuonNeutrino.json",
     "TauNeutrino.json",
 ]
 

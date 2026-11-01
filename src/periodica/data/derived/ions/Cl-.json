@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 18,
-  "Mass_MeVc2": 32872.00104918,
-  "Mass_amu": 35.28954285802017,
-  "Mass_kg": 0,
-  "Name": "Cl-"
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of Cl, plus 1 electron mass",
+  "Mass_MeVc2": 33021.976929739,
+  "Mass_amu": 35.45054857990907,
+  "Mass_kg": 5.886702084934016e-26,
+  "Name": "Cl-",
+  "Symbol": "Cl-"
 }

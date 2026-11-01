@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 58,
-  "Mass_MeVc2": 131493.78353502,
-  "Mass_amu": 141.16437580664376,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Ce",
+  "Mass_MeVc2": 130517.22765468073,
+  "Mass_amu": 140.116,
+  "Mass_kg": 2.326680918557256e-25,
   "Name": "Ce",
   "Symbol": "Ce"
 }

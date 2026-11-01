@@ -204,6 +204,23 @@ class TestFieldModelRegistry:
         }
         assert sample(entry, "Density_kgm3") == 2000
 
+    def test_overriding_a_builtin_model_reaches_sampling_by_name(self):
+        """R2-4: the native sampler implements the built-ins itself, so a
+        Python replacement used to be ignored for `sample("name", ...)`."""
+        from periodica.sample import _homogeneous
+
+        def tripled(field, prop, at, scale_m, entry):
+            v = _homogeneous(field, prop, at, scale_m, entry)
+            return None if v is None else v * 3
+
+        register_field_model("homogeneous", tripled)
+        try:
+            assert sample("Aluminum-6061", "Density_kgm3") == 3 * 2700
+        finally:
+            register_field_model("homogeneous", _homogeneous)
+        # Restoring the built-in restores the native path.
+        assert sample("Aluminum-6061", "Density_kgm3") == 2700
+
 
 # ─────────────────────────────────────────────────────────────────────────
 # CLI integration

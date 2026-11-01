@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 117,
-  "Mass_MeVc2": 276140.70062391,
-  "Mass_amu": 296.44922056716763,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Ts-294 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 274055.66232803423,
+  "Mass_amu": 294.21084,
+  "Mass_kg": 4.885485936372019e-25,
   "Name": "Ts",
   "Symbol": "Ts"
 }

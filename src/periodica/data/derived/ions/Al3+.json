@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 10,
-  "Mass_MeVc2": 25356.56302286,
-  "Mass_amu": 27.221388688463648,
-  "Mass_kg": 0,
-  "Name": "Al3+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Al, minus 3 electron masses",
+  "Mass_MeVc2": 25131.610896968763,
+  "Mass_amu": 26.979892660272807,
+  "Mass_kg": 4.4801165775057596e-26,
+  "Name": "Al3+",
+  "Symbol": "Al3+"
 }

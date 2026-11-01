@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 23,
-  "Mass_MeVc2": 51655.517795449996,
-  "Mass_amu": 55.4544764819335,
-  "Mass_kg": 0,
-  "Name": "Mn2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Mn, minus 2 electron masses",
+  "Mass_MeVc2": 51173.441055096366,
+  "Mass_amu": 54.93694584018187,
+  "Mass_kg": 9.122494476731035e-26,
+  "Name": "Mn2+",
+  "Symbol": "Mn2+"
 }

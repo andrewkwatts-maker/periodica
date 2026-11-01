@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 49,
-  "Mass_MeVc2": 108011.68902271,
-  "Mass_amu": 115.95531173267318,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of In",
+  "Mass_MeVc2": 106952.28985165956,
+  "Mass_amu": 114.818,
+  "Mass_kg": 1.9065977454887879e-25,
   "Name": "In",
   "Symbol": "In"
 }

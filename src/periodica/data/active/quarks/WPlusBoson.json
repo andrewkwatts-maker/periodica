@@ -5,8 +5,8 @@
   "Classification": ["Boson", "Gauge Boson", "Force Carrier", "Fundamental Particle"],
   "Charge_e": 1,
   "Mass_MeVc2": 80379.0, // ~80.379 GeV/c²
-  "Mass_kg": 1.43285e-25,
-  "Mass_amu": 86.299,
+  "Mass_kg": 1.43288582598e-25,
+  "Mass_amu": 86.2904014005,
   "Spin_hbar": 1.0,
   "MagneticDipoleMoment_J_T": null, // Complex, due to being a gauge boson with self-interaction
   "LeptonNumber_L": 0,

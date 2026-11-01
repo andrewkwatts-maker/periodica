@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 18,
-  "Mass_MeVc2": 36627.67606654,
-  "Mass_amu": 39.32142562316217,
-  "Mass_kg": 0,
-  "Name": "K+"
+  "MassSource": "CIAAW 2021 standard atomic weight of K, minus 1 electron mass",
+  "Mass_MeVc2": 36419.32486569789,
+  "Mass_amu": 39.09775142009094,
+  "Mass_kg": 6.492334364927662e-26,
+  "Name": "K+",
+  "Symbol": "K+"
 }

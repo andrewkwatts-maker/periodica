@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 99,
-  "Mass_MeVc2": 236693.03496345,
-  "Mass_amu": 254.10041174682644,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Es-252; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 234813.8084201132,
+  "Mass_amu": 252.082979173,
+  "Mass_kg": 4.1859363494168065e-25,
   "Name": "Es",
   "Symbol": "Es"
 }

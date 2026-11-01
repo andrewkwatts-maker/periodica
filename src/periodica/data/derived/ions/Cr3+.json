@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 21,
-  "Mass_MeVc2": 48837.09286835,
-  "Mass_amu": 52.42877302359437,
-  "Mass_kg": 0,
-  "Name": "Cr3+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Cr, minus 3 electron masses",
+  "Mass_MeVc2": 48432.52750199056,
+  "Mass_amu": 51.9944542602728,
+  "Mass_kg": 8.63388225457298e-26,
+  "Name": "Cr3+",
+  "Symbol": "Cr3+"
 }

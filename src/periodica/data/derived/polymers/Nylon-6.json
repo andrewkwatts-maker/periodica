@@ -33,9 +33,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 62,
-  "Mass_MeVc2": 106122.38784734001,
-  "Mass_amu": 113.92706359831404,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 105407.87262984719,
+  "Mass_amu": 113.16,
+  "Mass_kg": 1.8790660077645599e-25,
   "Name": "Nylon-6",
   "Properties": {
     "Density_kgm3": 1140,

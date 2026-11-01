@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 104,
-  "Mass_MeVc2": 250782.6046042,
-  "Mass_amu": 269.22618613897674,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Rf-267 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 248822.3692183914,
+  "Mass_amu": 267.121787,
+  "Mass_kg": 4.43566162853504e-25,
   "Name": "Rf",
   "Symbol": "Rf"
 }

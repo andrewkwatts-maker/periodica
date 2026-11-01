@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 112,
-  "Mass_MeVc2": 267688.52350628,
-  "Mass_amu": 287.3754356707173,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Cn-285 (estimated); CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 265640.9050949896,
+  "Mass_amu": 285.177227,
+  "Mass_kg": 4.735479263381564e-25,
   "Name": "Cn",
   "Symbol": "Cn"
 }

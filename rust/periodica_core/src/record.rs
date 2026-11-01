@@ -106,10 +106,17 @@ pub fn material_record(spec: &str, scope: Option<Scope>) -> Result<MaterialRecor
 
     if let Some(symbol) = root_symbol(&resolved) {
         if let Some((stem, element)) = element_datasheet(symbol) {
-            let mut joined = ingest(&element, &stem).context("material_record: ingest")?;
-            if has_density(&joined) {
-                joined.tier = Tier::Element;
-                return Ok(joined);
+            // A shared symbol is not a shared identity: tryptophan (W), the
+            // Higgs boson (H) and the Upsilon (Y) carry element symbols. Only
+            // an atom of that very element -- same atomic number -- joins.
+            let same_element =
+                atomic_number(&resolved).is_some_and(|z| atomic_number(&element) == Some(z));
+            if same_element {
+                let mut joined = ingest(&element, &stem).context("material_record: ingest")?;
+                if has_density(&joined) {
+                    joined.tier = Tier::Element;
+                    return Ok(joined);
+                }
             }
         }
     }
@@ -134,6 +141,25 @@ fn root_symbol(entry: &Value) -> Option<&str> {
         .or_else(|| entry.get("symbol"))
         .and_then(Value::as_str)
         .filter(|s| !s.is_empty())
+}
+
+/// The atomic number a datasheet declares: an explicit `atomic_number` /
+/// `AtomicNumber` / `Z`, or the proton count of a nuclear composition
+/// (`Composition: {P, N, E}`, as the generated atoms carry). `None` for
+/// anything else -- particles, amino acids, molecules.
+fn atomic_number(entry: &Value) -> Option<u64> {
+    for key in ["atomic_number", "AtomicNumber", "Z"] {
+        if let Some(z) = entry.get(key).and_then(Value::as_u64) {
+            return Some(z);
+        }
+    }
+    let comp = entry.get("Composition")?.as_object()?;
+    let nuclear = comp.contains_key("N") && comp.keys().all(|k| matches!(k.as_str(), "P" | "N" | "E"));
+    if nuclear {
+        comp.get("P").and_then(Value::as_u64)
+    } else {
+        None
+    }
 }
 
 /// The element datasheet whose root symbol is exactly `symbol`, with its
@@ -275,6 +301,55 @@ mod tests {
             // The join must not turn a composition into its first constituent.
             let e = material_record("{Fe=1,C=1}", None).unwrap_err().to_string();
             assert!(e.contains("formula"), "{e}");
+        });
+    }
+
+    #[test]
+    fn non_atoms_sharing_an_element_symbol_are_not_joined_to_the_element() {
+        // R2-1: the join matched on the root symbol alone, so 14 entries came
+        // back as the wrong element tagged Tier::Element.
+        with_empty_registry(|| {
+            for name in [
+                "Tryptophan", "Histidine", "Lysine", "Cysteine", "Serine", "Proline",
+                "Valine", "Tyrosine", "Isoleucine", "Phenylalanine", "Asparagine",
+                "Selenocysteine", "Higgs Boson", "Higgs", "Upsilon",
+            ] {
+                if let Ok(r) = material_record(name, None) {
+                    assert_ne!(r.tier, Tier::Element, "{name} was joined to an element");
+                }
+            }
+        });
+    }
+
+    #[test]
+    fn no_non_atom_registry_key_is_returned_as_an_element() {
+        with_empty_registry(|| {
+            data_loader::ensure_loaded().expect("bundled corpus");
+            let keys: Vec<(String, String)> = {
+                let hub = DATA.read();
+                hub.registry
+                    .tier_order()
+                    .iter()
+                    .filter(|t| t.as_str() != "atoms")
+                    .flat_map(|t| {
+                        hub.registry
+                            .tier_index(t)
+                            .map(|i| i.keys())
+                            .unwrap_or_default()
+                            .into_iter()
+                            .map(move |k| (t.clone(), k))
+                    })
+                    .collect()
+            };
+            assert!(keys.len() > 300, "{}", keys.len());
+            for (tier, key) in keys {
+                let scope = Scope::from_tier_name(&tier);
+                if let Ok(r) = material_record(&key, scope) {
+                    assert_ne!(r.tier, Tier::Element, "{tier}:{key} was joined to an element");
+                }
+            }
+            // ...while atoms still join.
+            assert_eq!(material_record("W", Some(Scope::Atom)).unwrap().tier, Tier::Element);
         });
     }
 

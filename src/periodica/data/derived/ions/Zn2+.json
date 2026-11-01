@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 28,
-  "Mass_MeVc2": 61047.2603336,
-  "Mass_amu": 65.53692629433382,
-  "Mass_kg": 0,
-  "Name": "Zn2+"
+  "MassSource": "CIAAW 2021 standard atomic weight of Zn, minus 2 electron masses",
+  "Mass_MeVc2": 60900.0624183196,
+  "Mass_amu": 65.37890284018187,
+  "Mass_kg": 1.085642222975677e-25,
+  "Name": "Zn2+",
+  "Symbol": "Zn2+"
 }

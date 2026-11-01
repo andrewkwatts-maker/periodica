@@ -44,7 +44,7 @@ from typing import Any, Callable, Dict, Mapping, Optional, Sequence, Tuple, Unio
 
 # Rust impl: rust/periodica_core/src/sample.rs
 from periodica.get import Get, UnknownName
-from periodica._dispatch import call_rust, declare_accelerated
+from periodica._dispatch import _record_fallback, call_rust, declare_accelerated
 
 # Declared at import so `periodica.backend_report()` is accurate before any
 # call happens, rather than filling in lazily as functions are first used.
@@ -57,15 +57,39 @@ FieldEvaluator = Callable[[dict, str, Optional[Point], Optional[float], dict], A
 
 _FIELD_MODELS: Dict[str, FieldEvaluator] = {}
 
+# The built-in evaluators, captured once they are registered below. The Rust
+# sampler implements these same models natively, so replacing one from Python
+# must route every entry that uses it away from the Rust path -- otherwise the
+# override is silently ignored for `sample("name", ...)` (R2-4).
+_BUILTIN_FIELD_MODELS: Dict[str, FieldEvaluator] = {}
+_OVERRIDDEN_BUILTINS: set = set()
+
 
 def register_field_model(name: str, evaluator: FieldEvaluator) -> None:
     """Register a field-model evaluator. Evaluator signature:
 
         evaluator(field_dict, prop_name, at, scale_m, entry) -> value
+
+    Registering a built-in name (``homogeneous``, ``mixture``, ...) replaces
+    the built-in for every entry that declares it, on every code path.
+    Re-registering the original built-in evaluator restores the native path.
     """
     if not isinstance(name, str) or not name:
         raise ValueError("Field model name must be a non-empty string.")
+    builtin = _BUILTIN_FIELD_MODELS.get(name)
+    if builtin is not None:
+        if evaluator is builtin:
+            _OVERRIDDEN_BUILTINS.discard(name)
+        else:
+            _OVERRIDDEN_BUILTINS.add(name)
     _FIELD_MODELS[name] = evaluator
+
+
+def _field_model_of(entry: dict) -> str:
+    field = entry.get("Field")
+    if isinstance(field, dict):
+        return field.get("model", "homogeneous")
+    return "homogeneous"
 
 
 # ── Helpers ─────────────────────────────────────────────────────────────
@@ -277,6 +301,7 @@ register_field_model("mixture", _mixture)
 register_field_model("anisotropic_axial", _anisotropic_axial)
 register_field_model("backbone_path", _backbone_path)
 register_field_model("microstructure_voronoi", _microstructure_voronoi)
+_BUILTIN_FIELD_MODELS.update(_FIELD_MODELS)
 
 
 # ── Public API ──────────────────────────────────────────────────────────
@@ -335,6 +360,14 @@ def sample(
     # backbone_path at a 3D point, a field model registered from Python).
     # Anything else it raises is a Rust bug and must not be hidden.
     if isinstance(name_or_entry, str):
+        if _OVERRIDDEN_BUILTINS:
+            entry = Get(name_or_entry)
+            model = _field_model_of(entry)
+            if model in _OVERRIDDEN_BUILTINS:
+                # The native sampler would evaluate the built-in, not the
+                # caller's replacement: decline Rust for this entry.
+                _record_fallback("sample", f"field model {model!r} is overridden from Python")
+                return _sample_python(entry, prop, at, scale_m)
         at_tuple = tuple(float(c) for c in at) if at is not None else None
         return call_rust(
             "py_sample",

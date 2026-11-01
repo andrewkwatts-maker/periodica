@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 89,
-  "Mass_MeVc2": 213211.72278455002,
-  "Mass_amu": 228.8921875422758,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Ac-227; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 211475.01076398965,
+  "Mass_amu": 227.027750594,
+  "Mass_kg": 3.7698844906365835e-25,
   "Name": "Ac",
   "Symbol": "Ac"
 }

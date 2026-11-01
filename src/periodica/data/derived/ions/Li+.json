@@ -24,8 +24,10 @@
     }
   ],
   "LeptonNumber_L": 2,
-  "Mass_MeVc2": 6574.09994446,
-  "Mass_amu": 7.05758622348113,
-  "Mass_kg": 0,
-  "Name": "Li+"
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of Li, minus 1 electron mass",
+  "Mass_MeVc2": 6464.0580718448,
+  "Mass_amu": 6.939451420090935,
+  "Mass_kg": 1.1523230183833847e-26,
+  "Name": "Li+",
+  "Symbol": "Li+"
 }

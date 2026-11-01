@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 27,
-  "Mass_MeVc2": 56352.80222913,
-  "Mass_amu": 60.49721848266175,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Co-60",
+  "Mass_MeVc2": 55827.99570731217,
+  "Mass_amu": 59.933815536,
+  "Mass_kg": 9.952244210792602e-26,
   "Name": "Co-60"
 }

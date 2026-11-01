@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 96,
-  "Mass_MeVc2": 231997.55486108,
-  "Mass_amu": 249.05960677533625,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Cm-247; CIAAW 2021 gives no standard atomic weight for this element",
+  "Mass_MeVc2": 230144.57640238645,
+  "Mass_amu": 247.070352678,
+  "Mass_kg": 4.1026997282045894e-25,
   "Name": "Cm",
   "Symbol": "Cm"
 }

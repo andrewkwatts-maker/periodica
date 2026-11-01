@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 7,
-  "Mass_MeVc2": 13148.43955341,
-  "Mass_amu": 14.115429737360454,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 abridged atomic weight (the standard weight is an interval) of N",
+  "Mass_MeVc2": 13047.43789259694,
+  "Mass_amu": 14.007,
+  "Mass_kg": 2.32591707058662e-26,
   "Name": "N",
   "Symbol": "N"
 }

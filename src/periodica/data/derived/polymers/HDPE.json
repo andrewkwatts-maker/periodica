@@ -21,9 +21,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 16,
-  "Mass_MeVc2": 26295.314440000002,
-  "Mass_amu": 28.22917973588104,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 26132.13554929068,
+  "Mass_amu": 28.054,
+  "Mass_kg": 4.65847629743964e-26,
   "Name": "HDPE",
   "Properties": {
     "Density_kgm3": 970,

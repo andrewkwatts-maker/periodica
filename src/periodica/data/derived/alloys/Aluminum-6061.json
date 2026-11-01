@@ -39,9 +39,9 @@
     "model": "homogeneous"
   },
   "LeptonNumber_L": 13.013999999999998,
-  "Mass_MeVc2": 25382.51376797578,
-  "Mass_amu": 27.249247957833667,
-  "Mass_kg": 0,
+  "Mass_MeVc2": 25162.627302960092,
+  "Mass_amu": 27.013190140000003,
+  "Mass_kg": 4.485645754096393e-26,
   "Name": "Aluminum-6061",
   "Properties": {
     "Density_kgm3": 2700,

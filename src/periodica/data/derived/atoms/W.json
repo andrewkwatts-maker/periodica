@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 74,
-  "Mass_MeVc2": 172822.14470334,
-  "Mass_amu": 185.53219419772483,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of W",
+  "Mass_MeVc2": 171245.8757888928,
+  "Mass_amu": 183.84,
+  "Mass_kg": 3.05273502003744e-25,
   "Name": "W",
   "Symbol": "W"
 }

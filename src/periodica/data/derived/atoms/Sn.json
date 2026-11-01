@@ -24,9 +24,10 @@
     }
   ],
   "LeptonNumber_L": 50,
-  "Mass_MeVc2": 112708.7337919,
-  "Mass_amu": 120.99779644300324,
-  "Mass_kg": 0,
+  "MassSource": "CIAAW 2021 standard atomic weight of Sn",
+  "Mass_MeVc2": 110577.66489827819,
+  "Mass_amu": 118.71,
+  "Mass_kg": 1.9712259259608599e-25,
   "Name": "Sn",
   "Symbol": "Sn"
 }

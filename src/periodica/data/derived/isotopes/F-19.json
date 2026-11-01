@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 9,
-  "Mass_MeVc2": 17844.70198919,
-  "Mass_amu": 19.157074578270585,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of F-19",
+  "Mass_MeVc2": 17696.900500865686,
+  "Mass_amu": 18.99840316207,
+  "Mass_kg": 3.154759065363421e-26,
   "Name": "F-19"
 }

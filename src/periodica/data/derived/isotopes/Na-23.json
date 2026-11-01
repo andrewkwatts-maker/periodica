@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 11,
-  "Mass_MeVc2": 21601.39900445,
-  "Mass_amu": 23.190054503230716,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Na-23",
+  "Mass_MeVc2": 21414.834502132904,
+  "Mass_amu": 22.98976928195,
+  "Mass_kg": 3.8175410024798604e-26,
   "Name": "Na-23"
 }

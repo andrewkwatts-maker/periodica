@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 55,
-  "Mass_MeVc2": 128677.43427368999,
-  "Mass_amu": 138.14090066705356,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Cs-137",
+  "Mass_MeVc2": 127528.14625871232,
+  "Mass_amu": 136.907089296,
+  "Mass_kg": 2.273395702705027e-25,
   "Name": "Cs-137"
 }

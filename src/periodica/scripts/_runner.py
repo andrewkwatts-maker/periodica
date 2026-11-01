@@ -30,6 +30,7 @@ from pathlib import Path
 from typing import Any, Iterable, List, Optional, Tuple
 
 from periodica.get import Get, Save, list_tiers, reload_registry
+from periodica.scripts._mass_source import apply_mass_source
 
 
 _INPUTS_DIR = Path(__file__).parent / "inputs"
@@ -104,6 +105,10 @@ def build_from_input(
             continue
         try:
             composed = Get(spec, from_=from_)
+            # Generated atoms, isotopes and ions take their mass from the
+            # curated reference declared in composition_rules.json (D3);
+            # composing free nucleons would ignore nuclear binding energy.
+            apply_mass_source(tier, composed)
             # Optional row enrichments: bulk properties + field model + aliases.
             # An explicit "symbol" intentionally shadows curated entries with
             # the same Symbol (e.g. Hydrogen 'H' shadows Higgs Boson 'H'); omit

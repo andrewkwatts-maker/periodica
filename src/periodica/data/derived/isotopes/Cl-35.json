@@ -24,8 +24,9 @@
     }
   ],
   "LeptonNumber_L": 17,
-  "Mass_MeVc2": 32871.49005023,
-  "Mass_amu": 35.288994278111105,
-  "Mass_kg": 0,
+  "MassSource": "AME2020 atomic mass of Cl-35",
+  "Mass_MeVc2": 32573.280052854727,
+  "Mass_amu": 34.968852694,
+  "Mass_kg": 5.806714601256765e-26,
   "Name": "Cl-35"
 }
