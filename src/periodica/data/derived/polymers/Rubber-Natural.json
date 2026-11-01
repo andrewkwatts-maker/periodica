@@ -1,0 +1,14 @@
+{
+  "Name": "Rubber-Natural",
+  "Class": "Elastomer",
+  "Category": "Rubber",
+  "Source": "Shear modulus 0.7 MPa (strains 50-200 %) and Poisson 0.4998: Martin Hernandez Morales, arXiv 2003.05621, lead-rubber bearing model (read). Young's modulus 2.0993 MPa = 2 G (1 + nu) from those two. Density 920 kg/m3: Engineering Toolbox solids densities, pure gum rubber 910-930 (read, midpoint). Tensile strength 16 MPa: Wikipedia 'Ultimate tensile strength', rubber row, marked citation needed (read); yield is set to it.",
+  "Properties": {
+    "Density_kgm3": 920,
+    "PoissonsRatio": 0.4998,
+    "ShearModulus_GPa": 0.0007,
+    "TensileStrength_MPa": 16,
+    "YieldStrength_MPa": 16,
+    "YoungsModulus_GPa": 0.0020993
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Name": "Mortar-CementLime",
+  "Class": "Ceramic",
+  "Category": "Masonry",
+  "Source": "Young's modulus 10580 MPa, Poisson 0.17, flexural 3.3 MPa, compressive 10.9 MPa: Table 1 of PMC8585325 (factory dry-mix cement mortar; read). Density 1980.6 kg/m3: Grigorjev, Azenha, De Belie (Zenodo 7711670) Table 3, air lime-cement-sand mortar, 28 d, tamping (read). The two sources are different mortars. Brittle: yield and tensile strength are both the flexural strength.",
+  "Properties": {
+    "CompressiveStrength_MPa": 10.9,
+    "Density_kgm3": 1980.6,
+    "FlexuralStrength_MPa": 3.3,
+    "PoissonsRatio": 0.17,
+    "TensileStrength_MPa": 3.3,
+    "YieldStrength_MPa": 3.3,
+    "YoungsModulus_GPa": 10.58
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Name": "Brick-Clay",
+  "Class": "Ceramic",
+  "Category": "Masonry",
+  "Source": "Young's modulus 11850 MPa, Poisson 0.11, flexural 3.2 MPa, compressive 44.1 MPa: Table 1 of PMC8585325 (clay brick class 40, 25x12x6.5 cm; read). Density 2000 kg/m3: Wikipedia 'Brick' (solid clay brick, 'around 2000 kg/m3'; read). Brittle: yield and tensile strength are both set to the flexural strength, so the first crack is the failure.",
+  "Properties": {
+    "CompressiveStrength_MPa": 44.1,
+    "Density_kgm3": 2000,
+    "FlexuralStrength_MPa": 3.2,
+    "PoissonsRatio": 0.11,
+    "TensileStrength_MPa": 3.2,
+    "YieldStrength_MPa": 3.2,
+    "YoungsModulus_GPa": 11.85
+  }
+}

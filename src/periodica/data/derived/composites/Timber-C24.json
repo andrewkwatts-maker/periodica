@@ -1,0 +1,13 @@
+{
+  "Name": "Timber-C24",
+  "Class": "Timber",
+  "Category": "Wood",
+  "Source": "EN 338:2016 Table 1 as implemented in blueprints.readthedocs.io (read; the standard itself was not): C24 f_m,k 24 N/mm2, E_0,mean 11.0 GPa, rho_mean 420 kg/m3. Poisson 0.372: US Forest Products Laboratory Wood Handbook Table 5-2, Sitka spruce mu_LR at about 12 % moisture (read; a spruce proxy for C24). C24 f_t,0,k was not read, so the bending strength 24 MPa stands as yield and failure stress.",
+  "Properties": {
+    "Density_kgm3": 420,
+    "PoissonsRatio": 0.372,
+    "TensileStrength_MPa": 24,
+    "YieldStrength_MPa": 24,
+    "YoungsModulus_GPa": 11
+  }
+}
