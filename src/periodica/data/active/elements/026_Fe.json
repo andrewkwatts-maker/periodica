@@ -79,7 +79,7 @@
   },
   "surface_energy_Jm2": 2.48,
   "_surface_energy": {
-    "source": "Tyson, W.R. and Miller, W.A., Surface free energies of solid metals: estimation from liquid surface tension measurements, Surface Science 62 (1977) 267-276, polycrystalline average; transcribed from the tabulation, verify against the paper's table",
+    "source": "Tyson, W.R. and Miller, W.A., Surface free energies of solid metals: estimation from liquid surface tension measurements, Surface Science 62 (1977) 267-276, polycrystalline average; UNVERIFIED (I3d: Tyson and Miller table not readable in any open document; value recalled, see docs/sources/I3d-verified.md)",
     "conditions": "solid-surface value extrapolated to the melting point from liquid surface tension; polycrystalline average",
     "fields": [
       "surface_energy_Jm2"

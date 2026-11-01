@@ -20,7 +20,10 @@
      "source": "fib Model Code 2010 Table 6.1-1, ribbed bars, pull-out failure; tau_max = coeff * sqrt(f_cm) in Pa with f_cm in Pa (2.5 and 1.25 sqrt(MPa) MPa), slips in m; values read from the fib structuralcodes mc2010 implementation"},
     {"a": "Steel", "b": "Steel", "finish_a": "Any", "finish_b": "Any", "law": "Coulomb",
      "mu_s": 0.65, "mu_s_range": [0.5, 0.8], "mu_k": 0.42,
-     "source": "Engineering Toolbox, Friction Coefficients vs. Materials and Surface Conditions, steel on steel clean and dry (static 0.5-0.8, midpoint stored; sliding 0.42)"},
+     "source": "Engineering ToolBox, Friction - Coefficients for Common Materials and Surfaces, https://www.engineeringtoolbox.com/friction-coefficients-d_778.html, opened in I3d: steel on steel clean and dry, static 0.5-0.8, sliding 0.42 (0.65 is the range midpoint, not a published value); Wikipedia Friction table gives 0.74-0.80 static, 0.42-0.62 kinetic for the same condition"},
+    {"a": "Steel", "b": "Concrete", "finish_a": "MillScale", "finish_b": "Grout", "law": "Coulomb",
+     "mu_s": 0.46,
+     "source": "AISC Engineering Journal, Experimental Investigation of Shear Transfer in Exposed Column Base Connections, https://ej.aisc.org/index.php/engj/article/view/1021, abstract opened in I3d: 0.46 from three tests, steel base plate on grout pad; surface and load conditions are in the full paper, not read"},
     {"a": "Glass", "b": "Steel", "finish_a": "Any", "finish_b": "Any", "law": "Coulomb",
      "mu_s": 0.6, "mu_s_range": [0.5, 0.7],
      "source": "Engineering Toolbox, Friction Coefficients vs. Materials and Surface Conditions, glass on metal clean and dry (static 0.5-0.7, midpoint stored; no sliding value listed)"}
