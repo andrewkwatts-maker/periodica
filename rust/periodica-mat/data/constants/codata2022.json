@@ -1,0 +1,29 @@
+{
+  "source": "CODATA 2022 recommended values of the fundamental physical constants",
+  "citation": "P. J. Mohr, D. B. Newell, B. N. Taylor and E. Tiesinga, CODATA recommended values of the fundamental physical constants: 2022, Rev. Mod. Phys. 97, 025002 (2025); J. Phys. Chem. Ref. Data 54, 033105 (2025)",
+  "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+  "retrieved": "2026-10-02",
+  "notes": "Mirror of rust/periodica-mat/src/constants.rs (asserted equal by its tests). hbar is h/(2 pi) evaluated in IEEE-754 binary64; NIST prints it truncated. Uncertainties are standard uncertainties in the same unit as the value; 0 means exact by definition of the SI.",
+  "constants": {
+    "c": {"name": "speed of light in vacuum", "value": 299792458.0, "standard_uncertainty": 0.0, "unit": "m s^-1", "exact": true},
+    "h": {"name": "Planck constant", "value": 6.62607015e-34, "standard_uncertainty": 0.0, "unit": "J Hz^-1", "exact": true},
+    "hbar": {"name": "reduced Planck constant", "value": 1.0545718176461565e-34, "standard_uncertainty": 0.0, "unit": "J s", "exact": true},
+    "e": {"name": "elementary charge", "value": 1.602176634e-19, "standard_uncertainty": 0.0, "unit": "C", "exact": true},
+    "eV": {"name": "electron volt", "value": 1.602176634e-19, "standard_uncertainty": 0.0, "unit": "J", "exact": true},
+    "m_e": {"name": "electron mass", "value": 9.1093837139e-31, "standard_uncertainty": 2.8e-40, "unit": "kg", "exact": false},
+    "m_p": {"name": "proton mass", "value": 1.67262192595e-27, "standard_uncertainty": 5.2e-37, "unit": "kg", "exact": false},
+    "m_n": {"name": "neutron mass", "value": 1.67492750056e-27, "standard_uncertainty": 8.5e-37, "unit": "kg", "exact": false},
+    "u": {"name": "atomic mass constant", "value": 1.66053906892e-27, "standard_uncertainty": 5.2e-37, "unit": "kg", "exact": false},
+    "MeV_per_u": {"name": "atomic mass constant energy equivalent in MeV", "value": 931.49410372, "standard_uncertainty": 2.9e-7, "unit": "MeV", "exact": false},
+    "m_e_u": {"name": "electron mass in u", "value": 5.485799090441e-4, "standard_uncertainty": 9.7e-15, "unit": "u", "exact": false},
+    "m_p_over_m_e": {"name": "proton-electron mass ratio", "value": 1836.152673426, "standard_uncertainty": 3.2e-8, "unit": "", "exact": false},
+    "a0": {"name": "Bohr radius", "value": 5.29177210544e-11, "standard_uncertainty": 8.2e-21, "unit": "m", "exact": false},
+    "E_h": {"name": "Hartree energy", "value": 4.359744722206e-18, "standard_uncertainty": 4.8e-30, "unit": "J", "exact": false},
+    "E_h_eV": {"name": "Hartree energy in eV", "value": 27.211386245981, "standard_uncertainty": 3.0e-11, "unit": "eV", "exact": false},
+    "t_au": {"name": "atomic unit of time", "value": 2.4188843265864e-17, "standard_uncertainty": 2.6e-29, "unit": "s", "exact": false},
+    "alpha": {"name": "fine-structure constant", "value": 7.2973525643e-3, "standard_uncertainty": 1.1e-12, "unit": "", "exact": false},
+    "R_inf": {"name": "Rydberg constant", "value": 10973731.568157, "standard_uncertainty": 1.2e-5, "unit": "m^-1", "exact": false},
+    "N_A": {"name": "Avogadro constant", "value": 6.02214076e23, "standard_uncertainty": 0.0, "unit": "mol^-1", "exact": true},
+    "k_B": {"name": "Boltzmann constant", "value": 1.380649e-23, "standard_uncertainty": 0.0, "unit": "J K^-1", "exact": true}
+  }
+}

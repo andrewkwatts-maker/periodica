@@ -1,0 +1,36 @@
+#====== periodica/rust/periodica-qm/Cargo.toml ======#
+# copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+#
+# This is the intellectual property of Andrew Keith Watts. Unauthorized
+# reproduction, distribution, or modification of this code, in whole or in part,
+# without the express written permission of Andrew Keith Watts is strictly prohibited.
+#
+# For inquiries, please contact AndrewKWatts@Gmail.com
+
+[package]
+name = "periodica-qm"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Quantum mechanics for periodica: special functions, exact hydrogen-like orbitals, superposition time evolution and Born-rule samplers. No pyo3."
+
+[lib]
+name = "periodica_qm"
+
+# No pyo3 and no filesystem access: bindings live in periodica_core.
+# `libm` (a pure-Rust port of musl's libm) supplies every transcendental so
+# results are bit-identical on every OS; std's f64::exp/sin/... call the
+# platform C library, which differs in the last bit between targets.
+[dependencies]
+periodica-mat.workspace = true
+periodica-runtime.workspace = true
+libm.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+# Independent Golub-Welsch quadrature oracles in the accuracy tests.
+nalgebra.workspace = true
