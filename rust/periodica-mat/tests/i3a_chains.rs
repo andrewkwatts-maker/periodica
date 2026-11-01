@@ -61,6 +61,9 @@ fn concrete_estimates_stay_estimated() {
             P::FractureEnergy,
             P::Jic,
         ] {
+            if g == "C30" && p == P::TensileStrength {
+                continue;
+            }
             assert_eq!(r.bulk.source(p), Source::Estimated, "{g} {p:?}");
         }
     }
@@ -70,6 +73,13 @@ fn concrete_estimates_stay_estimated() {
 fn datasheet_values_are_never_restamped() {
     let r = load("derived/composites/Concrete-Mix.json");
     assert_eq!(r.bulk.source(P::YoungsModulus), Source::Datasheet);
+}
+
+#[test]
+fn c30_tensile_strength_is_datasheet() {
+    let r = load("derived/composites/Concrete-C30.json");
+    assert_eq!(r.bulk.get(P::TensileStrength), Some(2.9e6));
+    assert_eq!(r.bulk.source(P::TensileStrength), Source::Datasheet);
 }
 
 #[test]
