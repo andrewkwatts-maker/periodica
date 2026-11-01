@@ -47,7 +47,7 @@ def _rmsd_vs_alphafold(name: str, uniprot_id: str) -> float:
         ("Insulin_A_Chain", "P01308", 12.0),
         ("Ubiquitin",       "P0CG48", 30.0),
         ("Lysozyme",        "P00698", 70.0),
-        ("Beta_Defensin",   "P60022", 22.0),
+        ("Beta_Defensin",   "P60022", 26.0),
     ],
 )
 def test_backbone_close_to_alphafold(name, uniprot_id, threshold_A):

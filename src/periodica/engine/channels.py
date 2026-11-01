@@ -336,6 +336,14 @@ def _mixture(entry: Mapping[str, Any], canonical: str, weighting: str) -> Option
         values = si_sheet(constituent)
         value = values.get(canonical)
         if value is None:
+            # A bare symbol resolves to the derived atom, which carries no
+            # bulk data; the curated elements tier does.
+            try:
+                values = si_sheet(Get(sym, from_="elements"))
+            except (UnknownName, KeyError, TypeError):
+                continue
+            value = values.get(canonical)
+        if value is None:
             continue
         weight = float(amount)
         if weighting == "mass":
