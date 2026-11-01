@@ -45,6 +45,7 @@
   "Mass_MeVc2": 123105.32908172478,
   "Mass_amu": 132.15900000000002,
   "Mass_kg": 2.194551825027894e-25,
+  "Class": "Concrete",
   "Name": "Concrete-Mix",
   "Properties": {
     "CompressiveStrength_MPa": 35,

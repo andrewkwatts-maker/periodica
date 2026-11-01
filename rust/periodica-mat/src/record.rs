@@ -370,6 +370,10 @@ pub struct MaterialRecord {
     pub tier: Tier,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub category: Option<String>,
+    /// Constitutive family flag from the datasheet's `"Class"` field, for
+    /// example `"Concrete"`. Never inferred from the name.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub class: Option<String>,
     /// Element symbol -> mass fraction in `0..=1`.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub composition: Vec<(String, f64)>,

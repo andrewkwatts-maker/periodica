@@ -46,6 +46,7 @@
 use serde_json::Value;
 
 use crate::canon::{canon, is_ignored, lookup};
+use crate::concrete::fill_concrete;
 use crate::derive::fill_derived;
 use crate::property::PropertyId;
 use crate::record::{
@@ -166,6 +167,7 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
             .or_else(|| obj.get("category"))
             .and_then(Value::as_str)
             .map(str::to_string),
+        class: obj.get("Class").and_then(Value::as_str).map(str::to_string),
         composition: extract_composition(obj),
         bulk,
         lattice,
@@ -185,6 +187,9 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
     };
 
     // 4. Fill exact relations (conductivity from resistivity, G/K from E+nu...).
+    if record.class.as_deref() == Some("Concrete") {
+        fill_concrete(&mut record.bulk);
+    }
     fill_derived(&mut record.bulk);
 
     Ok(record)

@@ -1,0 +1,11 @@
+{
+  "Name": "Concrete-C30",
+  "Class": "Concrete",
+  "Category": "Concrete",
+  "Properties": {
+    "AggregateMaxSize_mm": 16,
+    "CompressiveStrength_MPa": 30,
+    "Density_kgm3": 2400,
+    "PoissonsRatio": 0.2
+  }
+}
