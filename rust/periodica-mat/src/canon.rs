@@ -258,6 +258,11 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
         "epsiloninfinity" => map!(EpsilonInfinity),
         "emissiontemperaturek" => map!(EmissionTemperature),
         "surfaceroughnessum" => map!(SurfaceRoughnessRa, UM),
+        "surfaceenergyjm2" => map!(SurfaceEnergy),
+        "surfaceslopermsrad" => map!(SurfaceSlopeRms),
+        "kineticstaticratio" => map!(KineticStaticRatio),
+        "tensilestrengthftmpa" => map!(TensileStrength, MPA),
+        "indentationhardnessgpa" => map!(Hardness, GPA),
 
         // ── Misc physical ────────────────────────────────────────────────
         "porositypercent" => map!(Porosity, PCT_TO_FRAC),

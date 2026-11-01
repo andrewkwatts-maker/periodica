@@ -63,6 +63,7 @@
 #![deny(missing_debug_implementations)]
 
 pub mod canon;
+mod chains;
 pub mod concrete;
 pub mod constants;
 pub mod derive;
@@ -78,7 +79,7 @@ pub mod table;
 pub use canon::{canon, Mapping, UnitConv};
 pub use concrete::fill_concrete;
 pub use derive::fill_derived;
-pub use pairs::{Finish, Law, PairMiss, PairTable};
+pub use pairs::{Law, PairMiss, PairRow, PairTable};
 pub use ingest::{ingest, is_material_like, IngestError};
 pub use jsonc::strip_comments;
 pub use mix::{bounds as mix_bounds, mix, MixError};

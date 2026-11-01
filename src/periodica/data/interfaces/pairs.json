@@ -1,27 +1,4 @@
 {
-  "rows": [
-    {"a": "Concrete", "b": "Concrete", "finish_a": "VerySmooth", "finish_b": "VerySmooth", "law": "Cohesive",
-     "cohesion_factor": 0.025, "mu": 0.5,
-     "source": "EN 1992-1-1:2004 sec. 6.2.5(2), very smooth interface (c multiplies f_ctd); UNVERIFIED: values recalled, not yet checked against the clause text"},
-    {"a": "Concrete", "b": "Concrete", "finish_a": "Smooth", "finish_b": "Smooth", "law": "Cohesive",
-     "cohesion_factor": 0.20, "mu": 0.6,
-     "source": "EN 1992-1-1:2004 sec. 6.2.5(2), smooth interface (c multiplies f_ctd); UNVERIFIED: values recalled, not yet checked against the clause text"},
-    {"a": "Concrete", "b": "Concrete", "finish_a": "Rough", "finish_b": "Rough", "law": "Cohesive",
-     "cohesion_factor": 0.40, "mu": 0.7,
-     "source": "EN 1992-1-1:2004 sec. 6.2.5(2), rough interface (c multiplies f_ctd); UNVERIFIED: values recalled, not yet checked against the clause text"},
-    {"a": "Concrete", "b": "Concrete", "finish_a": "Indented", "finish_b": "Indented", "law": "Cohesive",
-     "cohesion_factor": 0.50, "mu": 0.9,
-     "source": "EN 1992-1-1:2004 sec. 6.2.5(2), indented interface (c multiplies f_ctd); UNVERIFIED: values recalled, not yet checked against the clause text"},
-    {"a": "Steel", "b": "Concrete", "finish_a": "Ribbed", "finish_b": "Any", "law": "BondSlip",
-     "tau_max_coeff_good": 2500.0, "tau_max_coeff_other": 1250.0,
-     "s1_good": 0.0010, "s1_other": 0.0018, "s2_good": 0.0020, "s2_other": 0.0036,
-     "s3_rule": "ClearRibSpacing", "alpha": 0.4,
-     "source": "fib Model Code 2010 Table 6.1-1, ribbed bars, pull-out failure; tau_max = coeff * sqrt(f_cm) in Pa with f_cm in Pa (2.5 and 1.25 sqrt(MPa) MPa), slips in m; values read from the fib structuralcodes mc2010 implementation"},
-    {"a": "Steel", "b": "Steel", "finish_a": "Any", "finish_b": "Any", "law": "Coulomb",
-     "mu_s": 0.65, "mu_s_range": [0.5, 0.8], "mu_k": 0.42,
-     "source": "Engineering Toolbox, Friction Coefficients vs. Materials and Surface Conditions, steel on steel clean and dry (static 0.5-0.8, midpoint stored; sliding 0.42)"},
-    {"a": "Glass", "b": "Steel", "finish_a": "Any", "finish_b": "Any", "law": "Coulomb",
-     "mu_s": 0.6, "mu_s_range": [0.5, 0.7],
-     "source": "Engineering Toolbox, Friction Coefficients vs. Materials and Surface Conditions, glass on metal clean and dry (static 0.5-0.7, midpoint stored; no sliding value listed)"}
-  ]
+  "note": "Measured pair values keyed by the two exact record ids (MaterialRecord.name), each with provenance. A row overrides the derived value. Published family tables live in periodica-mat/tests/oracles/pairs.json as test answers.",
+  "rows": []
 }

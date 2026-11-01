@@ -196,6 +196,13 @@ define_properties! {
     IonizationEnergy         => ("J",        "Ionization Energy"),
     ElectronAffinity         => ("J",        "Electron Affinity"),
     ValenceElectrons         => ("1",        "Valence Electrons"),
+
+    // ── Interface / contact (appended last so stored indices stay stable) ─
+    SurfaceEnergy            => ("J/m^2",    "Surface Energy"),
+    SurfaceSlopeRms          => ("rad",      "RMS Asperity Slope"),
+    KineticStaticRatio       => ("1",        "Kinetic/Static Friction Ratio"),
+    TensileStrength          => ("Pa",       "Tensile Strength f_t"),
+    Hardness                 => ("Pa",       "Indentation Hardness H"),
 }
 
 impl PropertyId {

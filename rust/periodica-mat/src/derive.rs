@@ -72,7 +72,19 @@ fn one_pass(t: &mut PropertyTable) -> usize {
     n += thermal(t);
     n += optical(t);
     n += hardness(t);
+    n += crate::chains::interface_chains(t);
     n
+}
+
+/// Source for a value computed by an exact identity from `inputs`: `Derived`
+/// when every input is measured or exact, `Estimated` when any input is itself
+/// an estimate. An identity never launders an estimate into a `Derived` value.
+fn inherit(t: &PropertyTable, inputs: &[P]) -> Source {
+    if inputs.iter().any(|p| t.source(*p) == Source::Estimated) {
+        Source::Estimated
+    } else {
+        Source::Derived
+    }
 }
 
 /// Conductivity and resistivity are exact reciprocals.
@@ -91,12 +103,14 @@ fn electrical(t: &mut PropertyTable) -> usize {
     }
 
     if let Some(rho) = rho {
-        if rho > 0.0 && t.set_if_better(P::ElectricalConductivity, 1.0 / rho, Source::Derived) {
+        let src = inherit(t, &[P::ElectricalResistivity]);
+        if rho > 0.0 && t.set_if_better(P::ElectricalConductivity, 1.0 / rho, src) {
             n += 1;
         }
     }
     if let Some(sigma) = sigma {
-        if sigma > 0.0 && t.set_if_better(P::ElectricalResistivity, 1.0 / sigma, Source::Derived) {
+        let src = inherit(t, &[P::ElectricalConductivity]);
+        if sigma > 0.0 && t.set_if_better(P::ElectricalResistivity, 1.0 / sigma, src) {
             n += 1;
         }
     }
@@ -104,7 +118,7 @@ fn electrical(t: &mut PropertyTable) -> usize {
 }
 
 /// Isotropic-elasticity identities. Any two of `E`, `G`, `K`, `nu` determine
-/// the rest.
+/// the rest. Each write inherits the weaker source of its inputs.
 fn elastic(t: &mut PropertyTable) -> usize {
     let mut n = 0;
     let e = t.get(P::YoungsModulus);
@@ -115,87 +129,68 @@ fn elastic(t: &mut PropertyTable) -> usize {
         .filter(|v| (NU_MIN..=NU_MAX).contains(v));
 
     if let (Some(e), Some(nu)) = (e, nu) {
-        if t.set_if_better(P::ShearModulus, e / (2.0 * (1.0 + nu)), Source::Derived) {
-            n += 1;
-        }
-        if t.set_if_better(
-            P::BulkModulus,
-            e / (3.0 * (1.0 - 2.0 * nu)),
-            Source::Derived,
-        ) {
-            n += 1;
-        }
+        let src = inherit(t, &[P::YoungsModulus, P::PoissonsRatio]);
+        n += usize::from(t.set_if_better(P::ShearModulus, e / (2.0 * (1.0 + nu)), src));
+        n += usize::from(t.set_if_better(P::BulkModulus, e / (3.0 * (1.0 - 2.0 * nu)), src));
     }
     if let (Some(g), Some(nu)) = (g, nu) {
-        if t.set_if_better(P::YoungsModulus, 2.0 * g * (1.0 + nu), Source::Derived) {
-            n += 1;
-        }
+        let src = inherit(t, &[P::ShearModulus, P::PoissonsRatio]);
+        n += usize::from(t.set_if_better(P::YoungsModulus, 2.0 * g * (1.0 + nu), src));
     }
     if let (Some(k), Some(nu)) = (k, nu) {
-        if t.set_if_better(
-            P::YoungsModulus,
-            3.0 * k * (1.0 - 2.0 * nu),
-            Source::Derived,
-        ) {
-            n += 1;
-        }
+        let src = inherit(t, &[P::BulkModulus, P::PoissonsRatio]);
+        n += usize::from(t.set_if_better(P::YoungsModulus, 3.0 * k * (1.0 - 2.0 * nu), src));
     }
     if let (Some(e), Some(g)) = (e, g) {
-        if g > 0.0 {
-            let derived_nu = e / (2.0 * g) - 1.0;
-            if (NU_MIN..=NU_MAX).contains(&derived_nu)
-                && t.set_if_better(P::PoissonsRatio, derived_nu, Source::Derived)
-            {
-                n += 1;
-            }
+        let src = inherit(t, &[P::YoungsModulus, P::ShearModulus]);
+        let derived_nu = e / (2.0 * g) - 1.0;
+        if g > 0.0 && (NU_MIN..=NU_MAX).contains(&derived_nu) {
+            n += usize::from(t.set_if_better(P::PoissonsRatio, derived_nu, src));
         }
     }
     if let (Some(e), Some(k)) = (e, k) {
-        if k > 0.0 {
-            let derived_nu = (1.0 - e / (3.0 * k)) * 0.5;
-            if (NU_MIN..=NU_MAX).contains(&derived_nu)
-                && t.set_if_better(P::PoissonsRatio, derived_nu, Source::Derived)
-            {
-                n += 1;
-            }
+        let src = inherit(t, &[P::YoungsModulus, P::BulkModulus]);
+        let derived_nu = (1.0 - e / (3.0 * k)) * 0.5;
+        if k > 0.0 && (NU_MIN..=NU_MAX).contains(&derived_nu) {
+            n += usize::from(t.set_if_better(P::PoissonsRatio, derived_nu, src));
         }
     }
     if let (Some(g), Some(k)) = (g, k) {
+        let src = inherit(t, &[P::ShearModulus, P::BulkModulus]);
         let denom = 3.0 * k + g;
-        if denom > 0.0 && t.set_if_better(P::YoungsModulus, 9.0 * k * g / denom, Source::Derived) {
-            n += 1;
+        if denom > 0.0 {
+            n += usize::from(t.set_if_better(P::YoungsModulus, 9.0 * k * g / denom, src));
         }
     }
     n
 }
 
-/// Irwin's relation between the stress-intensity and energy formulations of
-/// toughness. Plane stress: `G_IC = K_IC^2 / E`.
+/// Irwin's plane-stress relation between the stress-intensity and energy
+/// formulations of toughness, `G_IC = J_IC = K_IC^2 / E` (Irwin 1957). It
+/// holds only for a linear-elastic plane-stress crack, so the value is a
+/// correlation: `Estimated`. `G_F` and `J_IC` are the same quantity in the
+/// same units (`J_IC` is the initiation value, `G_F` the total), so each is
+/// mirrored from the other as `Estimated`.
 fn fracture(t: &mut PropertyTable) -> usize {
     let mut n = 0;
     let e = t.get(P::YoungsModulus).filter(|v| *v > 0.0);
     if let (Some(kic), Some(e)) = (t.get(P::FractureToughnessKic), e) {
-        if t.set_if_better(P::Jic, kic * kic / e, Source::Derived) {
-            n += 1;
-        }
+        n += usize::from(t.set_if_better(P::Jic, kic * kic / e, Source::Estimated));
     }
     if let (Some(jic), Some(e)) = (t.get(P::Jic), e) {
-        if jic > 0.0 && t.set_if_better(P::FractureToughnessKic, (jic * e).sqrt(), Source::Derived)
-        {
-            n += 1;
+        if jic > 0.0 {
+            n += usize::from(t.set_if_better(
+                P::FractureToughnessKic,
+                (jic * e).sqrt(),
+                Source::Estimated,
+            ));
         }
     }
-    // J_IC and a measured fracture energy are the same quantity in the same
-    // units; mirror whichever one is present.
     if let Some(jic) = t.get(P::Jic) {
-        if t.set_if_better(P::FractureEnergy, jic, Source::Derived) {
-            n += 1;
-        }
+        n += usize::from(t.set_if_better(P::FractureEnergy, jic, Source::Estimated));
     }
     if let Some(gf) = t.get(P::FractureEnergy) {
-        if t.set_if_better(P::Jic, gf, Source::Derived) {
-            n += 1;
-        }
+        n += usize::from(t.set_if_better(P::Jic, gf, Source::Estimated));
     }
     n
 }
@@ -209,8 +204,9 @@ fn thermal(t: &mut PropertyTable) -> usize {
         t.get(P::SpecificHeat),
     );
     if let (Some(k), Some(rho), Some(cp)) = (k, rho, cp) {
+        let src = inherit(t, &[P::ThermalConductivity, P::Density, P::SpecificHeat]);
         let denom = rho * cp;
-        if denom > 0.0 && t.set_if_better(P::ThermalDiffusivity, k / denom, Source::Derived) {
+        if denom > 0.0 && t.set_if_better(P::ThermalDiffusivity, k / denom, src) {
             n += 1;
         }
     }
@@ -224,20 +220,19 @@ fn optical(t: &mut PropertyTable) -> usize {
     let tr = t.get(P::Transmittance);
     if let (Some(r), Some(tr)) = (r, tr) {
         let a = 1.0 - r - tr;
-        if (0.0..=1.0).contains(&a) && t.set_if_better(P::Absorptance, a, Source::Derived) {
+        let src = inherit(t, &[P::Reflectance, P::Transmittance]);
+        if (0.0..=1.0).contains(&a) && t.set_if_better(P::Absorptance, a, src) {
             n += 1;
         }
     }
     // Kirchhoff: at thermal equilibrium emissivity equals absorptance.
     if let Some(a) = t.get(P::Absorptance) {
-        if t.set_if_better(P::Emissivity, a, Source::Derived) {
-            n += 1;
-        }
+        let src = inherit(t, &[P::Absorptance]);
+        n += usize::from(t.set_if_better(P::Emissivity, a, src));
     }
     if let Some(e) = t.get(P::Emissivity) {
-        if t.set_if_better(P::Absorptance, e, Source::Derived) {
-            n += 1;
-        }
+        let src = inherit(t, &[P::Emissivity]);
+        n += usize::from(t.set_if_better(P::Absorptance, e, src));
     }
     // Normal-incidence Fresnel reflectance from the refractive index.
     if let Some(nidx) = t.get(P::RefractiveIndexN) {
