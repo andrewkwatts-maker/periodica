@@ -1,0 +1,8 @@
+{
+  "Name": "Magnet-N42",
+  "Symbol": "Magnet-N42",
+  "Density_kgm3": 7500,
+  "Remanence_T": 1.32,
+  "IntrinsicCoercivity_Am": 955000,
+  "source": "Sintered neodymium-iron-boron grade N42, typical grade table (K&J Magnetics grade chart): residual induction Br 13.2 kG = 1.32 T, intrinsic coercivity Hcj >= 12 kOe = 955 kA/m, density 7.5 g/cm3"
+}

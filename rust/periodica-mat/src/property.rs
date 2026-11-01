@@ -203,6 +203,8 @@ define_properties! {
     KineticStaticRatio       => ("1",        "Kinetic/Static Friction Ratio"),
     TensileStrength          => ("Pa",       "Tensile Strength f_t"),
     Hardness                 => ("Pa",       "Indentation Hardness H"),
+    Remanence                => ("T",        "Remanence B_r"),
+    IntrinsicCoercivity      => ("A/m",      "Intrinsic Coercivity H_cj"),
 }
 
 impl PropertyId {

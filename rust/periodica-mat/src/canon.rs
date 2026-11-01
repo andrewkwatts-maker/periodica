@@ -107,6 +107,7 @@ const KJ: f64 = 1.0e3;
 const G_CM3_TO_KG_M3: f64 = 1.0e3;
 const UM: f64 = 1.0e-6;
 const UM2: f64 = 1.0e-12;
+const NOHM: f64 = 1.0e-9;
 const PM: f64 = 1.0e-12;
 const MM: f64 = 1.0e-3;
 const MM2_S: f64 = 1.0e-6;
@@ -236,6 +237,7 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
 
         // ── Electrical ───────────────────────────────────────────────────
         "electricalresistivityohmm" => map!(ElectricalResistivity),
+        "electricalresistivitynohmm" => map!(ElectricalResistivity, NOHM),
         // %IACS is defined against 5.8e7 S/m, so this is an exact conversion.
         "percentiacs" => map!(ElectricalConductivity, IACS_PCT_TO_S_M),
         "dielectricconstant" => map!(RelativePermittivity),
@@ -263,6 +265,8 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
         "kineticstaticratio" => map!(KineticStaticRatio),
         "tensilestrengthftmpa" => map!(TensileStrength, MPA),
         "indentationhardnessgpa" => map!(Hardness, GPA),
+        "remanencet" => map!(Remanence),
+        "intrinsiccoercivityam" => map!(IntrinsicCoercivity),
 
         // ── Misc physical ────────────────────────────────────────────────
         "porositypercent" => map!(Porosity, PCT_TO_FRAC),
