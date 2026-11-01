@@ -330,7 +330,7 @@ mod tests {
                 hub.registry
                     .tier_order()
                     .iter()
-                    .filter(|t| t.as_str() != "atoms")
+                    .filter(|t| t.as_str() != "atoms" && t.as_str() != "elements")
                     .flat_map(|t| {
                         hub.registry
                             .tier_index(t)

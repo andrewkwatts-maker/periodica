@@ -516,7 +516,7 @@ mod tests {
         }
         let _g = crate::data_loader::DATA_TEST_LOCK.lock();
         crate::data_loader::load_all_tiers(&data).unwrap();
-        let err = sample("Aluminum_6061_T6", "Density_kg_m3", None, None).unwrap_err();
+        let err = sample("No_Such_Material_6061", "Density_kg_m3", None, None).unwrap_err();
         assert!(matches!(kind(err), SampleError::UnknownName { .. }));
         assert_eq!(sample("Aluminum-6061", "Density_kgm3", None, None).unwrap(), 2700.0);
         // Any other resolution failure is reported as itself, not as an

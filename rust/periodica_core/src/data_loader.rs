@@ -615,21 +615,30 @@ mod tests {
         );
 
         let tiers = list_tiers();
-        // Exactly the 13 tiers Python's list_tiers() reports.
+        // Exactly the 21 tiers Python's list_tiers() reports: the derived
+        // tiers plus every bundled curated (active) tier.
         let expected = [
             "alloys",
             "amino_acids",
+            "antiquarks",
             "atoms",
+            "biological_materials",
+            "cell_components",
+            "cells",
             "ceramics",
             "composites",
+            "elements",
             "fundamentals",
             "hadrons_gen",
             "ions",
             "isotopes",
+            "materials",
             "molecules",
+            "nucleic_acids",
             "polymers",
             "proteins",
             "subatomic",
+            "tissues",
         ];
         assert_eq!(tiers, expected, "tier set must match Python's list_tiers()");
 

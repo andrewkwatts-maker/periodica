@@ -168,7 +168,7 @@ impl State {
         }
         let inv = 1.0 / libm::sqrt(norm2);
         for t in &mut state.terms {
-            t.coefficient = t.coefficient * inv;
+            t.coefficient *= inv;
         }
         Ok(state)
     }
