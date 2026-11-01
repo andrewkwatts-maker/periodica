@@ -6,6 +6,7 @@
 //! | Property | Rule |
 //! |---|---|
 //! | density, porosity, thermal expansion | volume-fraction average |
+//! | surface energy | fraction-weighted average; the caller supplies atom fractions, as the surface is counted in atoms |
 //! | specific heat (per mass) | mass-weighted average (the volume average of heat capacity per volume, divided by the mixed density) |
 //! | Young, shear, bulk modulus | Hill average, the mean of the Voigt (arithmetic) and Reuss (harmonic) bounds |
 //! | Poisson ratio | from the Hill bulk and shear moduli, `(3K - 2G) / (2 (3K + G))`; volume average when either modulus is missing |
@@ -73,7 +74,11 @@ pub fn bounds(entries: Entries<'_>, prop: PropertyId) -> MixResult<(f64, f64)> {
 pub fn mix(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
     use PropertyId as P;
     match prop {
-        P::Density | P::Porosity | P::ThermalExpansion | P::StrainHardeningExponent => {
+        P::Density
+        | P::Porosity
+        | P::ThermalExpansion
+        | P::StrainHardeningExponent
+        | P::SurfaceEnergy => {
             volume_average(entries, prop)
         }
         P::SpecificHeat => mass_weighted(entries, prop),

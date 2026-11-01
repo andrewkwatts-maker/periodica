@@ -64,6 +64,7 @@
 
 pub mod canon;
 mod chains;
+pub mod composition;
 pub mod concrete;
 pub mod constants;
 pub mod derive;
