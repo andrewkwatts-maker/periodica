@@ -1,0 +1,291 @@
+{
+  "_comment": [
+    "Engine channels: the physical quantities a game engine actually samples,",
+    "each defined as an ordered list of ways to obtain it. Consumed by",
+    "periodica.engine.channels.",
+    "",
+    "A channel is resolved by walking its `sources` in order and taking the",
+    "first that produces a value. Every source records how it was obtained, so",
+    "a consumer can always tell a measured number from a derived or defaulted",
+    "one via `confidence` and `method`.",
+    "",
+    "Source kinds:",
+    "  property  read a canonical property straight off the data sheet",
+    "  formula   evaluate `expr` over other channels and canonical properties",
+    "  mixture   volume- or mass-weighted average over Composition/Components",
+    "  constant  a documented fallback, so a channel is never missing",
+    "",
+    "`expr` is a restricted arithmetic expression over named inputs -- no",
+    "attribute access, no calls beyond the whitelisted math functions. See",
+    "periodica.engine.channels._safe_eval."
+  ],
+  "version": 1,
+
+  "channels": {
+    "density": {
+      "unit": "kg_m3", "dimension": "scalar",
+      "description": "Mass per unit volume. Drives inertia, buoyancy and impact response.",
+      "sources": [
+        { "kind": "property", "property": "density", "confidence": 1.0 },
+        { "kind": "mixture", "property": "density", "weighting": "mass", "confidence": 0.7 },
+        { "kind": "constant", "value": 1000.0, "confidence": 0.1,
+          "note": "water-like default so a bulk body is never massless" }
+      ]
+    },
+
+    "stiffness": {
+      "unit": "Pa", "dimension": "scalar",
+      "description": "Young's modulus. The elastic slope of the stress-strain curve.",
+      "sources": [
+        { "kind": "property", "property": "youngs_modulus", "confidence": 1.0 },
+        { "kind": "formula", "expr": "2 * shear_modulus * (1 + poissons_ratio)",
+          "inputs": ["shear_modulus", "poissons_ratio"], "confidence": 0.9,
+          "note": "isotropic elasticity identity E = 2G(1+v)" },
+        { "kind": "formula", "expr": "3 * bulk_modulus * (1 - 2 * poissons_ratio)",
+          "inputs": ["bulk_modulus", "poissons_ratio"], "confidence": 0.9,
+          "note": "isotropic elasticity identity E = 3K(1-2v)" },
+        { "kind": "mixture", "property": "youngs_modulus", "weighting": "volume", "confidence": 0.6 },
+        { "kind": "formula", "expr": "2 * density * speed_of_sound**2 * (1 + poisson)",
+          "inputs": ["density", "speed_of_sound", "poisson"],
+          "allow_defaults": ["poisson"], "confidence": 0.35,
+          "note": "Read the Debye velocity as the shear velocity: G = rho*v^2, then E = 2G(1+v). Lands within ~25% for elemental metals (Fe: 264 vs 211 GPa)." },
+        { "kind": "constant", "value": 1.0e11, "confidence": 0.1,
+          "note": "100 GPa, the order of magnitude of a structural metal" }
+      ]
+    },
+
+    "poisson": {
+      "unit": "ratio", "dimension": "scalar",
+      "description": "Poisson's ratio. Transverse contraction under axial load.",
+      "sources": [
+        { "kind": "property", "property": "poissons_ratio", "confidence": 1.0 },
+        { "kind": "formula", "expr": "stiffness / (2 * shear_modulus) - 1",
+          "inputs": ["stiffness", "shear_modulus"], "confidence": 0.9 },
+        { "kind": "constant", "value": 0.3, "confidence": 0.2,
+          "note": "0.3 is the usual engineering default for metals" }
+      ]
+    },
+
+    "yield_stress": {
+      "unit": "Pa", "dimension": "scalar",
+      "description": "Stress at which permanent deformation begins.",
+      "sources": [
+        { "kind": "property", "property": "yield_strength", "confidence": 1.0 },
+        { "kind": "formula", "expr": "0.75 * tensile_strength",
+          "inputs": ["tensile_strength"], "confidence": 0.5,
+          "note": "typical yield/tensile ratio for wrought metals" },
+        { "kind": "formula", "expr": "3.0e6 * hardness_vickers",
+          "inputs": ["hardness_vickers"], "confidence": 0.4,
+          "note": "Tabor: yield ~ HV/3, with HV in kgf/mm2" },
+        { "kind": "formula", "expr": "stiffness / 500.0", "inputs": ["stiffness"],
+          "confidence": 0.2,
+          "note": "E/500 is the rough yield-to-modulus ratio of engineering alloys" },
+        { "kind": "constant", "value": 2.5e8, "confidence": 0.1 }
+      ]
+    },
+
+    "ultimate_stress": {
+      "unit": "Pa", "dimension": "scalar",
+      "description": "Stress at fracture. The failure threshold for destructible geometry.",
+      "sources": [
+        { "kind": "property", "property": "tensile_strength", "confidence": 1.0 },
+        { "kind": "property", "property": "compressive_strength", "confidence": 0.6,
+          "note": "brittle sheets often quote compressive strength only" },
+        { "kind": "formula", "expr": "yield_stress / 0.75",
+          "inputs": ["yield_stress"], "confidence": 0.5 },
+        { "kind": "constant", "value": 4.0e8, "confidence": 0.1 }
+      ]
+    },
+
+    "failure_strain": {
+      "unit": "ratio", "dimension": "scalar",
+      "description": "Strain at fracture. Separates ductile crumpling from brittle shattering.",
+      "sources": [
+        { "kind": "property", "property": "elongation", "confidence": 1.0 },
+        { "kind": "formula", "expr": "ultimate_stress / stiffness",
+          "inputs": ["ultimate_stress", "stiffness"], "confidence": 0.4,
+          "note": "purely elastic estimate: a lower bound for a ductile material" },
+        { "kind": "constant", "value": 0.02, "confidence": 0.1 }
+      ]
+    },
+
+    "hardness": {
+      "unit": "Pa", "dimension": "scalar",
+      "description": "Indentation resistance, as a pressure. Drives digging and wear cost.",
+      "sources": [
+        { "kind": "formula", "expr": "9.80665e6 * hardness_vickers",
+          "inputs": ["hardness_vickers"], "confidence": 1.0,
+          "note": "HV in kgf/mm2 -> Pa" },
+        { "kind": "formula", "expr": "9.80665e6 * hardness_brinell",
+          "inputs": ["hardness_brinell"], "confidence": 0.9 },
+        { "kind": "formula", "expr": "3 * yield_stress",
+          "inputs": ["yield_stress"], "confidence": 0.5,
+          "note": "inverse of the Tabor relation" },
+        { "kind": "constant", "value": 1.0e9, "confidence": 0.1 }
+      ]
+    },
+
+    "toughness": {
+      "unit": "Pa_sqrt_m", "dimension": "scalar",
+      "description": "Resistance to crack propagation. Gates fracture in destructible meshes.",
+      "sources": [
+        { "kind": "property", "property": "fracture_toughness", "confidence": 1.0 },
+        { "kind": "formula", "expr": "sqrt(stiffness * 1000.0)",
+          "inputs": ["stiffness"], "confidence": 0.3,
+          "note": "order-of-magnitude stand-in; K ~ sqrt(E * G_c)" },
+        { "kind": "constant", "value": 2.0e7, "confidence": 0.1 }
+      ]
+    },
+
+    "thermal_conductivity": {
+      "unit": "W_mK", "dimension": "scalar",
+      "description": "Heat conduction rate. Drives heat spread and thermal imaging.",
+      "sources": [
+        { "kind": "property", "property": "thermal_conductivity", "confidence": 1.0 },
+        { "kind": "mixture", "property": "thermal_conductivity", "weighting": "volume", "confidence": 0.7 },
+        { "kind": "formula", "expr": "2.44e-8 * 300.0 / electrical_resistivity",
+          "inputs": ["electrical_resistivity"], "confidence": 0.6,
+          "note": "Wiedemann-Franz at 300 K, metals only" },
+        { "kind": "constant", "value": 1.0, "confidence": 0.1 }
+      ]
+    },
+
+    "specific_heat": {
+      "unit": "J_kgK", "dimension": "scalar",
+      "description": "Heat needed per kelvin per kilogram. Sets thermal inertia.",
+      "sources": [
+        { "kind": "property", "property": "specific_heat", "confidence": 1.0 },
+        { "kind": "mixture", "property": "specific_heat", "weighting": "mass", "confidence": 0.7 },
+        { "kind": "constant", "value": 500.0, "confidence": 0.1 }
+      ]
+    },
+
+    "thermal_diffusivity": {
+      "unit": "m2_s", "dimension": "scalar",
+      "description": "How fast a temperature front travels. The right timestep scale for heat sim.",
+      "sources": [
+        { "kind": "property", "property": "thermal_diffusivity", "confidence": 1.0 },
+        { "kind": "formula", "expr": "thermal_conductivity / (density * specific_heat)",
+          "inputs": ["thermal_conductivity", "density", "specific_heat"], "confidence": 0.95,
+          "note": "definition: alpha = k / (rho * c_p)" }
+      ]
+    },
+
+    "thermal_expansion": {
+      "unit": "per_K", "dimension": "scalar",
+      "description": "Linear expansion per kelvin. Drives thermal stress and warping.",
+      "sources": [
+        { "kind": "property", "property": "thermal_expansion", "confidence": 1.0 },
+        { "kind": "mixture", "property": "thermal_expansion", "weighting": "volume", "confidence": 0.7 },
+        { "kind": "constant", "value": 1.2e-5, "confidence": 0.1 }
+      ]
+    },
+
+    "melting_point": {
+      "unit": "K", "dimension": "scalar",
+      "description": "Temperature at which the material stops being a solid.",
+      "sources": [
+        { "kind": "property", "property": "melting_point", "confidence": 1.0 },
+        { "kind": "mixture", "property": "melting_point", "weighting": "mass", "confidence": 0.5,
+          "note": "a rule-of-mixtures melting point is a rough guide, not a solidus" },
+        { "kind": "constant", "value": 1000.0, "confidence": 0.1 }
+      ]
+    },
+
+    "emissivity": {
+      "unit": "ratio", "dimension": "scalar",
+      "description": "Thermal radiation efficiency. Drives IR rendering and radiative cooling.",
+      "sources": [
+        { "kind": "property", "property": "emissivity", "confidence": 1.0 },
+        { "kind": "formula", "expr": "1 - reflectance", "inputs": ["reflectance"],
+          "confidence": 0.6, "note": "Kirchhoff, opaque body" },
+        { "kind": "constant", "value": 0.9, "confidence": 0.2 }
+      ]
+    },
+
+    "reflectance": {
+      "unit": "ratio", "dimension": "scalar",
+      "description": "Fraction of incident light reflected. The albedo term in shading.",
+      "sources": [
+        { "kind": "property", "property": "reflectance", "confidence": 1.0 },
+        { "kind": "formula",
+          "expr": "((refractive_index - 1)**2 + extinction_coefficient**2) / ((refractive_index + 1)**2 + extinction_coefficient**2)",
+          "inputs": ["refractive_index", "extinction_coefficient"], "confidence": 0.9,
+          "note": "Fresnel reflectance at normal incidence from air" },
+        { "kind": "formula", "expr": "1 - emissivity", "inputs": ["emissivity"], "confidence": 0.5 },
+        { "kind": "constant", "value": 0.04, "confidence": 0.2,
+          "note": "0.04 is the usual dielectric base reflectance in PBR" }
+      ]
+    },
+
+    "absorption": {
+      "unit": "per_m", "dimension": "scalar",
+      "description": "Beer-Lambert absorption coefficient. Drives volumetric attenuation.",
+      "sources": [
+        { "kind": "property", "property": "absorption_coefficient", "confidence": 1.0 },
+        { "kind": "formula", "expr": "4 * pi * extinction_coefficient / reference_wavelength_m",
+          "inputs": ["extinction_coefficient"], "confidence": 0.9,
+          "note": "alpha = 4*pi*k/lambda, evaluated at the reference wavelength" },
+        { "kind": "formula", "expr": "-log(max(transmittance, 1e-9)) / reference_thickness_m",
+          "inputs": ["transmittance"], "confidence": 0.6 },
+        { "kind": "constant", "value": 0.0, "confidence": 0.2,
+          "note": "transparent by default rather than opaque" }
+      ]
+    },
+
+    "colour": {
+      "unit": "linear_srgb", "dimension": "rgb",
+      "description": "Base colour as linear sRGB. Read from a declared hex Color, else from reflectance, else from characteristic emission wavelength.",
+      "sources": [
+        { "kind": "colour_hex", "fields": ["Color", "color", "Colour", "colour"], "confidence": 1.0 },
+        { "kind": "colour_wavelength", "property": "emission_wavelength", "confidence": 0.6 },
+        { "kind": "colour_grey", "channel": "reflectance", "confidence": 0.4 }
+      ]
+    },
+
+    "electrical_resistivity": {
+      "unit": "Ohm_m", "dimension": "scalar",
+      "description": "Bulk resistivity. Drives conductivity gameplay and eddy effects.",
+      "sources": [
+        { "kind": "property", "property": "electrical_resistivity", "confidence": 1.0 },
+        { "kind": "formula", "expr": "1 / electrical_conductivity",
+          "inputs": ["electrical_conductivity"], "confidence": 1.0 },
+        { "kind": "constant", "value": 1.0e12, "confidence": 0.1,
+          "note": "insulating by default" }
+      ]
+    },
+
+    "speed_of_sound": {
+      "unit": "m_s", "dimension": "scalar",
+      "description": "Longitudinal wave speed. Sets acoustic delay and impact resonance.",
+      "sources": [
+        { "kind": "property", "property": "speed_of_sound", "confidence": 1.0 },
+        { "kind": "formula", "expr": "sqrt(stiffness / density)",
+          "inputs": ["stiffness", "density"], "confidence": 0.9,
+          "note": "thin-rod wave speed sqrt(E/rho)" },
+        { "kind": "formula",
+          "expr": "(k_B * debye_temperature / hbar) / (6 * pi**2 * density / atomic_mass)**(1.0/3.0)",
+          "inputs": ["debye_temperature", "density", "atomic_mass"], "confidence": 0.45,
+          "note": "Debye sound velocity from theta_D and atom number density n = rho/m_atom. This is what gives bare elements a mechanical response at all." },
+        { "kind": "constant", "value": 3000.0, "confidence": 0.1 }
+      ]
+    }
+  },
+
+  "constants": {
+    "reference_wavelength_m": 5.5e-7,
+    "reference_thickness_m": 1.0e-3,
+    "k_B": 1.380649e-23,
+    "hbar": 1.054571817e-34,
+    "N_A": 6.02214076e23
+  },
+
+  "channel_groups": {
+    "mechanical": ["stiffness", "poisson", "yield_stress", "ultimate_stress",
+                   "failure_strain", "hardness", "toughness"],
+    "thermal": ["thermal_conductivity", "specific_heat", "thermal_diffusivity",
+                "thermal_expansion", "melting_point", "emissivity"],
+    "optical": ["reflectance", "absorption", "colour"],
+    "bulk": ["density", "electrical_resistivity", "speed_of_sound"]
+  }
+}

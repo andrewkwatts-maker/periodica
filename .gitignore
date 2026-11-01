@@ -32,3 +32,6 @@ src/periodica/_periodica_core*.pyd
 src/periodica/_periodica_core*.so
 # Windows debug symbols `maturin develop` writes beside the .pyd.
 src/periodica/*.pdb
+# Locally built Rust extension (maturin output)
+*.so
+*.pyd

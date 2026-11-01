@@ -1,0 +1,514 @@
+{
+  "_comment": [
+    "Canonical property vocabulary for periodica. Consumed by periodica.properties.",
+    "Nothing here is chemistry: it is a naming + unit dictionary that lets one",
+    "physical quantity be written many ways across curated JSON (Density_g_cm3,",
+    "density, Density_kgm3, physical_properties.density_g_cm3) and still resolve",
+    "to one canonical name in one SI unit.",
+    "",
+    "How a raw key is read:",
+    "  1. the longest matching suffix in `units` is stripped off  -> the unit",
+    "  2. the remaining stem is slugified (CamelCase/snake -> snake, alnum only)",
+    "  3. the slug is looked up in each property's `aliases`      -> the canonical",
+    "  4. a key with no unit suffix uses the alias's `unit`, else the property's",
+    "     `default_unit`, else the property's `si_unit`",
+    "",
+    "`group` only drives presentation order in data sheets and the app."
+  ],
+  "version": 1,
+
+  "property_group_keys": [
+    "Properties", "properties",
+    "PhysicalProperties", "physical_properties",
+    "MechanicalProperties", "mechanical_properties",
+    "ElasticProperties", "elastic_properties",
+    "StrengthProperties", "strength_properties",
+    "ThermalProperties", "thermal_properties",
+    "ElectricalProperties", "electrical_properties",
+    "OpticalProperties", "optical_properties",
+    "MagneticProperties", "magnetic_properties",
+    "ChemicalProperties", "chemical_properties",
+    "AcousticProperties", "acoustic_properties",
+    "NuclearProperties", "nuclear_properties",
+    "LatticeProperties", "lattice_properties",
+    "Hardness", "hardness",
+    "Ductility", "ductility",
+    "FractureMechanics", "fracture_mechanics",
+    "FatigueProperties", "fatigue_properties",
+    "DerivedProperties", "derived_properties",
+    "BiologicalProperties", "biological_properties",
+    "TransportProperties", "transport_properties"
+  ],
+
+  "excluded_group_keys": [
+    "_derivation", "Constituents", "Composition", "Components", "Field",
+    "SimulationParameters", "ValidationData", "ProcessingMethods",
+    "TemperatureDependencies", "PressureDependencies", "SpatialFields",
+    "Microstructure", "PhaseComposition", "Discovery", "Antiparticle"
+  ],
+
+  "units": {
+    "per_m":         { "si": "per_m",   "factor": 1.0 },
+    "per_cm":        { "si": "per_m",   "factor": 1e2 },
+    "per_mm":        { "si": "per_m",   "factor": 1e3 },
+    "Pa":            { "si": "Pa",     "factor": 1.0 },
+    "kPa":           { "si": "Pa",     "factor": 1e3 },
+    "MPa":           { "si": "Pa",     "factor": 1e6 },
+    "GPa":           { "si": "Pa",     "factor": 1e9 },
+    "bar":           { "si": "Pa",     "factor": 1e5 },
+    "Pa_s":          { "si": "Pa_s",   "factor": 1.0 },
+    "mPa_s":         { "si": "Pa_s",   "factor": 1e-3 },
+    "MPa_sqrt_m":    { "si": "Pa_sqrt_m", "factor": 1e6 },
+    "Pa_sqrt_m":     { "si": "Pa_sqrt_m", "factor": 1.0 },
+
+    "kg_m3":         { "si": "kg_m3",  "factor": 1.0 },
+    "kgm3":          { "si": "kg_m3",  "factor": 1.0 },
+    "g_cm3":         { "si": "kg_m3",  "factor": 1e3 },
+    "gcm3":          { "si": "kg_m3",  "factor": 1e3 },
+    "g_ml":          { "si": "kg_m3",  "factor": 1e3 },
+
+    "K":             { "si": "K",      "factor": 1.0 },
+    "degC":          { "si": "K",      "factor": 1.0, "offset": 273.15 },
+    "C_deg":         { "si": "K",      "factor": 1.0, "offset": 273.15 },
+
+    "W_mK":          { "si": "W_mK",   "factor": 1.0 },
+    "WmK":           { "si": "W_mK",   "factor": 1.0 },
+    "J_kgK":         { "si": "J_kgK",  "factor": 1.0 },
+    "JkgK":          { "si": "J_kgK",  "factor": 1.0 },
+    "J_molK":        { "si": "J_molK", "factor": 1.0 },
+    "per_K":         { "si": "per_K",  "factor": 1.0 },
+    "perK":          { "si": "per_K",  "factor": 1.0 },
+    "um_mK":         { "si": "per_K",  "factor": 1e-6 },
+    "m2_s":          { "si": "m2_s",   "factor": 1.0 },
+    "mm2_s":         { "si": "m2_s",   "factor": 1e-6 },
+
+    "Ohm_m":         { "si": "Ohm_m",  "factor": 1.0 },
+    "Ohm_cm":        { "si": "Ohm_m",  "factor": 1e-2 },
+    "nOhm_m":        { "si": "Ohm_m",  "factor": 1e-9 },
+    "uOhm_cm":       { "si": "Ohm_m",  "factor": 1e-8 },
+    "S_m":           { "si": "S_m",    "factor": 1.0 },
+    "MS_m":          { "si": "S_m",    "factor": 1e6 },
+    "V_m":           { "si": "V_m",    "factor": 1.0 },
+    "kV_mm":         { "si": "V_m",    "factor": 1e6 },
+
+    "m":             { "si": "m",      "factor": 1.0 },
+    "cm":            { "si": "m",      "factor": 1e-2 },
+    "mm":            { "si": "m",      "factor": 1e-3 },
+    "um":            { "si": "m",      "factor": 1e-6 },
+    "nm":            { "si": "m",      "factor": 1e-9 },
+    "pm":            { "si": "m",      "factor": 1e-12 },
+    "fm":            { "si": "m",      "factor": 1e-15 },
+    "angstrom":      { "si": "m",      "factor": 1e-10 },
+    "m2_g":          { "si": "m2_kg",  "factor": 1e3 },
+
+    "percent":       { "si": "ratio",  "factor": 1e-2 },
+    "pct":           { "si": "ratio",  "factor": 1e-2 },
+    "ratio":         { "si": "ratio",  "factor": 1.0 },
+    "fraction":      { "si": "ratio",  "factor": 1.0 },
+
+    "J":             { "si": "J",      "factor": 1.0 },
+    "kJ":            { "si": "J",      "factor": 1e3 },
+    "kJ_m2":         { "si": "J_m2",   "factor": 1e3 },
+    "J_m2":          { "si": "J_m2",   "factor": 1.0 },
+    "eV":            { "si": "J",      "factor": 1.602176634e-19 },
+    "MeV":           { "si": "J",      "factor": 1.602176634e-13 },
+    "kJ_mol":        { "si": "J_mol",  "factor": 1e3 },
+    "J_mol":         { "si": "J_mol",  "factor": 1.0 },
+    "eV_atom":       { "si": "J",      "factor": 1.602176634e-19 },
+
+    "kg":            { "si": "kg",     "factor": 1.0 },
+    "g":             { "si": "kg",     "factor": 1e-3 },
+    "amu":           { "si": "kg",     "factor": 1.66053906660e-27 },
+    "u":             { "si": "kg",     "factor": 1.66053906660e-27 },
+    "Da":            { "si": "kg",     "factor": 1.66053906660e-27 },
+    "kDa":           { "si": "kg",     "factor": 1.66053906660e-24 },
+    "g_mol":         { "si": "kg_mol", "factor": 1e-3 },
+    "MeVc2":         { "si": "kg",     "factor": 1.78266192e-30 },
+
+    "deg":           { "si": "rad",    "factor": 0.017453292519943295 },
+    "rad":           { "si": "rad",    "factor": 1.0 },
+
+    "s":             { "si": "s",      "factor": 1.0 },
+    "ms":            { "si": "s",      "factor": 1e-3 },
+    "us":            { "si": "s",      "factor": 1e-6 },
+    "ns":            { "si": "s",      "factor": 1e-9 },
+    "ps":            { "si": "s",      "factor": 1e-12 },
+    "yr":            { "si": "s",      "factor": 31557600.0 },
+
+    "m_s":           { "si": "m_s",    "factor": 1.0 },
+    "km_s":          { "si": "m_s",    "factor": 1e3 },
+    "N_m":           { "si": "N_m",    "factor": 1.0 },
+    "mN_m":          { "si": "N_m",    "factor": 1e-3 },
+    "cycles":        { "si": "cycles", "factor": 1.0 },
+
+    "e":             { "si": "C",      "factor": 1.602176634e-19 },
+    "C":             { "si": "C",      "factor": 1.0 },
+    "hbar":          { "si": "hbar",   "factor": 1.0 },
+    "D":             { "si": "C_m",    "factor": 3.33564e-30 },
+    "bohr_magneton": { "si": "J_T",    "factor": 9.2740100783e-24 },
+
+    "HV":            { "si": "HV",     "factor": 1.0 },
+    "HB":            { "si": "HB",     "factor": 1.0 },
+    "HRC":           { "si": "HRC",    "factor": 1.0 },
+    "HRB":           { "si": "HRB",    "factor": 1.0 },
+    "ShoreD":        { "si": "ShoreD", "factor": 1.0 },
+    "mohs":          { "si": "mohs",   "factor": 1.0 },
+    "pauling":       { "si": "pauling","factor": 1.0 },
+    "mrd":           { "si": "mrd",    "factor": 1.0 },
+    "mV_SCE":        { "si": "V",      "factor": 1e-3 },
+    "V":             { "si": "V",      "factor": 1.0 }
+  },
+
+  "properties": {
+    "density": {
+      "si_unit": "kg_m3", "default_unit": "g_cm3", "group": "physical",
+      "range": [1.0, 30000.0], "description": "Mass per unit volume.",
+      "aliases": ["density", "bulk_density", "mass_density", "apparent_density", "true_density"]
+    },
+    "youngs_modulus": {
+      "si_unit": "Pa", "default_unit": "GPa", "group": "mechanical",
+      "range": [1e4, 2e12], "description": "Uniaxial elastic (tensile) modulus.",
+      "aliases": ["youngs_modulus", "young_modulus", "elastic_modulus",
+                  "modulus_of_elasticity", "tensile_modulus", "e_modulus",
+                  "youngs_modulus_voigt", "youngs_modulus_reuss"]
+    },
+    "shear_modulus": {
+      "si_unit": "Pa", "default_unit": "GPa", "group": "mechanical",
+      "range": [1e3, 1e12], "description": "Modulus of rigidity, G.",
+      "aliases": ["shear_modulus", "modulus_of_rigidity", "g_modulus"]
+    },
+    "bulk_modulus": {
+      "si_unit": "Pa", "default_unit": "GPa", "group": "mechanical",
+      "range": [1e5, 1e12], "description": "Resistance to uniform compression, K.",
+      "aliases": ["bulk_modulus", "k_modulus", "incompressibility"]
+    },
+    "poissons_ratio": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "mechanical",
+      "range": [-1.0, 0.5], "description": "Negative transverse-to-axial strain ratio.",
+      "aliases": ["poissons_ratio", "poisson_ratio", "nu"]
+    },
+    "tensile_strength": {
+      "si_unit": "Pa", "default_unit": "MPa", "group": "mechanical",
+      "range": [1e4, 2e10], "description": "Ultimate tensile strength.",
+      "aliases": ["tensile_strength", "ultimate_tensile_strength", "ultimate_strength",
+                  "uts", "breaking_strength", "rupture_strength"]
+    },
+    "yield_strength": {
+      "si_unit": "Pa", "default_unit": "MPa", "group": "mechanical",
+      "range": [1e3, 1e10], "description": "Onset of plastic deformation.",
+      "aliases": ["yield_strength", "yield_stress", "proof_strength", "elastic_limit"]
+    },
+    "compressive_strength": {
+      "si_unit": "Pa", "default_unit": "MPa", "group": "mechanical",
+      "range": [1e4, 5e10], "description": "Failure stress in compression.",
+      "aliases": ["compressive_strength", "compressive_yield_strength", "crushing_strength"]
+    },
+    "shear_strength": {
+      "si_unit": "Pa", "default_unit": "MPa", "group": "mechanical",
+      "range": [1e3, 1e10], "description": "Failure stress in shear.",
+      "aliases": ["shear_strength"]
+    },
+    "flexural_strength": {
+      "si_unit": "Pa", "default_unit": "MPa", "group": "mechanical",
+      "range": [1e4, 1e10], "description": "Modulus of rupture in bending.",
+      "aliases": ["flexural_strength", "bending_strength", "modulus_of_rupture"]
+    },
+    "fatigue_limit": {
+      "si_unit": "Pa", "default_unit": "MPa", "group": "mechanical",
+      "range": [1e3, 5e9], "description": "Stress amplitude survived indefinitely.",
+      "aliases": ["fatigue_limit", "endurance_limit", "fatigue_strength"]
+    },
+    "fracture_toughness": {
+      "si_unit": "Pa_sqrt_m", "default_unit": "MPa_sqrt_m", "group": "mechanical",
+      "range": [1e4, 1e9], "description": "Critical stress-intensity factor K_IC.",
+      "aliases": ["fracture_toughness", "fracture_toughness_kic", "kic", "k_ic"]
+    },
+    "elongation": {
+      "si_unit": "ratio", "default_unit": "percent", "group": "mechanical",
+      "range": [0.0, 30.0], "description": "Plastic strain at fracture.",
+      "aliases": ["elongation", "elongation_at_break", "elongation_at_fracture",
+                  "total_elongation", "strain_at_break"]
+    },
+    "reduction_of_area": {
+      "si_unit": "ratio", "default_unit": "percent", "group": "mechanical",
+      "range": [0.0, 1.0], "description": "Necking ductility measure.",
+      "aliases": ["reduction_of_area", "reduction_in_area"]
+    },
+    "strain_hardening_exponent": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "mechanical",
+      "range": [0.0, 1.0], "description": "Hollomon exponent n.",
+      "aliases": ["strain_hardening_exponent", "work_hardening_exponent", "hollomon_n"]
+    },
+    "hardness_vickers": {
+      "si_unit": "HV", "default_unit": "HV", "group": "mechanical",
+      "range": [0.1, 1e4], "description": "Vickers hardness.",
+      "aliases": ["hardness_vickers", "vickers_hardness", "vickers", "hv"]
+    },
+    "hardness_brinell": {
+      "si_unit": "HB", "default_unit": "HB", "group": "mechanical",
+      "range": [0.1, 1e4], "description": "Brinell hardness.",
+      "aliases": ["hardness_brinell", "brinell_hardness", "brinell", "hb"]
+    },
+    "hardness_rockwell_c": {
+      "si_unit": "HRC", "default_unit": "HRC", "group": "mechanical",
+      "range": [-20.0, 100.0], "description": "Rockwell C hardness.",
+      "aliases": ["hardness_rockwell_c", "rockwell_c", "hrc"]
+    },
+    "hardness_shore_d": {
+      "si_unit": "ShoreD", "default_unit": "ShoreD", "group": "mechanical",
+      "range": [0.0, 100.0], "description": "Shore D durometer hardness.",
+      "aliases": ["hardness_shore_d", "shore_d", "shored"]
+    },
+    "hardness_mohs": {
+      "si_unit": "mohs", "default_unit": "mohs", "group": "mechanical",
+      "range": [0.0, 10.0], "description": "Mohs scratch hardness.",
+      "aliases": ["hardness_mohs", "mohs_hardness", "mohs"]
+    },
+    "melting_point": {
+      "si_unit": "K", "default_unit": "K", "group": "thermal",
+      "range": [0.1, 6000.0], "description": "Solidus / melting temperature.",
+      "aliases": ["melting_point", "melting_temperature", "melt_temperature",
+                  "melting_temp", "solidus_temperature", "solidus"]
+    },
+    "boiling_point": {
+      "si_unit": "K", "default_unit": "K", "group": "thermal",
+      "range": [0.1, 7000.0], "description": "Boiling / vaporisation temperature.",
+      "aliases": ["boiling_point", "boiling_temperature", "vaporization_temperature"]
+    },
+    "glass_transition": {
+      "si_unit": "K", "default_unit": "K", "group": "thermal",
+      "range": [0.1, 3000.0], "description": "Glass-transition temperature T_g.",
+      "aliases": ["glass_transition", "glass_transition_temp",
+                  "glass_transition_temperature", "tg"]
+    },
+    "debye_temperature": {
+      "si_unit": "K", "default_unit": "K", "group": "thermal",
+      "range": [1.0, 3000.0], "description": "Debye temperature.",
+      "aliases": ["debye_temperature", "debye_temp"]
+    },
+    "curie_temperature": {
+      "si_unit": "K", "default_unit": "K", "group": "magnetic",
+      "range": [0.1, 2000.0], "description": "Ferromagnetic ordering temperature.",
+      "aliases": ["curie_temperature", "curie_point", "curie_temp"]
+    },
+    "thermal_conductivity": {
+      "si_unit": "W_mK", "default_unit": "W_mK", "group": "thermal",
+      "range": [1e-4, 3000.0], "description": "Fourier conduction coefficient k.",
+      "aliases": ["thermal_conductivity", "conductivity_thermal", "k_thermal"]
+    },
+    "specific_heat": {
+      "si_unit": "J_kgK", "default_unit": "J_kgK", "group": "thermal",
+      "range": [1.0, 20000.0], "description": "Specific heat capacity c_p.",
+      "aliases": ["specific_heat", "specific_heat_capacity", "heat_capacity", "cp"]
+    },
+    "thermal_expansion": {
+      "si_unit": "per_K", "default_unit": "per_K", "group": "thermal",
+      "range": [-1e-3, 1e-2], "description": "Linear coefficient of thermal expansion.",
+      "aliases": ["thermal_expansion", "coefficient_of_thermal_expansion", "cte",
+                  "linear_thermal_expansion", "thermal_expansion_coefficient"]
+    },
+    "thermal_diffusivity": {
+      "si_unit": "m2_s", "default_unit": "m2_s", "group": "thermal",
+      "range": [1e-9, 1e-2], "description": "k / (rho * c_p).",
+      "aliases": ["thermal_diffusivity", "alpha_thermal"]
+    },
+    "emissivity": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "thermal",
+      "range": [0.0, 1.0], "description": "Total hemispherical emissivity.",
+      "aliases": ["emissivity", "thermal_emissivity", "total_emissivity"]
+    },
+    "electrical_resistivity": {
+      "si_unit": "Ohm_m", "default_unit": "Ohm_m", "group": "electrical",
+      "range": [1e-9, 1e20], "description": "Bulk electrical resistivity.",
+      "aliases": ["electrical_resistivity", "resistivity", "volume_resistivity"]
+    },
+    "electrical_conductivity": {
+      "si_unit": "S_m", "default_unit": "S_m", "group": "electrical",
+      "range": [1e-20, 1e9], "description": "Bulk electrical conductivity.",
+      "aliases": ["electrical_conductivity", "conductivity_electrical"]
+    },
+    "dielectric_constant": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "electrical",
+      "range": [1.0, 1e5], "description": "Relative permittivity.",
+      "aliases": ["dielectric_constant", "relative_permittivity", "permittivity_relative"]
+    },
+    "dielectric_strength": {
+      "si_unit": "V_m", "default_unit": "kV_mm", "group": "electrical",
+      "range": [1e3, 1e10], "description": "Breakdown field strength.",
+      "aliases": ["dielectric_strength", "breakdown_field", "breakdown_strength"]
+    },
+    "refractive_index": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "optical",
+      "range": [0.01, 20.0], "description": "Real part of the refractive index n.",
+      "aliases": ["refractive_index", "index_of_refraction", "n_refractive"]
+    },
+    "extinction_coefficient": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "optical",
+      "range": [0.0, 100.0], "description": "Imaginary part of the refractive index k.",
+      "aliases": ["extinction_coefficient", "k_extinction", "absorption_index"]
+    },
+    "absorption_coefficient": {
+      "si_unit": "per_m", "default_unit": "per_m", "group": "optical",
+      "range": [0.0, 1e12], "description": "Beer-Lambert absorption coefficient.",
+      "aliases": ["absorption_coefficient", "alpha_absorption", "attenuation_coefficient"]
+    },
+    "reflectance": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "optical",
+      "range": [0.0, 1.0], "description": "Normal-incidence reflectance.",
+      "aliases": ["reflectance", "reflectivity", "albedo"]
+    },
+    "transmittance": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "optical",
+      "range": [0.0, 1.0], "description": "Fraction transmitted.",
+      "aliases": ["transmittance", "transmissivity", "transparency"]
+    },
+    "absorbance": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "optical",
+      "range": [0.0, 1.0], "description": "Fraction absorbed.",
+      "aliases": ["absorbance", "absorptance", "absorptivity"]
+    },
+    "band_gap": {
+      "si_unit": "J", "default_unit": "eV", "group": "electrical",
+      "range": [0.0, 3.2e-18], "description": "Electronic band gap.",
+      "aliases": ["band_gap", "bandgap", "energy_gap", "eg"]
+    },
+    "emission_wavelength": {
+      "si_unit": "m", "default_unit": "nm", "group": "optical",
+      "range": [1e-12, 1e-2], "description": "Characteristic emission wavelength.",
+      "aliases": ["emission_wavelength", "primary_emission_wavelength",
+                  "peak_emission_wavelength", "wavelength"]
+    },
+    "atomic_mass": {
+      "si_unit": "kg", "default_unit": "amu", "group": "physical",
+      "range": [1e-30, 1e-20], "description": "Mass of one atom / entity.",
+      "aliases": ["atomic_mass", "mass", "molecular_mass", "molar_mass_amu",
+                  "relative_atomic_mass", "atomic_weight"]
+    },
+    "charge": {
+      "si_unit": "C", "default_unit": "e", "group": "physical",
+      "range": [-1e-16, 1e-16], "description": "Electric charge.",
+      "aliases": ["charge", "electric_charge"]
+    },
+    "spin": {
+      "si_unit": "hbar", "default_unit": "hbar", "group": "physical",
+      "range": [0.0, 10.0], "description": "Intrinsic angular momentum.",
+      "aliases": ["spin", "spin_quantum_number"]
+    },
+    "lifetime": {
+      "si_unit": "s", "default_unit": "s", "group": "nuclear",
+      "range": [0.0, 1e40], "description": "Mean lifetime.",
+      "aliases": ["lifetime", "mean_lifetime", "tau"]
+    },
+    "half_life": {
+      "si_unit": "s", "default_unit": "s", "group": "nuclear",
+      "range": [0.0, 1e40], "description": "Half-life.",
+      "aliases": ["half_life", "halflife", "t_half"]
+    },
+    "binding_energy": {
+      "si_unit": "J", "default_unit": "MeV", "group": "nuclear",
+      "range": [0.0, 1e-7], "description": "Total nuclear binding energy.",
+      "aliases": ["binding_energy", "nuclear_binding_energy", "total_binding_energy"]
+    },
+    "ionization_energy": {
+      "si_unit": "J", "default_unit": "eV", "group": "chemical",
+      "range": [0.0, 1e-16], "description": "First ionisation energy.",
+      "aliases": ["ionization_energy", "ionisation_energy", "first_ionization_energy"]
+    },
+    "electron_affinity": {
+      "si_unit": "J_mol", "default_unit": "kJ_mol", "group": "chemical",
+      "range": [-1e6, 1e6], "description": "Electron affinity.",
+      "aliases": ["electron_affinity"]
+    },
+    "electronegativity": {
+      "si_unit": "pauling", "default_unit": "pauling", "group": "chemical",
+      "range": [0.0, 4.5], "description": "Pauling electronegativity.",
+      "aliases": ["electronegativity", "pauling_electronegativity"]
+    },
+    "atomic_radius": {
+      "si_unit": "m", "default_unit": "pm", "group": "physical",
+      "range": [1e-12, 1e-8], "description": "Empirical atomic radius.",
+      "aliases": ["atomic_radius", "empirical_radius"]
+    },
+    "covalent_radius": {
+      "si_unit": "m", "default_unit": "pm", "group": "physical",
+      "range": [1e-12, 1e-8], "description": "Covalent radius.",
+      "aliases": ["covalent_radius"]
+    },
+    "vdw_radius": {
+      "si_unit": "m", "default_unit": "pm", "group": "physical",
+      "range": [1e-12, 1e-8], "description": "Van der Waals radius.",
+      "aliases": ["vdw_radius", "van_der_waals_radius", "vanderwaals_radius"]
+    },
+    "lattice_a": {
+      "si_unit": "m", "default_unit": "pm", "group": "lattice",
+      "range": [1e-12, 1e-7], "description": "Lattice parameter a.",
+      "aliases": ["a", "lattice_a", "lattice_parameter_a", "a_lattice"]
+    },
+    "lattice_b": {
+      "si_unit": "m", "default_unit": "pm", "group": "lattice",
+      "range": [1e-12, 1e-7], "description": "Lattice parameter b.",
+      "aliases": ["b", "lattice_b", "lattice_parameter_b", "b_lattice"]
+    },
+    "lattice_c": {
+      "si_unit": "m", "default_unit": "pm", "group": "lattice",
+      "range": [1e-12, 1e-7], "description": "Lattice parameter c.",
+      "aliases": ["c", "lattice_c", "lattice_parameter_c", "c_lattice"]
+    },
+    "packing_factor": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "lattice",
+      "range": [0.0, 1.0], "description": "Atomic packing factor.",
+      "aliases": ["packing_factor", "atomic_packing_factor", "apf"]
+    },
+    "grain_size": {
+      "si_unit": "m", "default_unit": "um", "group": "microstructure",
+      "range": [1e-10, 1.0], "description": "Mean grain diameter.",
+      "aliases": ["grain_size", "average_grain_size", "mean_grain_size"]
+    },
+    "porosity": {
+      "si_unit": "ratio", "default_unit": "percent", "group": "physical",
+      "range": [0.0, 1.0], "description": "Void volume fraction.",
+      "aliases": ["porosity", "void_fraction", "void_content"]
+    },
+    "crystallinity": {
+      "si_unit": "ratio", "default_unit": "percent", "group": "physical",
+      "range": [0.0, 1.0], "description": "Crystalline volume fraction.",
+      "aliases": ["crystallinity", "crystallinity_percent", "degree_of_crystallinity"]
+    },
+    "water_content": {
+      "si_unit": "ratio", "default_unit": "percent", "group": "biological",
+      "range": [0.0, 1.0], "description": "Water mass fraction.",
+      "aliases": ["water_content", "moisture_content", "hydration"]
+    },
+    "viscosity": {
+      "si_unit": "Pa_s", "default_unit": "Pa_s", "group": "transport",
+      "range": [1e-6, 1e12], "description": "Dynamic viscosity.",
+      "aliases": ["viscosity", "dynamic_viscosity", "shear_viscosity"]
+    },
+    "surface_tension": {
+      "si_unit": "N_m", "default_unit": "N_m", "group": "transport",
+      "range": [1e-4, 10.0], "description": "Surface tension.",
+      "aliases": ["surface_tension", "surface_energy"]
+    },
+    "speed_of_sound": {
+      "si_unit": "m_s", "default_unit": "m_s", "group": "acoustic",
+      "range": [1.0, 3e4], "description": "Longitudinal sound speed.",
+      "aliases": ["speed_of_sound", "sound_velocity", "acoustic_velocity",
+                  "longitudinal_wave_velocity"]
+    },
+    "work_function": {
+      "si_unit": "J", "default_unit": "eV", "group": "electrical",
+      "range": [0.0, 2e-18], "description": "Electron work function.",
+      "aliases": ["work_function"]
+    },
+    "magnetic_permeability": {
+      "si_unit": "ratio", "default_unit": "ratio", "group": "magnetic",
+      "range": [0.0, 1e6], "description": "Relative magnetic permeability.",
+      "aliases": ["magnetic_permeability", "relative_permeability", "mu_r"]
+    },
+    "dipole_moment": {
+      "si_unit": "C_m", "default_unit": "D", "group": "chemical",
+      "range": [0.0, 1e-27], "description": "Electric dipole moment.",
+      "aliases": ["dipole_moment", "electric_dipole_moment"]
+    }
+  }
+}

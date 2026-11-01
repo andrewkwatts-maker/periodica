@@ -81,6 +81,23 @@ from periodica.sample import (
     data_sheet,
     register_field_model,
 )
+from periodica.refine import (
+    apply_refinements,
+    list_refiners,
+    register_refiner,
+)
+from periodica.properties import (
+    DataSheet,
+    canonical_of,
+    convert,
+    from_si,
+    list_properties,
+    parse_key,
+    property_spec,
+    si_sheet,
+    to_si,
+    validate_sheet,
+)
 from periodica.folding import (
     build_backbone,
     build_backbone_from_entry,
@@ -142,6 +159,11 @@ __all__ = [
     # Backend control: assert / inspect the Rust acceleration
     'assert_rust_backend', 'backend_report', 'backend_mode',
     'fallback_count', 'BackendMode', 'RustBackendUnavailable',
+    # Post-composition refinements
+    'apply_refinements', 'list_refiners', 'register_refiner',
+    # Canonical properties, units, validation
+    'DataSheet', 'canonical_of', 'convert', 'from_si', 'list_properties',
+    'parse_key', 'property_spec', 'si_sheet', 'to_si', 'validate_sheet',
     # Folding (3D backbone, Kabsch, AlphaFold reference)
     'build_backbone', 'build_backbone_from_entry', 'extract_phi_psi',
     'kabsch_rmsd', 'parse_pdb_backbone', 'backbone_array_from_pdb',

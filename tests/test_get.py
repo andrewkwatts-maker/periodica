@@ -86,14 +86,21 @@ class TestSubatomicToAtom:
         ref = _ref("atoms", ref_name)
         assert atom["Charge_e"] == ref["Charge_e"]
 
+    # Tolerances tightened once the nuclear_binding refinement supplied the
+    # mass defect: additive composition alone was ~1% high for every nucleus
+    # (Fe-56 came out 56.4634 against a measured 55.9349). What remains is
+    # mostly the honest difference between a specific isotope and the
+    # standard atomic weight the reference quotes -- C-12 is 11.9962 here
+    # against a natural-abundance 12.011 -- which AtomicWeight_amu carries
+    # separately. See test_refine.py for the accuracy floor itself.
     @pytest.mark.parametrize(
         "spec, ref_name, mass_tolerance",
         [
-            ({"P": 1, "N": 0, "E": 1}, "H", 0.01),
-            ({"P": 2, "N": 2, "E": 2}, "He", 0.05),
-            ({"P": 6, "N": 6, "E": 6}, "C", 0.10),
-            ({"P": 8, "N": 8, "E": 8}, "O", 0.15),
-            ({"P": 26, "N": 30, "E": 26}, "Fe", 1.00),
+            ({"P": 1, "N": 0, "E": 1}, "H", 0.001),
+            ({"P": 2, "N": 2, "E": 2}, "He", 0.005),
+            ({"P": 6, "N": 6, "E": 6}, "C", 0.020),
+            ({"P": 8, "N": 8, "E": 8}, "O", 0.020),
+            ({"P": 26, "N": 30, "E": 26}, "Fe", 0.100),
         ],
     )
     def test_atom_mass_close_to_reference(self, spec, ref_name, mass_tolerance):
@@ -127,10 +134,12 @@ class TestAtomsToMolecule:
     @pytest.mark.parametrize(
         "spec, ref_name, mass_tolerance",
         [
-            ({"H": 2, "O": 1}, "H2O", 0.20),
-            ({"C": 1, "O": 2}, "CO2", 0.50),
-            ({"C": 1, "H": 4}, "CH4", 0.15),
-            ({"N": 1, "H": 3}, "NH3", 0.15),
+            ({"H": 2, "O": 1}, "H2O", 0.02),
+            ({"C": 1, "O": 2}, "CO2", 0.05),
+            ({"C": 1, "H": 4}, "CH4", 0.02),
+            ({"N": 1, "H": 3}, "NH3", 0.02),
+            # NaCl stays loose: it composes from Cl-35, not chlorine's
+            # 35.45 natural-abundance weight, a 0.5 amu honest difference.
             ({"Na": 1, "Cl": 1}, "NaCl", 0.50),
         ],
     )

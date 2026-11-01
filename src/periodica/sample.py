@@ -1,9 +1,21 @@
 """3D property sampling for material entries (and any entry with a Field).
 
-A "data sheet" is the dict of bulk properties stored under `Properties`
-in a registry entry. A "field model" describes how each property varies
-in space - declared in JSON under `Field` so no chemistry/physics is
-hardcoded in this module.
+A "data sheet" is an entry's bulk properties, flattened out of whatever
+nesting the curated JSON happens to use (`Properties`, `PhysicalProperties`,
+`mechanical_properties`, ...) by `periodica.properties`. That flattening is
+what lets one sampler serve every tier: curated material and alloy sheets
+group their numbers under several blocks, generated sheets use one flat
+`Properties` dict, and element sheets put them at the root.
+
+Sheets are alias- and unit-aware, so a property can be asked for by any
+spelling the schema knows::
+
+    sample("Stainless_Steel_316L", "Density_kgm3")   # 8000.0
+    sample("Stainless_Steel_316L", "density")        # 8.0   (g/cm3)
+    sample("Stainless_Steel_316L", "YoungsModulus_GPa")
+
+A "field model" describes how each property varies in space - declared in
+JSON under `Field` so no chemistry/physics is hardcoded in this module.
 
 Public API
 ----------
@@ -38,9 +50,10 @@ or large, the sampler returns the bulk Properties.
 """
 from __future__ import annotations
 
-import hashlib
 import math
 from typing import Any, Callable, Dict, Mapping, Optional, Sequence, Tuple, Union
+
+import numpy as np
 
 # Rust impl: rust/periodica_core/src/sample.rs
 from periodica.get import Get, UnknownName
@@ -50,6 +63,8 @@ from periodica._dispatch import _record_fallback, call_rust, declare_accelerated
 # call happens, rather than filling in lazily as functions are first used.
 declare_accelerated("sample", "py_sample")
 declare_accelerated("data_sheet", "py_data_sheet")
+from periodica.properties import DataSheet, sheet as properties_sheet
+from periodica._hash import unit_at_grains, unit_at_point
 
 
 Point = Tuple[float, float, float]
@@ -94,13 +109,14 @@ def _field_model_of(entry: dict) -> str:
 
 # ── Helpers ─────────────────────────────────────────────────────────────
 
-def _props_of(entry: dict) -> dict:
-    """Bulk properties dict of an entry, falling back to root scalars."""
-    p = entry.get("Properties")
-    if isinstance(p, dict):
-        return p
-    # Promote root scalars (Mass_amu, Charge_e, ...) so atoms/molecules sample too.
-    return {k: v for k, v in entry.items() if isinstance(v, (int, float)) and v is not None}
+def _props_of(entry: dict) -> DataSheet:
+    """Flattened, alias-aware bulk properties of an entry.
+
+    Delegates to `periodica.properties.sheet`, which merges `Properties`,
+    every recognised nested property group, and root scalars into one dict
+    whose lookups tolerate alternative spellings and units.
+    """
+    return properties_sheet(entry)
 
 
 def _maybe_phase_at(point: Optional[Point], fractions: Mapping[str, float]) -> Optional[str]:
@@ -108,11 +124,16 @@ def _maybe_phase_at(point: Optional[Point], fractions: Mapping[str, float]) -> O
 
     `fractions` is {phase_name: volume_fraction} summing to <= 1; the leftover
     is treated as the dominant matrix.
+
+    The hash lives in `periodica._hash` so the vectorised sampler in
+    `periodica.engine.grid` assigns the *same* phase to the same point. It used
+    to be a SHA-1 here, which cannot be vectorised -- and a vectorised sampler
+    with its own hash would have made phase assignment depend on which
+    execution strategy the caller picked.
     """
     if point is None:
         return None
-    h = hashlib.sha1(repr(tuple(round(c, 9) for c in point)).encode()).digest()
-    u = int.from_bytes(h[:8], "big") / 2**64  # uniform in [0, 1)
+    u = unit_at_point(point)
     cum = 0.0
     for name, frac in fractions.items():
         cum += float(frac)
@@ -275,13 +296,11 @@ def _microstructure_voronoi(field: dict, prop: str, at, scale_m, entry) -> Any:
         return bulk
     # Hash 3D point + grain_density to a deterministic grain id, then a phase.
     g_density = float(field.get("grain_density", 1.0))
-    # Quantize the point by ~1/grain_density to pick a grain "cell".
+    # Quantize the point by ~1/grain_density to pick a grain "cell", then hash
+    # the cell so every point inside one grain agrees. Shared with the
+    # vectorised sampler via periodica._hash.
     grain_size = max(1e-12, 1.0 / max(1e-12, g_density)) ** (1.0 / 3.0)
-    qx = round(float(at[0]) / grain_size)
-    qy = round(float(at[1]) / grain_size)
-    qz = round(float(at[2]) / grain_size)
-    h = hashlib.sha1(repr((qx, qy, qz)).encode()).digest()
-    u = int.from_bytes(h[:8], "big") / 2**64
+    u = float(unit_at_grains(np.asarray(at, dtype=float).reshape(1, 3), grain_size)[0])
     cum = 0.0
     chosen = None
     for phase_name, phase_data in phases.items():
@@ -306,11 +325,23 @@ _BUILTIN_FIELD_MODELS.update(_FIELD_MODELS)
 
 # ── Public API ──────────────────────────────────────────────────────────
 
-def data_sheet(name_or_entry: Union[str, dict]) -> dict:
-    """Return the full property dict for a registry entry.
+def data_sheet(name_or_entry: Union[str, dict]) -> DataSheet:
+    """Return the full, flattened property sheet for a registry entry.
 
     Accepts either a name (resolved via Get) or a pre-fetched entry dict.
     Raises UnknownName when the name doesn't resolve.
+
+    The result is a `DataSheet`: a dict of the entry's own property keys that
+    also answers alternative spellings and units for the same quantity, so
+    `sheet["Density_kgm3"]` works on a sheet that stores `Density_g_cm3`.
+
+    Name resolution deliberately stays on the Python registry even when the
+    Rust core is present: the registry applies a documented tier priority
+    (curated stem beats derived symbol) that the Rust loader's tier walk does
+    not, so routing names through Rust could return a different entry for a
+    name that exists in two tiers. Rust still accelerates the compute-bound
+    exports and folding paths, and bulk sampling speed comes from
+    `periodica.engine.grid`, which vectorises over whole grids instead.
     """
     if isinstance(name_or_entry, str):
         # Only the by-name form has a Rust path; a pre-fetched dict does not.
@@ -331,9 +362,9 @@ def data_sheet(name_or_entry: Union[str, dict]) -> dict:
     )
 
 
-def _data_sheet_python(entry: dict) -> dict:
+def _data_sheet_python(entry: dict) -> DataSheet:
     """Pure-Python data_sheet body, shared by the fallback and the dict form."""
-    return dict(_props_of(entry))
+    return _props_of(entry)
 
 
 def sample(
