@@ -1,0 +1,84 @@
+{
+  "_provenance": {
+    "source": [
+      "K. P. Huber and G. Herzberg, Molecular Spectra and Molecular Structure IV. Constants of Diatomic Molecules (Van Nostrand Reinhold, New York, 1979), doi:10.1007/978-1-4757-0961-2 (measurements: Rice and Klemperer, 1957)",
+      "P.J. Linstrom and W.G. Mallard (eds.), NIST Chemistry WebBook, NIST Standard Reference Database Number 69, National Institute of Standards and Technology, Gaithersburg MD, doi:10.18434/T4D303; 'Constants of diatomic molecules' compiled by K. P. Huber and G. H. Herzberg; https://webbook.nist.gov/cgi/cbook.cgi?ID=C7647145&Mask=1000"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "NIST Chemistry WebBook is NIST SRD 69, copyright U.S. Secretary of Commerce (Standard Reference Data Act). Only the single factual r_e value per molecule is reproduced, attributed to Huber & Herzberg 1979 and the original measurements the WebBook lists.",
+    "transform": "tools/refdata/build_geometries.py: Cartesians constructed from the source internal coordinates (Z-matrix / symmetry construction), centroid at origin; every source value re-measured (<= 1e-4 A, <= 0.01 deg).",
+    "units": {
+      "coordinates": "angstrom",
+      "angles": "degree"
+    },
+    "uncertainty": "Huber & Herzberg print uncertain last digits as subscripts (kept in the value); uncertainty_A = one unit in the last digit they regard as certain - an indication of the quoted precision, not a standard deviation."
+  },
+  "name": "SodiumChloride",
+  "formula": "NaCl",
+  "kind": "r_e",
+  "kind_note": "Equilibrium internuclear distance of the X ground state (Huber & Herzberg).",
+  "atoms": [
+    {
+      "element": "Na",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -1.180397
+    },
+    {
+      "element": "Cl",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.180397
+    }
+  ],
+  "bonds": [
+    {
+      "i": 0,
+      "j": 1,
+      "order": 1.0
+    }
+  ],
+  "internal": {
+    "source_values": [
+      {
+        "label": "rNaCl",
+        "type": "distance",
+        "atoms": [
+          0,
+          1
+        ],
+        "value": 2.360795
+      }
+    ],
+    "bond_lengths_A": [
+      {
+        "atoms": [
+          0,
+          1
+        ],
+        "value_A": 2.360794
+      }
+    ]
+  },
+  "uncertainty_A": 1e-05,
+  "uncertainty_note": "Huber & Herzberg print uncertain last digits as subscripts (kept in the value); uncertainty_A = one unit in the last digit they regard as certain - an indication of the quoted precision, not a standard deviation.",
+  "source": "P.J. Linstrom and W.G. Mallard (eds.), NIST Chemistry WebBook, NIST Standard Reference Database Number 69, National Institute of Standards and Technology, Gaithersburg MD, doi:10.18434/T4D303; 'Constants of diatomic molecules' compiled by K. P. Huber and G. H. Herzberg; https://webbook.nist.gov/cgi/cbook.cgi?ID=C7647145&Mask=1000",
+  "citation": "K. P. Huber and G. Herzberg, Molecular Spectra and Molecular Structure IV. Constants of Diatomic Molecules (Van Nostrand Reinhold, New York, 1979), doi:10.1007/978-1-4757-0961-2 (measurements: Rice and Klemperer, 1957)",
+  "notes": [
+    "Ground state X 1Σ+.",
+    "Gas-phase NaCl monomer r_e; the crystal Na-Cl distance (2.82 A) is a different quantity."
+  ],
+  "verification": {
+    "max_abs_dev_distance_A": 1e-06,
+    "max_abs_dev_angle_deg": 0.0,
+    "checks": [
+      {
+        "label": "rNaCl",
+        "source": 2.360795,
+        "measured": 2.360794,
+        "gated": true
+      }
+    ],
+    "rmsd_vs_cccbdb_cartesians_A": 0.0
+  }
+}

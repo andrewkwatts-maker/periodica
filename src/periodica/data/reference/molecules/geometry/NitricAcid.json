@@ -1,0 +1,142 @@
+{
+  "_provenance": {
+    "source": [
+      "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "Values transcribed from the published abstract of Cox & Riveros (1965) (via Crossref/OpenAlex metadata); cross-checked against NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "Numerical values from the abstract of a published paper (facts), cited; CCCBDB used only as a cross-check.",
+    "transform": "tools/refdata/build_geometries.py (values as stated by the source; no derivation)",
+    "units": {
+      "distance": "angstrom",
+      "angle": "degree",
+      "dihedral": "degree",
+      "plane_angle": "degree"
+    },
+    "uncertainty": "No standard deviations in the abstract; uncertainty_A is the rounding of the quoted precision (0.001 A); angles are quoted to 1 arc-minute."
+  },
+  "name": "NitricAcid",
+  "formula": "HNO3",
+  "atom_order": [
+    "N1",
+    "O2",
+    "O3",
+    "O4",
+    "H5"
+  ],
+  "atom_index_base": 0,
+  "coordinates": [
+    {
+      "type": "distance",
+      "atoms": [
+        1,
+        4
+      ],
+      "value": 0.964,
+      "unit": "angstrom",
+      "label": "rOH",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "gate": true
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        1
+      ],
+      "value": 1.406,
+      "unit": "angstrom",
+      "label": "rNO(H)",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "gate": true
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        2
+      ],
+      "value": 1.211,
+      "unit": "angstrom",
+      "label": "rNO_cis",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "gate": true
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        3
+      ],
+      "value": 1.199,
+      "unit": "angstrom",
+      "label": "rNO_trans",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        0,
+        1,
+        4
+      ],
+      "value": 102.15,
+      "unit": "degree",
+      "label": "aHON",
+      "printed": "102°9′",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        1,
+        0,
+        2
+      ],
+      "value": 115.88333333333334,
+      "unit": "degree",
+      "label": "aONO_cis",
+      "printed": "115°53′",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        1,
+        0,
+        3
+      ],
+      "value": 113.85,
+      "unit": "degree",
+      "label": "aONO_trans",
+      "printed": "113°51′",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "gate": true
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        2,
+        3
+      ],
+      "value": 2.184,
+      "unit": "angstrom",
+      "label": "rO..O(NO2)",
+      "structure_type": "r_s",
+      "reference": "A. P. Cox and J. M. Riveros, 'Microwave Spectrum and Structure of Nitric Acid', J. Chem. Phys. 42, 3106 (1965), doi:10.1063/1.1696387",
+      "note": "Stated in the abstract; the other stated parameters imply 2.1865 A (0.0025 A apart), so it is recorded but not gated.",
+      "gate": false
+    }
+  ],
+  "has_active_geometry": true
+}

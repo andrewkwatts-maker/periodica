@@ -1,0 +1,146 @@
+{
+  "_provenance": {
+    "source": [
+      "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "Values (with their stated uncertainties) transcribed from the published abstract of Kuczkowski et al. (1981); cross-checked against NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "Numerical values from the abstract of a published paper (facts), cited; CCCBDB used only as a cross-check.",
+    "transform": "tools/refdata/build_geometries.py (values as stated by the source; no derivation)",
+    "units": {
+      "distance": "angstrom",
+      "angle": "degree",
+      "dihedral": "degree",
+      "plane_angle": "degree"
+    },
+    "uncertainty": "Stated by the source: 0.01 A for r(OH), r(S-O), r(S=O); angles 1.0-1.5 deg."
+  },
+  "name": "SulfuricAcid",
+  "formula": "H2SO4",
+  "atom_order": [
+    "S1",
+    "O2",
+    "O3",
+    "O4",
+    "O5",
+    "H6",
+    "H7"
+  ],
+  "atom_index_base": 0,
+  "coordinates": [
+    {
+      "type": "distance",
+      "atoms": [
+        4,
+        5
+      ],
+      "value": 0.97,
+      "unit": "angstrom",
+      "label": "rOH",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "0.97(1)",
+      "gate": true
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        3
+      ],
+      "value": 1.574,
+      "unit": "angstrom",
+      "label": "rS-O",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "1.574(10); S-O(H)",
+      "gate": true
+    },
+    {
+      "type": "distance",
+      "atoms": [
+        0,
+        1
+      ],
+      "value": 1.422,
+      "unit": "angstrom",
+      "label": "rS=O",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "1.422(10)",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        0,
+        4,
+        5
+      ],
+      "value": 108.5,
+      "unit": "degree",
+      "label": "aSOH",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "108.5(15)",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        3,
+        0,
+        4
+      ],
+      "value": 101.3,
+      "unit": "degree",
+      "label": "aHO-S-OH",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "101.3(10)",
+      "gate": true
+    },
+    {
+      "type": "angle",
+      "atoms": [
+        1,
+        0,
+        2
+      ],
+      "value": 123.3,
+      "unit": "degree",
+      "label": "aO=S=O",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "123.3(10)",
+      "gate": true
+    },
+    {
+      "type": "dihedral",
+      "atoms": [
+        4,
+        0,
+        3,
+        6
+      ],
+      "value": -90.9,
+      "unit": "degree",
+      "label": "tO'SOH",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "-90.9(10); O1'-S-O1-H with O1, O1' the hydroxyl oxygens",
+      "gate": true
+    },
+    {
+      "type": "plane_angle",
+      "atoms": [
+        1,
+        0,
+        2,
+        3,
+        0,
+        4
+      ],
+      "value": 88.4,
+      "unit": "degree",
+      "label": "plane_angle",
+      "reference": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "note": "88.4(1) as printed; angle between the two SO2 planes",
+      "gate": true
+    }
+  ],
+  "has_active_geometry": true
+}

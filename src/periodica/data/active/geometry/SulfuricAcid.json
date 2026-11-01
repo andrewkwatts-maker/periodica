@@ -1,0 +1,289 @@
+{
+  "_provenance": {
+    "source": [
+      "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+      "Values (with their stated uncertainties) transcribed from the published abstract of Kuczkowski et al. (1981); cross-checked against NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z"
+    ],
+    "retrieved": "2026-10-02",
+    "license_or_terms": "Numerical values from the abstract of a published paper (facts), cited; CCCBDB used only as a cross-check.",
+    "transform": "tools/refdata/build_geometries.py: Cartesians constructed from the source internal coordinates (Z-matrix / symmetry construction), centroid at origin; every source value re-measured (<= 1e-4 A, <= 0.01 deg).",
+    "units": {
+      "coordinates": "angstrom",
+      "angles": "degree"
+    },
+    "uncertainty": "Stated by the source: 0.01 A for r(OH), r(S-O), r(S=O); angles 1.0-1.5 deg."
+  },
+  "name": "SulfuricAcid",
+  "formula": "H2SO4",
+  "kind": "r_0",
+  "kind_note": "Effective ground-state structure fitted to rotational constants of four isotopologues (normal, 34S, D1, D2); the abstract does not name the structure type, r_0 is inferred.",
+  "atoms": [
+    {
+      "element": "S",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.429926
+    },
+    {
+      "element": "O",
+      "x": 1.25145,
+      "y": 0.0,
+      "z": 1.105172
+    },
+    {
+      "element": "O",
+      "x": -1.25145,
+      "y": 0.0,
+      "z": 1.105172
+    },
+    {
+      "element": "O",
+      "x": 0.033985,
+      "y": -1.216679,
+      "z": -0.568078
+    },
+    {
+      "element": "O",
+      "x": -0.033985,
+      "y": 1.216679,
+      "z": -0.568078
+    },
+    {
+      "element": "H",
+      "x": 0.878516,
+      "y": 1.489432,
+      "z": -0.752058
+    },
+    {
+      "element": "H",
+      "x": -0.878516,
+      "y": -1.489432,
+      "z": -0.752058
+    }
+  ],
+  "bonds": [
+    {
+      "i": 0,
+      "j": 1,
+      "order": 2
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "order": 2
+    },
+    {
+      "i": 0,
+      "j": 3,
+      "order": 1
+    },
+    {
+      "i": 0,
+      "j": 4,
+      "order": 1
+    },
+    {
+      "i": 4,
+      "j": 5,
+      "order": 1
+    },
+    {
+      "i": 3,
+      "j": 6,
+      "order": 1
+    }
+  ],
+  "internal": {
+    "source_values": [
+      {
+        "label": "rOH",
+        "type": "distance",
+        "atoms": [
+          4,
+          5
+        ],
+        "value": 0.97
+      },
+      {
+        "label": "rS-O",
+        "type": "distance",
+        "atoms": [
+          0,
+          3
+        ],
+        "value": 1.574
+      },
+      {
+        "label": "rS=O",
+        "type": "distance",
+        "atoms": [
+          0,
+          1
+        ],
+        "value": 1.422
+      },
+      {
+        "label": "aSOH",
+        "type": "angle",
+        "atoms": [
+          0,
+          4,
+          5
+        ],
+        "value": 108.5
+      },
+      {
+        "label": "aHO-S-OH",
+        "type": "angle",
+        "atoms": [
+          3,
+          0,
+          4
+        ],
+        "value": 101.3
+      },
+      {
+        "label": "aO=S=O",
+        "type": "angle",
+        "atoms": [
+          1,
+          0,
+          2
+        ],
+        "value": 123.3
+      },
+      {
+        "label": "tO'SOH",
+        "type": "dihedral",
+        "atoms": [
+          4,
+          0,
+          3,
+          6
+        ],
+        "value": -90.9
+      },
+      {
+        "label": "plane_angle",
+        "type": "plane_angle",
+        "atoms": [
+          1,
+          0,
+          2,
+          3,
+          0,
+          4
+        ],
+        "value": 88.4
+      }
+    ],
+    "bond_lengths_A": [
+      {
+        "atoms": [
+          0,
+          1
+        ],
+        "value_A": 1.422
+      },
+      {
+        "atoms": [
+          0,
+          2
+        ],
+        "value_A": 1.422
+      },
+      {
+        "atoms": [
+          0,
+          3
+        ],
+        "value_A": 1.574
+      },
+      {
+        "atoms": [
+          0,
+          4
+        ],
+        "value_A": 1.574
+      },
+      {
+        "atoms": [
+          4,
+          5
+        ],
+        "value_A": 0.97
+      },
+      {
+        "atoms": [
+          3,
+          6
+        ],
+        "value_A": 0.97
+      }
+    ]
+  },
+  "uncertainty_A": 0.01,
+  "uncertainty_note": "Stated by the source: 0.01 A for r(OH), r(S-O), r(S=O); angles 1.0-1.5 deg.",
+  "source": "Values (with their stated uncertainties) transcribed from the published abstract of Kuczkowski et al. (1981); cross-checked against NIST Computational Chemistry Comparison and Benchmark Database, NIST Standard Reference Database Number 101, Release 22, May 2022, Editor: Russell D. Johnson III, http://cccbdb.nist.gov/, doi:10.18434/T47C7Z",
+  "citation": "R. L. Kuczkowski, R. D. Suenram and F. J. Lovas, 'Microwave spectrum, structure, and dipole moment of sulfuric acid', J. Am. Chem. Soc. 103, 2561-2566 (1981), doi:10.1021/ja00400a013",
+  "notes": [
+    "C2 symmetry (axis z). Atoms: S1, O2/O3 (S=O), O4/O5 (S-OH), H6 on O5, H7 on O4.",
+    "Handedness: the abstract fixes |plane angle| = 88.4 deg and the torsion O1'-S-O1-H = -90.9 deg but not on which side of the S=O plane the hydroxyl plane is rotated; the hydroxyl O4 is placed 88.4 deg from O2 (as in CCCBDB's frame). The alternative reading (91.6 deg) gives a structure 0.032 A RMSD away (H atoms only), well inside the stated angle uncertainties.",
+    "CCCBDB's internal list assigns the -90.9 deg torsion to O3-S1-O4-H7 (an S=O oxygen) and its Cartesians follow that, so CCCBDB's H positions differ from this primary-based structure (larger RMSD expected)."
+  ],
+  "verification": {
+    "max_abs_dev_distance_A": 4.71e-07,
+    "max_abs_dev_angle_deg": 1.98e-05,
+    "checks": [
+      {
+        "label": "rOH",
+        "source": 0.97,
+        "measured": 0.97,
+        "gated": true
+      },
+      {
+        "label": "rS-O",
+        "source": 1.574,
+        "measured": 1.574,
+        "gated": true
+      },
+      {
+        "label": "rS=O",
+        "source": 1.422,
+        "measured": 1.422,
+        "gated": true
+      },
+      {
+        "label": "aSOH",
+        "source": 108.5,
+        "measured": 108.49999,
+        "gated": true
+      },
+      {
+        "label": "aHO-S-OH",
+        "source": 101.3,
+        "measured": 101.29998,
+        "gated": true
+      },
+      {
+        "label": "aO=S=O",
+        "source": 123.3,
+        "measured": 123.299984,
+        "gated": true
+      },
+      {
+        "label": "tO'SOH",
+        "source": -90.9,
+        "measured": -90.900019,
+        "gated": true
+      },
+      {
+        "label": "plane_angle",
+        "source": 88.4,
+        "measured": 88.399996,
+        "gated": true
+      }
+    ],
+    "rmsd_vs_cccbdb_cartesians_A": 0.5998
+  }
+}
