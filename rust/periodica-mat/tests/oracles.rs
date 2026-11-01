@@ -11,7 +11,7 @@ fn oracle_rows() -> Vec<serde_json::Value> {
 #[test]
 fn oracle_rows_cite_sources_and_keep_the_moved_tables() {
     let rows = oracle_rows();
-    assert_eq!(rows.len(), 7);
+    assert_eq!(rows.len(), 8);
     for r in &rows {
         assert!(!r["source"].as_str().unwrap_or("").trim().is_empty(), "{r}");
     }
