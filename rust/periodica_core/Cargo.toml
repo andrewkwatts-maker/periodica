@@ -26,6 +26,7 @@ python = ["dep:pyo3", "dep:numpy"]
 # plus `pyo3/extension-module`, which leaves libpython to the host interpreter.
 # Never use it for `cargo test` -- the test binary cannot link on Linux/macOS.
 extension-module = ["python", "pyo3/extension-module"]
+abi3 = ["pyo3/abi3-py310"]
 
 [dependencies]
 periodica-mat.workspace = true
