@@ -24,6 +24,10 @@ use crate::table::{PropertyTable, Source};
 
 /// `Tabor: H ~ 3 sigma_y` (Tabor, *The Hardness of Metals*, 1951).
 const TABOR_H_OVER_SIGMA_Y: f64 = 3.0;
+/// Constraint factor on the compressive strength of a pressure-sensitive,
+/// yield-free material: `H ~ 3 f_c` (Tabor's constraint factor applied to the
+/// compressive yield of the Drucker-Prager cap).
+const CONSTRAINT_H_OVER_FC: f64 = 3.0;
 /// Vickers and Brinell numbers are kgf/mm^2: one kgf/mm^2 in Pa.
 const KGF_MM2_PA: f64 = 9.80665e6;
 
@@ -75,7 +79,7 @@ fn measured(t: &PropertyTable, p: P) -> Option<f64> {
 
 /// Indentation hardness `H` in Pa: from a measured Vickers or Brinell number
 /// (`H = HV * 9.80665e6 Pa`), from Rockwell C via ASTM E140, else from yield
-/// by Tabor's `H ~ 3 sigma_y`.
+/// by Tabor's `H ~ 3 sigma_y`, else (no yield, as for concrete) `H ~ 3 f_c`.
 fn hardness_pa(t: &mut PropertyTable) -> bool {
     let from_scale = measured(t, P::HardnessVickers)
         .or_else(|| measured(t, P::HardnessBrinell))
@@ -85,10 +89,22 @@ fn hardness_pa(t: &mut PropertyTable) -> bool {
         .get(P::YieldStrength)
         .filter(|v| *v > 0.0)
         .map(|y| TABOR_H_OVER_SIGMA_Y * y);
-    match from_scale.or(from_yield) {
+    let from_fc = || {
+        measured_f_c(t)
+            .map(|fc| CONSTRAINT_H_OVER_FC * fc)
+    };
+    match from_scale.or(from_yield).or_else(from_fc) {
         Some(h) => t.set_if_better(P::Hardness, h, Source::Estimated),
         None => false,
     }
+}
+
+/// Compressive strength for the `H ~ 3 f_c` chain: the mean value if the sheet
+/// has one, else the characteristic value.
+fn measured_f_c(t: &PropertyTable) -> Option<f64> {
+    t.get(P::MeanCompressiveStrength)
+        .or_else(|| t.get(P::CompressiveStrength))
+        .filter(|v| *v > 0.0)
 }
 
 /// Tensile strength `f_t = UTS` where the sheet states no separate `f_t`.
@@ -146,6 +162,17 @@ mod tests {
         let mut out = table(&[(P::HardnessRockwellC, 10.0)]);
         interface_chains(&mut out);
         assert!(!out.has(P::Hardness));
+    }
+
+    #[test]
+    fn hardness_without_yield_is_three_f_c() {
+        let mut t = table(&[(P::CompressiveStrength, 30.0e6)]);
+        interface_chains(&mut t);
+        assert_relative_eq!(t.get(P::Hardness).unwrap(), 90.0e6, max_relative = 1e-12);
+        assert_eq!(t.source(P::Hardness), Source::Estimated);
+        let mut y = table(&[(P::CompressiveStrength, 30.0e6), (P::YieldStrength, 250.0e6)]);
+        interface_chains(&mut y);
+        assert_relative_eq!(y.get(P::Hardness).unwrap(), 750.0e6, max_relative = 1e-12);
     }
 
     #[test]
