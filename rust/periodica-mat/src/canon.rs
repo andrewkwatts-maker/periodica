@@ -108,6 +108,8 @@ const G_CM3_TO_KG_M3: f64 = 1.0e3;
 const UM: f64 = 1.0e-6;
 const UM2: f64 = 1.0e-12;
 const NOHM: f64 = 1.0e-9;
+/// 1 Brewster is 1e-12 m^2/N (1e-12 Pa^-1).
+const BREWSTER: f64 = 1.0e-12;
 const PM: f64 = 1.0e-12;
 const MM: f64 = 1.0e-3;
 const MM2_S: f64 = 1.0e-6;
@@ -267,6 +269,9 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
         "indentationhardnessgpa" => map!(Hardness, GPA),
         "remanencet" => map!(Remanence),
         "intrinsiccoercivityam" => map!(IntrinsicCoercivity),
+        "stressopticm2n" => map!(StressOptic),
+        "stressopticbrewster" => map!(StressOptic, BREWSTER),
+        "stressopticcoefficientbrewster" => map!(StressOptic, BREWSTER),
 
         // ── Misc physical ────────────────────────────────────────────────
         "porositypercent" => map!(Porosity, PCT_TO_FRAC),

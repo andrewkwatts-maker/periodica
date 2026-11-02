@@ -1,0 +1,13 @@
+{
+  "Name": "Polycarbonate (Makrolon sheet)",
+  "Category": "Polymer",
+  "SubCategory": "Photoelastic thermoplastic",
+  "Source": "Tensile modulus 2400 MPa (ISO 527-1,-2, 1 mm/min), yield stress 66 MPa (ISO 527-1,-2, 50 mm/min) and density 1200 kg/m3 (ISO 1183-1): Covestro Makrolon 2807 product page, solutions.covestro.com/en/products/makrolon/makrolon-2807_86287188-00009619 (read). Poisson's ratio 0.38 (ASTM E132): Bayer Makrolon MG sheet datasheet PDS062 (read). Stress-optic (Brewster) constant 84 Brewsters = 84e-12 m2/N for PC, with sigma[MPa] = retardation[nm] / (thickness[mm] * C_B), worked example 547 nm, 1.5 mm gives 4.3 MPa (checks against the constant): Covestro, Photoelastic Stress Analysis of Polycarbonate Medical Parts, COV00073644, 2016-03 (read in full, 3 pages).",
+  "Properties": {
+    "Density_kgm3": 1200,
+    "PoissonsRatio": 0.38,
+    "StressOptic_Brewster": 84,
+    "YieldStrength_MPa": 66,
+    "YoungsModulus_GPa": 2.4
+  }
+}

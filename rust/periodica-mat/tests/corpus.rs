@@ -408,3 +408,20 @@ fn fcc_entries_never_claim_a_cleavage_plane() {
         }
     }
 }
+
+/// The polycarbonate sheet's stress-optic constant survives ingest and a
+/// write and read of the property table (the `.pmat` payload).
+#[test]
+fn stress_optic_round_trips() {
+    let path = data_dir().join("active/materials/Polycarbonate_Makrolon.json");
+    let text = std::fs::read_to_string(&path).unwrap();
+    let value: serde_json::Value = jsonc::from_str(&text).unwrap();
+    let r = ingest(&value, "Polycarbonate_Makrolon").unwrap();
+    let c = r.bulk.get(PropertyId::StressOptic).expect("StressOptic missing");
+    assert!((c / 84.0e-12 - 1.0).abs() < 1e-12, "C = {c}");
+    let json = serde_json::to_string(&r.bulk).unwrap();
+    let back: periodica_mat::PropertyTable = serde_json::from_str(&json).unwrap();
+    let c2 = back.get(PropertyId::StressOptic).expect("lost on round trip");
+    assert!((c2 / c - 1.0).abs() < 1e-12, "round trip {c} -> {c2}");
+    assert_eq!(PropertyId::StressOptic.si_unit(), "m^2/N");
+}

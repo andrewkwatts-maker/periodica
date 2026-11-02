@@ -205,6 +205,7 @@ define_properties! {
     Hardness                 => ("Pa",       "Indentation Hardness H"),
     Remanence                => ("T",        "Remanence B_r"),
     IntrinsicCoercivity      => ("A/m",      "Intrinsic Coercivity H_cj"),
+    StressOptic              => ("m^2/N",    "Stress-Optic Coefficient C"),
 }
 
 impl PropertyId {
