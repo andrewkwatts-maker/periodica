@@ -63,6 +63,7 @@
 #![deny(missing_debug_implementations)]
 
 pub mod canon;
+pub mod census;
 mod chains;
 pub mod composition;
 pub mod concrete;

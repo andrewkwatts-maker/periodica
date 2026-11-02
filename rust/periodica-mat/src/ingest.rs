@@ -51,7 +51,7 @@ use crate::derive::fill_derived;
 use crate::orthotropy::Orthotropy;
 use crate::property::PropertyId;
 use crate::record::{
-    CrystalSystem, Inclusions, Lattice, MaterialRecord, Microstructure, NoiseKind, Phase,
+    CrystalSystem, GrainStructure, Inclusions, Lattice, MaterialRecord, Microstructure, NoiseKind, Phase,
     Provenance, Texture, Tier,
 };
 use crate::table::{PropertyTable, Source};
@@ -148,7 +148,9 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
 
     // 3. Structured sub-objects.
     let lattice = extract_lattice(obj);
-    let micro = extract_microstructure(obj);
+    let micro = extract_microstructure(obj).or_else(|| {
+        field_grains(obj).map(|grains| Microstructure { grains, ..Microstructure::default() })
+    });
     let texture = extract_texture(obj);
     let mut phases = extract_phases(obj);
     if phases.is_empty() {
@@ -308,9 +310,36 @@ fn extract_lattice(obj: &serde_json::Map<String, Value>) -> Option<Lattice> {
     Some(l)
 }
 
+/// Grains declared in the legacy `Field` block: `grain_density` (seeds per
+/// m^3) with optional `grain_size_um`, `grain_aspect_ratio` and
+/// `grain_boundary_width_um`. Without a stated size the mean diameter is the
+/// inverse cube root of the density, the relation `extract_microstructure`
+/// applies the other way round.
+fn field_grains(obj: &serde_json::Map<String, Value>) -> Option<GrainStructure> {
+    let field = get_obj(obj, "Field")?;
+    let n = get_num(field, "grain_density").filter(|v| *v > 0.0)?;
+    let mut g = GrainStructure { seed_density_per_m3: n, ..GrainStructure::default() };
+    g.average_size_m = match get_num(field, "grain_size_um") {
+        Some(v) => v * 1e-6,
+        None => n.powf(-1.0 / 3.0),
+    };
+    if let Some(v) = get_num(field, "grain_aspect_ratio") {
+        g.aspect_ratio = v;
+    }
+    if let Some(v) = get_num(field, "grain_boundary_width_um") {
+        g.boundary_width_m = v * 1e-6;
+    }
+    Some(g)
+}
+
 fn extract_microstructure(obj: &serde_json::Map<String, Value>) -> Option<Microstructure> {
     let ms = get_obj(obj, "Microstructure")?;
     let mut m = Microstructure::default();
+    if get_obj(ms, "GrainStructure").is_none() {
+        if let Some(g) = field_grains(obj) {
+            m.grains = g;
+        }
+    }
 
     if let Some(g) = get_obj(ms, "GrainStructure") {
         let d = &mut m.grains;
