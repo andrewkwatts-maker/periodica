@@ -387,6 +387,9 @@ pub struct MaterialRecord {
     pub micro: Option<Microstructure>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub texture: Option<Texture>,
+    /// Direction-dependent stiffness and strength, when the sheet gives axial and transverse data.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub orthotropy: Option<crate::orthotropy::Orthotropy>,
     /// Base colour, linear sRGB in `0..=1`.
     #[serde(default = "default_color")]
     pub color_srgb: [f32; 3],

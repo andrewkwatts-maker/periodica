@@ -48,6 +48,7 @@ use serde_json::Value;
 use crate::canon::{canon, is_ignored, lookup};
 use crate::concrete::fill_concrete;
 use crate::derive::fill_derived;
+use crate::orthotropy::Orthotropy;
 use crate::property::PropertyId;
 use crate::record::{
     CrystalSystem, Inclusions, Lattice, MaterialRecord, Microstructure, NoiseKind, Phase,
@@ -174,6 +175,7 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
         phases,
         micro,
         texture,
+        orthotropy: get_obj(obj, "Field").and_then(Orthotropy::from_field),
         color_srgb: extract_color(obj),
         provenance: Provenance {
             source: Some(name_hint.to_string()),
