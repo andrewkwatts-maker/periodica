@@ -40,7 +40,11 @@ fn every_material_is_ready_or_lists_what_it_lacks() {
     files.sort();
     let (mut total, mut ready, mut ortho) = (0usize, 0usize, 0usize);
     let mut by_key: BTreeMap<String, usize> = BTreeMap::new();
-    for rec in files.iter().filter_map(|p| load(p)).filter(is_material_like) {
+    for rec in files
+        .iter()
+        .filter_map(|p| load(p))
+        .filter(is_material_like)
+    {
         let r = volume_readiness(&rec);
         assert!(
             r.volume_ready || !r.missing.is_empty(),
@@ -56,6 +60,12 @@ fn every_material_is_ready_or_lists_what_it_lacks() {
         }
     }
     println!("census: {total} materials, {ready} volume-ready, {ortho} orthotropic");
+    for k in ["micro.grains", "phases", "bulk.YoungsModulus"] {
+        println!(
+            "  totals missing {k}: {}",
+            by_key.get(k).copied().unwrap_or(0)
+        );
+    }
     let mut keys: Vec<_> = by_key.into_iter().collect();
     keys.sort_by(|a, b| b.1.cmp(&a.1).then(a.0.cmp(&b.0)));
     for (k, n) in keys {
@@ -69,7 +79,37 @@ fn steel_1018_has_grains_from_the_field_block() {
     let path = data_dir().join("derived/alloys/Steel-1018.json");
     let rec = load(&path).expect("Steel-1018 ingests");
     let micro = rec.micro.expect("micro.grains from Field.grain_density");
-    assert_eq!(micro.grains.seed_density_per_m3, 1.0e15);
-    assert!((micro.grains.average_size_m - 1.0e-5).abs() < 1e-9);
+    let grains = micro.grains.expect("grains from Field.grain_density");
+    assert_eq!(grains.seed_density_per_m3, 1.0e15);
+    assert!((grains.average_size_m - 1.0e-5).abs() < 1e-9);
     assert!(!rec.phases.is_empty());
+}
+
+#[test]
+fn a_sheet_without_grain_data_has_no_grains() {
+    let v = serde_json::json!({"Name": "x", "Properties": {"Density_kgm3": 1000, "YoungsModulus_GPa": 1.0}});
+    let rec = ingest(&v, "x").expect("ingests");
+    assert!(rec.micro.and_then(|m| m.grains).is_none());
+}
+
+#[test]
+fn an_orthotropic_sheet_without_bulk_modulus_is_not_missing_it() {
+    let v = serde_json::json!({
+        "Name": "x",
+        "Properties": {"Density_kgm3": 1500},
+        "Field": {
+            "axial": {"YoungsModulus_GPa": 130.0},
+            "transverse": {"YoungsModulus_GPa": 9.0},
+            "fiber_direction": [1.0, 0.0, 0.0]
+        }
+    });
+    let rec = ingest(&v, "x").expect("ingests");
+    assert!(rec.orthotropy.is_some());
+    let r = volume_readiness(&rec);
+    assert!(
+        !r.missing.contains(&"bulk.YoungsModulus".to_string()),
+        "{:?}",
+        r.missing
+    );
+    assert!(r.missing.iter().any(|k| k.starts_with("orthotropy.")));
 }

@@ -207,7 +207,7 @@ mod tests {
             assert!((got / v - 1.0).abs() < 1e-12, "{p:?}: {got} vs {v}");
             assert_eq!(back.bulk.source(p), src, "{p:?} provenance");
         }
-        let (a, b) = (r.micro.unwrap().grains, back.micro.unwrap().grains);
+        let (a, b) = (r.micro.unwrap().grains.unwrap(), back.micro.unwrap().grains.unwrap());
         assert!((a.average_size_m / b.average_size_m - 1.0).abs() < 1e-12);
     }
 }

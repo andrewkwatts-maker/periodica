@@ -149,7 +149,7 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
     // 3. Structured sub-objects.
     let lattice = extract_lattice(obj);
     let micro = extract_microstructure(obj).or_else(|| {
-        field_grains(obj).map(|grains| Microstructure { grains, ..Microstructure::default() })
+        field_grains(obj).map(|g| Microstructure { grains: Some(g), ..Microstructure::default() })
     });
     let texture = extract_texture(obj);
     let mut phases = extract_phases(obj);
@@ -318,58 +318,49 @@ fn extract_lattice(obj: &serde_json::Map<String, Value>) -> Option<Lattice> {
 fn field_grains(obj: &serde_json::Map<String, Value>) -> Option<GrainStructure> {
     let field = get_obj(obj, "Field")?;
     let n = get_num(field, "grain_density").filter(|v| *v > 0.0)?;
-    let mut g = GrainStructure { seed_density_per_m3: n, ..GrainStructure::default() };
-    g.average_size_m = match get_num(field, "grain_size_um") {
+    let average_size_m = match get_num(field, "grain_size_um") {
         Some(v) => v * 1e-6,
         None => n.powf(-1.0 / 3.0),
     };
-    if let Some(v) = get_num(field, "grain_aspect_ratio") {
-        g.aspect_ratio = v;
-    }
-    if let Some(v) = get_num(field, "grain_boundary_width_um") {
-        g.boundary_width_m = v * 1e-6;
-    }
-    Some(g)
+    Some(GrainStructure {
+        average_size_m,
+        seed_density_per_m3: n,
+        aspect_ratio: get_num(field, "grain_aspect_ratio"),
+        boundary_width_m: get_num(field, "grain_boundary_width_um").map(|v| v * 1e-6),
+        ..GrainStructure::default()
+    })
+}
+
+/// Grains from a `GrainStructure` block. Size and seed density are derived
+/// from each other when only one is given; with neither there are no grains.
+/// Every other key stays `None` unless the block states it.
+fn block_grains(g: &serde_json::Map<String, Value>) -> Option<GrainStructure> {
+    let size = get_num(g, "AverageGrainSize_um").map(|v| v * 1e-6).filter(|v| *v > 0.0);
+    // The datasheets quote an areal seed density measured on a polished
+    // section; the stereological relation for equiaxed grains is n_v = n_a^(3/2).
+    let seeds = get_num(g, "VoronoiSeedDensity_per_mm2")
+        .map(|v| (v * 1.0e6).powf(1.5))
+        .filter(|v| *v > 0.0)
+        .or_else(|| size.map(|s| 1.0 / s.powi(3)));
+    let average_size_m = size.or_else(|| seeds.map(|n| n.powf(-1.0 / 3.0)))?;
+    Some(GrainStructure {
+        average_size_m,
+        size_std_dev: get_num(g, "GrainSizeStdDev"),
+        astm_number: get_num(g, "ASTMGrainSizeNumber"),
+        seed_density_per_m3: seeds?,
+        boundary_width_m: get_num(g, "GrainBoundaryWidth_nm").map(|v| v * 1e-9),
+        aspect_ratio: get_num(g, "GrainAspectRatio"),
+        twin_density_per_m: get_num(g, "TwinDensity_per_mm").map(|v| v * 1e3),
+    })
 }
 
 fn extract_microstructure(obj: &serde_json::Map<String, Value>) -> Option<Microstructure> {
     let ms = get_obj(obj, "Microstructure")?;
-    let mut m = Microstructure::default();
-    if get_obj(ms, "GrainStructure").is_none() {
-        if let Some(g) = field_grains(obj) {
-            m.grains = g;
-        }
-    }
-
-    if let Some(g) = get_obj(ms, "GrainStructure") {
-        let d = &mut m.grains;
-        if let Some(v) = get_num(g, "AverageGrainSize_um") {
-            d.average_size_m = v * 1e-6;
-        }
-        if let Some(v) = get_num(g, "GrainSizeStdDev") {
-            d.size_std_dev = v;
-        }
-        d.astm_number = get_num(g, "ASTMGrainSizeNumber");
-        if let Some(v) = get_num(g, "VoronoiSeedDensity_per_mm2") {
-            // The datasheets quote an areal seed density, measured on a polished
-            // section. Raising it to a volumetric one uses the standard
-            // stereological relation for equiaxed grains, n_v = n_a^(3/2).
-            //
-            // This is self-consistent with the quoted grain size: 400/mm^2 is
-            // 4e8/m^2, so n_v = 8e12/m^3, and 1/(50 um)^3 is also 8e12/m^3.
-            let areal_per_m2 = v * 1.0e6;
-            d.seed_density_per_m3 = areal_per_m2.powf(1.5);
-        } else if d.average_size_m > 0.0 {
-            d.seed_density_per_m3 = 1.0 / d.average_size_m.powi(3);
-        }
-        if let Some(v) = get_num(g, "GrainBoundaryWidth_nm") {
-            d.boundary_width_m = v * 1e-9;
-        }
-        if let Some(v) = get_num(g, "GrainAspectRatio") {
-            d.aspect_ratio = v;
-        }
-        d.twin_density_per_m = get_num(g, "TwinDensity_per_mm").map(|v| v * 1e3);
-    }
+    let grains = match get_obj(ms, "GrainStructure") {
+        Some(g) => block_grains(g),
+        None => field_grains(obj),
+    };
+    let mut m = Microstructure { grains, ..Microstructure::default() };
 
     if let Some(p) = get_obj(ms, "PhaseDistribution") {
         let d = &mut m.phase_distribution;
@@ -787,10 +778,11 @@ mod tests {
             }
         });
         let m = ingest(&v, "x").unwrap().micro.unwrap();
-        assert_relative_eq!(m.grains.average_size_m, 50e-6, max_relative = 1e-9);
-        assert_relative_eq!(m.grains.boundary_width_m, 0.5e-9, max_relative = 1e-9);
+        let grains = m.grains.unwrap();
+        assert_relative_eq!(grains.average_size_m, 50e-6, max_relative = 1e-9);
+        assert_relative_eq!(grains.boundary_width_m.unwrap(), 0.5e-9, max_relative = 1e-9);
         assert_relative_eq!(
-            m.grains.twin_density_per_m.unwrap(),
+            grains.twin_density_per_m.unwrap(),
             5000.0,
             max_relative = 1e-9
         );
@@ -819,7 +811,7 @@ mod tests {
         }}});
         let m = ingest(&v, "x").unwrap().micro.unwrap();
         let from_size = 1.0 / (50e-6_f64).powi(3);
-        let ratio = m.grains.seed_density_per_m3 / from_size;
+        let ratio = m.grains.unwrap().seed_density_per_m3 / from_size;
         assert!(ratio > 0.5 && ratio < 2.0, "seed density ratio {ratio}");
     }
 

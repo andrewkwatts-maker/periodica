@@ -210,8 +210,8 @@ impl NoiseKind {
 pub struct GrainStructure {
     /// Mean grain diameter in metres (datasheets store micrometres).
     pub average_size_m: f64,
-    /// Log-normal sigma of the grain-size distribution.
-    pub size_std_dev: f64,
+    /// Log-normal sigma of the grain-size distribution, when the sheet states one.
+    pub size_std_dev: Option<f64>,
     pub astm_number: Option<f64>,
     /// Voronoi seeds per cubic metre.
     ///
@@ -219,10 +219,10 @@ pub struct GrainStructure {
     /// [`crate::ingest`] raises it to a volumetric one by `n_v = n_a^(3/2)`,
     /// which is the standard stereological relation for equiaxed grains.
     pub seed_density_per_m3: f64,
-    /// Grain-boundary width in metres.
-    pub boundary_width_m: f64,
-    /// Elongation of grains along the rolling direction; 1.0 is equiaxed.
-    pub aspect_ratio: f64,
+    /// Grain-boundary width in metres, when the sheet states one.
+    pub boundary_width_m: Option<f64>,
+    /// Elongation of grains along the rolling direction (1.0 is equiaxed), when the sheet states one.
+    pub aspect_ratio: Option<f64>,
     /// Twin boundaries per metre.
     pub twin_density_per_m: Option<f64>,
 }
@@ -231,11 +231,11 @@ impl Default for GrainStructure {
     fn default() -> Self {
         Self {
             average_size_m: 50.0e-6,
-            size_std_dev: 0.35,
+            size_std_dev: None,
             astm_number: None,
             seed_density_per_m3: 8.0e12,
-            boundary_width_m: 0.5e-9,
-            aspect_ratio: 1.0,
+            boundary_width_m: None,
+            aspect_ratio: None,
             twin_density_per_m: None,
         }
     }
@@ -314,7 +314,9 @@ pub struct Inclusions {
 /// The full internal-structure description.
 #[derive(Debug, Clone, Copy, PartialEq, Default, Serialize, Deserialize)]
 pub struct Microstructure {
-    pub grains: GrainStructure,
+    /// Absent when the sheet states no grain data.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub grains: Option<GrainStructure>,
     pub phase_distribution: PhaseDistribution,
     pub defects: Defects,
     pub inclusions: Inclusions,
@@ -562,8 +564,7 @@ mod tests {
     fn defaults_are_physically_sane() {
         let g = GrainStructure::default();
         assert!(g.average_size_m > 0.0 && g.average_size_m < 1e-3);
-        assert!(g.boundary_width_m > 0.0 && g.boundary_width_m < g.average_size_m);
-        assert_eq!(g.aspect_ratio, 1.0, "default grains must be equiaxed");
+        assert!(g.boundary_width_m.is_none() && g.aspect_ratio.is_none());
 
         let p = PhaseDistribution::default();
         assert!(p.octaves >= 1);

@@ -21,10 +21,11 @@ pub fn volume_readiness(record: &MaterialRecord) -> Readiness {
     if !record.bulk.has(PropertyId::Density) {
         missing.push("bulk.Density".to_string());
     }
-    if !record.bulk.has(PropertyId::YoungsModulus) {
+    let axial = record.orthotropy.as_ref().is_some_and(|o| o.e[0].is_some());
+    if !record.bulk.has(PropertyId::YoungsModulus) && !axial {
         missing.push("bulk.YoungsModulus".to_string());
     }
-    if record.micro.is_none() {
+    if record.micro.and_then(|m| m.grains).is_none() {
         missing.push("micro.grains".to_string());
     }
     if record.phases.is_empty() {
@@ -41,7 +42,9 @@ pub fn volume_readiness(record: &MaterialRecord) -> Readiness {
             ("S", o.shear.is_some()),
         ];
         missing.extend(
-            keys.iter().filter(|(_, ok)| !ok).map(|(k, _)| format!("orthotropy.{k}")),
+            keys.iter()
+                .filter(|(_, ok)| !ok)
+                .map(|(k, _)| format!("orthotropy.{k}")),
         );
     }
     Readiness {

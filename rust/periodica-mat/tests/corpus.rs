@@ -265,15 +265,17 @@ fn microstructure_and_lattice_reach_the_records_that_declare_them() {
             continue;
         };
 
-        if let Some(m) = r.micro {
+        if r.micro.is_some() {
             with_micro += 1;
+        }
+        if let Some(g) = r.micro.and_then(|m| m.grains) {
             assert!(
-                m.grains.average_size_m > 0.0 && m.grains.average_size_m < 0.1,
+                g.average_size_m > 0.0 && g.average_size_m < 0.1,
                 "{stem}: implausible grain size {} m",
-                m.grains.average_size_m
+                g.average_size_m
             );
             assert!(
-                m.grains.seed_density_per_m3 > 0.0,
+                g.seed_density_per_m3 > 0.0,
                 "{stem}: zero Voronoi seed density would collapse the grain field"
             );
         }
