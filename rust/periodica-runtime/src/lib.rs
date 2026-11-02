@@ -55,14 +55,12 @@
 pub mod crystal;
 pub mod fields;
 pub mod sampling;
-pub mod volume;
 
 pub use crystal::{
     make_bcc, make_diamond, make_fcc, make_hcp, CrystalError, CrystalPrimitive, LatticeKind,
 };
 pub use fields::MaterialFields;
 pub use sampling::HaltonSampler;
-pub use volume::{bake, MaterialVolume, Probe, PropertyVolume, VolumeError};
 
 /// Version of this crate, for diagnostics alongside `PERIODICA_MAT_VERSION`.
 pub const PERIODICA_RUNTIME_VERSION: &str = env!("CARGO_PKG_VERSION");
