@@ -68,19 +68,20 @@ PlayTow's answers of 2026-11-11 on MP-PER-3 and MP-PER-4 (they set the S3 and S5
 | M1 element bulk properties | `briefs/M1-merge-element-bulk.md` | merged 5a7a054. It also overwrote 28 ion sheets; F6 restores them |
 | F3 mix (Turner expansion, Hill consistency, Lorentz-Lorenz n, `mix_tagged`) | `briefs/F3-mix.md` | merged bb3bd57 |
 | R0 CI (Arithma clone, fmt, path-dependency guard) | `briefs/R0-ci-green.md` | merged 11b2a79. First run on GitHub (4191f64) failed in two places; see below |
-| R0c reproduce the Python CI failure with the Rust extension | `briefs/R0c-python-ci-repro.md` | running (works on an export, changes nothing) |
+| R0c reproduce the Python CI failure with the Rust extension | `briefs/R0c-python-ci-repro.md` | running (works on an export, changes nothing). It stopped once while its build compiled and was resumed |
 | F5 ion keys, elastomer floor | `briefs/F5-corpus-green.md` | merged f9902fe; F6 revisits the ion keys |
 | F4 optics (gold interband terms, validity ranges, Planck guard) | `briefs/F4-optics-models.md` | merged 7eedcac. The gold fit matches Johnson and Christy within 0.05 in R; its citation (Etchegoin 2006) is from memory and unchecked |
 | F6 derived data green, MP-PER-1 | `briefs/F6-derived-green.md` | done dcfd0dc, 4191f64. f_ck is the property `CharacteristicCompressiveStrength` and triggers the fib relations; no code reads `Class`. 28 ion and 39 isotope sheets restored from 9890238 |
 | R0b release workflow builds with Arithma | `briefs/R0b-release-workflow.md` | done 37020cb: wheels and sdist jobs fetch Arithma at commit 447a7c0. Not run on GitHub. The sdist can't build a wheel on its own (owner decision 9) |
-| S5a column export of scalar properties | `briefs/S5a-column-export.md` | ready; after F2 |
-| F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | running |
-| P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | running (no Rust) |
-| F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin) | `briefs/F2-derive-mech.md` | after F1 |
-| R1b domain census | `briefs/R1b-domain-census.md` | after F2 |
+| S5a column export of scalar properties | `briefs/S5a-column-export.md` | next Rust lane (PlayTow waits on it) |
+| F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | done 957f83a, 0500d1f. Reflectance from n needs k (`Derived`) or a known transmittance (k = 0, `Estimated`); with k it also covers metals with n below 1. Absorptance and emissivity no longer copy each other. Open: R is `Estimated` even when the transmittance is itself an estimate |
+| P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | done 1247dc3, 826cc50. Only `tests/test_cli.py` wrote to the package; it now builds into a private copy of `derived/` and its fixture checks that the patch ended |
+| F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin) | `briefs/F2-derive-mech.md` | after S5a |
+| S3a new scalar properties (MP-PER-3): ten ids, sheet keys, sound-speed rules | `briefs/S3a-new-scalar-properties.md` | ready; after F2. No data values; the data and the emission lines are later lanes |
+| R1b domain census | `briefs/R1b-domain-census.md` | after S3a |
 
-State at 4191f64, pushed to `main` on 2026-11-11: 426 Rust tests pass and none fail; fmt, clippy,
-`cargo check --workspace --all-features` and the path-dependency guard pass.
+State at 826cc50, pushed to `main` on 2026-11-11: 433 Rust tests pass and none fail; fmt, clippy
+and `cargo check --workspace --all-features` pass.
 
 GitHub Actions on 4191f64 (run 42866560822) failed in two places:
 - Rust job, "Format check": `cargo fmt --all` also checks the Arithma path dependency, and three
@@ -88,6 +89,20 @@ GitHub Actions on 4191f64 (run 42866560822) failed in two places:
   1.95. Fixed: CI runs `cargo fmt --check`, which covers the four workspace crates only.
 - Python jobs (3.11, 3.12, 3.13), "Run tests": the runner builds the Rust extension; no local run
   had it, so local runs skipped the tests that need it. Lane R0c reproduces it.
+
+The runs on dc131e7 and 826cc50 (42869060902, 42871652719) pass format, clippy and the workspace
+tests on Linux. Two failures remain:
+- Rust job, "Test the PyO3 bindings": `surface_registers_exactly_the_expected_names` fails
+  because the module also registers `_probe_input_ptr`, `_probe_output` and
+  `_probe_scale_inplace`. They come from `pyfacade/numpy_probe.rs`, a spike whose header says
+  "Removed before commit"; a work-in-progress sync committed it (0ada509). Fixed by removing the
+  module. The `numpy` crate is now unused in `periodica_core` and stays in the `python` feature
+  for the zero-copy work the spike was testing.
+- Python jobs, "Run tests": still open (R0c).
+
+To run the binding tests on this machine: the Python on PATH is the Windows Store build, whose
+DLL a test binary can't load (exit 0xc0000022). Set `PYO3_PYTHON` to
+`%LOCALAPPDATA%/Programs/Python/Python313/python.exe` and put that folder first on PATH.
 
 Found by F6, not yet fixed:
 - A pytest run deletes and rebuilds the ion and isotope sheets inside the package
@@ -103,8 +118,9 @@ Found by F6, not yet fixed:
   are generated by code but ingest as `Source::Datasheet`.
 - S2 (MP-PER-2): temperature and frequency dependence as Arithma expressions with a validity range
   and source points. The optics models already return an error outside their range (F4).
-- S3 (MP-PER-3): the new property ids, sheet keys and formulas (for example sound speed from K and
-  density), then the data, from sources with permissive licences.
+- S3 (MP-PER-3), in three lanes. S3a: the ids, sheet keys and sound-speed rules (brief ready).
+  S3b: the values, each with a cited source. S3c: emission lines from the NIST Atomic Spectra
+  Database, a new record field, not a scalar. S3b and S3c wait on owner decision 11.
 - S4: phase data beyond the latent heats (sublimation point, solid phases).
 - S5 (MP-PER-4): the column export.
 
@@ -155,3 +171,15 @@ From `sheets-formula-review.md` (the U numbers are its rows):
 10. The hook asks for branches in the main checkout, not worktrees. `../periodica-sheets` is still
    a worktree because of item 8. Once item 8 is settled, the work moves to the main checkout and
    the worktree goes.
+11. Source and licence of the new data (S3b values, S3c emission lines). The values PlayTow asked
+    for (latent heats, viscosity, sound speed, loss factors, spectral lines) aren't in any sheet
+    today. The candidates are NIST (Atomic Spectra Database, Chemistry WebBook; Standard Reference
+    Data, free to use, NIST asks for a citation and holds the database copyright) and handbooks
+    (CRC, ASM; the numbers are facts, the tables are copyrighted). Suggested: NIST values with a
+    citation per value in the sheet and a LEGAL.txt entry; no handbook table copied wholesale.
+12. The Python builder and the native composer write different ion and isotope sheets. The Python
+    `Get` runs the `refinements` of `composition_rules.json` (binding energy, mass defect, the
+    cross-reference copy), so `python -m periodica build ions` writes 11 more keys for Ca2+ and 8
+    more for H-2 than the committed sheets, which the native composer wrote. Which one is the
+    reference: the Python build drops the refinements, or the native composer gains them?
+    `scripts/_mass_source.py` calls the Python mass source an interim twin of `mass_source.rs`.
