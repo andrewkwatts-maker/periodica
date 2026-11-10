@@ -17,8 +17,21 @@ from periodica.scripts._runner import (
 )
 
 
+@pytest.fixture(scope="module")
+def _private_derived(tmp_path_factory):
+    """A copy of the package's derived/ folder, so CLI build/clear never touch the package."""
+    from periodica import get as get_mod
+
+    copy = tmp_path_factory.mktemp("derived_copy") / "derived"
+    shutil.copytree(get_mod._derived_dir(), copy)
+    return copy
+
+
 @pytest.fixture(autouse=True)
-def _refresh_registry():
+def _refresh_registry(_private_derived, monkeypatch):
+    from periodica import get as get_mod
+
+    monkeypatch.setattr(get_mod, "_derived_dir", lambda: _private_derived)
     reload_registry()
     yield
     reload_registry()
@@ -51,6 +64,14 @@ class TestDefaultInputsAndOrdering:
 # ─────────────────────────────────────────────────────────────────────────
 
 class TestCLI:
+    def test_derived_folder_is_not_the_package_folder(self, _private_derived):
+        from periodica import get as get_mod
+
+        package = (get_mod._DATA_DIR / "derived").resolve()
+        assert get_mod._derived_dir().resolve() != package
+        assert get_mod._derived_dir().resolve() == _private_derived.resolve()
+        assert package not in _private_derived.resolve().parents
+
     def test_inputs_subcommand_runs(self, capsys):
         rc = cli_main(["inputs"])
         out = capsys.readouterr().out
