@@ -23,7 +23,15 @@ pub fn radiance_expr() -> E {
 }
 
 /// Spectral radiance in W sr^-1 m^-3 at temperature `t` (K) and wavelength `lambda` (m).
+/// Returns 0 where `h c / (lambda k T)` overflows the exponential (tiny `lambda T`) and for
+/// non-positive or non-finite inputs, never NaN.
 pub fn planck(t: f64, lambda: f64) -> f64 {
+    if !(t > 0.0 && lambda > 0.0 && t.is_finite() && lambda.is_finite()) {
+        return 0.0;
+    }
+    if PLANCK_H * LIGHT_C / (lambda * BOLTZMANN_K * t) > 700.0 {
+        return 0.0;
+    }
     static EXPR: OnceLock<E> = OnceLock::new();
     eval(EXPR.get_or_init(radiance_expr), &[("l", lambda), ("t", t)])
 }
