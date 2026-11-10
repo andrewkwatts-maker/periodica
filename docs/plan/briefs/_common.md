@@ -24,3 +24,12 @@
   pushes.
 - Final report, 15 lines or fewer: commit hashes, the test commands and their results, and open
   questions.
+
+## Before each commit
+- Run `cargo fmt --all`; CI runs `cargo fmt --check`.
+- Run Rust tests with `--no-fail-fast`, so one failing binary doesn't hide the rest.
+- Report what you verified and say what you didn't. Check a claim about what a commit touches with
+  `git diff --name-only`, not from memory.
+- The workspace depends on `arithma_core` by path (`../Arithma/rust/arithma_core`). The sibling
+  repo is at `H:/Projects/MathsPhysicsEcosystem/Arithma`, so a worktree beside the repo builds.
+  Don't edit `Cargo.toml` dependencies.
