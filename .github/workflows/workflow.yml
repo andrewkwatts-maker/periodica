@@ -4,6 +4,15 @@ on:
   release:
     types: [published]
 
+env:
+  # Cargo.toml depends on arithma_core by sibling path (../Arithma) and the crate
+  # is not on crates.io. Release builds pin one Arithma commit (the tip of
+  # origin/main that the local sibling builds from; v2.0.2 is older and its
+  # arithma_core is 2.0.2, while this repo's Cargo.lock wants 2.0.4).
+  # Bump this together with a release when Arithma changes.
+  ARITHMA_URL: https://github.com/andrewkwatts-maker/Arithma.git
+  ARITHMA_SHA: 447a7c01fede25fe894e96ad2a2e74ecd6616624
+
 jobs:
   build_wheels:
     name: Build wheels on ${{ matrix.os }}
@@ -15,12 +24,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check out Arithma beside the repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest="$GITHUB_WORKSPACE/../Arithma"
+          git init -q "$dest"
+          git -C "$dest" fetch --depth 1 "$ARITHMA_URL" "$ARITHMA_SHA"
+          git -C "$dest" checkout -q FETCH_HEAD
+          # arithma_core declares license-file = "LICENSE" but the repo has only a
+          # root LICENSE; maturin sdist fails without a copy beside the crate.
+          cp "$dest/LICENSE" "$dest/rust/arithma_core/LICENSE"
+
+      # The manylinux container sees only the project (mounted at /project), so
+      # hand it a copy; CIBW_BEFORE_ALL_LINUX places it at /Arithma (../Arithma).
+      - name: Stage Arithma for the Linux container
+        if: runner.os == 'Linux'
+        shell: bash
+        run: cp -r "$GITHUB_WORKSPACE/../Arithma" "$GITHUB_WORKSPACE/.arithma"
+
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.21.3
         env:
           CIBW_BUILD: "cp311-* cp312-* cp313-*"
           CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
-          CIBW_BEFORE_ALL_LINUX: "curl https://sh.rustup.rs -sSf | sh -s -- -y"
+          CIBW_BEFORE_ALL_LINUX: "cp -r /project/.arithma /Arithma && curl https://sh.rustup.rs -sSf | sh -s -- -y"
           CIBW_ENVIRONMENT: PATH="$PATH:$HOME/.cargo/bin"
           CIBW_SKIP: "*-win32 *_i686"
 
@@ -34,6 +62,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check out Arithma beside the repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest="$GITHUB_WORKSPACE/../Arithma"
+          git init -q "$dest"
+          git -C "$dest" fetch --depth 1 "$ARITHMA_URL" "$ARITHMA_SHA"
+          git -C "$dest" checkout -q FETCH_HEAD
+          # arithma_core declares license-file = "LICENSE" but the repo has only a
+          # root LICENSE; maturin sdist fails without a copy beside the crate.
+          cp "$dest/LICENSE" "$dest/rust/arithma_core/LICENSE"
       - name: Install maturin
         run: pip install maturin
       - name: Build sdist
