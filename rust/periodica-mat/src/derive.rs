@@ -260,7 +260,7 @@ fn fracture(t: &mut PropertyTable) -> usize {
     // plane-stress form K^2 / E is used (still Estimated).
     let plane_strain = 1.0
         - t.get(P::PoissonsRatio)
-            .filter(|nu| *nu > -1.0 && *nu < 0.5)
+            .filter(|nu| *nu > -1.0 && *nu <= 0.5)
             .map_or(0.0, |nu| nu * nu);
     if let (Some(kic), Some(e)) = (t.get(P::FractureToughnessKic), e) {
         let g = kic * kic * plane_strain / e;
@@ -325,19 +325,27 @@ fn optical(t: &mut PropertyTable) -> usize {
 const METALLIC_RESISTIVITY_MAX: f64 = 2.0e-6;
 
 /// Elongation at break (%) between which a table counts as ductile: below the
-/// lower bound the material is brittle, above the upper it is an elastomer.
+/// lower bound the material is brittle; above the upper it is taken for an
+/// elastomer unless a metallic resistivity says otherwise.
 const DUCTILE_ELONGATION_PCT: (f64, f64) = (1.0, 60.0);
 
 /// Whether the table shows ductile-metal behaviour, the domain of Tabor's
-/// rules. A stated elongation at break decides it (within
-/// [`DUCTILE_ELONGATION_PCT`]); with none stated, a metallic electrical
-/// resistivity decides it. A table with neither is not taken for a metal.
+/// rules. A stated resistivity that is not metallic rules it out whatever the
+/// elongation. A metallic resistivity makes it a metal, ductile unless a
+/// stated elongation is below the lower bound. With no resistivity, a stated
+/// elongation within [`DUCTILE_ELONGATION_PCT`] decides it. A table with
+/// neither field is not taken for a metal.
 pub(crate) fn shows_ductile_metal(t: &PropertyTable) -> bool {
-    if let Some(el) = t.get(P::ElongationPct) {
-        return el >= DUCTILE_ELONGATION_PCT.0 && el <= DUCTILE_ELONGATION_PCT.1;
+    let (min_el, max_el) = DUCTILE_ELONGATION_PCT;
+    let metallic = t
+        .get(P::ElectricalResistivity)
+        .map(|r| r > 0.0 && r < METALLIC_RESISTIVITY_MAX);
+    match (t.get(P::ElongationPct), metallic) {
+        (_, Some(false)) | (None, None) => false,
+        (Some(el), Some(true)) => el >= min_el,
+        (Some(el), None) => (min_el..=max_el).contains(&el),
+        (None, Some(true)) => true,
     }
-    t.get(P::ElectricalResistivity)
-        .is_some_and(|r| r > 0.0 && r < METALLIC_RESISTIVITY_MAX)
 }
 
 /// Tabor's hardness/strength correlation, for ductile metals only.

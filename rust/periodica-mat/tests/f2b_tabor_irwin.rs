@@ -56,6 +56,43 @@ fn elastomer_elongation_is_not_ductile_metal() {
 }
 
 #[test]
+fn stated_insulator_resistivity_overrides_elongation() {
+    // Polymer-like: ductile by elongation, but the resistivity is an insulator's.
+    let mut t = table(&[
+        (P::YieldStrength, 50e6),
+        (P::UltimateTensileStrength, 70e6),
+        (P::ElongationPct, 30.0),
+        (P::ElectricalResistivity, 1e14),
+    ]);
+    fill_derived(&mut t);
+    assert!(t.get(P::Hardness).is_none(), "Hardness");
+    assert!(t.get(P::HardnessVickers).is_none(), "HV");
+}
+
+#[test]
+fn very_ductile_metal_keeps_tabor() {
+    // Annealed austenitic steel: elongation above the elastomer bound, metallic resistivity.
+    let mut t = table(&[
+        (P::UltimateTensileStrength, 600e6),
+        (P::ElongationPct, 70.0),
+        (P::ElectricalResistivity, 7.2e-7),
+    ]);
+    fill_derived(&mut t);
+    assert!((t.get(P::HardnessVickers).unwrap() - 600.0 / 3.3).abs() < 1e-9);
+}
+
+#[test]
+fn brittle_metal_gets_no_tabor() {
+    let mut t = table(&[
+        (P::UltimateTensileStrength, 200e6),
+        (P::ElongationPct, 0.5),
+        (P::ElectricalResistivity, 8.0e-7),
+    ]);
+    fill_derived(&mut t);
+    assert!(t.get(P::HardnessVickers).is_none());
+}
+
+#[test]
 fn timber_and_rubber_get_no_hardness() {
     for rel in [
         "derived/composites/Timber-C24.json",
@@ -137,4 +174,13 @@ fn irwin_is_plane_strain_with_poisson_and_estimated_without() {
     fill_derived(&mut without);
     assert!((without.get(P::Jic).unwrap() - k * k / e).abs() < 1e-9 * (k * k / e));
     assert_eq!(without.source(P::Jic), Source::Estimated);
+    // nu = 0.5 (incompressible) is a valid plane-strain input: the factor is 0.75.
+    let mut half = table(&[
+        (P::FractureToughnessKic, k),
+        (P::YoungsModulus, e),
+        (P::PoissonsRatio, 0.5),
+    ]);
+    fill_derived(&mut half);
+    let want_half = 0.75 * k * k / e;
+    assert!((half.get(P::Jic).unwrap() - want_half).abs() < 1e-9 * want_half);
 }
