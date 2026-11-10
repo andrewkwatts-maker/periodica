@@ -7,6 +7,20 @@ use periodica_mat::record::MaterialRecord;
 use periodica_mat::{ingest, PropertyId, Source};
 use serde_json::json;
 
+const PLAYTOW: &[&str] = &[
+    "Steel-1018",
+    "Concrete-C30",
+    "Steel-B500B",
+    "Concrete-C40",
+    "Concrete-C25",
+    "Aluminum-6061",
+    "Magnet-N42",
+    "Timber-C24",
+    "Rubber-Natural",
+    "Mortar-CementLime",
+    "Brick-Clay",
+];
+
 fn tmp(name: &str) -> PathBuf {
     let d = std::env::temp_dir().join(format!("s5_export_{}_{name}", std::process::id()));
     let _ = std::fs::remove_dir_all(&d);
@@ -27,7 +41,7 @@ fn small() -> ColumnSet {
 
 fn corpus_set() -> (ColumnSet, Corpus) {
     let data = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../src/periodica/data");
-    let corpus = load_corpus(&data);
+    let corpus = load_corpus(&data, has_density);
     let props: Vec<PropertyId> = PropertyId::ALL
         .iter()
         .copied()
@@ -171,7 +185,7 @@ fn sheet_ids_are_unique_and_shadowed_copies_are_listed() {
 #[test]
 fn playtow_sheets_and_iron_density_are_rows() {
     let (set, _) = corpus_set();
-    for n in ALWAYS_INCLUDE {
+    for n in PLAYTOW {
         assert!(set.sheet_ids.iter().any(|i| i == n), "{n} missing");
     }
     let dir = tmp("iron");
@@ -185,4 +199,13 @@ fn playtow_sheets_and_iron_density_are_rows() {
     let raw = std::fs::read(dir.join(&d.values_file)).unwrap();
     let v = f64::from_le_bytes(raw[row * 8..row * 8 + 8].try_into().unwrap());
     assert!((v - 7874.0).abs() < 1e-9, "iron density {v}");
+}
+
+#[test]
+fn has_density_decides_rows() {
+    let with = rec("with", 1000.0);
+    let mut without = rec("without", 1.0);
+    without.1.bulk.clear(PropertyId::Density);
+    assert!(has_density(&with.1));
+    assert!(!has_density(&without.1));
 }

@@ -5,7 +5,7 @@
 
 use std::path::{Path, PathBuf};
 
-use periodica_mat::export::{columns, load_corpus, write_dir};
+use periodica_mat::export::{columns, has_density, load_corpus, write_dir};
 use periodica_mat::PropertyId;
 
 fn main() {
@@ -14,7 +14,7 @@ fn main() {
         std::process::exit(2);
     };
     let data = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../src/periodica/data");
-    let corpus = load_corpus(&data);
+    let corpus = load_corpus(&data, has_density);
     assert!(!corpus.records.is_empty(), "no sheets ingested");
     let props: Vec<PropertyId> = PropertyId::ALL
         .iter()
@@ -31,6 +31,13 @@ fn main() {
         corpus.shadowed.len(),
         corpus.skipped.len()
     );
+    let mut added: std::collections::BTreeMap<&str, usize> = Default::default();
+    for ((_, r), f) in corpus.records.iter().zip(&corpus.folders) {
+        if !periodica_mat::is_material_like(r) {
+            *added.entry(f.as_str()).or_default() += 1;
+        }
+    }
+    println!("rows beyond is_material_like: {added:?}");
     for s in &corpus.skipped {
         println!("skipped {}: {}", s.path, s.reason);
     }

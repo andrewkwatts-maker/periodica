@@ -19,28 +19,17 @@ use serde::{Deserialize, Serialize};
 
 use crate::record::MaterialRecord;
 use crate::table::Source;
-use crate::{ingest, is_material_like, jsonc, PropertyId};
+use crate::{ingest, jsonc, PropertyId};
 
 /// Current manifest version written by [`write_dir`].
 pub const FORMAT_VERSION: u32 = 1;
 /// Name of the hash used for the manifest's content hashes.
 pub const HASH_ALGORITHM: &str = "fnv1a-64";
-/// Data roots in precedence order; the first root holding a stem wins.
+/// Data roots in precedence order; the first root holding a stem wins. Mirrors
+/// `periodica_core::data_loader::MATERIAL_ROOTS` (this crate does not depend on that one). The
+/// loader scans only its `MATERIAL_DIRS` subfolders of each root; this walk takes every folder
+/// under a root.
 pub const ROOTS: &[&str] = &["active", "derived", "reference", "defaults"];
-/// Sheets always exported, though `is_material_like` may reject them (PlayTow loads them).
-pub const ALWAYS_INCLUDE: &[&str] = &[
-    "Steel-1018",
-    "Concrete-C30",
-    "Steel-B500B",
-    "Concrete-C40",
-    "Concrete-C25",
-    "Aluminum-6061",
-    "Magnet-N42",
-    "Timber-C24",
-    "Rubber-Natural",
-    "Mortar-CementLime",
-    "Brick-Clay",
-];
 const SOURCES: [Source; 5] = [
     Source::Absent,
     Source::Datasheet,
@@ -348,6 +337,8 @@ pub struct Skipped {
 #[derive(Debug, Default)]
 pub struct Corpus {
     pub records: Vec<(String, MaterialRecord)>,
+    /// Data folder of each record, parallel to `records`.
+    pub folders: Vec<String>,
     pub shadowed: Vec<Shadowed>,
     pub skipped: Vec<Skipped>,
 }
@@ -376,21 +367,33 @@ fn folder_of(data_dir: &Path, path: &Path) -> String {
 
 /// Ingest one file (the same `jsonc` + `ingest` path as the census, which fills derived and
 /// estimated values). `Err` carries the reason it is not a row.
-fn load_sheet(path: &Path, stem: &str) -> std::result::Result<MaterialRecord, String> {
+fn load_sheet(
+    path: &Path,
+    stem: &str,
+    keep: fn(&MaterialRecord) -> bool,
+) -> std::result::Result<MaterialRecord, String> {
     let text = std::fs::read_to_string(path).map_err(|e| format!("unreadable: {e}"))?;
     let raw = jsonc::from_str(&text).map_err(|e| format!("not JSON: {e}"))?;
     let rec = ingest(&raw, stem).map_err(|e| format!("ingest failed: {e}"))?;
-    if is_material_like(&rec) || ALWAYS_INCLUDE.contains(&stem) {
+    if keep(&rec) {
         Ok(rec)
     } else {
-        Err("not material-like".to_string())
+        Err("rejected by the row predicate (for has_density: no Density value)".to_string())
     }
+}
+
+/// A row is a sheet that describes bulk matter: it states a density.
+///
+/// `is_material_like` is the app library's narrower rule and rejects thin sheets, such as a magnet
+/// with density, remanence and coercivity only.
+pub fn has_density(rec: &MaterialRecord) -> bool {
+    rec.bulk.has(PropertyId::Density)
 }
 
 /// Walk the four data roots under `data_dir` (precedence order [`ROOTS`], files sorted within a
 /// root). The first copy of a name wins, as in the engine's loader; later copies are listed in
-/// `shadowed`.
-pub fn load_corpus(data_dir: &Path) -> Corpus {
+/// `shadowed`. A sheet `keep` rejects goes to `skipped`.
+pub fn load_corpus(data_dir: &Path, keep: fn(&MaterialRecord) -> bool) -> Corpus {
     let mut corpus = Corpus::default();
     let mut seen: BTreeSet<String> = BTreeSet::new();
     for root in ROOTS {
@@ -404,7 +407,7 @@ pub fn load_corpus(data_dir: &Path) -> Corpus {
                 .unwrap_or("")
                 .to_string();
             let folder = folder_of(data_dir, &path);
-            match load_sheet(&path, &stem) {
+            match load_sheet(&path, &stem, keep) {
                 Err(reason) => corpus.skipped.push(Skipped {
                     path: format!("{folder}/{stem}"),
                     reason,
@@ -414,6 +417,7 @@ pub fn load_corpus(data_dir: &Path) -> Corpus {
                 }
                 Ok(rec) => {
                     seen.insert(stem.clone());
+                    corpus.folders.push(folder);
                     corpus.records.push((stem, rec));
                 }
             }
