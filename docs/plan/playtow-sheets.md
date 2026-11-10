@@ -68,12 +68,14 @@ PlayTow's answers of 2026-11-11 on MP-PER-3 and MP-PER-4 (they set the S3 and S5
 | M1 element bulk properties | `briefs/M1-merge-element-bulk.md` | merged 5a7a054. It also overwrote 28 ion sheets; F6 restores them |
 | F3 mix (Turner expansion, Hill consistency, Lorentz-Lorenz n, `mix_tagged`) | `briefs/F3-mix.md` | merged bb3bd57 |
 | R0 CI (Arithma clone, fmt, path-dependency guard) | `briefs/R0-ci-green.md` | merged 11b2a79. First run on GitHub (4191f64) failed in two places; see below |
-| R0c reproduce the Python CI failure with the Rust extension | `briefs/R0c-python-ci-repro.md` | running (works on an export, changes nothing). It stopped once while its build compiled and was resumed |
+| R0c reproduce the Python CI failure with the Rust extension | `briefs/R0c-python-ci-repro.md` | done, no repo change. With the extension live: 7 failed, 1512 passed, 99 skipped, the same on a second run. All 7 come from the Rust core lagging the Python code: 6 from the datasheet reader (R0d), 1 from the grain hash (R0e). Log `H:/claude-scratch/periodica-sheets/pyrepro/pytest.log` |
+| R0d Rust core reads a datasheet as Python does | `briefs/R0d-rust-sheet-parity.md` | running (Rust lane) |
+| R0e Rust grain hash matches Python's | `briefs/R0e-grain-hash.md` | after R0d |
 | F5 ion keys, elastomer floor | `briefs/F5-corpus-green.md` | merged f9902fe; F6 revisits the ion keys |
 | F4 optics (gold interband terms, validity ranges, Planck guard) | `briefs/F4-optics-models.md` | merged 7eedcac. The gold fit matches Johnson and Christy within 0.05 in R; its citation (Etchegoin 2006) is from memory and unchecked |
 | F6 derived data green, MP-PER-1 | `briefs/F6-derived-green.md` | done dcfd0dc, 4191f64. f_ck is the property `CharacteristicCompressiveStrength` and triggers the fib relations; no code reads `Class`. 28 ion and 39 isotope sheets restored from 9890238 |
 | R0b release workflow builds with Arithma | `briefs/R0b-release-workflow.md` | done 37020cb: wheels and sdist jobs fetch Arithma at commit 447a7c0. Not run on GitHub. The sdist can't build a wheel on its own (owner decision 9) |
-| S5a column export of scalar properties | `briefs/S5a-column-export.md` | next Rust lane (PlayTow waits on it) |
+| S5a column export of scalar properties | `briefs/S5a-column-export.md` | after R0e (PlayTow waits on it) |
 | F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | done 957f83a, 0500d1f. Reflectance from n needs k (`Derived`) or a known transmittance (k = 0, `Estimated`); with k it also covers metals with n below 1. Absorptance and emissivity no longer copy each other. Open: R is `Estimated` even when the transmittance is itself an estimate |
 | P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | done 1247dc3, 826cc50. Only `tests/test_cli.py` wrote to the package; it now builds into a private copy of `derived/` and its fixture checks that the patch ended |
 | F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin) | `briefs/F2-derive-mech.md` | after S5a |
@@ -98,7 +100,14 @@ tests on Linux. Two failures remain:
   "Removed before commit"; a work-in-progress sync committed it (0ada509). Fixed by removing the
   module. The `numpy` crate is now unused in `periodica_core` and stays in the `python` feature
   for the zero-copy work the spike was testing.
-- Python jobs, "Run tests": still open (R0c).
+- Python jobs, "Run tests": 7 tests fail once the extension is built (R0c). Since commit 02b6807
+  Python flattens nested property groups and answers other spellings of a key
+  (`periodica.properties`); the Rust twin still reads only a flat `Properties` block, so with the
+  extension `data_sheet()` is empty for every curated sheet and `sample()` returns None. A wheel
+  from PyPI has the extension, so users of a wheel see this too. Lanes R0d and R0e fix it.
+  Three vocabularies now name the same quantities: `property_schema.json` (Python),
+  `periodica-mat/src/canon.rs` (Rust, what PlayTow reads) and the Rust core's reader. One of them
+  should generate the others (owner decision 13).
 
 To run the binding tests on this machine: the Python on PATH is the Windows Store build, whose
 DLL a test binary can't load (exit 0xc0000022). Set `PYO3_PYTHON` to
@@ -183,3 +192,7 @@ From `sheets-formula-review.md` (the U numbers are its rows):
     more for H-2 than the committed sheets, which the native composer wrote. Which one is the
     reference: the Python build drops the refinements, or the native composer gains them?
     `scripts/_mass_source.py` calls the Python mass source an interim twin of `mass_source.rs`.
+13. One property vocabulary. `property_schema.json` (68 properties, 96 unit tokens, Python) and
+    `canon.rs` (99 property ids, Rust) are kept by hand and already differ. Suggested: the schema
+    file is the single source and a test fails when `canon.rs` and the schema disagree; or
+    `canon.rs` is generated from it.
