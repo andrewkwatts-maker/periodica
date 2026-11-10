@@ -44,7 +44,6 @@ thiserror.workspace = true
 nalgebra.workspace = true
 # Seeded RNG for deterministic alloy composition search.
 rand.workspace = true
-sha1.workspace = true
 pyo3 = { workspace = true, optional = true }
 # Zero-copy ndarray <-> numpy at the binding boundary.
 numpy = { workspace = true, optional = true }

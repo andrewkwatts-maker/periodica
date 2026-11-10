@@ -76,8 +76,6 @@ dashmap = "6.1"
 half = { version = "2.4", features = ["bytemuck"] }
 memmap2 = "0.9"
 rand = { version = "0.8", features = ["small_rng"] }
-# Matches Python's hashlib.sha1 in the voronoi phase picker, byte for byte.
-sha1 = "0.10"
 nalgebra = "0.33"
 # Pure-Rust port of musl libm. Every transcendental in the physics crates goes
 # through it so results are bit-identical across operating systems (std's
