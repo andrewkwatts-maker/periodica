@@ -457,3 +457,18 @@ fn stress_optic_round_trips() {
     assert!((c2 / c - 1.0).abs() < 1e-12, "round trip {c} -> {c2}");
     assert_eq!(PropertyId::StressOptic.si_unit(), "m^2/N");
 }
+
+/// Ag+ carries debye_temperature_K 225, group, period and the emission
+/// wavelengths (nm on disk); none may be reported unknown.
+#[test]
+fn ion_sheet_ingests_debye_and_emission_keys() {
+    let path = data_dir().join("derived/ions/Ag+.json");
+    let text = std::fs::read_to_string(&path).expect("Ag+.json");
+    let value: serde_json::Value = jsonc::from_str(&text).expect("parse");
+    let r = ingest(&value, "Ag+").unwrap();
+    assert!(r.provenance.unknown_keys.is_empty(), "{:?}", r.provenance.unknown_keys);
+    assert_eq!(r.bulk.get(PropertyId::DebyeTemperature), Some(225.0));
+    assert_eq!(r.bulk.source(PropertyId::DebyeTemperature), Source::Datasheet);
+    let w = r.bulk.get(PropertyId::PrimaryEmissionWavelength).unwrap();
+    assert!((w - 328.1e-9).abs() < 1e-15, "{w}");
+}
