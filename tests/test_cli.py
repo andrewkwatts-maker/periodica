@@ -28,13 +28,18 @@ def _private_derived(tmp_path_factory):
 
 
 @pytest.fixture(autouse=True)
-def _refresh_registry(_private_derived, monkeypatch):
+def _refresh_registry(_private_derived):
     from periodica import get as get_mod
 
-    monkeypatch.setattr(get_mod, "_derived_dir", lambda: _private_derived)
+    # The patch ends before the last reload, so the registry that later test
+    # files see is loaded from the package folder, not from the private copy.
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setattr(get_mod, "_derived_dir", lambda: _private_derived)
+        reload_registry()
+        yield
     reload_registry()
-    yield
-    reload_registry()
+    # Checked on every teardown: a failure here means the patch outlived the reload.
+    assert get_mod._derived_dir().resolve() == (get_mod._DATA_DIR / "derived").resolve()
 
 
 # ─────────────────────────────────────────────────────────────────────────
