@@ -91,6 +91,7 @@ S3b adds both as material sheets.
 | R0c reproduce the Python CI failure with the Rust extension | `briefs/R0c-python-ci-repro.md` | done, no repo change. With the extension live: 7 failed, 1512 passed, 99 skipped, the same on a second run. All 7 come from the Rust core lagging the Python code: 6 from the datasheet reader (R0d), 1 from the grain hash (R0e). Log `H:/claude-scratch/periodica-sheets/pyrepro/pytest.log` |
 | R0d Rust core reads a datasheet as Python does | `briefs/R0d-rust-sheet-parity.md` | running (Rust lane) |
 | R0e Rust grain hash matches Python's | `briefs/R0e-grain-hash.md` | after R0d |
+| R0f Rust resolves aliases and units (a port of `DataSheet.resolve`) | to write | proposed, after R0e. Today `py_sample` declines any key that is not literal, and in strict `PERIODICA_BACKEND=rust` mode a decline raises `RustBackendUnavailable` (`_dispatch.py:165`). Ties to owner decision 13 |
 | F5 ion keys, elastomer floor | `briefs/F5-corpus-green.md` | merged f9902fe; F6 revisits the ion keys |
 | F4 optics (gold interband terms, validity ranges, Planck guard) | `briefs/F4-optics-models.md` | merged 7eedcac. The gold fit matches Johnson and Christy within 0.05 in R; its citation (Etchegoin 2006) is from memory and unchecked |
 | F6 derived data green, MP-PER-1 | `briefs/F6-derived-green.md` | done dcfd0dc, 4191f64. f_ck is the property `CharacteristicCompressiveStrength` and triggers the fib relations; no code reads `Class`. 28 ion and 39 isotope sheets restored from 9890238 |
@@ -100,7 +101,7 @@ S3b adds both as material sheets.
 | P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | done 1247dc3, 826cc50. Only `tests/test_cli.py` wrote to the package; it now builds into a private copy of `derived/` and its fixture checks that the patch ended |
 | F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin, near-incompressible K) | `briefs/F2-derive-mech.md` | after S5a |
 | S3a new scalar properties (MP-PER-3): ten ids, sheet keys, sound-speed rules | `briefs/S3a-new-scalar-properties.md` | ready; after F2. No data values; the data and the emission lines are later lanes |
-| R1b domain census | `briefs/R1b-domain-census.md` | running beside R0d (it builds `periodica-mat` only). Rerun the example after F2 and S3a |
+| R1b domain census | `briefs/R1b-domain-census.md` | done, 5f306e1 (on main). Findings below. Rerun the example after F2 and S3a |
 
 State at 826cc50, pushed to `main` on 2026-11-11: 433 Rust tests pass and none fail; fmt, clippy
 and `cargo check --workspace --all-features` pass.
@@ -188,6 +189,26 @@ cited source in the data lane (S3b), never recalled.
   from f_ck, so both speeds derive. A sound wave sees the tangent (dynamic) modulus, not the
   secant one: an argument for keeping the tangent value in owner decision 6, or for storing both.
 - Steel-1018, Aluminum-6061: E, G, nu and density present; both speeds derive.
+
+## Census findings (R1b, 5f306e1; `docs/dev/domain-census.md`)
+Rerun with `cargo run -p periodica-mat --example domain_census`. The domain table is
+`rust/periodica-mat/src/domains.rs`; a test fails when a new `PropertyId` is in no domain.
+- Contact: no `PropertyId` for friction or restitution, in any sheet. PlayTow's contact solver has
+  nothing to read. Not in MP-PER-1 to 4; ask PlayTow whether it wants them (a pair property, so
+  a per-material scalar is at best a default).
+- Acoustic: empty until S3a.
+- Thermal and electrical: nine of the eleven sheets have no value, all except Steel-1018 and
+  Aluminum-6061 (table 2 of the census). S3b adds conductivity and heat capacity.
+- Optical: none of the eleven sheets has n, k or emissivity.
+- Magnet-N42: density, remanence and coercivity only, and `is_material_like` rejects the sheet.
+  Check that S5a's export still includes it.
+- Steel-1018 and Aluminum-6061 exist in both `derived/` and `reference/`. The Rust lookup returns
+  `derived/` (`data_loader.rs:67`, `:294`). The `reference/` copies hold fewer values. Not
+  checked: whether Python's lookup picks the same one. One of the two copies should go.
+- 1827 temperature-dependent values in 374 sheets state no reference temperature (a key-name
+  heuristic, so an upper bound). Input to S2.
+- 129 sheets have no `bulk.YoungsModulus`. Ingest drops no keys.
+- Not done by R1b: it took the domains from this plan, not from PlayTow's `MATERIALS.md`.
 
 ## Owner decisions open
 From `sheets-formula-review.md` (the U numbers are its rows):
