@@ -86,7 +86,7 @@ pub use orthotropy::{Orthotropy, OrthotropyIncomplete};
 pub use pairs::{Law, PairMiss, PairRow, PairTable};
 pub use ingest::{ingest, is_material_like, IngestError};
 pub use jsonc::strip_comments;
-pub use mix::{bounds as mix_bounds, mix, MixError};
+pub use mix::{bounds as mix_bounds, mix, mix_tagged, MixError};
 pub use property::PropertyId;
 pub use record::{
     CrystalSystem, Defects, GrainStructure, Inclusions, Lattice, MaterialRecord, Microstructure,
