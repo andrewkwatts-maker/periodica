@@ -166,6 +166,29 @@ Found by F6, not yet fixed:
 | f | Resistivity, conductivity, permittivity, dielectric strength, Remanence, Coercivity | Magnetic permeability, saturation, B-H, sound speed, acoustic loss. `Permeability` is the hydraulic one (m²). |
 | g | Nothing | A column export. |
 
+## Gaps in the sheets PlayTow loads (read 2026-11-11, c6a1e8b)
+What each sheet gives the elastic and sound-speed rules today. Values to add are read from a
+cited source in the data lane (S3b), never recalled.
+- Timber-C24: wrong today. The sheet holds one modulus (E_0 = 11 GPa, along the grain) and one
+  Poisson's ratio (0.372) and no `Field`, so `orthotropy` is `None` and the isotropic identities
+  run: shear modulus 4.0 GPa `Derived` (EN 338 gives G_mean of about 0.69 GPa for C24, a factor of
+  6) and bulk modulus 14.3 GPa. The F2 gate tests for an `Orthotropy` field, so it does not catch
+  this sheet. Fix in the data lane: a `Field` with `axial` and `transverse` blocks (E_90, G, the
+  strengths), read the way `active/materials/Carbon_Fiber_Epoxy.json` is. Its sound speed is
+  directional (along the grain about `sqrt(E_0 / rho)`, far lower across), so one scalar is the
+  along-grain value and the sheet must say so.
+- Steel-B500B: Young's modulus and density only. No Poisson's ratio, so no shear or bulk modulus
+  and no sound speed. Add Poisson's ratio from a steel standard.
+- Rubber-Natural: Poisson's ratio 0.4998, so the bulk modulus from `(E, nu)` moves 50 % for an
+  error of 0.0001 in nu, and the longitudinal speed with it. F2 item 4 marks it `Estimated`; S3b
+  gives a measured speed.
+- Magnet-N42: density, remanence and coercivity only. No elastic data. PlayTow asks only for its
+  permeability.
+- Concrete-C25, C30, C40: no modulus in the sheet; `fill_concrete` gives the fib tangent modulus
+  from f_ck, so both speeds derive. A sound wave sees the tangent (dynamic) modulus, not the
+  secant one: an argument for keeping the tangent value in owner decision 6, or for storing both.
+- Steel-1018, Aluminum-6061: E, G, nu and density present; both speeds derive.
+
 ## Owner decisions open
 From `sheets-formula-review.md` (the U numbers are its rows):
 1. Licence: the source headers say "All rights reserved", `LICENSE` says MIT, and there is no
