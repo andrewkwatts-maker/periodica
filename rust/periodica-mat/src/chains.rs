@@ -81,8 +81,8 @@ fn measured(t: &PropertyTable, p: P) -> Option<f64> {
 }
 
 /// Indentation hardness `H` in Pa: from a measured Vickers or Brinell number
-/// (`H = HV * 9.80665e6 Pa`), from Rockwell C via ASTM E140, else from yield
-/// by Tabor's `H ~ 3 sigma_y`, else (no yield, as for concrete) `H ~ 3 f_c`.
+/// (`H = HV * 9.80665e6 Pa`), from Rockwell C via ASTM E140, else, for a ductile metal,
+/// from yield by Tabor's `H ~ 3 sigma_y`, else (no yield, as for concrete) `H ~ 3 f_c`.
 fn hardness_pa(t: &mut PropertyTable) -> bool {
     let from_scale = measured(t, P::HardnessVickers)
         .or_else(|| measured(t, P::HardnessBrinell))
@@ -90,7 +90,7 @@ fn hardness_pa(t: &mut PropertyTable) -> bool {
         .map(|hv| hv * KGF_MM2_PA);
     let from_yield = t
         .get(P::YieldStrength)
-        .filter(|v| *v > 0.0)
+        .filter(|v| *v > 0.0 && crate::derive::shows_ductile_metal(t))
         .map(|y| TABOR_H_OVER_SIGMA_Y * y);
     let from_fc = || measured_f_c(t).map(|fc| CONSTRAINT_H_OVER_FC * fc);
     match from_scale.or(from_yield).or_else(from_fc) {
@@ -145,7 +145,7 @@ mod tests {
 
     #[test]
     fn hardness_from_yield_is_tabor() {
-        let mut t = table(&[(P::YieldStrength, 250.0e6)]);
+        let mut t = table(&[(P::YieldStrength, 250.0e6), (P::ElongationPct, 20.0)]);
         interface_chains(&mut t);
         assert_relative_eq!(t.get(P::Hardness).unwrap(), 750.0e6, max_relative = 1e-12);
         assert_eq!(t.source(P::Hardness), Source::Estimated);
@@ -185,6 +185,7 @@ mod tests {
         let mut y = table(&[
             (P::CompressiveStrength, 30.0e6),
             (P::YieldStrength, 250.0e6),
+            (P::ElongationPct, 20.0),
         ]);
         interface_chains(&mut y);
         assert_relative_eq!(y.get(P::Hardness).unwrap(), 750.0e6, max_relative = 1e-12);
@@ -192,7 +193,10 @@ mod tests {
 
     #[test]
     fn estimated_vickers_is_not_a_hardness_input() {
-        let mut t = table(&[(P::UltimateTensileStrength, 400.0e6)]);
+        let mut t = table(&[
+            (P::UltimateTensileStrength, 400.0e6),
+            (P::ElongationPct, 20.0),
+        ]);
         crate::derive::fill_derived(&mut t);
         assert_eq!(t.source(P::HardnessVickers), Source::Estimated);
         assert!(!t.has(P::Hardness));

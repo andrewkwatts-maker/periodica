@@ -247,23 +247,30 @@ fn elastic(t: &mut PropertyTable) -> usize {
     n
 }
 
-/// Irwin's plane-stress relation between the stress-intensity and energy
-/// formulations of toughness, `G_IC = J_IC = K_IC^2 / E` (Irwin 1957). It
-/// holds only for a linear-elastic plane-stress crack, so the value is a
+/// Irwin's relation between the stress-intensity and energy formulations of
+/// toughness, `G_IC = J_IC = K_IC^2 (1 - nu^2) / E` (plane strain, Irwin
+/// 1957). It holds only for a linear-elastic crack, so the value is a
 /// correlation: `Estimated`. `G_F` and `J_IC` are the same quantity in the
 /// same units (`J_IC` is the initiation value, `G_F` the total), so each is
 /// mirrored from the other as `Estimated`.
 fn fracture(t: &mut PropertyTable) -> usize {
     let mut n = 0;
     let e = t.get(P::YoungsModulus).filter(|v| *v > 0.0);
+    // K_IC is a plane-strain value: G = K^2 (1 - nu^2) / E. Without nu the
+    // plane-stress form K^2 / E is used (still Estimated).
+    let plane_strain = 1.0
+        - t.get(P::PoissonsRatio)
+            .filter(|nu| *nu > -1.0 && *nu < 0.5)
+            .map_or(0.0, |nu| nu * nu);
     if let (Some(kic), Some(e)) = (t.get(P::FractureToughnessKic), e) {
-        n += usize::from(t.set_if_better(P::Jic, kic * kic / e, Source::Estimated));
+        let g = kic * kic * plane_strain / e;
+        n += usize::from(t.set_if_better(P::Jic, g, Source::Estimated));
     }
     if let (Some(jic), Some(e)) = (t.get(P::Jic), e) {
         if jic > 0.0 {
             n += usize::from(t.set_if_better(
                 P::FractureToughnessKic,
-                (jic * e).sqrt(),
+                (jic * e / plane_strain).sqrt(),
                 Source::Estimated,
             ));
         }
@@ -313,9 +320,33 @@ fn optical(t: &mut PropertyTable) -> usize {
     n
 }
 
-/// Tabor's hardness/strength correlation. Empirical, so `Estimated`.
+/// Metallic electrical resistivity bound (Ohm*m): pure metals and most alloys
+/// lie below 2e-6; semiconductors, ceramics and polymers far above.
+const METALLIC_RESISTIVITY_MAX: f64 = 2.0e-6;
+
+/// Elongation at break (%) between which a table counts as ductile: below the
+/// lower bound the material is brittle, above the upper it is an elastomer.
+const DUCTILE_ELONGATION_PCT: (f64, f64) = (1.0, 60.0);
+
+/// Whether the table shows ductile-metal behaviour, the domain of Tabor's
+/// rules. A stated elongation at break decides it (within
+/// [`DUCTILE_ELONGATION_PCT`]); with none stated, a metallic electrical
+/// resistivity decides it. A table with neither is not taken for a metal.
+pub(crate) fn shows_ductile_metal(t: &PropertyTable) -> bool {
+    if let Some(el) = t.get(P::ElongationPct) {
+        return el >= DUCTILE_ELONGATION_PCT.0 && el <= DUCTILE_ELONGATION_PCT.1;
+    }
+    t.get(P::ElectricalResistivity)
+        .is_some_and(|r| r > 0.0 && r < METALLIC_RESISTIVITY_MAX)
+}
+
+/// Tabor's hardness/strength correlation, for ductile metals only.
+/// Empirical, so `Estimated`.
 fn hardness(t: &mut PropertyTable) -> usize {
     let mut n = 0;
+    if !shows_ductile_metal(t) {
+        return n;
+    }
     if let Some(uts) = t.get(P::UltimateTensileStrength) {
         // HV is conventionally a kgf/mm^2 number; UTS[MPa] ~ 3.3 * HV.
         let hv = uts / 1.0e6 / TABOR_FACTOR;
