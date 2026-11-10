@@ -44,15 +44,17 @@ impl Orthotropy {
         let g12 = a("ShearModulus_GPa", 1.0e9);
         let nu12 = a("PoissonRatio", 1.0);
         let nu23 = t("PoissonRatio", 1.0);
-        let g23 = t("ShearModulus_GPa", 1.0e9)
-            .or_else(|| Some(e2? / (2.0 * (1.0 + nu23?))));
+        let g23 = t("ShearModulus_GPa", 1.0e9).or_else(|| Some(e2? / (2.0 * (1.0 + nu23?))));
         Some(Self {
             axis_1: unit(fiber_direction(field)?)?,
             axis_2: None,
             e: [a("YoungsModulus_GPa", 1.0e9), e2, e2],
             g: [g12, g12, g23],
             nu: [nu12, nu12, nu23],
-            tensile: [a("TensileStrength_MPa", 1.0e6), t("TensileStrength_MPa", 1.0e6)],
+            tensile: [
+                a("TensileStrength_MPa", 1.0e6),
+                t("TensileStrength_MPa", 1.0e6),
+            ],
             compressive: [
                 a("CompressiveStrength_MPa", 1.0e6),
                 t("CompressiveStrength_MPa", 1.0e6),
@@ -97,7 +99,8 @@ impl Orthotropy {
         let c2 = dir.map_or(0.0, |v| v[0] * v[0]);
         let s2 = 1.0 - c2;
         // direct-float: periodica has no Arithma dependency
-        let inv = c2 * c2 / (x1 * x1) + (1.0 / (s * s) - 1.0 / (x1 * x1)) * c2 * s2 + s2 * s2 / (x2 * x2);
+        let inv =
+            c2 * c2 / (x1 * x1) + (1.0 / (s * s) - 1.0 / (x1 * x1)) * c2 * s2 + s2 * s2 / (x2 * x2);
         Ok(1.0 / inv.sqrt())
     }
 
@@ -125,22 +128,27 @@ impl Orthotropy {
 }
 
 fn need(v: Option<f64>, key: &'static str, missing: &mut Vec<&'static str>) -> f64 {
-    v.filter(|x| *x > 0.0 || key.starts_with("nu")).unwrap_or_else(|| {
-        missing.push(key);
-        1.0
-    })
+    v.filter(|x| *x > 0.0 || key.starts_with("nu"))
+        .unwrap_or_else(|| {
+            missing.push(key);
+            1.0
+        })
 }
 
 fn fail_if(missing: &[&'static str]) -> Result<(), OrthotropyIncomplete> {
     if missing.is_empty() {
         Ok(())
     } else {
-        Err(OrthotropyIncomplete { missing: missing.to_vec() })
+        Err(OrthotropyIncomplete {
+            missing: missing.to_vec(),
+        })
     }
 }
 
 fn num(map: &Map<String, Value>, key: &str) -> Option<f64> {
-    map.get(key).and_then(Value::as_f64).filter(|v| v.is_finite())
+    map.get(key)
+        .and_then(Value::as_f64)
+        .filter(|v| v.is_finite())
 }
 
 fn fiber_direction(field: &Map<String, Value>) -> Option<[f64; 3]> {
@@ -154,7 +162,11 @@ fn dot(a: [f64; 3], b: [f64; 3]) -> f64 {
 }
 
 fn cross(a: [f64; 3], b: [f64; 3]) -> [f64; 3] {
-    [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]
+    [
+        a[1] * b[2] - a[2] * b[1],
+        a[2] * b[0] - a[0] * b[2],
+        a[0] * b[1] - a[1] * b[0],
+    ]
 }
 
 fn unit(v: [f64; 3]) -> Option<[f64; 3]> {

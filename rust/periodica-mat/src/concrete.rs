@@ -128,7 +128,11 @@ mod tests {
 
     #[test]
     fn fctm_switches_above_c50() {
-        assert_relative_eq!(fctm_mpa(60.0), 2.12 * (1.0f64 + 6.8).ln(), max_relative = 1e-12);
+        assert_relative_eq!(
+            fctm_mpa(60.0),
+            2.12 * (1.0f64 + 6.8).ln(),
+            max_relative = 1e-12
+        );
     }
 
     #[test]
@@ -136,8 +140,16 @@ mod tests {
         let mut t = PropertyTable::new();
         t.set(P::CompressiveStrength, 27.5e6, Source::Datasheet);
         fill_concrete(&mut t);
-        assert_relative_eq!(t.get(P::PeakCompressiveStrain).unwrap(), 2.25e-3, epsilon = 1e-12);
-        assert_relative_eq!(t.get(P::UltimateCompressiveStrain).unwrap(), 3.5e-3, epsilon = 1e-12);
+        assert_relative_eq!(
+            t.get(P::PeakCompressiveStrain).unwrap(),
+            2.25e-3,
+            epsilon = 1e-12
+        );
+        assert_relative_eq!(
+            t.get(P::UltimateCompressiveStrain).unwrap(),
+            3.5e-3,
+            epsilon = 1e-12
+        );
     }
 
     #[test]

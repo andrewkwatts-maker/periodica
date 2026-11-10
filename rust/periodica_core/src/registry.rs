@@ -206,7 +206,13 @@ impl Registry {
     /// Must be called in sorted file order within a tier: a key already held
     /// by an earlier file of the same tier is not re-claimed, and is recorded
     /// as contested instead.
-    pub fn add_entry(&mut self, tier: &str, stem: &str, data: Arc<Value>, is_active: bool) -> Entry {
+    pub fn add_entry(
+        &mut self,
+        tier: &str,
+        stem: &str,
+        data: Arc<Value>,
+        is_active: bool,
+    ) -> Entry {
         self.add_tier(tier);
         let entry = Arc::new(Record {
             tier: tier.to_string(),
@@ -276,7 +282,11 @@ impl Registry {
     /// Fail if `claim` landed on a key that several files of its tier claim.
     fn checked(&self, claim: &Claim) -> Result<Entry, GetError> {
         let tier = &claim.entry.tier;
-        if let Some(files) = self.tiers.get(tier).and_then(|s| s.contested.get(&claim.key)) {
+        if let Some(files) = self
+            .tiers
+            .get(tier)
+            .and_then(|s| s.contested.get(&claim.key))
+        {
             return Err(GetError::RegistryCollision {
                 key: claim.key.clone(),
                 tier: tier.clone(),
@@ -293,10 +303,15 @@ impl Registry {
     /// [`Self::validate_scope`]); here they simply match nothing.
     pub fn lookup(&self, name: &str, scope: Option<&[&str]>) -> Result<Option<Entry>, GetError> {
         match scope {
-            None => self.merged.claim_for(name).map(|c| self.checked(c)).transpose(),
+            None => self
+                .merged
+                .claim_for(name)
+                .map(|c| self.checked(c))
+                .transpose(),
             Some(tiers) => {
                 for tier in tiers {
-                    if let Some(claim) = self.tiers.get(*tier).and_then(|s| s.index.claim_for(name)) {
+                    if let Some(claim) = self.tiers.get(*tier).and_then(|s| s.index.claim_for(name))
+                    {
                         return self.checked(claim).map(Some);
                     }
                 }
@@ -308,7 +323,11 @@ impl Registry {
     /// Exact-case match in the first of `tiers` that has one.
     pub fn lookup_exact(&self, name: &str, tiers: &[&str]) -> Result<Option<Entry>, GetError> {
         for tier in tiers {
-            if let Some(claim) = self.tiers.get(*tier).and_then(|s| s.index.exact_claim(name)) {
+            if let Some(claim) = self
+                .tiers
+                .get(*tier)
+                .and_then(|s| s.index.exact_claim(name))
+            {
                 return self.checked(claim).map(Some);
             }
         }
@@ -319,18 +338,19 @@ impl Registry {
     /// tier has one, otherwise casefold matches. Used to detect a constituent
     /// symbol that means different things in different tiers.
     pub fn candidates(&self, name: &str) -> Result<Vec<Entry>, GetError> {
-        let collect = |pick: &dyn Fn(&TierIndex) -> Option<&Claim>| -> Result<Vec<Entry>, GetError> {
-            let mut out: Vec<Entry> = Vec::new();
-            for tier in &self.order {
-                if let Some(claim) = self.tiers.get(tier).and_then(|s| pick(&s.index)) {
-                    let entry = self.checked(claim)?;
-                    if !out.iter().any(|e| Arc::ptr_eq(e, &entry)) {
-                        out.push(entry);
+        let collect =
+            |pick: &dyn Fn(&TierIndex) -> Option<&Claim>| -> Result<Vec<Entry>, GetError> {
+                let mut out: Vec<Entry> = Vec::new();
+                for tier in &self.order {
+                    if let Some(claim) = self.tiers.get(tier).and_then(|s| pick(&s.index)) {
+                        let entry = self.checked(claim)?;
+                        if !out.iter().any(|e| Arc::ptr_eq(e, &entry)) {
+                            out.push(entry);
+                        }
                     }
                 }
-            }
-            Ok(out)
-        };
+                Ok(out)
+            };
         let exact = collect(&|idx| idx.exact_claim(name))?;
         if !exact.is_empty() {
             return Ok(exact);
@@ -498,7 +518,13 @@ mod tests {
     fn higher_priority_claims_a_contested_key_across_tiers() {
         let mut reg = Registry::new();
         add(&mut reg, "a", "X", json!({"Name": "stem"}), false);
-        add(&mut reg, "b", "Other", json!({"Name": "alias", "Aliases": ["X"]}), true);
+        add(
+            &mut reg,
+            "b",
+            "Other",
+            json!({"Name": "alias", "Aliases": ["X"]}),
+            true,
+        );
         let got = reg.lookup("X", None).unwrap().unwrap();
         assert_eq!(name_of(&got), "alias");
     }
@@ -506,8 +532,20 @@ mod tests {
     #[test]
     fn equal_priority_across_tiers_is_first_writer_wins() {
         let mut reg = Registry::new();
-        add(&mut reg, "a", "One", json!({"Name": "first", "Symbol": "X"}), true);
-        add(&mut reg, "b", "Two", json!({"Name": "second", "Symbol": "X"}), true);
+        add(
+            &mut reg,
+            "a",
+            "One",
+            json!({"Name": "first", "Symbol": "X"}),
+            true,
+        );
+        add(
+            &mut reg,
+            "b",
+            "Two",
+            json!({"Name": "second", "Symbol": "X"}),
+            true,
+        );
         assert_eq!(name_of(&reg.lookup("X", None).unwrap().unwrap()), "first");
     }
 
@@ -527,9 +565,24 @@ mod tests {
         // acid (symbol "E", amino_acids): the active alias outranks the
         // active symbol, and fundamentals is registered first anyway.
         let mut reg = Registry::new();
-        add(&mut reg, "fundamentals", "Electron", json!({"Name": "Electron", "Aliases": ["E"]}), true);
-        add(&mut reg, "amino_acids", "GlutamicAcid", json!({"name": "Glutamic acid", "symbol": "E"}), true);
-        assert_eq!(name_of(&reg.lookup("E", None).unwrap().unwrap()), "Electron");
+        add(
+            &mut reg,
+            "fundamentals",
+            "Electron",
+            json!({"Name": "Electron", "Aliases": ["E"]}),
+            true,
+        );
+        add(
+            &mut reg,
+            "amino_acids",
+            "GlutamicAcid",
+            json!({"name": "Glutamic acid", "symbol": "E"}),
+            true,
+        );
+        assert_eq!(
+            name_of(&reg.lookup("E", None).unwrap().unwrap()),
+            "Electron"
+        );
         let scoped = reg.lookup("E", Some(&["amino_acids"])).unwrap().unwrap();
         assert_eq!(name_of(&scoped), "Glutamic acid");
     }
@@ -547,9 +600,27 @@ mod tests {
     fn in_tier_duplicates_are_reported_on_lookup_not_silently_resolved() {
         // D6: AsparticAcid.json and Aspartic_Acid.json both claimed "D".
         let mut reg = Registry::new();
-        add(&mut reg, "amino_acids", "AsparticAcid", json!({"symbol": "D", "n": 1}), true);
-        add(&mut reg, "amino_acids", "Aspartic_Acid", json!({"symbol": "D", "n": 2}), true);
-        add(&mut reg, "amino_acids", "Glycine", json!({"symbol": "G"}), true);
+        add(
+            &mut reg,
+            "amino_acids",
+            "AsparticAcid",
+            json!({"symbol": "D", "n": 1}),
+            true,
+        );
+        add(
+            &mut reg,
+            "amino_acids",
+            "Aspartic_Acid",
+            json!({"symbol": "D", "n": 2}),
+            true,
+        );
+        add(
+            &mut reg,
+            "amino_acids",
+            "Glycine",
+            json!({"symbol": "G"}),
+            true,
+        );
 
         let collisions = reg.collisions();
         assert_eq!(
@@ -579,7 +650,13 @@ mod tests {
     fn the_same_key_in_two_tiers_is_a_priority_contest_not_a_collision() {
         let mut reg = Registry::new();
         add(&mut reg, "atoms", "P", json!({"Symbol": "P"}), false);
-        add(&mut reg, "subatomic", "Proton", json!({"Aliases": ["P"]}), true);
+        add(
+            &mut reg,
+            "subatomic",
+            "Proton",
+            json!({"Aliases": ["P"]}),
+            true,
+        );
         assert!(reg.collisions().is_empty());
         assert_eq!(reg.candidates("P").unwrap().len(), 2);
     }
@@ -588,7 +665,13 @@ mod tests {
     fn candidates_prefer_exact_matches_over_casefold() {
         let mut reg = Registry::new();
         add(&mut reg, "atoms", "U", json!({"Symbol": "U"}), false);
-        add(&mut reg, "fundamentals", "UpQuark", json!({"Symbol": "u"}), true);
+        add(
+            &mut reg,
+            "fundamentals",
+            "UpQuark",
+            json!({"Symbol": "u"}),
+            true,
+        );
         let c = reg.candidates("u").unwrap();
         assert_eq!(c.len(), 1);
         assert_eq!(c[0].stem, "UpQuark");
@@ -605,13 +688,22 @@ mod tests {
             reg.validate_scope(&["atom"]),
             Err(GetError::UnknownTier { .. })
         ));
-        assert!(matches!(reg.validate_scope(&[]), Err(GetError::InvalidSpec(_))));
+        assert!(matches!(
+            reg.validate_scope(&[]),
+            Err(GetError::InvalidSpec(_))
+        ));
     }
 
     #[test]
     fn every_key_of_an_entry_shares_one_allocation() {
         let mut reg = Registry::new();
-        let e = add(&mut reg, "atoms", "Fe", json!({"Symbol": "Fe", "Aliases": ["Iron"]}), false);
+        let e = add(
+            &mut reg,
+            "atoms",
+            "Fe",
+            json!({"Symbol": "Fe", "Aliases": ["Iron"]}),
+            false,
+        );
         let a = reg.lookup("Iron", None).unwrap().unwrap();
         let b = reg.lookup("Fe", None).unwrap().unwrap();
         assert!(Arc::ptr_eq(&a, &b) && Arc::ptr_eq(&a, &e));

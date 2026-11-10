@@ -31,10 +31,7 @@ pub(crate) fn var(name: &str) -> E {
 }
 
 pub(crate) fn sum(terms: Vec<E>) -> E {
-    terms
-        .into_iter()
-        .reduce(E::add)
-        .unwrap_or_else(|| num(0.0))
+    terms.into_iter().reduce(E::add).unwrap_or_else(|| num(0.0))
 }
 
 pub(crate) fn eval(expr: &E, vars: &[(&str, f64)]) -> f64 {

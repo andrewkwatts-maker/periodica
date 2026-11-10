@@ -82,11 +82,11 @@ pub mod table;
 pub use canon::{canon, Mapping, UnitConv};
 pub use concrete::fill_concrete;
 pub use derive::fill_derived;
-pub use orthotropy::{Orthotropy, OrthotropyIncomplete};
-pub use pairs::{Law, PairMiss, PairRow, PairTable};
 pub use ingest::{ingest, is_material_like, IngestError};
 pub use jsonc::strip_comments;
 pub use mix::{bounds as mix_bounds, mix, mix_tagged, MixError};
+pub use orthotropy::{Orthotropy, OrthotropyIncomplete};
+pub use pairs::{Law, PairMiss, PairRow, PairTable};
 pub use property::PropertyId;
 pub use record::{
     CrystalSystem, Defects, GrainStructure, Inclusions, Lattice, MaterialRecord, Microstructure,
@@ -207,7 +207,10 @@ mod tests {
             assert!((got / v - 1.0).abs() < 1e-12, "{p:?}: {got} vs {v}");
             assert_eq!(back.bulk.source(p), src, "{p:?} provenance");
         }
-        let (a, b) = (r.micro.unwrap().grains.unwrap(), back.micro.unwrap().grains.unwrap());
+        let (a, b) = (
+            r.micro.unwrap().grains.unwrap(),
+            back.micro.unwrap().grains.unwrap(),
+        );
         assert!((a.average_size_m / b.average_size_m - 1.0).abs() < 1e-12);
     }
 }

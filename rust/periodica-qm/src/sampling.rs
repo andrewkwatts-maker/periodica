@@ -379,7 +379,11 @@ impl SuperpositionSampler {
             let dir = Direction::from_cartesian(p);
             let mut psi = Complex::ZERO;
             let mut mixture = 0.0;
-            for ((orb, &c), &w) in self.orbitals.iter().zip(&self.coefficients).zip(&self.weights)
+            for ((orb, &c), &w) in self
+                .orbitals
+                .iter()
+                .zip(&self.coefficients)
+                .zip(&self.weights)
             {
                 let v = orb.psi_polar(r, &dir);
                 psi += c * v;

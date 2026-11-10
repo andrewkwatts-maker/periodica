@@ -154,7 +154,8 @@ fn atomic_number(entry: &Value) -> Option<u64> {
         }
     }
     let comp = entry.get("Composition")?.as_object()?;
-    let nuclear = comp.contains_key("N") && comp.keys().all(|k| matches!(k.as_str(), "P" | "N" | "E"));
+    let nuclear =
+        comp.contains_key("N") && comp.keys().all(|k| matches!(k.as_str(), "P" | "N" | "E"));
     if nuclear {
         comp.get("P").and_then(Value::as_u64)
     } else {
@@ -310,9 +311,21 @@ mod tests {
         // back as the wrong element tagged Tier::Element.
         with_empty_registry(|| {
             for name in [
-                "Tryptophan", "Histidine", "Lysine", "Cysteine", "Serine", "Proline",
-                "Valine", "Tyrosine", "Isoleucine", "Phenylalanine", "Asparagine",
-                "Selenocysteine", "Higgs Boson", "Higgs", "Upsilon",
+                "Tryptophan",
+                "Histidine",
+                "Lysine",
+                "Cysteine",
+                "Serine",
+                "Proline",
+                "Valine",
+                "Tyrosine",
+                "Isoleucine",
+                "Phenylalanine",
+                "Asparagine",
+                "Selenocysteine",
+                "Higgs Boson",
+                "Higgs",
+                "Upsilon",
             ] {
                 if let Ok(r) = material_record(name, None) {
                     assert_ne!(r.tier, Tier::Element, "{name} was joined to an element");
@@ -345,11 +358,18 @@ mod tests {
             for (tier, key) in keys {
                 let scope = Scope::from_tier_name(&tier);
                 if let Ok(r) = material_record(&key, scope) {
-                    assert_ne!(r.tier, Tier::Element, "{tier}:{key} was joined to an element");
+                    assert_ne!(
+                        r.tier,
+                        Tier::Element,
+                        "{tier}:{key} was joined to an element"
+                    );
                 }
             }
             // ...while atoms still join.
-            assert_eq!(material_record("W", Some(Scope::Atom)).unwrap().tier, Tier::Element);
+            assert_eq!(
+                material_record("W", Some(Scope::Atom)).unwrap().tier,
+                Tier::Element
+            );
         });
     }
 

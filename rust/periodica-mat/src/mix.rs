@@ -117,9 +117,7 @@ fn mix_plain(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
         | P::Porosity
         | P::ThermalExpansion
         | P::StrainHardeningExponent
-        | P::SurfaceEnergy => {
-            volume_average(entries, prop)
-        }
+        | P::SurfaceEnergy => volume_average(entries, prop),
         P::SpecificHeat => mass_weighted(entries, prop),
         P::YoungsModulus | P::ShearModulus | P::BulkModulus => hill(entries, prop),
         P::PoissonsRatio => poisson(entries),
@@ -224,7 +222,9 @@ fn kg_of(rec: &MaterialRecord) -> Option<(f64, f64)> {
 
 /// Bulk modulus of a part, given or derived.
 fn k_of(rec: &MaterialRecord) -> Option<f64> {
-    rec.bulk.get(PropertyId::BulkModulus).or_else(|| kg_of(rec).map(|(k, _)| k))
+    rec.bulk
+        .get(PropertyId::BulkModulus)
+        .or_else(|| kg_of(rec).map(|(k, _)| k))
 }
 
 /// Hill-averaged `(K, G)` when every part has both.
@@ -233,7 +233,9 @@ fn hill_kg(entries: Entries<'_>) -> MixResult<Option<(f64, f64)>> {
     let mut kp = Vec::new();
     let mut gp = Vec::new();
     for (rec, f) in entries.iter().filter(|(_, f)| *f > 0.0) {
-        let Some((k, g)) = kg_of(rec) else { return Ok(None) };
+        let Some((k, g)) = kg_of(rec) else {
+            return Ok(None);
+        };
         kp.push((*f, k));
         gp.push((*f, g));
     }
@@ -263,8 +265,11 @@ fn poisson(entries: Entries<'_>) -> MixResult<f64> {
 /// volume average.
 fn thermal_expansion(entries: Entries<'_>) -> MixResult<f64> {
     let alpha = gather(entries, PropertyId::ThermalExpansion)?;
-    let ks: Option<Vec<f64>> =
-        entries.iter().filter(|(_, f)| *f > 0.0).map(|(r, _)| k_of(r)).collect();
+    let ks: Option<Vec<f64>> = entries
+        .iter()
+        .filter(|(_, f)| *f > 0.0)
+        .map(|(r, _)| k_of(r))
+        .collect();
     match ks {
         Some(ks) => {
             let num: f64 = alpha.iter().zip(&ks).map(|((f, a), k)| a * k * f).sum();
@@ -285,7 +290,10 @@ fn lorentz_lorenz(entries: Entries<'_>) -> MixResult<f64> {
     if absorbing {
         return Err(MixError::NotMixable(PropertyId::RefractiveIndexN));
     }
-    let ll: f64 = n.iter().map(|(f, n)| f * (n * n - 1.0) / (n * n + 2.0)).sum();
+    let ll: f64 = n
+        .iter()
+        .map(|(f, n)| f * (n * n - 1.0) / (n * n + 2.0))
+        .sum();
     Ok(((1.0 + 2.0 * ll) / (1.0 - ll)).sqrt())
 }
 

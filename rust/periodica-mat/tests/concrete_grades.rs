@@ -5,7 +5,9 @@ use std::path::Path;
 use periodica_mat::{ingest, jsonc, MaterialRecord, PropertyId as P, Source};
 
 fn load(rel: &str) -> MaterialRecord {
-    let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../src/periodica/data").join(rel);
+    let path = Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../../src/periodica/data")
+        .join(rel);
     let text = std::fs::read_to_string(&path).unwrap();
     let value: serde_json::Value = serde_json::from_str(&jsonc::strip_comments(&text)).unwrap();
     ingest(&value, rel).unwrap()
@@ -27,7 +29,10 @@ fn grades_are_flagged_and_derived() {
             P::PeakCompressiveStrain,
             P::UltimateCompressiveStrain,
         ] {
-            assert!(r.bulk.has(p) && r.bulk.source(p) != Source::Datasheet, "{g} {p:?}");
+            assert!(
+                r.bulk.has(p) && r.bulk.source(p) != Source::Datasheet,
+                "{g} {p:?}"
+            );
         }
     }
 }
@@ -44,7 +49,12 @@ fn mix_datasheet_values_win() {
 fn rebar_has_class_inputs() {
     let r = load("derived/alloys/Steel-B500B.json");
     assert!(r.class.is_none());
-    for p in [P::ElongationPct, P::UltimateTensileStrength, P::YieldStrength, P::YoungsModulus] {
+    for p in [
+        P::ElongationPct,
+        P::UltimateTensileStrength,
+        P::YieldStrength,
+        P::YoungsModulus,
+    ] {
         assert!(r.bulk.has(p), "{p:?}");
     }
 }

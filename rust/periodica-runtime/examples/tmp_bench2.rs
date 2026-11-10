@@ -86,5 +86,8 @@ fn main() {
         time("pair", n, &pr, &mut b[2]);
         time("lib", n, &lib, &mut b[3]);
     }
-    println!("old {:.2}  single {:.2}  pair {:.2}  lib(point) {:.2} ns/pt", b[0], b[1], b[2], b[3]);
+    println!(
+        "old {:.2}  single {:.2}  pair {:.2}  lib(point) {:.2} ns/pt",
+        b[0], b[1], b[2], b[3]
+    );
 }

@@ -88,17 +88,20 @@ fn steel_chains_fill_hardness_and_f_t() {
     let sy = r.bulk.get(P::YieldStrength).unwrap();
     assert_eq!(r.bulk.get(P::Hardness), Some(3.0 * sy));
     assert_eq!(r.bulk.source(P::Hardness), Source::Estimated);
-    assert_eq!(r.bulk.get(P::TensileStrength), r.bulk.get(P::UltimateTensileStrength));
+    assert_eq!(
+        r.bulk.get(P::TensileStrength),
+        r.bulk.get(P::UltimateTensileStrength)
+    );
     assert_eq!(r.bulk.source(P::TensileStrength), Source::Estimated);
 }
 
 #[test]
 fn new_fields_ingest_from_a_sheet() {
     let v: serde_json::Value = serde_json::json!({
-        "Name": "Probe", "Properties": {
-            "SurfaceEnergy_Jm2": 1.1, "SurfaceSlopeRms_rad": 0.07,
-            "KineticStaticRatio": 0.8, "TensileStrength_ft_MPa": 3.0
-        }});
+    "Name": "Probe", "Properties": {
+        "SurfaceEnergy_Jm2": 1.1, "SurfaceSlopeRms_rad": 0.07,
+        "KineticStaticRatio": 0.8, "TensileStrength_ft_MPa": 3.0
+    }});
     let r = ingest(&v, "probe").unwrap();
     assert_eq!(r.bulk.get(P::SurfaceEnergy), Some(1.1));
     assert_eq!(r.bulk.get(P::SurfaceSlopeRms), Some(0.07));

@@ -53,7 +53,9 @@ pub fn parse(json: &str) -> Result<BTreeMap<String, Constant>, serde_json::Error
 /// # Errors
 /// [`MissingConstant`] naming the entry when it is absent.
 pub fn get(name: &str) -> Result<&'static Constant, MissingConstant> {
-    TABLE.get(name).ok_or_else(|| MissingConstant(name.to_owned()))
+    TABLE
+        .get(name)
+        .ok_or_else(|| MissingConstant(name.to_owned()))
 }
 
 /// Look up a constant's value in its stored unit.
@@ -78,21 +80,37 @@ fn known(name: &str) -> &'static Constant {
 }
 
 /// Newton's G, m^3 kg^-1 s^-2.
-pub fn g() -> f64 { known("G").value }
+pub fn g() -> f64 {
+    known("G").value
+}
 /// Speed of light, m/s.
-pub fn c() -> f64 { known("c").value }
+pub fn c() -> f64 {
+    known("c").value
+}
 /// Planck constant, J s.
-pub fn h() -> f64 { known("h").value }
+pub fn h() -> f64 {
+    known("h").value
+}
 /// Boltzmann constant, J/K.
-pub fn k_b() -> f64 { known("k_B").value }
+pub fn k_b() -> f64 {
+    known("k_B").value
+}
 /// Stefan-Boltzmann constant, W m^-2 K^-4.
-pub fn sigma_sb() -> f64 { known("sigma_SB").value }
+pub fn sigma_sb() -> f64 {
+    known("sigma_SB").value
+}
 /// Hubble constant, km/s/Mpc.
-pub fn h0() -> f64 { known("H0").value }
+pub fn h0() -> f64 {
+    known("H0").value
+}
 /// Matter density parameter.
-pub fn omega_m() -> f64 { known("Omega_m").value }
+pub fn omega_m() -> f64 {
+    known("Omega_m").value
+}
 /// Dark-energy density parameter.
-pub fn omega_lambda() -> f64 { known("Omega_Lambda").value }
+pub fn omega_lambda() -> f64 {
+    known("Omega_Lambda").value
+}
 
 #[cfg(test)]
 mod tests {

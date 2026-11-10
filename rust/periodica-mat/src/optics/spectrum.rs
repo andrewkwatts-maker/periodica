@@ -14,8 +14,14 @@ impl Spectrum {
     /// Samples `f` (wavelength in metres) over the band; `bins` is raised to at least 2.
     pub fn sample(lo: f64, hi: f64, bins: usize, f: impl Fn(f64) -> f64) -> Self {
         let n = bins.max(2);
-        let values = (0..n).map(|i| f(lo + (hi - lo) * i as f64 / (n - 1) as f64)).collect();
-        Self { lo, hi, bins: values }
+        let values = (0..n)
+            .map(|i| f(lo + (hi - lo) * i as f64 / (n - 1) as f64))
+            .collect();
+        Self {
+            lo,
+            hi,
+            bins: values,
+        }
     }
 
     /// A constant spectrum.
@@ -61,7 +67,11 @@ pub fn spectrum_to_rgb(s: &Spectrum) -> [f64; 3] {
         }
     }
     let rgb = rgb_of_xyz([acc[0] / t.y_sum, acc[1] / t.y_sum, acc[2] / t.y_sum]);
-    fit_gamut([rgb[0] / t.white[0], rgb[1] / t.white[1], rgb[2] / t.white[2]])
+    fit_gamut([
+        rgb[0] / t.white[0],
+        rgb[1] / t.white[1],
+        rgb[2] / t.white[2],
+    ])
 }
 
 const GAMUT_FLOOR: f64 = 1e-3;

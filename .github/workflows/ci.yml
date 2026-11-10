@@ -16,6 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Cargo.toml depends on arithma_core by sibling path (../Arithma), and
+      # the crate is not on crates.io, so fetch the public repo beside the checkout.
+      - name: Check out Arithma beside the repo
+        run: git clone --depth 1 https://github.com/andrewkwatts-maker/Arithma.git "$GITHUB_WORKSPACE/../Arithma"
+
+      - name: Guard against path dependencies outside the repo
+        run: python3 scripts/check_path_deps.py
+
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy, rustfmt
@@ -72,6 +80,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      # Cargo.toml depends on arithma_core by sibling path (../Arithma), and
+      # the crate is not on crates.io, so fetch the public repo beside the checkout.
+      - name: Check out Arithma beside the repo
+        run: git clone --depth 1 https://github.com/andrewkwatts-maker/Arithma.git "$GITHUB_WORKSPACE/../Arithma"
+
+      - name: Guard against path dependencies outside the repo
+        run: python3 scripts/check_path_deps.py
 
       - uses: actions/setup-python@v5
         with:

@@ -41,7 +41,11 @@ fn rad_s_to_ev(w: f64) -> f64 {
 }
 
 fn sellmeier_of(t: &PropertyTable) -> Option<Sellmeier> {
-    let pairs = [(P::SellmeierB1, P::SellmeierC1), (P::SellmeierB2, P::SellmeierC2), (P::SellmeierB3, P::SellmeierC3)];
+    let pairs = [
+        (P::SellmeierB1, P::SellmeierC1),
+        (P::SellmeierB2, P::SellmeierC2),
+        (P::SellmeierB3, P::SellmeierC3),
+    ];
     let (mut b, mut c) = (Vec::new(), Vec::new());
     for (pb, pc) in pairs {
         if let (Some(vb), Some(vc)) = (t.get(pb), t.get(pc)) {
@@ -74,8 +78,14 @@ impl Dispersion {
     /// `n` and `k` at `wavelength_m` metres.
     pub fn nk(&self, wavelength_m: f64) -> Nk {
         match self {
-            Self::Sellmeier(s) => Nk { n: s.refractive_index(wavelength_m), k: 0.0 },
-            Self::Cauchy(c) => Nk { n: c.refractive_index(wavelength_m), k: 0.0 },
+            Self::Sellmeier(s) => Nk {
+                n: s.refractive_index(wavelength_m),
+                k: 0.0,
+            },
+            Self::Cauchy(c) => Nk {
+                n: c.refractive_index(wavelength_m),
+                k: 0.0,
+            },
             Self::DrudeLorentz(d) => {
                 let (n, k) = d.nk(wavelength_m);
                 Nk { n, k }

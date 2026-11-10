@@ -28,9 +28,17 @@ fn load(rel: &str) -> MaterialRecord {
 
 fn element_sheets() -> Vec<serde_json::Value> {
     let dir = data_dir().join("active/elements");
-    let mut files: Vec<PathBuf> = std::fs::read_dir(dir).unwrap().flatten().map(|e| e.path()).collect();
+    let mut files: Vec<PathBuf> = std::fs::read_dir(dir)
+        .unwrap()
+        .flatten()
+        .map(|e| e.path())
+        .collect();
     files.sort();
-    files.iter().filter(|p| p.extension().is_some_and(|x| x == "json")).map(|p| read(p)).collect()
+    files
+        .iter()
+        .filter(|p| p.extension().is_some_and(|x| x == "json"))
+        .map(|p| read(p))
+        .collect()
 }
 
 fn elements() -> ElementTable {
@@ -64,13 +72,32 @@ fn every_added_value_has_source() {
             continue;
         }
         let block = &v["_surface_energy"];
-        assert!(block["source"].as_str().is_some_and(|s| !s.trim().is_empty()), "{}", v["symbol"]);
-        assert!(block["conditions"].as_str().is_some_and(|s| !s.trim().is_empty()), "{}", v["symbol"]);
+        assert!(
+            block["source"]
+                .as_str()
+                .is_some_and(|s| !s.trim().is_empty()),
+            "{}",
+            v["symbol"]
+        );
+        assert!(
+            block["conditions"]
+                .as_str()
+                .is_some_and(|s| !s.trim().is_empty()),
+            "{}",
+            v["symbol"]
+        );
         let fields = block["fields"].as_array().unwrap();
-        assert!(fields.iter().any(|f| f == "surface_energy_Jm2"), "{}", v["symbol"]);
+        assert!(
+            fields.iter().any(|f| f == "surface_energy_Jm2"),
+            "{}",
+            v["symbol"]
+        );
         seen += 1;
     }
-    assert!(seen >= 15, "only {seen} element sheets carry a cited surface energy");
+    assert!(
+        seen >= 15,
+        "only {seen} element sheets carry a cited surface energy"
+    );
 }
 
 fn chain_vs_datasheet(rel: &str) -> (f64, f64) {
@@ -80,7 +107,10 @@ fn chain_vs_datasheet(rel: &str) -> (f64, f64) {
     rec.bulk.clear(P::ShearModulus);
     rec.bulk.clear(P::BulkModulus);
     let failures = fill(&mut rec, &elements());
-    assert!(failures.iter().all(|(p, _)| *p != P::YoungsModulus), "{failures:?}");
+    assert!(
+        failures.iter().all(|(p, _)| *p != P::YoungsModulus),
+        "{failures:?}"
+    );
     assert_eq!(rec.bulk.source(P::YoungsModulus), Source::Estimated);
     (rec.bulk.get(P::YoungsModulus).unwrap(), stated)
 }
@@ -88,7 +118,10 @@ fn chain_vs_datasheet(rel: &str) -> (f64, f64) {
 #[test]
 fn composition_chain_estimated() {
     let (chain, stated) = chain_vs_datasheet("derived/alloys/Aluminum-6061.json");
-    assert!((chain - stated).abs() / stated < 0.05, "{chain} vs {stated}");
+    assert!(
+        (chain - stated).abs() / stated < 0.05,
+        "{chain} vs {stated}"
+    );
 }
 
 /// The brief asks for 5% on brass too. The Hill mean of the Cu and Zn element
@@ -128,8 +161,17 @@ fn no_family_defaults() {
         let text = std::fs::read_to_string(src.join(file)).unwrap();
         let code = text.split("#[cfg(test)]").next().unwrap();
         for line in code.lines().filter(|l| !l.trim_start().starts_with("//")) {
-            for banned in [".class", ".category", "rec.name ==", ".name.contains", "Category"] {
-                assert!(!line.contains(banned), "{file} branches on `{banned}`: {line}");
+            for banned in [
+                ".class",
+                ".category",
+                "rec.name ==",
+                ".name.contains",
+                "Category",
+            ] {
+                assert!(
+                    !line.contains(banned),
+                    "{file} branches on `{banned}`: {line}"
+                );
             }
         }
     }
@@ -182,10 +224,16 @@ fn chains_csv() {
         ("theta_q", P::SurfaceSlopeRms),
         ("gamma", P::SurfaceEnergy),
     ];
-    let count_cols = [P::SurfaceEnergy, P::FractureToughnessKic, P::YoungsModulus, P::TensileStrength];
+    let count_cols = [
+        P::SurfaceEnergy,
+        P::FractureToughnessKic,
+        P::YoungsModulus,
+        P::TensileStrength,
+    ];
     let elements = elements();
     let mut csv = String::from("sheet,name");
-    cols.iter().for_each(|(n, _)| csv.push_str(&format!(",{n}")));
+    cols.iter()
+        .for_each(|(n, _)| csv.push_str(&format!(",{n}")));
     csv.push('\n');
     let (mut before, mut after) = ([0usize; 4], [0usize; 4]);
     let all = sheets();
@@ -200,11 +248,18 @@ fn chains_csv() {
             after[i] += usize::from(!r.bulk.has(*p));
         }
         csv.push_str(&format!("{rel},{}", r.name));
-        cols.iter().for_each(|(_, p)| csv.push_str(&format!(",{}", tag(&r, *p))));
+        cols.iter()
+            .for_each(|(_, p)| csv.push_str(&format!(",{}", tag(&r, *p))));
         csv.push('\n');
     }
-    eprintln!("absent before/after over {} sheets: gamma {:?}, K_IC {:?}, E {:?}, f_t {:?}",
-        all.len(), (before[0], after[0]), (before[1], after[1]), (before[2], after[2]), (before[3], after[3]));
+    eprintln!(
+        "absent before/after over {} sheets: gamma {:?}, K_IC {:?}, E {:?}, f_t {:?}",
+        all.len(),
+        (before[0], after[0]),
+        (before[1], after[1]),
+        (before[2], after[2]),
+        (before[3], after[3])
+    );
     if let Ok(out) = std::env::var("I3C_CSV") {
         std::fs::write(out, csv).unwrap();
     }

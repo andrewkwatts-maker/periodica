@@ -266,7 +266,9 @@ impl Formula {
         }
         for (i, (sym, _)) in parts.iter().enumerate() {
             if sym.is_empty() {
-                return Err(GetError::InvalidSpec("empty constituent symbol".to_string()));
+                return Err(GetError::InvalidSpec(
+                    "empty constituent symbol".to_string(),
+                ));
             }
             if parts[..i].iter().any(|(s, _)| s == sym) {
                 return Err(GetError::InvalidSpec(format!(
@@ -405,7 +407,11 @@ pub fn Get(spec: &str, scope: Option<Scope>) -> anyhow::Result<Value> {
 }
 
 /// Bare-name lookup.
-fn resolve_named(hub: &DataHub, name: &str, scope: Option<&[&str]>) -> Result<Arc<Value>, GetError> {
+fn resolve_named(
+    hub: &DataHub,
+    name: &str,
+    scope: Option<&[&str]>,
+) -> Result<Arc<Value>, GetError> {
     if let Some(found) = hub.registry.lookup(name, scope)? {
         return Ok(Arc::clone(&found.data));
     }
@@ -606,7 +612,9 @@ mod tests {
     }
 
     fn f(v: &Value, key: &str) -> f64 {
-        v[key].as_f64().unwrap_or_else(|| panic!("{key} missing in {v}"))
+        v[key]
+            .as_f64()
+            .unwrap_or_else(|| panic!("{key} missing in {v}"))
     }
 
     fn rel(a: f64, b: f64) -> f64 {
@@ -621,8 +629,19 @@ mod tests {
         assert_eq!(
             names,
             vec![
-                "fundamentals", "subatomic", "atoms", "molecules", "hadrons_gen", "isotopes",
-                "ions", "alloys", "polymers", "ceramics", "composites", "amino_acids", "proteins",
+                "fundamentals",
+                "subatomic",
+                "atoms",
+                "molecules",
+                "hadrons_gen",
+                "isotopes",
+                "ions",
+                "alloys",
+                "polymers",
+                "ceramics",
+                "composites",
+                "amino_acids",
+                "proteins",
             ]
         );
         assert_eq!(Scope::from_tier_name("atoms"), Some(Scope::Atom));
@@ -634,7 +653,10 @@ mod tests {
         with_corpus(|| {
             let tiers = crate::data_loader::list_tiers();
             for s in Scope::iter() {
-                assert!(tiers.contains(&s.tier_name().to_string()), "{s:?} -> {tiers:?}");
+                assert!(
+                    tiers.contains(&s.tier_name().to_string()),
+                    "{s:?} -> {tiers:?}"
+                );
             }
         });
     }
@@ -644,7 +666,10 @@ mod tests {
     #[test]
     fn parse_accepts_every_python_spelling() {
         let f = parse_formula("{u=2,d=1}").unwrap().unwrap();
-        assert_eq!(f.parts, vec![("u".into(), Count::Int(2)), ("d".into(), Count::Int(1))]);
+        assert_eq!(
+            f.parts,
+            vec![("u".into(), Count::Int(2)), ("d".into(), Count::Int(1))]
+        );
         let g = parse_formula(" { u : 2 , d:1 } ").unwrap().unwrap();
         assert_eq!(f, g);
         let h = parse_formula("H=2,O=1").unwrap().unwrap();
@@ -660,7 +685,11 @@ mod tests {
         let g = parse_formula("{H=2.0}").unwrap().unwrap();
         assert_eq!(g.parts[0].1, Count::Int(2));
         let z = parse_formula("{N=0}").unwrap().unwrap();
-        assert_eq!(z.parts[0].1, Count::Int(0), "zero counts are legitimate (hydrogen has N=0)");
+        assert_eq!(
+            z.parts[0].1,
+            Count::Int(0),
+            "zero counts are legitimate (hydrogen has N=0)"
+        );
     }
 
     #[test]
@@ -672,8 +701,22 @@ mod tests {
 
     #[test]
     fn bad_input_is_a_typed_error_not_a_silent_result() {
-        for bad in ["", "   ", "{}", "{ }", "{,}", "{H=-2}", "{H=2,H=3}", "{H}", "{=2}",
-                    "{H=two}", "{H=1e3}", "{H=.5}", "{H=1.}", "{not valid spec}"] {
+        for bad in [
+            "",
+            "   ",
+            "{}",
+            "{ }",
+            "{,}",
+            "{H=-2}",
+            "{H=2,H=3}",
+            "{H}",
+            "{=2}",
+            "{H=two}",
+            "{H=1e3}",
+            "{H=.5}",
+            "{H=1.}",
+            "{not valid spec}",
+        ] {
             match parse_formula(bad) {
                 Err(GetError::InvalidSpec(_)) => {}
                 other => panic!("{bad:?} -> {other:?}"),
@@ -687,9 +730,19 @@ mod tests {
     fn map_specs_validate_their_counts() {
         let ok = Formula::from_map(&[("H".into(), json!(2)), ("O".into(), json!(1.5))]).unwrap();
         assert_eq!(ok.parts[1].1, Count::Real(1.5));
-        for bad in [json!(null), json!(-1), json!(-0.5), json!("2"), json!(true), json!([1])] {
+        for bad in [
+            json!(null),
+            json!(-1),
+            json!(-0.5),
+            json!("2"),
+            json!(true),
+            json!([1]),
+        ] {
             assert!(
-                matches!(Formula::from_map(&[("H".into(), bad.clone())]), Err(GetError::InvalidSpec(_))),
+                matches!(
+                    Formula::from_map(&[("H".into(), bad.clone())]),
+                    Err(GetError::InvalidSpec(_))
+                ),
                 "{bad}"
             );
         }
@@ -716,12 +769,23 @@ mod tests {
             let keys: Vec<&str> = v.as_object().unwrap().keys().map(String::as_str).collect();
             assert_eq!(
                 keys,
-                vec!["Composition", "Constituents", "Charge_e", "Mass_MeVc2", "Mass_kg",
-                     "Mass_amu", "BaryonNumber_B", "LeptonNumber_L"],
+                vec![
+                    "Composition",
+                    "Constituents",
+                    "Charge_e",
+                    "Mass_MeVc2",
+                    "Mass_kg",
+                    "Mass_amu",
+                    "BaryonNumber_B",
+                    "LeptonNumber_L"
+                ],
                 "only the rules' additive properties, in rules order; no `formula` key"
             );
             assert_eq!(v["Composition"], json!({"u": 2, "d": 1}));
-            assert_eq!(v["Constituents"][0], json!({"Symbol": "u", "Count": 2, "Resolved": "Up Quark"}));
+            assert_eq!(
+                v["Constituents"][0],
+                json!({"Symbol": "u", "Count": 2, "Resolved": "Up Quark"})
+            );
             assert_eq!(v["Charge_e"], json!(1), "integral total snapped to an int");
             assert_eq!(v["BaryonNumber_B"], json!(1));
             assert_eq!(v["LeptonNumber_L"], json!(0));
@@ -780,7 +844,10 @@ mod tests {
                     other => panic!("{spec}: {other:?}"),
                 }
             }
-            assert!(matches!(scoped("Fe", &["atoms", "nope"]), Err(GetError::UnknownTier { .. })));
+            assert!(matches!(
+                scoped("Fe", &["atoms", "nope"]),
+                Err(GetError::UnknownTier { .. })
+            ));
         });
     }
 
@@ -793,7 +860,11 @@ mod tests {
             assert!(rel(f(&nh3, "Mass_amu"), 17.031) < 1e-4, "{nh3}");
             assert_eq!(nh3["Constituents"][0]["Resolved"], "N");
             let acid = text("{H=3,P=1,O=4}").unwrap();
-            assert_eq!(acid["Charge_e"], json!(0), "phosphoric acid, not 3 H + a proton");
+            assert_eq!(
+                acid["Charge_e"],
+                json!(0),
+                "phosphoric acid, not 3 H + a proton"
+            );
             assert!(rel(f(&acid, "Mass_amu"), 97.994) < 1e-4);
         });
     }
@@ -823,7 +894,10 @@ mod tests {
             // A symbol that means one thing composes fine in a mixed spec.
             let ok = text("{H2O=2,Na+=1}").unwrap();
             assert_eq!(ok["Charge_e"], json!(1));
-            assert!(matches!(text("{Xxxxxxx=1}"), Err(GetError::UnknownConstituent { .. })));
+            assert!(matches!(
+                text("{Xxxxxxx=1}"),
+                Err(GetError::UnknownConstituent { .. })
+            ));
         });
     }
 
@@ -883,7 +957,10 @@ mod tests {
     fn the_legacy_signature_wraps_the_typed_error() {
         with_corpus(|| {
             let err = Get("{H=-2}", Some(Scope::Atom)).unwrap_err();
-            assert!(matches!(err.downcast_ref::<GetError>(), Some(GetError::InvalidSpec(_))));
+            assert!(matches!(
+                err.downcast_ref::<GetError>(),
+                Some(GetError::InvalidSpec(_))
+            ));
             assert!(Get("P", Some(Scope::Atom)).is_ok());
         });
     }

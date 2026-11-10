@@ -121,7 +121,11 @@ impl PairTable {
         let rows = file.rows;
         for (i, r) in rows.iter().enumerate() {
             if r.source.trim().is_empty() {
-                return Err(PairError::NoSource { row: i, a: r.a.clone(), b: r.b.clone() });
+                return Err(PairError::NoSource {
+                    row: i,
+                    a: r.a.clone(),
+                    b: r.b.clone(),
+                });
             }
         }
         check_conflicts(&rows)?;
@@ -138,7 +142,10 @@ impl PairTable {
         self.rows
             .iter()
             .find(|r| norm(&r.a, &r.b) == k)
-            .ok_or_else(|| PairMiss { a: a.to_string(), b: b.to_string() })
+            .ok_or_else(|| PairMiss {
+                a: a.to_string(),
+                b: b.to_string(),
+            })
     }
 }
 
@@ -175,7 +182,10 @@ mod tests {
 
     #[test]
     fn lookup_is_symmetric_in_record_ids() {
-        let json = format!(r#"{{"rows":[{}]}}"#, coulomb("Steel-1018", "Glass_Borosilicate", 0.4));
+        let json = format!(
+            r#"{{"rows":[{}]}}"#,
+            coulomb("Steel-1018", "Glass_Borosilicate", 0.4)
+        );
         let t = PairTable::from_json(&json).unwrap();
         let fwd = t.lookup("Steel-1018", "Glass_Borosilicate").unwrap();
         let rev = t.lookup("Glass_Borosilicate", "Steel-1018").unwrap();
@@ -185,25 +195,45 @@ mod tests {
     #[test]
     fn missing_pair_notice_names_both_records() {
         let t = PairTable::bundled().unwrap();
-        let msg = t.lookup("Unobtainium", "Steel-1018").unwrap_err().to_string();
-        assert!(msg.contains("Unobtainium") && msg.contains("Steel-1018"), "{msg}");
+        let msg = t
+            .lookup("Unobtainium", "Steel-1018")
+            .unwrap_err()
+            .to_string();
+        assert!(
+            msg.contains("Unobtainium") && msg.contains("Steel-1018"),
+            "{msg}"
+        );
     }
 
     #[test]
     fn blank_or_absent_source_fails() {
         let blank = coulomb("A", "B", 0.5).replace(r#""source":"s""#, r#""source":"  ""#);
         let json = format!(r#"{{"rows":[{blank}]}}"#);
-        assert!(matches!(PairTable::from_json(&json), Err(PairError::NoSource { .. })));
+        assert!(matches!(
+            PairTable::from_json(&json),
+            Err(PairError::NoSource { .. })
+        ));
         let absent = coulomb("A", "B", 0.5).replace(r#","source":"s""#, "");
         let json = format!(r#"{{"rows":[{absent}]}}"#);
-        assert!(matches!(PairTable::from_json(&json), Err(PairError::Json(_))));
+        assert!(matches!(
+            PairTable::from_json(&json),
+            Err(PairError::Json(_))
+        ));
     }
 
     #[test]
     fn conflicting_rows_fail_naming_both() {
-        let json = format!(r#"{{"rows":[{},{}]}}"#, coulomb("A", "B", 0.5), coulomb("B", "A", 0.6));
+        let json = format!(
+            r#"{{"rows":[{},{}]}}"#,
+            coulomb("A", "B", 0.5),
+            coulomb("B", "A", 0.6)
+        );
         match PairTable::from_json(&json) {
-            Err(PairError::Conflict { first: 0, second: 1, .. }) => {}
+            Err(PairError::Conflict {
+                first: 0,
+                second: 1,
+                ..
+            }) => {}
             other => panic!("{other:?}"),
         }
     }
