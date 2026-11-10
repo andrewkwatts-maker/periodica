@@ -100,7 +100,11 @@ pub enum SampleError {
 /// which an `f64` sampler cannot, so that case is
 /// [`SampleError::Unsupported`] and the Python path answers it.
 pub(crate) fn no_value(entry: &Value, property: &str) -> anyhow::Error {
-    match props_of(entry).get(property) {
+    let props = match props_of(entry) {
+        Ok(p) => p,
+        Err(e) => return e,
+    };
+    match props.get(property) {
         Some(v) if !v.is_null() && v.as_f64().is_none() && !v.is_boolean() => anyhow::Error::new(
             SampleError::Unsupported(format!("property '{property}' has a non-numeric value")),
         ),
@@ -123,20 +127,25 @@ pub fn register_field_model(name: &str, model: Arc<dyn FieldModel>) -> Option<Ar
 /// then the `Properties` block, then the schema's property groups, then any
 /// other shallow dict; the first key seen wins. Numbers and strings are kept.
 /// Booleans are dropped, as in Python: they are flags, not bulk properties.
-fn props_of(entry: &Value) -> Value {
-    Value::Object(crate::property_schema::flatten(entry))
+///
+/// Fails when the property schema cannot be read: a silent fallback would make
+/// curated sheets read as nearly empty.
+fn props_of(entry: &Value) -> Result<Value> {
+    Ok(Value::Object(crate::property_schema::flatten(entry)?))
 }
 
 /// Look a property up in the bulk table.
 ///
 /// Booleans read as 1.0 / 0.0 so a property promoted from a root scalar stays
 /// samplable; Python returns `True`, and `True == 1.0` there, so the two agree.
-pub(crate) fn bulk_lookup(entry: &Value, property: &str) -> Option<f64> {
-    let v = props_of(entry).get(property).cloned()?;
-    match v {
+pub(crate) fn bulk_lookup(entry: &Value, property: &str) -> Result<Option<f64>> {
+    let Some(v) = props_of(entry)?.get(property).cloned() else {
+        return Ok(None);
+    };
+    Ok(match v {
         Value::Bool(b) => Some(if b { 1.0 } else { 0.0 }),
         other => other.as_f64(),
-    }
+    })
 }
 
 /// The entry's `Field` block, or an empty object.
@@ -196,7 +205,7 @@ pub fn sample_entry(
 
 /// The bulk `Properties` dict for an entry.
 pub fn data_sheet(name: &str) -> Result<Value> {
-    Ok(props_of(lookup_entry(name)?.as_ref()))
+    props_of(lookup_entry(name)?.as_ref())
 }
 
 fn lookup_entry(name: &str) -> Result<Arc<Value>> {

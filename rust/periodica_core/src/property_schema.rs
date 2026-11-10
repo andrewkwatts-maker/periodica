@@ -7,7 +7,7 @@
 //! answered natively.
 
 use std::collections::HashSet;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use once_cell::sync::Lazy;
 use serde_json::{Map, Value};
@@ -54,31 +54,38 @@ pub fn parse_schema(text: &str) -> Result<GroupSchema, serde_json::Error> {
     })
 }
 
+const SCHEMA_FILE: &str = "config/property_schema.json";
+
+/// The loaded data root's schema when it has one (an installed package),
+/// otherwise the default data root's. A fixture root without the file must not
+/// make the real schema unreachable.
 fn schema_path() -> PathBuf {
     let loaded = crate::data_loader::DATA.read().root.clone();
-    loaded
-        .unwrap_or_else(crate::data_loader::default_data_root)
-        .join("config")
-        .join("property_schema.json")
+    if let Some(p) = loaded.map(|r| r.join(SCHEMA_FILE)).filter(|p| p.is_file()) {
+        return p;
+    }
+    crate::data_loader::default_data_root().join(SCHEMA_FILE)
 }
 
-static SCHEMA: Lazy<GroupSchema> = Lazy::new(|| {
-    let path = schema_path();
-    let loaded = std::fs::read_to_string(&path)
-        .map_err(|e| e.to_string())
-        .and_then(|t| parse_schema(&t).map_err(|e| e.to_string()));
-    loaded.unwrap_or_else(|e| {
-        eprintln!(
-            "periodica_core: cannot read {}: {e}; property groups disabled",
-            path.display()
-        );
-        GroupSchema::default()
-    })
-});
+/// Read and parse the schema at `path`; the error names the path.
+pub fn load_schema(path: &Path) -> Result<GroupSchema, String> {
+    let text = std::fs::read_to_string(path)
+        .map_err(|e| format!("property schema: cannot read {}: {e}", path.display()))?;
+    parse_schema(&text)
+        .map_err(|e| format!("property schema: cannot parse {}: {e}", path.display()))
+}
 
-/// The schema read once from the data directory.
-pub fn schema() -> &'static GroupSchema {
-    &SCHEMA
+static SCHEMA: Lazy<Result<GroupSchema, String>> = Lazy::new(|| load_schema(&schema_path()));
+
+/// The property schema could not be read (a bug or a broken install, never a
+/// decline to Python).
+#[derive(Debug, thiserror::Error)]
+#[error("{0}")]
+pub struct SchemaError(pub String);
+
+/// The schema read once from the data directory, or the reason it is unusable.
+pub fn schema() -> Result<&'static GroupSchema, &'static str> {
+    SCHEMA.as_ref().map_err(String::as_str)
 }
 
 fn is_scalar(v: &Value) -> bool {
@@ -147,9 +154,11 @@ pub fn flatten_with(entry: &Value, schema: &GroupSchema) -> Map<String, Value> {
     out
 }
 
-/// [`flatten_with`] using the schema from the data directory.
-pub fn flatten(entry: &Value) -> Map<String, Value> {
-    flatten_with(entry, schema())
+/// [`flatten_with`] using the schema from the data directory; an error when
+/// that schema cannot be read.
+pub fn flatten(entry: &Value) -> anyhow::Result<Map<String, Value>> {
+    let schema = schema().map_err(|e| anyhow::Error::new(SchemaError(e.to_string())))?;
+    Ok(flatten_with(entry, schema))
 }
 
 #[cfg(test)]
@@ -202,6 +211,18 @@ mod tests {
         let f = flatten_with(&e, &sch());
         assert!(f.contains_key("l1") && f.contains_key("l2") && f.contains_key("l3"));
         assert!(!f.contains_key("l4"));
+    }
+
+    #[test]
+    fn malformed_schema_is_an_error() {
+        assert!(parse_schema("{ not json").is_err());
+    }
+
+    #[test]
+    fn missing_schema_file_is_an_error_naming_the_path() {
+        let p = Path::new("H:/definitely/not/here/property_schema.json");
+        let err = load_schema(p).unwrap_err();
+        assert!(err.contains("not/here/property_schema.json"), "{err}");
     }
 
     #[test]

@@ -198,7 +198,7 @@ impl FieldModel for HomogeneousModel {
                 }
             }
         }
-        bulk_lookup(entry, property).ok_or_else(|| no_value(entry, property))
+        bulk_lookup(entry, property)?.ok_or_else(|| no_value(entry, property))
     }
 }
 
@@ -224,7 +224,7 @@ impl FieldModel for AnisotropicAxialModel {
             .get("transverse")
             .and_then(|v| v.get(property))
             .and_then(Value::as_f64);
-        let bulk = bulk_lookup(entry, property);
+        let bulk = bulk_lookup(entry, property)?;
         let missing = || no_value(entry, property);
 
         // No sample point: Python returns the axial value, falling back to bulk.
@@ -295,7 +295,7 @@ impl FieldModel for MixtureModel {
             let Ok(c_entry) = crate::get::Get(symbol, None) else {
                 continue;
             };
-            let Some(v) = bulk_lookup(&c_entry, property) else {
+            let Some(v) = bulk_lookup(&c_entry, property)? else {
                 continue;
             };
             let w = weights.get(symbol).and_then(Value::as_f64).unwrap_or(1.0);
@@ -323,7 +323,7 @@ impl FieldModel for MicrostructureVoronoiModel {
         at: Option<(f64, f64, f64)>,
         scale_m: Option<f64>,
     ) -> Result<f64> {
-        let bulk = bulk_lookup(entry, property);
+        let bulk = bulk_lookup(entry, property)?;
         let bulk_or_err = || bulk.ok_or_else(|| no_value(entry, property));
 
         let macro_scale = field.get("macro_scale_m").and_then(Value::as_f64);
@@ -394,7 +394,7 @@ impl FieldModel for BackbonePathModel {
             .filter(|r| !r.is_empty());
 
         let Some(_residues) = residues else {
-            return bulk_lookup(entry, property).ok_or_else(|| no_value(entry, property));
+            return bulk_lookup(entry, property)?.ok_or_else(|| no_value(entry, property));
         };
         if at.is_some() {
             return Err(anyhow::Error::new(SampleError::Unsupported(
@@ -403,7 +403,7 @@ impl FieldModel for BackbonePathModel {
                     .to_string(),
             )));
         }
-        bulk_lookup(entry, property).ok_or_else(|| no_value(entry, property))
+        bulk_lookup(entry, property)?.ok_or_else(|| no_value(entry, property))
     }
 }
 

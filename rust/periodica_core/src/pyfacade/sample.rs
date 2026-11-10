@@ -83,7 +83,16 @@ fn py_sample(
 #[pyfunction]
 fn py_data_sheet(py: Python<'_>, name: &str) -> PyResult<PyObject> {
     assert!(!name.is_empty(), "py_data_sheet: name must be non-empty");
-    let val = crate::sample::data_sheet(name).map_err(|e| PyKeyError::new_err(e.to_string()))?;
+    let val = crate::sample::data_sheet(name).map_err(|e| {
+        // An unreadable property schema is a Rust-side bug, not a decline.
+        if e.downcast_ref::<crate::property_schema::SchemaError>()
+            .is_some()
+        {
+            PyRuntimeError::new_err(format!("{e:#}"))
+        } else {
+            PyKeyError::new_err(e.to_string())
+        }
+    })?;
     value_to_py(py, &val)
 }
 
