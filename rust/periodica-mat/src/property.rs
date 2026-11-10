@@ -206,6 +206,9 @@ define_properties! {
     Remanence                => ("T",        "Remanence B_r"),
     IntrinsicCoercivity      => ("A/m",      "Intrinsic Coercivity H_cj"),
     StressOptic              => ("m^2/N",    "Stress-Optic Coefficient C"),
+    DebyeTemperature         => ("K",        "Debye Temperature"),
+    PrimaryEmissionWavelength => ("m",       "Primary Emission Wavelength"),
+    VisibleEmissionWavelength => ("m",       "Visible Emission Wavelength"),
 }
 
 impl PropertyId {

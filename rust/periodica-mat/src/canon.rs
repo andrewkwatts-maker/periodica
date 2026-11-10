@@ -111,6 +111,8 @@ const NOHM: f64 = 1.0e-9;
 /// 1 Brewster is 1e-12 m^2/N (1e-12 Pa^-1).
 const BREWSTER: f64 = 1.0e-12;
 const PM: f64 = 1.0e-12;
+/// Nanometres to metres (emission wavelengths are nm on disk).
+const NM: f64 = 1.0e-9;
 const MM: f64 = 1.0e-3;
 const MM2_S: f64 = 1.0e-6;
 const KV_MM_TO_V_M: f64 = 1.0e6;
@@ -295,6 +297,9 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
         "ionizationenergy" => map!(IonizationEnergy, EV_TO_J),
         "electronaffinity" => map!(ElectronAffinity, KJ_MOL_TO_J),
         "valenceelectrons" => map!(ValenceElectrons),
+        "debyetemperaturek" => map!(DebyeTemperature),
+        "primaryemissionwavelength" => map!(PrimaryEmissionWavelength, NM),
+        "visibleemissionwavelength" => map!(VisibleEmissionWavelength, NM),
 
         _ => None,
     }
@@ -311,7 +316,11 @@ pub fn is_ignored(canon_key: &str) -> bool {
         // anisotropy and belong in a FieldNode::AnisotropyAxial, not in the
         // isotropic bulk table -- mapping them would silently overwrite the
         // bulk value with an off-axis one.
-        "youngsmodulus0gpa"
+        // Periodic-table position of an ion's parent element; descriptive,
+        // as in the element sheets (where they sit at the root).
+        "group"
+            | "period"
+            | "youngsmodulus0gpa"
             | "youngsmodulus90gpa"
             | "shearmodulus12gpa"
             | "poissonsratio12"
