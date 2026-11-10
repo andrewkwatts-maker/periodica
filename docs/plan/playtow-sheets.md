@@ -99,7 +99,8 @@ S3b adds both as material sheets.
 | S5a column export of scalar properties | `briefs/S5a-column-export.md` | running beside R0e (it builds `periodica-mat` only; PlayTow waits on it). Added at launch: ids are sheet names and unique (the `derived/` copy wins, the other is listed as `shadowed`); all eleven PlayTow sheets must be rows, Magnet-N42 included |
 | F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | done 957f83a, 0500d1f. Reflectance from n needs k (`Derived`) or a known transmittance (k = 0, `Estimated`); with k it also covers metals with n below 1. Absorptance and emissivity no longer copy each other. Open: R is `Estimated` even when the transmittance is itself an estimate |
 | P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | done 1247dc3, 826cc50. Only `tests/test_cli.py` wrote to the package; it now builds into a private copy of `derived/` and its fixture checks that the patch ended |
-| F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin, near-incompressible K, no isotropic G or K for wood-class sheets without directional data) | `briefs/F2-derive-mech.md` | after S5a |
+| F2a gates on the isotropic elastic identities (orthotropy, wood-class sheets without directional data, near-incompressible K) | `briefs/F2a-elastic-gates.md` | after S5a (both build `periodica-mat`) |
+| F2b Tabor's rule for ductile metals only (three sites); plane-strain Irwin | `briefs/F2b-tabor-gate-irwin.md` | after F2a. PlayTow's contact model reads `Hardness` |
 | S3a new scalar properties (MP-PER-3): ten ids, sheet keys, sound-speed rules | `briefs/S3a-new-scalar-properties.md` | ready; after F2. No data values; the data and the emission lines are later lanes |
 | R1b domain census | `briefs/R1b-domain-census.md` | done, 5f306e1 (on main). Findings below. Rerun the example after F2 and S3a |
 
@@ -193,9 +194,22 @@ cited source in the data lane (S3b), never recalled.
 ## Census findings (R1b, 5f306e1; `docs/dev/domain-census.md`)
 Rerun with `cargo run -p periodica-mat --example domain_census`. The domain table is
 `rust/periodica-mat/src/domains.rs`; a test fails when a new `PropertyId` is in no domain.
-- Contact: no `PropertyId` for friction or restitution, in any sheet. PlayTow's contact solver has
-  nothing to read. Not in MP-PER-1 to 4; ask PlayTow whether it wants them (a pair property, so
-  a per-material scalar is at best a default).
+- Contact: no `PropertyId` for friction or restitution, and PlayTow wants none (its answer of
+  2026-11-11). Both are pair properties: measured friction goes in the existing `PairTable`,
+  keyed by the two record ids; restitution is not read yet, and when it is, its entries carry
+  the impact speed. Pairs first, unchecked: timber-timber, timber-steel, steel-concrete,
+  concrete-concrete, steel-steel.
+- Contact inputs. PlayTow derives friction from `Hardness`, `SurfaceEnergy`, `SurfaceSlopeRms`
+  and `KineticStaticRatio` (with E and nu) and refuses a sheet without the first two. In the
+  eleven: `SurfaceEnergy`, `SurfaceSlopeRms` and `KineticStaticRatio` are in none (corpus: 18
+  sheets, 2 sheets and none). `Hardness` is in ten, always `Estimated`: from a measured Brinell
+  number (Steel-1018, Aluminum-6061), from `3 * yield` (Steel-B500B, and wrongly Timber-C24,
+  Rubber-Natural, Mortar-CementLime, Brick-Clay), from `3 * f_c` (the concretes). F2b gates the
+  Tabor rule; S3b adds surface energy for the eleven and a measured hardness for timber and
+  rubber.
+- PlayTow reads neither `ShearModulus` nor `BulkModulus`; its lattice is isotropic from E and nu.
+  Timber's shear error is theirs to fix on their side. F2a's wood gate still matters here: the
+  S3a sound speeds derive from K and G.
 - Acoustic: empty until S3a.
 - Thermal and electrical: nine of the eleven sheets have no value, all except Steel-1018 and
   Aluminum-6061 (table 2 of the census). S3b adds conductivity and heat capacity.
