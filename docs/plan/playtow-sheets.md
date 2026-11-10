@@ -204,15 +204,13 @@ From `sheets-formula-review.md` (the U numbers are its rows):
 6. U9: concrete Young's modulus is the fib Model Code 2010 tangent value, 11 % above the secant
    value and not EN 1992. Which one does the statics solver expect?
 7. U3 (second half): the J_IC and fracture-energy mirror is up to 2x off for concrete.
-8. The main checkout `../periodica` can't follow `origin/main`:
-    - it has an uncommitted `tests/deviation_report.txt`, which the pushed work also changes;
-    - its local `main` (a23ed05) holds 5 commits that were never pushed, and merging it with
-      `origin/main` conflicts in `canon.rs` and about 20 element sheets. Their content is already
-      on `origin/main`: M1 cherry-picked d78bb77, both lane branches are merged there, and
-      `CLAUDE.md` is identical.
-
-    Suggested: discard or commit the report file, then `git reset --hard origin/main` there. The
-    planner won't do that without the owner's word.
+8. Done 2026-11-11 (the owner asked for one line, a second session being open). The main
+    checkout `../periodica` follows `origin/main` again: its 5 unpushed commits were already on
+    `origin/main` in content, so d5e2d01 joins the two histories with no content change, and the
+    checkout was fast-forwarded. Its modified `tests/deviation_report.txt` was byte-identical to
+    the pushed version (copy in `H:/claude-scratch/periodica-sheets/main-checkout-backup/`). The
+    stash there is untouched. After every push, fast-forward that checkout too
+    (`git -C ../periodica merge --ff-only origin/main`).
 9. (PyPI state on 2026-11-11: newest release 2.0.2 of 2026-05-17; the repo is at 2.3.0 with no
    tag and no release.) The PyPI source distribution can't build without the sibling repos (R0b, checked locally):
     - `rust/periodica-mat/src/pairs.rs:24` includes `../../../src/periodica/data/interfaces/pairs.json`,
