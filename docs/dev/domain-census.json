@@ -5937,8 +5937,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -5979,7 +5979,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
@@ -6017,8 +6017,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -6059,7 +6059,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
@@ -6097,8 +6097,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -6139,7 +6139,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
@@ -6177,8 +6177,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -6219,7 +6219,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
@@ -6257,8 +6257,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -6299,7 +6299,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
@@ -6737,8 +6737,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -6779,7 +6779,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
@@ -6977,8 +6977,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -7019,7 +7019,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
@@ -32321,7 +32321,7 @@
       ],
       "elastic": [
         2,
-        2,
+        0,
         0,
         0
       ],
@@ -32363,12 +32363,10 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
       "Density": "Datasheet",
       "Hardness": "Estimated",
       "HardnessVickers": "Estimated",
       "PoissonsRatio": "Datasheet",
-      "ShearModulus": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YieldStrength": "Datasheet",
@@ -32380,7 +32378,7 @@
       "phases"
     ],
     "orthotropy_none_but_wood_like": true,
-    "temp_dependent_without_reference_temp": 3
+    "temp_dependent_without_reference_temp": 1
   },
   {
     "root": "derived",
@@ -33115,8 +33113,8 @@
       ],
       "elastic": [
         3,
-        1,
         0,
+        1,
         0
       ],
       "electrical": [
@@ -33157,7 +33155,7 @@
       ]
     },
     "props": {
-      "BulkModulus": "Derived",
+      "BulkModulus": "Estimated",
       "Density": "Datasheet",
       "Hardness": "Estimated",
       "HardnessVickers": "Estimated",

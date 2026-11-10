@@ -71,8 +71,8 @@ Cells: datasheet/derived/estimated property counts. A name in two folders gets t
 | Aluminum-6061 | derived/alloys | 1/0/0 | 3/1/0 | 3/0/3 | 0/0/0 | 0/0/0 | 2/0/0 | 1/1/0 | 0/0/0 | 0/0/0 |
 | Aluminum-6061 | reference/alloys | 1/0/0 | 1/0/0 | 2/0/3 | 0/0/0 | 0/0/0 | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Magnet-N42 | reference/alloys | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 2/0/0 | 0/0/0 |
-| Timber-C24 | derived/composites | 1/0/0 | 2/2/0 | 2/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Rubber-Natural | derived/polymers | 1/0/0 | 3/1/0 | 2/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
+| Timber-C24 | derived/composites | 1/0/0 | 2/0/0 | 2/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
+| Rubber-Natural | derived/polymers | 1/0/0 | 3/0/1 | 2/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Mortar-CementLime | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Brick-Clay | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 
@@ -105,4 +105,4 @@ Keys ingest drops: 0 distinct
 
 Wood-like with orthotropy None (1): Timber-C24
 
-Temperature-dependent values with no reference temperature: 1827
+Temperature-dependent values with no reference temperature: 1825

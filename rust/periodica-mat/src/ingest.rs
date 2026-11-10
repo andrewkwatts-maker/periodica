@@ -47,7 +47,7 @@ use serde_json::Value;
 
 use crate::canon::{canon, is_ignored, lookup};
 use crate::concrete::fill_concrete;
-use crate::derive::fill_derived;
+use crate::derive::{fill_derived_with, gates_for};
 use crate::orthotropy::Orthotropy;
 use crate::property::PropertyId;
 use crate::record::{
@@ -195,7 +195,8 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
 
     // 4. Fill exact relations (conductivity from resistivity, G/K from E+nu...).
     fill_concrete(&mut record.bulk);
-    fill_derived(&mut record.bulk);
+    let gates = gates_for(&record);
+    fill_derived_with(&mut record.bulk, gates);
 
     Ok(record)
 }

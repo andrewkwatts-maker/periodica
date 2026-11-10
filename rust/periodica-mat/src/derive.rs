@@ -71,9 +71,60 @@ const MAX_PASSES: usize = 8;
 ///
 /// Returns the number of properties added.
 pub fn fill_derived(t: &mut PropertyTable) -> usize {
+    fill_derived_with(t, DeriveGates::default())
+}
+
+/// Switches that close a rule family for records it does not describe.
+/// The default leaves every family open.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct DeriveGates {
+    /// The isotropic elastic identities (E, G, K, nu) apply.
+    pub isotropic_elastic: bool,
+}
+
+impl Default for DeriveGates {
+    fn default() -> Self {
+        Self {
+            isotropic_elastic: true,
+        }
+    }
+}
+
+/// Category words (lower case) of materials that are anisotropic by class, so
+/// one modulus and one Poisson's ratio do not fix the others.
+const ANISOTROPIC_CLASS_WORDS: &[&str] = &[
+    "wood",
+    "timber",
+    "laminate",
+    "fibre composite",
+    "fiber composite",
+];
+
+/// Above this Poisson's ratio `K = E / (3 (1 - 2 nu))` is ill-conditioned: the
+/// relative error of K is `2 d_nu / (1 - 2 nu)`, so at nu = 0.4998 an error of
+/// 0.0001 in nu moves K by 50 %.
+const NU_ILL_CONDITIONED: f64 = 0.45;
+
+fn is_anisotropic_class(category: Option<&str>) -> bool {
+    let Some(c) = category else { return false };
+    let c = c.to_lowercase();
+    ANISOTROPIC_CLASS_WORDS.iter().any(|w| c.contains(w))
+}
+
+/// Gates for one record: closed for orthotropic records and for anisotropic
+/// classes, where the isotropic identities would write wrong moduli.
+pub fn gates_for(record: &crate::record::MaterialRecord) -> DeriveGates {
+    let aniso = record.orthotropy.is_some() || is_anisotropic_class(record.category.as_deref());
+    DeriveGates {
+        isotropic_elastic: !aniso,
+    }
+}
+
+/// [`fill_derived`] with some rule families closed by `gates`.
+pub fn fill_derived_with(t: &mut PropertyTable, gates: DeriveGates) -> usize {
     let mut total = 0;
     for _ in 0..MAX_PASSES {
-        let added = one_pass(t);
+        let added = one_pass(t, gates);
         total += added;
         if added == 0 {
             break;
@@ -82,10 +133,12 @@ pub fn fill_derived(t: &mut PropertyTable) -> usize {
     total
 }
 
-fn one_pass(t: &mut PropertyTable) -> usize {
+fn one_pass(t: &mut PropertyTable, gates: DeriveGates) -> usize {
     let mut n = 0;
     n += electrical(t);
-    n += elastic(t);
+    if gates.isotropic_elastic {
+        n += elastic(t);
+    }
     n += fracture(t);
     n += thermal(t);
     n += optical(t);
@@ -135,6 +188,15 @@ fn electrical(t: &mut PropertyTable) -> usize {
     n
 }
 
+/// Past [`NU_ILL_CONDITIONED`] an identity through `1 - 2 nu` is `Estimated`.
+fn capped_near_incompressible(src: Source, nu: f64) -> Source {
+    if nu > NU_ILL_CONDITIONED {
+        Source::Estimated
+    } else {
+        src
+    }
+}
+
 /// Isotropic-elasticity identities. Any two of `E`, `G`, `K`, `nu` determine
 /// the rest. Each write inherits the weaker source of its inputs.
 fn elastic(t: &mut PropertyTable) -> usize {
@@ -149,7 +211,8 @@ fn elastic(t: &mut PropertyTable) -> usize {
     if let (Some(e), Some(nu)) = (e, nu) {
         let src = inherit(t, &[P::YoungsModulus, P::PoissonsRatio]);
         n += usize::from(t.set_if_better(P::ShearModulus, e / (2.0 * (1.0 + nu)), src));
-        n += usize::from(t.set_if_better(P::BulkModulus, e / (3.0 * (1.0 - 2.0 * nu)), src));
+        let k_src = capped_near_incompressible(src, nu);
+        n += usize::from(t.set_if_better(P::BulkModulus, e / (3.0 * (1.0 - 2.0 * nu)), k_src));
     }
     if let (Some(g), Some(nu)) = (g, nu) {
         let src = inherit(t, &[P::ShearModulus, P::PoissonsRatio]);
@@ -157,7 +220,8 @@ fn elastic(t: &mut PropertyTable) -> usize {
     }
     if let (Some(k), Some(nu)) = (k, nu) {
         let src = inherit(t, &[P::BulkModulus, P::PoissonsRatio]);
-        n += usize::from(t.set_if_better(P::YoungsModulus, 3.0 * k * (1.0 - 2.0 * nu), src));
+        let e_src = capped_near_incompressible(src, nu);
+        n += usize::from(t.set_if_better(P::YoungsModulus, 3.0 * k * (1.0 - 2.0 * nu), e_src));
     }
     if let (Some(e), Some(g)) = (e, g) {
         let src = inherit(t, &[P::YoungsModulus, P::ShearModulus]);
