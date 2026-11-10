@@ -20,6 +20,21 @@ Result in the sheets PlayTow loads (its contact model reads `Hardness`):
 - Steel-1018 and Aluminum-6061 take `Hardness` from a measured Brinell number; Steel-B500B from
   `3 * yield` (it has `ElongationPct`). These three are right and must not change.
 
+## Newer than the text above (2026-11-11, after F2a landed as 8ed7d85)
+- `derive.rs` now has `DeriveGates { isotropic_elastic }`, `fill_derived_with(t, gates)` and
+  `gates_for(record)`; `ingest.rs` calls the gated form. Read them before you design the predicate.
+- Corpus tests load a sheet by its path under `src/periodica/data`; copy `sheet(rel)` from
+  `tests/f2a_elastic_gates.rs`. Never find a sheet by file name with a directory walk:
+  `reference/alloys/` holds thinner copies of Steel-1018 and Aluminum-6061, and `read_dir` order
+  differs on Linux. That made CI red on ff3ae8c. The paths:
+  `derived/composites/Timber-C24.json`, `derived/polymers/Rubber-Natural.json`,
+  `derived/ceramics/Mortar-CementLime.json`, `derived/ceramics/Brick-Clay.json`,
+  `derived/alloys/Steel-1018.json`, `derived/alloys/Aluminum-6061.json`,
+  `derived/alloys/Steel-B500B.json`.
+- "Unchanged" for the three steel and aluminium sheets means the same `Hardness`,
+  `HardnessVickers` and `TensileStrength` values and source tags as before your change. Record
+  them before you edit and assert them in the test.
+
 ## Changes
 1. One predicate, "this table shows ductile-metal behaviour", used by all three Tabor sites. Build
    it from data the table already carries (read `property.rs` and a few alloy sheets; candidates:

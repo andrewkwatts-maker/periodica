@@ -35,6 +35,9 @@
 - Run `cargo fmt` from the repo root; CI runs `cargo fmt --check`. Never `cargo fmt --all`: it also
   rewrites the Arithma path dependency, which is another repo.
 - Run Rust tests with `--no-fail-fast`, so one failing binary doesn't hide the rest.
+- A test that reads a corpus sheet names its path under `src/periodica/data`. Don't pick a sheet
+  by file name from a directory walk: 116 names repeat across the data roots and `read_dir` order
+  differs between Windows and Linux, so the test passes here and fails in CI.
 - Report what you verified and say what you didn't. Check a claim about what a commit touches with
   `git diff --name-only`, not from memory.
 - The workspace depends on `arithma_core` by path (`../Arithma/rust/arithma_core`). The sibling
