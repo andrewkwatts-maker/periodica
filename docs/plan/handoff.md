@@ -17,7 +17,7 @@ Written 2026-11-11 by session periodica-92 (it took the topic over from periodic
 4. S3b, S3c (need owner decision 11, the data source and licence), S1, S2.
 
 ## Other sessions
-- playtowecosystem-16 was told on 2026-11-11 what F2b changed in its eleven sheets: Timber-C24 and Rubber-Natural have no `Hardness` and no `HardnessVickers`; Mortar-CementLime and Brick-Clay take `Hardness` from `3 * CompressiveStrength`; the three concrete sheets lost the estimated `HardnessVickers`; the steel and aluminium sheets are unchanged. Its contact model refuses a sheet without `Hardness`. Two questions to it are still unanswered: does it prefer a flagged estimate, and does it want a narrower row rule for the export.
+- playtowecosystem-16 was told on 2026-11-11 what F2b changed in its eleven sheets: Timber-C24 and Rubber-Natural have no `Hardness` and no `HardnessVickers`; Mortar-CementLime and Brick-Clay take `Hardness` from `3 * CompressiveStrength`; the three concrete sheets lost the estimated `HardnessVickers`; the steel and aluminium sheets are unchanged. It answered the same day, and both questions are closed: (1) keep `Hardness` missing on timber and rubber, with no flagged estimate, because its contact model refuses a sheet by naming the missing input and that is the behaviour it wants; (2) no narrower row rule for the export, which it does not read yet. Its periodica checkout is held at 5c70977 until its Dynameis change SE3 lands; then it pulls and changes its own tests to expect the refusal.
 - periodica-bd holds no work and stays out of in-flight files. Tell it what moved after each push.
 
 ## How a lane runs
