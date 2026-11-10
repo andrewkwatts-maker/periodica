@@ -147,7 +147,9 @@ fn plausible_ranges() {
         let mut rec = load(&rel);
         fill(&mut rec, &elements);
         if let Some(e) = rec.bulk.get(P::YoungsModulus) {
-            assert!((0.01e9..=1200e9).contains(&e), "{rel} E {e}");
+            // Floor 0.5 MPa: natural rubber is 1 to 5 MPa (Rubber-Natural is 2.1 MPa).
+            // Still far above a unit slip, and 1200 GPa caps Pa read as GPa.
+            assert!((0.5e6..=1200e9).contains(&e), "{rel} E {e}");
         }
         if let Some(k) = rec.bulk.get(P::FractureToughnessKic) {
             assert!((0.1e6..=250e6).contains(&k), "{rel} K_IC {k}");
