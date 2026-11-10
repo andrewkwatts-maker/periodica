@@ -273,7 +273,8 @@ impl RadialFunction {
         let nf = f64::from(n);
         let scale = 2.0 * atom.z / (nf * atom.length_scale());
         let ln_norm = 0.5
-            * (3.0 * libm::log(scale) + ln_gamma(f64::from(n - l)) - libm::log(2.0 * nf)
+            * (3.0 * libm::log(scale) + ln_gamma(f64::from(n - l))
+                - libm::log(2.0 * nf)
                 - ln_gamma(f64::from(n + l + 1)));
         Self {
             n,
@@ -330,8 +331,8 @@ impl RadialFunction {
             // underflowed long ago: the true value is 0 to f64 precision.
             return 0.0;
         }
-        let ln_mag = self.ln_norm + f64::from(self.l) * libm::log(rho) - 0.5 * rho
-            + libm::log(lag.abs());
+        let ln_mag =
+            self.ln_norm + f64::from(self.l) * libm::log(rho) - 0.5 * rho + libm::log(lag.abs());
         libm::exp(ln_mag).copysign(lag)
     }
 }

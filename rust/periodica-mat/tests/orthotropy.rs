@@ -51,5 +51,8 @@ fn bundled_cfrp_names_missing_keys() {
     let err = o.modulus_along([1.0, 1.0, 0.0]).unwrap_err();
     assert_eq!(err.missing, vec!["G12", "nu12"]);
     assert!(err.to_string().contains("G12"));
-    assert_eq!(o.tensile_along([1.0, 0.0, 0.0]).unwrap_err().missing, vec!["S"]);
+    assert_eq!(
+        o.tensile_along([1.0, 0.0, 0.0]).unwrap_err().missing,
+        vec!["S"]
+    );
 }

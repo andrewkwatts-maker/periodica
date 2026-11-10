@@ -74,7 +74,10 @@ fn hrc_to_hv(hrc: f64) -> Option<f64> {
 /// A hardness-scale value that was measured, not itself estimated from UTS.
 fn measured(t: &PropertyTable, p: P) -> Option<f64> {
     let src = t.source(p);
-    (src != Source::Estimated).then(|| t.get(p)).flatten().filter(|v| *v > 0.0)
+    (src != Source::Estimated)
+        .then(|| t.get(p))
+        .flatten()
+        .filter(|v| *v > 0.0)
 }
 
 /// Indentation hardness `H` in Pa: from a measured Vickers or Brinell number
@@ -89,10 +92,7 @@ fn hardness_pa(t: &mut PropertyTable) -> bool {
         .get(P::YieldStrength)
         .filter(|v| *v > 0.0)
         .map(|y| TABOR_H_OVER_SIGMA_Y * y);
-    let from_fc = || {
-        measured_f_c(t)
-            .map(|fc| CONSTRAINT_H_OVER_FC * fc)
-    };
+    let from_fc = || measured_f_c(t).map(|fc| CONSTRAINT_H_OVER_FC * fc);
     match from_scale.or(from_yield).or_else(from_fc) {
         Some(h) => t.set_if_better(P::Hardness, h, Source::Estimated),
         None => false,
@@ -123,7 +123,11 @@ fn slope_from_ra(t: &mut PropertyTable) -> bool {
         return false;
     };
     let rq_um = RQ_OVER_RA * ra * 1.0e6;
-    t.set_if_better(P::SurfaceSlopeRms, SLOPE_COEFF * rq_um.powf(SLOPE_EXP), Source::Estimated)
+    t.set_if_better(
+        P::SurfaceSlopeRms,
+        SLOPE_COEFF * rq_um.powf(SLOPE_EXP),
+        Source::Estimated,
+    )
 }
 
 #[cfg(test)]
@@ -151,14 +155,22 @@ mod tests {
     fn hardness_prefers_measured_vickers_over_yield() {
         let mut t = table(&[(P::HardnessVickers, 200.0), (P::YieldStrength, 250.0e6)]);
         interface_chains(&mut t);
-        assert_relative_eq!(t.get(P::Hardness).unwrap(), 200.0 * KGF_MM2_PA, max_relative = 1e-12);
+        assert_relative_eq!(
+            t.get(P::Hardness).unwrap(),
+            200.0 * KGF_MM2_PA,
+            max_relative = 1e-12
+        );
     }
 
     #[test]
     fn hardness_from_rockwell_c_interpolates() {
         let mut t = table(&[(P::HardnessRockwellC, 42.5)]);
         interface_chains(&mut t);
-        assert_relative_eq!(t.get(P::Hardness).unwrap(), 419.0 * KGF_MM2_PA, max_relative = 1e-9);
+        assert_relative_eq!(
+            t.get(P::Hardness).unwrap(),
+            419.0 * KGF_MM2_PA,
+            max_relative = 1e-9
+        );
         let mut out = table(&[(P::HardnessRockwellC, 10.0)]);
         interface_chains(&mut out);
         assert!(!out.has(P::Hardness));
@@ -170,7 +182,10 @@ mod tests {
         interface_chains(&mut t);
         assert_relative_eq!(t.get(P::Hardness).unwrap(), 90.0e6, max_relative = 1e-12);
         assert_eq!(t.source(P::Hardness), Source::Estimated);
-        let mut y = table(&[(P::CompressiveStrength, 30.0e6), (P::YieldStrength, 250.0e6)]);
+        let mut y = table(&[
+            (P::CompressiveStrength, 30.0e6),
+            (P::YieldStrength, 250.0e6),
+        ]);
         interface_chains(&mut y);
         assert_relative_eq!(y.get(P::Hardness).unwrap(), 750.0e6, max_relative = 1e-12);
     }
@@ -193,7 +208,10 @@ mod tests {
 
     #[test]
     fn stated_f_t_survives() {
-        let mut t = table(&[(P::UltimateTensileStrength, 400.0e6), (P::TensileStrength, 350.0e6)]);
+        let mut t = table(&[
+            (P::UltimateTensileStrength, 400.0e6),
+            (P::TensileStrength, 350.0e6),
+        ]);
         interface_chains(&mut t);
         assert_eq!(t.get(P::TensileStrength), Some(350.0e6));
         assert_eq!(t.source(P::TensileStrength), Source::Datasheet);
@@ -203,15 +221,26 @@ mod tests {
     fn slope_from_ra_follows_the_correlation() {
         let mut t = table(&[(P::SurfaceRoughnessRa, 1.6e-6)]);
         interface_chains(&mut t);
-        assert_relative_eq!(t.get(P::SurfaceSlopeRms).unwrap(), 0.125 * 2.0_f64.powf(0.402), max_relative = 1e-12);
+        assert_relative_eq!(
+            t.get(P::SurfaceSlopeRms).unwrap(),
+            0.125 * 2.0_f64.powf(0.402),
+            max_relative = 1e-12
+        );
         assert_eq!(t.source(P::SurfaceSlopeRms), Source::Estimated);
     }
 
     #[test]
     fn gf_from_kic_squared_over_e_is_estimated() {
-        let mut t = table(&[(P::FractureToughnessKic, 50.0e6), (P::YoungsModulus, 200.0e9)]);
+        let mut t = table(&[
+            (P::FractureToughnessKic, 50.0e6),
+            (P::YoungsModulus, 200.0e9),
+        ]);
         crate::derive::fill_derived(&mut t);
-        assert_relative_eq!(t.get(P::FractureEnergy).unwrap(), 12500.0, max_relative = 1e-12);
+        assert_relative_eq!(
+            t.get(P::FractureEnergy).unwrap(),
+            12500.0,
+            max_relative = 1e-12
+        );
         assert_eq!(t.source(P::FractureEnergy), Source::Estimated);
     }
 

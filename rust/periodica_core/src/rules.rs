@@ -235,7 +235,10 @@ mod tests {
         assert!(r.tier_definitions[0].is_active);
         assert_eq!(r.additive_properties, ["Charge_e", "Mass_amu", "Mass_kg"]);
         assert!(r.is_integral("Charge_e"));
-        assert!(!r.is_integral("Mass_kg"), "masses must never be snapped (D1)");
+        assert!(
+            !r.is_integral("Mass_kg"),
+            "masses must never be snapped (D1)"
+        );
         assert_eq!(r.placeholder_prefixes, ["demo_", "example_"]);
         assert_eq!(
             r.resolution_levels,

@@ -4,8 +4,8 @@ use std::sync::OnceLock;
 
 use arithma_core::ArithmaExpression as E;
 
-use super::{eval, num, var};
 use super::spectrum::{luminous_band_m, spectrum_to_rgb, Spectrum};
+use super::{eval, num, var};
 
 pub const PLANCK_H: f64 = 6.626_070_15e-34;
 pub const LIGHT_C: f64 = 299_792_458.0;
@@ -14,11 +14,11 @@ pub const BOLTZMANN_K: f64 = 1.380_649e-23;
 /// `B(l, T) = 2 h c^2 / (l^5 (exp(h c / (l k T)) - 1))`, variables `l` (m) and `t` (K).
 pub fn radiance_expr() -> E {
     let hc = PLANCK_H * LIGHT_C;
-    let x = E::div(num(hc), E::mul(E::mul(var("l"), num(BOLTZMANN_K)), var("t")));
-    let denom = E::mul(
-        E::pow(var("l"), num(5.0)),
-        E::sub(E::exp(x), num(1.0)),
+    let x = E::div(
+        num(hc),
+        E::mul(E::mul(var("l"), num(BOLTZMANN_K)), var("t")),
     );
+    let denom = E::mul(E::pow(var("l"), num(5.0)), E::sub(E::exp(x), num(1.0)));
     E::div(num(2.0 * hc * LIGHT_C), denom)
 }
 
@@ -56,7 +56,10 @@ mod tests {
                 l += 1e-9;
             }
             let product = best_l * t;
-            assert!((product - 2.8978e-3).abs() / 2.8978e-3 < 0.005, "T={t} {product}");
+            assert!(
+                (product - 2.8978e-3).abs() / 2.8978e-3 < 0.005,
+                "T={t} {product}"
+            );
         }
     }
 

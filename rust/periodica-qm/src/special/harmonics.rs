@@ -332,10 +332,7 @@ mod tests {
         let l = 3i32;
         for a in -l..=l {
             for b in -l..=l {
-                for (ba, bb) in [
-                    (Basis::Real, Basis::Real),
-                    (Basis::Complex, Basis::Complex),
-                ] {
+                for (ba, bb) in [(Basis::Real, Basis::Real), (Basis::Complex, Basis::Complex)] {
                     let o = angular_overlap(a, ba, b, bb);
                     let want = if a == b { 1.0 } else { 0.0 };
                     assert!((o.re - want).abs() < 1e-15 && o.im.abs() < 1e-15);

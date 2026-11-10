@@ -25,7 +25,10 @@ const XYZ_TO_RGB: [[f64; 3]; 3] = [
 ];
 
 fn lobe((amp, mu, s1, s2): (f64, f64, f64, f64)) -> E {
-    let side = E::func(arithma_core::ArithmaFunction::Sign, vec![E::sub(num(mu), var("nm"))]);
+    let side = E::func(
+        arithma_core::ArithmaFunction::Sign,
+        vec![E::sub(num(mu), var("nm"))],
+    );
     let blend = E::mul(num(0.5), E::add(num(1.0), side));
     let sigma = E::add(num(s2), E::mul(num(s1 - s2), blend));
     let z = E::div(E::sub(var("nm"), num(mu)), sigma);
@@ -44,7 +47,11 @@ pub struct Table {
 
 pub fn rgb_of_xyz(xyz: [f64; 3]) -> [f64; 3] {
     let row = |r: &[f64; 3]| r[0] * xyz[0] + r[1] * xyz[1] + r[2] * xyz[2];
-    [row(&XYZ_TO_RGB[0]), row(&XYZ_TO_RGB[1]), row(&XYZ_TO_RGB[2])]
+    [
+        row(&XYZ_TO_RGB[0]),
+        row(&XYZ_TO_RGB[1]),
+        row(&XYZ_TO_RGB[2]),
+    ]
 }
 
 fn build() -> Table {
@@ -56,10 +63,16 @@ fn build() -> Table {
             [eval(&cx, &v), eval(&cy, &v), eval(&cz, &v)]
         })
         .collect();
-    let sums = cmf.iter().fold([0.0; 3], |a, c| [a[0] + c[0], a[1] + c[1], a[2] + c[2]]);
+    let sums = cmf
+        .iter()
+        .fold([0.0; 3], |a, c| [a[0] + c[0], a[1] + c[1], a[2] + c[2]]);
     let y_sum = sums[1];
     let flat = rgb_of_xyz([sums[0] / y_sum, 1.0, sums[2] / y_sum]);
-    Table { cmf, white: flat, y_sum }
+    Table {
+        cmf,
+        white: flat,
+        y_sum,
+    }
 }
 
 pub fn table() -> &'static Table {

@@ -162,11 +162,16 @@ impl MassSources {
             let z = e
                 .get("Z")
                 .and_then(Value::as_u64)
-                .ok_or_else(|| anyhow!("element weights: entry without Z: {e}"))? as u32;
+                .ok_or_else(|| anyhow!("element weights: entry without Z: {e}"))?
+                as u32;
             elements.insert(
                 z,
                 ElementWeight {
-                    symbol: e.get("symbol").and_then(Value::as_str).unwrap_or("?").to_string(),
+                    symbol: e
+                        .get("symbol")
+                        .and_then(Value::as_str)
+                        .unwrap_or("?")
+                        .to_string(),
                     mass_amu: e.get("Mass_amu").and_then(Value::as_f64),
                     kind: e
                         .get("value_kind")
@@ -249,7 +254,11 @@ impl MassSources {
         let mass_amu = neutral + excess as f64 * self.electron_mass_u;
         if excess != 0 {
             let k = excess.unsigned_abs();
-            let noun = if k == 1 { "electron mass" } else { "electron masses" };
+            let noun = if k == 1 {
+                "electron mass"
+            } else {
+                "electron masses"
+            };
             let verb = if excess > 0 { "plus" } else { "minus" };
             source.push_str(&format!(", {verb} {k} {noun}"));
         }
@@ -263,7 +272,12 @@ impl MassSources {
         Ok(true)
     }
 
-    fn neutral_mass(&self, policy: MassPolicy, z: u32, a: u32) -> Result<(f64, String), MassSourceError> {
+    fn neutral_mass(
+        &self,
+        policy: MassPolicy,
+        z: u32,
+        a: u32,
+    ) -> Result<(f64, String), MassSourceError> {
         if policy == MassPolicy::Element {
             if let Some(el) = self.elements.get(&z) {
                 if let Some(m) = el.mass_amu {
@@ -325,7 +339,11 @@ mod tests {
 
     fn sources() -> Option<MassSources> {
         let (rules, data) = bundled()?;
-        Some(MassSources::load(&rules, &data).expect("load").expect("declared"))
+        Some(
+            MassSources::load(&rules, &data)
+                .expect("load")
+                .expect("declared"),
+        )
     }
 
     fn atom(p: u32, n: u32, e: u32) -> Value {
@@ -342,8 +360,16 @@ mod tests {
         let mut fe = atom(26, 30, 26);
         assert!(s.apply("atoms", &mut fe).unwrap());
         assert_eq!(fe["Mass_amu"], 55.845);
-        assert!(close(fe["Mass_MeVc2"].as_f64().unwrap(), 55.845 * 931.49410242, 1e-15));
-        assert!(close(fe["Mass_kg"].as_f64().unwrap(), 55.845 * 1.66053906660e-27, 1e-15));
+        assert!(close(
+            fe["Mass_MeVc2"].as_f64().unwrap(),
+            55.845 * 931.49410242,
+            1e-15
+        ));
+        assert!(close(
+            fe["Mass_kg"].as_f64().unwrap(),
+            55.845 * 1.66053906660e-27,
+            1e-15
+        ));
         assert_eq!(fe["MassSource"], "CIAAW 2021 standard atomic weight of Fe");
     }
 
@@ -374,7 +400,11 @@ mod tests {
         assert_eq!(c12["Mass_amu"], 12.0, "C-12 is 12 u by definition");
         let mut h2 = atom(1, 1, 1);
         s.apply("isotopes", &mut h2).unwrap();
-        assert!(close(h2["Mass_amu"].as_f64().unwrap(), 2.014101777844, 1e-12));
+        assert!(close(
+            h2["Mass_amu"].as_f64().unwrap(),
+            2.014101777844,
+            1e-12
+        ));
     }
 
     #[test]
@@ -384,11 +414,21 @@ mod tests {
         let mut k = atom(19, 20, 18);
         s.apply("ions", &mut k).unwrap();
         assert!(close(k["Mass_amu"].as_f64().unwrap(), 39.0983 - me, 1e-14));
-        assert!(k["MassSource"].as_str().unwrap().ends_with("minus 1 electron mass"));
+        assert!(k["MassSource"]
+            .as_str()
+            .unwrap()
+            .ends_with("minus 1 electron mass"));
         let mut o2 = atom(8, 8, 10);
         s.apply("ions", &mut o2).unwrap();
-        assert!(close(o2["Mass_amu"].as_f64().unwrap(), 15.999 + 2.0 * me, 1e-14));
-        assert!(o2["MassSource"].as_str().unwrap().ends_with("plus 2 electron masses"));
+        assert!(close(
+            o2["Mass_amu"].as_f64().unwrap(),
+            15.999 + 2.0 * me,
+            1e-14
+        ));
+        assert!(o2["MassSource"]
+            .as_str()
+            .unwrap()
+            .ends_with("plus 2 electron masses"));
     }
 
     #[test]
@@ -396,7 +436,10 @@ mod tests {
         let Some(s) = sources() else { return };
         let mut m = json!({"Composition": {"H": 2, "O": 1}, "Mass_amu": 18.015});
         assert!(!s.apply("molecules", &mut m).unwrap());
-        assert_eq!(m, json!({"Composition": {"H": 2, "O": 1}, "Mass_amu": 18.015}));
+        assert_eq!(
+            m,
+            json!({"Composition": {"H": 2, "O": 1}, "Mass_amu": 18.015})
+        );
     }
 
     #[test]

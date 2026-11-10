@@ -91,8 +91,15 @@ fn constituents<'a>(
     let mut parts = Vec::with_capacity(rec.composition.len());
     for (sym, mass_fraction) in &rec.composition {
         let el = elements.get(sym)?;
-        let missing = |property| CompositionError::MissingConstituent { element: sym.clone(), property };
-        let d = el.bulk.get(divisor).filter(|d| *d > 0.0).ok_or_else(|| missing(divisor))?;
+        let missing = |property| CompositionError::MissingConstituent {
+            element: sym.clone(),
+            property,
+        };
+        let d = el
+            .bulk
+            .get(divisor)
+            .filter(|d| *d > 0.0)
+            .ok_or_else(|| missing(divisor))?;
         el.bulk.get(prop).ok_or_else(|| missing(prop))?;
         parts.push((el, mass_fraction / d));
     }
@@ -105,7 +112,11 @@ fn constituents<'a>(
 /// # Errors
 /// No composition, an unknown constituent, a constituent lacking `prop`
 /// (named), or a failed mix.
-pub fn estimate(rec: &MaterialRecord, elements: &ElementTable, prop: P) -> Result<f64, CompositionError> {
+pub fn estimate(
+    rec: &MaterialRecord,
+    elements: &ElementTable,
+    prop: P,
+) -> Result<f64, CompositionError> {
     let parts = constituents(rec, elements, prop)?;
     Ok(mix(&parts, prop)?)
 }

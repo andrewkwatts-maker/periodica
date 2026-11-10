@@ -30,7 +30,12 @@ pub struct DrudeLorentz {
 impl DrudeLorentz {
     /// Drude gold.
     pub fn gold() -> Self {
-        Self { epsilon_inf: 1.0, plasma_ev: 9.03, damping_ev: 0.07, oscillators: Vec::new() }
+        Self {
+            epsilon_inf: 1.0,
+            plasma_ev: 9.03,
+            damping_ev: 0.07,
+            oscillators: Vec::new(),
+        }
     }
 
     fn drude_parts(&self) -> (E, E) {

@@ -76,12 +76,7 @@ pub fn laguerre_roots(k: u32, alpha: f64) -> Vec<f64> {
         let mut lo = 0.0;
         for i in 0..j as usize {
             let hi = if i < roots.len() { roots[i] } else { upper };
-            let f = |x: f64| {
-                (
-                    laguerre(j, alpha, x),
-                    laguerre_derivative(j, alpha, x),
-                )
-            };
+            let f = |x: f64| (laguerre(j, alpha, x), laguerre_derivative(j, alpha, x));
             next.push(solve_bracketed(f, lo, hi, 0.5 * (lo + hi)));
             lo = hi;
         }

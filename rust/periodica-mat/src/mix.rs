@@ -78,9 +78,7 @@ pub fn mix(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
         | P::Porosity
         | P::ThermalExpansion
         | P::StrainHardeningExponent
-        | P::SurfaceEnergy => {
-            volume_average(entries, prop)
-        }
+        | P::SurfaceEnergy => volume_average(entries, prop),
         P::SpecificHeat => mass_weighted(entries, prop),
         P::YoungsModulus | P::ShearModulus | P::BulkModulus => hill(entries, prop),
         P::PoissonsRatio => poisson(entries),

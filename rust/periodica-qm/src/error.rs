@@ -44,7 +44,9 @@ pub enum QmError {
     #[error("the state has zero norm and cannot be normalised")]
     ZeroNorm,
     /// Gamma-distribution parameters not finite and positive.
-    #[error("gamma distribution needs finite shape > 0 and scale > 0, got shape {shape}, scale {scale}")]
+    #[error(
+        "gamma distribution needs finite shape > 0 and scale > 0, got shape {shape}, scale {scale}"
+    )]
     InvalidGammaParameters {
         /// Shape `k` as given.
         shape: f64,

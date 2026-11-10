@@ -88,9 +88,8 @@ impl ModelLabel {
         let mut it = labels.into_iter();
         let mut out = it.next()?.clone();
         for l in it {
-            out.numerical_error_vs_model = out
-                .numerical_error_vs_model
-                .max(l.numerical_error_vs_model);
+            out.numerical_error_vs_model =
+                out.numerical_error_vs_model.max(l.numerical_error_vs_model);
             out.physical_error_vs_reality = out
                 .physical_error_vs_reality
                 .max(l.physical_error_vs_reality);
@@ -104,7 +103,10 @@ impl fmt::Display for ModelLabel {
         write!(
             f,
             "{} | numerical <= {:.0e} | vs reality ~{:.1e} | {}",
-            self.model, self.numerical_error_vs_model, self.physical_error_vs_reality, self.reference
+            self.model,
+            self.numerical_error_vs_model,
+            self.physical_error_vs_reality,
+            self.reference
         )
     }
 }
@@ -155,6 +157,9 @@ mod tests {
         assert_eq!(w.physical_error_vs_reality, b.physical_error_vs_reality);
         assert!(ModelLabel::worst(core::iter::empty()).is_none());
         let text = a.to_string();
-        assert!(text.contains("CODATA 2022") && text.contains("1e-12"), "{text}");
+        assert!(
+            text.contains("CODATA 2022") && text.contains("1e-12"),
+            "{text}"
+        );
     }
 }

@@ -51,8 +51,8 @@ use crate::derive::fill_derived;
 use crate::orthotropy::Orthotropy;
 use crate::property::PropertyId;
 use crate::record::{
-    CrystalSystem, GrainStructure, Inclusions, Lattice, MaterialRecord, Microstructure, NoiseKind, Phase,
-    Provenance, Texture, Tier,
+    CrystalSystem, GrainStructure, Inclusions, Lattice, MaterialRecord, Microstructure, NoiseKind,
+    Phase, Provenance, Texture, Tier,
 };
 use crate::table::{PropertyTable, Source};
 
@@ -149,7 +149,10 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
     // 3. Structured sub-objects.
     let lattice = extract_lattice(obj);
     let micro = extract_microstructure(obj).or_else(|| {
-        field_grains(obj).map(|g| Microstructure { grains: Some(g), ..Microstructure::default() })
+        field_grains(obj).map(|g| Microstructure {
+            grains: Some(g),
+            ..Microstructure::default()
+        })
     });
     let texture = extract_texture(obj);
     let mut phases = extract_phases(obj);
@@ -335,7 +338,9 @@ fn field_grains(obj: &serde_json::Map<String, Value>) -> Option<GrainStructure> 
 /// from each other when only one is given; with neither there are no grains.
 /// Every other key stays `None` unless the block states it.
 fn block_grains(g: &serde_json::Map<String, Value>) -> Option<GrainStructure> {
-    let size = get_num(g, "AverageGrainSize_um").map(|v| v * 1e-6).filter(|v| *v > 0.0);
+    let size = get_num(g, "AverageGrainSize_um")
+        .map(|v| v * 1e-6)
+        .filter(|v| *v > 0.0);
     // The datasheets quote an areal seed density measured on a polished
     // section; the stereological relation for equiaxed grains is n_v = n_a^(3/2).
     let seeds = get_num(g, "VoronoiSeedDensity_per_mm2")
@@ -360,7 +365,10 @@ fn extract_microstructure(obj: &serde_json::Map<String, Value>) -> Option<Micros
         Some(g) => block_grains(g),
         None => field_grains(obj),
     };
-    let mut m = Microstructure { grains, ..Microstructure::default() };
+    let mut m = Microstructure {
+        grains,
+        ..Microstructure::default()
+    };
 
     if let Some(p) = get_obj(ms, "PhaseDistribution") {
         let d = &mut m.phase_distribution;
@@ -780,7 +788,11 @@ mod tests {
         let m = ingest(&v, "x").unwrap().micro.unwrap();
         let grains = m.grains.unwrap();
         assert_relative_eq!(grains.average_size_m, 50e-6, max_relative = 1e-9);
-        assert_relative_eq!(grains.boundary_width_m.unwrap(), 0.5e-9, max_relative = 1e-9);
+        assert_relative_eq!(
+            grains.boundary_width_m.unwrap(),
+            0.5e-9,
+            max_relative = 1e-9
+        );
         assert_relative_eq!(
             grains.twin_density_per_m.unwrap(),
             5000.0,

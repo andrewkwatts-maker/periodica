@@ -71,7 +71,11 @@ fn scope_of(from: Option<&Value>) -> Option<Vec<String>> {
     match from {
         None | Some(Value::Null) => None,
         Some(Value::String(s)) => Some(vec![s.clone()]),
-        Some(Value::Array(a)) => Some(a.iter().filter_map(|v| v.as_str().map(str::to_string)).collect()),
+        Some(Value::Array(a)) => Some(
+            a.iter()
+                .filter_map(|v| v.as_str().map(str::to_string))
+                .collect(),
+        ),
         Some(other) => panic!("unsupported `from`: {other}"),
     }
 }
@@ -85,7 +89,9 @@ fn derived_tiers_are_reproduced_by_the_native_composer() {
     }
     data_loader::load_all_tiers(&data).expect("load");
     let rules = CompositionRules::load(&data).expect("rules");
-    let masses = MassSources::load(&rules, &data).expect("mass sources").expect("declared");
+    let masses = MassSources::load(&rules, &data)
+        .expect("mass sources")
+        .expect("declared");
 
     let mut inputs: Vec<PathBuf> = std::fs::read_dir(inputs_dir())
         .expect("inputs dir")
@@ -102,7 +108,9 @@ fn derived_tiers_are_reproduced_by_the_native_composer() {
         let doc = jsonc::from_path(input).expect("input json");
         let tier = doc["tier"].as_str().unwrap_or("general").to_string();
         let scope = scope_of(doc.get("from"));
-        let scope_refs: Option<Vec<&str>> = scope.as_ref().map(|s| s.iter().map(String::as_str).collect());
+        let scope_refs: Option<Vec<&str>> = scope
+            .as_ref()
+            .map(|s| s.iter().map(String::as_str).collect());
         for row in doc["rows"].as_array().expect("rows") {
             let name = row["name"].as_str().expect("row name");
             let spec: Vec<(String, Value)> = row["spec"]
@@ -121,20 +129,34 @@ fn derived_tiers_are_reproduced_by_the_native_composer() {
             };
             masses.apply(&tier, &mut native).expect("mass source");
             let obj = native.as_object_mut().unwrap();
-            if let Some(sym) = row.get("symbol").and_then(Value::as_str).filter(|s| !s.is_empty()) {
+            if let Some(sym) = row
+                .get("symbol")
+                .and_then(Value::as_str)
+                .filter(|s| !s.is_empty())
+            {
                 obj.insert("Symbol".into(), Value::String(sym.to_string()));
             }
             for (key, field) in [("properties", "Properties"), ("field", "Field")] {
-                if let Some(v) = row.get(key).filter(|v| v.as_object().is_some_and(|o| !o.is_empty())) {
+                if let Some(v) = row
+                    .get(key)
+                    .filter(|v| v.as_object().is_some_and(|o| !o.is_empty()))
+                {
                     obj.insert(field.into(), v.clone());
                 }
             }
-            if let Some(v) = row.get("aliases").filter(|v| v.as_array().is_some_and(|a| !a.is_empty())) {
+            if let Some(v) = row
+                .get("aliases")
+                .filter(|v| v.as_array().is_some_and(|a| !a.is_empty()))
+            {
                 obj.insert("Aliases".into(), v.clone());
             }
-            obj.entry("Name").or_insert_with(|| Value::String(name.to_string()));
+            obj.entry("Name")
+                .or_insert_with(|| Value::String(name.to_string()));
 
-            let file = data.join("derived").join(&tier).join(format!("{name}.json"));
+            let file = data
+                .join("derived")
+                .join(&tier)
+                .join(format!("{name}.json"));
             let committed = match jsonc::from_path(&file) {
                 Ok(v) => v,
                 Err(e) => {
@@ -154,6 +176,11 @@ fn derived_tiers_are_reproduced_by_the_native_composer() {
         "{} differences between the native composer and the committed derived data \
          (regenerate with `python -m periodica build`):\n{}",
         failures.len(),
-        failures.iter().take(40).cloned().collect::<Vec<_>>().join("\n")
+        failures
+            .iter()
+            .take(40)
+            .cloned()
+            .collect::<Vec<_>>()
+            .join("\n")
     );
 }

@@ -2,8 +2,8 @@
 
 use arithma_core::ArithmaExpression as E;
 
-use super::{eval, num, square, sum, var};
 use super::spectrum::Spectrum;
+use super::{eval, num, square, sum, var};
 
 /// One emission line: centre and width (standard deviation) in metres, peak radiance.
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -43,7 +43,11 @@ mod tests {
 
     #[test]
     fn peak_at_centre() {
-        let l = [Line { centre_m: 589e-9, sigma_m: 1e-9, peak: 3.0 }];
+        let l = [Line {
+            centre_m: 589e-9,
+            sigma_m: 1e-9,
+            peak: 3.0,
+        }];
         assert!((radiance(&l, 589e-9) - 3.0).abs() < 1e-9);
         assert!(radiance(&l, 600e-9) < 1e-6);
     }

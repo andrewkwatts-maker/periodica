@@ -33,7 +33,11 @@ mod tests {
 
     #[test]
     fn cauchy_matches_closed_form() {
-        let m = Cauchy { a: 1.5, b: 0.004, c: 0.0001 };
+        let m = Cauchy {
+            a: 1.5,
+            b: 0.004,
+            c: 0.0001,
+        };
         let l: f64 = 0.55;
         let want = 1.5 + 0.004 / (l * l) + 0.0001 / l.powi(4);
         assert!((m.refractive_index(550e-9) - want).abs() < 1e-12);
