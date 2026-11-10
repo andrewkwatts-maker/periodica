@@ -4,6 +4,7 @@
   "Category": "Concrete",
   "Properties": {
     "AggregateMaxSize_mm": 16,
+    "CharacteristicCompressiveStrength_MPa": 25,
     "CompressiveStrength_MPa": 25,
     "Density_kgm3": 2400,
     "PoissonsRatio": 0.2

@@ -9,9 +9,9 @@
 
 //! # concrete
 //!
-//! fib Model Code 2010 (MC2010) derivations for records flagged
-//! `"Class": "Concrete"`. `CompressiveStrength` is taken as the characteristic
-//! cylinder strength `f_ck`; every fill is [`Source::Estimated`], so a
+//! fib Model Code 2010 (MC2010) derivations. The trigger is the presence of
+//! `CharacteristicCompressiveStrength` (the cylinder strength `f_ck`), never a
+//! class label: no code branches on `"Class"`. Every fill is [`Source::Estimated`], so a
 //! datasheet value always wins through [`PropertyTable::set_if_better`].
 
 use crate::property::PropertyId as P;
@@ -73,16 +73,21 @@ fn interp(fck: f64, column: &[f64; 17]) -> Option<f64> {
     Some(column[hi - 1] + t * (column[hi] - column[hi - 1]))
 }
 
-/// Fill the MC2010 concrete properties from `CompressiveStrength` (`f_ck`).
+/// Fill the MC2010 concrete properties from `CharacteristicCompressiveStrength`
+/// (`f_ck`), including `CompressiveStrength` = `f_ck` when not in the datasheet.
 ///
 /// Returns the number of properties added. Absent `f_ck` fills nothing.
 pub fn fill_concrete(t: &mut PropertyTable) -> usize {
-    let Some(fck_pa) = t.get(P::CompressiveStrength).filter(|v| *v > 0.0) else {
+    let Some(fck_pa) = t
+        .get(P::CharacteristicCompressiveStrength)
+        .filter(|v| *v > 0.0)
+    else {
         return 0;
     };
     let fck = fck_pa / MPA;
     let fcm = fck + DELTA_F_MPA;
     let mut fills = vec![
+        (P::CompressiveStrength, fck_pa),
         (P::MeanCompressiveStrength, fcm * MPA),
         (P::YoungsModulus, eci_pa(fcm)),
         (P::UltimateTensileStrength, fctm_mpa(fck) * MPA),
@@ -107,7 +112,11 @@ mod tests {
 
     fn c30() -> PropertyTable {
         let mut t = PropertyTable::new();
-        t.set(P::CompressiveStrength, 30.0e6, Source::Datasheet);
+        t.set(
+            P::CharacteristicCompressiveStrength,
+            30.0e6,
+            Source::Datasheet,
+        );
         t
     }
 
@@ -138,7 +147,11 @@ mod tests {
     #[test]
     fn strains_interpolate_between_grades() {
         let mut t = PropertyTable::new();
-        t.set(P::CompressiveStrength, 27.5e6, Source::Datasheet);
+        t.set(
+            P::CharacteristicCompressiveStrength,
+            27.5e6,
+            Source::Datasheet,
+        );
         fill_concrete(&mut t);
         assert_relative_eq!(
             t.get(P::PeakCompressiveStrain).unwrap(),

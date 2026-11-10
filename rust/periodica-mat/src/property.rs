@@ -209,6 +209,7 @@ define_properties! {
     DebyeTemperature         => ("K",        "Debye Temperature"),
     PrimaryEmissionWavelength => ("m",       "Primary Emission Wavelength"),
     VisibleEmissionWavelength => ("m",       "Visible Emission Wavelength"),
+    CharacteristicCompressiveStrength => ("Pa", "Characteristic Compressive Strength f_ck"),
 }
 
 impl PropertyId {

@@ -194,9 +194,7 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
     };
 
     // 4. Fill exact relations (conductivity from resistivity, G/K from E+nu...).
-    if record.class.as_deref() == Some("Concrete") {
-        fill_concrete(&mut record.bulk);
-    }
+    fill_concrete(&mut record.bulk);
     fill_derived(&mut record.bulk);
 
     Ok(record)

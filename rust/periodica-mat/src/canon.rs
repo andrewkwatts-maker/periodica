@@ -169,6 +169,7 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
             map!(UltimateTensileStrength, MPA)
         }
         "compressivestrengthmpa" => map!(CompressiveStrength, MPA),
+        "characteristiccompressivestrengthmpa" => map!(CharacteristicCompressiveStrength, MPA),
         "meancompressivestrengthmpa" => map!(MeanCompressiveStrength, MPA),
         "aggregatemaxsizemm" => map!(AggregateMaxSize, MM),
         "compressiveyieldstrengthmpa" => map!(CompressiveYieldStrength, MPA),
