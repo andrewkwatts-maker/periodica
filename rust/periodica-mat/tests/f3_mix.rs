@@ -21,7 +21,7 @@ fn turner_thermal_expansion_al_steel() {
     let st = rec(&[(P::ThermalExpansion, 12e-6), (P::BulkModulus, 167e9)]);
     let (a, src) = mix_tagged(&[(&al, 0.5), (&st, 0.5)], P::ThermalExpansion).unwrap();
     assert!((a - 15.3e-6).abs() / 15.3e-6 < 0.01, "{a}");
-    assert_eq!(src, Source::Derived);
+    assert_eq!(src, Source::Estimated);
     let nok = rec(&[(P::ThermalExpansion, 12e-6)]);
     let (v, src) = mix_tagged(&[(&al, 0.5), (&nok, 0.5)], P::ThermalExpansion).unwrap();
     assert!((v - 17.5e-6).abs() < 1e-12);
@@ -53,4 +53,33 @@ fn refractive_index_lorentz_lorenz() {
         mix(&[(&a, 0.5), (&m, 0.5)], P::RefractiveIndexN),
         Err(MixError::NotMixable(_))
     ));
+}
+
+#[test]
+fn only_exact_rules_are_tagged_derived() {
+    let a = rec(&[
+        (P::Density, 8000.0),
+        (P::YoungsModulus, 200e9),
+        (P::PoissonsRatio, 0.3),
+        (P::ThermalExpansion, 12e-6),
+        (P::RefractiveIndexN, 1.5),
+        (P::ThermalConductivity, 50.0),
+        (P::YieldStrength, 300e6),
+    ]);
+    let b = a.clone();
+    let e = [(&a, 0.5), (&b, 0.5)];
+    let tag = |p| mix_tagged(&e, p).unwrap().1;
+    assert_eq!(tag(P::Density), Source::Derived);
+    for p in [
+        P::YoungsModulus,
+        P::ThermalExpansion,
+        P::RefractiveIndexN,
+        P::ThermalConductivity,
+        P::YieldStrength,
+    ] {
+        assert_eq!(tag(p), Source::Estimated, "{p:?}");
+    }
+    let nok = rec(&[(P::ThermalExpansion, 23e-6)]);
+    let (_, src) = mix_tagged(&[(&a, 0.5), (&nok, 0.5)], P::ThermalExpansion).unwrap();
+    assert_eq!(src, Source::Estimated);
 }

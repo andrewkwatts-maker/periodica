@@ -147,7 +147,7 @@ fn plausible_ranges() {
         let mut rec = load(&rel);
         fill(&mut rec, &elements);
         if let Some(e) = rec.bulk.get(P::YoungsModulus) {
-            assert!((0.001e9..=1200e9).contains(&e), "{rel} E {e}");
+            assert!((0.01e9..=1200e9).contains(&e), "{rel} E {e}");
         }
         if let Some(k) = rec.bulk.get(P::FractureToughnessKic) {
             assert!((0.1e6..=250e6).contains(&k), "{rel} K_IC {k}");

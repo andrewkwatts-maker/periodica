@@ -6,7 +6,7 @@
 //! | Property | Rule |
 //! |---|---|
 //! | density, porosity | volume-fraction average |
-//! | thermal expansion | Turner, `sum(alpha K V) / sum(K V)`, when every part has a bulk modulus (given or from E and nu); else the volume average, tagged `Estimated` by [`mix_tagged`] |
+//! | thermal expansion | Turner, `sum(alpha K V) / sum(K V)`, when every part has a bulk modulus (given or from E and nu); else the volume average |
 //! | refractive index n | Lorentz-Lorenz over volume fractions, when no part has a positive extinction coefficient k |
 //! | surface energy | fraction-weighted average; the caller supplies atom fractions, as the surface is counted in atoms |
 //! | specific heat (per mass) | mass-weighted average (the volume average of heat capacity per volume, divided by the mixed density) |
@@ -14,6 +14,8 @@
 //! | Young modulus, Poisson ratio | from the Hill K and G, `E = 9KG / (3K + G)`, `nu = (3K - 2G) / (2 (3K + G))`, so the isotropic identities hold exactly; K and G come from the part's own values or from its E and nu. When a part lacks them: Hill on E, volume average of nu |
 //! | thermal and electrical conductivity | harmonic (series) average, a lower bound; a zero part gives zero |
 //! | strengths, toughness, fracture energy, fatigue | volume average. A documented estimate, not a bound: real strength depends on microstructure |
+//!
+//! [`mix_tagged`] tags density and porosity `Derived` (exact); every other rule is `Estimated`.
 //!
 //! Any other property is not mixable ([`MixError::NotMixable`]).
 //! Fractions are volume fractions and must sum to 1 within [`FRACTION_TOLERANCE`].
@@ -78,22 +80,33 @@ pub fn mix(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
     mix_tagged(entries, prop).map(|(v, _)| v)
 }
 
-/// Like [`mix`], with the provenance of the result: `Derived` for an exact
-/// rule, `Estimated` where the rule fell back to a plain volume average.
+/// Like [`mix`], with the provenance of the result. `Derived` only for the
+/// exact rules, density and porosity (ideal volume-fraction sums); every other
+/// rule (Hill, Turner, Lorentz-Lorenz, bounds, volume-average strengths, the
+/// volume-average fallbacks) is a model and is tagged `Estimated`.
 ///
 /// # Errors
 /// As for [`mix`].
 pub fn mix_tagged(entries: Entries<'_>, prop: PropertyId) -> MixResult<(f64, Source)> {
     use PropertyId as P;
     if prop == P::ThermalExpansion {
-        return thermal_expansion(entries);
+        return thermal_expansion(entries).map(|v| (v, rule_source(prop)));
     }
     if prop == P::YoungsModulus || prop == P::PoissonsRatio {
         if let Some(v) = elastic_from_hill(entries, prop)? {
-            return Ok((v, Source::Derived));
+            return Ok((v, rule_source(prop)));
         }
     }
-    mix_plain(entries, prop).map(|v| (v, Source::Derived))
+    mix_plain(entries, prop).map(|v| (v, rule_source(prop)))
+}
+
+/// The provenance of a property's mixing rule. Exhaustive on the exact rules:
+/// a new exact rule must be listed here, anything else is a model.
+fn rule_source(prop: PropertyId) -> Source {
+    match prop {
+        PropertyId::Density | PropertyId::Porosity => Source::Derived,
+        _ => Source::Estimated,
+    }
 }
 
 fn mix_plain(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
@@ -247,8 +260,8 @@ fn poisson(entries: Entries<'_>) -> MixResult<f64> {
 }
 
 /// Turner's thermal expansion when every part has a bulk modulus, else the
-/// volume average tagged `Estimated`.
-fn thermal_expansion(entries: Entries<'_>) -> MixResult<(f64, Source)> {
+/// volume average.
+fn thermal_expansion(entries: Entries<'_>) -> MixResult<f64> {
     let alpha = gather(entries, PropertyId::ThermalExpansion)?;
     let ks: Option<Vec<f64>> =
         entries.iter().filter(|(_, f)| *f > 0.0).map(|(r, _)| k_of(r)).collect();
@@ -256,9 +269,9 @@ fn thermal_expansion(entries: Entries<'_>) -> MixResult<(f64, Source)> {
         Some(ks) => {
             let num: f64 = alpha.iter().zip(&ks).map(|((f, a), k)| a * k * f).sum();
             let den: f64 = alpha.iter().zip(&ks).map(|((f, _), k)| k * f).sum();
-            Ok((num / den, Source::Derived))
+            Ok(num / den)
         }
-        None => Ok((voigt(&alpha), Source::Estimated)),
+        None => Ok(voigt(&alpha)),
     }
 }
 
