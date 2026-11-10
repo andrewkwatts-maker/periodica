@@ -62,12 +62,15 @@ fn matches_python_prototype() {
         a: 1.5,
         b: 0.004,
         c: 0.0001,
+        range_m: (0.3e-6, 1.0e-6),
     };
     let drude = DrudeLorentz {
         epsilon_inf: 1.0,
         plasma_ev: 9.03,
         damping_ev: 0.07,
         oscillators: vec![],
+        critical_points: vec![],
+        range_m: (0.3e-6, 2.0e-6),
     };
     let dl = DrudeLorentz {
         epsilon_inf: 2.0,
@@ -78,15 +81,27 @@ fn matches_python_prototype() {
             resonance_ev: 3.0,
             damping_ev: 0.4,
         }],
+        critical_points: vec![],
+        range_m: (0.3e-6, 2.0e-6),
     };
     for (i, nm) in WL_NM.iter().enumerate() {
         let l = nm * 1e-9;
-        close(bk7.refractive_index(l), SELLMEIER_N[i], "sellmeier", *nm);
-        close(cauchy.refractive_index(l), CAUCHY_N[i], "cauchy", *nm);
-        let (n, k) = drude.nk(l);
+        close(
+            bk7.refractive_index(l).unwrap(),
+            SELLMEIER_N[i],
+            "sellmeier",
+            *nm,
+        );
+        close(
+            cauchy.refractive_index(l).unwrap(),
+            CAUCHY_N[i],
+            "cauchy",
+            *nm,
+        );
+        let (n, k) = drude.nk(l).unwrap();
         close(n, DRUDE_N[i], "drude n", *nm);
         close(k, DRUDE_K[i], "drude k", *nm);
-        let (n, k) = dl.nk(l);
+        let (n, k) = dl.nk(l).unwrap();
         close(n, DL_N[i], "drude-lorentz n", *nm);
         close(k, DL_K[i], "drude-lorentz k", *nm);
     }

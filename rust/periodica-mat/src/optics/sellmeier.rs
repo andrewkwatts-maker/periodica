@@ -2,21 +2,24 @@
 
 use arithma_core::ArithmaExpression as E;
 
-use super::{eval, num, square, sum, var};
+use super::{check_range, eval, finite, num, square, sum, var, OpticsError};
 
 /// Sellmeier coefficients; `c` is in square micrometres.
+/// `range_m` is the wavelength range (metres) the coefficients were fitted over.
 #[derive(Debug, Clone, PartialEq)]
 pub struct Sellmeier {
     pub b: Vec<f64>,
     pub c: Vec<f64>,
+    pub range_m: (f64, f64),
 }
 
 impl Sellmeier {
-    /// Schott N-BK7.
+    /// Schott N-BK7; the Schott datasheet states validity over 0.3 to 2.5 um.
     pub fn bk7() -> Self {
         Self {
             b: vec![1.03961212, 0.231792344, 1.01046945],
             c: vec![0.00600069867, 0.0200179144, 103.560653],
+            range_m: (0.3e-6, 2.5e-6),
         }
     }
 
@@ -37,9 +40,13 @@ impl Sellmeier {
         E::sqrt(self.n_squared_expr())
     }
 
-    /// Refractive index at `wavelength_m` metres.
-    pub fn refractive_index(&self, wavelength_m: f64) -> f64 {
-        eval(&self.n_expr(), &[("um", wavelength_m * 1e6)])
+    /// Refractive index at `wavelength_m` metres; an error outside the fitted range.
+    pub fn refractive_index(&self, wavelength_m: f64) -> Result<f64, OpticsError> {
+        check_range(wavelength_m, self.range_m)?;
+        finite(
+            eval(&self.n_expr(), &[("um", wavelength_m * 1e6)]),
+            wavelength_m,
+        )
     }
 }
 
@@ -49,7 +56,7 @@ mod tests {
 
     #[test]
     fn bk7_at_sodium_d() {
-        let n = Sellmeier::bk7().refractive_index(587.6e-9);
+        let n = Sellmeier::bk7().refractive_index(587.6e-9).unwrap();
         assert!((n - 1.5168).abs() < 1e-4, "{n}");
     }
 }
