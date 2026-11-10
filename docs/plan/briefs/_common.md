@@ -1,12 +1,19 @@
 # Rules for every lane brief (read before you start)
 
 ## Where to work
-- Make your worktree beside the repo, from the integration branch:
-  `git -C H:/Projects/MathsPhysicsEcosystem/periodica worktree add ../periodica-<lane> -b claude/<lane> claude/sheets`
-- Put scratch and builds under `H:/claude-scratch/periodica-<lane>`. Set
-  `TEMP=TMP=H:/claude-scratch/tmp` and `CARGO_TARGET_DIR=H:/claude-scratch/periodica-<lane>/target`.
-  Never write to C:.
-- For Python, use an absolute `PYTHONPATH=H:/Projects/MathsPhysicsEcosystem/periodica-<lane>/src`.
+- No new worktrees and no clones. A TokenWatch hook bans `git worktree add` (worktrees took
+  108 GB). Briefs written before 2026-11-11 name a lane branch `claude/<lane>` and a worktree
+  `../periodica-<lane>`: ignore both.
+- Work in the one integration checkout, `H:/Projects/MathsPhysicsEcosystem/periodica-sheets`, on
+  the branch `claude/sheets`. Commit there directly. Don't create branches.
+- Another lane may be working in the same checkout. Edit only the files your brief names. Stage
+  and commit only your own paths: `git add <paths>`, then `git commit -m "..." -- <paths>`. Never
+  `git add -A`, `git commit -a`, `git stash`, `git reset`, `git checkout -- .` or `git clean`.
+- If a build or a test fails in a file your brief doesn't name, don't fix it. Report it.
+- Build into the shared `CARGO_TARGET_DIR=H:/claude-scratch/periodica-sheets/target`. Set
+  `TEMP=TMP=H:/claude-scratch/tmp`. Put other scratch under
+  `H:/claude-scratch/periodica-sheets/<lane>/`. Never write to C:.
+- For Python, use an absolute `PYTHONPATH=H:/Projects/MathsPhysicsEcosystem/periodica-sheets/src`.
   Without it, subprocesses import the main checkout.
 - Don't touch the main checkout `H:/Projects/MathsPhysicsEcosystem/periodica`. Its uncommitted
   `tests/deviation_report.txt` and its stash belong to someone else.
@@ -20,8 +27,7 @@
   section to your brief (what's done, what's next, the exact commands) and stop.
 - SOLID. Functions of 60 lines or fewer. Fail early. Add a test for each fix. Permissive licences
   only.
-- Commits: no AI attribution and no Co-Authored-By lines. Don't push; the planner merges and
-  pushes.
+- Commits: no AI attribution and no Co-Authored-By lines. Don't push; the planner pushes.
 - Final report, 15 lines or fewer: commit hashes, the test commands and their results, and open
   questions.
 
@@ -31,5 +37,5 @@
 - Report what you verified and say what you didn't. Check a claim about what a commit touches with
   `git diff --name-only`, not from memory.
 - The workspace depends on `arithma_core` by path (`../Arithma/rust/arithma_core`). The sibling
-  repo is at `H:/Projects/MathsPhysicsEcosystem/Arithma`, so a worktree beside the repo builds.
-  Don't edit `Cargo.toml` dependencies.
+  repo is at `H:/Projects/MathsPhysicsEcosystem/Arithma`, so the checkout builds. Don't edit
+  `Cargo.toml` dependencies.
