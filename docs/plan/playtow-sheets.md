@@ -44,9 +44,13 @@ Both are owner decisions.
 ## Lanes (one deliverable each; at most 3 agents at once)
 | Lane | Brief | Branch / worktree | Status |
 |---|---|---|---|
-| R0 CI green | `briefs/R0-ci-green.md` | claude/ci, periodica-ci | ready |
-| M1 merge the element bulk properties | `briefs/M1-merge-element-bulk.md` | claude/merge, periodica-merge | ready |
-| R1a formula review | `briefs/R1a-formula-review.md` | claude/review, periodica-review | ready |
+| R0 CI green | `briefs/R0-ci-green.md` | claude/ci, periodica-ci | running |
+| M1 merge the element bulk properties | `briefs/M1-merge-element-bulk.md` | claude/merge, periodica-merge | running (d78bb77 only; 33a84fb nets to nothing) |
+| R1a formula review | `briefs/R1a-formula-review.md` | merged 30786c4, branch closed | done: 36 OK, 6 BUG, 13 UNCLEAR in `sheets-formula-review.md` |
+| F3 mix (Turner expansion, Hill consistency, Lorentz-Lorenz n) | `briefs/F3-mix.md` | claude/mix, periodica-mix | running |
+| F1 derive optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | claude/derive-optics | ready |
+| F2 derive mechanics (HV gate, orthotropy gate, plane-strain Irwin) | `briefs/F2-derive-mech.md` | claude/derive-mech | after F1 |
+| F4 optics models (gold interband, validity ranges) | `briefs/F4-optics-models.md` | claude/optics | ready |
 | R1b domain census | `briefs/R1b-domain-census.md` | claude/census, periodica-census | after M1 |
 
 The integration branch is `claude/sheets`, in worktree `../periodica-sheets`, from origin/main. The
@@ -58,3 +62,19 @@ planner merges the lanes there, then pushes `claude/sheets:main`.
 - S3: phase data and latent heats.
 - S4: the electrical, magnetic and acoustic columns.
 - S5: the column export, sheet id to SoA columns.
+
+## Owner decisions open
+From `sheets-formula-review.md` (the U numbers are its rows):
+1. Licence: the source headers say "All rights reserved", `LICENSE` says MIT, and there is no
+   LEGAL.txt. Which one holds?
+2. U2: mixed thermal and electrical conductivity always takes the series (lowest) bound. Copper
+   with 10 % air gives 0.26 W/mK, where a dispersed mix is about 320. This needs a microstructure
+   tag or a Maxwell-Eucken default.
+3. U5, U6: strengths, toughness, fatigue and the hardening exponent mix by volume average, which
+   holds only along the fibres of a composite. Keep them as tagged estimates, or refuse to mix?
+4. U7: Paris C has no unit scale. Which units do the sheets quote?
+5. U8: the colour-matching functions are a fit, not the CIE 1931 table. Fine for rendering; rename
+   it, or load the table?
+6. U9: concrete Young's modulus is the fib Model Code 2010 tangent value, 11 % above the secant
+   value and not EN 1992. Which one does the statics solver expect?
+7. U3 (second half): the J_IC and fracture-energy mirror is up to 2x off for concrete.
