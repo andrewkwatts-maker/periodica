@@ -52,7 +52,8 @@ The four requests, with PlayTow's answers to the planner's questions:
 | F5 ion keys, elastomer floor | `briefs/F5-corpus-green.md` | merged f9902fe; F6 revisits the ion keys |
 | F4 optics (gold interband terms, validity ranges, Planck guard) | `briefs/F4-optics-models.md` | merged 7eedcac. The gold fit matches Johnson and Christy within 0.05 in R; its citation (Etchegoin 2006) is from memory and unchecked |
 | F6 derived data green, MP-PER-1 | `briefs/F6-derived-green.md` | running |
-| R0b release workflow builds with Arithma | `briefs/R0b-release-workflow.md` | running |
+| R0b release workflow builds with Arithma | `briefs/R0b-release-workflow.md` | done 37020cb: wheels and sdist jobs fetch Arithma at commit 447a7c0. Not run on GitHub. The sdist can't build a wheel on its own (owner decision 9) |
+| S5a column export of scalar properties | `briefs/S5a-column-export.md` | ready; after F2 |
 | F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | after F6 |
 | F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin) | `briefs/F2-derive-mech.md` | after F1 |
 | R1b domain census | `briefs/R1b-domain-census.md` | after F2 |
@@ -98,6 +99,16 @@ From `sheets-formula-review.md` (the U numbers are its rows):
 7. U3 (second half): the J_IC and fracture-energy mirror is up to 2x off for concrete.
 8. The main checkout `../periodica` has an uncommitted `tests/deviation_report.txt`, which the
    pushed work also changes, so it can't fast-forward until that file is committed or discarded.
-9. The hook asks for branches in the main checkout, not worktrees. `../periodica-sheets` is still
+9. The PyPI source distribution can't build without the sibling repos (R0b, checked locally):
+    - `rust/periodica-mat/src/pairs.rs:24` includes `../../../src/periodica/data/interfaces/pairs.json`,
+      a path that the sdist layout breaks;
+    - `arithma_core` declares `license-file = "LICENSE"` but Arithma has no such file beside the
+      crate (the workflow copies the root one as a workaround);
+    - the release pins an untagged Arithma commit, because `Cargo.lock` needs `arithma_core` 2.0.4
+      and the newest tag carries 2.0.2.
+
+    Publishing `arithma_core` on crates.io would remove all three. Otherwise: fix the include path
+    and tag Arithma, or release wheels only.
+10. The hook asks for branches in the main checkout, not worktrees. `../periodica-sheets` is still
    a worktree because of item 8. Once item 8 is settled, the work moves to the main checkout and
    the worktree goes.
