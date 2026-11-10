@@ -3,8 +3,8 @@ Next step: launch lane S3a from `docs/plan/briefs/S3a-new-scalar-properties.md` 
 Written 2026-11-11 by session periodica-92 (it took the topic over from periodica-1d). Topic: periodica datasheets and formulas for the PlayTow engine. The plan is `docs/plan/playtow-sheets.md`; read its lanes table and "Census findings" section before anything else, and no more than that.
 
 ## State
-- `origin/main`, the main checkout (`H:/Projects/MathsPhysicsEcosystem/periodica`) and the lane checkout (`H:/Projects/MathsPhysicsEcosystem/periodica-sheets`, branch `claude/sheets`) are at the commit that adds this text. It changes only this file. No agent and no background task is running. Nothing is unpushed.
-- CI: green in all four jobs on 5242039 (run 42900204282), which holds all the code below. The run for the handoff commit on top of it was not watched.
+- `origin/main`, the main checkout (`H:/Projects/MathsPhysicsEcosystem/periodica`) and the lane checkout (`H:/Projects/MathsPhysicsEcosystem/periodica-sheets`, branch `claude/sheets`) are at the same commit. The commits after 5242039 change only `docs/plan/`. No agent and no background task is running. Nothing is unpushed.
+- CI: green in all four jobs on 5242039 (run 42900204282), which holds all the code below. The runs for the plan-only commits after it were not watched.
 - Landed 2026-11-11, all on main: R1b census (5f306e1), R0d follow-up (0a8bc00), S5a column export (9fb3908, d35db37), R0e grain hash (f43e075), `sha1` dependency removed (109a4c3), F2a elastic gates (8ed7d85), F2a test fix (2cd310e), F2b Tabor gate and plane-strain Irwin (8a08b5a, 351d5de).
 - CI was red on ff3ae8c and 2dacb57: an F2a test found Steel-1018 by a directory walk, and Linux listed the `reference/alloys/` copy first, which has no Poisson's ratio. A local Windows pass does not show this class of failure. `briefs/_common.md` now says to load a sheet by its path.
 - F2b in one line: Tabor's rule runs only when `shows_ductile_metal(table)` holds. 53 sheets lost estimated values, 48 of them rightly (tissues, polymers, ceramics, concrete, timber). The lanes table has the rule and the counts.
@@ -12,9 +12,10 @@ Written 2026-11-11 by session periodica-92 (it took the topic over from periodic
 
 ## Lane order from here
 1. S3a: ten new property ids. Brief ready.
-2. F2c: five metal sheets state neither elongation nor resistivity, so F2b gives them no Tabor estimate (`derived/alloys` Magnesium-AZ31B and Solder-Sn63Pb37; `reference/alloys` Steel-1018, Aluminum-6061, Titanium-Ti6Al4V). No brief yet. The lanes table lists the two ways to fix it; one needs owner decision 11.
-3. R0f: Rust resolves aliases and units. No brief yet; it ties to owner decision 13.
-4. S3b, S3c (need owner decision 11, the data source and licence), S1, S2.
+2. F2d: since 1f8c5fa a mix of one part returns E and nu from the Hill K and G, not the part's stored values (Steel-1018: 203.9 GPa against a stored 200). PlayTow reported it on 2026-11-11 and its unprobed samples are 2 % off until this lands. No brief yet; the lanes table has the numbers and the two things PlayTow asks for. Tell PlayTow the commit.
+3. F2c: five metal sheets state neither elongation nor resistivity, so F2b gives them no Tabor estimate (`derived/alloys` Magnesium-AZ31B and Solder-Sn63Pb37; `reference/alloys` Steel-1018, Aluminum-6061, Titanium-Ti6Al4V). No brief yet. The lanes table lists the two ways to fix it; one needs owner decision 11.
+4. R0f: Rust resolves aliases and units. No brief yet; it ties to owner decision 13.
+5. S3b, S3c (need owner decision 11, the data source and licence), S1, S2.
 
 ## Other sessions
 - playtowecosystem-16 was told on 2026-11-11 what F2b changed in its eleven sheets: Timber-C24 and Rubber-Natural have no `Hardness` and no `HardnessVickers`; Mortar-CementLime and Brick-Clay take `Hardness` from `3 * CompressiveStrength`; the three concrete sheets lost the estimated `HardnessVickers`; the steel and aluminium sheets are unchanged. It answered the same day, and both questions are closed: (1) keep `Hardness` missing on timber and rubber, with no flagged estimate, because its contact model refuses a sheet by naming the missing input and that is the behaviour it wants; (2) no narrower row rule for the export, which it does not read yet. Its periodica checkout is held at 5c70977 until its Dynameis change SE3 lands; then it pulls and changes its own tests to expect the refusal.
