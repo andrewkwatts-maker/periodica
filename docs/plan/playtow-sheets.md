@@ -100,11 +100,13 @@ tests on Linux. Two failures remain:
   "Removed before commit"; a work-in-progress sync committed it (0ada509). Fixed by removing the
   module. The `numpy` crate is now unused in `periodica_core` and stays in the `python` feature
   for the zero-copy work the spike was testing.
+  The Rust job is green on GitHub from 48f2b17 (run 42874255586).
 - Python jobs, "Run tests": 7 tests fail once the extension is built (R0c). Since commit 02b6807
   Python flattens nested property groups and answers other spellings of a key
   (`periodica.properties`); the Rust twin still reads only a flat `Properties` block, so with the
-  extension `data_sheet()` is empty for every curated sheet and `sample()` returns None. A wheel
-  from PyPI has the extension, so users of a wheel see this too. Lanes R0d and R0e fix it.
+  extension `data_sheet()` is empty for every curated sheet and `sample()` returns None. The
+  newest release on PyPI is 2.0.2 (2026-05-17, wheels with the extension), which predates that
+  commit, so no published wheel has the fault; the next release would. Lanes R0d and R0e fix it.
   Three vocabularies now name the same quantities: `property_schema.json` (Python),
   `periodica-mat/src/canon.rs` (Rust, what PlayTow reads) and the Rust core's reader. One of them
   should generate the others (owner decision 13).
@@ -167,7 +169,8 @@ From `sheets-formula-review.md` (the U numbers are its rows):
 
     Suggested: discard or commit the report file, then `git reset --hard origin/main` there. The
     planner won't do that without the owner's word.
-9. The PyPI source distribution can't build without the sibling repos (R0b, checked locally):
+9. (PyPI state on 2026-11-11: newest release 2.0.2 of 2026-05-17; the repo is at 2.3.0 with no
+   tag and no release.) The PyPI source distribution can't build without the sibling repos (R0b, checked locally):
     - `rust/periodica-mat/src/pairs.rs:24` includes `../../../src/periodica/data/interfaces/pairs.json`,
       a path that the sdist layout breaks;
     - `arithma_core` declares `license-file = "LICENSE"` but Arithma has no such file beside the
