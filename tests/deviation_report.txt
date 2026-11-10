@@ -5,11 +5,11 @@ DEVIATION REPORT - ORDERED BY SIGMA FROM REFERENCE DATA
 SUMMARY STATISTICS:
 --------------------------------------------------
   Total comparisons: 82
-  Mean % error: 1.006%
-  Max % error: 19.021%
-  Std % error: 3.991%
-  Mean sigma: 929.76
-  Max sigma: 6216.44
+  Mean % error: 0.841%
+  Max % error: 16.856%
+  Std % error: 3.276%
+  Mean sigma: 742.55
+  Max sigma: 4853.32
   Comparisons > 3s: 5
   Comparisons > 5s: 4
 
@@ -17,16 +17,16 @@ BY CATEGORY:
 --------------------------------------------------
   Amino Acid: 40 comparisons, mean error = 0.229%
   Hadron: 30 comparisons, mean error = 0.000%
-  Protein: 12 comparisons, mean error = 6.113%
+  Protein: 12 comparisons, mean error = 4.985%
 
 TOP 50 DEVIATIONS (ORDERED BY SIGMA):
 ------------------------------------------------------------------------------------------------------------------------
 Category        | Entity                    | Property             |   Calculated |    Reference |  Error% |    Sigma | Source
 ------------------------------------------------------------------------------------------------------------------------
-Protein         | Myoglobin                 | molecular_mass       | calc=  14091.7200 | ref=  17199.9400 | err= 18.07% |  6216.4s | UniProt P02185 (mature) / Henderson-Hasselbalch
-Protein         | Cytochrome C              | molecular_mass       | calc=   9584.4500 | ref=  11701.5700 | err= 18.09% |  4234.2s | UniProt P00004 (mature) / Henderson-Hasselbalch
-Protein         | Ubiquitin                 | molecular_mass       | calc=   7008.8800 | ref=   8564.8700 | err= 18.17% |  3112.0s | UniProt P0CG48 / Henderson-Hasselbalch
-Protein         | Insulin B                 | molecular_mass       | calc=   2777.5700 | ref=   3429.9700 | err= 19.02% |  1304.8s | UniProt P01308 / Henderson-Hasselbalch
+Protein         | Myoglobin                 | molecular_mass       | calc=  14773.2800 | ref=  17199.9400 | err= 14.11% |  4853.3s | UniProt P02185 (mature) / Henderson-Hasselbalch
+Protein         | Cytochrome C              | molecular_mass       | calc=   9987.9500 | ref=  11701.5700 | err= 14.64% |  3427.2s | UniProt P00004 (mature) / Henderson-Hasselbalch
+Protein         | Ubiquitin                 | molecular_mass       | calc=   7347.1800 | ref=   8564.8700 | err= 14.22% |  2435.4s | UniProt P0CG48 / Henderson-Hasselbalch
+Protein         | Insulin B                 | molecular_mass       | calc=   2851.8300 | ref=   3429.9700 | err= 16.86% |  1156.3s | UniProt P01308 / Henderson-Hasselbalch
 Amino Acid      | Tryptophan (W)            | isoelectric_point    | calc=      6.1100 | ref=      5.8900 | err=  3.74% |     4.4s | Lehninger
 Amino Acid      | Aspartic Acid (D)         | isoelectric_point    | calc=      2.8700 | ref=      2.7700 | err=  3.61% |     2.0s | Lehninger
 Amino Acid      | Isoleucine (I)            | isoelectric_point    | calc=      5.9800 | ref=      6.0200 | err=  0.66% |     0.8s | Lehninger

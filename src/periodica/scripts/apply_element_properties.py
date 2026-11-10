@@ -1,15 +1,16 @@
-"""Merge the measured element bulk-property table into data/active/elements.
+"""Merge the measured element bulk-property table into the element sheets.
 
-The 118 element sheets shipped with 16 fields each and no thermal, electrical
-or elastic data at all. That left every element -- and every alloy, ceramic or
-composite whose properties are averaged over its elements -- resolving the
-mechanical and thermal engine channels to bare constants, so a stiffness query
-about iron answered 100 GPa (the documented default) rather than 211.
+The 118 element sheets shipped with no thermal, electrical or elastic data at
+all, so the material model (periodica-mat) had nothing to report for iron's
+stiffness or copper's conductivity, and every alloy, ceramic or composite whose
+properties are estimated from its elements inherited the gap.
 
-This script copies ``data/reference/elements/bulk_properties.json`` into the
-element sheets. It is idempotent and non-destructive: a field already present
-on a sheet is never overwritten, so hand edits and later curation win. Each
-touched sheet records what was added under ``_bulk_properties`` for audit.
+This script copies ``data/reference/elements/bulk_properties.json`` into
+``data/active/elements`` and ``data/defaults/elements`` (so a reset to defaults
+keeps the measured values). It is idempotent and non-destructive: a field
+already present on a sheet is never overwritten, so hand edits and later
+curation win. Each touched sheet records what was added under
+``_bulk_properties`` for audit.
 
     python -m periodica.scripts.apply_element_properties [--dry-run]
 """
@@ -19,10 +20,10 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 _DATA = Path(__file__).parent.parent / "data"
-_ELEMENTS_DIR = _DATA / "active" / "elements"
+_ELEMENT_DIRS = (_DATA / "active" / "elements", _DATA / "defaults" / "elements")
 _TABLE_PATH = _DATA / "reference" / "elements" / "bulk_properties.json"
 
 
@@ -45,15 +46,17 @@ def apply(*, dry_run: bool = False, verbose: bool = True) -> dict:
     skipped: List[str] = []
     seen: set = set()
 
-    for path in sorted(_ELEMENTS_DIR.glob("*.json")):
+    paths = [p for d in _ELEMENT_DIRS if d.is_dir() for p in sorted(d.glob("*.json"))]
+    for path in paths:
+        label = f"{path.parent.parent.name}/{path.name}"
         data = json.loads(path.read_text(encoding="utf-8"))
         symbol = data.get("symbol") or data.get("Symbol")
         if not symbol:
-            skipped.append(f"{path.name}: no symbol field")
+            skipped.append(f"{label}: no symbol field")
             continue
         values = per_element.get(str(symbol))
         if values is None:
-            skipped.append(f"{path.name}: {symbol} not in the reference table")
+            skipped.append(f"{label}: {symbol} not in the reference table")
             continue
         seen.add(str(symbol))
 
@@ -75,7 +78,7 @@ def apply(*, dry_run: bool = False, verbose: bool = True) -> dict:
         fields_added += len(added)
         updated += 1
         if verbose:
-            print(f"  {path.name}: +{len(added)} ({', '.join(sorted(added))})")
+            print(f"  {label}: +{len(added)} ({', '.join(sorted(added))})")
         if not dry_run:
             path.write_text(
                 json.dumps(data, indent=2, ensure_ascii=False) + "\n",
@@ -106,8 +109,8 @@ def main(argv: List[str] | None = None) -> int:
     parser.add_argument("-q", "--quiet", action="store_true",
                         help="Only print the summary line.")
     args = parser.parse_args(argv)
-    result = apply(dry_run=args.dry_run, verbose=not args.quiet)
-    return 0 if not result["skipped"] or result["updated"] else 0
+    apply(dry_run=args.dry_run, verbose=not args.quiet)
+    return 0
 
 
 if __name__ == "__main__":
