@@ -51,15 +51,24 @@ The four requests, with PlayTow's answers to the planner's questions:
 | R0 CI (Arithma clone, fmt, path-dependency guard) | `briefs/R0-ci-green.md` | merged 11b2a79; not yet run on a GitHub runner |
 | F5 ion keys, elastomer floor | `briefs/F5-corpus-green.md` | merged f9902fe; F6 revisits the ion keys |
 | F4 optics (gold interband terms, validity ranges, Planck guard) | `briefs/F4-optics-models.md` | merged 7eedcac. The gold fit matches Johnson and Christy within 0.05 in R; its citation (Etchegoin 2006) is from memory and unchecked |
-| F6 derived data green, MP-PER-1 | `briefs/F6-derived-green.md` | running |
+| F6 derived data green, MP-PER-1 | `briefs/F6-derived-green.md` | done dcfd0dc, 4191f64. f_ck is the property `CharacteristicCompressiveStrength` and triggers the fib relations; no code reads `Class`. 28 ion and 39 isotope sheets restored from 9890238 |
 | R0b release workflow builds with Arithma | `briefs/R0b-release-workflow.md` | done 37020cb: wheels and sdist jobs fetch Arithma at commit 447a7c0. Not run on GitHub. The sdist can't build a wheel on its own (owner decision 9) |
 | S5a column export of scalar properties | `briefs/S5a-column-export.md` | ready; after F2 |
-| F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | after F6 |
+| F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | running |
+| P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | running (no Rust) |
 | F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin) | `briefs/F2-derive-mech.md` | after F1 |
 | R1b domain census | `briefs/R1b-domain-census.md` | after F2 |
 
-State at 7eedcac: 423 Rust tests pass and one fails (`derived_regeneration`, which F6 fixes);
-clippy and `cargo check --workspace --all-features` pass.
+State at 4191f64, pushed to `main` on 2026-11-11: 426 Rust tests pass and none fail; fmt, clippy,
+`cargo check --workspace --all-features` and the path-dependency guard pass.
+
+Found by F6, not yet fixed:
+- A pytest run deletes and rebuilds the ion and isotope sheets inside the package
+  (`tests/test_cli.py:94-113`), and the Python builder writes about 26 more keys per sheet than
+  the native composer. Lane P1 isolates the tests and reports on the builder difference.
+- The emission wavelengths in the element sheets look computed
+  (`utils/physics_calculator.py`, a Rydberg-style estimate clamped to 100-1000 nm), yet they
+  ingest as `Source::Datasheet`. Their unit (nm) isn't stated in the key. For S1 and S3.
 
 ## Schema lanes (after the census; one brief each)
 - S1 (MP-PER-4): one standard uncertainty per value, plus min and max where given. Map `Source` to
@@ -97,8 +106,15 @@ From `sheets-formula-review.md` (the U numbers are its rows):
 6. U9: concrete Young's modulus is the fib Model Code 2010 tangent value, 11 % above the secant
    value and not EN 1992. Which one does the statics solver expect?
 7. U3 (second half): the J_IC and fracture-energy mirror is up to 2x off for concrete.
-8. The main checkout `../periodica` has an uncommitted `tests/deviation_report.txt`, which the
-   pushed work also changes, so it can't fast-forward until that file is committed or discarded.
+8. The main checkout `../periodica` can't follow `origin/main`:
+    - it has an uncommitted `tests/deviation_report.txt`, which the pushed work also changes;
+    - its local `main` (a23ed05) holds 5 commits that were never pushed, and merging it with
+      `origin/main` conflicts in `canon.rs` and about 20 element sheets. Their content is already
+      on `origin/main`: M1 cherry-picked d78bb77, both lane branches are merged there, and
+      `CLAUDE.md` is identical.
+
+    Suggested: discard or commit the report file, then `git reset --hard origin/main` there. The
+    planner won't do that without the owner's word.
 9. The PyPI source distribution can't build without the sibling repos (R0b, checked locally):
     - `rust/periodica-mat/src/pairs.rs:24` includes `../../../src/periodica/data/interfaces/pairs.json`,
       a path that the sdist layout breaks;

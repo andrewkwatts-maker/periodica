@@ -2,7 +2,8 @@
 
 Read `_common.md` first. Source: `docs/plan/sheets-formula-review.md`, BUGs 1 and 2. Deliverable:
 two fixes in `rust/periodica-mat/src/derive.rs` (about lines 228-243), each with a test in a new
-file `rust/periodica-mat/tests/f1_derive_optics.rs`, on `claude/derive-optics`.
+file `rust/periodica-mat/tests/f1_derive_optics.rs`, on `claude/sheets`. Edit only those two files, plus
+oracle numbers in existing tests that your change moves.
 
 1. Reflectance from n (derive.rs:235-243) ignores k. New rule:
    - `ExtinctionK` present: `R = ((n-1)^2 + k^2) / ((n+1)^2 + k^2)`, source `Derived`. Reuse
@@ -18,3 +19,7 @@ file `rust/periodica-mat/tests/f1_derive_optics.rs`, on `claude/derive-optics`.
 Run `cargo test -p periodica-mat`. Count how many corpus sheets lose a derived Reflectance or
 Emissivity because of this, and list the count in your report. Update oracles that change, with old
 and new numbers.
+
+Lane P1 runs beside you and runs pytest, which can rewrite the sheets under
+`src/periodica/data/derived/ions` and `isotopes` for a short time. If `derived_regeneration` fails
+on those two folders only, it isn't yours: wait for your next run, and say so in your report.
