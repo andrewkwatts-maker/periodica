@@ -93,6 +93,15 @@ already there, leave its code alone.
 - A corpus check (add to the corpus test file, or here): every record with `DynamicViscosity` has
   `ViscosityReferenceTemperature`. No sheet has either today, so it passes; it guards the data lane.
 
+## Domain table and census (added 2026-11-11, after lane R1b)
+`rust/periodica-mat/tests/domain_census.rs` fails until every new id is placed in
+`rust/periodica-mat/src/domains.rs`. Place them: the two sound speeds, `MechanicalLossFactor` and
+`AcousticAttenuationOverF2` in acoustic; the latent heats in thermal; `RelativePermeability` in
+magnetic; the viscosity and its reference temperature where the table's own grouping puts
+transport properties (say where, and why, in the report). Then rerun
+`cargo run -p periodica-mat --example domain_census` and commit the two regenerated files under
+`docs/dev/`. Use `-p periodica-mat` for every cargo command and `cargo fmt -p periodica-mat`.
+
 ## Report (20 lines or fewer)
 The commit hash; test counts; every file touched outside the three source files and the test; any
 existing test whose expected numbers moved, with the reason; anything in the definitions above that

@@ -99,7 +99,7 @@ S3b adds both as material sheets.
 | S5a column export of scalar properties | `briefs/S5a-column-export.md` | running beside R0e (it builds `periodica-mat` only; PlayTow waits on it). Added at launch: ids are sheet names and unique (the `derived/` copy wins, the other is listed as `shadowed`); all eleven PlayTow sheets must be rows, Magnet-N42 included |
 | F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | done 957f83a, 0500d1f. Reflectance from n needs k (`Derived`) or a known transmittance (k = 0, `Estimated`); with k it also covers metals with n below 1. Absorptance and emissivity no longer copy each other. Open: R is `Estimated` even when the transmittance is itself an estimate |
 | P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | done 1247dc3, 826cc50. Only `tests/test_cli.py` wrote to the package; it now builds into a private copy of `derived/` and its fixture checks that the patch ended |
-| F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin, near-incompressible K) | `briefs/F2-derive-mech.md` | after S5a |
+| F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin, near-incompressible K, no isotropic G or K for wood-class sheets without directional data) | `briefs/F2-derive-mech.md` | after S5a |
 | S3a new scalar properties (MP-PER-3): ten ids, sheet keys, sound-speed rules | `briefs/S3a-new-scalar-properties.md` | ready; after F2. No data values; the data and the emission lines are later lanes |
 | R1b domain census | `briefs/R1b-domain-census.md` | done, 5f306e1 (on main). Findings below. Rerun the example after F2 and S3a |
 
