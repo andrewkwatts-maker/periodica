@@ -19,25 +19,17 @@ fn data_root() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR")).join("../../src/periodica/data")
 }
 
-fn walk(dir: &Path, name: &str) -> Option<PathBuf> {
-    for e in std::fs::read_dir(dir).ok()?.flatten() {
-        let p = e.path();
-        if p.is_dir() {
-            if let Some(f) = walk(&p, name) {
-                return Some(f);
-            }
-        } else if p.file_name().and_then(|n| n.to_str()) == Some(name) {
-            return Some(p);
-        }
-    }
-    None
-}
-
-fn sheet(file: &str) -> MaterialRecord {
-    let path = walk(&data_root(), file).expect("sheet file found");
-    let text = std::fs::read_to_string(path).expect("sheet readable");
+/// Loads one sheet by its path under the data root. Never by file name alone: names repeat
+/// across `derived/` and `reference/`, and `read_dir` order differs between platforms.
+fn sheet(rel: &str) -> MaterialRecord {
+    let path = data_root().join(rel);
+    let text = std::fs::read_to_string(&path).expect("sheet readable");
     let value: serde_json::Value = jsonc::from_str(&text).expect("sheet parses");
-    ingest(&value, file).expect("sheet ingests")
+    let name = path
+        .file_name()
+        .and_then(|n| n.to_str())
+        .expect("file name");
+    ingest(&value, name).expect("sheet ingests")
 }
 
 #[test]
@@ -63,7 +55,7 @@ fn orthotropic_record_gets_no_derived_g_or_k() {
 
 #[test]
 fn timber_keeps_e_and_nu_but_gets_no_g_or_k() {
-    let r = sheet("Timber-C24.json");
+    let r = sheet("derived/composites/Timber-C24.json");
     assert!(r.bulk.get(P::YoungsModulus).is_some() && r.bulk.get(P::PoissonsRatio).is_some());
     assert!(r.bulk.get(P::ShearModulus).is_none(), "G derived");
     assert!(r.bulk.get(P::BulkModulus).is_none(), "K derived");
@@ -71,7 +63,7 @@ fn timber_keeps_e_and_nu_but_gets_no_g_or_k() {
 
 #[test]
 fn steel_1018_still_gets_g_and_k() {
-    let r = sheet("Steel-1018.json");
+    let r = sheet("derived/alloys/Steel-1018.json");
     assert!(r.bulk.get(P::ShearModulus).is_some(), "G missing");
     assert!(r.bulk.get(P::BulkModulus).is_some(), "K missing");
 }
