@@ -1,11 +1,12 @@
-Next step: check that GitHub Actions is green on the head of `origin/main` (the commit that added this file; its parent ff3ae8c carries lane F2a and has not been checked either), then launch lane F2b from `docs/plan/briefs/F2b-tabor-gate-irwin.md`.
+Next step: review lane F2b and push it. Session periodica-92 launched its executor on 2026-11-11 from `docs/plan/briefs/F2b-tabor-gate-irwin.md`, on 5c70977 in `periodica-sheets`. If no agent is running and `git log origin/main..claude/sheets` is empty, the lane died: look at `git status` in `periodica-sheets` for partial work in `derive.rs`, `chains.rs`, `tests/f2b_tabor_irwin.rs` and `docs/dev/`, check the brief for a `## Checkpoint`, and relaunch.
 
-Written 2026-11-11 by session periodica-1d. Topic: periodica datasheets and formulas for the PlayTow engine. The plan is `docs/plan/playtow-sheets.md`; read its lanes table and "Census findings" section before anything else, and no more than that.
+Written 2026-11-11 by session periodica-1d, updated the same day by periodica-92. Topic: periodica datasheets and formulas for the PlayTow engine. The plan is `docs/plan/playtow-sheets.md`; read its lanes table and "Census findings" section before anything else, and no more than that.
 
 ## State
-- `origin/main`, the main checkout (`H:/Projects/MathsPhysicsEcosystem/periodica`) and the lane checkout (`H:/Projects/MathsPhysicsEcosystem/periodica-sheets`, branch `claude/sheets`) are at the same commit. No agent and no background task is running. Nothing is unpushed.
-- Landed today, all on main: R1b census (5f306e1), R0d follow-up (0a8bc00), S5a column export (9fb3908, d35db37), R0e grain hash (f43e075), `sha1` dependency removed (109a4c3), F2a elastic gates (8ed7d85).
-- CI: green in all four jobs on 0b2cb4a (run 42890111992) and 1e912cf (run 42891377916). Before R0e the three Python jobs were red. ff3ae8c (F2a) passed the same cargo steps locally; its GitHub run was not watched.
+- `origin/main` and the main checkout (`H:/Projects/MathsPhysicsEcosystem/periodica`) are at the commit that holds this text. The lane checkout (`H:/Projects/MathsPhysicsEcosystem/periodica-sheets`, branch `claude/sheets`) has the F2b executor working in it.
+- Landed 2026-11-11, all on main: R1b census (5f306e1), R0d follow-up (0a8bc00), S5a column export (9fb3908, d35db37), R0e grain hash (f43e075), `sha1` dependency removed (109a4c3), F2a elastic gates (8ed7d85), F2a test fix (2cd310e).
+- CI: green in all four jobs on 5c70977 (run 42895675467). It was red on ff3ae8c and 2dacb57 in the Rust `Test` step: the F2a test found Steel-1018 by a directory walk, and Linux listed the `reference/alloys/` copy first, which has no Poisson's ratio. 2cd310e loads sheets by path; `briefs/_common.md` now has that rule. A local Windows pass does not show this class of failure, so watch the GitHub run after every push.
+- The local Arithma checkout is at a842d94 (2026-10-17); `origin/main` there is 45a54c3 (2026-11-03), which is what CI clones. Local Rust runs build against the older one.
 - PyPI still serves 2.0.2 (2026-05-17). The repo is at 2.3.0 with no tag and no release. A release needs the owner (`gh auth login`, and decision 9).
 
 ## Lane order from here
