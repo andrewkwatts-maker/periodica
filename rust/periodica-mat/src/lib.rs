@@ -69,6 +69,7 @@ pub mod composition;
 pub mod concrete;
 pub mod constants;
 pub mod derive;
+pub mod domains;
 pub mod ingest;
 pub mod jsonc;
 pub mod mix;
