@@ -15,8 +15,19 @@ One directory per export:
 - `<PropertyName>.src`: one byte per row, the `Source` of that value. 0 means no data, so this
   file is the missing-value mask and the provenance column in one.
 - `manifest.json`: `format_version` 1, `endianness` "little", `rows`, `sheet_ids` in row order,
-  the legend of the source codes, and per property: name, numeric id, SI unit string (from
-  `PropertyId::si_unit`), the two file names, and the count of present values.
+  the legend of the source codes (byte to name, so no reader hard-codes it), and per property:
+  name, numeric id, SI unit string (from `PropertyId::si_unit`), the two file names, a content
+  hash of each of the two files, and the count of present values.
+
+PlayTow's asks of 2026-11-11 (they accepted the form above):
+- The manifest says that `.src` is the authority for presence; the NaN is a convenience.
+- The content hash keys PlayTow's bake cache. periodica-mat must not gain a dependency, so: use a
+  hash crate only if `Cargo.toml` already has one; otherwise write FNV-1a 64-bit in this module
+  (about 10 lines). Name the algorithm in the manifest (`hash_algorithm`) and write each hash as
+  16 lowercase hex digits. Not `std::hash::DefaultHasher`: its algorithm isn't specified.
+- Later versions only add (`.unc`, `.min`, `.max`, curves as new files, a higher
+  `format_version`). So `read_dir` accepts a higher `format_version` and ignores manifest fields
+  and files it doesn't know, as long as the version 1 fields are there.
 
 Rules:
 - One row per sheet. Rows are sorted by sheet id, so two exports of the same corpus are
@@ -42,6 +53,9 @@ Rules:
 - Each `.f64` file is `rows * 8` bytes and each `.src` file is `rows` bytes.
 - From an export of the real corpus: the iron element sheet's Density column value is 7874 at the
   row that the manifest gives for it.
+- Each hash in the manifest equals the hash of the file's bytes, and two exports give the same
+  hashes.
+- A manifest with `format_version` 2, one unknown field and one extra file still reads.
 
 Run `cargo test -p periodica-mat --no-fail-fast`, clippy with `-D warnings`, and the example once
 into `H:/claude-scratch/periodica-sheets/export/out`. Report the row count, the property count and

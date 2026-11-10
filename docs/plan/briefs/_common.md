@@ -32,7 +32,8 @@
   questions.
 
 ## Before each commit
-- Run `cargo fmt --all`; CI runs `cargo fmt --check`.
+- Run `cargo fmt` from the repo root; CI runs `cargo fmt --check`. Never `cargo fmt --all`: it also
+  rewrites the Arithma path dependency, which is another repo.
 - Run Rust tests with `--no-fail-fast`, so one failing binary doesn't hide the rest.
 - Report what you verified and say what you didn't. Check a claim about what a commit touches with
   `git diff --name-only`, not from memory.

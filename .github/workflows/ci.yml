@@ -36,8 +36,11 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
 
+      # Not `--all`: that also checks path dependencies, and Arithma (another
+      # repo, cloned above) has its own formatting state. Without `--all`,
+      # run from the workspace root, cargo fmt covers every workspace member.
       - name: Format check
-        run: cargo fmt --all --check
+        run: cargo fmt --check
 
       # periodica_core carries pre-existing lint debt (unused-range-loop,
       # write-with-newline). Deny warnings on the new crates, and merely report

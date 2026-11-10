@@ -33,6 +33,25 @@ The four requests, with PlayTow's answers to the planner's questions:
 | MP-PER-3 | New properties | Latent heats (fusion, vaporisation, sublimation), magnetic permeability, speed of sound, acoustic absorption, viscosity, emission lines |
 | MP-PER-4 | Column export and uncertainty | Raw little-endian f64 column files plus one manifest (property, SI unit, row count, sheet ids in row order, missing-value mask). One row per sheet. Curves are sampled only on a grid the caller gives. One standard uncertainty per value; min and max too where the datasheet gives a range. PlayTow wraps the columns itself |
 
+PlayTow's answers of 2026-11-11 on MP-PER-3 and MP-PER-4 (they set the S3 and S5a briefs):
+- Acoustic loss, intrinsic quantities only. Solids: loss factor eta = tan delta (dimensionless), a
+  scalar now. Fluids: bulk attenuation alpha(f) in Np/m as an MP-PER-2 expression; until then a
+  scalar alpha/f^2 (Np s^2/m) at the reference state where the classical f^2 law holds, absent
+  otherwise. No surface absorption coefficient: that belongs to a product, not a material.
+- Speed of sound. Solids: two properties. Longitudinal is the bulk wave in an unbounded medium,
+  sqrt((K + 4G/3)/rho), not the thin-rod sqrt(E/rho); the property doc must say so. Shear is
+  sqrt(G/rho). Fluids: one value, and shear reads absent, not zero. Derive from moduli and density,
+  flagged derived, when nothing is measured.
+- Viscosity: dynamic, Pa s, a scalar now with its reference temperature stored beside it. Absent
+  for solids. The MP-PER-2 expression replaces it later.
+- Emission lines: vacuum wavelengths from 200 to 2500 nm, ion stages I and II, the 50 strongest per
+  (element, stage). Carry A_ki (1/s), the upper-level energy E_k (J) and the statistical weight g_k
+  where NIST has them, NaN otherwise; prefer lines with A_ki when intensities tie.
+- Column export: the form in `briefs/S5a-column-export.md` fits. Asks: the source legend in the
+  manifest, `.src` as the authority for presence, a content hash per column file, and later
+  versions that only add files. One standard uncertainty per value in the next version.
+- PlayTow will adapt its two optics readers to the `Result` API when it pulls 4191f64.
+
 ## How lanes run
 - The integration branch is `claude/sheets`, in the one checkout `../periodica-sheets`.
 - No new worktrees: a TokenWatch hook bans `git worktree add` (worktrees took 108 GB). Lanes commit
@@ -48,7 +67,8 @@ The four requests, with PlayTow's answers to the planner's questions:
 | R1a formula review | `briefs/R1a-formula-review.md` | merged 30786c4: 36 OK, 6 BUG, 13 UNCLEAR in `sheets-formula-review.md` |
 | M1 element bulk properties | `briefs/M1-merge-element-bulk.md` | merged 5a7a054. It also overwrote 28 ion sheets; F6 restores them |
 | F3 mix (Turner expansion, Hill consistency, Lorentz-Lorenz n, `mix_tagged`) | `briefs/F3-mix.md` | merged bb3bd57 |
-| R0 CI (Arithma clone, fmt, path-dependency guard) | `briefs/R0-ci-green.md` | merged 11b2a79; not yet run on a GitHub runner |
+| R0 CI (Arithma clone, fmt, path-dependency guard) | `briefs/R0-ci-green.md` | merged 11b2a79. First run on GitHub (4191f64) failed in two places; see below |
+| R0c reproduce the Python CI failure with the Rust extension | `briefs/R0c-python-ci-repro.md` | running (works on an export, changes nothing) |
 | F5 ion keys, elastomer floor | `briefs/F5-corpus-green.md` | merged f9902fe; F6 revisits the ion keys |
 | F4 optics (gold interband terms, validity ranges, Planck guard) | `briefs/F4-optics-models.md` | merged 7eedcac. The gold fit matches Johnson and Christy within 0.05 in R; its citation (Etchegoin 2006) is from memory and unchecked |
 | F6 derived data green, MP-PER-1 | `briefs/F6-derived-green.md` | done dcfd0dc, 4191f64. f_ck is the property `CharacteristicCompressiveStrength` and triggers the fib relations; no code reads `Class`. 28 ion and 39 isotope sheets restored from 9890238 |
@@ -61,6 +81,13 @@ The four requests, with PlayTow's answers to the planner's questions:
 
 State at 4191f64, pushed to `main` on 2026-11-11: 426 Rust tests pass and none fail; fmt, clippy,
 `cargo check --workspace --all-features` and the path-dependency guard pass.
+
+GitHub Actions on 4191f64 (run 42866560822) failed in two places:
+- Rust job, "Format check": `cargo fmt --all` also checks the Arithma path dependency, and three
+  files on Arithma's `main` aren't formatted. periodica's own code is clean under rustfmt 1.88 and
+  1.95. Fixed: CI runs `cargo fmt --check`, which covers the four workspace crates only.
+- Python jobs (3.11, 3.12, 3.13), "Run tests": the runner builds the Rust extension; no local run
+  had it, so local runs skipped the tests that need it. Lane R0c reproduces it.
 
 Found by F6, not yet fixed:
 - A pytest run deletes and rebuilds the ion and isotope sheets inside the package
