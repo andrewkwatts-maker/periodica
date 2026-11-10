@@ -98,9 +98,9 @@ S3b adds both as material sheets.
 | S5a column export of scalar properties | `briefs/S5a-column-export.md` | after R0e (PlayTow waits on it) |
 | F1 derived optics (Fresnel with k, no emissivity mirror) | `briefs/F1-derive-optics.md` | done 957f83a, 0500d1f. Reflectance from n needs k (`Derived`) or a known transmittance (k = 0, `Estimated`); with k it also covers metals with n below 1. Absorptance and emissivity no longer copy each other. Open: R is `Estimated` even when the transmittance is itself an estimate |
 | P1 pytest must not rewrite package data | `briefs/P1-tests-leave-data-alone.md` | done 1247dc3, 826cc50. Only `tests/test_cli.py` wrote to the package; it now builds into a private copy of `derived/` and its fixture checks that the patch ended |
-| F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin) | `briefs/F2-derive-mech.md` | after S5a |
+| F2 derived mechanics (HV gate, orthotropy gate, plane-strain Irwin, near-incompressible K) | `briefs/F2-derive-mech.md` | after S5a |
 | S3a new scalar properties (MP-PER-3): ten ids, sheet keys, sound-speed rules | `briefs/S3a-new-scalar-properties.md` | ready; after F2. No data values; the data and the emission lines are later lanes |
-| R1b domain census | `briefs/R1b-domain-census.md` | after S3a |
+| R1b domain census | `briefs/R1b-domain-census.md` | running beside R0d (it builds `periodica-mat` only). Rerun the example after F2 and S3a |
 
 State at 826cc50, pushed to `main` on 2026-11-11: 433 Rust tests pass and none fail; fmt, clippy
 and `cargo check --workspace --all-features` pass.
