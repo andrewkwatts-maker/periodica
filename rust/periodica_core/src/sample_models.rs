@@ -104,19 +104,53 @@ pub fn grain_size_from_density(g_density: f64) -> f64 {
     (1.0f64 / g_density.max(1e-12)).max(1e-12).cbrt()
 }
 
-/// Uniform draw in `[0, 1)` from the SHA-1 of `key`, matching
-/// `int.from_bytes(hashlib.sha1(key).digest()[:8], "big") / 2**64`.
-///
-/// SHA-1 is slow for a sub-microsecond budget. It is used because agreeing
-/// with Python comes first; swapping in a cheap mixer is a deliberate,
-/// versioned change that must land in *both* implementations together, never
-/// as a unilateral Rust optimisation.
-pub fn sha1_unit_interval(key: &str) -> f64 {
-    use sha1::{Digest, Sha1};
-    let digest = Sha1::digest(key.as_bytes());
-    let mut first8 = [0u8; 8];
-    first8.copy_from_slice(&digest[..8]);
-    u64::from_be_bytes(first8) as f64 / 18_446_744_073_709_551_616.0
+const MIX_M1: u64 = 0xBF58_476D_1CE4_E5B9;
+const MIX_M2: u64 = 0x94D0_49BB_1331_11EB;
+const AXIS_X: u64 = 0x9E37_79B9_7F4A_7C15;
+const AXIS_Y: u64 = 0xC2B2_AE3D_27D4_EB4F;
+const AXIS_Z: u64 = 0x1656_67B1_9E37_79F9;
+const HASH_SEED: u64 = 0x2545_F491_4F6C_DD1D;
+/// Decimals a point is rounded to before hashing (`_hash.COORD_DECIMALS`).
+const COORD_DECIMALS: i32 = 9;
+
+/// `_hash.hash_cells`: SplitMix64 finaliser over the packed cell, wrapping.
+pub fn hash_cells(ix: i64, iy: i64, iz: i64) -> u64 {
+    let mut z = (ix as u64)
+        .wrapping_mul(AXIS_X)
+        .wrapping_add((iy as u64).wrapping_mul(AXIS_Y))
+        .wrapping_add((iz as u64).wrapping_mul(AXIS_Z))
+        .wrapping_add(HASH_SEED);
+    z = (z ^ (z >> 30)).wrapping_mul(MIX_M1);
+    z = (z ^ (z >> 27)).wrapping_mul(MIX_M2);
+    z ^ (z >> 31)
+}
+
+/// `_hash.unit_from_cells`: uniform draw in `[0, 1)` from integer cells.
+pub fn unit_from_cells(ix: i64, iy: i64, iz: i64) -> f64 {
+    (hash_cells(ix, iy, iz) >> 11) as f64 / (1u64 << 53) as f64
+}
+
+/// `_hash.grain_cells`: `rint(point / max(size, 1e-30))` per axis.
+pub fn grain_cells(pos: (f64, f64, f64), grain_size: f64) -> (i64, i64, i64) {
+    let size = grain_size.max(1e-30);
+    (
+        py_round(pos.0 / size) as i64,
+        py_round(pos.1 / size) as i64,
+        py_round(pos.2 / size) as i64,
+    )
+}
+
+/// `_hash.unit_at_grains` for one point: one value per grain cell.
+pub fn unit_at_grain(pos: (f64, f64, f64), grain_size: f64) -> f64 {
+    let (ix, iy, iz) = grain_cells(pos, grain_size);
+    unit_from_cells(ix, iy, iz)
+}
+
+/// `_hash.unit_at_point`: round to 9 decimals, scale by 1e9, `rint`, hash.
+pub fn unit_at_point(pos: (f64, f64, f64)) -> f64 {
+    let scale = 10f64.powi(COORD_DECIMALS);
+    let cell = |v: f64| py_round(round_to(v, COORD_DECIMALS) * scale) as i64;
+    unit_from_cells(cell(pos.0), cell(pos.1), cell(pos.2))
 }
 
 /// Walk `entries` in order, returning the first key whose cumulative fraction
@@ -139,14 +173,8 @@ pub fn maybe_phase_at(
     point: Option<(f64, f64, f64)>,
     fractions: &[(String, f64)],
 ) -> Option<String> {
-    let (x, y, z) = point?;
-    let key = format!(
-        "({}, {}, {})",
-        py_float_repr(round_to(x, 9)),
-        py_float_repr(round_to(y, 9)),
-        py_float_repr(round_to(z, 9))
-    );
-    pick_by_cumulative(fractions, sha1_unit_interval(&key))
+    let pos = point?;
+    pick_by_cumulative(fractions, unit_at_point(pos))
 }
 
 /// Ordered `(name, fraction)` pairs from a JSON object of phase records.
@@ -347,15 +375,7 @@ impl FieldModel for MicrostructureVoronoiModel {
             .and_then(Value::as_f64)
             .unwrap_or(1.0);
         let grain_size = grain_size_from_density(g_density);
-        // Python's `round()` returns an int, so the tuple repr is integral:
-        // "(1, -2, 3)".
-        let key = format!(
-            "({}, {}, {})",
-            py_round(pos.0 / grain_size) as i64,
-            py_round(pos.1 / grain_size) as i64,
-            py_round(pos.2 / grain_size) as i64
-        );
-        let u = sha1_unit_interval(&key);
+        let u = unit_at_grain(pos, grain_size);
 
         let fractions = ordered_fractions(phases);
         match pick_by_cumulative(&fractions, u) {
@@ -463,36 +483,58 @@ mod tests {
         }
     }
 
+    // Pinned from Python:
+    //   $V -c "from periodica import _hash as h; import numpy as np;     //     print(h.unit_from_cells(*[np.array([v]) for v in (1,-2,3)]))"
+    // (and likewise for every row, plus h.unit_at_point for the points).
+    const CELL_VECTORS: [((i64, i64, i64), f64); 8] = [
+        ((0, 0, 0), 0.5827496615028087),
+        ((1, -2, 3), 0.8232064229195126),
+        ((-1, -1, -1), 0.5817114623734086),
+        ((5, 0, 0), 0.01762800963892097),
+        ((0, 7, -9), 0.4670275066690629),
+        ((123456, -654321, 42), 0.8961981228744933),
+        ((-2147483648, 2147483647, 1), 0.9226364920319958),
+        ((1000000000000, -1000000000000, 7), 0.948130718523495),
+    ];
+
     #[test]
-    fn sha1_draw_matches_cpython() {
-        // CPython:
-        //   h = hashlib.sha1(repr((1,-2,3)).encode()).digest()
-        //   int.from_bytes(h[:8],'big') / 2**64  -> 0.2840237670897698
-        let u = sha1_unit_interval("(1, -2, 3)");
-        assert!(
-            (u - 0.284_023_767_089_769_8).abs() < 1e-15,
-            "got {u}, expected 0.2840237670897698"
-        );
-        assert!((0.0..1.0).contains(&u));
+    fn unit_from_cells_matches_python_hash() {
+        for ((x, y, z), want) in CELL_VECTORS {
+            assert_eq!(unit_from_cells(x, y, z), want, "cell ({x}, {y}, {z})");
+        }
     }
 
     #[test]
-    fn sha1_draw_is_deterministic_and_spreads() {
-        assert_eq!(
-            sha1_unit_interval("(0, 0, 0)"),
-            sha1_unit_interval("(0, 0, 0)")
-        );
-        assert_ne!(
-            sha1_unit_interval("(0, 0, 0)"),
-            sha1_unit_interval("(0, 0, 1)")
-        );
+    fn unit_at_point_matches_python_hash() {
+        let pts = [
+            ((0.0, 0.0, 0.0), 0.5827496615028087),
+            ((0.123456789012, -1e-3, 2.5), 0.9941553189403497),
+            ((1e-4, 2e-4, -3e-4), 0.9286309546372372),
+        ];
+        for (p, want) in pts {
+            assert_eq!(unit_at_point(p), want, "point {p:?}");
+        }
+    }
 
-        // Rough uniformity: 1000 distinct cells should land either side of 0.5
-        // in roughly equal numbers.
-        let below = (0..1000)
-            .filter(|i| sha1_unit_interval(&format!("({i}, 0, 0)")) < 0.5)
-            .count();
-        assert!((400..600).contains(&below), "{below}/1000 below 0.5");
+    #[test]
+    fn grain_cells_round_half_to_even_like_numpy_rint() {
+        // Python: h.grain_cells(np.array([[2.5,3.5,-2.5],[0.4999,-0.5,1.5]]), 1.0)
+        //   -> x [2, 0], y [4, 0], z [-2, 2]
+        assert_eq!(grain_cells((2.5, 3.5, -2.5), 1.0), (2, 4, -2));
+        assert_eq!(grain_cells((0.4999, -0.5, 1.5), 1.0), (0, 0, 2));
+        // A near-zero grain size is clamped to 1e-30, not divided by.
+        let (x, _, _) = grain_cells((1.0, 0.0, 0.0), 0.0);
+        assert_eq!(x, (1.0f64 / 1e-30).round_ties_even() as i64);
+    }
+
+    #[test]
+    fn every_point_in_one_cell_shares_a_value() {
+        let size = 0.1;
+        let base = unit_at_grain((0.3, -0.2, 0.5), size);
+        for d in [-0.049, -0.01, 0.0, 0.02, 0.049] {
+            assert_eq!(unit_at_grain((0.3 + d, -0.2 + d, 0.5 - d), size), base);
+        }
+        assert_ne!(unit_at_grain((0.4, -0.2, 0.5), size), base);
     }
 
     #[test]

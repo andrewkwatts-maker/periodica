@@ -350,18 +350,10 @@ pub fn voxel_phase_map(
                 // Above the macro scale the material reads as homogeneous, so
                 // every voxel is phase 0 -- the same rule the sampler applies.
                 let phase = match macro_scale {
-                    Some(m) if eff_scale < m => {
-                        let key = format!(
-                            "({}, {}, {})",
-                            crate::sample_models::py_round(x / grain_size) as i64,
-                            crate::sample_models::py_round(y / grain_size) as i64,
-                            crate::sample_models::py_round(z / grain_size) as i64
-                        );
-                        crate::sample_models::pick_by_cumulative(
-                            &fractions,
-                            crate::sample_models::sha1_unit_interval(&key),
-                        )
-                    }
+                    Some(m) if eff_scale < m => crate::sample_models::pick_by_cumulative(
+                        &fractions,
+                        crate::sample_models::unit_at_grain((x, y, z), grain_size),
+                    ),
                     _ => None,
                 };
                 *cell = phase
@@ -742,8 +734,8 @@ mod tests {
 
     // ── Cross-language parity ────────────────────────────────────────────
     //
-    // The expected values below were produced by calling periodica's own
-    // Python `sample()` (not a reimplementation of it) on the identical entry
+    // The expected values below were produced (after the move from SHA-1 to
+    // `periodica._hash`) by calling periodica's own Python `sample()` (not a reimplementation of it) on the identical entry
     // and points. They are the contract: if the Rust backend stops agreeing
     // with Python here, the "pure Rust backend" claim is false.
 
@@ -753,13 +745,13 @@ mod tests {
         // grain_density 1e15 clamps to a 1e-4 m grain pitch.
         let g = crate::sample_models::grain_size_from_density(1.0e15);
         let cases: &[((i32, i32, i32), f64)] = &[
-            ((0, 0, 0), 220.0),
-            ((1, 0, 0), 220.0),
+            ((0, 0, 0), 195.0),
+            ((1, 0, 0), 195.0),
             ((1, 2, 3), 195.0),
-            ((11, 11, 11), 195.0),
+            ((11, 11, 11), 220.0),
             ((5, 7, 2), 195.0),
             ((-3, 4, -9), 195.0),
-            ((2, 2, 2), 220.0),
+            ((2, 2, 2), 195.0),
         ];
         for ((i, j, k), want) in cases {
             let at = Some((*i as f64 * g, *j as f64 * g, *k as f64 * g));
@@ -773,9 +765,8 @@ mod tests {
 
     #[test]
     fn scale_dependent_matches_python_sample_point_for_point() {
-        // Exercises the float-repr hash path, where Python formats 0.0 as
-        // "0.0" and 1e-5 as "1e-05". Getting either wrong changes the digest
-        // and therefore the phase.
+        // Exercises the point hash (`_hash.unit_at_point`): coordinates are
+        // rounded to 9 decimals, so 1e-5 and 0.0 must land in distinct cells.
         let e = json!({
             "Properties": {"E": 200.0},
             "Field": {
@@ -788,7 +779,7 @@ mod tests {
             }
         });
         let cases: &[((f64, f64, f64), f64)] = &[
-            ((0.0, 0.0, 0.0), 350.0),
+            ((0.0, 0.0, 0.0), 200.0),
             ((0.0123, -0.004, 0.07), 200.0),
             ((1e-5, 2e-5, 3e-5), 200.0),
             ((1.0, 2.0, 3.0), 200.0),
