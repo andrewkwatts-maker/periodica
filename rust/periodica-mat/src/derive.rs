@@ -40,6 +40,25 @@ use crate::table::{PropertyTable, Source};
 const NU_MIN: f64 = -0.999;
 const NU_MAX: f64 = 0.4999;
 
+/// Normal-incidence reflectance `((n-1)^2 + k^2) / ((n+1)^2 + k^2)`.
+/// Needs `k` (exact, `Derived`) or a known `Transmittance` (k = 0, `Estimated`);
+/// with n alone nothing says whether the material absorbs, so derive nothing.
+fn fresnel_from_index(t: &mut PropertyTable) -> bool {
+    let Some(nidx) = t.get(P::RefractiveIndexN) else {
+        return false;
+    };
+    if nidx < 1.0 {
+        return false;
+    }
+    let (k, src) = match (t.get(P::ExtinctionK), t.get(P::Transmittance)) {
+        (Some(k), _) if k >= 0.0 => (k, Source::Derived),
+        (None, Some(_)) => (0.0, Source::Estimated),
+        _ => return false,
+    };
+    let r = ((nidx - 1.0).powi(2) + k * k) / ((nidx + 1.0).powi(2) + k * k);
+    t.set_if_better(P::Reflectance, r, src)
+}
+
 /// Tabor's correlation: for work-hardening metals the Vickers hardness in
 /// MPa is roughly three times the ultimate tensile strength.
 const TABOR_FACTOR: f64 = 3.3;
@@ -213,7 +232,7 @@ fn thermal(t: &mut PropertyTable) -> usize {
     n
 }
 
-/// Energy conservation across a surface, plus Kirchhoff's law.
+/// Energy conservation across a surface, plus Fresnel reflectance from n and k.
 fn optical(t: &mut PropertyTable) -> usize {
     let mut n = 0;
     let r = t.get(P::Reflectance);
@@ -225,24 +244,9 @@ fn optical(t: &mut PropertyTable) -> usize {
             n += 1;
         }
     }
-    // Kirchhoff: at thermal equilibrium emissivity equals absorptance.
-    if let Some(a) = t.get(P::Absorptance) {
-        let src = inherit(t, &[P::Absorptance]);
-        n += usize::from(t.set_if_better(P::Emissivity, a, src));
-    }
-    if let Some(e) = t.get(P::Emissivity) {
-        let src = inherit(t, &[P::Emissivity]);
-        n += usize::from(t.set_if_better(P::Absorptance, e, src));
-    }
-    // Normal-incidence Fresnel reflectance from the refractive index.
-    if let Some(nidx) = t.get(P::RefractiveIndexN) {
-        if nidx >= 1.0 {
-            let r0 = ((nidx - 1.0) / (nidx + 1.0)).powi(2);
-            if t.set_if_better(P::Reflectance, r0, Source::Estimated) {
-                n += 1;
-            }
-        }
-    }
+    // Emissivity is a thermal-band value and Absorptance a visible-band one,
+    // so Kirchhoff's law is not applied between them.
+    n += usize::from(fresnel_from_index(t));
     n
 }
 
@@ -354,7 +358,7 @@ mod tests {
     #[test]
     fn fresnel_reflectance_from_refractive_index() {
         // Soda-lime glass n=1.52 -> ~4.3 % reflectance at normal incidence.
-        let mut t = table(&[(P::RefractiveIndexN, 1.52)]);
+        let mut t = table(&[(P::RefractiveIndexN, 1.52), (P::Transmittance, 0.9)]);
         fill_derived(&mut t);
         assert_relative_eq!(t.get(P::Reflectance).unwrap(), 0.0426, max_relative = 0.01);
         assert_eq!(t.source(P::Reflectance), Source::Estimated);
@@ -365,8 +369,7 @@ mod tests {
         let mut t = table(&[(P::Reflectance, 0.08), (P::Transmittance, 0.90)]);
         fill_derived(&mut t);
         assert_relative_eq!(t.get(P::Absorptance).unwrap(), 0.02, max_relative = 1e-9);
-        // Kirchhoff carries it into emissivity.
-        assert_relative_eq!(t.get(P::Emissivity).unwrap(), 0.02, max_relative = 1e-9);
+        assert!(t.get(P::Emissivity).is_none());
     }
 
     #[test]
