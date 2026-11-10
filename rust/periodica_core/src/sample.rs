@@ -119,34 +119,12 @@ pub fn register_field_model(name: &str, model: Arc<dyn FieldModel>) -> Option<Ar
 
 /// Bulk property table of an entry.
 ///
-/// Mirrors `sample.py::_props_of`: prefer the `Properties` object, otherwise
-/// promote the entry's own numeric root scalars, so atoms and molecules --
-/// which store `Mass_amu` / `Charge_e` at the root -- stay samplable.
+/// Port of `properties.flatten` (see [`crate::property_schema`]): root scalars,
+/// then the `Properties` block, then the schema's property groups, then any
+/// other shallow dict; the first key seen wins. Numbers and strings are kept.
+/// Booleans are dropped, as in Python: they are flags, not bulk properties.
 fn props_of(entry: &Value) -> Value {
-    if let Some(p) = entry.get("Properties") {
-        if p.is_object() {
-            return p.clone();
-        }
-    }
-    let mut map = serde_json::Map::new();
-    if let Some(obj) = entry.as_object() {
-        for (k, v) in obj {
-            // Booleans are included on purpose. Python promotes root scalars
-            // with `isinstance(v, (int, float))`, and in Python `bool` is a
-            // subclass of `int`, so `"can_form_disulfide": true` lands in the
-            // property dict there. Excluding it here made `data_sheet()`
-            // disagree with Python on every amino-acid entry.
-            //
-            // This mirrors a Python quirk rather than endorsing it. Dropping
-            // booleans would be the cleaner design, but `data_sheet()` is a
-            // published API, so that is a deliberate breaking change for both
-            // implementations at once -- not a unilateral Rust divergence.
-            if v.is_number() || v.is_boolean() {
-                map.insert(k.clone(), v.clone());
-            }
-        }
-    }
-    Value::Object(map)
+    Value::Object(crate::property_schema::flatten(entry))
 }
 
 /// Look a property up in the bulk table.
@@ -486,15 +464,13 @@ mod tests {
     }
 
     #[test]
-    fn boolean_root_scalars_are_promoted_like_python_does() {
-        // Python's `isinstance(v, (int, float))` is True for bools, so they
-        // reach the property dict there. Rust must agree or `data_sheet()`
-        // diverges on every amino-acid entry.
+    fn boolean_root_scalars_are_not_properties() {
+        // `properties.flatten` drops booleans: they are flags, not bulk values.
         let e = json!({"Name": "Cys", "can_form_disulfide": true, "mass": 121.16});
-        assert_eq!(
-            sample_entry(&e, "can_form_disulfide", None, None).unwrap(),
-            1.0
-        );
+        assert!(matches!(
+            kind(sample_entry(&e, "can_form_disulfide", None, None).unwrap_err()),
+            SampleError::MissingProperty(_)
+        ));
         assert_eq!(sample_entry(&e, "mass", None, None).unwrap(), 121.16);
     }
 

@@ -39,6 +39,7 @@ import sys
 import pytest
 
 import periodica
+import periodica.properties
 from periodica import _dispatch
 from periodica._dispatch import _HAS_RUST
 
@@ -289,13 +290,7 @@ def _resolution_divergences() -> list[str]:
     for name in _entries():
         try:
             rust = periodica.data_sheet(name)
-            py = dict((Get(name).get("Properties") or {}))
-            if not py:
-                py = {
-                    k: v
-                    for k, v in Get(name).items()
-                    if isinstance(v, (int, float)) and v is not None
-                }
+            py = periodica.properties.flatten(Get(name))
         except Exception:
             continue
         if set(rust) != set(py):
@@ -357,6 +352,12 @@ def test_data_sheet_matches_between_backends():
     assert checked >= 10, f"only {checked} entries were comparable"
 
 
+def _is_plain_number(entry, prop) -> bool:
+    """True when `prop` is a literal numeric key of the flattened sheet."""
+    v = periodica.properties.flatten(entry).get(prop)
+    return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
 @needs_rust
 def test_sample_matches_between_backends_across_properties():
     """The real parity gate: N entries x M properties, both backends."""
@@ -366,15 +367,20 @@ def test_sample_matches_between_backends_across_properties():
     points = [None, (0.0, 0.0, 0.0), (1e-5, -2e-5, 3e-5), (0.01, 0.02, 0.03)]
     scales = [None, 1e-9, 1e-3]
 
+    from periodica._dispatch import _native
+
+    def native_sample(name, prop, at, scale):
+        return _native.py_sample(name, prop, at, scale)
+
     comparisons = 0
+    declines = 0
+    declined_literal: list[str] = []
     for name in _entries():
         try:
             entry = Get(name)
         except Exception:
             continue
-        props = list((entry.get("Properties") or {}))[:20]
-        if not props:
-            props = [k for k, v in entry.items() if isinstance(v, (int, float))][:20]
+        props = list(periodica.properties.flatten(entry))[:20]
         for prop in props:
             for at in points:
                 for scale in scales:
@@ -383,7 +389,17 @@ def test_sample_matches_between_backends_across_properties():
                     except Exception:
                         continue
                     try:
-                        rust = periodica.sample(name, prop, at=at, scale_m=scale)
+                        rust = native_sample(name, prop, at, scale)
+                    except (KeyError, NotImplementedError) as exc:
+                        # Rust declined and Python answers. A literal key of
+                        # the flattened sheet must never decline (an entry the
+                        # Rust registry does not know is a KeyError decline).
+                        if isinstance(exc, NotImplementedError) and _is_plain_number(
+                            entry, prop
+                        ):
+                            declined_literal.append(f"{name}.{prop}")
+                        declines += 1
+                        continue
                     except Exception as exc:  # a Rust bug, not a decline
                         pytest.fail(f"{name}.{prop} at={at} scale={scale}: {exc}")
                     assert _close(rust, py), (
@@ -391,6 +407,8 @@ def test_sample_matches_between_backends_across_properties():
                         f"rust={rust!r} python={py!r}"
                     )
                     comparisons += 1
+    assert declined_literal == [], f"literal keys declined: {declined_literal[:5]}"
+    print(f"sample parity: {declines} (entry, property, point) calls declined to Python")
     assert comparisons >= 200, f"only {comparisons} comparisons ran"
 
 
@@ -416,15 +434,17 @@ def test_no_silent_fallbacks_in_strict_mode():
 
 
 @needs_rust
-def test_missing_property_is_none_without_a_fallback():
-    """Python returns None for a property the entry lacks; Rust must too.
+def test_missing_property_is_none():
+    """Python returns None for a property the entry lacks.
 
-    It used to raise KeyError, which the dispatcher reads as a decline: every
-    such call quietly fell back in `auto` mode and raised
-    RustBackendUnavailable in `rust` mode.
+    Rust declines a property that is not a literal key of the flattened sheet
+    (Python owns the alias and unit vocabulary), so the answer comes from the
+    Python fallback and a fallback is expected here.
     """
-    _dispatch.reset_fallback_counts()
     assert periodica.sample("Steel-1018", "NonExistentProperty_XYZ") is None
+    # A literal key never falls back.
+    _dispatch.reset_fallback_counts()
+    assert periodica.sample("Steel-1018", "Density_kgm3") == 7870
     assert periodica.fallback_count("sample") == 0, periodica.backend_report()
 
 

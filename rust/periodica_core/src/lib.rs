@@ -60,6 +60,7 @@ pub mod fourier_bake;
 pub mod get;
 pub mod mass_source;
 pub mod predictors;
+pub mod property_schema;
 pub mod protein;
 pub mod record;
 pub mod registry;

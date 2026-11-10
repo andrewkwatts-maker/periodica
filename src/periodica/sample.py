@@ -348,13 +348,15 @@ def data_sheet(name_or_entry: Union[str, dict]) -> DataSheet:
         # A KeyError means the Rust registry does not know this name, which is
         # a legitimate decline -- any other exception is a bug and propagates
         # rather than being silently absorbed.
-        return call_rust(
+        result = call_rust(
             "py_data_sheet",
             name_or_entry,
             py_name="data_sheet",
             declines=(KeyError,),
             fallback=lambda: _data_sheet_python(Get(name_or_entry)),
         )
+        # The native sheet is a plain dict; every caller gets a DataSheet.
+        return result if isinstance(result, DataSheet) else DataSheet(result)
     if isinstance(name_or_entry, dict):
         return _data_sheet_python(name_or_entry)
     raise TypeError(

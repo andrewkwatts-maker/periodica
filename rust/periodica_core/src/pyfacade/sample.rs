@@ -35,7 +35,10 @@ fn py_sample(
     use crate::sample::SampleError;
     // Each sampler outcome maps to what Python's `sample()` would do, so the
     // dispatcher can tell a decline from a bug (see `SampleError`):
-    //   MissingProperty -> None, exactly as Python returns;
+    //   MissingProperty -> NotImplementedError, a decline: the property is not
+    //                      a literal key of the flattened sheet, and Python owns
+    //                      the alias and unit vocabulary that may still answer
+    //                      it (or return None itself);
     //   UnknownName     -> KeyError, a decline (e.g. an entry Saved from Python);
     //   Unsupported     -> NotImplementedError, a decline;
     //   anything else   -> RuntimeError, a Rust bug, which must propagate.
@@ -43,7 +46,9 @@ fn py_sample(
         Ok(v) => v,
         Err(e) => {
             return match e.downcast_ref::<SampleError>() {
-                Some(SampleError::MissingProperty(_)) => Ok(py.None()),
+                Some(SampleError::MissingProperty(_)) => {
+                    Err(PyNotImplementedError::new_err(e.to_string()))
+                }
                 Some(SampleError::UnknownName { .. }) => Err(PyKeyError::new_err(e.to_string())),
                 Some(SampleError::Unsupported(_)) => {
                     Err(PyNotImplementedError::new_err(e.to_string()))

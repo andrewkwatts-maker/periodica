@@ -291,6 +291,14 @@ class TestBundledData:
         assert len(s) > 10
         assert s.si("density") > 7000
 
+    def test_data_sheet_is_a_datasheet_whichever_backend_answers(self):
+        from periodica.properties import DataSheet
+
+        s = data_sheet("Stainless_Steel_316L")
+        assert isinstance(s, DataSheet)
+        assert len(s) > 10
+        assert s["Density_kgm3"] == 7990.0
+
     def test_sampling_a_curated_material_works(self):
         assert sample("Stainless_Steel_316L", "Density_kgm3") > 7000
         assert sample("Stainless_Steel_316L", "YoungsModulus_GPa") > 100
