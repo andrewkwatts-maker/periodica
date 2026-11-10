@@ -47,12 +47,11 @@ fn fresnel_from_index(t: &mut PropertyTable) -> bool {
     let Some(nidx) = t.get(P::RefractiveIndexN) else {
         return false;
     };
-    if nidx < 1.0 {
-        return false;
-    }
+    // With k the formula holds for any positive n; metals have n < 1 in the
+    // visible. Without k, n < 1 means an absorbing medium, so k = 0 is wrong.
     let (k, src) = match (t.get(P::ExtinctionK), t.get(P::Transmittance)) {
-        (Some(k), _) if k >= 0.0 => (k, Source::Derived),
-        (None, Some(_)) => (0.0, Source::Estimated),
+        (Some(k), _) if k >= 0.0 && nidx > 0.0 => (k, Source::Derived),
+        (None, Some(_)) if nidx >= 1.0 => (0.0, Source::Estimated),
         _ => return false,
     };
     let r = ((nidx - 1.0).powi(2) + k * k) / ((nidx + 1.0).powi(2) + k * k);

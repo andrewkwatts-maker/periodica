@@ -49,3 +49,20 @@ fn emissivity_does_not_become_absorptance() {
     fill_derived(&mut t);
     assert!(t.get(P::Absorptance).is_none());
 }
+
+#[test]
+fn reflectance_of_a_metal_with_n_below_one() {
+    // Silver near 600 nm: n = 0.055, k = 4.01 gives R = 0.987.
+    let mut t = table(&[(P::RefractiveIndexN, 0.055), (P::ExtinctionK, 4.01)]);
+    fill_derived(&mut t);
+    let r = t.get(P::Reflectance).unwrap();
+    assert!((r - 0.987).abs() < 0.002, "R = {r}");
+    assert_eq!(t.source(P::Reflectance), Source::Derived);
+}
+
+#[test]
+fn n_below_one_without_k_derives_no_reflectance() {
+    let mut t = table(&[(P::RefractiveIndexN, 0.2), (P::Transmittance, 0.0)]);
+    fill_derived(&mut t);
+    assert!(t.get(P::Reflectance).is_none());
+}
