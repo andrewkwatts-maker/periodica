@@ -52,6 +52,26 @@ PlayTow's answers of 2026-11-11 on MP-PER-3 and MP-PER-4 (they set the S3 and S5
   versions that only add files. One standard uncertainty per value in the next version.
 - PlayTow will adapt its two optics readers to the `Result` API when it pulls 4191f64.
 
+PlayTow's reply of 2026-11-11 on the ten S3a ids: all names and units accepted, no change asked.
+The values it needs first (this orders lane S3b; a reader's needs, the source is owner decision 11):
+1. `MechanicalLossFactor`: Steel-1018, Concrete-C30, Steel-B500B, Aluminum-6061, Timber-C24,
+   Rubber-Natural, Brick-Clay, Mortar-CementLime (modal damping and sound; the widest need).
+2. Sound speeds: longitudinal and shear for the same eight solids; longitudinal only for water
+   and air.
+3. `DynamicViscosity` with `ViscosityReferenceTemperature`, and `AcousticAttenuationOverF2`:
+   air, water.
+4. `RelativePermeability`: Steel-1018, Magnet-N42, Aluminum-6061 (about 1, the non-magnetic
+   check). A soft-iron or electrical-steel sheet would be new; no reader needs it yet.
+5. Latent heats: water (fusion, vaporization), then Steel-1018 and Aluminum-6061 (fusion).
+   Sublimation has no reader yet.
+
+The sheets PlayTow loads today, most used first: Steel-1018, Concrete-C30, Steel-B500B,
+Concrete-C40, Concrete-C25, Aluminum-6061, Magnet-N42; planned: Timber-C24, Rubber-Natural,
+Mortar-CementLime, Brick-Clay. All eleven exist (`data/derived/` or `data/reference/`).
+Missing: a bulk water sheet and an air sheet. `molecules/Water.json` describes the molecule
+(density in g/cm3, state at STP), not the liquid as a material; there is no air sheet at all.
+S3b adds both as material sheets.
+
 ## How lanes run
 - The integration branch is `claude/sheets`, in the one checkout `../periodica-sheets`.
 - No new worktrees: a TokenWatch hook bans `git worktree add` (worktrees took 108 GB). Lanes commit
@@ -130,7 +150,8 @@ Found by F6, not yet fixed:
 - S2 (MP-PER-2): temperature and frequency dependence as Arithma expressions with a validity range
   and source points. The optics models already return an error outside their range (F4).
 - S3 (MP-PER-3), in three lanes. S3a: the ids, sheet keys and sound-speed rules (brief ready).
-  S3b: the values, each with a cited source. S3c: emission lines from the NIST Atomic Spectra
+  S3b: the values, each with a cited source, in PlayTow's order of need (above), plus new water
+  and air material sheets. S3c: emission lines from the NIST Atomic Spectra
   Database, a new record field, not a scalar. S3b and S3c wait on owner decision 11.
 - S4: phase data beyond the latent heats (sublimation point, solid phases).
 - S5 (MP-PER-4): the column export.
