@@ -31,6 +31,19 @@
 - Final report, 15 lines or fewer: commit hashes, the test commands and their results, and open
   questions.
 
+## Real quantities only (owner's rule, 2026-11-11)
+- A property is a quantity with a standard name in physics, engineering or materials science and
+  an SI unit. Its doc comment gives the definition. No tuning knobs and no engine parameters.
+- A sheet value is a measured or tabulated value with its source cited in the sheet. Never type a
+  value from memory, back-solve one so that a test or another value agrees, or fill a gap with a
+  guess. A missing value stays missing.
+- A value computed from other values is not stored in a sheet. Code derives it and tags it
+  `Derived` (an exact identity) or `Estimated` (an empirical relation, named with its reference
+  and the range it holds in).
+- A fix changes a rule or the data for a stated physical reason. No clamp, floor, fudge factor or
+  threshold without a derivation or a reference. If you add any number that is not a measured
+  value or a unit conversion, list it in your report with where it comes from.
+
 ## Before each commit
 - Run `cargo fmt` from the repo root; CI runs `cargo fmt --check`. Never `cargo fmt --all`: it also
   rewrites the Arithma path dependency, which is another repo.
