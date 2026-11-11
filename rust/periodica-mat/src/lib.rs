@@ -67,6 +67,7 @@ pub mod census;
 mod chains;
 pub mod composition;
 pub mod concrete;
+pub mod consistency;
 pub mod constants;
 pub mod derive;
 pub mod domains;
@@ -83,6 +84,7 @@ pub mod table;
 
 pub use canon::{canon, Mapping, UnitConv};
 pub use concrete::fill_concrete;
+pub use consistency::{elastic_mismatch, ElasticMismatch};
 pub use derive::fill_derived;
 pub use ingest::{ingest, is_material_like, IngestError};
 pub use jsonc::strip_comments;

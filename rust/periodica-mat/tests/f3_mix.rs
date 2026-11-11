@@ -66,7 +66,9 @@ fn only_exact_rules_are_tagged_derived() {
         (P::ThermalConductivity, 50.0),
         (P::YieldStrength, 300e6),
     ]);
-    let b = a.clone();
+    // A different part: a mix of one part returns the stored tag (F2d).
+    let mut b = a.clone();
+    b.name = "b".to_string();
     let e = [(&a, 0.5), (&b, 0.5)];
     let tag = |p| mix_tagged(&e, p).unwrap().1;
     assert_eq!(tag(P::Density), Source::Derived);

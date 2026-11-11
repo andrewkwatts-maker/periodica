@@ -11,11 +11,17 @@
 //! | surface energy | fraction-weighted average; the caller supplies atom fractions, as the surface is counted in atoms |
 //! | specific heat (per mass) | mass-weighted average (the volume average of heat capacity per volume, divided by the mixed density) |
 //! | shear, bulk modulus | Hill average, the mean of the Voigt (arithmetic) and Reuss (harmonic) bounds |
-//! | Young modulus, Poisson ratio | from the Hill K and G, `E = 9KG / (3K + G)`, `nu = (3K - 2G) / (2 (3K + G))`, so the isotropic identities hold exactly; K and G come from the part's own values or from its E and nu. When a part lacks them: Hill on E, volume average of nu |
+//! | Young modulus, Poisson ratio | from the Hill K and G, `E = 9KG / (3K + G)`, `nu = (3K - 2G) / (2 (3K + G))`, so the isotropic identities hold exactly; a part's K and G come from its E and nu when it has both (`-1 < nu < 0.5`, the primary pair), else from its own K and G. When a part has neither: Hill on E, volume average of nu |
 //! | thermal and electrical conductivity | harmonic (series) average, a lower bound; a zero part gives zero |
 //! | strengths, toughness, fracture energy, fatigue | volume average. A documented estimate, not a bound: real strength depends on microstructure |
 //!
 //! [`mix_tagged`] tags density and porosity `Derived` (exact); every other rule is `Estimated`.
+//!
+//! A mix of one part is the part: when every entry with a positive fraction is the same
+//! record (the same reference, or records equal under `==`), [`mix_tagged`] returns that
+//! record's stored value and source for any property, with or without a mixing rule, and
+//! [`MixError::Missing`] when it lacks the property. E and nu are the primary pair, so the
+//! mix is continuous as a part's fraction tends to 1.
 //!
 //! Any other property is not mixable ([`MixError::NotMixable`]).
 //! Fractions are volume fractions and must sum to 1 within [`FRACTION_TOLERANCE`].
@@ -89,6 +95,9 @@ pub fn mix(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
 /// As for [`mix`].
 pub fn mix_tagged(entries: Entries<'_>, prop: PropertyId) -> MixResult<(f64, Source)> {
     use PropertyId as P;
+    if let Some(rec) = single_record(entries)? {
+        return stored(rec, prop);
+    }
     if prop == P::ThermalExpansion {
         return thermal_expansion(entries).map(|v| (v, rule_source(prop)));
     }
@@ -98,6 +107,27 @@ pub fn mix_tagged(entries: Entries<'_>, prop: PropertyId) -> MixResult<(f64, Sou
         }
     }
     mix_plain(entries, prop).map(|v| (v, rule_source(prop)))
+}
+
+/// The one record every positive-fraction entry shares (the same reference, or
+/// records that compare equal), after the fractions are checked.
+fn single_record<'a>(entries: Entries<'a>) -> MixResult<Option<&'a MaterialRecord>> {
+    check_fractions(entries)?;
+    let mut parts = entries.iter().filter(|(_, f)| *f > 0.0).map(|(r, _)| *r);
+    let Some(first) = parts.next() else {
+        return Ok(None);
+    };
+    let same = parts.all(|r| std::ptr::eq(r, first) || r == first);
+    Ok(same.then_some(first))
+}
+
+/// A record's stored value and source for `prop`.
+fn stored(rec: &MaterialRecord, prop: PropertyId) -> MixResult<(f64, Source)> {
+    let v = rec.bulk.get(prop).ok_or_else(|| MixError::Missing {
+        material: rec.name.clone(),
+        property: prop,
+    })?;
+    Ok((v, rec.bulk.source(prop)))
 }
 
 /// The provenance of a property's mixing rule. Exhaustive on the exact rules:
@@ -206,18 +236,17 @@ fn mass_weighted(entries: Entries<'_>, prop: PropertyId) -> MixResult<f64> {
     Ok(heat / mass)
 }
 
-/// `(K, G)` of a part: its own values, or derived from E and nu.
+/// `(K, G)` of a part: from E and nu when both are present and `-1 < nu < 0.5`
+/// (the primary pair), else its own K and G, else `None`.
 fn kg_of(rec: &MaterialRecord) -> Option<(f64, f64)> {
     use PropertyId as P;
     let b = &rec.bulk;
-    if let (Some(k), Some(g)) = (b.get(P::BulkModulus), b.get(P::ShearModulus)) {
-        return Some((k, g));
+    if let (Some(e), Some(nu)) = (b.get(P::YoungsModulus), b.get(P::PoissonsRatio)) {
+        if nu > -1.0 && nu < 0.5 {
+            return Some((e / (3.0 * (1.0 - 2.0 * nu)), e / (2.0 * (1.0 + nu))));
+        }
     }
-    let (e, nu) = (b.get(P::YoungsModulus)?, b.get(P::PoissonsRatio)?);
-    if nu <= -1.0 || nu >= 0.5 {
-        return None;
-    }
-    Some((e / (3.0 * (1.0 - 2.0 * nu)), e / (2.0 * (1.0 + nu))))
+    Some((b.get(P::BulkModulus)?, b.get(P::ShearModulus)?))
 }
 
 /// Bulk modulus of a part, given or derived.
@@ -377,7 +406,7 @@ mod tests {
         assert!(matches!(mix(&[], id), Err(MixError::Empty)));
         let melt = PropertyId::MeltingPoint;
         assert!(matches!(
-            mix(&[(&a, 1.0)], melt),
+            mix(&[(&a, 0.5), (&b, 0.5)], melt),
             Err(MixError::NotMixable(_))
         ));
         let ys = PropertyId::YieldStrength;
