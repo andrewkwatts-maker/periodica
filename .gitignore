@@ -19,7 +19,6 @@ Thumbs.db
 # Rust backend artifacts
 rust/target/
 target/
-Cargo.lock
 
 # Local agent artefacts
 CLAUDE.md
