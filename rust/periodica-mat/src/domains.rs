@@ -17,7 +17,15 @@ pub struct Domain {
 pub const DOMAINS: &[Domain] = &[
     Domain {
         name: "mass",
-        ids: &[P::Density, P::Porosity, P::Permeability],
+        // Viscosity sits with the flow property `Permeability`: the table has no
+        // transport domain, and these describe how a fluid moves through or past matter.
+        ids: &[
+            P::Density,
+            P::Porosity,
+            P::Permeability,
+            P::DynamicViscosity,
+            P::ViscosityReferenceTemperature,
+        ],
     },
     Domain {
         name: "elastic",
@@ -124,6 +132,9 @@ pub const DOMAINS: &[Domain] = &[
             P::LiquidusTemperature,
             P::GlassTransition,
             P::DebyeTemperature,
+            P::LatentHeatFusion,
+            P::LatentHeatVaporization,
+            P::LatentHeatSublimation,
         ],
     },
     Domain {
@@ -136,15 +147,22 @@ pub const DOMAINS: &[Domain] = &[
             P::ResistivityTempCoeff,
         ],
     },
-    // Permeability (magnetic) has no id: `Permeability` is the hydraulic one.
     Domain {
         name: "magnetic",
-        ids: &[P::Remanence, P::IntrinsicCoercivity],
+        ids: &[
+            P::Remanence,
+            P::IntrinsicCoercivity,
+            P::RelativePermeability,
+        ],
     },
-    // Speed of sound and acoustic loss have no id yet (MP-PER-3).
     Domain {
         name: "acoustic",
-        ids: &[],
+        ids: &[
+            P::SoundSpeedLongitudinal,
+            P::SoundSpeedShear,
+            P::MechanicalLossFactor,
+            P::AcousticAttenuationOverF2,
+        ],
     },
 ];
 

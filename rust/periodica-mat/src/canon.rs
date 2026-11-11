@@ -114,6 +114,8 @@ const PM: f64 = 1.0e-12;
 /// Nanometres to metres (emission wavelengths are nm on disk).
 const NM: f64 = 1.0e-9;
 const MM: f64 = 1.0e-3;
+/// mPa s and cP are both 1e-3 Pa s.
+const MILLI: f64 = 1.0e-3;
 const MM2_S: f64 = 1.0e-6;
 const KV_MM_TO_V_M: f64 = 1.0e6;
 const PCT_TO_FRAC: f64 = 1.0e-2;
@@ -301,6 +303,28 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
         "debyetemperaturek" => map!(DebyeTemperature),
         "primaryemissionwavelength" => map!(PrimaryEmissionWavelength, NM),
         "visibleemissionwavelength" => map!(VisibleEmissionWavelength, NM),
+
+        // ── Latent heat, sound speed, loss, attenuation, viscosity ───────
+        // Molar latent heats (kJ/mol) are not mapped: the conversion needs a
+        // molar mass. `LossTangent` and `SpeedOfSound` are ambiguous.
+        "latentheatfusionjkg" => map!(LatentHeatFusion),
+        "latentheatfusionkjkg" => map!(LatentHeatFusion, KJ),
+        "latentheatvaporizationjkg" | "latentheatvaporisationjkg" => {
+            map!(LatentHeatVaporization)
+        }
+        "latentheatvaporizationkjkg" | "latentheatvaporisationkjkg" => {
+            map!(LatentHeatVaporization, KJ)
+        }
+        "latentheatsublimationjkg" => map!(LatentHeatSublimation),
+        "latentheatsublimationkjkg" => map!(LatentHeatSublimation, KJ),
+        "relativepermeability" => map!(RelativePermeability),
+        "soundspeedlongitudinalms" | "soundspeedms" => map!(SoundSpeedLongitudinal),
+        "soundspeedshearms" => map!(SoundSpeedShear),
+        "mechanicallossfactor" => map!(MechanicalLossFactor),
+        "acousticattenuationoverf2nps2m" => map!(AcousticAttenuationOverF2),
+        "dynamicviscositypas" => map!(DynamicViscosity),
+        "dynamicviscositympas" | "dynamicviscositycp" => map!(DynamicViscosity, MILLI),
+        "viscosityreferencetemperaturek" => map!(ViscosityReferenceTemperature),
 
         _ => None,
     }

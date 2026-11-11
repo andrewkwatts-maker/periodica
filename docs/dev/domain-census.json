@@ -791,7 +791,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -862,6 +862,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -885,7 +887,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -956,6 +958,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -1153,7 +1157,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -1221,6 +1225,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -1244,7 +1250,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -1312,6 +1318,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -1335,7 +1343,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -1403,6 +1411,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -1774,7 +1784,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -1842,6 +1852,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -1952,7 +1964,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -2023,6 +2035,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -4134,7 +4148,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -4202,6 +4216,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -4399,7 +4415,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -4467,6 +4483,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -4577,7 +4595,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -4647,6 +4665,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ResistivityTempCoeff": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -4757,7 +4777,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -4825,6 +4845,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5022,7 +5044,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5091,6 +5113,8 @@
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
       "SolidusTemperature": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5114,7 +5138,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5182,6 +5206,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5205,7 +5231,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5273,6 +5299,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5296,7 +5324,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5364,6 +5392,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5387,7 +5417,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5458,6 +5488,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5481,7 +5513,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5549,6 +5581,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5572,7 +5606,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5640,6 +5674,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5663,7 +5699,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5731,6 +5767,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5754,7 +5792,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5822,6 +5860,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -5845,7 +5885,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -5903,6 +5943,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -5924,8 +5966,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -5982,6 +6024,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6003,8 +6047,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -6061,6 +6105,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6082,8 +6128,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -6140,6 +6186,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6161,8 +6209,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -6219,6 +6267,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6240,8 +6290,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -6298,6 +6348,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6319,7 +6371,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -6377,6 +6429,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6398,7 +6452,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -6456,6 +6510,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6477,7 +6533,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -6535,6 +6591,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6556,7 +6614,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -6614,6 +6672,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6635,7 +6695,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -6693,6 +6753,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6714,8 +6776,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -6772,6 +6834,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6793,7 +6857,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -6851,6 +6915,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6872,7 +6938,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -6930,6 +6996,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -6951,8 +7019,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -7009,6 +7077,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -7030,7 +7100,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7088,6 +7158,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -7109,7 +7181,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7167,6 +7239,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -7188,7 +7262,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7246,6 +7320,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -7267,7 +7343,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7325,6 +7401,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -7346,7 +7424,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7405,6 +7483,8 @@
       "LossModulus": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "StorageModulus": "Datasheet",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
@@ -7603,7 +7683,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7673,6 +7753,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -7698,7 +7780,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7768,6 +7850,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -7793,7 +7877,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -7861,6 +7945,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -8330,7 +8416,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -8400,6 +8486,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -8425,7 +8513,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -8495,6 +8583,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -8521,7 +8611,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -8592,6 +8682,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -8618,7 +8710,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -8686,6 +8778,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -9158,7 +9252,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9228,6 +9322,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -9253,7 +9349,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9323,6 +9419,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -9348,7 +9446,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9419,6 +9517,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -9445,7 +9545,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9516,6 +9616,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -9542,7 +9644,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9613,6 +9715,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -9639,7 +9743,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9710,6 +9814,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -9735,7 +9841,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9806,6 +9912,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -9831,7 +9939,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9902,6 +10010,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -9928,7 +10038,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -9999,6 +10109,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -10025,7 +10137,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -10096,6 +10208,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -10122,7 +10236,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -10193,6 +10307,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -10311,7 +10427,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -10379,6 +10495,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -10404,7 +10522,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -10474,6 +10592,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -10498,7 +10618,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -10566,6 +10686,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -10860,7 +10982,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -10930,6 +11052,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -10955,7 +11079,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11025,6 +11149,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -11050,7 +11176,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11121,6 +11247,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -11147,7 +11275,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11218,6 +11346,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -11244,7 +11374,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11315,6 +11445,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -11432,7 +11564,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11503,6 +11635,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -11528,7 +11662,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11599,6 +11733,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -11624,7 +11760,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11695,6 +11831,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -11720,7 +11858,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11791,6 +11929,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -11817,7 +11957,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11887,6 +12027,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -11913,7 +12055,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -11983,6 +12125,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12008,7 +12152,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12079,6 +12223,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -12105,7 +12251,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12175,6 +12321,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12200,7 +12348,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12268,6 +12416,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12471,7 +12621,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12541,6 +12691,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12566,7 +12718,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12636,6 +12788,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12661,7 +12815,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12731,6 +12885,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12756,7 +12912,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12826,6 +12982,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12851,7 +13009,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -12921,6 +13079,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -12946,7 +13106,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13016,6 +13176,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13041,7 +13203,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13111,6 +13273,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13136,7 +13300,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13206,6 +13370,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13231,7 +13397,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13301,6 +13467,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13326,7 +13494,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13396,6 +13564,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13421,7 +13591,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13491,6 +13661,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13516,7 +13688,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13586,6 +13758,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13611,7 +13785,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13681,6 +13855,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13706,7 +13882,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13776,6 +13952,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13801,7 +13979,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13871,6 +14049,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13896,7 +14076,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -13966,6 +14146,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -13991,7 +14173,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14061,6 +14243,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14086,7 +14270,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14156,6 +14340,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14181,7 +14367,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14252,6 +14438,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14277,7 +14465,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14347,6 +14535,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14372,7 +14562,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14442,6 +14632,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14467,7 +14659,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14537,6 +14729,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14562,7 +14756,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14633,6 +14827,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14658,7 +14854,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14729,6 +14925,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -14847,7 +15045,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -14917,6 +15115,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -14942,7 +15142,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -15013,6 +15213,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceEnergy": "Datasheet",
       "ThermalConductivity": "Datasheet",
@@ -15039,7 +15241,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -15109,6 +15311,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -15405,7 +15609,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -15475,6 +15679,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -15591,7 +15797,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -15661,6 +15867,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -15777,7 +15985,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -15846,6 +16054,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -16556,7 +16766,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -16634,6 +16844,8 @@
       "RelativePermittivity": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -16660,7 +16872,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -16741,6 +16953,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "StrengthCoefficient": "Datasheet",
@@ -16856,7 +17070,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -16933,6 +17147,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "TensileStrength": "Estimated",
@@ -17046,7 +17262,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -17126,6 +17342,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "StrengthCoefficient": "Datasheet",
@@ -18686,7 +18904,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -18762,6 +18980,8 @@
       "RefractiveIndexN": "Datasheet",
       "RelativePermittivity": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -18789,7 +19009,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -18863,6 +19083,8 @@
       "Porosity": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceRoughnessRa": "Datasheet",
       "SurfaceSlopeRms": "Estimated",
@@ -18891,7 +19113,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -18968,6 +19190,8 @@
       "RelativePermittivity": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "TensileStrength": "Estimated",
@@ -18995,7 +19219,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -19076,6 +19300,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "StrengthCoefficient": "Datasheet",
@@ -19361,7 +19587,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -19419,6 +19645,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "StressOptic": "Datasheet",
       "YieldStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -19440,7 +19668,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -19521,6 +19749,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "StrengthCoefficient": "Datasheet",
@@ -19551,7 +19781,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -19616,6 +19846,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "SurfaceRoughnessRa": "Datasheet",
       "SurfaceSlopeRms": "Estimated",
@@ -19642,7 +19874,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -19724,6 +19956,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "StrengthCoefficient": "Datasheet",
@@ -19754,7 +19988,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -19835,6 +20069,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "StrengthCoefficient": "Datasheet",
@@ -19865,7 +20101,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -19947,6 +20183,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "StrainHardeningExponent": "Datasheet",
       "StrengthCoefficient": "Datasheet",
@@ -19977,7 +20215,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20055,6 +20293,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20081,7 +20321,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20141,6 +20381,8 @@
       "Hardness": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YoungsModulus": "Datasheet"
@@ -20162,7 +20404,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20233,6 +20475,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20256,7 +20500,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20327,6 +20571,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20350,7 +20596,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20418,6 +20664,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20441,7 +20689,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20509,6 +20757,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20532,7 +20782,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20600,6 +20850,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20623,7 +20875,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20691,6 +20943,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20714,7 +20968,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20785,6 +21039,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20808,7 +21064,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20876,6 +21132,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20899,7 +21157,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -20967,6 +21225,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -20990,7 +21250,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21060,6 +21320,8 @@
       "ReductionOfAreaPct": "Datasheet",
       "ResistivityTempCoeff": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21083,7 +21345,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21151,6 +21413,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21174,7 +21438,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21243,6 +21507,8 @@
       "ShearModulus": "Datasheet",
       "ShearStrength": "Datasheet",
       "SolidusTemperature": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21266,7 +21532,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21334,6 +21600,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21357,7 +21625,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21425,6 +21693,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21448,7 +21718,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21516,6 +21786,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21539,7 +21811,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21610,6 +21882,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21633,7 +21907,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21701,6 +21975,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21724,7 +22000,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -21792,6 +22068,8 @@
       "PoissonsRatio": "Datasheet",
       "ReductionOfAreaPct": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -21991,7 +22269,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -22061,6 +22339,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -22086,7 +22366,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -22156,6 +22436,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -22181,7 +22463,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -22249,6 +22531,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -22718,7 +23002,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -22788,6 +23072,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -22813,7 +23099,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -22883,6 +23169,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -22908,7 +23196,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -22978,6 +23266,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -23003,7 +23293,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -23071,6 +23361,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -23543,7 +23835,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -23613,6 +23905,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -23638,7 +23932,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -23708,6 +24002,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -23733,7 +24029,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -23803,6 +24099,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -23828,7 +24126,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -23898,6 +24196,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -23923,7 +24223,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -23993,6 +24293,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24018,7 +24320,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24088,6 +24390,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24113,7 +24417,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24183,6 +24487,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24207,7 +24513,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24277,6 +24583,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24302,7 +24610,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24372,6 +24680,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24397,7 +24707,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24467,6 +24777,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24492,7 +24804,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24562,6 +24874,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24679,7 +24993,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24747,6 +25061,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24772,7 +25088,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24842,6 +25158,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -24866,7 +25184,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -24934,6 +25252,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25228,7 +25548,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -25298,6 +25618,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25323,7 +25645,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -25393,6 +25715,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25418,7 +25742,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -25488,6 +25812,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25513,7 +25839,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -25583,6 +25909,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25608,7 +25936,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -25678,6 +26006,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25794,7 +26124,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -25864,6 +26194,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25889,7 +26221,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -25959,6 +26291,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -25984,7 +26318,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26054,6 +26388,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26079,7 +26415,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26149,6 +26485,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26174,7 +26512,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26244,6 +26582,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26269,7 +26609,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26339,6 +26679,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26364,7 +26706,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26434,6 +26776,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26459,7 +26803,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26529,6 +26873,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26554,7 +26900,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26622,6 +26968,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26825,7 +27173,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26895,6 +27243,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -26920,7 +27270,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -26990,6 +27340,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27015,7 +27367,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27085,6 +27437,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27110,7 +27464,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27180,6 +27534,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27205,7 +27561,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27275,6 +27631,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27300,7 +27658,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27370,6 +27728,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27395,7 +27755,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27465,6 +27825,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27490,7 +27852,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27560,6 +27922,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27585,7 +27949,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27655,6 +28019,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27680,7 +28046,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27750,6 +28116,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27775,7 +28143,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27845,6 +28213,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27870,7 +28240,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -27940,6 +28310,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -27965,7 +28337,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28035,6 +28407,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28060,7 +28434,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28130,6 +28504,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28155,7 +28531,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28225,6 +28601,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28250,7 +28628,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28320,6 +28698,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28345,7 +28725,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28415,6 +28795,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28440,7 +28822,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28510,6 +28892,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28535,7 +28919,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28605,6 +28989,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28630,7 +29016,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28700,6 +29086,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28725,7 +29113,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28795,6 +29183,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28820,7 +29210,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28890,6 +29280,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -28915,7 +29307,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -28985,6 +29377,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -29010,7 +29404,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -29080,6 +29474,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -29197,7 +29593,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -29267,6 +29663,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -29292,7 +29690,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -29362,6 +29760,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -29387,7 +29787,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -29457,6 +29857,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -29753,7 +30155,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -29823,6 +30225,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -29939,7 +30343,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30009,6 +30413,8 @@
       "PoissonsRatio": "Datasheet",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -30125,7 +30531,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30194,6 +30600,8 @@
       "PoissonsRatio": "Derived",
       "PrimaryEmissionWavelength": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "SpecificHeat": "Datasheet",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Derived",
@@ -30309,7 +30717,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30373,6 +30781,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -30396,7 +30806,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30460,6 +30870,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -30483,7 +30895,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30547,6 +30959,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -30570,7 +30984,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30634,6 +31048,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -30657,7 +31073,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30721,6 +31137,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -30744,7 +31162,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30803,6 +31221,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -30904,7 +31324,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -30968,6 +31388,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -30988,7 +31410,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31052,6 +31474,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "StrainHardeningExponent": "Datasheet",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
@@ -31153,7 +31577,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31217,6 +31641,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "UltimateTensileStrength": "Datasheet",
@@ -31240,7 +31666,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31306,6 +31732,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "ThermalConductivity": "Datasheet",
       "YoungsModulus": "Datasheet"
     },
@@ -31405,7 +31833,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31466,6 +31894,8 @@
       "Hardness": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YieldStrength": "Datasheet",
@@ -31488,7 +31918,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31549,6 +31979,8 @@
       "Hardness": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YieldStrength": "Datasheet",
@@ -31571,7 +32003,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31633,6 +32065,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "ThermalConductivity": "Datasheet",
       "YoungsModulus": "Datasheet"
     },
@@ -31653,7 +32087,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31719,6 +32153,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "ThermalConductivity": "Datasheet",
       "YoungsModulus": "Datasheet"
     },
@@ -31739,7 +32175,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31805,6 +32241,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "ThermalConductivity": "Datasheet",
       "YoungsModulus": "Datasheet"
     },
@@ -31825,7 +32263,7 @@
     "cells": {
       "acoustic": [
         0,
-        0,
+        2,
         0,
         0
       ],
@@ -31891,6 +32329,8 @@
       "MeltingPoint": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
+      "SoundSpeedLongitudinal": "Derived",
+      "SoundSpeedShear": "Derived",
       "ThermalConductivity": "Datasheet",
       "YoungsModulus": "Datasheet"
     },
@@ -31912,7 +32352,7 @@
       "acoustic": [
         0,
         0,
-        0,
+        2,
         0
       ],
       "contact": [
@@ -31978,6 +32418,8 @@
       "PeakCompressiveStrain": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Estimated",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Estimated",
       "TensileStrength": "Estimated",
       "UltimateCompressiveStrain": "Estimated",
       "UltimateTensileStrength": "Estimated",
@@ -32001,7 +32443,7 @@
       "acoustic": [
         0,
         0,
-        0,
+        2,
         0
       ],
       "contact": [
@@ -32067,6 +32509,8 @@
       "PeakCompressiveStrain": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Estimated",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Estimated",
       "TensileStrength": "Datasheet",
       "UltimateCompressiveStrain": "Estimated",
       "UltimateTensileStrength": "Estimated",
@@ -32090,7 +32534,7 @@
       "acoustic": [
         0,
         0,
-        0,
+        2,
         0
       ],
       "contact": [
@@ -32156,6 +32600,8 @@
       "PeakCompressiveStrain": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Estimated",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Estimated",
       "TensileStrength": "Estimated",
       "UltimateCompressiveStrain": "Estimated",
       "UltimateTensileStrength": "Estimated",
@@ -33045,8 +33491,8 @@
     "cells": {
       "acoustic": [
         0,
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "contact": [
@@ -33103,6 +33549,8 @@
       "Density": "Datasheet",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Datasheet",
+      "SoundSpeedLongitudinal": "Estimated",
+      "SoundSpeedShear": "Derived",
       "TensileStrength": "Estimated",
       "UltimateTensileStrength": "Datasheet",
       "YieldStrength": "Datasheet",

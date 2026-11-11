@@ -138,6 +138,7 @@ fn one_pass(t: &mut PropertyTable, gates: DeriveGates) -> usize {
     n += electrical(t);
     if gates.isotropic_elastic {
         n += elastic(t);
+        n += acoustic(t);
     }
     n += fracture(t);
     n += thermal(t);
@@ -243,6 +244,43 @@ fn elastic(t: &mut PropertyTable) -> usize {
         if denom > 0.0 {
             n += usize::from(t.set_if_better(P::YoungsModulus, 9.0 * k * g / denom, src));
         }
+    }
+    n
+}
+
+/// Bulk-wave sound speeds, from the isotropic moduli and the density. Gated
+/// with [`elastic`]: the formulas are isotropic identities.
+///
+/// - Shear: `sqrt(G / rho)`.
+/// - Longitudinal, solid: `sqrt((K + 4G/3) / rho)`, the wave in an unbounded
+///   medium (not the thin-rod speed `sqrt(E / rho)`).
+/// - Longitudinal, fluid: `sqrt(K / rho)` when `G` is absent and a dynamic
+///   viscosity is present (viscosity is what marks a fluid). `Estimated`,
+///   because a sheet's `K` may be the isothermal one and the wave needs the
+///   adiabatic one.
+///
+/// With `K` and `rho` alone nothing is derived. Nothing runs in reverse.
+fn acoustic(t: &mut PropertyTable) -> usize {
+    let mut n = 0;
+    let pos = |v: Option<f64>| v.filter(|x| *x > 0.0);
+    let Some(rho) = pos(t.get(P::Density)) else {
+        return 0;
+    };
+    let g = pos(t.get(P::ShearModulus));
+    let k = pos(t.get(P::BulkModulus));
+    if let Some(g) = g {
+        let src = inherit(t, &[P::ShearModulus, P::Density]);
+        n += usize::from(t.set_if_better(P::SoundSpeedShear, (g / rho).sqrt(), src));
+    }
+    if let (Some(k), Some(g)) = (k, g) {
+        let src = inherit(t, &[P::BulkModulus, P::ShearModulus, P::Density]);
+        let v = ((k + 4.0 * g / 3.0) / rho).sqrt();
+        n += usize::from(t.set_if_better(P::SoundSpeedLongitudinal, v, src));
+    }
+    let fluid = t.get(P::ShearModulus).is_none() && t.get(P::DynamicViscosity).is_some();
+    if let (Some(k), true) = (k, fluid) {
+        let v = (k / rho).sqrt();
+        n += usize::from(t.set_if_better(P::SoundSpeedLongitudinal, v, Source::Estimated));
     }
     n
 }

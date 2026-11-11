@@ -16,14 +16,14 @@ fn every_property_id_is_placed_exactly_once() {
 }
 
 #[test]
-fn no_domain_repeats_an_id_and_acoustic_is_an_empty_gap() {
+fn no_domain_repeats_an_id_and_acoustic_holds_the_sound_ids() {
     for d in DOMAINS {
         for (i, id) in d.ids.iter().enumerate() {
             assert!(!d.ids[..i].contains(id), "{id:?} repeated in {}", d.name);
         }
     }
     let acoustic = DOMAINS.iter().find(|d| d.name == "acoustic");
-    assert!(acoustic.is_some_and(|d| d.ids.is_empty()));
+    assert!(acoustic.is_some_and(|d| d.ids.contains(&PropertyId::SoundSpeedShear)));
     assert_eq!(domain_of(PropertyId::Density), Some("mass"));
     assert_eq!(domain_of(PropertyId::AtomicMass), None);
 }

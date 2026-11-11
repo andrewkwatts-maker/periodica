@@ -38,6 +38,23 @@
 //!
 //! Hardness scales (HV/HB/HRC/...) are not inter-convertible by any exact
 //! relation, so each scale is its own property rather than one "hardness".
+//!
+//! ## Acoustic, magnetic, latent-heat and viscosity properties
+//!
+//! - `LatentHeatFusion`, `LatentHeatVaporization`, `LatentHeatSublimation`: specific latent
+//!   heat of the phase change, in J/kg (not molar).
+//! - `RelativePermeability`: the magnetic relative permeability mu_r, dimensionless. It is
+//!   unrelated to `Permeability` (m^2, flow through a porous solid).
+//! - `SoundSpeedLongitudinal`: the bulk-wave speed in an unbounded medium,
+//!   `sqrt((K + 4G/3) / rho)` for a solid. It is not the thin-rod speed `sqrt(E / rho)`.
+//!   A fluid has one sound speed, stored here.
+//! - `SoundSpeedShear`: `sqrt(G / rho)`. Absent for a fluid, not zero.
+//! - `MechanicalLossFactor`: the mechanical loss factor eta = tan delta of a solid,
+//!   dimensionless. It is not the dielectric loss tangent.
+//! - `AcousticAttenuationOverF2`: a fluid's bulk attenuation divided by frequency squared,
+//!   alpha / f^2, in Np s^2/m, at a reference state where the classical f^2 law holds.
+//! - `DynamicViscosity`: dynamic viscosity in Pa s, a scalar; absent for solids.
+//! - `ViscosityReferenceTemperature`: the temperature in K at which `DynamicViscosity` holds.
 
 use serde::{Deserialize, Serialize};
 
@@ -210,6 +227,16 @@ define_properties! {
     PrimaryEmissionWavelength => ("m",       "Primary Emission Wavelength"),
     VisibleEmissionWavelength => ("m",       "Visible Emission Wavelength"),
     CharacteristicCompressiveStrength => ("Pa", "Characteristic Compressive Strength f_ck"),
+    LatentHeatFusion         => ("J/kg",     "Latent Heat of Fusion"),
+    LatentHeatVaporization   => ("J/kg",     "Latent Heat of Vaporization"),
+    LatentHeatSublimation    => ("J/kg",     "Latent Heat of Sublimation"),
+    RelativePermeability     => ("1",        "Relative Magnetic Permeability mu_r"),
+    SoundSpeedLongitudinal   => ("m/s",      "Longitudinal Sound Speed (unbounded medium)"),
+    SoundSpeedShear          => ("m/s",      "Shear Sound Speed"),
+    MechanicalLossFactor     => ("1",        "Mechanical Loss Factor eta"),
+    AcousticAttenuationOverF2 => ("Np s^2/m", "Acoustic Attenuation alpha/f^2"),
+    DynamicViscosity         => ("Pa s",     "Dynamic Viscosity"),
+    ViscosityReferenceTemperature => ("K",   "Viscosity Reference Temperature"),
 }
 
 impl PropertyId {
