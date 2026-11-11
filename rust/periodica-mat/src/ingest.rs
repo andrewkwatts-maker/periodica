@@ -163,7 +163,7 @@ pub fn ingest_stated(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
         phases = extract_field_phases(obj, src);
     }
 
-    let mut record = MaterialRecord {
+    let record = MaterialRecord {
         name: obj
             .get("Name")
             .or_else(|| obj.get("name"))
