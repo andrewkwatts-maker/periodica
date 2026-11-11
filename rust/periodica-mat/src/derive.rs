@@ -39,7 +39,8 @@ use crate::table::{PropertyTable, Source};
 ///
 /// The strain energy is positive definite when `K > 0` and `G > 0`, which is the open
 /// interval `-1 < nu < 0.5` (Landau and Lifshitz, *Theory of Elasticity*, section 5).
-/// Outside it the data is corrupt; the identities divide by `1 + nu` and `1 - 2 nu`.
+/// At its ends the identities divide by zero (`1 + nu` at -1, `1 - 2 nu` at 0.5), and
+/// beyond them they give a negative G or K.
 pub(crate) fn nu_is_stable(nu: f64) -> bool {
     nu > -1.0 && nu < 0.5
 }

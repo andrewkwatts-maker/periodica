@@ -39,6 +39,23 @@ fn slope_applies_the_rms_factor_and_the_source_range() {
 }
 
 #[test]
+fn slope_correlation_reproduces_the_source_worked_example() {
+    // Teertstra (1997) works the correlation for rms roughness 0.4 um and 1.3 um and
+    // prints m = 0.0865 and m = 0.139, three significant figures each. R_a is chosen so
+    // that R_q is the source's sigma; the rms slope over sqrt(pi / 2) is the source's m.
+    let r = FRAC_PI_2.sqrt();
+    for (sigma_um, m, half_last_digit) in [(0.4, 0.0865, 0.00005), (1.3, 0.139, 0.0005)] {
+        let mut t = table(&[(P::SurfaceRoughnessRa, sigma_um * 1.0e-6 / r)]);
+        fill_derived(&mut t);
+        let got = t.get(P::SurfaceSlopeRms).unwrap() / r;
+        assert!(
+            (got - m).abs() < half_last_digit,
+            "sigma {sigma_um} um: m {got}"
+        );
+    }
+}
+
+#[test]
 fn one_tabor_factor_for_hardness_and_uts() {
     let mut t = table(&[
         (P::UltimateTensileStrength, 400.0e6),
@@ -83,6 +100,14 @@ fn poisson_near_half_is_estimated_and_the_limits_give_nothing() {
     fill_derived(&mut t);
     let k = t.get(P::BulkModulus).unwrap();
     assert!(k.is_finite() && k > 0.0);
+    // K = E / (3 (1 - 2 nu)) and G = E / (2 (1 + nu)).
+    let (e, nu) = (3.0e9, 0.49995);
+    assert_relative_eq!(k, e / (3.0 * (1.0 - 2.0 * nu)), max_relative = 1e-9);
+    assert_relative_eq!(
+        t.get(P::ShearModulus).unwrap(),
+        e / (2.0 * (1.0 + nu)),
+        max_relative = 1e-12
+    );
     assert_eq!(t.source(P::BulkModulus), Source::Estimated);
     for nu in [0.5, -1.0] {
         let mut o = table(&[(P::YoungsModulus, 3.0e9), (P::PoissonsRatio, nu)]);
