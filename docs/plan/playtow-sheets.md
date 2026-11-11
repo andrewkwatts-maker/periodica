@@ -73,12 +73,15 @@ Missing: a bulk water sheet and an air sheet. `molecules/Water.json` describes t
 S3b adds both as material sheets.
 
 ## How lanes run
-- The integration branch is `claude/sheets`, in the one checkout `../periodica-sheets`.
-- No new worktrees: a TokenWatch hook bans `git worktree add` (worktrees took 108 GB). Lanes commit
-  straight to `claude/sheets` in that checkout. One Rust lane runs at a time; a lane that touches
-  no Rust source may run beside it.
-- The planner pushes `claude/sheets:main` when the workspace tests pass, then checks GitHub
-  Actions.
+- Lanes work in the main checkout, `H:/Projects/MathsPhysicsEcosystem/periodica`, on `main`. There
+  is no lane branch and no second checkout: the worktree `../periodica-sheets` and its branch
+  `claude/sheets` were removed on 2026-11-11, after Q1a (decision 10).
+- No new worktrees: a TokenWatch hook bans `git worktree add` (worktrees took 108 GB). One Rust
+  lane runs at a time; a lane that touches no Rust source may run beside it.
+- An executor commits to local `main` with explicit paths and doesn't push. The planner reads the
+  diff, runs the workspace tests, pushes `main`, then checks GitHub Actions.
+- `sync.bat` commits and pushes `main` in every repo here, so lane work can reach `origin` before
+  the planner has reviewed it. The planner then reviews what is on `origin/main` and fixes forward.
 - At most 3 agents at once; one deliverable per brief (`briefs/_common.md`).
 
 ## Lanes
@@ -250,8 +253,8 @@ From `sheets-formula-review.md` (the U numbers are its rows):
     `origin/main` in content, so d5e2d01 joins the two histories with no content change, and the
     checkout was fast-forwarded. Its modified `tests/deviation_report.txt` was byte-identical to
     the pushed version (copy in `H:/claude-scratch/periodica-sheets/main-checkout-backup/`). The
-    stash there is untouched. After every push, fast-forward that checkout too
-    (`git -C ../periodica merge --ff-only origin/main`).
+    stash there is untouched. (Until decision 10 closed, each push from the lane checkout was
+    followed by a fast-forward of this one.)
 9. (PyPI state on 2026-11-11: newest release 2.0.2 of 2026-05-17; the repo is at 2.3.0 with no
    tag and no release.) The PyPI source distribution can't build without the sibling repos (R0b, checked locally):
     - `rust/periodica-mat/src/pairs.rs:24` includes `../../../src/periodica/data/interfaces/pairs.json`,
@@ -263,9 +266,9 @@ From `sheets-formula-review.md` (the U numbers are its rows):
 
     Publishing `arithma_core` on crates.io would remove all three. Otherwise: fix the include path
     and tag Arithma, or release wheels only.
-10. The hook asks for branches in the main checkout, not worktrees. `../periodica-sheets` is still
-   a worktree because of item 8. Once item 8 is settled, the work moves to the main checkout and
-   the worktree goes.
+10. Done 2026-11-11. With item 8 settled and Q1a landed, the worktree `../periodica-sheets` and
+   its branch `claude/sheets` were removed. Lanes work in the main checkout on `main`, which is
+   the owner's rule (no feature branches, no worktrees). See "How lanes run".
 11. Source and licence of the new data (S3b values, S3c emission lines). The values PlayTow asked
     for (latent heats, viscosity, sound speed, loss factors, spectral lines) aren't in any sheet
     today. The candidates are NIST (Atomic Spectra Database, Chemistry WebBook; Standard Reference

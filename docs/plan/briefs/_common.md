@@ -1,22 +1,22 @@
 # Rules for every lane brief (read before you start)
 
 ## Where to work
-- No new worktrees and no clones. A TokenWatch hook bans `git worktree add` (worktrees took
-  108 GB). Briefs written before 2026-11-11 name a lane branch `claude/<lane>` and a worktree
-  `../periodica-<lane>`: ignore both.
-- Work in the one integration checkout, `H:/Projects/MathsPhysicsEcosystem/periodica-sheets`, on
-  the branch `claude/sheets`. Commit there directly. Don't create branches.
+- Work in the main checkout, `H:/Projects/MathsPhysicsEcosystem/periodica`, on `main`. Commit there
+  directly. No branches, no worktrees and no clones: a TokenWatch hook bans `git worktree add`
+  (worktrees took 108 GB), and the owner's rule is one checkout on `main`.
+- Older briefs name a lane branch `claude/<lane>`, a worktree `../periodica-<lane>`, or the
+  checkout `../periodica-sheets` on `claude/sheets` (removed 2026-11-11). Ignore all three and
+  read their paths as the main checkout.
 - Another lane may be working in the same checkout. Edit only the files your brief names. Stage
   and commit only your own paths: `git add <paths>`, then `git commit -m "..." -- <paths>`. Never
   `git add -A`, `git commit -a`, `git stash`, `git reset`, `git checkout -- .` or `git clean`.
+- The checkout holds a stash (`stash@{0}`, WIP on lane/cleanup) that belongs to someone else.
+  Never apply, pop or drop it.
 - If a build or a test fails in a file your brief doesn't name, don't fix it. Report it.
-- Build into the shared `CARGO_TARGET_DIR=H:/claude-scratch/periodica-sheets/target`. Set
-  `TEMP=TMP=H:/claude-scratch/tmp`. Put other scratch under
+- Build into the shared `CARGO_TARGET_DIR=H:/claude-scratch/periodica-sheets/target` (the scratch
+  folder keeps its old name). Set `TEMP=TMP=H:/claude-scratch/tmp`. Put other scratch under
   `H:/claude-scratch/periodica-sheets/<lane>/`. Never write to C:.
-- For Python, use an absolute `PYTHONPATH=H:/Projects/MathsPhysicsEcosystem/periodica-sheets/src`.
-  Without it, subprocesses import the main checkout.
-- Don't touch the main checkout `H:/Projects/MathsPhysicsEcosystem/periodica`. Its uncommitted
-  `tests/deviation_report.txt` and its stash belong to someone else.
+- For Python, use an absolute `PYTHONPATH=H:/Projects/MathsPhysicsEcosystem/periodica/src`.
 - Git Bash rewrites `origin/main:path`. Prefix such git commands with `MSYS_NO_PATHCONV=1`.
 
 ## How to work
