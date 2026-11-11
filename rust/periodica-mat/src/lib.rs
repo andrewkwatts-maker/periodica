@@ -86,7 +86,7 @@ pub use canon::{canon, Mapping, UnitConv};
 pub use concrete::fill_concrete;
 pub use consistency::{elastic_mismatch, ElasticMismatch};
 pub use derive::fill_derived;
-pub use ingest::{ingest, is_material_like, IngestError};
+pub use ingest::{ingest, ingest_stated, is_material_like, IngestError};
 pub use jsonc::strip_comments;
 pub use mix::{bounds as mix_bounds, mix, mix_tagged, MixError};
 pub use orthotropy::{Orthotropy, OrthotropyIncomplete};

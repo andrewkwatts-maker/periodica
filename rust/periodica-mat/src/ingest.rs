@@ -121,31 +121,33 @@ pub enum IngestError {
     NotAnObject(&'static str),
 }
 
-/// Ingest a raw datasheet into a canonical [`MaterialRecord`].
+/// Ingest a raw datasheet into a canonical [`MaterialRecord`], with the exact
+/// relations filled in (conductivity from resistivity, G/K from E+nu...).
 ///
 /// `name_hint` is used when the JSON carries no `Name` field -- normally the
 /// file stem, which is how the registry keys entries.
 pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
+    let mut record = ingest_stated(value, name_hint)?;
+    fill_concrete(&mut record.bulk);
+    let gates = gates_for(&record);
+    fill_derived_with(&mut record.bulk, gates);
+    Ok(record)
+}
+
+/// Ingest a raw datasheet as the sheet states it: no computed value is added.
+/// [`ingest`] is this plus the derivations.
+///
+/// [`crate::elastic_mismatch`] wants this record: after derivation a value
+/// filled from an `Estimated` input is tagged `Estimated` and would be taken
+/// for one the sheet states.
+pub fn ingest_stated(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
     let obj = value
         .as_object()
         .ok_or_else(|| IngestError::NotAnObject(json_type_name(value)))?;
 
     let src = sheet_source(obj);
-    let mut bulk = PropertyTable::new();
     let mut unknown = Vec::new();
-
-    // 1. Root-level scalars (element datasheets), opportunistic.
-    for (k, v) in obj {
-        if let Some(n) = as_number(v) {
-            let c = canon(k);
-            if let Some(m) = lookup(&c) {
-                bulk.set_if_better(m.property, m.conv.apply(n), src);
-            }
-        }
-    }
-
-    // 2. Recognised property blocks, strict.
-    walk_blocks(value, false, src, &mut bulk, &mut unknown);
+    let bulk = stated_bulk(value, obj, src, &mut unknown);
 
     // 3. Structured sub-objects.
     let lattice = extract_lattice(obj);
@@ -194,12 +196,29 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
         },
     };
 
-    // 4. Fill exact relations (conductivity from resistivity, G/K from E+nu...).
-    fill_concrete(&mut record.bulk);
-    let gates = gates_for(&record);
-    fill_derived_with(&mut record.bulk, gates);
-
     Ok(record)
+}
+
+/// Steps 1 and 2: the root scalars, then the recognised property blocks.
+fn stated_bulk(
+    value: &Value,
+    obj: &serde_json::Map<String, Value>,
+    src: Source,
+    unknown: &mut Vec<String>,
+) -> PropertyTable {
+    let mut bulk = PropertyTable::new();
+    // 1. Root-level scalars (element datasheets), opportunistic.
+    for (k, v) in obj {
+        if let Some(n) = as_number(v) {
+            let c = canon(k);
+            if let Some(m) = lookup(&c) {
+                bulk.set_if_better(m.property, m.conv.apply(n), src);
+            }
+        }
+    }
+    // 2. Recognised property blocks, strict.
+    walk_blocks(value, false, src, &mut bulk, unknown);
+    bulk
 }
 
 /// True when a Python generator wrote the sheet from a model rather than a

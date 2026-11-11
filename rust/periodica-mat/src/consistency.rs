@@ -27,7 +27,9 @@ fn stated(t: &PropertyTable, prop: P) -> Option<f64> {
 
 /// How far the stated G and K disagree with the stated E and nu.
 ///
-/// Call it on the table as ingested: only constants the sheet states are compared.
+/// Pass the table of a record from [`crate::ingest_stated`]. After derivation a
+/// value filled from an `Estimated` input is tagged `Estimated` and would be
+/// compared as if the sheet stated it.
 #[must_use]
 pub fn elastic_mismatch(t: &PropertyTable) -> ElasticMismatch {
     let (Some(e), Some(nu)) = (stated(t, P::YoungsModulus), stated(t, P::PoissonsRatio)) else {
