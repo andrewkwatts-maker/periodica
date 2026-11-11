@@ -130,6 +130,7 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
         .as_object()
         .ok_or_else(|| IngestError::NotAnObject(json_type_name(value)))?;
 
+    let src = sheet_source(obj);
     let mut bulk = PropertyTable::new();
     let mut unknown = Vec::new();
 
@@ -138,13 +139,13 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
         if let Some(n) = as_number(v) {
             let c = canon(k);
             if let Some(m) = lookup(&c) {
-                bulk.set_if_better(m.property, m.conv.apply(n), Source::Datasheet);
+                bulk.set_if_better(m.property, m.conv.apply(n), src);
             }
         }
     }
 
     // 2. Recognised property blocks, strict.
-    walk_blocks(value, false, &mut bulk, &mut unknown);
+    walk_blocks(value, false, src, &mut bulk, &mut unknown);
 
     // 3. Structured sub-objects.
     let lattice = extract_lattice(obj);
@@ -155,9 +156,9 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
         })
     });
     let texture = extract_texture(obj);
-    let mut phases = extract_phases(obj);
+    let mut phases = extract_phases(obj, src);
     if phases.is_empty() {
-        phases = extract_field_phases(obj);
+        phases = extract_field_phases(obj, src);
     }
 
     let mut record = MaterialRecord {
@@ -201,11 +202,42 @@ pub fn ingest(value: &Value, name_hint: &str) -> Result<MaterialRecord> {
     Ok(record)
 }
 
+/// True when a Python generator wrote the sheet from a model rather than a
+/// source: `_derivation.source == "auto_generated"`, or a non-empty
+/// `derived_properties.model_used`.
+fn is_generated(obj: &serde_json::Map<String, Value>) -> bool {
+    let auto = get_obj(obj, "_derivation")
+        .and_then(|d| d.get("source"))
+        .and_then(Value::as_str)
+        == Some("auto_generated");
+    let modelled = get_obj(obj, "derived_properties")
+        .and_then(|d| d.get("model_used"))
+        .and_then(Value::as_str)
+        .is_some_and(|m| !m.is_empty());
+    auto || modelled
+}
+
+/// Source tag for every value read from this sheet: model output is
+/// `Estimated`, a curated sheet is `Datasheet`.
+fn sheet_source(obj: &serde_json::Map<String, Value>) -> Source {
+    if is_generated(obj) {
+        Source::Estimated
+    } else {
+        Source::Datasheet
+    }
+}
+
 /// Recursively walk for property blocks.
 ///
 /// `inside` tracks whether the current subtree is within a recognised property
 /// block. Once inside, every numeric leaf is accounted for.
-fn walk_blocks(value: &Value, inside: bool, bulk: &mut PropertyTable, unknown: &mut Vec<String>) {
+fn walk_blocks(
+    value: &Value,
+    inside: bool,
+    src: Source,
+    bulk: &mut PropertyTable,
+    unknown: &mut Vec<String>,
+) {
     match value {
         Value::Object(map) => {
             for (k, v) in map {
@@ -215,7 +247,9 @@ fn walk_blocks(value: &Value, inside: bool, bulk: &mut PropertyTable, unknown: &
                 }
                 let now_inside = inside || PROPERTY_BLOCKS.contains(&c.as_str());
                 match v {
-                    Value::Object(_) | Value::Array(_) => walk_blocks(v, now_inside, bulk, unknown),
+                    Value::Object(_) | Value::Array(_) => {
+                        walk_blocks(v, now_inside, src, bulk, unknown)
+                    }
                     _ => {
                         if !inside {
                             // Root-level scalars were handled opportunistically
@@ -225,7 +259,7 @@ fn walk_blocks(value: &Value, inside: bool, bulk: &mut PropertyTable, unknown: &
                         let Some(n) = as_number(v) else { continue };
                         match lookup(&c) {
                             Some(m) => {
-                                bulk.set_if_better(m.property, m.conv.apply(n), Source::Datasheet);
+                                bulk.set_if_better(m.property, m.conv.apply(n), src);
                             }
                             None if is_ignored(&c) => {}
                             None => unknown.push(c),
@@ -236,7 +270,7 @@ fn walk_blocks(value: &Value, inside: bool, bulk: &mut PropertyTable, unknown: &
         }
         Value::Array(items) => {
             for item in items {
-                walk_blocks(item, inside, bulk, unknown);
+                walk_blocks(item, inside, src, bulk, unknown);
             }
         }
         _ => {}
@@ -445,7 +479,7 @@ fn extract_texture(obj: &serde_json::Map<String, Value>) -> Option<Texture> {
     })
 }
 
-fn extract_phases(obj: &serde_json::Map<String, Value>) -> Vec<Phase> {
+fn extract_phases(obj: &serde_json::Map<String, Value>, src: Source) -> Vec<Phase> {
     let Some(pc) = get_obj(obj, "PhaseComposition") else {
         return Vec::new();
     };
@@ -458,7 +492,7 @@ fn extract_phases(obj: &serde_json::Map<String, Value>) -> Vec<Phase> {
             let mut props = PropertyTable::new();
             for (k, v) in p {
                 if let (Some(n), Some(m)) = (as_number(v), lookup(&canon(k))) {
-                    props.set(m.property, m.conv.apply(n), Source::Datasheet);
+                    props.set(m.property, m.conv.apply(n), src);
                 }
             }
             Phase {
@@ -483,7 +517,7 @@ fn extract_phases(obj: &serde_json::Map<String, Value>) -> Vec<Phase> {
 
 /// Phases declared the other way: in a `Field` block of a `derived/alloys`
 /// entry, where fractions are already 0..1 rather than percentages.
-fn extract_field_phases(obj: &serde_json::Map<String, Value>) -> Vec<Phase> {
+fn extract_field_phases(obj: &serde_json::Map<String, Value>, src: Source) -> Vec<Phase> {
     let Some(field) = get_obj(obj, "Field") else {
         return Vec::new();
     };
@@ -500,7 +534,7 @@ fn extract_field_phases(obj: &serde_json::Map<String, Value>) -> Vec<Phase> {
                     continue;
                 }
                 if let (Some(n), Some(m)) = (as_number(v), lookup(&canon(k))) {
-                    props.set(m.property, m.conv.apply(n), Source::Datasheet);
+                    props.set(m.property, m.conv.apply(n), src);
                 }
             }
             Phase {

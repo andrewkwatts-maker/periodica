@@ -47,7 +47,8 @@
 //!   unrelated to `Permeability` (m^2, flow through a porous solid).
 //! - `SoundSpeedLongitudinal`: the bulk-wave speed in an unbounded medium,
 //!   `sqrt((K + 4G/3) / rho)` for a solid. It is not the thin-rod speed `sqrt(E / rho)`.
-//!   A fluid has one sound speed, stored here.
+//!   A fluid has one sound speed, stored here. Derived only from stated moduli, `Estimated`
+//!   (adiabatic vs quasi-static moduli), and not for a pore-fluid-saturated solid.
 //! - `SoundSpeedShear`: `sqrt(G / rho)`. Absent for a fluid, not zero.
 //! - `MechanicalLossFactor`: the mechanical loss factor eta = tan delta of a solid,
 //!   dimensionless. It is not the dielectric loss tangent.
@@ -55,6 +56,7 @@
 //!   alpha / f^2, in Np s^2/m, at a reference state where the classical f^2 law holds.
 //! - `DynamicViscosity`: dynamic viscosity in Pa s, a scalar; absent for solids.
 //! - `ViscosityReferenceTemperature`: the temperature in K at which `DynamicViscosity` holds.
+//! - `WaterContent`: mass of water per total mass of the wet material (wet basis), 0 to 1.
 
 use serde::{Deserialize, Serialize};
 
@@ -237,6 +239,7 @@ define_properties! {
     AcousticAttenuationOverF2 => ("Np s^2/m", "Acoustic Attenuation alpha/f^2"),
     DynamicViscosity         => ("Pa s",     "Dynamic Viscosity"),
     ViscosityReferenceTemperature => ("K",   "Viscosity Reference Temperature"),
+    WaterContent             => ("1",        "Water Content (wet basis)"),
 }
 
 impl PropertyId {

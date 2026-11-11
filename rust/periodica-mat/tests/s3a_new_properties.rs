@@ -39,7 +39,9 @@ fn ids_follow_the_last_old_id_in_order_with_units() {
         assert_eq!(p.si_unit(), *unit, "{p:?}");
         assert_eq!(P::from_name(p.name()), Some(*p));
     }
-    assert_eq!(P::COUNT, base + 1 + NEW_IDS.len());
+    // P2 appended `WaterContent` after the ten.
+    assert_eq!(P::WaterContent.index(), base + 1 + NEW_IDS.len());
+    assert_eq!(P::COUNT, base + 2 + NEW_IDS.len());
 }
 
 #[test]
@@ -123,12 +125,12 @@ fn steel_sound_speeds_follow_the_unbounded_medium_formulas() {
     assert!((l / vl - 1.0).abs() < 0.005 && (l / 5778.0 - 1.0).abs() < 0.005);
     assert!((s / vs - 1.0).abs() < 0.005 && (s / 3142.0 - 1.0).abs() < 0.005);
     assert!((l / (e / rho).sqrt() - 1.0).abs() > 0.10);
-    assert_eq!(t.source(P::SoundSpeedLongitudinal), Source::Derived);
-    assert_eq!(t.source(P::SoundSpeedShear), Source::Derived);
+    assert_eq!(t.source(P::SoundSpeedLongitudinal), Source::Estimated);
+    assert_eq!(t.source(P::SoundSpeedShear), Source::Estimated);
 }
 
 #[test]
-fn an_estimated_input_makes_the_speeds_estimated() {
+fn an_estimated_input_derives_no_sound_speed() {
     let mut t = table(&[
         (P::YoungsModulus, 200e9),
         (P::PoissonsRatio, 0.29),
@@ -136,8 +138,56 @@ fn an_estimated_input_makes_the_speeds_estimated() {
     ]);
     t.set(P::Density, 7850.0, Source::Estimated);
     fill_derived(&mut t);
+    assert_eq!(t.get(P::SoundSpeedLongitudinal), None);
+    assert_eq!(t.get(P::SoundSpeedShear), None);
+}
+
+#[test]
+fn an_estimated_modulus_derives_no_sound_speed() {
+    let mut t = table(&[(P::PoissonsRatio, 0.29), (P::Density, 7850.0)]);
+    t.set(P::YoungsModulus, 200e9, Source::Estimated);
+    fill_derived(&mut t);
+    assert_eq!(t.get(P::SoundSpeedLongitudinal), None);
+    assert_eq!(t.get(P::SoundSpeedShear), None);
+}
+
+fn steel_with(extra: &[(P, f64)]) -> PropertyTable {
+    let mut base = vec![
+        (P::YoungsModulus, 200e9),
+        (P::PoissonsRatio, 0.29),
+        (P::Density, 7850.0),
+    ];
+    base.extend_from_slice(extra);
+    let mut t = table(&base);
+    fill_derived(&mut t);
+    t
+}
+
+#[test]
+fn pore_fluid_closes_the_solid_longitudinal_speed_only() {
+    for extra in [(P::WaterContent, 0.7), (P::Porosity, 0.1)] {
+        let t = steel_with(&[extra]);
+        assert!(t.get(P::SoundSpeedShear).is_some(), "{extra:?}");
+        assert_eq!(t.get(P::SoundSpeedLongitudinal), None, "{extra:?}");
+    }
+    let t = steel_with(&[(P::WaterContent, 0.0)]);
+    assert!(t.get(P::SoundSpeedShear).is_some());
+    assert!(t.get(P::SoundSpeedLongitudinal).is_some());
+}
+
+#[test]
+fn saturated_fluid_keeps_the_fluid_form() {
+    let mut t = table(&[
+        (P::BulkModulus, 2.2e9),
+        (P::Density, 998.0),
+        (P::DynamicViscosity, 1.0e-3),
+        (P::WaterContent, 1.0),
+    ]);
+    fill_derived(&mut t);
+    let v = t.get(P::SoundSpeedLongitudinal).unwrap();
+    assert!((v / (2.2e9_f64 / 998.0).sqrt() - 1.0).abs() < 1e-12);
     assert_eq!(t.source(P::SoundSpeedLongitudinal), Source::Estimated);
-    assert_eq!(t.source(P::SoundSpeedShear), Source::Estimated);
+    assert_eq!(t.get(P::SoundSpeedShear), None);
 }
 
 #[test]

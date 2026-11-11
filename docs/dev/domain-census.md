@@ -7,28 +7,28 @@ Cells: sheets with a datasheet value / sheets with only derived or estimated val
 
 | folder | category | sheets | mass | elastic | failure | contact | optical | thermal | electrical | magnetic | acoustic |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| active/alloys | Aluminum Alloy | 11 | 11/0 | 3/0 | 11/0 | 0/0 | 0/0 | 11/0 | 11/0 | 0/0 | 0/3 |
+| active/alloys | Aluminum Alloy | 11 | 3/8 | 3/0 | 3/8 | 0/0 | 0/0 | 3/8 | 3/8 | 0/0 | 0/3 |
 | active/alloys | Brass | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
 | active/alloys | Bronze | 2 | 2/0 | 2/0 | 2/0 | 0/0 | 0/0 | 2/0 | 2/0 | 0/0 | 0/2 |
-| active/alloys | Copper Alloy | 9 | 9/0 | 1/0 | 9/0 | 0/0 | 0/0 | 9/0 | 9/0 | 0/0 | 0/1 |
+| active/alloys | Copper Alloy | 9 | 1/8 | 1/0 | 1/8 | 0/0 | 0/0 | 1/8 | 1/8 | 0/0 | 0/1 |
 | active/alloys | Nickel Alloy | 2 | 2/0 | 2/0 | 2/0 | 0/0 | 0/0 | 2/0 | 2/0 | 0/0 | 0/2 |
 | active/alloys | Pewter | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
 | active/alloys | Precious Metal Alloy | 2 | 2/0 | 2/0 | 2/0 | 0/0 | 0/0 | 2/0 | 2/0 | 0/0 | 0/2 |
 | active/alloys | Resistance Alloy | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
 | active/alloys | Shape Memory Alloy | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
 | active/alloys | Solder | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
-| active/alloys | Steel | 34 | 34/0 | 4/0 | 34/0 | 0/0 | 0/0 | 34/0 | 34/0 | 0/0 | 0/4 |
+| active/alloys | Steel | 34 | 4/30 | 4/0 | 4/30 | 0/0 | 0/0 | 4/30 | 4/30 | 0/0 | 0/4 |
 | active/alloys | Titanium Alloy | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
-| active/biological_materials | - | 20 | 20/0 | 20/0 | 20/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/20 |
+| active/biological_materials | - | 20 | 0/20 | 0/20 | 0/20 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | active/elements | - | 91 | 91/0 | 66/0 | 0/0 | 18/0 | 91/0 | 91/0 | 70/0 | 0/0 | 0/65 |
-| active/materials | Aluminum Alloy | 7 | 7/0 | 1/0 | 7/0 | 0/0 | 0/0 | 7/0 | 7/0 | 0/0 | 0/1 |
+| active/materials | Aluminum Alloy | 7 | 1/6 | 1/0 | 1/6 | 0/0 | 0/0 | 1/6 | 1/6 | 0/0 | 0/1 |
 | active/materials | Ceramic | 3 | 3/0 | 3/0 | 3/0 | 0/0 | 1/0 | 3/0 | 3/0 | 0/0 | 0/3 |
-| active/materials | Copper Alloy | 6 | 6/0 | 2/0 | 6/0 | 0/0 | 0/0 | 6/0 | 6/0 | 0/0 | 0/2 |
+| active/materials | Copper Alloy | 6 | 2/4 | 2/0 | 2/4 | 0/0 | 0/0 | 2/4 | 2/4 | 0/0 | 0/2 |
 | active/materials | Natural Rock | 1 | 1/0 | 1/0 | 1/0 | 1/0 | 1/0 | 1/0 | 1/0 | 0/0 | 0/1 |
 | active/materials | Nickel Superalloy | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
 | active/materials | Polymer | 2 | 2/0 | 2/0 | 2/0 | 0/0 | 1/0 | 1/0 | 1/0 | 0/0 | 0/2 |
 | active/materials | Stainless Steel | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
-| active/materials | Steel | 20 | 20/0 | 0/0 | 20/0 | 0/0 | 0/0 | 20/0 | 20/0 | 0/0 | 0/0 |
+| active/materials | Steel | 20 | 0/20 | 0/0 | 0/20 | 0/0 | 0/0 | 0/20 | 0/20 | 0/0 | 0/0 |
 | active/materials | Structural Steel | 3 | 3/0 | 3/0 | 3/0 | 1/0 | 1/0 | 3/0 | 3/0 | 0/0 | 0/3 |
 | active/materials | Titanium Alloy | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 1/0 | 0/0 | 0/1 |
 | active/tissues | - | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/1 |
@@ -49,7 +49,7 @@ Cells: sheets with a datasheet value / sheets with only derived or estimated val
 | derived/ceramics | - | 6 | 6/0 | 6/0 | 6/0 | 0/0 | 0/0 | 6/0 | 0/0 | 0/0 | 0/5 |
 | derived/ceramics | Masonry | 2 | 2/0 | 2/0 | 2/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/2 |
 | derived/composites | - | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 1/0 | 0/0 | 0/0 | 0/0 |
-| derived/composites | Concrete | 3 | 3/0 | 3/0 | 3/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/3 |
+| derived/composites | Concrete | 3 | 3/0 | 3/0 | 3/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | derived/composites | Wood | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | derived/polymers | - | 9 | 9/0 | 9/0 | 9/0 | 0/0 | 0/0 | 9/0 | 0/0 | 0/0 | 0/0 |
 | derived/polymers | Rubber | 1 | 1/0 | 1/0 | 1/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/1 |
@@ -62,29 +62,29 @@ Cells: datasheet/derived/estimated property counts. A name in two folders gets t
 
 | sheet | folder | mass | elastic | failure | contact | optical | thermal | electrical | magnetic | acoustic |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Steel-1018 | derived/alloys | 1/0/0 | 3/1/0 | 4/0/3 | 0/0/0 | 0/0/0 | 2/0/0 | 1/1/0 | 0/0/0 | 0/2/0 |
+| Steel-1018 | derived/alloys | 1/0/0 | 3/1/0 | 4/0/3 | 0/0/0 | 0/0/0 | 2/0/0 | 1/1/0 | 0/0/0 | 0/0/2 |
 | Steel-1018 | reference/alloys | 1/0/0 | 1/0/0 | 3/0/1 | 0/0/0 | 0/0/0 | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Concrete-C30 | derived/composites | 1/0/0 | 1/0/3 | 4/0/8 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
+| Concrete-C30 | derived/composites | 1/0/0 | 1/0/3 | 4/0/8 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Steel-B500B | derived/alloys | 1/0/0 | 1/0/0 | 3/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Concrete-C40 | derived/composites | 1/0/0 | 1/0/3 | 3/0/9 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
-| Concrete-C25 | derived/composites | 1/0/0 | 1/0/3 | 3/0/9 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
-| Aluminum-6061 | derived/alloys | 1/0/0 | 3/1/0 | 3/0/3 | 0/0/0 | 0/0/0 | 2/0/0 | 1/1/0 | 0/0/0 | 0/2/0 |
+| Concrete-C40 | derived/composites | 1/0/0 | 1/0/3 | 3/0/9 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
+| Concrete-C25 | derived/composites | 1/0/0 | 1/0/3 | 3/0/9 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
+| Aluminum-6061 | derived/alloys | 1/0/0 | 3/1/0 | 3/0/3 | 0/0/0 | 0/0/0 | 2/0/0 | 1/1/0 | 0/0/0 | 0/0/2 |
 | Aluminum-6061 | reference/alloys | 1/0/0 | 1/0/0 | 2/0/1 | 0/0/0 | 0/0/0 | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Magnet-N42 | reference/alloys | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 2/0/0 | 0/0/0 |
 | Timber-C24 | derived/composites | 1/0/0 | 2/0/0 | 2/0/1 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Rubber-Natural | derived/polymers | 1/0/0 | 3/0/1 | 2/0/1 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/1/1 |
-| Mortar-CementLime | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/2 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/2/0 |
-| Brick-Clay | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/2 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/2/0 |
+| Rubber-Natural | derived/polymers | 1/0/0 | 3/0/1 | 2/0/1 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/1 |
+| Mortar-CementLime | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/2 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
+| Brick-Clay | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/2 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
 
 ## 3. Worst gaps for PlayTow, most used sheets first
 1. acoustic: no PropertyId (speed of sound, loss) in any sheet; MP-PER-3
 2. contact: no PropertyId for friction or restitution; only surface descriptors
 3. optical: none of the eleven PlayTow sheets carries n, k or emissivity
-4. Steel-1018: acoustic has no datasheet value (0/2/0)
+4. Steel-1018: acoustic has no datasheet value (0/0/2)
 5. Steel-1018: 6 temperature-dependent values, no reference temperature
 6. Concrete-C30: thermal has no datasheet value (0/0/0)
 7. Concrete-C30: electrical has no datasheet value (0/0/0)
-8. Concrete-C30: acoustic has no datasheet value (0/0/2)
+8. Concrete-C30: acoustic has no datasheet value (0/0/0)
 9. Concrete-C30: 3 temperature-dependent values, no reference temperature
 10. Steel-B500B: thermal has no datasheet value (0/0/0)
 11. Steel-B500B: electrical has no datasheet value (0/0/0)
@@ -92,11 +92,11 @@ Cells: datasheet/derived/estimated property counts. A name in two folders gets t
 13. Steel-B500B: 1 temperature-dependent values, no reference temperature
 14. Concrete-C40: thermal has no datasheet value (0/0/0)
 15. Concrete-C40: electrical has no datasheet value (0/0/0)
-16. Concrete-C40: acoustic has no datasheet value (0/0/2)
+16. Concrete-C40: acoustic has no datasheet value (0/0/0)
 17. Concrete-C40: 3 temperature-dependent values, no reference temperature
 18. Concrete-C25: thermal has no datasheet value (0/0/0)
 19. Concrete-C25: electrical has no datasheet value (0/0/0)
-20. Concrete-C25: acoustic has no datasheet value (0/0/2)
+20. Concrete-C25: acoustic has no datasheet value (0/0/0)
 
 ## 4. Other lists
 Sheets not volume-ready, by missing key: {"bulk.YoungsModulus": 129, "micro.grains": 304, "phases": 304}

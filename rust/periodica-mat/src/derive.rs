@@ -253,36 +253,54 @@ fn elastic(t: &mut PropertyTable) -> usize {
 ///
 /// - Shear: `sqrt(G / rho)`.
 /// - Longitudinal, solid: `sqrt((K + 4G/3) / rho)`, the wave in an unbounded
-///   medium (not the thin-rod speed `sqrt(E / rho)`).
+///   medium (not the thin-rod speed `sqrt(E / rho)`). Closed when the sheet
+///   states a `WaterContent` or `Porosity` above zero: in a fluid-saturated
+///   solid the `E` and `nu` of a slow test are the drained frame's, and the
+///   `K` from them is the drained bulk modulus, not the one a sound wave sees
+///   (Gassmann 1951; Biot 1956). The shear modulus is the same drained or
+///   saturated, so the shear speed stays open.
 /// - Longitudinal, fluid: `sqrt(K / rho)` when `G` is absent and a dynamic
-///   viscosity is present (viscosity is what marks a fluid). `Estimated`,
-///   because a sheet's `K` may be the isothermal one and the wave needs the
-///   adiabatic one.
+///   viscosity is present (viscosity marks a fluid). The pore gate does not
+///   apply.
 ///
-/// With `K` and `rho` alone nothing is derived. Nothing runs in reverse.
+/// No input may be `Estimated`; a `Derived` input counts as known. Every
+/// result is `Estimated`: a sheet's moduli are in general quasi-static and
+/// isothermal, while the wave moves with the adiabatic moduli at its own
+/// frequency. The two agree within a few percent in metals and dense ceramics
+/// and differ by tens of percent in polymers. A speed stated in a sheet
+/// outranks the estimate. With `K` and `rho` alone nothing is derived.
+/// Nothing runs in reverse.
 fn acoustic(t: &mut PropertyTable) -> usize {
-    let mut n = 0;
     let pos = |v: Option<f64>| v.filter(|x| *x > 0.0);
     let Some(rho) = pos(t.get(P::Density)) else {
         return 0;
     };
     let g = pos(t.get(P::ShearModulus));
     let k = pos(t.get(P::BulkModulus));
-    if let Some(g) = g {
-        let src = inherit(t, &[P::ShearModulus, P::Density]);
-        n += usize::from(t.set_if_better(P::SoundSpeedShear, (g / rho).sqrt(), src));
+    let known = |ps: &[P]| ps.iter().all(|p| t.source(*p) != Source::Estimated);
+    let pores = |p: P| t.get(p).is_some_and(|x| x > 0.0);
+    let saturated = pores(P::WaterContent) || pores(P::Porosity);
+    let fluid = g.is_none() && t.get(P::DynamicViscosity).is_some();
+
+    let mut speeds: Vec<(P, f64)> = Vec::new();
+    if let Some(g) = g.filter(|_| known(&[P::ShearModulus, P::Density])) {
+        speeds.push((P::SoundSpeedShear, (g / rho).sqrt()));
     }
     if let (Some(k), Some(g)) = (k, g) {
-        let src = inherit(t, &[P::BulkModulus, P::ShearModulus, P::Density]);
-        let v = ((k + 4.0 * g / 3.0) / rho).sqrt();
-        n += usize::from(t.set_if_better(P::SoundSpeedLongitudinal, v, src));
+        if !saturated && known(&[P::BulkModulus, P::ShearModulus, P::Density]) {
+            let v = ((k + 4.0 * g / 3.0) / rho).sqrt();
+            speeds.push((P::SoundSpeedLongitudinal, v));
+        }
     }
-    let fluid = t.get(P::ShearModulus).is_none() && t.get(P::DynamicViscosity).is_some();
     if let (Some(k), true) = (k, fluid) {
-        let v = (k / rho).sqrt();
-        n += usize::from(t.set_if_better(P::SoundSpeedLongitudinal, v, Source::Estimated));
+        if known(&[P::BulkModulus, P::Density]) {
+            speeds.push((P::SoundSpeedLongitudinal, (k / rho).sqrt()));
+        }
     }
-    n
+    speeds
+        .into_iter()
+        .filter(|(p, v)| t.set_if_better(*p, *v, Source::Estimated))
+        .count()
 }
 
 /// Irwin's relation between the stress-intensity and energy formulations of

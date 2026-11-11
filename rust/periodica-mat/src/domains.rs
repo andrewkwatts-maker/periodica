@@ -22,6 +22,7 @@ pub const DOMAINS: &[Domain] = &[
         ids: &[
             P::Density,
             P::Porosity,
+            P::WaterContent,
             P::Permeability,
             P::DynamicViscosity,
             P::ViscosityReferenceTemperature,

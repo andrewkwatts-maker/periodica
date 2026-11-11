@@ -285,6 +285,7 @@ pub fn lookup(canon_key: &str) -> Option<Mapping> {
 
         // ── Misc physical ────────────────────────────────────────────────
         "porositypercent" => map!(Porosity, PCT_TO_FRAC),
+        "watercontentpercent" => map!(WaterContent, PCT_TO_FRAC),
         "permeabilitym2" => map!(Permeability),
 
         // ── Atomic (element-tier root scalars) ───────────────────────────
@@ -432,7 +433,6 @@ pub fn is_ignored(canon_key: &str) -> bool {
             | "quartztransitiontemperaturek"
             | "rockwellhrf"
             | "barcol"
-            | "watercontentpercent"
             // Nested `{"value": ..., "wavelength": ...}` spectral records; the
             // spectral path handles these, not the scalar table.
             | "value"

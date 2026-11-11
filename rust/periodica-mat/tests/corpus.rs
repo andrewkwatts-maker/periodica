@@ -140,7 +140,8 @@ fn corpus_property_coverage_is_reported() {
         };
         records += 1;
         for (p, _, src) in r.bulk.iter() {
-            if src == Source::Datasheet {
+            // Values read from a sheet: curated (`Datasheet`) or generated (`Estimated`).
+            if matches!(src, Source::Datasheet | Source::Estimated) {
                 *counts.entry(p.name()).or_default() += 1;
             }
         }
@@ -217,7 +218,8 @@ fn conductivity_is_answerable_wherever_resistivity_exists() {
             // Stated independently as %IACS. Real datasheets round the two
             // figures separately, so they agree only to a few parts in a
             // thousand -- assert consistency, not identity.
-            Source::Datasheet => {
+            // A generated sheet states its values as `Estimated`; same check.
+            Source::Datasheet | Source::Estimated => {
                 let disagreement = (sigma * rho - 1.0).abs();
                 worst_disagreement = worst_disagreement.max(disagreement);
                 assert!(
