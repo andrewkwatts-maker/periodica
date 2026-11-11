@@ -35,10 +35,14 @@
 use crate::property::PropertyId as P;
 use crate::table::{PropertyTable, Source};
 
-/// Poisson's ratio outside this range is thermodynamically impossible for an
-/// isotropic solid; treat such data as corrupt rather than dividing by it.
-const NU_MIN: f64 = -0.999;
-const NU_MAX: f64 = 0.4999;
+/// Whether Poisson's ratio is inside the stability interval of an isotropic solid.
+///
+/// The strain energy is positive definite when `K > 0` and `G > 0`, which is the open
+/// interval `-1 < nu < 0.5` (Landau and Lifshitz, *Theory of Elasticity*, section 5).
+/// Outside it the data is corrupt; the identities divide by `1 + nu` and `1 - 2 nu`.
+pub(crate) fn nu_is_stable(nu: f64) -> bool {
+    nu > -1.0 && nu < 0.5
+}
 
 /// Normal-incidence reflectance `((n-1)^2 + k^2) / ((n+1)^2 + k^2)`.
 /// Needs `k` (exact, `Derived`) or a known `Transmittance` (k = 0, `Estimated`);
@@ -58,9 +62,16 @@ fn fresnel_from_index(t: &mut PropertyTable) -> bool {
     t.set_if_better(P::Reflectance, r, src)
 }
 
-/// Tabor's correlation: for work-hardening metals the Vickers hardness in
-/// MPa is roughly three times the ultimate tensile strength.
-const TABOR_FACTOR: f64 = 3.3;
+/// Vickers and Brinell numbers are kgf/mm^2: one kgf/mm^2 in Pa.
+pub(crate) const KGF_MM2_PA: f64 = 9.80665e6;
+
+/// Tabor's relation `H ~ 3 sigma` (D. Tabor, *The Hardness of Metals*, Oxford, 1951): the
+/// mean pressure under a fully plastic indentation of a ductile metal is about 3 times
+/// its flow stress. Factors reported for metals run from 2.6 to 3.0 (secondary sources;
+/// the book was not read). The flow stress is the yield stress for a metal that does not
+/// work harden and lies between yield and UTS for one that does. `UTS[MPa] ~ 3.3 HV` is
+/// the same relation with HV in kgf/mm^2: `9.80665 / 3 = 3.269`, rounded.
+pub(crate) const TABOR_CONSTRAINT_FACTOR: f64 = 3.0;
 
 /// Upper bound on fixpoint passes. Every rule is monotone (it only ever fills
 /// absent slots), so this terminates well before the bound; the cap exists to
@@ -100,9 +111,11 @@ const ANISOTROPIC_CLASS_WORDS: &[&str] = &[
     "fiber composite",
 ];
 
-/// Above this Poisson's ratio `K = E / (3 (1 - 2 nu))` is ill-conditioned: the
-/// relative error of K is `2 d_nu / (1 - 2 nu)`, so at nu = 0.4998 an error of
-/// 0.0001 in nu moves K by 50 %.
+/// Above this Poisson's ratio `K = E / (3 (1 - 2 nu))` is ill-conditioned. The condition
+/// number of K with respect to nu is `(nu / K) dK/dnu = 2 nu / (1 - 2 nu)`, which is 9 at
+/// nu = 0.45: an error of 1 % in nu is an error of 9 % in K. The cut-off itself is a
+/// choice with no reference; the owner decides it (decision 15 in
+/// `docs/plan/playtow-sheets.md`).
 const NU_ILL_CONDITIONED: f64 = 0.45;
 
 fn is_anisotropic_class(category: Option<&str>) -> bool {
@@ -205,9 +218,7 @@ fn elastic(t: &mut PropertyTable) -> usize {
     let e = t.get(P::YoungsModulus);
     let g = t.get(P::ShearModulus);
     let k = t.get(P::BulkModulus);
-    let nu = t
-        .get(P::PoissonsRatio)
-        .filter(|v| (NU_MIN..=NU_MAX).contains(v));
+    let nu = t.get(P::PoissonsRatio).filter(|v| nu_is_stable(*v));
 
     if let (Some(e), Some(nu)) = (e, nu) {
         let src = inherit(t, &[P::YoungsModulus, P::PoissonsRatio]);
@@ -227,14 +238,14 @@ fn elastic(t: &mut PropertyTable) -> usize {
     if let (Some(e), Some(g)) = (e, g) {
         let src = inherit(t, &[P::YoungsModulus, P::ShearModulus]);
         let derived_nu = e / (2.0 * g) - 1.0;
-        if g > 0.0 && (NU_MIN..=NU_MAX).contains(&derived_nu) {
+        if g > 0.0 && nu_is_stable(derived_nu) {
             n += usize::from(t.set_if_better(P::PoissonsRatio, derived_nu, src));
         }
     }
     if let (Some(e), Some(k)) = (e, k) {
         let src = inherit(t, &[P::YoungsModulus, P::BulkModulus]);
         let derived_nu = (1.0 - e / (3.0 * k)) * 0.5;
-        if k > 0.0 && (NU_MIN..=NU_MAX).contains(&derived_nu) {
+        if k > 0.0 && nu_is_stable(derived_nu) {
             n += usize::from(t.set_if_better(P::PoissonsRatio, derived_nu, src));
         }
     }
@@ -312,7 +323,9 @@ fn acoustic(t: &mut PropertyTable) -> usize {
 fn fracture(t: &mut PropertyTable) -> usize {
     let mut n = 0;
     let e = t.get(P::YoungsModulus).filter(|v| *v > 0.0);
-    // K_IC is a plane-strain value: G = K^2 (1 - nu^2) / E. Without nu the
+    // The range includes the incompressible limit nu = 0.5 on purpose: `1 - nu^2` has no
+    // singularity there (stability interval: Landau and Lifshitz, *Theory of Elasticity*,
+    // section 5). K_IC is a plane-strain value: G = K^2 (1 - nu^2) / E. Without nu the
     // plane-stress form K^2 / E is used (still Estimated).
     let plane_strain = 1.0
         - t.get(P::PoissonsRatio)
@@ -376,8 +389,13 @@ fn optical(t: &mut PropertyTable) -> usize {
     n
 }
 
-/// Metallic electrical resistivity bound (Ohm*m): pure metals and most alloys
-/// lie below 2e-6; semiconductors, ceramics and polymers far above.
+/// Metallic electrical resistivity bound (Ohm*m). 2.0e-6 Ohm m is 200 micro-ohm cm, the top
+/// of the range (100 to 200 micro-ohm cm) where the resistivity of a metal saturates because
+/// the electron mean free path has fallen to the interatomic spacing, the
+/// Mott-Ioffe-Regel limit: Mooij (1973) and Fisk and Webb (1976), as reviewed by
+/// N. E. Hussey, K. Takenaka and H. Takagi, "Universality of the Mott-Ioffe-Regel limit in
+/// metals" (2004), arXiv:cond-mat/0404263. That review says the number is not sharply
+/// defined and that some correlated metals exceed it.
 const METALLIC_RESISTIVITY_MAX: f64 = 2.0e-6;
 
 /// Elongation at break (%) between which a table counts as ductile: below the
@@ -404,22 +422,22 @@ pub(crate) fn shows_ductile_metal(t: &PropertyTable) -> bool {
     }
 }
 
-/// Tabor's hardness/strength correlation, for ductile metals only.
-/// Empirical, so `Estimated`.
+/// Tabor's hardness/strength relation ([`TABOR_CONSTRAINT_FACTOR`]), for ductile metals
+/// only. Empirical, so `Estimated`.
 fn hardness(t: &mut PropertyTable) -> usize {
     let mut n = 0;
     if !shows_ductile_metal(t) {
         return n;
     }
     if let Some(uts) = t.get(P::UltimateTensileStrength) {
-        // HV is conventionally a kgf/mm^2 number; UTS[MPa] ~ 3.3 * HV.
-        let hv = uts / 1.0e6 / TABOR_FACTOR;
+        // HV is a kgf/mm^2 number: H = HV * KGF_MM2_PA ~ 3 * UTS.
+        let hv = TABOR_CONSTRAINT_FACTOR * uts / KGF_MM2_PA;
         if hv > 0.0 && t.set_if_better(P::HardnessVickers, hv, Source::Estimated) {
             n += 1;
         }
     }
     if let Some(hv) = t.get(P::HardnessVickers) {
-        let uts = hv * TABOR_FACTOR * 1.0e6;
+        let uts = hv * KGF_MM2_PA / TABOR_CONSTRAINT_FACTOR;
         if t.set_if_better(P::UltimateTensileStrength, uts, Source::Estimated) {
             n += 1;
         }
@@ -431,6 +449,15 @@ fn hardness(t: &mut PropertyTable) -> usize {
 mod tests {
     use super::*;
     use approx::assert_relative_eq;
+
+    #[test]
+    fn nu_is_stable_is_the_open_interval() {
+        assert!(!nu_is_stable(-1.0));
+        assert!(nu_is_stable(-0.9999));
+        assert!(nu_is_stable(0.0));
+        assert!(nu_is_stable(0.49999));
+        assert!(!nu_is_stable(0.5));
+    }
 
     fn table(pairs: &[(P, f64)]) -> PropertyTable {
         let mut t = PropertyTable::new();

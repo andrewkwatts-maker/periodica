@@ -18994,7 +18994,7 @@
       "contact": [
         1,
         0,
-        1,
+        0,
         0
       ],
       "elastic": [
@@ -19064,7 +19064,6 @@
       "SoundSpeedShear": "Estimated",
       "SpecificHeat": "Datasheet",
       "SurfaceRoughnessRa": "Datasheet",
-      "SurfaceSlopeRms": "Estimated",
       "TensileStrength": "Estimated",
       "ThermalConductivity": "Datasheet",
       "ThermalDiffusivity": "Datasheet",
@@ -20323,7 +20322,7 @@
       "failure": [
         2,
         0,
-        2,
+        1,
         0
       ],
       "magnetic": [
@@ -20355,7 +20354,6 @@
       "BulkModulus": "Derived",
       "CompressiveStrength": "Datasheet",
       "Density": "Datasheet",
-      "Hardness": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
       "SoundSpeedShear": "Estimated",
@@ -31835,7 +31833,7 @@
       "failure": [
         4,
         0,
-        2,
+        1,
         0
       ],
       "magnetic": [
@@ -31868,7 +31866,6 @@
       "CompressiveStrength": "Datasheet",
       "Density": "Datasheet",
       "FlexuralStrength": "Datasheet",
-      "Hardness": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
       "SoundSpeedLongitudinal": "Estimated",
@@ -31920,7 +31917,7 @@
       "failure": [
         4,
         0,
-        2,
+        1,
         0
       ],
       "magnetic": [
@@ -31953,7 +31950,6 @@
       "CompressiveStrength": "Datasheet",
       "Density": "Datasheet",
       "FlexuralStrength": "Datasheet",
-      "Hardness": "Estimated",
       "PoissonsRatio": "Datasheet",
       "ShearModulus": "Derived",
       "SoundSpeedLongitudinal": "Estimated",
@@ -32353,7 +32349,7 @@
       "failure": [
         3,
         0,
-        9,
+        8,
         0
       ],
       "magnetic": [
@@ -32389,7 +32385,6 @@
       "Density": "Datasheet",
       "FractureEnergy": "Estimated",
       "FractureToughnessKic": "Estimated",
-      "Hardness": "Estimated",
       "Jic": "Estimated",
       "MeanCompressiveStrength": "Estimated",
       "PeakCompressiveStrain": "Estimated",
@@ -32442,7 +32437,7 @@
       "failure": [
         4,
         0,
-        8,
+        7,
         0
       ],
       "magnetic": [
@@ -32478,7 +32473,6 @@
       "Density": "Datasheet",
       "FractureEnergy": "Estimated",
       "FractureToughnessKic": "Estimated",
-      "Hardness": "Estimated",
       "Jic": "Estimated",
       "MeanCompressiveStrength": "Estimated",
       "PeakCompressiveStrain": "Estimated",
@@ -32531,7 +32525,7 @@
       "failure": [
         3,
         0,
-        9,
+        8,
         0
       ],
       "magnetic": [
@@ -32567,7 +32561,6 @@
       "Density": "Datasheet",
       "FractureEnergy": "Estimated",
       "FractureToughnessKic": "Estimated",
-      "Hardness": "Estimated",
       "Jic": "Estimated",
       "MeanCompressiveStrength": "Estimated",
       "PeakCompressiveStrain": "Estimated",
@@ -32620,7 +32613,7 @@
       "failure": [
         3,
         0,
-        8,
+        7,
         0
       ],
       "magnetic": [
@@ -32654,7 +32647,6 @@
       "Density": "Datasheet",
       "FractureEnergy": "Estimated",
       "FractureToughnessKic": "Estimated",
-      "Hardness": "Estimated",
       "Jic": "Estimated",
       "MeanCompressiveStrength": "Estimated",
       "PeakCompressiveStrain": "Estimated",
@@ -33879,7 +33871,7 @@
       "failure": [
         2,
         0,
-        1,
+        0,
         0
       ],
       "magnetic": [
@@ -33911,7 +33903,6 @@
       "CompressiveStrength": "Datasheet",
       "Density": "Datasheet",
       "FlexuralStrength": "Datasheet",
-      "Hardness": "Estimated",
       "MeltingPoint": "Datasheet",
       "YoungsModulus": "Datasheet"
     },
@@ -33957,7 +33948,7 @@
       "failure": [
         1,
         0,
-        1,
+        0,
         0
       ],
       "magnetic": [
@@ -33988,7 +33979,6 @@
     "props": {
       "CompressiveStrength": "Datasheet",
       "Density": "Datasheet",
-      "Hardness": "Estimated",
       "MeltingPoint": "Datasheet",
       "YoungsModulus": "Datasheet"
     },

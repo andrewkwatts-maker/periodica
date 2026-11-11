@@ -64,17 +64,17 @@ Cells: datasheet/derived/estimated property counts. A name in two folders gets t
 |---|---|---|---|---|---|---|---|---|---|---|
 | Steel-1018 | derived/alloys | 1/0/0 | 3/1/0 | 4/0/3 | 0/0/0 | 0/0/0 | 2/0/0 | 1/1/0 | 0/0/0 | 0/0/2 |
 | Steel-1018 | reference/alloys | 1/0/0 | 1/0/0 | 3/0/1 | 0/0/0 | 0/0/0 | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Concrete-C30 | derived/composites | 1/0/0 | 1/0/3 | 4/0/8 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
+| Concrete-C30 | derived/composites | 1/0/0 | 1/0/3 | 4/0/7 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Steel-B500B | derived/alloys | 1/0/0 | 1/0/0 | 3/0/3 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Concrete-C40 | derived/composites | 1/0/0 | 1/0/3 | 3/0/9 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Concrete-C25 | derived/composites | 1/0/0 | 1/0/3 | 3/0/9 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
+| Concrete-C40 | derived/composites | 1/0/0 | 1/0/3 | 3/0/8 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
+| Concrete-C25 | derived/composites | 1/0/0 | 1/0/3 | 3/0/8 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Aluminum-6061 | derived/alloys | 1/0/0 | 3/1/0 | 3/0/3 | 0/0/0 | 0/0/0 | 2/0/0 | 1/1/0 | 0/0/0 | 0/0/2 |
 | Aluminum-6061 | reference/alloys | 1/0/0 | 1/0/0 | 2/0/1 | 0/0/0 | 0/0/0 | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Magnet-N42 | reference/alloys | 1/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 2/0/0 | 0/0/0 |
 | Timber-C24 | derived/composites | 1/0/0 | 2/0/0 | 2/0/1 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
 | Rubber-Natural | derived/polymers | 1/0/0 | 3/0/1 | 2/0/1 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/1 |
-| Mortar-CementLime | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/2 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
-| Brick-Clay | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/2 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
+| Mortar-CementLime | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/1 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
+| Brick-Clay | derived/ceramics | 1/0/0 | 2/2/0 | 4/0/1 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/2 |
 
 ## 3. Worst gaps for PlayTow, most used sheets first
 1. acoustic: no PropertyId (speed of sound, loss) in any sheet; MP-PER-3

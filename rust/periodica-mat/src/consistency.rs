@@ -35,7 +35,7 @@ pub fn elastic_mismatch(t: &PropertyTable) -> ElasticMismatch {
     let (Some(e), Some(nu)) = (stated(t, P::YoungsModulus), stated(t, P::PoissonsRatio)) else {
         return ElasticMismatch::default();
     };
-    if nu <= -1.0 || nu >= 0.5 {
+    if !crate::derive::nu_is_stable(nu) {
         return ElasticMismatch::default();
     }
     let rel = |given: f64, from_pair: f64| (given - from_pair).abs() / given;

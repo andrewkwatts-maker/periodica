@@ -242,7 +242,7 @@ fn kg_of(rec: &MaterialRecord) -> Option<(f64, f64)> {
     use PropertyId as P;
     let b = &rec.bulk;
     if let (Some(e), Some(nu)) = (b.get(P::YoungsModulus), b.get(P::PoissonsRatio)) {
-        if nu > -1.0 && nu < 0.5 {
+        if crate::derive::nu_is_stable(nu) {
             return Some((e / (3.0 * (1.0 - 2.0 * nu)), e / (2.0 * (1.0 + nu))));
         }
     }

@@ -42,10 +42,10 @@ fn steel_like_table_gets_both_tabor_directions() {
         (P::ElectricalResistivity, 1.4e-7),
     ]);
     fill_derived(&mut a);
-    assert!((a.get(P::HardnessVickers).unwrap() - 440.0 / 3.3).abs() < 1e-9);
+    assert!((a.get(P::HardnessVickers).unwrap() - 3.0 * 440e6 / 9.80665e6).abs() < 1e-9);
     let mut b = table(&[(P::HardnessVickers, 200.0), (P::ElongationPct, 20.0)]);
     fill_derived(&mut b);
-    assert!((b.get(P::UltimateTensileStrength).unwrap() - 660e6).abs() < 1.0);
+    assert!((b.get(P::UltimateTensileStrength).unwrap() - 200.0 * 9.80665e6 / 3.0).abs() < 1.0);
 }
 
 #[test]
@@ -78,7 +78,7 @@ fn very_ductile_metal_keeps_tabor() {
         (P::ElectricalResistivity, 7.2e-7),
     ]);
     fill_derived(&mut t);
-    assert!((t.get(P::HardnessVickers).unwrap() - 600.0 / 3.3).abs() < 1e-9);
+    assert!((t.get(P::HardnessVickers).unwrap() - 3.0 * 600e6 / 9.80665e6).abs() < 1e-9);
 }
 
 #[test]
@@ -105,41 +105,39 @@ fn timber_and_rubber_get_no_hardness() {
 }
 
 #[test]
-fn masonry_hardness_is_three_times_compressive_strength() {
+fn masonry_has_no_hardness_without_a_cited_ratio() {
+    // Q1a item 4: no single H / f_c exists for a cohesive-frictional solid.
     for rel in [
         "derived/ceramics/Mortar-CementLime.json",
         "derived/ceramics/Brick-Clay.json",
     ] {
         let r = sheet(rel);
-        let fc = r.bulk.get(P::CompressiveStrength).expect("f_c");
-        assert!(
-            (r.bulk.get(P::Hardness).expect("H") - 3.0 * fc).abs() < 1.0,
-            "{rel}"
-        );
+        assert!(r.bulk.get(P::Hardness).is_none(), "{rel} H");
         assert!(r.bulk.get(P::HardnessVickers).is_none(), "{rel} HV");
     }
 }
 
 #[test]
 fn metal_sheets_keep_their_hardness_values_and_tags() {
-    // (path, Hardness, HV, TensileStrength), recorded at 5c70977 before the change.
+    // (path, Hardness, HV, TensileStrength). HV is 3 * UTS / 9.80665e6 since Q1a item 3
+    // (it was recorded at 5c70977 with UTS / 3.3).
     let cases = [
         (
             "derived/alloys/Steel-1018.json",
             1235637900.0,
-            133.33333333333334,
+            3.0 * 440e6 / 9.80665e6,
             440e6,
         ),
         (
             "derived/alloys/Aluminum-6061.json",
             931631750.0,
-            93.93939393939394,
+            3.0 * 310e6 / 9.80665e6,
             310e6,
         ),
         (
             "derived/alloys/Steel-B500B.json",
             1500e6,
-            163.63636363636365,
+            3.0 * 540e6 / 9.80665e6,
             540e6,
         ),
     ];

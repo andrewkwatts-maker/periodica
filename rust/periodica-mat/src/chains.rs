@@ -22,14 +22,7 @@
 use crate::property::PropertyId as P;
 use crate::table::{PropertyTable, Source};
 
-/// `Tabor: H ~ 3 sigma_y` (Tabor, *The Hardness of Metals*, 1951).
-const TABOR_H_OVER_SIGMA_Y: f64 = 3.0;
-/// Constraint factor on the compressive strength of a pressure-sensitive,
-/// yield-free material: `H ~ 3 f_c` (Tabor's constraint factor applied to the
-/// compressive yield of the Drucker-Prager cap).
-const CONSTRAINT_H_OVER_FC: f64 = 3.0;
-/// Vickers and Brinell numbers are kgf/mm^2: one kgf/mm^2 in Pa.
-const KGF_MM2_PA: f64 = 9.80665e6;
+use crate::derive::{KGF_MM2_PA, TABOR_CONSTRAINT_FACTOR};
 
 /// Rockwell C to Vickers, ASTM E140 approximate conversion table
 /// (`HRC`, `HV`), used by piecewise-linear interpolation.
@@ -46,12 +39,29 @@ const HRC_TO_HV: [(f64, f64); 10] = [
     (65.0, 832.0),
 ];
 
-/// Antonetti, Whittle and Simons (1993) slope correlation for ground,
-/// lapped and blasted metal surfaces: `m = 0.125 * sigma_um^0.402`.
+/// Coefficient of the mean-absolute-slope correlation `m = 0.125 (sigma * 1e6)^0.402`,
+/// `sigma` the rms roughness in metres. Source as read: P. Teertstra, "Calculating
+/// interface resistance", Electronics Cooling, 1 May 1997
+/// (electronics-cooling.com/1997/05/calculating-interface-resistance/), which credits
+/// V. W. Antonetti, T. D. Whittle and R. E. Simons, "An approximate thermal contact
+/// conductance correlation", ASME HTD-Vol. 170, 1991, pp. 35-42. `m` is the mean absolute
+/// asperity slope. The 1991 paper itself was not read; the page does not say which
+/// surfaces the fit covers and gives no scatter.
 const SLOPE_COEFF: f64 = 0.125;
+/// Exponent of the correlation above.
 const SLOPE_EXP: f64 = 0.402;
-/// `sigma_rms = 1.25 R_a` for a Gaussian height distribution.
-const RQ_OVER_RA: f64 = 1.25;
+/// The roughness range of the correlation, `R_q` in micrometres: Teertstra states it was
+/// "developed for the surface roughness range 0.216 um < sigma < 9.6 um".
+const SLOPE_RQ_RANGE_UM: (f64, f64) = (0.216, 9.6);
+
+/// `R_q / R_a = sqrt(pi / 2) = 1.2533` for a Gaussian height distribution.
+///
+/// With rms height `R_q` the mean absolute height of a zero-mean Gaussian is
+/// `R_a = R_q sqrt(2 / pi)`, so `R_q = R_a sqrt(pi / 2)`. The same ratio converts a
+/// Gaussian mean absolute slope to an rms slope. (`sqrt` is not `const`, hence a function.)
+pub(crate) fn rq_over_ra() -> f64 {
+    std::f64::consts::FRAC_PI_2.sqrt()
+}
 
 /// Run every chain once; returns the number of properties added.
 pub(crate) fn interface_chains(t: &mut PropertyTable) -> usize {
@@ -82,7 +92,9 @@ fn measured(t: &PropertyTable, p: P) -> Option<f64> {
 
 /// Indentation hardness `H` in Pa: from a measured Vickers or Brinell number
 /// (`H = HV * 9.80665e6 Pa`), from Rockwell C via ASTM E140, else, for a ductile metal,
-/// from yield by Tabor's `H ~ 3 sigma_y`, else (no yield, as for concrete) `H ~ 3 f_c`.
+/// from yield by Tabor's `H ~ 3 sigma_y` ([`TABOR_CONSTRAINT_FACTOR`]). A sheet with
+/// none of these gets no `Hardness`: for a cohesive-frictional solid the ratio of
+/// hardness to cohesion depends on the friction angle, so no single `H / f_c` exists.
 fn hardness_pa(t: &mut PropertyTable) -> bool {
     let from_scale = measured(t, P::HardnessVickers)
         .or_else(|| measured(t, P::HardnessBrinell))
@@ -91,20 +103,11 @@ fn hardness_pa(t: &mut PropertyTable) -> bool {
     let from_yield = t
         .get(P::YieldStrength)
         .filter(|v| *v > 0.0 && crate::derive::shows_ductile_metal(t))
-        .map(|y| TABOR_H_OVER_SIGMA_Y * y);
-    let from_fc = || measured_f_c(t).map(|fc| CONSTRAINT_H_OVER_FC * fc);
-    match from_scale.or(from_yield).or_else(from_fc) {
+        .map(|y| TABOR_CONSTRAINT_FACTOR * y);
+    match from_scale.or(from_yield) {
         Some(h) => t.set_if_better(P::Hardness, h, Source::Estimated),
         None => false,
     }
-}
-
-/// Compressive strength for the `H ~ 3 f_c` chain: the mean value if the sheet
-/// has one, else the characteristic value.
-fn measured_f_c(t: &PropertyTable) -> Option<f64> {
-    t.get(P::MeanCompressiveStrength)
-        .or_else(|| t.get(P::CompressiveStrength))
-        .filter(|v| *v > 0.0)
 }
 
 /// Tensile strength `f_t = UTS` where the sheet states no separate `f_t`.
@@ -115,17 +118,22 @@ fn tensile_f_t(t: &mut PropertyTable) -> bool {
     }
 }
 
-/// Rms asperity slope `theta_q` (rad) from `R_a`, using the Antonetti,
-/// Whittle and Simons (1993) correlation `m = 0.125 (R_q[um])^0.402` with
-/// `R_q = 1.25 R_a`; `theta_q ~ m` for small slopes.
+/// Rms asperity slope `theta_q` (rad) from `R_a`: `R_q = sqrt(pi / 2) R_a`, then the
+/// mean absolute slope `m = 0.125 (R_q[um])^0.402` (see [`SLOPE_COEFF`]), then
+/// `theta_q = sqrt(pi / 2) m`, the rms of Gaussian slopes with mean absolute value `m`.
+/// Writes nothing when `R_q` is outside the correlation's range 0.216..=9.6 um.
 fn slope_from_ra(t: &mut PropertyTable) -> bool {
     let Some(ra) = t.get(P::SurfaceRoughnessRa).filter(|v| *v > 0.0) else {
         return false;
     };
-    let rq_um = RQ_OVER_RA * ra * 1.0e6;
+    let rq_um = rq_over_ra() * ra * 1.0e6;
+    if !(SLOPE_RQ_RANGE_UM.0..=SLOPE_RQ_RANGE_UM.1).contains(&rq_um) {
+        return false;
+    }
+    let mean_abs = SLOPE_COEFF * rq_um.powf(SLOPE_EXP);
     t.set_if_better(
         P::SurfaceSlopeRms,
-        SLOPE_COEFF * rq_um.powf(SLOPE_EXP),
+        rq_over_ra() * mean_abs,
         Source::Estimated,
     )
 }
@@ -134,6 +142,11 @@ fn slope_from_ra(t: &mut PropertyTable) -> bool {
 mod tests {
     use super::*;
     use approx::assert_relative_eq;
+
+    #[test]
+    fn rq_over_ra_is_sqrt_half_pi() {
+        assert_eq!(rq_over_ra(), (std::f64::consts::PI / 2.0).sqrt());
+    }
 
     fn table(pairs: &[(P, f64)]) -> PropertyTable {
         let mut t = PropertyTable::new();
@@ -177,11 +190,10 @@ mod tests {
     }
 
     #[test]
-    fn hardness_without_yield_is_three_f_c() {
+    fn hardness_without_yield_is_absent() {
         let mut t = table(&[(P::CompressiveStrength, 30.0e6)]);
         interface_chains(&mut t);
-        assert_relative_eq!(t.get(P::Hardness).unwrap(), 90.0e6, max_relative = 1e-12);
-        assert_eq!(t.source(P::Hardness), Source::Estimated);
+        assert!(!t.has(P::Hardness));
         let mut y = table(&[
             (P::CompressiveStrength, 30.0e6),
             (P::YieldStrength, 250.0e6),
@@ -225,9 +237,10 @@ mod tests {
     fn slope_from_ra_follows_the_correlation() {
         let mut t = table(&[(P::SurfaceRoughnessRa, 1.6e-6)]);
         interface_chains(&mut t);
+        let rq_um = rq_over_ra() * 1.6;
         assert_relative_eq!(
             t.get(P::SurfaceSlopeRms).unwrap(),
-            0.125 * 2.0_f64.powf(0.402),
+            rq_over_ra() * 0.125 * rq_um.powf(0.402),
             max_relative = 1e-12
         );
         assert_eq!(t.source(P::SurfaceSlopeRms), Source::Estimated);
