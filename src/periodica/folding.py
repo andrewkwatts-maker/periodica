@@ -22,12 +22,12 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Sequence, Tuple
-from urllib.request import urlopen, urlretrieve
-
-import numpy as np
+from typing import TYPE_CHECKING, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from periodica.get import Get
+
+if TYPE_CHECKING:  # numpy is imported inside the functions that use it so
+    import numpy as np  # `import periodica` does not pay for it up front.
 
 
 _DATA_DIR = Path(__file__).parent / "data"
@@ -51,6 +51,8 @@ def _place_next(a: np.ndarray, b: np.ndarray, c: np.ndarray,
     Bond geometry: |c-d| = bond_len, angle b-c-d = bond_angle_deg,
     dihedral a-b-c-d = dihedral_deg.
     """
+    import numpy as np
+
     bc = c - b
     bc_n = np.linalg.norm(bc)
     if bc_n == 0:
@@ -95,6 +97,8 @@ def build_backbone(
     Returns ndarray of shape (n_residues, 3, 3): [residue][atom in {N, CA, C}][xyz].
     Bond lengths and angles come from `folding_rules()`; omega defaults to 180.
     """
+    import numpy as np
+
     rules = rules or folding_rules()
     bl = rules["bond_lengths_A"]
     ba = rules["bond_angles_deg"]
@@ -187,6 +191,8 @@ def kabsch_rmsd(P: np.ndarray, Q: np.ndarray) -> Tuple[np.ndarray, float]:
 
     Standard Kabsch via SVD; mirror-corrected so the rotation is proper.
     """
+    import numpy as np
+
     P = np.asarray(P, dtype=float)
     Q = np.asarray(Q, dtype=float)
     if P.shape != Q.shape or P.ndim != 2 or P.shape[1] != 3:
@@ -224,6 +230,8 @@ def parse_pdb_backbone(path) -> Dict[int, Dict[str, np.ndarray]]:
     Returns: dict[residue_index, dict[atom_name, np.ndarray(3,)]] for atoms
     in {N, CA, C}. Skips alt-locs other than the first occurrence per residue.
     """
+    import numpy as np
+
     out: Dict[int, Dict[str, np.ndarray]] = {}
     with open(path, "r", encoding="utf-8", errors="replace") as f:
         for line in f:
@@ -252,6 +260,8 @@ def backbone_array_from_pdb(parsed: Dict[int, Dict[str, np.ndarray]]) -> np.ndar
 
     Skips any residue missing one of N/CA/C.
     """
+    import numpy as np
+
     rows: List[np.ndarray] = []
     for resi in sorted(parsed):
         atoms = parsed[resi]
@@ -291,6 +301,8 @@ def fetch_alphafold(uniprot_id: str, *, cache_dir: Optional[Path] = None) -> Pat
     Uses the AlphaFold prediction API to discover the current model version
     URL, then urlretrieve to fetch. Pure stdlib. Cached on disk.
     """
+    from urllib.request import urlopen, urlretrieve
+
     cache = Path(cache_dir) if cache_dir is not None else _default_cache_dir()
     cache.mkdir(parents=True, exist_ok=True)
     existing = _find_existing_pdb(cache, uniprot_id)

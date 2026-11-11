@@ -7,7 +7,6 @@ matching version tag if neither exists.
 import os
 import subprocess
 import sys
-from importlib.metadata import version as _pkg_version
 from pathlib import Path
 
 _APP_REPO   = "https://github.com/andrewkwatts-maker/periodica-app.git"
@@ -17,6 +16,10 @@ _LIB_FILE   = Path(__file__)
 
 
 def _library_version() -> str:
+    # Local import: importlib.metadata costs several ms and is only needed
+    # when the app has to be cloned, never on `import periodica`.
+    from importlib.metadata import version as _pkg_version
+
     try:
         return _pkg_version("periodica")
     except Exception:
