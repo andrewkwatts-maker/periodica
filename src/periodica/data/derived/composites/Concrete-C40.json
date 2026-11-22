@@ -7,6 +7,7 @@
     "CharacteristicCompressiveStrength_MPa": 40,
     "CompressiveStrength_MPa": 40,
     "Density_kgm3": 2400,
+    "WeibullModulus": 8,
     "PoissonsRatio": 0.2
   }
 }

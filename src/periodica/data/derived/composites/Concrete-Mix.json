@@ -50,6 +50,7 @@
     "CharacteristicCompressiveStrength_MPa": 35,
     "CompressiveStrength_MPa": 35,
     "Density_kgm3": 2400,
+    "WeibullModulus": 8,
     "TensileStrength_MPa": 3.5,
     "ThermalConductivity_WmK": 1.7,
     "YoungsModulus_GPa": 30
