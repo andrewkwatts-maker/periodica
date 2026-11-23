@@ -1,4 +1,26 @@
 {
   "note": "Measured pair values keyed by the two exact record ids (MaterialRecord.name), each with provenance. A row overrides the derived value. Published family tables live in periodica-mat/tests/oracles/pairs.json as test answers.",
-  "rows": []
+  "rows": [
+    {
+      "a": "Concrete-C25",
+      "b": "Concrete-C25",
+      "law": "Coulomb",
+      "mu_s": 1.4,
+      "source": "ACI 318-19 Table 22.9.4.2 shear-friction coefficient, concrete placed monolithically, mu = 1.4*lambda with lambda = 1 for normal-weight concrete (apparent coefficient fitted to push-off tests, Mattock and Hawkins 1972, PCI J. 17(2)); no kinetic value published; UNVERIFIED: recalled, not checked against the clause text"
+    },
+    {
+      "a": "Concrete-C30",
+      "b": "Concrete-C30",
+      "law": "Coulomb",
+      "mu_s": 1.4,
+      "source": "ACI 318-19 Table 22.9.4.2 shear-friction coefficient, concrete placed monolithically, mu = 1.4*lambda with lambda = 1 for normal-weight concrete (apparent coefficient fitted to push-off tests, Mattock and Hawkins 1972, PCI J. 17(2)); no kinetic value published; UNVERIFIED: recalled, not checked against the clause text"
+    },
+    {
+      "a": "Concrete-C40",
+      "b": "Concrete-C40",
+      "law": "Coulomb",
+      "mu_s": 1.4,
+      "source": "ACI 318-19 Table 22.9.4.2 shear-friction coefficient, concrete placed monolithically, mu = 1.4*lambda with lambda = 1 for normal-weight concrete (apparent coefficient fitted to push-off tests, Mattock and Hawkins 1972, PCI J. 17(2)); no kinetic value published; UNVERIFIED: recalled, not checked against the clause text"
+    }
+  ]
 }
