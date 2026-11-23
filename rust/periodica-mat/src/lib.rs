@@ -81,6 +81,7 @@ pub mod pairs;
 pub mod property;
 pub mod record;
 pub mod table;
+pub mod temperature;
 
 pub use canon::{canon, Mapping, UnitConv};
 pub use concrete::fill_concrete;
